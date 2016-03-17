@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>task_12</title>
+	<style type="text/css">
+		*{padding: 0;margin: 0;}
+		section{margin-bottom: 100px;}
+
+		/*ul-list*/
+		ul li{list-style: none;}
+		ul,li,section{overflow: hidden;}
+		ul li p:nth-child(1),ul li p:nth-child(2),ul li p:nth-child(3){float: left;height: 20px;margin-right: 2px;}
+		ul li p:nth-child(2){width: 150px;}
+		ul li p:nth-child(1),ul li p:nth-child(3){width: 50px;}
+		ul li:first-child p{background-color: #000!important;color: #fff!important;margin-right: 2px;}
+		ul li:nth-child(2n+1) p{background-color: gray;}
+		ul li:nth-child(2),ul li:nth-child(3),ul li:nth-child(4){color: red;}
+
+		/*change-input*/
+		#change-input input{width: 100px;}
+		#change-input input:focus{animation: inputChangeLarger 1s forwards;}
+		@-webkit-keyframes inputChangeLarger
+		{
+			from {width: 100px;}
+			to {width: 200px;}
+		}
+
+		/*banners*/
+		#banners{width: 300px;height: 150px;overflow: hidden;position: relative;}
+		.banners-wrap{width: 900px;height: 150px;animation: banner-change1 6s linear infinite;}
+		.banner-item{width: 300px;height: 150px;float: left;}
+		.banner-btn{position: absolute;right: 0;bottom: 0;}
+		input:nth-child(1):checked~div{animation: banner-change1 6s linear infinite;transform: translate(0px,0px);}
+		input:nth-child(2):checked~div{animation: banner-change2 6s linear infinite;transform: translate(-300px,0px);}
+		input:nth-child(3):checked~div{animation: banner-change3 6s linear infinite;transform: translate(-600px,0px);}
+		#banners input:nth-child(1),#banners input:nth-child(2),#banners input:nth-child(3){position: absolute;bottom: 0;width: 20px;height: 20px;display: block;z-index: 99;opacity: 0;}
+  		.btn1,.btn2,.btn3{position: absolute;bottom: 0;width: 20px;height: 20px;display: block;z-index: 9;background-color: rgba(255,255,255,0.5);;color: #fff;line-height: 20px;text-align: center;}
+  		.btn1,#banners input:nth-child(1){right: 42px;}
+  		.btn2,#banners input:nth-child(2){right: 21px;}
+  		.btn3,#banners input:nth-child(3){right: 0px;}
+		@-webkit-keyframes banner-change1
+		{
+			0%   {transform: translate(0px,0px);}
+			23%  {transform: translate(0px,0px);}
+			33%  {transform: translate(-300px,0px);}
+			56%  {transform: translate(-300px,0px);}
+			66%  {transform: translate(-600px,0px);}
+			90%  {transform: translate(-600px,0px);}
+			100% {transform: translate(-0,0px);}
+		}
+		@-webkit-keyframes banner-change2
+		{
+			0%   {transform: translate(-300px,0px);}
+			23%  {transform: translate(-300px,0px);}
+			33%  {transform: translate(-600px,0px);}
+			56%  {transform: translate(-600px,0px);}
+			66%  {transform: translate(-0px,0px);}
+			90%  {transform: translate(-0px,0px);}
+			100% {transform: translate(-300,0px);}
+		}
+		@-webkit-keyframes banner-change3
+		{
+			0%   {transform: translate(-600px,0px);}
+			23%  {transform: translate(-600px,0px);}
+			33%  {transform: translate(-0px,0px);}
+			56%  {transform: translate(-0px,0px);}
+			66%  {transform: translate(-300px,0px);}
+			90%  {transform: translate(-300px,0px);}
+			100% {transform: translate(-0,0px);}
+		}
+
+
+	</style>
+</head>
+<body>
+	<section id='ul-list'>
+		<ul>
+			<li>
+				<p>排名</p>
+				<p>网站</p>
+				<p>热度</p>
+			</li>
+			<li>
+				<p>1.</p>
+				<p>百度前端技术学院</p>
+				<p>1300</p>
+			</li>
+			<li>
+				<p>2.</p>
+				<p>百度前端技术学院</p>
+				<p>1300</p>
+			</li>
+			<li>
+				<p>3.</p>
+				<p>百度前端技术学院</p>
+				<p>1300</p>
+			</li>
+			<li>
+				<p>4.</p>
+				<p>百度前端技术学院</p>
+				<p>1300</p>
+			</li>
+			<li>
+				<p>5.</p>
+				<p>百度前端技术学院</p>
+				<p>1300</p>
+			</li>
+			<li>
+				<p>6.</p>
+				<p>百度前端技术学院</p>
+				<p>1300</p>
+			</li>
+			<li>
+				<p>7.</p>
+				<p>百度前端技术学院</p>
+				<p>1300</p>
+			</li>
+		</ul>
+	</section>
+	<section id='change-input'>
+		<input type='text' />
+	</section>
+	<section id='banners'>
+		<input type="radio" name="banner" >
+		<input type="radio" name="banner" >
+		<input type="radio" name="banner" >
+		<div class="banners-wrap">
+			<div class="banner-item" style="background-color: red;"></div>
+			<div class="banner-item" style="background-color: green;"></div>
+			<div class="banner-item" style="background-color: blue;"></div>
+		</div>
+		<label class="btn1">1</label>
+		<label class="btn2">2</label>
+		<label class="btn3">3</label>
+	</section>
+</body>
+</html>
