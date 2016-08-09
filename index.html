@@ -238,13 +238,8 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="形式化语法"><a href="#形式化语法" class="headerlink" title="形式化语法"></a>形式化语法</h2><p>normal | <number> | <length> | <percentage><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">/* Keyword values */</div><div class="line">line-height: normal;</div><div class="line"></div><div class="line">/* Unitless: use this number multiplied by the element&apos;s font size */ </div><div class="line">line-height: 3.5;</div><div class="line"></div><div class="line">/* &lt;length&gt; values */</div><div class="line">line-height: 3em;</div><div class="line"></div><div class="line">/* &lt;percentage&gt; values */</div><div class="line">line-height: 34%;</div><div class="line"></div><div class="line">/* Global values */</div><div class="line">line-height: inherit;</div><div class="line">line-height: initial;</div><div class="line">line-height: unset;</div></pre></td></tr></table></figure></percentage></length></number></p>
-<h2 id="取值"><a href="#取值" class="headerlink" title="取值"></a>取值</h2><h3 id="normal"><a href="#normal" class="headerlink" title="normal"></a>normal</h3><p>取决于用户代理。桌面浏览器（包括火狐浏览器）使用默认值，约为1.2，这取决于元素的 font-family。</p>
-<h3 id=""><a href="#" class="headerlink" title=""></a><number></number></h3><p>所用的值是无单位数值<number>乘以元素的 font size。计算出来的值与使用数值指定的一样。大多数情况下，使用这种方法设置line-height是首选方法，在继承情况下不会有异常的值。    </number></p>
-<h3 id="-1"><a href="#-1" class="headerlink" title=""></a><length></length></h3><p>指定<length>  用于计算 line box 的高度。查看<length> 获取可能的单位。</length></length></p>
-<h3 id="-2"><a href="#-2" class="headerlink" title=""></a><percentage></percentage></h3><p>与元素自身的字体大小有关。计算出的值是给定的百分比值乘以元素计算出的字体大小。</p>
-<h2 id="自己的理解："><a href="#自己的理解：" class="headerlink" title="自己的理解："></a>自己的理解：</h2><p>normal由浏览器决定，一般是1.1到1.2之间，1.14左右。<br>最近遇到，安卓浏览器显示placeholder 垂直不居中，去掉line-height即可。或者line-height:normal。<br>font-size:30px;line-height:3em;(90px),<br>line-height:300px;(90px),<br>line-height:3;(90px)<br>百分比和数字的区别：number是直接继承。（推荐使用无单位数值给line-height赋值）<br><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/line-height" target="_blank" rel="external">参见：MDN line-height</a><br><a href="css.doyoe.com">参见：手册</a></p>
-<h3 id="感悟，多查规范，看MDN。善用google搜索。"><a href="#感悟，多查规范，看MDN。善用google搜索。" class="headerlink" title="感悟，多查规范，看MDN。善用google搜索。"></a>感悟，多查规范，看MDN。善用google搜索。</h3>
+              <p>line-height<br>看似简单，其实还是有挺多不知道的奥妙。比如line-height:300%,line-height:3,有什么不同……
+          
       
     </div>
     
@@ -261,6 +256,10 @@
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
     </div>
 
+      
+        <p class="article-more-link">
+          <a  href="/2016/08/08/line-height-20160808/#more">阅读更多 >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
