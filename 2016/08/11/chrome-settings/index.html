@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>搭建hexo博客，记录前端开发 | 轩辕Rowboat的博客</title>
+  <title>chrome跨域设置 | 轩辕Rowboat的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="虽然有在简书上使用markdown写法发布一些文章，但不是前端相关的，主要是一些电脑技巧，PPT，读书笔记等。早就有想着搭建自己的博客，记录在前端开发的路上学到的知识……">
+  <meta name="description" content="今天用vuejs,与后端联调,发现用localhost或者本机ip访问本地资源，和后端接口资源，没有数据，google发现是chrome的安全机制，不允许跨域……">
 <meta property="og:type" content="article">
-<meta property="og:title" content="搭建hexo博客，记录前端开发">
-<meta property="og:url" content="http://lxchuan12.github.io/2016/08/06/hexo-20160806/index.html">
+<meta property="og:title" content="chrome跨域设置">
+<meta property="og:url" content="http://lxchuan12.github.io/2016/08/11/chrome-settings/index.html">
 <meta property="og:site_name" content="轩辕Rowboat的博客">
-<meta property="og:description" content="虽然有在简书上使用markdown写法发布一些文章，但不是前端相关的，主要是一些电脑技巧，PPT，读书笔记等。早就有想着搭建自己的博客，记录在前端开发的路上学到的知识……">
-<meta property="og:updated_time" content="2016-08-06T12:57:55.644Z">
+<meta property="og:description" content="今天用vuejs,与后端联调,发现用localhost或者本机ip访问本地资源，和后端接口资源，没有数据，google发现是chrome的安全机制，不允许跨域……">
+<meta property="og:updated_time" content="2016-08-11T15:46:44.843Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="搭建hexo博客，记录前端开发">
-<meta name="twitter:description" content="虽然有在简书上使用markdown写法发布一些文章，但不是前端相关的，主要是一些电脑技巧，PPT，读书笔记等。早就有想着搭建自己的博客，记录在前端开发的路上学到的知识……">
+<meta name="twitter:title" content="chrome跨域设置">
+<meta name="twitter:description" content="今天用vuejs,与后端联调,发现用localhost或者本机ip访问本地资源，和后端接口资源，没有数据，google发现是chrome的安全机制，不允许跨域……">
   
     <link rel="alternative" href="/atom.xml" title="轩辕Rowboat的博客" type="application/atom+xml">
   
@@ -207,11 +207,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-hexo-20160806" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-chrome-settings" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/08/06/hexo-20160806/" class="article-date">
-      <time datetime="2016-08-06T08:40:38.000Z" itemprop="datePublished">2016-08-06</time>
+      <a href="/2016/08/11/chrome-settings/" class="article-date">
+      <time datetime="2016-08-11T14:55:38.000Z" itemprop="datePublished">2016-08-11</time>
 </a>
     </div>
   
@@ -224,7 +224,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      搭建hexo博客，记录前端开发
+      chrome跨域设置
     </h1>
   
 
@@ -233,13 +233,13 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/前端开发/">前端开发</a>
+    <a class="article-category-link" href="/categories/调试技巧/">调试技巧</a>
     </div>
 
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端开发/">前端开发</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/chrome/">chrome</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -249,8 +249,11 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>虽然有在简书上使用markdown写法发布一些文章，但不是前端相关的，主要是一些电脑技巧，PPT，读书笔记等。早就有想着搭建自己的博客，记录在前端开发的路上学到的知识……<a id="more"></a>有人说，写博客，不要太在乎有多少阅读量。重要的是，写博客是自己对一些知识的理解，并且能写出来，这本身就是一种整理和成长。其实有记录自己前端开发所学知识，不过是保存在为知笔记上。现在看来，也可以写博客分享出来。</p>
-<p></p><p>总之，慢慢坚持写博客。</p><p></p>
+        <p>今天用vuejs,与后端联调,发现用localhost或者本机ip访问本地资源，和后端接口资源，没有数据，google发现是chrome的安全机制，不允许跨域……<a id="more"></a></p>
+<p>解决方案：<br>浏览器版本：chrome 52。<br>1、在桌面找到chrome浏览器快捷图标并点击鼠标右键的属性一栏。(或者任务栏选中chrome右击——google chrome右击属性)</p>
+<p>2、在属性页面中的目标输入框里加上   –args –disable-web-security.–args可省略。</p>
+<p>3、点击应用和确定后关闭属性页面，并打开chrome浏览器即可。</p>
+<p>使用本机ip地址加端口号，访问本地资源。</p>
 
       
     </div>
@@ -259,13 +262,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/08/06/hexo-20160806/">搭建hexo博客，记录前端开发</a></p>
+        <p><span>本文标题:</span><a href="/2016/08/11/chrome-settings/">chrome跨域设置</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 轩辕Rowboat 的个人博客">轩辕Rowboat</a></p>
-        <p><span>发布时间:</span>2016年08月06日 - 16时40分</p>
-        <p><span>最后更新:</span>2016年08月06日 - 20时57分</p>
+        <p><span>发布时间:</span>2016年08月11日 - 22时55分</p>
+        <p><span>最后更新:</span>2016年08月11日 - 23时46分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/08/06/hexo-20160806/" title="搭建hexo博客，记录前端开发">http://lxchuan12.github.io/2016/08/06/hexo-20160806/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://lxchuan12.github.io/2016/08/06/hexo-20160806/　　作者: 轩辕Rowboat" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2016/08/11/chrome-settings/" title="chrome跨域设置">http://lxchuan12.github.io/2016/08/11/chrome-settings/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://lxchuan12.github.io/2016/08/11/chrome-settings/　　作者: 轩辕Rowboat" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -278,15 +281,11 @@
 
 <nav id="article-nav">
   
-    <a href="/2016/08/06/tips-20160806/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          最近碰到的兼容性问题
-        
-      </div>
-    </a>
   
+    <a href="/2016/08/10/ms-clear/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">清除IE下input的默认叉</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
   
 </nav>
 
@@ -343,7 +342,7 @@
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2016/08/06/hexo-20160806/" data-title="搭建hexo博客，记录前端开发" data-url="http://lxchuan12.github.io/2016/08/06/hexo-20160806/"></div>
+    <div class="ds-thread" data-thread-key="2016/08/11/chrome-settings/" data-title="chrome跨域设置" data-url="http://lxchuan12.github.io/2016/08/11/chrome-settings/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -366,13 +365,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/08/06/tips-20160806/" title="上一篇: 最近碰到的兼容性问题">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+            <a href="/2016/08/10/ms-clear/" title="下一篇: 清除IE下input的默认叉">
+                <i class="fa fa-angle-right"></i>
+            </a>
         
     </div>
     <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/08/11/chrome-settings/">chrome跨域设置</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/10/ms-clear/">清除IE下input的默认叉</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/08/line-height-20160808/">line-height学习笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/07/The 30 CSS Selectors you Must Memorize/">(转)30个你必须记住的CSS选择器</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/06/tips-20160806/">最近碰到的兼容性问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/06/hexo-20160806/">搭建hexo博客，记录前端开发</a></li></ul>
