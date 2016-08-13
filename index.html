@@ -238,13 +238,8 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>##<br>var  date = new Date(‘2016-08-13 13:25:50’).getTime();这种chrome下没问题，但ie和firefox下是NaN,在Safari下也有问题。</p>
-<p>var  date = new Date(‘2014/05/10 13:25:50’).getTime(); 这么写的时候所有浏览器都没有问题。</p>
-<p>所以遇到兼容的时候：<br>这样就可以将上面那种格式yyyy-MM-dd改为yyyy/MM/dd 再去转换</p>
-<p>var  date = new Date((‘2016-08-13 13:25:50’).replace(new RegExp(“-“,”g”),”/“)).getTime()</p>
-<p>###另外：<br>+new Date()=== new Date().getTime();<br>true.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&lt;div id=&quot;d&quot;&gt;&lt;/div&gt;</div><div class="line">&lt;div id=&quot;getTime&quot;&gt;&lt;/div&gt;</div><div class="line">&lt;div id=&quot;type&quot;&gt;&lt;/div&gt;</div><div class="line">&lt;script type=&quot;text/javascript&quot;&gt;</div><div class="line">    var d1 = document.getElementById(&apos;d&apos;);</div><div class="line">    var getTime1 = document.getElementById(&apos;getTime&apos;);</div><div class="line">    var type1 = document.getElementById(&apos;type&apos;);</div><div class="line">    var date = new Date(&apos;2016-08-13 13:25:50&apos;);</div><div class="line">    d.innerHTML = date.toString();</div><div class="line">    d.innerHTML = date.getTime();</div><div class="line">    type1.innerHTML = typeof date.toString();</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure></p>
-<p>###参考文章：<br><a href="https://segmentfault.com/a/1190000003710954?mType=Group" target="_blank" rel="external">JS原生Date类型方法的一些冷知识</a><br><a href="http://blog.csdn.net/blueheart20/article/details/44902747" target="_blank" rel="external">javascript中new Date()的浏览器兼容性问题</a><br><a href="http://www.bubuko.com/infodetail-1643478.html" target="_blank" rel="external">js new Date(“2016-07-01 08:00:00”) 格式在IE内核浏览器中显示NaN的问题</a></p>
-
+              <p>##<br>var  date = new Date(‘2016-08-13 13:25:50’).getTime();这种chrome下没问题，但ie和firefox下是NaN,在Safari下也有问题……
+          
       
     </div>
     
@@ -261,6 +256,10 @@
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/date/">date</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
     </div>
 
+      
+        <p class="article-more-link">
+          <a  href="/2016/08/13/tip-js-new-date/#more">阅读更多 >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
