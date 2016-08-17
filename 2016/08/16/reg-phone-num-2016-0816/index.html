@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>line-height学习笔记 | 轩辕Rowboat的博客</title>
+  <title>js手机号码正则表达式 | 轩辕Rowboat的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="line-height看似简单，其实还是有挺多不知道的奥妙。比如line-height:300%,line-height:3,有什么不同……">
+  <meta name="description" content="前端做了手机号的限制，但有的号码通过了前端验证，但依旧数据无法保存成功，但又没错误提示。与后台联调发现，原来是后端也做了限制，还不一样……">
 <meta property="og:type" content="article">
-<meta property="og:title" content="line-height学习笔记">
-<meta property="og:url" content="http://lxchuan12.github.io/2016/08/08/line-height-20160808/index.html">
+<meta property="og:title" content="js手机号码正则表达式">
+<meta property="og:url" content="http://lxchuan12.github.io/2016/08/16/reg-phone-num-2016-0816/index.html">
 <meta property="og:site_name" content="轩辕Rowboat的博客">
-<meta property="og:description" content="line-height看似简单，其实还是有挺多不知道的奥妙。比如line-height:300%,line-height:3,有什么不同……">
-<meta property="og:updated_time" content="2016-08-09T15:09:26.569Z">
+<meta property="og:description" content="前端做了手机号的限制，但有的号码通过了前端验证，但依旧数据无法保存成功，但又没错误提示。与后台联调发现，原来是后端也做了限制，还不一样……">
+<meta property="og:updated_time" content="2016-08-16T15:46:13.380Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="line-height学习笔记">
-<meta name="twitter:description" content="line-height看似简单，其实还是有挺多不知道的奥妙。比如line-height:300%,line-height:3,有什么不同……">
+<meta name="twitter:title" content="js手机号码正则表达式">
+<meta name="twitter:description" content="前端做了手机号的限制，但有的号码通过了前端验证，但依旧数据无法保存成功，但又没错误提示。与后台联调发现，原来是后端也做了限制，还不一样……">
   
     <link rel="alternative" href="/atom.xml" title="轩辕Rowboat的博客" type="application/atom+xml">
   
@@ -207,11 +207,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-line-height-20160808" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-reg-phone-num-2016-0816" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/08/08/line-height-20160808/" class="article-date">
-      <time datetime="2016-08-08T15:28:23.000Z" itemprop="datePublished">2016-08-08</time>
+      <a href="/2016/08/16/reg-phone-num-2016-0816/" class="article-date">
+      <time datetime="2016-08-16T15:06:16.000Z" itemprop="datePublished">2016-08-16</time>
 </a>
     </div>
   
@@ -224,7 +224,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      line-height学习笔记
+      js手机号码正则表达式
     </h1>
   
 
@@ -233,13 +233,13 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/CSS/">CSS</a>
+    <a class="article-category-link" href="/categories/js/">js</a>
     </div>
 
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/正则表达式/">正则表达式</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -249,17 +249,12 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>line-height<br>看似简单，其实还是有挺多不知道的奥妙。比如line-height:300%,line-height:3,有什么不同……<a id="more"></a></p>
-<h2 id="形式化语法"><a href="#形式化语法" class="headerlink" title="形式化语法"></a>形式化语法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">normal | &lt;number&gt; | &lt;length&gt; | &lt;percentage&gt;</div></pre></td></tr></table></figure>
-<h2 id="取值"><a href="#取值" class="headerlink" title="取值"></a>取值</h2><h3 id="normal"><a href="#normal" class="headerlink" title="normal"></a>normal</h3><p>取决于用户代理。桌面浏览器（包括火狐浏览器）使用默认值，约为1.2，这取决于元素的 font-family。</p>
-<h3 id=""><a href="#" class="headerlink" title=""></a><number></number></h3><p>所用的值是无单位数值<number>乘以元素的 font size。计算出来的值与使用数值指定的一样。大多数情况下，使用这种方法设置line-height是首选方法，在继承情况下不会有异常的值。    </number></p>
-<h3 id="-1"><a href="#-1" class="headerlink" title=""></a><length></length></h3><p>指定<length>  用于计算 line box 的高度。查看<length> 获取可能的单位。</length></length></p>
-<h3 id="-2"><a href="#-2" class="headerlink" title=""></a><percentage></percentage></h3><p>与元素自身的字体大小有关。计算出的值是给定的百分比值乘以元素计算出的字体大小。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">&lt;meta charset=&quot;utf-8&quot;/&gt;</div><div class="line">&lt;title&gt;line-height&lt;/title&gt;</div><div class="line">&lt;style type=&quot;text/css&quot;&gt;</div><div class="line">p&#123;margin:10px;background:#ddd;&#125;</div><div class="line">p+p&#123;margin-left:40px;&#125;</div><div class="line"></div><div class="line">body&#123;font-size:30px;&#125;</div><div class="line"></div><div class="line">.m-demo&#123;line-height:40px;&#125;</div><div class="line">.m-demo p&#123;background:#ddd;&#125;</div><div class="line">.m-demo .p1&#123;line-height:3em;&#125;</div><div class="line">.m-demo .p2&#123;line-height:300%;&#125;</div><div class="line">.m-demo .p3&#123;line-height:3;&#125;</div><div class="line"></div><div class="line">.m-demo2&#123;line-height:300%;&#125;</div><div class="line">.m-demo2 p&#123;background:#fbb;&#125;</div><div class="line">.m-demo2 .p1&#123;font-size:16px;&#125;</div><div class="line"></div><div class="line">.m-demo3&#123;line-height:3;&#125;</div><div class="line">.m-demo3 p&#123;background:#0dd;&#125;</div><div class="line">.m-demo3 .p1&#123;font-size:16px;&#125;</div><div class="line">&lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">&lt;div class=&quot;m-demo&quot;&gt;</div><div class="line">    &lt;p&gt;行高：line-height:40px;&lt;/p&gt;</div><div class="line">    &lt;p class=&quot;p1&quot;&gt;行高：line-height:3em;&lt;/p&gt;</div><div class="line">    &lt;p class=&quot;p2&quot;&gt;行高：line-height:300%;&lt;/p&gt;</div><div class="line">    &lt;p class=&quot;p3&quot;&gt;行高：line-height:3;&lt;/p&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;div class=&quot;m-demo2&quot;&gt;</div><div class="line">    &lt;p&gt;行高：line-height:300%;&lt;/p&gt;</div><div class="line">    &lt;p class=&quot;p1&quot;&gt;字体大小：font-size:16px;&lt;/p&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;div class=&quot;m-demo3&quot;&gt;</div><div class="line">    &lt;p&gt;行高：line-height:3;&lt;/p&gt;</div><div class="line">    &lt;p class=&quot;p1&quot;&gt;字体大小：font-size:16px;&lt;/p&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure></p>
-<h2 id="自己的理解："><a href="#自己的理解：" class="headerlink" title="自己的理解："></a>自己的理解：</h2><p>1、normal由浏览器决定，一般是1.1到1.2之间，1.14左右。</p>
-<p>2、最近遇到，安卓浏览器显示placeholder 垂直不居中，去掉line-height即可。或者line-height:normal。</p>
-<p>3、font-size:30px;line-height:3em;(90px),<br>line-height:300px;(90px),<br>line-height:3;(90px)<br>百分比和数字的区别：number是直接继承。（推荐使用无单位数值给line-height赋值）<br>比如：m-demo2行高是90px;m-demo3行高是48px;</p>
-<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/line-height" target="_blank" rel="external">参见：MDN line-height</a><br><a href="css.doyoe.com">参见：CSS3在线手册</a><br><a href="http://www.ayqy.net/doc/css2-1/visudet.html#propdef-line-height" target="_blank" rel="external">参见：css2.1规范</a></p>
-<h3 id="感悟，多查规范，看MDN。善用google搜索。"><a href="#感悟，多查规范，看MDN。善用google搜索。" class="headerlink" title="感悟，多查规范，看MDN。善用google搜索。"></a>感悟，多查规范，看MDN。善用google搜索。</h3>
+        <p>前端做了手机号的限制，但有的号码通过了前端验证，但依旧数据无法保存成功，但又没错误提示。与后台联调发现，原来是后端也做了限制，还不一样……<a id="more"></a><br><strong>1.前端验证</strong><br>var reg = /^1\d{10}$/;</p>
+<p><strong>2.后端验证</strong><br>var reg = /^1[3|4|5|7|8][0-9]{9}$/; //验证规则<br>不知其合理性，普适性，于是搜索了下。</p>
+<p><strong>3.最后采用：</strong></p>
+<p>var reg = /^1\d{10}$/; //验证规则<br>var phoneNum = ‘18296821923’;//手机号码<br>var flag = reg.test(phoneNum); //true</p>
+<p><strong>4.参考资料：</strong><br><a href="http://caibaojian.com/phone-regexp.html" target="_blank" rel="external">JS最新手机号码检验正则表达式</a></p>
+
       
     </div>
     
@@ -267,13 +262,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/08/08/line-height-20160808/">line-height学习笔记</a></p>
+        <p><span>本文标题:</span><a href="/2016/08/16/reg-phone-num-2016-0816/">js手机号码正则表达式</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 轩辕Rowboat 的个人博客">轩辕Rowboat</a></p>
-        <p><span>发布时间:</span>2016年08月08日 - 23时28分</p>
-        <p><span>最后更新:</span>2016年08月09日 - 23时09分</p>
+        <p><span>发布时间:</span>2016年08月16日 - 23时06分</p>
+        <p><span>最后更新:</span>2016年08月16日 - 23时46分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/08/08/line-height-20160808/" title="line-height学习笔记">http://lxchuan12.github.io/2016/08/08/line-height-20160808/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://lxchuan12.github.io/2016/08/08/line-height-20160808/　　作者: 轩辕Rowboat" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2016/08/16/reg-phone-num-2016-0816/" title="js手机号码正则表达式">http://lxchuan12.github.io/2016/08/16/reg-phone-num-2016-0816/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://lxchuan12.github.io/2016/08/16/reg-phone-num-2016-0816/　　作者: 轩辕Rowboat" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -286,18 +281,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2016/08/10/ms-clear/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          清除IE下input的默认叉
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/08/07/The 30 CSS Selectors you Must Memorize/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">(转)30个你必须记住的CSS选择器</div>
+    <a href="/2016/08/13/tip-js-new-date/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">new Date()的浏览器兼容性问题</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -308,7 +294,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#形式化语法"><span class="toc-number">1.</span> <span class="toc-text">形式化语法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#取值"><span class="toc-number">2.</span> <span class="toc-text">取值</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#normal"><span class="toc-number">2.1.</span> <span class="toc-text">normal</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-number">2.2.</span> <span class="toc-text"></span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#-1"><span class="toc-number">2.3.</span> <span class="toc-text"></span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#-2"><span class="toc-number">2.4.</span> <span class="toc-text"></span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#自己的理解："><span class="toc-number">3.</span> <span class="toc-text">自己的理解：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#感悟，多查规范，看MDN。善用google搜索。"><span class="toc-number">3.1.</span> <span class="toc-text">感悟，多查规范，看MDN。善用google搜索。</span></a></li></ol></li></ol>
+    
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -356,7 +342,7 @@
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2016/08/08/line-height-20160808/" data-title="line-height学习笔记" data-url="http://lxchuan12.github.io/2016/08/08/line-height-20160808/"></div>
+    <div class="ds-thread" data-thread-key="2016/08/16/reg-phone-num-2016-0816/" data-title="js手机号码正则表达式" data-url="http://lxchuan12.github.io/2016/08/16/reg-phone-num-2016-0816/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -379,13 +365,11 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/08/10/ms-clear/" title="上一篇: 清除IE下input的默认叉">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2016/08/07/The 30 CSS Selectors you Must Memorize/" title="下一篇: (转)30个你必须记住的CSS选择器">
+            <a href="/2016/08/13/tip-js-new-date/" title="下一篇: new Date()的浏览器兼容性问题">
                 <i class="fa fa-angle-right"></i>
             </a>
         
