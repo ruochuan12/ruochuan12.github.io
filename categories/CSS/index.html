@@ -136,7 +136,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/CSS选择器/" style="font-size: 10px;">CSS选择器</a> <a href="/tags/chrome/" style="font-size: 10px;">chrome</a> <a href="/tags/css/" style="font-size: 20px;">css</a> <a href="/tags/date/" style="font-size: 10px;">date</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/js/" style="font-size: 10px;">js</a> <a href="/tags/vuejs/" style="font-size: 10px;">vuejs</a> <a href="/tags/兼容性/" style="font-size: 10px;">兼容性</a> <a href="/tags/前端开发/" style="font-size: 20px;">前端开发</a> <a href="/tags/正则表达式/" style="font-size: 10px;">正则表达式</a> <a href="/tags/自我成长/" style="font-size: 10px;">自我成长</a>
+                        <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/CSS选择器/" style="font-size: 10px;">CSS选择器</a> <a href="/tags/chrome/" style="font-size: 10px;">chrome</a> <a href="/tags/clearfix/" style="font-size: 10px;">clearfix</a> <a href="/tags/css/" style="font-size: 20px;">css</a> <a href="/tags/date/" style="font-size: 10px;">date</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/js/" style="font-size: 15px;">js</a> <a href="/tags/vuejs/" style="font-size: 10px;">vuejs</a> <a href="/tags/wechat/" style="font-size: 10px;">wechat</a> <a href="/tags/兼容性/" style="font-size: 10px;">兼容性</a> <a href="/tags/前端开发/" style="font-size: 15px;">前端开发</a> <a href="/tags/正则表达式/" style="font-size: 10px;">正则表达式</a> <a href="/tags/自我成长/" style="font-size: 10px;">自我成长</a>
                     </div>
                 </section>
                 
@@ -223,14 +223,14 @@
   <div class="archive-article-inner">
     <header class="archive-article-header">
           <div class="article-meta">
-              <a href="/2016/08/17/modal-center-20160817/" class="archive-article-date">
+              <a href="/2016/08/17/20160817-modal-center/" class="archive-article-date">
       <time datetime="2016-08-17T15:07:15.000Z" itemprop="datePublished">08-17</time>
 </a>
         </div>
          
   
     <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/08/17/modal-center-20160817/">弹窗（modal）垂直水平居中</a>
+      <a class="archive-article-title" href="/2016/08/17/20160817-modal-center/">弹窗（modal）垂直水平居中</a>
     </h1>
   
 
@@ -258,14 +258,14 @@
   <div class="archive-article-inner">
     <header class="archive-article-header">
           <div class="article-meta">
-              <a href="/2016/08/10/ms-clear/" class="archive-article-date">
+              <a href="/2016/08/10/20160810-ms-clear/" class="archive-article-date">
       <time datetime="2016-08-10T15:00:38.000Z" itemprop="datePublished">08-10</time>
 </a>
         </div>
          
   
     <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/08/10/ms-clear/">清除IE下input的默认叉</a>
+      <a class="archive-article-title" href="/2016/08/10/20160810-ms-clear/">清除IE下input的默认叉</a>
     </h1>
   
 
@@ -401,7 +401,40 @@
 
   </div>
 </body>
-</html>();
+</html>ry-1.9.1.min.js">
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("button").click(function() {
+                $(".article-info").toggle(200);
+            });
+        });
+    </script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
             });
         });
     });

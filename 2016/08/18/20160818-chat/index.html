@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>vuejs生态，自顶而下学习 | 轩辕Rowboat的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="由于我git比较活跃，有幸收到大搜车前端leader芋头（前端乱炖网站创始人，颜文字APP）的邮件，并与之交流。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vuejs生态，自顶而下学习">
+<meta property="og:url" content="http://lxchuan12.github.io/2016/08/18/20160818-chat/index.html">
+<meta property="og:site_name" content="轩辕Rowboat的博客">
+<meta property="og:description" content="由于我git比较活跃，有幸收到大搜车前端leader芋头（前端乱炖网站创始人，颜文字APP）的邮件，并与之交流。">
+<meta property="og:updated_time" content="2016-08-18T15:57:00.920Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="vuejs生态，自顶而下学习">
+<meta name="twitter:description" content="由于我git比较活跃，有幸收到大搜车前端leader芋头（前端乱炖网站创始人，颜文字APP）的邮件，并与之交流。">
+  
+    <link rel="alternative" href="/atom.xml" title="轩辕Rowboat的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/head.jpg" class="js-avatar">
+            
+        </a>
+
+        <hgroup>
+          <h1 class="header-author"><a href="/">轩辕Rowboat</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">前端路上 | PPT爱好者 | 所知甚少，唯善学。</p>
+        
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/works">作品展示</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl weibo" target="_blank" href="http://weibo.com/lxchuan12" title="weibo">weibo</a>
+                            
+                                <a class="fl github" target="_blank" href="https://github.com/lxchuan12" title="github">github</a>
+                            
+                                <a class="fl zhihu" target="_blank" href="https://www.zhihu.com/people/lxchuan12" title="zhihu">zhihu</a>
+                            
+                                <a class="fl mail" target="_blank" href="mailto:lxchuan12@163.com" title="mail">mail</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/CSS选择器/" style="font-size: 10px;">CSS选择器</a> <a href="/tags/chrome/" style="font-size: 10px;">chrome</a> <a href="/tags/clearfix/" style="font-size: 10px;">clearfix</a> <a href="/tags/css/" style="font-size: 20px;">css</a> <a href="/tags/date/" style="font-size: 10px;">date</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/js/" style="font-size: 15px;">js</a> <a href="/tags/vuejs/" style="font-size: 10px;">vuejs</a> <a href="/tags/wechat/" style="font-size: 10px;">wechat</a> <a href="/tags/兼容性/" style="font-size: 10px;">兼容性</a> <a href="/tags/前端开发/" style="font-size: 15px;">前端开发</a> <a href="/tags/正则表达式/" style="font-size: 10px;">正则表达式</a> <a href="/tags/自我成长/" style="font-size: 10px;">自我成长</a>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://chenxianliang.github.io/">maat</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">前端攻城狮 | PPT爱好者 | 某陶瓷大学2016届毕业生 | 目前在杭州工作 | 常以轩辕Rowboat为名混迹于江湖 | 所知甚少，唯善学</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">轩辕Rowboat</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/head.jpg" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">轩辕Rowboat</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">前端路上 | PPT爱好者 | 所知甚少，唯善学。</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/works">作品展示</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="weibo" target="_blank" href="http://weibo.com/lxchuan12" title="weibo">weibo</a>
+                    
+                        <a class="github" target="_blank" href="https://github.com/lxchuan12" title="github">github</a>
+                    
+                        <a class="zhihu" target="_blank" href="https://www.zhihu.com/people/lxchuan12" title="zhihu">zhihu</a>
+                    
+                        <a class="mail" target="_blank" href="mailto:lxchuan12@163.com" title="mail">mail</a>
+                    
+                </div>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-20160818-chat" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/08/18/20160818-chat/" class="article-date">
+      <time datetime="2016-08-18T15:24:12.000Z" itemprop="datePublished">2016-08-18</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      vuejs生态，自顶而下学习
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/自我成长/">自我成长</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/自我成长/">自我成长</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>由于我git比较活跃，有幸收到大搜车前端leader芋头（前端乱炖网站创始人，颜文字APP）的邮件，并与之交流。<a id="more"></a><a href="https://www.zhihu.com/people/li-shou-xin" target="_blank" rel="external">小芋头君的知乎主页</a>.<br><a href="http://f2e.souche.com/blog/" target="_blank" rel="external">大搜车前端团队博客</a>.</p>
+<h3 id="大概整理："><a href="#大概整理：" class="headerlink" title="大概整理："></a>大概整理：</h3><blockquote>
+<p>1、自顶而下学习，看vuejs文章，熟悉其生态圈，怎么产生的，解决了什么问题。不是会写，就行。很多人看完vuejs教程都会写。</p>
+<blockquote>
+<p>比如angularjs，双向绑定，vuejs是单向绑定，虽然也可以双向绑定。<br>2、自我管理，自我规划，自我提升。综合能力。<br>3、追新，有些人工作了几年就不学新东西，这样没提升。<br>4、前端工程化，（打包工具只是其中一小部分）。<br>5、目前重要的不是学ES6，而是把基础夯实。</p>
+</blockquote>
+</blockquote>
+<p>这让我想起：知乎上一个提问<a href="https://www.zhihu.com/question/49164656/noti-answers?group_id=744949063161507840" target="_blank" rel="external">大学毕业做前端工作感觉最近遇到了瓶颈，不知道该如何提升自己？</a></p>
+<blockquote>
+<p>作者：林獺<br>链接：<a href="https://www.zhihu.com/question/49164656/answer/114625869" target="_blank" rel="external">https://www.zhihu.com/question/49164656/answer/114625869</a><br>来源：知乎<br>著作权归作者所有，转载请联系作者获得授权。</p>
+</blockquote>
+<p>首先，正视自己的能力。前端的新技术，不是门坎较低、就是给人一种容易掌握的错觉。Less/Sass 不谈，你学了 Angular，懂得 data-binding、router 等背后的实现原理吗？你虽会用 Node 搭建一个本地 server，但懂得 I/O 流程、HTTP 和操作系统知识吗？你能不诉诸书本和搜索引擎，写出几个 JS 设计模式和继承模式吗？你能完全脱离 jQuery 来操纵 DOM 和 Ajax 吗？你知道怎么写 CSS 选择器能让浏览器解释速度最快吗？你会在开发过程中，下意识地追求 HTTP 请求最少吗？……<br>如果你不能的话，那就需要重新审视自己，是否被一时的自我成就和满足所障目，而忘却了技术最重要的永远是基础。<br>如果你能的话，恭喜你，你已经不止是合格的前端了。这样的话，你要怎么做才能走出平阳、找到归宿呢？<br>我的建议是积累经验——积累工作和项目的经验，闲时继续学习并深入新技术。你的工作效率高、闲时多，这是好事。我毕业后第一份工作也是如此，领导缺乏技术嗅觉，技术路线过时老旧。我是这么应对的：凭越发娴熟的技能，加快工作速度，换来学习的时间。接着，主动把你的新技能移植到公司项目中。例如 Gulp、Less/Sass，都是开发环境下的利器，开发环境下你想怎么用就怎么用，外人只看到生产代码；甚或 Angular——遇到独力负责的中重量级项目，主动考虑此类 MVC 框架的可行性；有时不是项目和领导不允许使用新框架，而是自己不愿走出舒适圈、缺乏实践自信。<br>（业余时间，用你的 Gulp、Angular 写一些个人项目放在 GitHub 上，配以 Node mock server 甚至 Redis 数据库，有助理解前后端交互和数据库的组织，也增加面试的资本。）<br>当你「利用」这个公司，积累了新老技术的实践经验后，便是另谋高就的时机了。你的简历不仅会有上述技能，还会有「一力为旧公司引入任务构建、工作流等新技术」之类的 impressing 字眼。<br>在投简历时，开始考虑实质回报以外更深层的东西。你可以询问对方，贵团队的前端技术栈为何，未来的技术规划为何。因为接下来的新工作，在你的职场生涯中，是最能影响你的技术修炼的——你将第一次名正言顺地学习技术、并将其付诸实践、甚至有同样技术路线的同事大牛带领。对比上一家，事半功倍。</p>
+<h3 id="小结："><a href="#小结：" class="headerlink" title="小结："></a>小结：</h3><p>坚持学习，自我提升；<br>重视基础！<br>努力争取能进好团队，学习更快。</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2016/08/18/20160818-chat/">vuejs生态，自顶而下学习</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 轩辕Rowboat 的个人博客">轩辕Rowboat</a></p>
+        <p><span>发布时间:</span>2016年08月18日 - 23时24分</p>
+        <p><span>最后更新:</span>2016年08月18日 - 23时57分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2016/08/18/20160818-chat/" title="vuejs生态，自顶而下学习">http://lxchuan12.github.io/2016/08/18/20160818-chat/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://lxchuan12.github.io/2016/08/18/20160818-chat/　　作者: 轩辕Rowboat" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+    <a href="/2016/08/19/20160819-css-micro clearfix-hack/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          (转)一种代码量更少的(micro clearfix)清除浮动的hack
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/08/17/20160817-modal-center/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">弹窗（modal）垂直水平居中</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#大概整理："><span class="toc-number">1.</span> <span class="toc-text">大概整理：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#小结："><span class="toc-number">2.</span> <span class="toc-text">小结：</span></a></li></ol>
+</div>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+    }
+</script>
+
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+    
+      <div class="duoshuo" id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="2016/08/18/20160818-chat/" data-title="vuejs生态，自顶而下学习" data-url="http://lxchuan12.github.io/2016/08/18/20160818-chat/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:"lxchuan12"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = '/js/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+    <!-- 多说公共JS代码 end -->
+</div>
+
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2016/08/19/20160819-css-micro clearfix-hack/" title="上一篇: (转)一种代码量更少的(micro clearfix)清除浮动的hack">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/2016/08/17/20160817-modal-center/" title="下一篇: 弹窗（modal）垂直水平居中">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/08/20/20160820-safari-open-wechat/">iPhone safari可以通过打开链接</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/19/20160819-css-micro clearfix-hack/">(转)一种代码量更少的(micro clearfix)清除浮动的hack</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/18/20160818-chat/">vuejs生态，自顶而下学习</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/17/20160817-modal-center/">弹窗（modal）垂直水平居中</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/16/20160816-reg-phone-num/">js手机号码正则表达式</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/13/20160813-tip-js-new-date/">new Date()的浏览器兼容性问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/12/20160812-vue-route request/">vue js两次请求</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/11/20160811-chrome-settings/">chrome跨域设置</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/10/20160810-ms-clear/">清除IE下input的默认叉</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/08/20160808-line-height/">line-height学习笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/07/20160807-The 30 CSS Selectors you Must Memorize/">(转)30个你必须记住的CSS选择器</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/06/20160806-tips/">最近碰到的兼容性问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/06/20160806-hexo/">搭建hexo博客，记录前端开发</a></li></ul>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+            }
+        })
+    </script>
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2016 轩辕Rowboat
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/luuman/hexo-theme-spfk" target="_blank">spfk</a> by luuman
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >本站访问量: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+
+    </div>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 24;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+  </div>
+</body>
+</html>
