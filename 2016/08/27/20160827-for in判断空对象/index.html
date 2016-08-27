@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>(转)一种代码量更少的(micro clearfix)清除浮动的hack | 轩辕Rowboat的博客</title>
+  <title>js如何判断对象为空。 | 轩辕Rowboat的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="clearfix hack做为一种无需借助额外标签清除浮动的方法已经人尽皆知了，本文给出一种优化方案，可以进一步减少所需css的数量……">
+  <meta name="description" content="vuejs项目中，遇到要判断data:{    msg:{}},判断对象是否为空。jquery有工具方法：$.isEmptyObject();源码是这样实现的……">
 <meta property="og:type" content="article">
-<meta property="og:title" content="(转)一种代码量更少的(micro clearfix)清除浮动的hack">
-<meta property="og:url" content="http://lxchuan12.github.io/2016/08/19/20160819-css-micro clearfix-hack/index.html">
+<meta property="og:title" content="js如何判断对象为空。">
+<meta property="og:url" content="http://lxchuan12.github.io/2016/08/27/20160827-for in判断空对象/index.html">
 <meta property="og:site_name" content="轩辕Rowboat的博客">
-<meta property="og:description" content="clearfix hack做为一种无需借助额外标签清除浮动的方法已经人尽皆知了，本文给出一种优化方案，可以进一步减少所需css的数量……">
-<meta property="og:updated_time" content="2016-08-19T15:36:30.924Z">
+<meta property="og:description" content="vuejs项目中，遇到要判断data:{    msg:{}},判断对象是否为空。jquery有工具方法：$.isEmptyObject();源码是这样实现的……">
+<meta property="og:updated_time" content="2016-08-27T15:51:28.926Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="(转)一种代码量更少的(micro clearfix)清除浮动的hack">
-<meta name="twitter:description" content="clearfix hack做为一种无需借助额外标签清除浮动的方法已经人尽皆知了，本文给出一种优化方案，可以进一步减少所需css的数量……">
+<meta name="twitter:title" content="js如何判断对象为空。">
+<meta name="twitter:description" content="vuejs项目中，遇到要判断data:{    msg:{}},判断对象是否为空。jquery有工具方法：$.isEmptyObject();源码是这样实现的……">
   
     <link rel="alternative" href="/atom.xml" title="轩辕Rowboat的博客" type="application/atom+xml">
   
@@ -211,11 +211,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-20160819-css-micro clearfix-hack" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-20160827-for in判断空对象" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/08/19/20160819-css-micro clearfix-hack/" class="article-date">
-      <time datetime="2016-08-19T15:24:12.000Z" itemprop="datePublished">2016-08-19</time>
+      <a href="/2016/08/27/20160827-for in判断空对象/" class="article-date">
+      <time datetime="2016-08-27T14:46:23.000Z" itemprop="datePublished">2016-08-27</time>
 </a>
     </div>
   
@@ -228,7 +228,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      (转)一种代码量更少的(micro clearfix)清除浮动的hack
+      js如何判断对象为空。
     </h1>
   
 
@@ -237,13 +237,13 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/CSS/">CSS</a>
+    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
     </div>
 
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/clearfix/">clearfix</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vuejs/">vuejs</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -253,16 +253,11 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>clearfix hack做为一种无需借助额外标签清除浮动的方法已经人尽皆知了，本文给出一种优化方案，可以进一步减少所需css的数量……<a id="more"></a></p>
-<p>Demo: <a href="http://nicolasgallagher.com/micro-clearfix-hack/demo/" target="_blank" rel="external">Micro clearfix hack</a></p>
-<p>Known support: Firefox 3.5+, Safari 4+, Chrome, Opera 9+, IE 6+</p>
-<p>micro clearfix基于 <a href="http://www.yuiblog.com/blog/2010/09/27/clearfix-reloaded-overflowhidden-demystified/" target="_blank" rel="external">Thierry Koblentz’s “clearfix reloaded</a>reloaded优化而来，适用于现代浏览器（modern browsers）</p>
-<p>下面是micro clearfix的代码片段<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">.cf:before,</div><div class="line">.cf:after &#123;</div><div class="line">    content: &quot; &quot;; </div><div class="line">    display: table; </div><div class="line">&#125;</div><div class="line">.cf:after &#123;</div><div class="line">    clear: both;</div><div class="line">&#125;</div><div class="line">.cf &#123;</div><div class="line">    *zoom: 1;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>“micro clearfix”生成伪类元素，并将其display属性设置为table，这样就会创建一个匿名<a href="http://www.w3.org/TR/CSS2/tables.html#anonymous-boxes" target="_blank" rel="external">table-cell</a>，同时生成了新的BFC，这样意味着<br>:before伪类会阻止上边距折叠，:after伪类用于清除浮动，好处是不用隐藏产生的内容了，所需要的css代码就变少了。</p>
-<p>为了清除浮动包含:before选择器是没必要的，但是:before的加入可以阻止top-margins折叠，这样有两个好处：</p>
-<p>同其他使用BFC方式清除浮动一样，确保了视觉上的一致，例如使用overflow:hidden<br>IE 6/7中使用zoom:1 时，确保了视觉上的一致<br>N.B.: 有一个细节：IE 6/7中在新的BFC中浮动元素的下边距是不会包含在内的，进一步的描述可以看这里： <a href="http://nicolasgallagher.com/better-float-containment-in-ie/" target="_blank" rel="external">Better float containment in IE using CSS expressions</a>.<br>content:” “的使用避免了一个Opera的bug，如果contenteditable属性同时出现在元素中时，这个bug会在待清除元素周围生成空格。一种可选的修复方案是使用 font:0/0 a，多谢Sergio Cerrutti测试出这个bug</p>
-<p>转载于：<a href="http://www.jianshu.com/p/7521ec9d8f24" target="_blank" rel="external">一种代码量更少的(micro clearfix)清除浮动的hack</a></p>
-<p>英文版：<a href="http://nicolasgallagher.com/micro-clearfix-hack/" target="_blank" rel="external">A new micro clearfix hack</a>，转载标明出处，谢谢！</p>
+        <p>vuejs项目中，遇到要判断data:{<br>    msg:{}<br>},判断对象是否为空。jquery有工具方法：<br>$.isEmptyObject();源码是这样实现的……<a id="more"></a></p>
+<p>isEmptyObject:function(obj){<br>    var name;<br>    for(name in obj){<br>        return false;<br>    }<br>    return true;<br>}</p>
+<p>利用for in无法循环到系统自带的。<br>比如：function Watch(){}<br>//Watch.prototype.constructor = Watch;//系统自己生成。写出来这句也无法用for in循环到。<br>for (var attr in Watch.prototype){<br>    console.log(‘can not console’);//无法输出。<br>}<br>如果自己写<br>Watch.prototype.show = function(){}<br>则可以输出show.</p>
+<p>这是想起了<a href="http://www.tuicool.com/articles/3meE3a" target="_blank" rel="external">js中数组遍历for与for in区别(强烈建议不要使用for in遍历数组)</a><br><a href="http://jsbin.com/xasemec/22/edit?html,js,console" target="_blank" rel="external">jsbin代码实验(vuejs)：</a><br>参考资料：<a href="http://www.cnblogs.com/TomXu/archive/2011/12/15/2288411.html" target="_blank" rel="external">汤姆大叔博客</a></p>
+<p>小结:js一切皆为对象，了解面对对象编程很有好处。能研究一遍jquery源码,定能更上一层楼。</p>
 
       
     </div>
@@ -271,13 +266,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/08/19/20160819-css-micro clearfix-hack/">(转)一种代码量更少的(micro clearfix)清除浮动的hack</a></p>
+        <p><span>本文标题:</span><a href="/2016/08/27/20160827-for in判断空对象/">js如何判断对象为空。</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 轩辕Rowboat 的个人博客">轩辕Rowboat</a></p>
-        <p><span>发布时间:</span>2016年08月19日 - 23时24分</p>
-        <p><span>最后更新:</span>2016年08月19日 - 23时36分</p>
+        <p><span>发布时间:</span>2016年08月27日 - 22时46分</p>
+        <p><span>最后更新:</span>2016年08月27日 - 23时51分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/08/19/20160819-css-micro clearfix-hack/" title="(转)一种代码量更少的(micro clearfix)清除浮动的hack">http://lxchuan12.github.io/2016/08/19/20160819-css-micro clearfix-hack/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://lxchuan12.github.io/2016/08/19/20160819-css-micro clearfix-hack/　　作者: 轩辕Rowboat" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2016/08/27/20160827-for in判断空对象/" title="js如何判断对象为空。">http://lxchuan12.github.io/2016/08/27/20160827-for in判断空对象/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://lxchuan12.github.io/2016/08/27/20160827-for in判断空对象/　　作者: 轩辕Rowboat" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -290,18 +285,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2016/08/20/20160820-safari-open-wechat/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          iPhone safari可以通过访问链接来打开微信
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/08/18/20160818-chat/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">vuejs生态，自顶而下学习</div>
+    <a href="/2016/08/20/20160820-safari-open-wechat/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">iPhone safari可以通过访问链接来打开微信</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -360,7 +346,7 @@
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2016/08/19/20160819-css-micro clearfix-hack/" data-title="(转)一种代码量更少的(micro clearfix)清除浮动的hack" data-url="http://lxchuan12.github.io/2016/08/19/20160819-css-micro clearfix-hack/"></div>
+    <div class="ds-thread" data-thread-key="2016/08/27/20160827-for in判断空对象/" data-title="js如何判断对象为空。" data-url="http://lxchuan12.github.io/2016/08/27/20160827-for in判断空对象/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -383,13 +369,11 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/08/20/20160820-safari-open-wechat/" title="上一篇: iPhone safari可以通过访问链接来打开微信">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2016/08/18/20160818-chat/" title="下一篇: vuejs生态，自顶而下学习">
+            <a href="/2016/08/20/20160820-safari-open-wechat/" title="下一篇: iPhone safari可以通过访问链接来打开微信">
                 <i class="fa fa-angle-right"></i>
             </a>
         
