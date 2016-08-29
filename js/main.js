@@ -1,144 +1,210 @@
-require([], function (){
+(function(w, d) {
 
-    var isMobileInit = false;
-    var loadMobile = function(){
-        require(['/js/mobile.js'], function(mobile){
-            mobile.init();
-            isMobileInit = true;
-        });
-    }
-    var isPCInit = false;
-    var loadPC = function(){
-        require(['/js/pc.js'], function(pc){
-            pc.init();
-            isPCInit = true;
-        });
-    }
+    var body = d.body,
+        gotop = d.getElementById('gotop'),
+        menu = d.getElementById('menu'),
+        header = d.getElementById('header'),
+        mask = d.getElementById('mask'),
+        menuToggle = d.getElementById('menu-toggle'),
+        menuOff = d.getElementById('menu-off'),
+        loading = d.getElementById('loading'),
+        animate = w.requestAnimationFrame,
+        ua = navigator.userAgent,
+        isMD = ua.indexOf('Mobile') !== -1 || ua.indexOf('Android') !== -1 || ua.indexOf('iPhone') !== -1 || ua.indexOf('iPad') !== -1 || ua.indexOf('KFAPWI') !== -1,
+        even = isMD ? 'touchstart' : 'click',
+        noop = function() {},
+        offset = function(el) {
+            var x = el.offsetLeft,
+                y = el.offsetTop;
 
-    var browser={
-        versions:function(){
-        var u = window.navigator.userAgent;
-        return {
-            trident: u.indexOf('Trident') > -1, //IE内核
-            presto: u.indexOf('Presto') > -1, //opera内核
-            webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
-            gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
-            mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
-            ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
-            android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
-            iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者安卓QQ浏览器
-            iPad: u.indexOf('iPad') > -1, //是否为iPad
-            webApp: u.indexOf('Safari') == -1 ,//是否为web应用程序，没有头部与底部
-            weixin: u.indexOf('MicroMessenger') == -1 //是否为微信浏览器
+            if (el.offsetParent) {
+                var pOfs = arguments.callee(el.offsetParent);
+                x += pOfs.x;
+                y += pOfs.y;
+            }
+
+            return {
+                x: x,
+                y: y
             };
-        }()
-    }
+        },
+        docEl = ua.indexOf('Firefox') !== -1 ? d.documentElement : body;
 
-    $(window).bind("resize", function(){
-        if(isMobileInit && isPCInit){
-            $(window).unbind("resize");
-            return;
+    var Blog = {
+        goTop: function() {
+            var top = docEl.scrollTop;
+            if (top > 400) {
+                docEl.scrollTop = top - 400;
+                animate(arguments.callee);
+            } else {
+                docEl.scrollTop = 0;
+            }
+        },
+        toggleGotop: function(top) {
+            if (top > w.innerHeight / 2) {
+                gotop.classList.add('in');
+            } else {
+                gotop.classList.remove('in');
+            }
+        },
+        toggleMenu: function(flag) {
+            if (flag) {
+                menu.classList.remove('hide');
+
+                if (w.innerWidth < 1241) {
+                    mask.classList.add('in');
+                    menu.classList.add('show');
+                }
+
+            } else {
+                menu.classList.remove('show');
+                mask.classList.remove('in');
+            }
+        },
+        fixedHeader: function(top) {
+            if (top > header.clientHeight) {
+                header.classList.add('fixed');
+            } else {
+                header.classList.remove('fixed');
+            }
+        },
+        fixedToc: (function() {
+            var toc = d.getElementById('post-toc');
+
+            if (!toc) {
+                return noop;
+            }
+
+            var tocOfs = offset(toc),
+                tocTop = tocOfs.y,
+                tocH = toc.offsetHeight,
+                isScroll = tocH > w.innerHeight,
+                titles = d.getElementById('post-content').querySelectorAll('h1, h2, h3, h4, h5, h6'),
+                cssTop = 150,
+                minTop = -1 * (tocH - w.innerHeight) - cssTop;
+
+            function scroll(top) {
+
+                for (var id, i = 0, len = titles.length; i < len; i++) {
+                    if (top > offset(titles[i]).y) {
+                        id = titles[i].id;
+                    }
+                }
+
+                var top = cssTop - toc.querySelectorAll('a[href="#' + id + '"]')[0].offsetTop;
+
+                toc.style.top = (top < minTop ? minTop : top) + 'px';
+            }
+
+            return function(top) {
+                if (top > tocTop) {
+                    toc.classList.add('fixed');
+
+                    if (isScroll) {
+                        scroll(top);
+                    }
+                } else {
+                    toc.classList.remove('fixed');
+                }
+
+            };
+        })(),
+        share: function() {
+
+            var share = d.getElementById('global-share'),
+                menuShare = d.getElementById('menu-share'),
+                div = d.createElement('div'),
+                sns = d.getElementsByClassName('share-sns'),
+                summary, api;
+
+            div.innerHTML = BLOG_SHARE.summary;
+            summary = div.innerText;
+            div = undefined;
+
+            api = 'http://www.jiathis.com/send/?webid={service}&url=' + BLOG_SHARE.url + '&title=' + BLOG_SHARE.title + '&summary=' + summary + '&pic=' + location.protocol + '//' + location.host + BLOG_SHARE.pic;
+
+            function goShare(service) {
+                w.open(encodeURI(api.replace('{service}', service)));
+            }
+
+            function show() {
+                mask.classList.add('in');
+                share.classList.add('in');
+            }
+
+            function hide() {
+                share.classList.remove('in');
+                mask.classList.remove('in');
+            }
+
+            [].forEach.call(sns, function(el) {
+                el.addEventListener('click', function() {
+                    goShare(this.dataset.service);
+                }, false);
+            });
+
+            menuShare.addEventListener(even, function() {
+                show();
+            }, false);
+
+            mask.addEventListener(even, function() {
+                hide();
+            }, false);
+        },
+        search: function() {
+            var searchWrap = d.getElementById('search-wrap');
+
+            function toggleSearch() {
+                searchWrap.classList.toggle('in');
+            }
+
+            d.getElementById('search').addEventListener(even, toggleSearch);
+            d.getElementById('search').addEventListener(even, toggleSearch);
         }
-        var w = $(window).width();
-        if(w >= 700){
-            loadPC();
-        }else{
-            loadMobile();
-        }
+    };
+
+    menu.addEventListener('touchmove', function(e) {
+        e.preventDefault();
     });
 
-    if(browser.versions.mobile === true || $(window).width() < 700){
-        loadMobile();
-    }else{
-        loadPC();
+    w.addEventListener('load', function() {
+        loading.classList.remove('active');
+    });
+
+    w.addEventListener('resize', function() {
+        Blog.toggleMenu();
+    });
+
+    gotop.addEventListener(even, function() {
+        animate(Blog.goTop);
+    }, false);
+
+    menuToggle.addEventListener(even, function(e) {
+        Blog.toggleMenu(true);
+        e.preventDefault();
+    }, false);
+
+    menuOff.addEventListener(even, function() {
+        menu.classList.add('hide');
+    }, false);
+
+    mask.addEventListener(even, function() {
+        Blog.toggleMenu();
+    }, false);
+
+    d.addEventListener('scroll', function() {
+        var top = docEl.scrollTop;
+        Blog.toggleGotop(top);
+        Blog.fixedHeader(top);
+        Blog.fixedToc(top);
+    }, false);
+
+    if (typeof BLOG_SHARE !== 'undefined') {
+        Blog.share();
     }
 
-    //是否使用fancybox
-    if(yiliaConfig.fancybox === true){
-        require(['/fancybox/jquery.fancybox.js'], function(pc){
-            var isFancy = $(".isFancy");
-            if(isFancy.length != 0){
-                var imgArr = $(".article-inner img");
-                for(var i=0,len=imgArr.length;i<len;i++){
-                    var src = imgArr.eq(i).attr("src");
-                    var title = imgArr.eq(i).attr("alt");
-                    imgArr.eq(i).replaceWith("<a href='"+src+"' title='"+title+"' rel='fancy-group' class='fancy-ctn fancybox'><img src='"+src+"' title='"+title+"'></a>");
-                }
-                $(".article-inner .fancy-ctn").fancybox();
-            }
-        });
+    Waves.init();
+    Waves.attach('.global-share li', ['waves-block']);
+    Waves.attach('.article-tag-list-link, #page-nav a, #page-nav span', ['waves-button']);
 
-    }
-    //是否开启动画
-    if(yiliaConfig.animate === true){
-
-        require(['/js/jquery.lazyload.js'], function(){
-            //avatar
-            $(".js-avatar").attr("src", $(".js-avatar").attr("lazy-src"));
-            $(".js-avatar")[0].onload = function(){
-                $(".js-avatar").addClass("show");
-            }
-        });
-
-      if(yiliaConfig.isHome === true) {
-        // 滚动条监听使用scrollreveal.js
-        // https://github.com/jlmakes/scrollreveal.js
-        // 使用cdn[//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js]
-        require([
-          '//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js'
-        ], function (ScrollReveal) {
-          // 更多animation:
-          // http://daneden.github.io/animate.css/
-          var animationNames = [
-            "pulse", "fadeIn","fadeInRight", "flipInX", "lightSpeedIn","rotateInUpLeft", "slideInUp","zoomIn",
-            ],
-            len = animationNames.length,
-            randomAnimationName = animationNames[Math.ceil(Math.random() * len) - 1];
-
-          // ie9 不支持css3 keyframe动画, safari不支持requestAnimationFrame, 不使用随机动画，切回原来的动画
-          if (!window.requestAnimationFrame) {
-              $('.body-wrap > article').css({opacity: 1});
-
-              if (navigator.userAgent.match(/Safari/i)) {
-                  function showArticle(){
-                      $(".article").each(function(){
-                          if( $(this).offset().top <= $(window).scrollTop()+$(window).height() && !($(this).hasClass('show')) ) {
-                              $(this).removeClass("hidden").addClass("show");
-                              $(this).addClass("is-hiddened");
-                          }else{
-                              if(!$(this).hasClass("is-hiddened")){
-                                  $(this).addClass("hidden");
-                              }
-                          }
-                      });
-                  }
-                  $(window).on('scroll', function(){
-                      showArticle();
-                  });
-                  showArticle();
-              }
-              return;
-          }
-          // document.body有些浏览器不支持监听scroll，所以使用默认的document.documentElement
-          ScrollReveal({
-            duration: 0,
-            afterReveal: function (domEl) {
-              // safari不支持requestAnimationFrame不支持document.documentElement的onscroll所以这里不会执行
-              // 初始状态设为opacity: 0, 动画效果更平滑一些(由于脚本加载是异步，页面元素渲染后在执行动画，感觉像是延时)
-              $(domEl).addClass('animated ' + randomAnimationName).css({opacity: 1});
-            }
-          }).reveal('.body-wrap > article');
-
-        });
-      } else {
-        $('.body-wrap > article').css({opacity: 1});
-      }
-
-    }
-
-    //是否新窗口打开链接
-    if(yiliaConfig.open_in_new == true){
-        $(".article a[href]").attr("target", "_blank")
-    }
-    $(".archive-article-title").attr("target", "_blank");
-});
+})(window, document);
