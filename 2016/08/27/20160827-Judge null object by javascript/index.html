@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>chrome跨域设置 | 轩辕Rowboat的博客</title>
+  <title>js如何判断对象为空。 | 轩辕Rowboat的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="今天用vuejs,与后端联调,发现用localhost或者本机ip访问本地资源，和后端接口资源，没有数据，google发现是chrome的安全机制，不允许跨域……">
+  <meta name="description" content="vuejs项目中，遇到要判断data:{    msg:{}},判断对象是否为空。jquery有工具方法：$.isEmptyObject();源码是这样实现的……">
 <meta property="og:type" content="article">
-<meta property="og:title" content="chrome跨域设置">
-<meta property="og:url" content="http://lxchuan12.github.io/2016/08/11/20160811-chrome-settings/index.html">
+<meta property="og:title" content="js如何判断对象为空。">
+<meta property="og:url" content="http://lxchuan12.github.io/2016/08/27/20160827-Judge null object by javascript/index.html">
 <meta property="og:site_name" content="轩辕Rowboat的博客">
-<meta property="og:description" content="今天用vuejs,与后端联调,发现用localhost或者本机ip访问本地资源，和后端接口资源，没有数据，google发现是chrome的安全机制，不允许跨域……">
-<meta property="og:updated_time" content="2016-08-11T15:46:44.843Z">
+<meta property="og:description" content="vuejs项目中，遇到要判断data:{    msg:{}},判断对象是否为空。jquery有工具方法：$.isEmptyObject();源码是这样实现的……">
+<meta property="og:updated_time" content="2016-08-29T13:23:13.966Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="chrome跨域设置">
-<meta name="twitter:description" content="今天用vuejs,与后端联调,发现用localhost或者本机ip访问本地资源，和后端接口资源，没有数据，google发现是chrome的安全机制，不允许跨域……">
+<meta name="twitter:title" content="js如何判断对象为空。">
+<meta name="twitter:description" content="vuejs项目中，遇到要判断data:{    msg:{}},判断对象是否为空。jquery有工具方法：$.isEmptyObject();源码是这样实现的……">
   
     <link rel="alternative" href="/atom.xml" title="轩辕Rowboat的博客" type="application/atom+xml">
   
@@ -211,11 +211,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-20160811-chrome-settings" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-20160827-Judge null object by javascript" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/08/11/20160811-chrome-settings/" class="article-date">
-      <time datetime="2016-08-11T14:55:38.000Z" itemprop="datePublished">2016-08-11</time>
+      <a href="/2016/08/27/20160827-Judge null object by javascript/" class="article-date">
+      <time datetime="2016-08-27T14:46:23.000Z" itemprop="datePublished">2016-08-27</time>
 </a>
     </div>
   
@@ -228,7 +228,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      chrome跨域设置
+      js如何判断对象为空。
     </h1>
   
 
@@ -237,13 +237,13 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/调试技巧/">调试技巧</a>
+    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
     </div>
 
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/chrome/">chrome</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vuejs/">vuejs</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -253,11 +253,12 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>今天用vuejs,与后端联调,发现用localhost或者本机ip访问本地资源，和后端接口资源，没有数据，google发现是chrome的安全机制，不允许跨域……<a id="more"></a></p>
-<p>解决方案：<br>浏览器版本：chrome 52。<br>1、在桌面找到chrome浏览器快捷图标并点击鼠标右键的属性一栏。(或者任务栏选中chrome右击——google chrome右击属性)</p>
-<p>2、在属性页面中的目标输入框里加上   –args –disable-web-security.–args可省略。</p>
-<p>3、点击应用和确定后关闭属性页面，并打开chrome浏览器即可。</p>
-<p>使用本机ip地址加端口号，访问本地资源。</p>
+        <p>vuejs项目中，遇到要判断data:{<br>    msg:{}<br>},判断对象是否为空。jquery有工具方法：<br>$.isEmptyObject();源码是这样实现的……<a id="more"></a></p>
+<p>isEmptyObject:function(obj){<br>    var name;<br>    for(name in obj){<br>        return false;<br>    }<br>    return true;<br>}</p>
+<p>利用for in无法循环到系统自带的。<br>比如：function Watch(){}<br>//Watch.prototype.constructor = Watch;//系统自己生成。写出来这句也无法用for in循环到。<br>for (var attr in Watch.prototype){<br>    console.log(‘can not console’);//无法输出。<br>}<br>如果自己写<br>Watch.prototype.show = function(){}<br>则可以输出show.</p>
+<p>这是想起了<a href="http://www.tuicool.com/articles/3meE3a" target="_blank" rel="external">js中数组遍历for与for in区别(强烈建议不要使用for in遍历数组)</a><br><a href="http://www.365mini.com/page/jquery_isplainobject.htm" target="_blank" rel="external">$.isPlainObject()判断”纯粹的对象”，就是该对象是通过”{}”或”new Object”创建的。</a><br><a href="http://jsbin.com/xasemec/22/edit?html,js,console" target="_blank" rel="external">jsbin代码实验(vuejs)：</a><br>$.isPlainObject( document.location ) ); // false(在IE中返回true)</p>
+<p><strong>参考资料：</strong><a href="http://www.cnblogs.com/TomXu/archive/2011/12/15/2288411.html" target="_blank" rel="external">汤姆大叔博客</a></p>
+<p>小结:js一切皆为对象，了解面对对象编程很有好处。能研究一遍jquery源码,定能更上一层楼。</p>
 
       
     </div>
@@ -266,13 +267,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/08/11/20160811-chrome-settings/">chrome跨域设置</a></p>
+        <p><span>本文标题:</span><a href="/2016/08/27/20160827-Judge null object by javascript/">js如何判断对象为空。</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 轩辕Rowboat 的个人博客">轩辕Rowboat</a></p>
-        <p><span>发布时间:</span>2016年08月11日 - 22时55分</p>
-        <p><span>最后更新:</span>2016年08月11日 - 23时46分</p>
+        <p><span>发布时间:</span>2016年08月27日 - 22时46分</p>
+        <p><span>最后更新:</span>2016年08月29日 - 21时23分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/08/11/20160811-chrome-settings/" title="chrome跨域设置">http://lxchuan12.github.io/2016/08/11/20160811-chrome-settings/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://lxchuan12.github.io/2016/08/11/20160811-chrome-settings/　　作者: 轩辕Rowboat" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2016/08/27/20160827-Judge null object by javascript/" title="js如何判断对象为空。">http://lxchuan12.github.io/2016/08/27/20160827-Judge null object by javascript/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://lxchuan12.github.io/2016/08/27/20160827-Judge null object by javascript/　　作者: 轩辕Rowboat" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -285,18 +286,18 @@
 
 <nav id="article-nav">
   
-    <a href="/2016/08/12/20160812-vue-route request/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/08/29/20160829-Sass basic characteristics of computing/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          vue js两次请求
+          sass基本特性-运算
         
       </div>
     </a>
   
   
-    <a href="/2016/08/10/20160810-ms-clear/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">清除IE下input的默认叉</div>
+    <a href="/2016/08/20/20160820-safari-open-wechat/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">iPhone safari可以通过访问链接来打开微信</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -355,7 +356,7 @@
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2016/08/11/20160811-chrome-settings/" data-title="chrome跨域设置" data-url="http://lxchuan12.github.io/2016/08/11/20160811-chrome-settings/"></div>
+    <div class="ds-thread" data-thread-key="2016/08/27/20160827-Judge null object by javascript/" data-title="js如何判断对象为空。" data-url="http://lxchuan12.github.io/2016/08/27/20160827-Judge null object by javascript/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -378,13 +379,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/08/12/20160812-vue-route request/" title="上一篇: vue js两次请求">
+            <a href="/2016/08/29/20160829-Sass basic characteristics of computing/" title="上一篇: sass基本特性-运算">
                 <i class="fa fa-angle-left"></i>
             </a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2016/08/10/20160810-ms-clear/" title="下一篇: 清除IE下input的默认叉">
+            <a href="/2016/08/20/20160820-safari-open-wechat/" title="下一篇: iPhone safari可以通过访问链接来打开微信">
                 <i class="fa fa-angle-right"></i>
             </a>
         

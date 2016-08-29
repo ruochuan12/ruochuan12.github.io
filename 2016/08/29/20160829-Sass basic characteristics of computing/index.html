@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>chrome跨域设置 | 轩辕Rowboat的博客</title>
+  <title>sass基本特性-运算 | 轩辕Rowboat的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="今天用vuejs,与后端联调,发现用localhost或者本机ip访问本地资源，和后端接口资源，没有数据，google发现是chrome的安全机制，不允许跨域……">
+  <meta name="description" content="CSS中目前只有calc()能做运算，但是在Sass中，可以做各种数学运算……">
 <meta property="og:type" content="article">
-<meta property="og:title" content="chrome跨域设置">
-<meta property="og:url" content="http://lxchuan12.github.io/2016/08/11/20160811-chrome-settings/index.html">
+<meta property="og:title" content="sass基本特性-运算">
+<meta property="og:url" content="http://lxchuan12.github.io/2016/08/29/20160829-Sass basic characteristics of computing/index.html">
 <meta property="og:site_name" content="轩辕Rowboat的博客">
-<meta property="og:description" content="今天用vuejs,与后端联调,发现用localhost或者本机ip访问本地资源，和后端接口资源，没有数据，google发现是chrome的安全机制，不允许跨域……">
-<meta property="og:updated_time" content="2016-08-11T15:46:44.843Z">
+<meta property="og:description" content="CSS中目前只有calc()能做运算，但是在Sass中，可以做各种数学运算……">
+<meta property="og:updated_time" content="2016-08-29T13:35:25.631Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="chrome跨域设置">
-<meta name="twitter:description" content="今天用vuejs,与后端联调,发现用localhost或者本机ip访问本地资源，和后端接口资源，没有数据，google发现是chrome的安全机制，不允许跨域……">
+<meta name="twitter:title" content="sass基本特性-运算">
+<meta name="twitter:description" content="CSS中目前只有calc()能做运算，但是在Sass中，可以做各种数学运算……">
   
     <link rel="alternative" href="/atom.xml" title="轩辕Rowboat的博客" type="application/atom+xml">
   
@@ -211,11 +211,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-20160811-chrome-settings" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-20160829-Sass basic characteristics of computing" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/08/11/20160811-chrome-settings/" class="article-date">
-      <time datetime="2016-08-11T14:55:38.000Z" itemprop="datePublished">2016-08-11</time>
+      <a href="/2016/08/29/20160829-Sass basic characteristics of computing/" class="article-date">
+      <time datetime="2016-08-29T13:26:28.000Z" itemprop="datePublished">2016-08-29</time>
 </a>
     </div>
   
@@ -228,7 +228,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      chrome跨域设置
+      sass基本特性-运算
     </h1>
   
 
@@ -237,13 +237,13 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/调试技巧/">调试技巧</a>
+    <a class="article-category-link" href="/categories/sass/">sass</a>
     </div>
 
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/chrome/">chrome</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sass/">sass</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -253,11 +253,51 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>今天用vuejs,与后端联调,发现用localhost或者本机ip访问本地资源，和后端接口资源，没有数据，google发现是chrome的安全机制，不允许跨域……<a id="more"></a></p>
-<p>解决方案：<br>浏览器版本：chrome 52。<br>1、在桌面找到chrome浏览器快捷图标并点击鼠标右键的属性一栏。(或者任务栏选中chrome右击——google chrome右击属性)</p>
-<p>2、在属性页面中的目标输入框里加上   –args –disable-web-security.–args可省略。</p>
-<p>3、点击应用和确定后关闭属性页面，并打开chrome浏览器即可。</p>
-<p>使用本机ip地址加端口号，访问本地资源。</p>
+        <p>CSS中目前只有calc()能做运算，但是在Sass中，可以做各种数学运算……<a id="more"></a></p>
+<p><strong>1、加法</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.box&#123;</div><div class="line">    width: 20px + 8in;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>编译出来的CSS:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.box &#123;</div><div class="line">  width: 788px;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>1in = 96px;</p>
+<p>当em,rem等相对当前字体，于px在一起不能运算，会报错，如:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.box&#123;</div><div class="line">    width: 20px + 8em;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>不过如果其中一个不同单位，那么会以另一个带单位的为准，如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">.box&#123;</div><div class="line">    width: 20px + 8;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.box2&#123;</div><div class="line">    width: 20em + 8;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>编译出来的CSS为:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">.box &#123;</div><div class="line">  width: 28px;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.box2 &#123;</div><div class="line">  width: 28em;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><strong>2、减法</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">$container: 960px;</div><div class="line">$sidebar-width: 220px;</div><div class="line">$gap-width: 20px;</div><div class="line"></div><div class="line">.content&#123;</div><div class="line">    width: $container - $sidebar-width - $gap-width;</div><div class="line">    float: left;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>编译出来的CSS：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">.content &#123;</div><div class="line"></div><div class="line">  width: 720px;</div><div class="line"></div><div class="line">  float: left; </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>减法和加法一样，不支持em,rem等相对当前字体大小的单位与px进行计算。</p>
+<p><strong>3、乘法</strong></p>
+<p>乘法运算时，只需要其中一个带单位即可，如果都带有单位会报错,<br>如:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.box&#123;</div><div class="line">    width: 20px * 20px</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>编译时会报错。</p>
+<p>而:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.box&#123;</div><div class="line">    width: 20px * 20;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>编译出来的CSS：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.box&#123;</div><div class="line">    width: 400px;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>与加减法一样，不同类型的单位运算时会报错。</p>
+<p><strong>4、除法</strong></p>
+<p>Sass的乘法运算规则也适用于除法运算，不过除法运算有特殊之处，因为”/”符号在CSS中已经作为一种符号使用，因此在Sass中直接使用”/”作为处好时，将不会生效，编译时既不会报错，也不会得到我们想要的效果。</p>
+<p>如:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.box&#123;</div><div class="line">    width: 100px / 2;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>编译出来的CSS:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.box &#123;</div><div class="line">  width: 100px / 2;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>要修正这个文字，只需要给运算的外面添加一对小括号即可。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.box&#123;</div><div class="line">    width: (100px / 2);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>编译出来的CSS为:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.box &#123;</div><div class="line">  width: 50px;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>除了小括号以外，如果除了 “/” 外，还有其它的运算符号，那么也会被当作除号看待。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.box &#123;</div><div class="line">  width: 100px / 2 + 20px;  </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>编译出来的CSS为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.box &#123;</div><div class="line">    width: 70px;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>另外，如果是用变量进行除法运算，”/”也会自动被识别为除法。</p>
+<p>如:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$width: 960px;</div><div class="line"></div><div class="line">.col &#123;</div><div class="line">   width: $width / 10;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>编译出来的CSS为:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">.col &#123;</div><div class="line"></div><div class="line">  width: 96px; </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>综合上述，”/ ”符号被当作除法运算符时有以下几种情况：</p>
+<p>如果数值或它的任意部分是存储在一个变量中或是函数的返回值。<br>如果数值被圆括号包围。<br>如果数值是另一个数学表达式的一部分。<br>在除法运算时，如果两个值带有相同的单位值时，除法运算之后会得到一个不带单位的数值。</p>
+<p>关于单位计算的问题，同物理倒是非常像。</p>
+<p>如果不想记”/”的规则，那么在想作为除法使用是，加上一个括号即可。</p>
+<p><strong>5、颜色运算</strong></p>
+<p>所有的运算都支持颜色值。<br>如:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">p &#123;</div><div class="line">  color: #010203 + #040506;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>编译出的CSS为:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">p &#123;</div><div class="line">  color: #050709;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>同样颜色值也支持乘法运算:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">p &#123;</div><div class="line">  color: #010203 * 2;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>编译出来的CSS:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">p &#123;</div><div class="line">  color: #020406;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>运算规则和二进制乘法相同，依次与每一位相乘。个人觉得颜色值的运算意义不是很大。</p>
+<p><strong>6、字符运算</strong></p>
+<p>在Sass中可以用”+”号对字符串进行拼接，如:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">$content: &quot;Hello&quot; + &quot; &quot; + &quot;Sass!&quot;;</div><div class="line">.box&#123;</div><div class="line">    &amp;:after&#123;</div><div class="line">        content: $content;</div><div class="line">    &#125;</div><div class="line">    &amp;:before&#123;</div><div class="line">        content: &quot; #&#123;$content&#125; &quot;;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>编译出来的CSS为:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">.box:after &#123;</div><div class="line">  content: &quot;Hello Sass!&quot;; </div><div class="line">&#125;</div><div class="line">.box:before &#123;</div><div class="line">  content: &quot; Hello Sass! &quot;; </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>除了在变量中做字符连接运算之外，还可以直接通过 +，把字符连接在一起：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">div&#123;</div><div class="line">    cursor: e + -resize;</div><div class="line">&#125;</div><div class="line"></div><div class="line">span&#123;</div><div class="line">    cursor: &quot;e&quot; + &quot;-resize&quot;;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>编译出来的CSS为:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">div &#123;</div><div class="line">  cursor: e-resize;</div><div class="line">&#125;</div><div class="line"></div><div class="line">span &#123;</div><div class="line">  cursor: &quot;e-resize&quot;; </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><strong>==注意==:</strong>如果有引号的字符串被添加了一个没有引号的字符串 （也就是，带引号的字符串在 + 符号左侧）， 结果会是一个有引号的字符串。 同样的，如果一个没有引号的字符串被添加了一个有引号的字符串 （没有引号的字符串在 + 符号左侧）， 结果将是一个没有引号的字符串。 也就是说始终与加号左边的保持一致:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">p:before &#123;</div><div class="line">  content: &quot;Foo &quot; + Bar;</div><div class="line">  font-family: sans- + &quot;serif&quot;;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>编译出来的CSS为:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">p:before &#123;</div><div class="line">  content: &quot;Foo Bar&quot;;</div><div class="line">  font-family: sans-serif; </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>根据慕课网sass入门篇整理：<a href="http://www.imooc.com/learn/311" target="_blank" rel="external">链接</a></p>
 
       
     </div>
@@ -266,13 +306,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/08/11/20160811-chrome-settings/">chrome跨域设置</a></p>
+        <p><span>本文标题:</span><a href="/2016/08/29/20160829-Sass basic characteristics of computing/">sass基本特性-运算</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 轩辕Rowboat 的个人博客">轩辕Rowboat</a></p>
-        <p><span>发布时间:</span>2016年08月11日 - 22时55分</p>
-        <p><span>最后更新:</span>2016年08月11日 - 23时46分</p>
+        <p><span>发布时间:</span>2016年08月29日 - 21时26分</p>
+        <p><span>最后更新:</span>2016年08月29日 - 21时35分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/08/11/20160811-chrome-settings/" title="chrome跨域设置">http://lxchuan12.github.io/2016/08/11/20160811-chrome-settings/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://lxchuan12.github.io/2016/08/11/20160811-chrome-settings/　　作者: 轩辕Rowboat" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2016/08/29/20160829-Sass basic characteristics of computing/" title="sass基本特性-运算">http://lxchuan12.github.io/2016/08/29/20160829-Sass basic characteristics of computing/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://lxchuan12.github.io/2016/08/29/20160829-Sass basic characteristics of computing/　　作者: 轩辕Rowboat" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -285,18 +325,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2016/08/12/20160812-vue-route request/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          vue js两次请求
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/08/10/20160810-ms-clear/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">清除IE下input的默认叉</div>
+    <a href="/2016/08/27/20160827-Judge null object by javascript/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">js如何判断对象为空。</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -355,7 +386,7 @@
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2016/08/11/20160811-chrome-settings/" data-title="chrome跨域设置" data-url="http://lxchuan12.github.io/2016/08/11/20160811-chrome-settings/"></div>
+    <div class="ds-thread" data-thread-key="2016/08/29/20160829-Sass basic characteristics of computing/" data-title="sass基本特性-运算" data-url="http://lxchuan12.github.io/2016/08/29/20160829-Sass basic characteristics of computing/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -378,13 +409,11 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/08/12/20160812-vue-route request/" title="上一篇: vue js两次请求">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2016/08/10/20160810-ms-clear/" title="下一篇: 清除IE下input的默认叉">
+            <a href="/2016/08/27/20160827-Judge null object by javascript/" title="下一篇: js如何判断对象为空。">
                 <i class="fa fa-angle-right"></i>
             </a>
         
