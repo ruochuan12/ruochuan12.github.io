@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://lxchuan12.github.io/"/>
-  <updated>2016-08-29T15:16:14.266Z</updated>
+  <updated>2016-08-30T15:58:27.070Z</updated>
   <id>http://lxchuan12.github.io/</id>
   
   <author>
@@ -14,6 +14,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>由js一道面向对象题引发的思考</title>
+    <link href="http://lxchuan12.github.io/2016/08/30/20160830-js%20oop%20prototype%20constructor/"/>
+    <id>http://lxchuan12.github.io/2016/08/30/20160830-js oop prototype constructor/</id>
+    <published>2016-08-30T15:09:00.000Z</published>
+    <updated>2016-08-30T15:58:27.070Z</updated>
+    
+    <content type="html"><![CDATA[<p>一个前端QQ群里，有人提问，关于面向对象的……我看完后解答了<a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">function Person()&#123;</div><div class="line">  this.name = &quot;lxchuan12&quot;;</div><div class="line">&#125;</div><div class="line">var rowboat = new Person();</div><div class="line">Person.prototype.age=20;</div><div class="line">Person.prototype=&#123;a:1,b:2&#125;;</div><div class="line">//Person.prototype.constructor = Person;</div><div class="line">console.log(rowboat.name);//&quot;lxchuan12&quot;</div><div class="line">console.log(rowboat.age);//20</div><div class="line">console.log(rowboat.a);//undefined</div><div class="line">console.log(rowboat.b);//undefined</div><div class="line">console.log(rowboat);</div><div class="line">console.log(Person.prototype.name);//undefined</div><div class="line">console.log(Person.prototype.age);//undefined</div><div class="line">console.log(Person.prototype.a);//1</div><div class="line">console.log(Person.prototype.b);//2</div><div class="line">console.log(Person.prototype.constructor);//function Object() &#123; [native code] &#125;</div><div class="line">console.log(Person.prototype);//Object &#123;a: 1, b: 2&#125;</div></pre></td></tr></table></figure></p>
+<p><strong>问题：</strong>他不明白，为什么rowboat.age为20。但Person.prototype.age却为undefined。<br><strong>解答：</strong>我把代码在<a href="http://jsbin.com/muzofix/19/edit?html,js,console" target="_blank" rel="external">jsbin</a>运行后，为之解答。<br>Person.prototype={a:1,b:2};这种写法是赋值，<br>与Person.prototype.age=20;写法不同，不经意间把constructor指向原本为Person的，改为了Object。<img src="./img/console-output.jpg" alt="图"><br>相当于prototype下只有a,b两个值了。所以age则是undefined。<br>一般来说，需要修正指向。Person.prototype.constructor = Person;</p>
+<p><strong>小结：</strong>学习js面对对象编程相关知识,对了解js语言很有帮助。另外，有人说，能写组件，做组件开发说明达到了中级水平。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;一个前端QQ群里，有人提问，关于面向对象的……我看完后解答了
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="http://lxchuan12.github.io/categories/JavaScript/"/>
+    
+    
+      <category term="js" scheme="http://lxchuan12.github.io/tags/js/"/>
+    
+      <category term="oop" scheme="http://lxchuan12.github.io/tags/oop/"/>
+    
+  </entry>
   
   <entry>
     <title>sass基本特性-运算</title>
