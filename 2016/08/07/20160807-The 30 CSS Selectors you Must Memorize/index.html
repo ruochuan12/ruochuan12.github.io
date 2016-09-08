@@ -18,7 +18,7 @@
 <meta property="og:description" content="概述也许你了解了基本的 id,class和descendant选择器，并且整天都在调用，如果是这样的话，那你正在错过拥有灵活性更大的选择器。这篇文章里面提到的大部分选择器都是在CSS3标准下的，所以它们只能在相应最新版本的浏览器中才能生效，你完全应该把这些都记在你聪明的脑袋里面……">
 <meta property="og:image" content="http://images.cnitblog.com/blog/460220/201401/03143631-272fddc759664e95be319d868bae7abf.png">
 <meta property="og:image" content="http://images.cnitblog.com/blog/460220/201401/04194911-6cbeb39056254f6d9903aa7d1cdfb5da.png">
-<meta property="og:updated_time" content="2016-08-07T15:51:07.222Z">
+<meta property="og:updated_time" content="2016-09-08T13:57:25.487Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="(转)30个你必须记住的CSS选择器">
 <meta name="twitter:description" content="概述也许你了解了基本的 id,class和descendant选择器，并且整天都在调用，如果是这样的话，那你正在错过拥有灵活性更大的选择器。这篇文章里面提到的大部分选择器都是在CSS3标准下的，所以它们只能在相应最新版本的浏览器中才能生效，你完全应该把这些都记在你聪明的脑袋里面……">
@@ -292,6 +292,14 @@ a:visited {color: purple;}
     color:red;
 }
 </code></pre><p>这被称作相邻选择符。它将只选择紧贴在X元素之后Y元素。上面的例子，仅每一个ul之后的第一个段落元素的文本为红色。<br><a href="http://cdn.tutsplus.com/net/uploads/legacy/840_cssSelectors/selectors/adjacent.html" target="_blank" rel="external">DEMO</a></p>
+<p><strong>兼容性</strong>:</p>
+<ul>
+<li>IE7+</li>
+<li>Firefox</li>
+<li>Chrome</li>
+<li>Safari</li>
+<li>Opera</li>
+</ul>
 <h2 id="8-X-gt-Y"><a href="#8-X-gt-Y" class="headerlink" title="8.X&gt;Y"></a>8.X&gt;Y</h2><pre><code>div#container &gt; ul{
     border :1px solid black;
 }
