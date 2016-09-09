@@ -1,6 +1,7 @@
 (function(w, d) {
 
     var body = d.body,
+        root = d.querySelector('html'),
         gotop = d.getElementById('gotop'),
         menu = d.getElementById('menu'),
         header = d.getElementById('header'),
@@ -48,17 +49,20 @@
             }
         },
         toggleMenu: function(flag) {
+
             if (flag) {
                 menu.classList.remove('hide');
 
                 if (w.innerWidth < 1241) {
                     mask.classList.add('in');
                     menu.classList.add('show');
+                    root.style.overflow = 'hidden';
                 }
 
             } else {
                 menu.classList.remove('show');
                 mask.classList.remove('in');
+                root.style.overflow = '';
             }
         },
         fixedHeader: function(top) {
@@ -71,41 +75,57 @@
         fixedToc: (function() {
             var toc = d.getElementById('post-toc');
 
-            if (!toc) {
+            if (!toc || !toc.children.length) {
                 return noop;
             }
 
             var tocOfs = offset(toc),
                 tocTop = tocOfs.y,
-                tocH = toc.offsetHeight,
-                isScroll = tocH > w.innerHeight,
-                titles = d.getElementById('post-content').querySelectorAll('h1, h2, h3, h4, h5, h6'),
-                cssTop = 150,
-                minTop = -1 * (tocH - w.innerHeight) - cssTop;
+                headerH = header.clientHeight,
+                titles = d.getElementById('post-content').querySelectorAll('h1, h2, h3, h4, h5, h6');
 
-            function scroll(top) {
+            toc.querySelector('a[href="#' + titles[0].id + '"]').parentNode.classList.add('active');  
 
-                for (var id, i = 0, len = titles.length; i < len; i++) {
-                    if (top > offset(titles[i]).y) {
-                        id = titles[i].id;
-                    }
+            [].forEach.call(toc.querySelectorAll('a[href*="#"]'), function(el){
+                
+                el.addEventListener('click', function(e){
+                    e.preventDefault();
+                    docEl.scrollTop = offset(d.querySelector(this.hash)).y - headerH + 10;
+                })
+            });
+
+            function setActive(top) {
+
+                for (i = 0, len = titles.length; i < len; i++) {
+                    if (top > offset(titles[i]).y - headerH) {
+                        toc.querySelector('li.active').classList.remove('active');
+
+                        var active = toc.querySelector('a[href="#' + titles[i].id + '"]').parentNode;
+                        active.classList.add('active');
+
+                        if(active.offsetTop >= toc.clientHeight - headerH) {
+                            toc.scrollTop = active.offsetTop - toc.clientHeight + parseInt(w.innerHeight/3);
+                        } else {
+                            toc.scrollTop = 0;
+                        }
+                    } 
                 }
 
-                var top = cssTop - toc.querySelectorAll('a[href="#' + id + '"]')[0].offsetTop;
-
-                toc.style.top = (top < minTop ? minTop : top) + 'px';
+                if(top < offset(titles[0]).y) {
+                    toc.querySelector('li.active').classList.remove('active');
+                    toc.querySelector('a[href="#' + titles[0].id + '"]').parentNode.classList.add('active');  
+                }
             }
 
             return function(top) {
-                if (top > tocTop) {
+                if (top > tocTop - headerH) {
                     toc.classList.add('fixed');
-
-                    if (isScroll) {
-                        scroll(top);
-                    }
                 } else {
                     toc.classList.remove('fixed');
+                    
                 }
+
+                setActive(top);
 
             };
         })(),
@@ -162,10 +182,6 @@
             d.getElementById('search').addEventListener(even, toggleSearch);
         }
     };
-
-    menu.addEventListener('touchmove', function(e) {
-        e.preventDefault();
-    });
 
     w.addEventListener('load', function() {
         loading.classList.remove('active');

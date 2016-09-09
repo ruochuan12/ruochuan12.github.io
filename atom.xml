@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://lxchuan12.github.io/"/>
-  <updated>2016-09-08T14:07:35.829Z</updated>
+  <updated>2016-09-09T12:59:12.138Z</updated>
   <id>https://lxchuan12.github.io/</id>
   
   <author>
@@ -14,6 +14,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>CSS3 媒体查询media</title>
+    <link href="https://lxchuan12.github.io/2016/09/09/20160909-CSS3-@media/"/>
+    <id>https://lxchuan12.github.io/2016/09/09/20160909-CSS3-@media/</id>
+    <published>2016-09-09T12:50:42.000Z</published>
+    <updated>2016-09-09T12:59:12.138Z</updated>
+    
+    <content type="html"><![CDATA[<p>CSS3 媒体查询media，其实CSS2也有media，只是基本不用……<a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">@media only screen and (max-width:375px)&#123;</div><div class="line">    .box&#123;</div><div class="line">        background:#f00!important;</div><div class="line">        /*加上！important才有效。*/</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">.box&#123;</div><div class="line">	width:100px;</div><div class="line">	height:100px;</div><div class="line">	background:#000;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>媒体查询@media需要配合meta标签使用才有效。<br>简版：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width&quot;&gt;</div></pre></td></tr></table></figure></p>
+<p>完整版：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui&quot;&gt;</div></pre></td></tr></table></figure></p>
+<p>其中minimal-ui表示<br>参考链接：<br><a href="http://36kr.com/p/210516.html" target="_blank" rel="external">iOS 7.1的Safari为meta标签新增minimal-ui属性，在网页加载时隐藏地址栏与导航栏</a><br><a href="http://stackoverflow.com/questions/24889100/ios-8-removed-minimal-ui-viewport-property-are-there-other-soft-fullscreen" target="_blank" rel="external">iOS 8 removed “minimal-ui” viewport property, are there other “soft fullscreen” solutions?</a><br>取值：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">@media screen and (max-width:320px)&#123;</div><div class="line">	/*视窗宽度&lt;=320px*/</div><div class="line">&#125;</div><div class="line">@media screen and (min-width:769px)&#123;</div><div class="line">	/*视窗宽度&gt;=769px*/</div><div class="line">&#125;</div><div class="line">@media screen and (min-width:769px) and (max-width:1000px)&#123;</div><div class="line">	/*769px&lt;=视窗宽度&lt;=1000px*/</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>几道判断题：<br>1、媒体查询条件中，（max-width:320px）表示的是：<br>A. 当视窗宽度小于等于320px时。<br>2、要做响应式网站，就必须设置viewport<br>A. √<br>3、device-width是viewport的默认宽度<br>B、×<br>4、viewport的默认宽度就是屏幕的水平分辨率<br>B、×</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;CSS3 媒体查询media，其实CSS2也有media，只是基本不用……
+    
+    </summary>
+    
+      <category term="css3" scheme="https://lxchuan12.github.io/categories/css3/"/>
+    
+    
+      <category term="css3" scheme="https://lxchuan12.github.io/tags/css3/"/>
+    
+      <category term="media" scheme="https://lxchuan12.github.io/tags/media/"/>
+    
+  </entry>
   
   <entry>
     <title>我是如何踏上前端这条路的</title>
