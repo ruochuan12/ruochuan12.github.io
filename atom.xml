@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://lxchuan12.github.io/"/>
-  <updated>2016-09-09T12:59:12.138Z</updated>
+  <updated>2016-09-11T13:55:03.057Z</updated>
   <id>https://lxchuan12.github.io/</id>
   
   <author>
@@ -16,11 +16,41 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>jQuery的几种写法探析</title>
+    <link href="https://lxchuan12.github.io/2016/09/11/20160911-Several-writing-of-jquery/"/>
+    <id>https://lxchuan12.github.io/2016/09/11/20160911-Several-writing-of-jquery/</id>
+    <published>2016-09-11T13:41:23.000Z</published>
+    <updated>2016-09-11T13:55:03.057Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>写法一：</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(function()&#123;</div><div class="line">	//code here</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<p><strong>写法二：</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(document).ready(function()&#123;</div><div class="line">	//code here</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p><strong>写法三：</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$().ready(function()&#123;</div><div class="line">	//code here</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<p>默认参数就是document，所以可以省略不写。<br><strong>写法四：</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">(function($)&#123;</div><div class="line">	//code here</div><div class="line">&#125;)(jQuery);</div></pre></td></tr></table></figure></p>
+<p>这种写法的最大好处是形成闭包。在内部定义的函数和变量只能在此范围内有效。形成是否函数函数、私有变量的概念。不会与其他类库，框架产生冲突。<br>以上四种方法都是同一个意思，一般来说使用<strong>写法一</strong>比较多。<br><strong>此外，</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$(window).load = function()&#123;</div><div class="line"></div><div class="line">&#125;</div><div class="line">//等价于：</div><div class="line">window.onload = function()&#123;</div><div class="line">	//code here</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>(JS中的事件，不加on，比如单击事件：click,双击事件：dblclick)</p>
+<p><strong>window.onload = function(){}</strong>与<strong>$(funtion(){})</strong>两者的区别是：<br><strong>$(funtion(){})</strong>：<br>1、在DOM加载完成后就可以可以对DOM进行操作。<br>一般情况一个页面响应加载的顺序是：域名解析-加载html-加载js和css-加载图片和视频等其他信息。<br>那么Dom Ready应该在“加载js和css”和“加载图片等其他信息”之间，就可以操作Dom了。<br>2、能多次使用，按序执行。<br><strong>window.onload = function(){}</strong>：<br>1、在网页中所有元素(包括元素的所有关联文件)完全加载到浏览器后才执行，即JavaScript 此时可以访问网页中的所有元素。<br>2、不能多次使用，后者会覆盖前者。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;写法一：&lt;/strong&gt;&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$(function()&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	//code here&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;);&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="jQuery" scheme="https://lxchuan12.github.io/categories/jQuery/"/>
+    
+    
+      <category term="jQuery" scheme="https://lxchuan12.github.io/tags/jQuery/"/>
+    
+  </entry>
+  
+  <entry>
     <title>CSS3 媒体查询media</title>
     <link href="https://lxchuan12.github.io/2016/09/09/20160909-CSS3-@media/"/>
     <id>https://lxchuan12.github.io/2016/09/09/20160909-CSS3-@media/</id>
     <published>2016-09-09T12:50:42.000Z</published>
-    <updated>2016-09-09T12:59:12.138Z</updated>
+    <updated>2016-09-09T13:20:44.079Z</updated>
     
     <content type="html"><![CDATA[<p>CSS3 媒体查询media，其实CSS2也有media，只是基本不用……<a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">@media only screen and (max-width:375px)&#123;</div><div class="line">    .box&#123;</div><div class="line">        background:#f00!important;</div><div class="line">        /*加上！important才有效。*/</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">.box&#123;</div><div class="line">	width:100px;</div><div class="line">	height:100px;</div><div class="line">	background:#000;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>媒体查询@media需要配合meta标签使用才有效。<br>简版：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width&quot;&gt;</div></pre></td></tr></table></figure></p>

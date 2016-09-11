@@ -2608,12 +2608,16 @@ a.waves-effect .waves-ripple {
   color: #C5CAE9;
   font-size: 13px;
 }
+#menu .scroll-wrap {
+  position: relative;
+  overflow-y: auto;
+}
 #menu .nav {
   margin: 0;
   padding: 12px 0;
+  min-height: calc(100% - 115px);
   list-style: none;
   line-height: 44px;
-  overflow-y: auto;
 }
 #menu .nav li {
   padding: 0 20px;
@@ -2645,6 +2649,7 @@ a.waves-effect .waves-ripple {
 #menu .footer {
   position: relative;
   width: 100%;
+  height: 115px;
   font-size: 12px;
   font-family: Consolas, Monaco, courier, monospace;
   padding: 10px 20px;
@@ -3134,20 +3139,30 @@ a[title="站长统计"] {
 .post-toc-wrap.fixed {
   position: fixed;
   top: 76px;
+  bottom: 20px;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 .post-toc-wrap .post-toc {
   list-style: none;
   margin: 0 !important;
-  padding-left: 20px;
-  max-width: 226px;
-  border-left: 5px solid #3F51B5;
+  padding: 0 20px;
+  width: 226px;
+  border-left: 5px solid #B6B6B6;
+}
+.post-toc-wrap .post-toc li {
+  font-weight: 400;
+  color: #727272;
+}
+.post-toc-wrap .post-toc li.active {
+  color: #3F51B5;
+  font-weight: 500;
 }
 .post-toc-wrap .post-toc a {
   display: block;
   padding: 3px 0;
-  font-weight: 400;
+  color: inherit;
 }
-.post-toc-wrap .post-toc a.active,
 .post-toc-wrap .post-toc a:hover {
   font-weight: 500;
   text-decoration: underline;
@@ -3553,6 +3568,10 @@ a[title="站长统计"] {
   margin: 0;
   padding: 0;
 }
+.post-content .highlight .line {
+  height: 19.2px;
+  line-height: 19.2px;
+}
 .post-content .highlight table {
   margin: 0;
   width: auto;
@@ -3580,9 +3599,6 @@ a[title="站长统计"] {
   font-size: 0.85em;
   text-align: right;
   padding-right: 20px;
-}
-.post-content .highlight .gutter pre .line {
-  text-shadow: none;
 }
 .post-content .gist {
   background: #f5f5f5;
