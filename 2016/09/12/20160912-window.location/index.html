@@ -3,26 +3,30 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Category: JavaScript | 轩辕Rowboat的博客 | 前端路上 | PPT爱好者 | 所知甚少，唯善学。</title>
+  <title>window.location-浏览器定位和导航 | 轩辕Rowboat的博客 | 前端路上 | PPT爱好者 | 所知甚少，唯善学。</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   <meta name="theme-color" content="#3F51B5">
   
   
-  <meta name="keywords" content="轩辕Rowboat，前端路上，PPT爱好者，所知甚少，唯善学。">
-  <meta name="description" content="轩辕Rowboat，某世界闻名的陶瓷大学2016届毕业生，目前在杭州从事前端开发工作，也是一枚PPT爱好者。常以轩辕Rowboat为名混迹于江湖。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="轩辕Rowboat的博客">
-<meta property="og:url" content="https://lxchuan12.github.io/categories/JavaScript/index.html">
+  <meta name="keywords" content="JavaScript,BOM">
+  <meta name="description" content="平时用window.location.href比较多。但却经常会忽略window.location下的其他属性……">
+<meta property="og:type" content="article">
+<meta property="og:title" content="window.location-浏览器定位和导航">
+<meta property="og:url" content="https://lxchuan12.github.io/2016/09/12/20160912-window.location/index.html">
 <meta property="og:site_name" content="轩辕Rowboat的博客">
-<meta property="og:description" content="轩辕Rowboat，某世界闻名的陶瓷大学2016届毕业生，目前在杭州从事前端开发工作，也是一枚PPT爱好者。常以轩辕Rowboat为名混迹于江湖。">
+<meta property="og:description" content="平时用window.location.href比较多。但却经常会忽略window.location下的其他属性……">
+<meta property="og:image" content="https://lxchuan12.github.io/./img/url.png">
+<meta property="og:image" content="https://lxchuan12.github.io/./img/location.png">
+<meta property="og:updated_time" content="2016-09-12T15:33:32.117Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="轩辕Rowboat的博客">
-<meta name="twitter:description" content="轩辕Rowboat，某世界闻名的陶瓷大学2016届毕业生，目前在杭州从事前端开发工作，也是一枚PPT爱好者。常以轩辕Rowboat为名混迹于江湖。">
+<meta name="twitter:title" content="window.location-浏览器定位和导航">
+<meta name="twitter:description" content="平时用window.location.href比较多。但却经常会忽略window.location下的其他属性……">
+<meta name="twitter:image" content="https://lxchuan12.github.io/./img/url.png">
   
     <link rel="alternative" href="/atom.xml" title="轩辕Rowboat的博客" type="application/atom+xml">
   
-  <meta name="summary" content="轩辕Rowboat，某世界闻名的陶瓷大学2016届毕业生，目前在杭州从事前端开发工作，也是一枚PPT爱好者。常以轩辕Rowboat为名混迹于江湖。">
+  <meta name="summary" content="&lt;p&gt;平时用window.location.href比较多。&lt;br&gt;但却经常会忽略window.location下的其他属性……">
   <link rel="shortcut icon" href="/favicon.ico">
   <link rel="stylesheet" href="/css/style.css">
 </head>
@@ -30,7 +34,7 @@
 <body>
   <div id="loading" class="active"></div>
 
-  <nav id="menu"  >
+  <nav id="menu" class="hide" >
    <div class="inner flex-row-vertical">
   <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
       <i class="icon icon-lg icon-close"></i>
@@ -116,7 +120,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">轩辕Rowboat的博客</div>
+        <div class="flex-col header-title ellipsis">window.location-浏览器定位和导航</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -137,132 +141,135 @@
 </header>
 <header class="content-header">
   <div class="container">
-    <h1 class="author">轩辕Rowboat的博客</h1>
+    <h1 class="author">window.location-浏览器定位和导航</h1>
     <h5 class="subtitle">
         
-        前端路上 | PPT爱好者 | 所知甚少，唯善学。
+            <time datetime="2016-09-12T14:55:32.000Z" itemprop="datePublished" class="page-time">
+  2016-09-12
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/JavaScript/">JavaScript</a></li></ul>
+
         
     </h5>
   </div>
 </header>
 
     <div class="container body-wrap">
-      
-
-
-        <h3 class="archive-separator">September, 2016</h3>
-
-
-
-     <article class="archive-article">
-  <div class="archive-article-date">
-    <time datetime="2016-09-12T14:55:32.000Z" itemprop="datePublished" class="post-time">
-  Sep 12
-</time>
-
-  </div>
-  <div class="archive-article-inner">
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2016/09/12/20160912-window.location/">window.location-浏览器定位和导航</a>
-    </h3>
-  
-
-
-
-    
+      <article id="post-20160912-window.location" 
+  class="article article-type-post" itemprop="blogPost">
+    <div class="post-meta flex-row">
+        
 	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/BOM/">BOM</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
 
-  </div>
+    </div>
+    <div class="post-body">
+        <aside class="post-widget" id="post-widget">
+
+            
+            <div class="post-share" id="post-share">
+    <div class="tit">分享到：</div>
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" href="javascript:;" data-title="微博" data-service="tsina">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns" href="javascript:;" data-title="微信" data-service="weixin">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" href="javascript:;" data-title=" QQ" data-service="cqq">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" href="javascript:;" data-title=" Facebook" data-service="fb">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" href="javascript:;" data-title=" Twitter" data-service="twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="douban share-sns" href="javascript:;" data-title="豆瓣" data-service="douban">
+          豆
+        </a>
+      </li>
+    </ul>
+ </div>
+
+            
+
+            
+            <nav class="post-toc-wrap" id="post-toc">
+            
+            </nav>
+            
+        </aside>
+
+        <div class="post-main">
+
+            <div class="post-content" id="post-content" itemprop="postContent">
+            <p>平时用window.location.href比较多。<br>但却经常会忽略window.location下的其他属性……<a id="more"></a><br>并且很多时候需要对链接问号后面字符串做处理，一般使用split()分割，再取。而实际上，有window.location.search可以获取。<br>一图胜千言<br><img src="./img/url.png" alt="图解url"><br><strong>url</strong>: 统一资源定位符 (Uniform Resource Locator, URL)<br><strong>href</strong>: 当前页面的url<br><strong>protocol</strong>: 协议<br><strong>hostname</strong>: 主机名<br><strong>port</strong>: 端口号<br><strong>host</strong>: 主机名+端口号<br><strong>pathname</strong>: 当前页面的路径和文件名</p>
+<p><img src="./img/location.png" alt="图解location"></p>
+
+            <blockquote>
+                <p>
+                本文地址：
+                <a href="https://lxchuan12.github.io/2016/09/12/20160912-window.location/" target="_blank" rel="external">https://lxchuan12.github.io/2016/09/12/20160912-window.location/</a>
+                </p>
+                <footer><cite><a href="https://lxchuan12.github.io">@轩辕Rowboat的博客</a></cite></footer>
+            </blockquote>
+            </div>
+            
+<nav class="post-nav">
+  
+
+  
+    <div class="waves-block waves-effect next fr">
+      <a href="/2016/09/11/20160911-Several-writing-of-jquery/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">jQuery的几种写法探析</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+            
+            
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="20160912-window.location" data-title="window.location-浏览器定位和导航" data-url="https://lxchuan12.github.io/2016/09/12/20160912-window.location/index.html"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"lxchuan12"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+
+        </div>
+    </div>
 </article>
-
-        <h3 class="archive-separator">August, 2016</h3>
-
-
-
-     <article class="archive-article">
-  <div class="archive-article-date">
-    <time datetime="2016-08-30T15:09:00.000Z" itemprop="datePublished" class="post-time">
-  Aug 30
-</time>
-
-  </div>
-  <div class="archive-article-inner">
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2016/08/30/20160830-js-oop-prototype-constructor/">由JavaScript一道面向对象题引发的思考</a>
-    </h3>
-  
-
-
-
-    
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/oop/">oop</a></li></ul>
-
-  </div>
-</article>
-
-
-     <article class="archive-article">
-  <div class="archive-article-date">
-    <time datetime="2016-08-27T14:46:23.000Z" itemprop="datePublished" class="post-time">
-  Aug 27
-</time>
-
-  </div>
-  <div class="archive-article-inner">
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2016/08/27/20160827-Judge-null-object-by-javascript/">js如何判断对象为空</a>
-    </h3>
-  
-
-
-
-    
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vuejs/">vuejs</a></li></ul>
-
-  </div>
-</article>
-
-
-     <article class="archive-article">
-  <div class="archive-article-date">
-    <time datetime="2016-08-20T15:35:26.000Z" itemprop="datePublished" class="post-time">
-  Aug 20
-</time>
-
-  </div>
-  <div class="archive-article-inner">
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2016/08/20/20160820-safari-open-wechat/">iPhone safari可以通过访问链接来打开微信</a>
-    </h3>
-  
-
-
-
-    
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/wechat/">wechat</a></li></ul>
-
-  </div>
-</article>
-
-
-
-
     </div>
   </main>
 <div class="mask" id="mask"></div>
@@ -270,10 +277,10 @@
 
 <script>
 var BLOG_SHARE = {
-    title: "轩辕Rowboat的博客",
+    title: "window.location-浏览器定位和导航",
     pic: "/img/logo.jpg",
     summary: document.getElementsByName('summary')[0].content,
-    url: "https://lxchuan12.github.io/categories/JavaScript/index.html"
+    url: "https://lxchuan12.github.io/2016/09/12/20160912-window.location/index.html"
 };
 </script>
 <div class="global-share" id="global-share">

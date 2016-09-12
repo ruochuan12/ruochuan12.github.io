@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://lxchuan12.github.io/"/>
-  <updated>2016-09-11T13:55:03.057Z</updated>
+  <updated>2016-09-12T15:33:32.117Z</updated>
   <id>https://lxchuan12.github.io/</id>
   
   <author>
@@ -14,6 +14,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>window.location-浏览器定位和导航</title>
+    <link href="https://lxchuan12.github.io/2016/09/12/20160912-window.location/"/>
+    <id>https://lxchuan12.github.io/2016/09/12/20160912-window.location/</id>
+    <published>2016-09-12T14:55:32.000Z</published>
+    <updated>2016-09-12T15:33:32.117Z</updated>
+    
+    <content type="html"><![CDATA[<p>平时用window.location.href比较多。<br>但却经常会忽略window.location下的其他属性……<a id="more"></a><br>并且很多时候需要对链接问号后面字符串做处理，一般使用split()分割，再取。而实际上，有window.location.search可以获取。<br>一图胜千言<br><img src="./img/url.png" alt="图解url"><br><strong>url</strong>: 统一资源定位符 (Uniform Resource Locator, URL)<br><strong>href</strong>: 当前页面的url<br><strong>protocol</strong>: 协议<br><strong>hostname</strong>: 主机名<br><strong>port</strong>: 端口号<br><strong>host</strong>: 主机名+端口号<br><strong>pathname</strong>: 当前页面的路径和文件名</p>
+<p><img src="./img/location.png" alt="图解location"></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;平时用window.location.href比较多。&lt;br&gt;但却经常会忽略window.location下的其他属性……
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="https://lxchuan12.github.io/categories/JavaScript/"/>
+    
+    
+      <category term="JavaScript" scheme="https://lxchuan12.github.io/tags/JavaScript/"/>
+    
+      <category term="BOM" scheme="https://lxchuan12.github.io/tags/BOM/"/>
+    
+  </entry>
   
   <entry>
     <title>jQuery的几种写法探析</title>
