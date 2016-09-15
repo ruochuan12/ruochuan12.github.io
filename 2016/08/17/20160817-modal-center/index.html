@@ -6,7 +6,7 @@
   <title>弹窗（modal）垂直水平居中 | 轩辕Rowboat的博客 | 前端路上 | PPT爱好者 | 所知甚少，唯善学。</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="theme-color" content="#3F51B5">
+  <meta name="theme-color" content="#02A1E6">
   
   
   <meta name="keywords" content="css">
@@ -220,6 +220,13 @@
 <p><strong>小结:</strong>不支持IE9+，modal不需定宽定高，手机端可用。（发现如果有其他的transform，好像先执行其他的，在移动到中心。）另外，发现{margin:0 auto}:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">.modal&#123;</div><div class="line">    position:fixed;</div><div class="line">    width:250px;</div><div class="line">    left:0;</div><div class="line">    right:0;</div><div class="line">    top:40%;</div><div class="line">    bottom:auto;</div><div class="line">    margin:0 auto;</div><div class="line">    background:#ececec;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>竟然能使固定定位fixed(脱离文档流）（在chrome手机模拟器和chrome浏览器）水平居中。<br>在我安卓手机(4.2.2)不行。后来改成{margin-left:-定宽/2}，于是在安卓手机也可以了</p>
 
+
+            
+            <div class="post-reward">
+                <a id="rewardBtn" href="javascript:;" class="post-reward-btn waves-effect waves-circle waves-light">赏</a>
+            </div>
+            
+            
             <blockquote>
                 <p>
                 本文地址：
@@ -328,6 +335,31 @@ var BLOG_SHARE = {
  </div>
 
 
+
+
+<div id="reward" class="reward-lay">
+    <a class="reward-off" id="rewardOff" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        你的打赏是我写作的动力~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <ul class="reward-items">
+        
+        <li>
+            <img src="/img/wechat.jpg" title="微信打赏二维码" alt="微信打赏二维码">
+            <p>微信</p>
+        </li>
+        
+
+        
+        <li>
+            <img src="/img/alipay.jpg" title="支付宝打赏二维码" alt="支付宝打赏二维码">
+            <p>支付宝</p>
+        </li>
+        
+    </ul>
+</div>
 
 <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
 

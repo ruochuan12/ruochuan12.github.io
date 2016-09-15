@@ -6,7 +6,7 @@
   <title>iPhone safari可以通过访问链接来打开微信 | 轩辕Rowboat的博客 | 前端路上 | PPT爱好者 | 所知甚少，唯善学。</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="theme-color" content="#3F51B5">
+  <meta name="theme-color" content="#02A1E6">
   
   
   <meta name="keywords" content="js,wechat">
@@ -216,6 +216,13 @@
             <p>今天发现：iPhone safari可以可以通过访问链接来打开微信。而安卓手机不行。不多说，直接show the code……<a id="more"></a></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">let ua = window.navigator.userAgent.toLowerCase();</div><div class="line">if ((ua.indexOf(&apos;iphone&apos;)&gt;-1)&amp;&amp;(ua.indexOf(&apos;safari&apos;)&gt;-1))&#123;</div><div class="line">    window.location.href = &apos;weixin:http://weixin.qq.com&apos;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
+
+            
+            <div class="post-reward">
+                <a id="rewardBtn" href="javascript:;" class="post-reward-btn waves-effect waves-circle waves-light">赏</a>
+            </div>
+            
+            
             <blockquote>
                 <p>
                 本文地址：
@@ -324,6 +331,31 @@ var BLOG_SHARE = {
  </div>
 
 
+
+
+<div id="reward" class="reward-lay">
+    <a class="reward-off" id="rewardOff" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        你的打赏是我写作的动力~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <ul class="reward-items">
+        
+        <li>
+            <img src="/img/wechat.jpg" title="微信打赏二维码" alt="微信打赏二维码">
+            <p>微信</p>
+        </li>
+        
+
+        
+        <li>
+            <img src="/img/alipay.jpg" title="支付宝打赏二维码" alt="支付宝打赏二维码">
+            <p>支付宝</p>
+        </li>
+        
+    </ul>
+</div>
 
 <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
 

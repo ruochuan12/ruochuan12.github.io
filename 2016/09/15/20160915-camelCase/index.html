@@ -3,29 +3,27 @@
 <head>
   <meta charset="utf-8">
   
-  <title>由JavaScript一道面向对象题引发的思考 | 轩辕Rowboat的博客 | 前端路上 | PPT爱好者 | 所知甚少，唯善学。</title>
+  <title>camelCase()转驼峰方法实现 | 轩辕Rowboat的博客 | 前端路上 | PPT爱好者 | 所知甚少，唯善学。</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   <meta name="theme-color" content="#02A1E6">
   
   
-  <meta name="keywords" content="js,oop">
-  <meta name="description" content="一个前端QQ群里，有人提问，关于面向对象的……我看完后解答了">
+  <meta name="keywords" content="JavaScript,jquery,zepto">
+  <meta name="description" content="今天中秋节，放假三天。看zeptojs文档时，看到camelCase()转驼峰的方法，就想着也不难，就自己实现了一遍……">
 <meta property="og:type" content="article">
-<meta property="og:title" content="由JavaScript一道面向对象题引发的思考">
-<meta property="og:url" content="https://lxchuan12.github.io/2016/08/30/20160830-js-oop-prototype-constructor/index.html">
+<meta property="og:title" content="camelCase()转驼峰方法实现">
+<meta property="og:url" content="https://lxchuan12.github.io/2016/09/15/20160915-camelCase/index.html">
 <meta property="og:site_name" content="轩辕Rowboat的博客">
-<meta property="og:description" content="一个前端QQ群里，有人提问，关于面向对象的……我看完后解答了">
-<meta property="og:image" content="https://lxchuan12.github.io/./img/console-output.jpg">
-<meta property="og:updated_time" content="2016-08-31T05:13:33.817Z">
+<meta property="og:description" content="今天中秋节，放假三天。看zeptojs文档时，看到camelCase()转驼峰的方法，就想着也不难，就自己实现了一遍……">
+<meta property="og:updated_time" content="2016-09-15T10:28:03.036Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="由JavaScript一道面向对象题引发的思考">
-<meta name="twitter:description" content="一个前端QQ群里，有人提问，关于面向对象的……我看完后解答了">
-<meta name="twitter:image" content="https://lxchuan12.github.io/./img/console-output.jpg">
+<meta name="twitter:title" content="camelCase()转驼峰方法实现">
+<meta name="twitter:description" content="今天中秋节，放假三天。看zeptojs文档时，看到camelCase()转驼峰的方法，就想着也不难，就自己实现了一遍……">
   
     <link rel="alternative" href="/atom.xml" title="轩辕Rowboat的博客" type="application/atom+xml">
   
-  <meta name="summary" content="&lt;p&gt;一个前端QQ群里，有人提问，关于面向对象的……我看完后解答了">
+  <meta name="summary" content="&lt;p&gt;今天中秋节，放假三天。看zeptojs文档时，看到camelCase()转驼峰的方法，就想着也不难，就自己实现了一遍……">
   <link rel="shortcut icon" href="/favicon.ico">
   <link rel="stylesheet" href="/css/style.css">
 </head>
@@ -119,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">由JavaScript一道面向对象题引发的思考</div>
+        <div class="flex-col header-title ellipsis">camelCase()转驼峰方法实现</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -140,11 +138,11 @@
 </header>
 <header class="content-header">
   <div class="container">
-    <h1 class="author">由JavaScript一道面向对象题引发的思考</h1>
+    <h1 class="author">camelCase()转驼峰方法实现</h1>
     <h5 class="subtitle">
         
-            <time datetime="2016-08-30T15:09:00.000Z" itemprop="datePublished" class="page-time">
-  2016-08-30
+            <time datetime="2016-09-15T09:30:32.000Z" itemprop="datePublished" class="page-time">
+  2016-09-15
 </time>
 
 
@@ -156,11 +154,11 @@
 </header>
 
     <div class="container body-wrap">
-      <article id="post-20160830-js-oop-prototype-constructor" 
+      <article id="post-20160915-camelCase" 
   class="article article-type-post" itemprop="blogPost">
     <div class="post-meta flex-row">
         
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/oop/">oop</a></li></ul>
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jquery/">jquery</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/zepto/">zepto</a></li></ul>
 
     </div>
     <div class="post-body">
@@ -207,7 +205,7 @@
 
             
             <nav class="post-toc-wrap" id="post-toc">
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#问题："><span class="post-toc-text">问题：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#解答："><span class="post-toc-text">解答：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#参考资料："><span class="post-toc-text">参考资料：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#小结："><span class="post-toc-text">小结：</span></a></li></ol>
+            
             </nav>
             
         </aside>
@@ -215,11 +213,12 @@
         <div class="post-main">
 
             <div class="post-content" id="post-content" itemprop="postContent">
-            <p>一个前端QQ群里，有人提问，关于面向对象的……我看完后解答了<a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">function Person()&#123;</div><div class="line">  this.name = &quot;lxchuan12&quot;;</div><div class="line">&#125;</div><div class="line">var rowboat = new Person();</div><div class="line">Person.prototype.age=20;</div><div class="line">Person.prototype=&#123;a:1,b:2&#125;;</div><div class="line">//Person.prototype.constructor = Person;</div><div class="line">console.log(rowboat.name);//&quot;lxchuan12&quot;</div><div class="line">console.log(rowboat.age);//20</div><div class="line">console.log(rowboat.a);//undefined</div><div class="line">console.log(rowboat.b);//undefined</div><div class="line">console.log(rowboat);</div><div class="line">console.log(Person.prototype.name);//undefined</div><div class="line">console.log(Person.prototype.age);//undefined</div><div class="line">console.log(Person.prototype.a);//1</div><div class="line">console.log(Person.prototype.b);//2</div><div class="line">console.log(Person.prototype.constructor);//function Object() &#123; [native code] &#125;</div><div class="line">console.log(Person.prototype);//Object &#123;a: 1, b: 2&#125;</div></pre></td></tr></table></figure></p>
-<h3 id="问题："><a href="#问题：" class="headerlink" title="问题："></a>问题：</h3><p>他不明白，为什么rowboat.age为20。但Person.prototype.age却为undefined。</p>
-<h3 id="解答："><a href="#解答：" class="headerlink" title="解答："></a>解答：</h3><p>我把代码在<a href="http://jsbin.com/muzofix/19/edit?html,js,console" target="_blank" rel="external">jsbin</a>运行后，为之解答。<br>Person.prototype={a:1,b:2};这种写法是赋值，<br>与Person.prototype.age=20;写法不同，不经意间把constructor指向原本为Person的，改为了Object（一般来说，需要修正指向。Person.prototype.constructor = Person）。<br><img src="./img/console-output.jpg" alt="控制台输出对象"><br>相当于prototype下只有a,b两个值了。所以Person.prototype.age则是undefined。<br>但rowboat.age是原型上的，可以找到，所以是20。<br>所谓原型查找：查找的是构造器查找的原型，构造器是指向一个function(){},里面没有a和b.</p>
-<h3 id="参考资料："><a href="#参考资料：" class="headerlink" title="参考资料："></a>参考资料：</h3><p><a href="https://segmentfault.com/a/1190000006009690" target="_blank" rel="external">《JavaScript高级程序设计》——对象学习笔记</a></p>
-<h3 id="小结："><a href="#小结：" class="headerlink" title="小结："></a>小结：</h3><p>学习js面对对象编程相关知识,对了解js语言很有帮助。另外，有人说，能写组件，做组件开发说明达到了中级水平。</p>
+            <p>今天中秋节，放假三天。看zeptojs文档时，看到camelCase()转驼峰的方法，就想着也不难，就自己实现了一遍……<a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">function camelCase_1(str)&#123;</div><div class="line">    var i=1,</div><div class="line">        arr = str.split(&apos;-&apos;),</div><div class="line">        len = str.split(&apos;-&apos;).length;</div><div class="line">    var result = arr[0];</div><div class="line">    for(;i&lt;len;i++)&#123;</div><div class="line">        result += arr[i].substring(0,1).toUpperCase()+arr[i].substring(1);</div><div class="line">    &#125;</div><div class="line">    return result;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>再看下jquery实现方案：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">//str.replace(/^-ms-/,&apos;ms-&apos;)是有IE下有，-ms-前缀的，比如转换成msTransform，而其他转换成首字母大写，如：WebkitTransform</div><div class="line">function camelCase_2(str)&#123;</div><div class="line">    return str.replace(/^-ms-/,&apos;ms-&apos;).replace(/-([\da-z])/gi,function(all,letter)&#123;</div><div class="line">        return letter.toUpperCase();</div><div class="line">    &#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>再看zeptojs实现方案：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">//zepto.js实现方式：没处理-ms-，兼容性IE10+，但依旧有很多IE10依旧要加-ms-前缀的css3属性。为啥zeptojs没实现呢，难道还没碰到这个bug？</div><div class="line">//并且，空字符串写toUpperCase()依旧是空字符串。所以不需要写三目运算。</div><div class="line">function camelCase_3(str)&#123; </div><div class="line">    return str.replace(/-+(.)?/g, function(match, chr)&#123; return chr ? chr.toUpperCase() : &apos;&apos; &#125;)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>测试：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">var webkitstr = &apos;-webkit-transfrom&apos;;</div><div class="line">var msstr = &apos;-ms-transfrom&apos;;</div><div class="line">console.log(camelCase_1(webkitstr));//WebkitTransfrom</div><div class="line">console.log(camelCase_1(msstr));    //MsTransfrom</div><div class="line">console.log(camelCase_2(webkitstr));  //WebkitTransfrom</div><div class="line">console.log(camelCase_2(msstr));    //msTransfrom</div><div class="line">console.log(camelCase_3(webkitstr));//WebkitTransfrom</div><div class="line">console.log(camelCase_3(msstr));    //MsTransfrom</div></pre></td></tr></table></figure></p>
+<p>看到这里，其实很想给zepto提pull request的。但还是没有提。</p>
+<p>小结：分析jquery/zeptojs源码，发现能学到很多。</p>
 
 
             
@@ -231,7 +230,7 @@
             <blockquote>
                 <p>
                 本文地址：
-                <a href="https://lxchuan12.github.io/2016/08/30/20160830-js-oop-prototype-constructor/" target="_blank" rel="external">https://lxchuan12.github.io/2016/08/30/20160830-js-oop-prototype-constructor/</a>
+                <a href="https://lxchuan12.github.io/2016/09/15/20160915-camelCase/" target="_blank" rel="external">https://lxchuan12.github.io/2016/09/15/20160915-camelCase/</a>
                 </p>
                 <footer><cite><a href="https://lxchuan12.github.io">@轩辕Rowboat的博客</a></cite></footer>
             </blockquote>
@@ -239,19 +238,12 @@
             
 <nav class="post-nav">
   
-    <div class="waves-block waves-effect prev fl">
-      <a href="/2016/09/07/20160907-How-do-I-set-foot-on-the-front-end-of-the-road/" id="post-prev" class="post-nav-link">
-        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">我是如何踏上前端这条路的</h4>
-      </a>
-    </div>
-  
 
   
     <div class="waves-block waves-effect next fr">
-      <a href="/2016/08/29/20160829-Sass-basic-characteristics-of-computing/" id="post-next" class="post-nav-link">
+      <a href="/2016/09/12/20160912-window.location/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">sass基本特性-运算</h4>
+        <h4 class="title">window.location-浏览器定位和导航</h4>
       </a>
     </div>
   
@@ -262,7 +254,7 @@
             
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="20160830-js-oop-prototype-constructor" data-title="由JavaScript一道面向对象题引发的思考" data-url="https://lxchuan12.github.io/2016/08/30/20160830-js-oop-prototype-constructor/index.html"></div>
+	<div class="ds-thread" data-thread-key="20160915-camelCase" data-title="camelCase()转驼峰方法实现" data-url="https://lxchuan12.github.io/2016/09/15/20160915-camelCase/index.html"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
@@ -293,10 +285,10 @@
 
 <script>
 var BLOG_SHARE = {
-    title: "由JavaScript一道面向对象题引发的思考",
+    title: "camelCase()转驼峰方法实现",
     pic: "/img/logo.jpg",
     summary: document.getElementsByName('summary')[0].content,
-    url: "https://lxchuan12.github.io/2016/08/30/20160830-js-oop-prototype-constructor/index.html"
+    url: "https://lxchuan12.github.io/2016/09/15/20160915-camelCase/index.html"
 };
 </script>
 <div class="global-share" id="global-share">

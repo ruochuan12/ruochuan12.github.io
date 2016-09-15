@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://lxchuan12.github.io/"/>
-  <updated>2016-09-12T15:33:32.117Z</updated>
+  <updated>2016-09-15T10:28:03.036Z</updated>
   <id>https://lxchuan12.github.io/</id>
   
   <author>
@@ -14,6 +14,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>camelCase()转驼峰方法实现</title>
+    <link href="https://lxchuan12.github.io/2016/09/15/20160915-camelCase/"/>
+    <id>https://lxchuan12.github.io/2016/09/15/20160915-camelCase/</id>
+    <published>2016-09-15T09:30:32.000Z</published>
+    <updated>2016-09-15T10:28:03.036Z</updated>
+    
+    <content type="html"><![CDATA[<p>今天中秋节，放假三天。看zeptojs文档时，看到camelCase()转驼峰的方法，就想着也不难，就自己实现了一遍……<a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">function camelCase_1(str)&#123;</div><div class="line">    var i=1,</div><div class="line">        arr = str.split(&apos;-&apos;),</div><div class="line">        len = str.split(&apos;-&apos;).length;</div><div class="line">    var result = arr[0];</div><div class="line">    for(;i&lt;len;i++)&#123;</div><div class="line">        result += arr[i].substring(0,1).toUpperCase()+arr[i].substring(1);</div><div class="line">    &#125;</div><div class="line">    return result;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>再看下jquery实现方案：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">//str.replace(/^-ms-/,&apos;ms-&apos;)是有IE下有，-ms-前缀的，比如转换成msTransform，而其他转换成首字母大写，如：WebkitTransform</div><div class="line">function camelCase_2(str)&#123;</div><div class="line">    return str.replace(/^-ms-/,&apos;ms-&apos;).replace(/-([\da-z])/gi,function(all,letter)&#123;</div><div class="line">        return letter.toUpperCase();</div><div class="line">    &#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>再看zeptojs实现方案：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">//zepto.js实现方式：没处理-ms-，兼容性IE10+，但依旧有很多IE10依旧要加-ms-前缀的css3属性。为啥zeptojs没实现呢，难道还没碰到这个bug？</div><div class="line">//并且，空字符串写toUpperCase()依旧是空字符串。所以不需要写三目运算。</div><div class="line">function camelCase_3(str)&#123; </div><div class="line">    return str.replace(/-+(.)?/g, function(match, chr)&#123; return chr ? chr.toUpperCase() : &apos;&apos; &#125;)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>测试：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">var webkitstr = &apos;-webkit-transfrom&apos;;</div><div class="line">var msstr = &apos;-ms-transfrom&apos;;</div><div class="line">console.log(camelCase_1(webkitstr));//WebkitTransfrom</div><div class="line">console.log(camelCase_1(msstr));    //MsTransfrom</div><div class="line">console.log(camelCase_2(webkitstr));  //WebkitTransfrom</div><div class="line">console.log(camelCase_2(msstr));    //msTransfrom</div><div class="line">console.log(camelCase_3(webkitstr));//WebkitTransfrom</div><div class="line">console.log(camelCase_3(msstr));    //MsTransfrom</div></pre></td></tr></table></figure></p>
+<p>看到这里，其实很想给zepto提pull request的。但还是没有提。</p>
+<p>小结：分析jquery/zeptojs源码，发现能学到很多。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;今天中秋节，放假三天。看zeptojs文档时，看到camelCase()转驼峰的方法，就想着也不难，就自己实现了一遍……
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="https://lxchuan12.github.io/categories/JavaScript/"/>
+    
+    
+      <category term="JavaScript" scheme="https://lxchuan12.github.io/tags/JavaScript/"/>
+    
+      <category term="jquery" scheme="https://lxchuan12.github.io/tags/jquery/"/>
+    
+      <category term="zepto" scheme="https://lxchuan12.github.io/tags/zepto/"/>
+    
+  </entry>
   
   <entry>
     <title>window.location-浏览器定位和导航</title>
@@ -1047,32 +1079,6 @@ a[data-info~=&quot;image&quot;] {
       <category term="前端开发" scheme="https://lxchuan12.github.io/tags/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
     
       <category term="兼容性" scheme="https://lxchuan12.github.io/tags/%E5%85%BC%E5%AE%B9%E6%80%A7/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>搭建hexo博客，记录前端开发</title>
-    <link href="https://lxchuan12.github.io/2016/08/06/20160806-hexo/"/>
-    <id>https://lxchuan12.github.io/2016/08/06/20160806-hexo/</id>
-    <published>2016-08-06T08:40:38.000Z</published>
-    <updated>2016-08-20T15:51:54.470Z</updated>
-    
-    <content type="html"><![CDATA[<p>虽然有在简书上使用markdown写法发布一些文章，但不是前端相关的，主要是一些电脑技巧，PPT，读书笔记等。早就有想着搭建自己的博客，记录在前端开发的路上学到的知识……<a id="more"></a>有人说，写博客，不要太在乎有多少阅读量。重要的是，写博客是自己对一些知识的理解，并且能写出来，这本身就是一种整理和成长。其实有记录自己前端开发所学知识，不过是保存在为知笔记上。现在看来，也可以写博客分享出来。</p>
-<p></p><p>总之，慢慢坚持写博客。</p><p></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;虽然有在简书上使用markdown写法发布一些文章，但不是前端相关的，主要是一些电脑技巧，PPT，读书笔记等。早就有想着搭建自己的博客，记录在前端开发的路上学到的知识……
-    
-    </summary>
-    
-      <category term="前端开发" scheme="https://lxchuan12.github.io/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
-    
-    
-      <category term="hexo" scheme="https://lxchuan12.github.io/tags/hexo/"/>
-    
-      <category term="F2E" scheme="https://lxchuan12.github.io/tags/F2E/"/>
     
   </entry>
   
