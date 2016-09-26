@@ -200,7 +200,7 @@
     <link href="https://lxchuan12.github.io/2016/09/07/20160907-How-do-I-set-foot-on-the-front-end-of-the-road/"/>
     <id>https://lxchuan12.github.io/2016/09/07/20160907-How-do-I-set-foot-on-the-front-end-of-the-road/</id>
     <published>2016-09-07T13:48:12.000Z</published>
-    <updated>2016-09-16T15:57:02.690Z</updated>
+    <updated>2016-09-26T15:05:25.735Z</updated>
     
     <content type="html"><![CDATA[<p>感觉最近<strong>我是如何XXX的</strong>这类标题挺火的。<br>杭州举办G20峰会，9月1日~7日，放假7天，带了本《ES6 标准入门》回家。在火车上看了几集《微微一笑很倾城》，让我回忆起大学生活。就想着下次返杭的时候可以在火车上，写篇文章记录下，自己的前端学习之路。<a id="more"></a><br><strong>1、刚好可以对现在大四迷茫的学弟学妹们，有些指引</strong>。<br><strong>2、还可以借此回忆下大学生活</strong>。<br><strong>3、锻炼自己写长文的逻辑能力</strong>。<br><strong>当然，学习是座大山，人们沿着不同的路登山，分享着自己看到的风景，别人不一定看得到你看到的风景，体会得了你的心情。</strong></p>
 <h3 id="接触前端"><a href="#接触前端" class="headerlink" title="接触前端"></a>接触前端</h3><p>2012年，那年大一，只记得上学期参加了四个社团，参加社团的各种活动，比较忙，另外自己收集一些电子书放到我那一点都不智能的手机上看。下学期，我所在的社团计算机协会（后文简称计协），当时教网页制作（嗯，那时不叫前端开发），当然我报名去参加了。比我们大一级的学长用着Dreamweaver软件 给我们教学，超链接，图片，音乐，视频，FLASH等。总之感觉很有趣。也要我们做出一些作品，交作业。但那时我并没有电脑。所以就没做。</p>
@@ -212,7 +212,7 @@
 <h3 id="大四最后一个学期"><a href="#大四最后一个学期" class="headerlink" title="大四最后一个学期"></a>大四最后一个学期</h3><p>开学伊始，我和同学A，B都没去公司实习，重新来到了课题组。刚去不久，老师N就推荐我去南昌，算是实习，说有搞PHP的愿意带一个人一起做项目。后来委婉的拒绝了。因为已经不想走PHP开发路线，想走前端开发路线。但本学期，老师交给我的任务依旧是PHP开发的。第二课堂管理系统（PHP+MySql，CI框架）。因为不是很赶，我就前端微专业，百度前端技术学院任务，（妙味课堂的vip视频）三线并行。4月初，完成了<a href="http://lxchuan12.github.io/Netease-Web/">前端微专业大作业</a>，获得优秀学员证书。在学校，上班是996（早上9点上班，晚上9点下班，中午休息1-2小时）。周日老师不在办公室，而我一般在（同学A，B不在）。因为我太Low了，所以只好多花点时间学习。有段时间，都是24点前提交完代码，才去刷牙洗脸睡觉。晚上躺着睡前还在<strong>牛客网</strong>刷题，或者看视频，或者看前端开发类电子书。</p>
 <h3 id="面试，入职杭州一家移动互联网公司"><a href="#面试，入职杭州一家移动互联网公司" class="headerlink" title="面试，入职杭州一家移动互联网公司"></a>面试，入职杭州一家移动互联网公司</h3><p>4月底投简历，5月劳动节一过，我和同学A就来杭州面试。我求职还算顺利，面试了3天，共9家。有的给了offer，就选了一家我认为比较合适的。6月1日入职杭州一家移动互联网公司，公司使用花名，我自己挑选了一个，叫<strong>轩辕</strong>。于是把网上各种昵称，改成了<strong>轩辕Rowboat</strong>。</p>
 <blockquote>
-<p><strong>轩辕Rowboat</strong>由来：轩辕(公司花名)。Rowboat，英文名，拆解：Row(音：罗)boat(意：小船(音：小川))。</p>
+<p><strong>轩辕Rowboat</strong>由来：轩辕(公司花名)。Rowboat，英文名，拆解：Row(音：罗)boat(意：小船(音：小川))。其他还挺喜欢这花名的，轩辕（剑），剑未佩妥，出门便是江湖。</p>
 </blockquote>
 <p>公司使用的技术主要有：HTML5，模板语言（velocity，thymeleaf,handlebarsjs，underscorejs工具库等），CSS3，Less，Sass，JS，JQuery，zeptojs，bootstrap，angularjs，vuejs，git，gulp，webpack，ES6等（React，nodejs暂时没用到）。<br>不知不觉就写了挺多字，感觉一路走来，<strong>在网易云课堂购买了付费课程（office，前端微专业等）两千左右（已赚回），当没有时间，有钱时，可以选择付费学习，投资学习，回报很大</strong>。<strong>技术提升需要一定的过程，脚踏实地走好每一步，先定好一个个小目标，然后去一一实现</strong>。<strong>看过很多前端大神成长路线，也是从刚开始啥都不会，一步一步变成前端大神的。</strong></p>
 ]]></content>
