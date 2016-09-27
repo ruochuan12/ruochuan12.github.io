@@ -56,13 +56,14 @@
     <link href="https://lxchuan12.github.io/2016/09/20/20160920-gitflow%20workflow/"/>
     <id>https://lxchuan12.github.io/2016/09/20/20160920-gitflow workflow/</id>
     <published>2016-09-20T09:30:32.000Z</published>
-    <updated>2016-09-21T14:15:39.694Z</updated>
+    <updated>2016-09-27T15:06:56.001Z</updated>
     
     <content type="html"><![CDATA[<p>记得今年6月份参加了一次<code>coding</code>技术小馆杭州站的活动，讲的就是<code>git</code>和<code>gitflow</code>相关的。讲师当场也写代码。那是第一次<code>gitflow</code>工作流。那时在想我什么时候也能在舞台上讲开发技术……<a id="more"></a><br>今天就碰到一个关于<code>gitflow</code>工作流的问题。<br>使用<code>sourceTree</code>软件时，建立工作流。一般来说，是切换到<code>master</code>上。再建立工作流。我不小心，直接在<code>develop</code>分支上建了工作流。切换到<code>master</code>分支上。再打<code>hotfix</code>(修复补丁)时，发现无法成功。</p>
 <p>谷歌搜索发现解决方案：</p>
 <blockquote>
 <p>1、找到项目当前文件夹中的<code>.git/config</code>，把配置文件中的<code>gitflow</code>*相关的全部删除。<br>2、关闭再重新打开<code>SourceTree</code>。<br>3、重新在<code>master</code>上建立工作流，再打<code>hotfix</code>。<br>发现成功了。</p>
 </blockquote>
+<p>参考链接：<a href="http://www.ruanyifeng.com/blog/2015/12/git-workflow.html" target="_blank" rel="external">Git 工作流程</a><br><a href="http://blog.csdn.net/wyc_cs/article/details/51458990" target="_blank" rel="external">Git Flow 在团队中的最佳实践 – SourceTree的使用</a><br><a href="https://blog.sourcetreeapp.com/2012/08/01/smart-branching-with-sourcetree-and-git-flow/" target="_blank" rel="external">Smart branching with SourceTree and Git-flow</a></p>
 ]]></content>
     
     <summary type="html">
