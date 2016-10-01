@@ -2589,7 +2589,7 @@ a.waves-effect .waves-ripple {
   background-size: 100% 100%;
 }
 #menu .brand {
-  padding: 40px 20px 2em;
+  padding: 40px 40px 2em;
   background: rgba(69, 90, 100, 0.5);
 }
 #menu .avatar {
@@ -2626,12 +2626,12 @@ a.waves-effect .waves-ripple {
   line-height: 44px;
 }
 #menu .nav li {
-  padding: 0 20px;
+  padding: 0 40px;
 }
 #menu .nav li .icon {
   position: absolute;
   top: 0;
-  left: 20px;
+  left: 40px;
   line-height: inherit;
 }
 #menu .nav li:hover,
@@ -2646,7 +2646,7 @@ a.waves-effect .waves-ripple {
 }
 #menu .nav a {
   display: block;
-  padding-left: 48px;
+  padding-left: 96px;
   height: 44px;
   line-height: 44px;
   font-weight: 500;
@@ -2658,12 +2658,12 @@ a.waves-effect .waves-ripple {
   height: 115px;
   font-size: 12px;
   font-family: Consolas, Monaco, courier, monospace;
-  padding: 10px 20px;
+  padding: 10px 40px;
   border-top: 1px solid #dadada;
 }
 #menu .footer .rss {
   position: absolute;
-  right: 20px;
+  right: 40px;
   top: 17px;
   color: #E64A19;
 }
