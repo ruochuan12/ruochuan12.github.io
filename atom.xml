@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://lxchuan12.github.io/"/>
-  <updated>2016-09-28T16:00:47.904Z</updated>
+  <updated>2016-10-09T13:52:20.365Z</updated>
   <id>https://lxchuan12.github.io/</id>
   
   <author>
@@ -14,6 +14,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>函数的length属性</title>
+    <link href="https://lxchuan12.github.io/2016/10/09/20161009-function-length/"/>
+    <id>https://lxchuan12.github.io/2016/10/09/20161009-function-length/</id>
+    <published>2016-10-09T13:30:12.000Z</published>
+    <updated>2016-10-09T13:52:20.365Z</updated>
+    
+    <content type="html"><![CDATA[<p>看<a href="http://es6.ruanyifeng.com/#docs/function#函数的length属性" target="_blank" rel="external">《ES6标准入门》中提到函数的length属性</a>，看到有函数的length属性这一说法，其实之前一直都不知道有。并且不知道这个length有何应用。查阅了<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Function/length" target="_blank" rel="external">MDN Function.length</a>是这样描述的：</p>
+<blockquote>
+<p>length 是函数对象的一个属性值，指明该函数期望多少个参数，意即形参的个数。数量不包括剩余参数。相比之下，arguments.length 是函数被调用时实际传参的个数。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">function test(a,b,c) &#123;&#125;</div><div class="line">test.length // 3</div><div class="line"></div><div class="line">function test(a,b,c,d) &#123;&#125;</div><div class="line">test.length // 4</div></pre></td></tr></table></figure></p>
+</blockquote>
+<p>看起来很简单，但是也有特殊的，如果函数内部是通过arguments 调用参数，而没有实际定义参数的话，length只会的得到0。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">function test() &#123; console.log( arguments );&#125;</div><div class="line">test.length // 0</div></pre></td></tr></table></figure></p>
+<p>这个函数确实可以传入参数，而且内部也调用了参数，但是length却无法得知传入的参数的个数。<br>只能在函数执行的时候通过arguments.length得到实参个数。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">function test() &#123; console.log( arguments.length );&#125;</div><div class="line">test(1,2,3); // 输出 3</div><div class="line">test(1,2,3,4); // 输出 4</div></pre></td></tr></table></figure></p>
+<p>所以函数的length属性只能得到他的形参个数，而无法得知实参个数。</p>
+<p>参考链接：<a href="http://www.cnblogs.com/52cik/p/js-function-length.html?utm_source=tuicool&amp;utm_medium=referral" target="_blank" rel="external">js小记 function 的 length 属性</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;看&lt;a href=&quot;http://es6.ruanyifeng.com/#docs/function#函数的length属性&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;《ES6标准入门》中提到函数的length属性&lt;/a&gt;，看到有函数的length属性
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="https://lxchuan12.github.io/categories/JavaScript/"/>
+    
+    
+      <category term="js" scheme="https://lxchuan12.github.io/tags/js/"/>
+    
+  </entry>
   
   <entry>
     <title>正则表达式知识点</title>
@@ -354,9 +384,9 @@
       <category term="JavaScript" scheme="https://lxchuan12.github.io/categories/JavaScript/"/>
     
     
-      <category term="js" scheme="https://lxchuan12.github.io/tags/js/"/>
-    
       <category term="vuejs" scheme="https://lxchuan12.github.io/tags/vuejs/"/>
+    
+      <category term="js" scheme="https://lxchuan12.github.io/tags/js/"/>
     
   </entry>
   
@@ -616,38 +646,6 @@
     
     
       <category term="css" scheme="https://lxchuan12.github.io/tags/css/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>line-height学习笔记</title>
-    <link href="https://lxchuan12.github.io/2016/08/08/20160808-line-height/"/>
-    <id>https://lxchuan12.github.io/2016/08/08/20160808-line-height/</id>
-    <published>2016-08-08T15:28:23.000Z</published>
-    <updated>2016-08-09T15:09:26.569Z</updated>
-    
-    <content type="html"><![CDATA[<p>line-height<br>看似简单，其实还是有挺多不知道的奥妙。比如line-height:300%,line-height:3,有什么不同……<a id="more"></a></p>
-<h2 id="形式化语法"><a href="#形式化语法" class="headerlink" title="形式化语法"></a>形式化语法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">normal | &lt;number&gt; | &lt;length&gt; | &lt;percentage&gt;</div></pre></td></tr></table></figure>
-<h2 id="取值"><a href="#取值" class="headerlink" title="取值"></a>取值</h2><h3 id="normal"><a href="#normal" class="headerlink" title="normal"></a>normal</h3><p>取决于用户代理。桌面浏览器（包括火狐浏览器）使用默认值，约为1.2，这取决于元素的 font-family。</p>
-<h3 id=""><a href="#" class="headerlink" title=""></a><number></number></h3><p>所用的值是无单位数值<number>乘以元素的 font size。计算出来的值与使用数值指定的一样。大多数情况下，使用这种方法设置line-height是首选方法，在继承情况下不会有异常的值。    </number></p>
-<h3 id="-1"><a href="#-1" class="headerlink" title=""></a><length></length></h3><p>指定<length>  用于计算 line box 的高度。查看<length> 获取可能的单位。</length></length></p>
-<h3 id="-2"><a href="#-2" class="headerlink" title=""></a><percentage></percentage></h3><p>与元素自身的字体大小有关。计算出的值是给定的百分比值乘以元素计算出的字体大小。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">&lt;meta charset=&quot;utf-8&quot;/&gt;</div><div class="line">&lt;title&gt;line-height&lt;/title&gt;</div><div class="line">&lt;style type=&quot;text/css&quot;&gt;</div><div class="line">p&#123;margin:10px;background:#ddd;&#125;</div><div class="line">p+p&#123;margin-left:40px;&#125;</div><div class="line"></div><div class="line">body&#123;font-size:30px;&#125;</div><div class="line"></div><div class="line">.m-demo&#123;line-height:40px;&#125;</div><div class="line">.m-demo p&#123;background:#ddd;&#125;</div><div class="line">.m-demo .p1&#123;line-height:3em;&#125;</div><div class="line">.m-demo .p2&#123;line-height:300%;&#125;</div><div class="line">.m-demo .p3&#123;line-height:3;&#125;</div><div class="line"></div><div class="line">.m-demo2&#123;line-height:300%;&#125;</div><div class="line">.m-demo2 p&#123;background:#fbb;&#125;</div><div class="line">.m-demo2 .p1&#123;font-size:16px;&#125;</div><div class="line"></div><div class="line">.m-demo3&#123;line-height:3;&#125;</div><div class="line">.m-demo3 p&#123;background:#0dd;&#125;</div><div class="line">.m-demo3 .p1&#123;font-size:16px;&#125;</div><div class="line">&lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">&lt;div class=&quot;m-demo&quot;&gt;</div><div class="line">    &lt;p&gt;行高：line-height:40px;&lt;/p&gt;</div><div class="line">    &lt;p class=&quot;p1&quot;&gt;行高：line-height:3em;&lt;/p&gt;</div><div class="line">    &lt;p class=&quot;p2&quot;&gt;行高：line-height:300%;&lt;/p&gt;</div><div class="line">    &lt;p class=&quot;p3&quot;&gt;行高：line-height:3;&lt;/p&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;div class=&quot;m-demo2&quot;&gt;</div><div class="line">    &lt;p&gt;行高：line-height:300%;&lt;/p&gt;</div><div class="line">    &lt;p class=&quot;p1&quot;&gt;字体大小：font-size:16px;&lt;/p&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;div class=&quot;m-demo3&quot;&gt;</div><div class="line">    &lt;p&gt;行高：line-height:3;&lt;/p&gt;</div><div class="line">    &lt;p class=&quot;p1&quot;&gt;字体大小：font-size:16px;&lt;/p&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure></p>
-<h2 id="自己的理解："><a href="#自己的理解：" class="headerlink" title="自己的理解："></a>自己的理解：</h2><p>1、normal由浏览器决定，一般是1.1到1.2之间，1.14左右。</p>
-<p>2、最近遇到，安卓浏览器显示placeholder 垂直不居中，去掉line-height即可。或者line-height:normal。</p>
-<p>3、font-size:30px;line-height:3em;(90px),<br>line-height:300px;(90px),<br>line-height:3;(90px)<br>百分比和数字的区别：number是直接继承。（推荐使用无单位数值给line-height赋值）<br>比如：m-demo2行高是90px;m-demo3行高是48px;</p>
-<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/line-height" target="_blank" rel="external">参见：MDN line-height</a><br><a href="css.doyoe.com">参见：CSS3在线手册</a><br><a href="http://www.ayqy.net/doc/css2-1/visudet.html#propdef-line-height" target="_blank" rel="external">参见：css2.1规范</a></p>
-<h3 id="感悟，多查规范，看MDN。善用google搜索。"><a href="#感悟，多查规范，看MDN。善用google搜索。" class="headerlink" title="感悟，多查规范，看MDN。善用google搜索。"></a>感悟，多查规范，看MDN。善用google搜索。</h3>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;line-height&lt;br&gt;看似简单，其实还是有挺多不知道的奥妙。比如line-height:300%,line-height:3,有什么不同……
-    
-    </summary>
-    
-      <category term="CSS" scheme="https://lxchuan12.github.io/categories/CSS/"/>
-    
-    
-      <category term="CSS" scheme="https://lxchuan12.github.io/tags/CSS/"/>
     
   </entry>
   
