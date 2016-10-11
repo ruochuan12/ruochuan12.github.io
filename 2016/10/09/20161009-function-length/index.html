@@ -12,20 +12,26 @@
   <meta name="keywords" content="js">
   <meta name="description" content="看《ES6标准入门》中提到函数的length属性，看到有函数的length属性这一说法，其实之前一直都不知道有。并且不知道这个length有何应用。查阅了MDN Function.length是这样描述的：
 
-length 是函数对象的一个属性值，指明该函数期望多少个参数，意即形参的个数。数量不包括剩余参数。相比之下，arguments.length 是函数被调用时实际传参的个数。12345fun">
+length 是函数对象的一个属性值，指明该函数期望多少个参数，意即形参的个数。数量不包括剩余参数。相比之下，arguments.length 是函数被调用时实际传参的个数。
+
+12345f">
 <meta property="og:type" content="article">
 <meta property="og:title" content="函数的length属性">
 <meta property="og:url" content="https://lxchuan12.github.io/2016/10/09/20161009-function-length/index.html">
 <meta property="og:site_name" content="轩辕Rowboat的博客">
 <meta property="og:description" content="看《ES6标准入门》中提到函数的length属性，看到有函数的length属性这一说法，其实之前一直都不知道有。并且不知道这个length有何应用。查阅了MDN Function.length是这样描述的：
 
-length 是函数对象的一个属性值，指明该函数期望多少个参数，意即形参的个数。数量不包括剩余参数。相比之下，arguments.length 是函数被调用时实际传参的个数。12345fun">
-<meta property="og:updated_time" content="2016-10-09T13:52:20.365Z">
+length 是函数对象的一个属性值，指明该函数期望多少个参数，意即形参的个数。数量不包括剩余参数。相比之下，arguments.length 是函数被调用时实际传参的个数。
+
+12345f">
+<meta property="og:updated_time" content="2016-10-11T14:35:37.354Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="函数的length属性">
 <meta name="twitter:description" content="看《ES6标准入门》中提到函数的length属性，看到有函数的length属性这一说法，其实之前一直都不知道有。并且不知道这个length有何应用。查阅了MDN Function.length是这样描述的：
 
-length 是函数对象的一个属性值，指明该函数期望多少个参数，意即形参的个数。数量不包括剩余参数。相比之下，arguments.length 是函数被调用时实际传参的个数。12345fun">
+length 是函数对象的一个属性值，指明该函数期望多少个参数，意即形参的个数。数量不包括剩余参数。相比之下，arguments.length 是函数被调用时实际传参的个数。
+
+12345f">
   
     <link rel="alternative" href="/atom.xml" title="轩辕Rowboat的博客" type="application/atom+xml">
   
@@ -221,8 +227,9 @@ length 是函数对象的一个属性值，指明该函数期望多少个参数�
             <div class="post-content" id="post-content" itemprop="postContent">
             <p>看<a href="http://es6.ruanyifeng.com/#docs/function#函数的length属性" target="_blank" rel="external">《ES6标准入门》中提到函数的length属性</a>，看到有函数的length属性这一说法，其实之前一直都不知道有。并且不知道这个length有何应用。查阅了<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Function/length" target="_blank" rel="external">MDN Function.length</a>是这样描述的：</p>
 <blockquote>
-<p>length 是函数对象的一个属性值，指明该函数期望多少个参数，意即形参的个数。数量不包括剩余参数。相比之下，arguments.length 是函数被调用时实际传参的个数。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">function test(a,b,c) &#123;&#125;</div><div class="line">test.length // 3</div><div class="line"></div><div class="line">function test(a,b,c,d) &#123;&#125;</div><div class="line">test.length // 4</div></pre></td></tr></table></figure></p>
+<p>length 是函数对象的一个属性值，指明该函数期望多少个参数，意即形参的个数。数量不包括剩余参数。相比之下，arguments.length 是函数被调用时实际传参的个数。</p>
 </blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">function test(a,b,c) &#123;&#125;</div><div class="line">test.length // 3</div><div class="line"></div><div class="line">function test(a,b,c,d) &#123;&#125;</div><div class="line">test.length // 4</div></pre></td></tr></table></figure>
 <p>看起来很简单，但是也有特殊的，如果函数内部是通过arguments 调用参数，而没有实际定义参数的话，length只会的得到0。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">function test() &#123; console.log( arguments );&#125;</div><div class="line">test.length // 0</div></pre></td></tr></table></figure></p>
 <p>这个函数确实可以传入参数，而且内部也调用了参数，但是length却无法得知传入的参数的个数。<br>只能在函数执行的时候通过arguments.length得到实参个数。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">function test() &#123; console.log( arguments.length );&#125;</div><div class="line">test(1,2,3); // 输出 3</div><div class="line">test(1,2,3,4); // 输出 4</div></pre></td></tr></table></figure></p>
 <p>所以函数的length属性只能得到他的形参个数，而无法得知实参个数。</p>
