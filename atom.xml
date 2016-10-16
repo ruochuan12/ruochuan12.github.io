@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://lxchuan12.github.io/"/>
-  <updated>2016-10-11T14:35:37.354Z</updated>
+  <updated>2016-10-16T15:15:27.329Z</updated>
   <id>https://lxchuan12.github.io/</id>
   
   <author>
@@ -14,6 +14,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>(转)背景图片固定不随内容滚动而滚动</title>
+    <link href="https://lxchuan12.github.io/2016/10/16/20161016-background-attachment/"/>
+    <id>https://lxchuan12.github.io/2016/10/16/20161016-background-attachment/</id>
+    <published>2016-10-16T14:48:38.000Z</published>
+    <updated>2016-10-16T15:15:27.329Z</updated>
+    
+    <content type="html"><![CDATA[<p>有些网站希望将背景图片固定不随内容滚动而滚动，太原网站建设公司归纳用CSS代码写主要有以下三种写法……<a id="more"></a></p>
+<h3 id="第一种：背景附着属性-background-attachment-，代码如下："><a href="#第一种：背景附着属性-background-attachment-，代码如下：" class="headerlink" title="第一种：背景附着属性(background-attachment)，代码如下："></a>第一种：背景附着属性(background-attachment)，代码如下：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">&lt;title&gt;背景附着属性 background-attachment&lt;/title&gt;</div><div class="line">&lt;style type=&quot;text/css&quot;&gt;</div><div class="line">body &#123;background-image:url(../images/css_tutorials/background.jpg); background-repeat:no-repeat; background-attachment:fixed&#125;</div><div class="line">&lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line"></div><div class="line">&lt;body&gt;</div><div class="line">&lt;p&gt;这个HTML使用了CSS的background-attachment属性，将背景图片固定，不随内容滚动而滚动。&lt;p&gt;</div><div class="line">&lt;p&gt;背景附着(background-attachment)属性有两个值。一个是scroll，表示随内容滚动而动；一个是fixed，表示固定不动，不受内容滚动影响。缺省值是scroll。&lt;/p&gt;</div><div class="line">&lt;p&gt;background-attachment要和background-image一起用。&lt;/p&gt;</div><div class="line"></div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+<h3 id="第二种：背景位置属性-background-position-，代码如下："><a href="#第二种：背景位置属性-background-position-，代码如下：" class="headerlink" title="第二种：背景位置属性(background-position)，代码如下："></a>第二种：背景位置属性(background-position)，代码如下：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">&lt;title&gt;背景位置属性 background-position&lt;/title&gt;</div><div class="line">&lt;style type=&quot;text/css&quot;&gt;</div><div class="line">body &#123;background-image:url(../images/css_tutorials/background.jpg);background-repeat:no-repeat; background-position:20px 60px&#125;</div><div class="line">&lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">&lt;p&gt;这个HTML使用了CSS的background-position属性。这个属性和background-image属性连在一起使用，决定了背景图片的最初位置。&lt;/p&gt;</div><div class="line">&lt;p&gt;上面的代码表示背景图片的初始位置距离网页最左面20px，距离网页最上面60px。&lt;/p&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+<h3 id="第三种：背景属性-background-，代码如下："><a href="#第三种：背景属性-background-，代码如下：" class="headerlink" title="第三种：背景属性(background)，代码如下："></a>第三种：背景属性(background)，代码如下：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">&lt;title&gt;背景属性 background&lt;/title&gt;</div><div class="line">&lt;style type=&quot;text/css&quot;&gt;</div><div class="line">body &#123;background:#99FF00 url(../images/css_tutorials/background.jpg) no-repeat fixed 40px 100px&#125;</div><div class="line">&lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line"></div><div class="line">&lt;body&gt;</div><div class="line">&lt;p&gt;这个属性是设置背景相关属性的一种快捷的综合写法， 包括background-color, background-image, background-repeat, backgroundattachment, background-position。&lt;/p&gt;</div><div class="line">&lt;p&gt;这个HTML所用的背景属性表示，网页的背景颜色是翠绿色，背景图片是background.jpg图片，背景图片不重复显示，背景图片不随内容滚动而动，背景图片距离网页最左面40px，距离网页最上面100px。&lt;/p&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+<p><a href="http://www.1280.cc/article/1806.html" target="_blank" rel="external">原文：背景图片固定不随内容滚动而滚动</a><br>源自<a href="http://www.nowcoder.com/test/question/done?tid=5696897&amp;qid=44708" target="_blank" rel="external">今日头条2017前端工程师实习生笔试题</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">5、下面哪条声明能固定背景图片（）</div><div class="line">正确答案: A   你的答案: A (正确)</div><div class="line"></div><div class="line">background-attachment:fixed;</div><div class="line">background-attachment:scroll;</div><div class="line">background-origin: initial;</div><div class="line">background-clip: initial;</div></pre></td></tr></table></figure></p>
+<p>——————————————————————————<br><a href="http://blog.csdn.net/lai_xu/article/details/46954249" target="_blank" rel="external">置换元素与非置换元素</a><br>a) 置换元素：浏览器根据元素的标签和属性，来决定元素的具体显示内容。<br>b) 不可替换元素：(x)html 的大多数元素是不可替换元素，即其内容直接表现给用户端（如浏览器）。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">4、请选出所有的置换元素（）</div><div class="line">正确答案: A B C D   你的答案: A B C D (正确)</div><div class="line"></div><div class="line">A、img</div><div class="line">B、input</div><div class="line">C、textarea</div><div class="line">D、select</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;有些网站希望将背景图片固定不随内容滚动而滚动，太原网站建设公司归纳用CSS代码写主要有以下三种写法……
+    
+    </summary>
+    
+      <category term="CSS" scheme="https://lxchuan12.github.io/categories/CSS/"/>
+    
+    
+      <category term="CSS" scheme="https://lxchuan12.github.io/tags/CSS/"/>
+    
+  </entry>
   
   <entry>
     <title>函数的length属性</title>
@@ -618,30 +646,6 @@
     
     
       <category term="chrome" scheme="https://lxchuan12.github.io/tags/chrome/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>清除IE下input的默认叉</title>
-    <link href="https://lxchuan12.github.io/2016/08/10/20160810-ms-clear/"/>
-    <id>https://lxchuan12.github.io/2016/08/10/20160810-ms-clear/</id>
-    <published>2016-08-10T15:00:38.000Z</published>
-    <updated>2016-08-10T15:50:19.919Z</updated>
-    
-    <content type="html"><![CDATA[<p>IE10下的Input Text和谷歌下面的 input search 一旦输入内容，会在最右端出现一个叉号，点击后，内容就会自动清空，input password有小眼睛，点击显示密码。看似方便，其实有些场景并不需要，需要写代码清除掉……<a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">/*--清除谷歌浏览器下的 text 叉号*/</div><div class="line"></div><div class="line">input::-webkit-text-cancel-button&#123;</div><div class="line">    display: none;</div><div class="line">&#125; </div><div class="line">input[type=text]::-ms-clear&#123;</div><div class="line">    display: none;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">/*--清除IE下的 search 叉号*/</div><div class="line"></div><div class="line">/*当然如果想清除所有的input的话 ，只需把[type=search]去掉即可。*/</div><div class="line"></div><div class="line">input::-webkit-search-cancel-button&#123;</div><div class="line">    display: none;</div><div class="line">&#125; </div><div class="line"></div><div class="line">input[type=search]::-ms-clear&#123;</div><div class="line">    display: none;</div><div class="line">&#125;</div><div class="line"></div><div class="line">/* 小眼睛 */</div><div class="line">input[type=password]::-ms-reveal&#123;</div><div class="line">    display:none;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>待完善……</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;IE10下的Input Text和谷歌下面的 input search 一旦输入内容，会在最右端出现一个叉号，点击后，内容就会自动清空，input password有小眼睛，点击显示密码。看似方便，其实有些场景并不需要，需要写代码清除掉……
-    
-    </summary>
-    
-      <category term="css" scheme="https://lxchuan12.github.io/categories/css/"/>
-    
-    
-      <category term="css" scheme="https://lxchuan12.github.io/tags/css/"/>
     
   </entry>
   
