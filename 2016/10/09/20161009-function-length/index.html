@@ -10,32 +10,20 @@
   
   
   <meta name="keywords" content="js">
-  <meta name="description" content="看《ES6标准入门》中提到函数的length属性，看到有函数的length属性这一说法，其实之前一直都不知道有。并且不知道这个length有何应用。查阅了MDN Function.length是这样描述的：
-
-length 是函数对象的一个属性值，指明该函数期望多少个参数，意即形参的个数。数量不包括剩余参数。相比之下，arguments.length 是函数被调用时实际传参的个数。
-
-12345f">
+  <meta name="description" content="看《ES6标准入门》中提到函数的length属性，看到有函数的length属性这一说法，其实之前一直都不知道有。并且不知道这个length有何应用……">
 <meta property="og:type" content="article">
 <meta property="og:title" content="函数的length属性">
 <meta property="og:url" content="https://lxchuan12.github.io/2016/10/09/20161009-function-length/index.html">
 <meta property="og:site_name" content="轩辕Rowboat的博客">
-<meta property="og:description" content="看《ES6标准入门》中提到函数的length属性，看到有函数的length属性这一说法，其实之前一直都不知道有。并且不知道这个length有何应用。查阅了MDN Function.length是这样描述的：
-
-length 是函数对象的一个属性值，指明该函数期望多少个参数，意即形参的个数。数量不包括剩余参数。相比之下，arguments.length 是函数被调用时实际传参的个数。
-
-12345f">
-<meta property="og:updated_time" content="2016-10-11T14:35:37.354Z">
+<meta property="og:description" content="看《ES6标准入门》中提到函数的length属性，看到有函数的length属性这一说法，其实之前一直都不知道有。并且不知道这个length有何应用……">
+<meta property="og:updated_time" content="2016-10-17T12:50:41.889Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="函数的length属性">
-<meta name="twitter:description" content="看《ES6标准入门》中提到函数的length属性，看到有函数的length属性这一说法，其实之前一直都不知道有。并且不知道这个length有何应用。查阅了MDN Function.length是这样描述的：
-
-length 是函数对象的一个属性值，指明该函数期望多少个参数，意即形参的个数。数量不包括剩余参数。相比之下，arguments.length 是函数被调用时实际传参的个数。
-
-12345f">
+<meta name="twitter:description" content="看《ES6标准入门》中提到函数的length属性，看到有函数的length属性这一说法，其实之前一直都不知道有。并且不知道这个length有何应用……">
   
     <link rel="alternative" href="/atom.xml" title="轩辕Rowboat的博客" type="application/atom+xml">
   
-  <meta name="summary" content="轩辕Rowboat，某世界闻名的陶瓷大学2016届毕业生，目前在杭州从事前端开发工作，也是一枚PPT爱好者。常以轩辕Rowboat为名混迹于江湖。">
+  <meta name="summary" content="&lt;p&gt;看&lt;a href=&quot;http://es6.ruanyifeng.com/#docs/function#函数的length属性&quot;&gt;《ES6标准入门》中提到函数的length属性&lt;/a&gt;，看到有函数的length属性这一说法，其实之前一直都不知道有。并且不知道这个length有何应用……">
   <link rel="shortcut icon" href="/favicon.ico">
   <link rel="stylesheet" href="/css/style.css">
 </head>
@@ -75,16 +63,9 @@ length 是函数对象的一个属性值，指明该函数期望多少个参数�
           </li>
       
           <li class="waves-block waves-effect">
-            <a href="/tags"  >
-              <i class="icon icon-lg icon-tags"></i>
-              标签
-            </a>
-          </li>
-      
-          <li class="waves-block waves-effect">
-            <a href="https://github.com/lxchuan12" target="_blank" >
-              <i class="icon icon-lg icon-github"></i>
-              Github
+            <a href="http://www.jianshu.com/users/83129d433d72/latest_articles" target="_blank" >
+              <i class="icon icon-lg icon-book"></i>
+              简书
             </a>
           </li>
       
@@ -96,9 +77,9 @@ length 是函数对象的一个属性值，指明该函数期望多少个参数�
           </li>
       
           <li class="waves-block waves-effect">
-            <a href="http://www.jianshu.com/users/83129d433d72/latest_articles" target="_blank" >
-              <i class="icon icon-lg icon-book"></i>
-              简书
+            <a href="https://github.com/lxchuan12" target="_blank" >
+              <i class="icon icon-lg icon-github"></i>
+              Github
             </a>
           </li>
       
@@ -106,6 +87,13 @@ length 是函数对象的一个属性值，指明该函数期望多少个参数�
             <a href="https://lxchuan12.github.io/works/" target="_blank" >
               <i class="icon icon-lg icon-hand-o-right"></i>
               作品展示
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="https://lxchuan12.github.io/2016/09/07/20160907-How-do-I-set-foot-on-the-front-end-of-the-road/" target="_blank" >
+              <i class="icon icon-lg icon-user"></i>
+              关于我
             </a>
           </li>
       
@@ -225,7 +213,7 @@ length 是函数对象的一个属性值，指明该函数期望多少个参数�
         <div class="post-main">
 
             <div class="post-content" id="post-content" itemprop="postContent">
-            <p>看<a href="http://es6.ruanyifeng.com/#docs/function#函数的length属性" target="_blank" rel="external">《ES6标准入门》中提到函数的length属性</a>，看到有函数的length属性这一说法，其实之前一直都不知道有。并且不知道这个length有何应用。查阅了<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Function/length" target="_blank" rel="external">MDN Function.length</a>是这样描述的：</p>
+            <p>看<a href="http://es6.ruanyifeng.com/#docs/function#函数的length属性" target="_blank" rel="external">《ES6标准入门》中提到函数的length属性</a>，看到有函数的length属性这一说法，其实之前一直都不知道有。并且不知道这个length有何应用……<a id="more"></a>查阅了<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Function/length" target="_blank" rel="external">MDN Function.length</a>是这样描述的：</p>
 <blockquote>
 <p>length 是函数对象的一个属性值，指明该函数期望多少个参数，意即形参的个数。数量不包括剩余参数。相比之下，arguments.length 是函数被调用时实际传参的个数。</p>
 </blockquote>
