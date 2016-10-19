@@ -16,7 +16,7 @@
 <meta property="og:url" content="https://lxchuan12.github.io/2016/08/11/20160811-chrome-settings/index.html">
 <meta property="og:site_name" content="轩辕Rowboat的博客">
 <meta property="og:description" content="今天用vuejs,与后端联调,发现用localhost或者本机ip访问本地资源，和后端接口资源，没有数据，google发现是chrome的安全机制，不允许跨域……">
-<meta property="og:updated_time" content="2016-08-11T15:46:44.843Z">
+<meta property="og:updated_time" content="2016-10-19T15:29:34.907Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="chrome跨域设置">
 <meta name="twitter:description" content="今天用vuejs,与后端联调,发现用localhost或者本机ip访问本地资源，和后端接口资源，没有数据，google发现是chrome的安全机制，不允许跨域……">
@@ -215,7 +215,7 @@
             <div class="post-content" id="post-content" itemprop="postContent">
             <p>今天用vuejs,与后端联调,发现用localhost或者本机ip访问本地资源，和后端接口资源，没有数据，google发现是chrome的安全机制，不允许跨域……<a id="more"></a></p>
 <p>解决方案：<br>浏览器版本：chrome 52。<br>1、在桌面找到chrome浏览器快捷图标并点击鼠标右键的属性一栏。(或者任务栏选中chrome右击——google chrome右击属性)</p>
-<p>2、在属性页面中的目标输入框里加上   –args –disable-web-security.–args可省略。</p>
+<p>2、在属性页面中的目标输入框里加上   –args –disable-web-security.–args可省略。<br>或者试试：–disable-web-security –user-data-dir</p>
 <p>3、点击应用和确定后关闭属性页面，并打开chrome浏览器即可。</p>
 <p>使用本机ip地址加端口号，访问本地资源。</p>
 
