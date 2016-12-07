@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://lxchuan12.github.io/"/>
-  <updated>2016-10-29T15:47:36.020Z</updated>
+  <updated>2016-12-07T15:02:05.646Z</updated>
   <id>https://lxchuan12.github.io/</id>
   
   <author>
@@ -14,6 +14,54 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>提高效率的webstorm技巧</title>
+    <link href="https://lxchuan12.github.io/2016/12/07/20161207-webstrom-skill/"/>
+    <id>https://lxchuan12.github.io/2016/12/07/20161207-webstrom-skill/</id>
+    <published>2016-12-07T14:48:18.000Z</published>
+    <updated>2016-12-07T15:02:05.646Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>
+<p><strong>webstrom有一些基本的操作</strong><br>1、快速查找<br>2、代码补全<br>3、版本控制<br>4、本地历史<br>5、即时模板<br>6、光标<br>7、代码格式化等</p>
+</blockquote>
+<h4 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h4><p>双击shift搜索：快速查找。文件，函数名等。</p>
+<p>template模板可以设置。</p>
+<p>光标定位到相关位置。比如tilte,body<br>每次修改的历史：local  history。</p>
+<p>多光标的功能。<br>1、查找替换，ctrl+R<br>2、alt+鼠标选择。</p>
+<p> 3、alt+单击。</p>
+<p>4、格式化代码：ctrl+alt+L</p>
+<p> 菜单，code——reformat code。</p>
+<p>5、快捷键可以自定义设置。 可以通过快捷键名称来查找。也可以通过怎么使用来查找快捷键，然后对其进行修改。<br>webstrom预设了许多快捷键，可以自己选择。与原来的IDE快捷键相同。</p>
+<h4 id="Emmet"><a href="#Emmet" class="headerlink" title="Emmet"></a><strong>Emmet</strong></h4><p>参见：<br><a href="http://www.iteye.com/news/27580" target="_blank" rel="external">Emmet：HTML/CSS代码快速编写神器</a></p>
+<p>1、Tab键，缩写的补全<br>2、li中间写完，按enter键，光标直接定位到接下来的一个。<br>3、嵌套结构：<br>>  +  ^      <em>  ()<br>子元素，同级，往上一级，重复，（）<br>4、属性<br># （id）. （类）[]自定义属性<br>div#container.container<br> $<br>ul&gt;li.item-$</em>5<br>{}文本<br>p{click me}<br>lorem没有意义的文字。用于排版。<br>用法：lorem100<br>注意事项：光标定位在最后（最想展开的）。<br>不能有空格。<br>比如：<br>css中，bt:border-top<br>m10:margin:10px;<br>m10-20:margin:10px 20px;<br>bdrs10:border-radius:10px;<br>df：display：flex;</p>
+<p> 设置前缀。<br>默认关闭这个开关。可以用其他工具来实现。、<br>html:5,sublime text等编辑器可以安装emmet插件。</p>
+<h4 id="进阶操作一——常见快捷键"><a href="#进阶操作一——常见快捷键" class="headerlink" title="进阶操作一——常见快捷键"></a>进阶操作一——常见快捷键</h4><p>操作，快捷键。</p>
+<p>光标放在相对应的标签上，按F1，可以显示相关的描述，关联的站点等。<br>js也是如此，参数列表等。<br>比如</p>
+<p></p><p>hello world</p><br>要包裹在一个div中，选择这代码，ctrl+alt+T,选择第一个，输入div就变包裹在div中。<p></p>
+<p>——7<br>1、注释与取消注释<br>ctrl+/<br>2、选择<br>选中子元素，alt+上/下<br>3、粘贴<br>ctrl+shift+V，最近粘贴板中的内容。<br>4、删除当前行，<br>ctrl+退格键。<br>5、当前行上、下面加入一行<br>上面加入一行。ctrl+alt+enter<br>下面加入一行。ctrl+shift+enter.<br>这样不需要刻意定位光标的位置。其实键盘上有（home,end)键。<br>6、折叠代码，ctrl++（展开），ctrl+-(折叠)<br>ctrl+shift++,ctrl+shift+-,所有可以折叠的地方全部折叠。在css中，js,html中都是如此。<br>7、相邻位置代码换位置。<br>alt+shift+上、下键。选中一段代码也可以让其上下移动。<br>8、闭合标签，定位在两个标签位置。ctrl+m键。引号，括号，{}等也适用。window下好像无效。<br>9、前进、后退到上一次编辑的地方。ctrl+alt+左右键。<br>10、转到上一次编辑的地方。ctrl+shift+backspace键。<br>11、最近使用的文件，ctrl+E<br>——8<br>1、img标签，知道图片宽和高。<img src="">方式1、输入路径，宽和高，按住Tab键可以自动补全。<br>方式2、放在图片上，按F1图片预览，固定预览框。或者悬浮在文字上方。<br>方式3、按住shift，鼠标浮在路径上，就可以看到图片的预览了。<br>2、color:#999;色块上点击即可选择修改颜色。亮度（竖向）和透明度（横向）可以调节。</p>
+<h4 id="进阶操作二——重命名"><a href="#进阶操作二——重命名" class="headerlink" title="进阶操作二——重命名"></a>进阶操作二——重命名</h4><p>1、重命名，</p>
+<p></p><p>hello world</p>，把光标放在标签上，<br>ctrl+T,第一个就是重命名。window下试用无效。shift+F6重命名。2、其实直接写即可呀。<br>对话框会显示有相同的地方，右击，排查或包含include，exclude.点击执行，do refactor。侧边有一些功能。<br>2、函数名称，参数重命名。<br>html,css,js中都可以重命名，类名，颜色，可以预览，避免把一些框架库里的相同东西修改了。、<br>文件或文件夹也可以重命名。所有引用的地方也被修改了。<p></p>
+<h4 id="进阶操作三——代码检查"><a href="#进阶操作三——代码检查" class="headerlink" title="进阶操作三——代码检查"></a>进阶操作三——代码检查</h4><p>webstrom使用了静态代码分析。<br>不仅检查编译错误，<br>而且代码效率低下，未使用的代码，非本地化的字符串，无法解析的代码，内存泄露，甚至编写问题等等。<br>提示分为：错误，警告和正确。红色，橙黄色，或者绿色。<br>一般来说是对整个项目进行检查的。也可以自己配置检查的范围。<br>也可以自己运行检查。–&gt;code-&gt;Inspect code</p>
+<p>webstrom检查出来的不代表真的有错，还需要人工自己检查。<br>一般在文件中，F2键可以在各个错误中切换。<br>alt+enter，可以看到提示。（右侧的提示）<br>规则自己设置，搜索inspec</p>
+<p>js是静态的校验。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;webstrom有一些基本的操作&lt;/strong&gt;&lt;br&gt;1、快速查找&lt;br&gt;2、代码补全&lt;br&gt;3、版本控制&lt;br&gt;4、本地历史&lt;br&gt;5、即时模板&lt;br&gt;6、光标&lt;br&gt;7、代码格式化等&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h
+    
+    </summary>
+    
+      <category term="tool" scheme="https://lxchuan12.github.io/categories/tool/"/>
+    
+    
+      <category term="tool" scheme="https://lxchuan12.github.io/tags/tool/"/>
+    
+  </entry>
   
   <entry>
     <title>数组方法splice和数组去重</title>
@@ -454,9 +502,9 @@
       <category term="JavaScript" scheme="https://lxchuan12.github.io/categories/JavaScript/"/>
     
     
-      <category term="js" scheme="https://lxchuan12.github.io/tags/js/"/>
-    
       <category term="vuejs" scheme="https://lxchuan12.github.io/tags/vuejs/"/>
+    
+      <category term="js" scheme="https://lxchuan12.github.io/tags/js/"/>
     
   </entry>
   
@@ -639,32 +687,6 @@
       <category term="date" scheme="https://lxchuan12.github.io/tags/date/"/>
     
       <category term="javascript" scheme="https://lxchuan12.github.io/tags/javascript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>vue js两次请求</title>
-    <link href="https://lxchuan12.github.io/2016/08/12/20160812-vue-route%20request/"/>
-    <id>https://lxchuan12.github.io/2016/08/12/20160812-vue-route request/</id>
-    <published>2016-08-12T14:59:16.000Z</published>
-    <updated>2016-08-16T15:06:06.197Z</updated>
-    
-    <content type="html"><![CDATA[<p>当使用vue-resource发送注册的POST请求时，Fiddler捕获到了2次请求，第1次是由浏览器发送的OPTIONS预请求，第2次才是实际的POST请求……<a id="more"></a>这和使用$.ajax时是不一样的，因为$.ajax会将非GET请求的Content-Type设置为application/x-www-form-urlencoded，而vue-resource发送POST请求的Content-Type为application/json;charset=UTF-8。</p>
-<h2 id="1-全局启用："><a href="#1-全局启用：" class="headerlink" title="1.全局启用："></a>1.全局启用：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Vue.http.options.emulateJSON = true</div></pre></td></tr></table></figure>
-<h2 id="2-局部启用"><a href="#2-局部启用" class="headerlink" title="2.局部启用"></a>2.局部启用</h2><p>启用了emulateJSON选项后，使得POST请求的Content-Type变为application/x-www-form-urlencoded<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">this.$http.post(this.registerUrl, this.registerModel ,&#123; emulateJSON : true&#125;)</div><div class="line">    .then( (response) =&gt; &#123;</div><div class="line">        this.msg = ‘注册成功！‘</div><div class="line">    &#125;)</div></pre></td></tr></table></figure></p>
-<h2 id="3-参考资料："><a href="#3-参考资料：" class="headerlink" title="3.参考资料："></a>3.参考资料：</h2><p><a href="https://github.com/vuejs/vue-resource/blob/master/docs/http.md" target="_blank" rel="external">参考官方文档</a><br><a href="http://www.mamicode.com/info-detail-1439661.html" target="_blank" rel="external">$.ajax和vue-resource实现OAuth</a><br><a href="http://www.doc00.com/doc/1001004eg" target="_blank" rel="external">Vue.js——vue-resource全攻略</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;当使用vue-resource发送注册的POST请求时，Fiddler捕获到了2次请求，第1次是由浏览器发送的OPTIONS预请求，第2次才是实际的POST请求……
-    
-    </summary>
-    
-      <category term="vuejs" scheme="https://lxchuan12.github.io/categories/vuejs/"/>
-    
-    
-      <category term="vuejs" scheme="https://lxchuan12.github.io/tags/vuejs/"/>
     
   </entry>
   
