@@ -2183,7 +2183,6 @@ button,
 label {
   vertical-align: middle;
 }
-em,
 i {
   font-style: normal;
 }
@@ -3149,8 +3148,14 @@ a[title="站长统计"] {
   overflow-x: hidden;
   overflow-y: auto;
 }
-.post-toc-wrap .post-toc {
+.post-toc-wrap ol,
+.post-toc-wrap li {
   list-style: none;
+}
+.post-toc-wrap .post-toc-child {
+  padding: 0 0 0 20px;
+}
+.post-toc-wrap .post-toc {
   margin: 0 !important;
   padding: 0 20px;
   width: 226px;
@@ -3250,6 +3255,9 @@ a[title="站长统计"] {
 .post-content li a:active {
   border-bottom-style: solid;
   opacity: .7;
+}
+.post-content em {
+  color: #727272;
 }
 .post-content strong {
   font-weight: 600;

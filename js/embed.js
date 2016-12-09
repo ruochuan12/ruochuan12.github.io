@@ -1,2023 +1,2435 @@
-//HelloDog -  http://wsgzao.github.io/post/duoshuo/
-//More info: http://moxfive.xyz/2015/09/29/duosuo-style
-//移动客户端判断开始
-function checkMobile() {
-    var isiPad = navigator.userAgent.match(/iPad/i) != null;
-    if (isiPad) {
-        return false;
-    }
-    var isMobile = navigator.userAgent.match(/iphone|android|phone|mobile|wap|netfront|java|opera mobi|opera mini|ucweb|windows ce|symbian|symbianos|series|webos|sony|blackberry|dopod|nokia|samsung|palmsource|xda|pieplus|meizu|midp|cldc|motorola|foma|docomo|up.browser|up.link|blazer|helio|hosin|huawei|novarra|coolpad|webos|techfaith|palmsource|alcatel|amoi|ktouch|nexian|ericsson|philips|sagem|wellcom|bunjalloo|maui|smartphone|iemobile|spice|bird|zte-|longcos|pantech|gionee|portalmmm|jig browser|hiptop|benq|haier|^lct|320x320|240x320|176x220/i) != null;
-    if (isMobile) {
-        return true;
-    }
-    return false;
-}
-//移动客户端判断结束
-//管理员判断开始
-function sskadmin(e) {
-    var ssk = '';
-    if (e.user_id == 6225154084773561090) {
-        if (checkMobile()) {
-            ssk = '<span class="ua"><span class="sskadmin">Captain</span></span><br><br>';
-        } else {
-            ssk = '<span class="ua"><span class="sskadmin">Captain</span></span>';
+!function (e, n) { "object" == typeof exports && "object" == typeof module ? module.exports = n() : "function" == typeof define && define.amd ? define(n) : "object" == typeof exports ? exports.detector = n() : e.detector = n() } (this, function () { return function (e) { function n(o) { if (r[o]) return r[o].exports; var i = r[o] = { exports: {}, id: o, loaded: !1 }; return e[o].call(i.exports, i, i.exports, n), i.loaded = !0, i.exports } var r = {}; return n.m = e, n.c = r, n.p = "", n(0) } ([function (e, n, r) { e.exports = r(2) }, function (e, n) { "use strict"; function r(e, n) { if (!(e instanceof n)) throw new TypeError("Cannot call a class as a function") } function o(e) { return function (n) { return Object.prototype.toString.call(n) === "[object " + e + "]" } } function i(e, n) { for (var r = 0, o = e.length; o > r && n.call(e, e[r], r) !== !1; r++); } function t(e, n, r) { var o = f(n) ? n.call(null, r) : n; if (!o) return null; var i = { name: e, version: b, codename: "" }; if (o === !0) return i; if (d(o)) { if (-1 !== r.indexOf(o)) return i } else { if (l(o)) return o.hasOwnProperty("version") && (i.version = o.version), i; if (c(o)) { var t = o.exec(r); if (t) return t.length >= 2 && t[1] ? i.version = t[1].replace(/_/g, ".") : i.version = b, i } } } function a(e, n, r, o) { var a = u; i(n, function (n) { var r = t(n[0], n[1], e); return r ? (a = r, !1) : void 0 }), r.call(o, a.name, a.version) } var s = function () { function e(e, n) { for (var r = 0; r < n.length; r++) { var o = n[r]; o.enumerable = o.enumerable || !1, o.configurable = !0, "value" in o && (o.writable = !0), Object.defineProperty(e, o.key, o) } } return function (n, r, o) { return r && e(n.prototype, r), o && e(n, o), n } } (), b = "-1", u = { name: "na", version: b }, d = o("String"), c = o("RegExp"), l = o("Object"), f = o("Function"), p = function () { function e(n) { r(this, e), this._rules = n } return s(e, [{ key: "parse", value: function (e) { e = (e || "").toLowerCase(); var n = {}; a(e, this._rules.device, function (e, r) { var o = parseFloat(r); n.device = { name: e, version: o, fullVersion: r }, n.device[e] = o }, n), a(e, this._rules.os, function (e, r) { var o = parseFloat(r); n.os = { name: e, version: o, fullVersion: r }, n.os[e] = o }, n); var r = this.IEMode(e); return a(e, this._rules.engine, function (e, o) { var i = o; r && (o = r.engineVersion || r.engineMode, i = r.engineMode); var t = parseFloat(o); n.engine = { name: e, version: t, fullVersion: o, mode: parseFloat(i), fullMode: i, compatible: r ? r.compatible : !1 }, n.engine[e] = t }, n), a(e, this._rules.browser, function (e, o) { var i = o; r && ("ie" === e && (o = r.browserVersion), i = r.browserMode); var t = parseFloat(o); n.browser = { name: e, version: t, fullVersion: o, mode: parseFloat(i), fullMode: i, compatible: r ? r.compatible : !1 }, n.browser[e] = t }, n), n } }, { key: "IEMode", value: function (e) { if (!this._rules.re_msie.test(e)) return null; var n = void 0, r = void 0, o = void 0, i = void 0, t = void 0; if (-1 !== e.indexOf("trident/") && (n = /\btrident\/([0-9.]+)/.exec(e), n && n.length >= 2)) { o = n[1]; var a = n[1].split("."); a[0] = parseInt(a[0], 10) + 4, t = a.join(".") } n = this._rules.re_msie.exec(e), i = n[1]; var s = n[1].split("."); return "undefined" == typeof t && (t = i), s[0] = parseInt(s[0], 10) - 4, r = s.join("."), "undefined" == typeof o && (o = r), { browserVersion: t, browserMode: i, engineVersion: o, engineMode: r, compatible: o !== r } } }]), e } (); e.exports = p }, function (e, n, r) { "use strict"; function o(e) { if (!a.re_msie.test(e)) return null; var n = void 0, r = void 0, o = void 0, i = void 0, t = void 0; if (-1 !== e.indexOf("trident/") && (n = /\btrident\/([0-9.]+)/.exec(e), n && n.length >= 2)) { o = n[1]; var s = n[1].split("."); s[0] = parseInt(s[0], 10) + 4, t = s.join(".") } n = a.re_msie.exec(e), i = n[1]; var b = n[1].split("."); return "undefined" == typeof t && (t = i), b[0] = parseInt(b[0], 10) - 4, r = b.join("."), "undefined" == typeof o && (o = r), { browserVersion: t, browserMode: i, engineVersion: o, engineMode: r, compatible: o !== r } } function i(e) { var n = c.parse(e), r = o(e); if (r) { var i = n.engine.name, t = r.engineVersion || r.engineMode, a = parseFloat(t), s = r.engineMode; n.engine = { name: i, version: a, fullVersion: t, mode: parseFloat(s), fullMode: s, compatible: r ? r.compatible : !1 }, n.engine[n.engine.name] = a; var b = n.browser.name, u = n.browser.fullVersion; "ie" === b && (u = r.browserVersion); var d = r.browserMode, l = parseFloat(u); n.browser = { name: b, version: l, fullVersion: u, mode: parseFloat(d), fullMode: d, compatible: r ? r.compatible : !1 }, n.browser[b] = l } return n } var t = r(1), a = r(3), s = navigator.userAgent || "", b = navigator.appVersion || "", u = navigator.vendor || "", d = s + " " + b + " " + u, c = new t(a), l = i(d); l.parse = i, e.exports = l }, function (e, n) { (function (n) { "use strict"; function r(e) { if (i) try { var n = i.twGetRunPath.toLowerCase(), r = i.twGetSecurityID(o), t = i.twGetVersion(r); if (n && -1 === n.indexOf(e)) return !1; if (t) return { version: t } } catch (a) { } } var o = "undefined" == typeof window ? n : window, i = o.external, t = /\b(?:msie |ie |trident\/[0-9].*rv[ :])([0-9.]+)/, a = /\bbb10\b.+?\bversion\/([\d.]+)/, s = /\bblackberry\b.+\bversion\/([\d.]+)/, b = /\bblackberry\d+\/([\d.]+)/, u = "-1", d = [["nokia", function (e) { return -1 !== e.indexOf("nokia ") ? /\bnokia ([0-9]+)?/ : /\bnokia([a-z0-9]+)?/ }], ["samsung", function (e) { return -1 !== e.indexOf("samsung") ? /\bsamsung(?:[ \-](?:sgh|gt|sm))?-([a-z0-9]+)/ : /\b(?:sgh|sch|gt|sm)-([a-z0-9]+)/ }], ["wp", function (e) { return -1 !== e.indexOf("windows phone ") || -1 !== e.indexOf("xblwp") || -1 !== e.indexOf("zunewp") || -1 !== e.indexOf("windows ce") }], ["pc", "windows"], ["ipad", "ipad"], ["ipod", "ipod"], ["iphone", /\biphone\b|\biph(\d)/], ["mac", "macintosh"], ["mi", /\bmi[ \-]?([a-z0-9 ]+(?= build|\)))/], ["hongmi", /\bhm[ \-]?([a-z0-9]+)/], ["aliyun", /\baliyunos\b(?:[\-](\d+))?/], ["meizu", function (e) { return e.indexOf("meizu") >= 0 ? /\bmeizu[\/ ]([a-z0-9]+)\b/ : /\bm([0-9cx]{1,4})\b/ }], ["nexus", /\bnexus ([0-9s.]+)/], ["huawei", function (e) { var n = /\bmediapad (.+?)(?= build\/huaweimediapad\b)/; return -1 !== e.indexOf("huawei-huawei") ? /\bhuawei\-huawei\-([a-z0-9\-]+)/ : n.test(e) ? n : /\bhuawei[ _\-]?([a-z0-9]+)/ }], ["lenovo", function (e) { return -1 !== e.indexOf("lenovo-lenovo") ? /\blenovo\-lenovo[ \-]([a-z0-9]+)/ : /\blenovo[ \-]?([a-z0-9]+)/ }], ["zte", function (e) { return /\bzte\-[tu]/.test(e) ? /\bzte-[tu][ _\-]?([a-su-z0-9\+]+)/ : /\bzte[ _\-]?([a-su-z0-9\+]+)/ }], ["vivo", /\bvivo(?: ([a-z0-9]+))?/], ["htc", function (e) { return /\bhtc[a-z0-9 _\-]+(?= build\b)/.test(e) ? /\bhtc[ _\-]?([a-z0-9 ]+(?= build))/ : /\bhtc[ _\-]?([a-z0-9 ]+)/ }], ["oppo", /\boppo[_]([a-z0-9]+)/], ["konka", /\bkonka[_\-]([a-z0-9]+)/], ["sonyericsson", /\bmt([a-z0-9]+)/], ["coolpad", /\bcoolpad[_ ]?([a-z0-9]+)/], ["lg", /\blg[\-]([a-z0-9]+)/], ["android", /\bandroid\b|\badr\b/], ["blackberry", function (e) { return e.indexOf("blackberry") >= 0 ? /\bblackberry\s?(\d+)/ : "bb10" }]], c = [["wp", function (e) { return -1 !== e.indexOf("windows phone ") ? /\bwindows phone (?:os )?([0-9.]+)/ : -1 !== e.indexOf("xblwp") ? /\bxblwp([0-9.]+)/ : -1 !== e.indexOf("zunewp") ? /\bzunewp([0-9.]+)/ : "windows phone" }], ["windows", /\bwindows nt ([0-9.]+)/], ["macosx", /\bmac os x ([0-9._]+)/], ["ios", function (e) { return /\bcpu(?: iphone)? os /.test(e) ? /\bcpu(?: iphone)? os ([0-9._]+)/ : -1 !== e.indexOf("iph os ") ? /\biph os ([0-9_]+)/ : /\bios\b/ }], ["yunos", /\baliyunos ([0-9.]+)/], ["android", function (e) { return e.indexOf("android") >= 0 ? /\bandroid[ \/-]?([0-9.x]+)?/ : e.indexOf("adr") >= 0 ? e.indexOf("mqqbrowser") >= 0 ? /\badr[ ]\(linux; u; ([0-9.]+)?/ : /\badr(?:[ ]([0-9.]+))?/ : "android" }], ["chromeos", /\bcros i686 ([0-9.]+)/], ["linux", "linux"], ["windowsce", /\bwindows ce(?: ([0-9.]+))?/], ["symbian", /\bsymbian(?:os)?\/([0-9.]+)/], ["blackberry", function (e) { var n = e.match(a) || e.match(s) || e.match(b); return n ? { version: n[1] } : "blackberry" }]], l = [["edgehtml", /edge\/([0-9.]+)/], ["trident", t], ["blink", function () { return "chrome" in o && "CSS" in o && /\bapplewebkit[\/]?([0-9.+]+)/ }], ["webkit", /\bapplewebkit[\/]?([0-9.+]+)/], ["gecko", function (e) { var n = e.match(/\brv:([\d\w.]+).*\bgecko\/(\d+)/); return n ? { version: n[1] + "." + n[2] } : void 0 }], ["presto", /\bpresto\/([0-9.]+)/], ["androidwebkit", /\bandroidwebkit\/([0-9.]+)/], ["coolpadwebkit", /\bcoolpadwebkit\/([0-9.]+)/], ["u2", /\bu2\/([0-9.]+)/], ["u3", /\bu3\/([0-9.]+)/]], f = [["edge", /edge\/([0-9.]+)/], ["sogou", function (e) { return e.indexOf("sogoumobilebrowser") >= 0 ? /sogoumobilebrowser\/([0-9.]+)/ : e.indexOf("sogoumse") >= 0 ? !0 : / se ([0-9.x]+)/ }], ["theworld", function () { var e = r("theworld"); return "undefined" != typeof e ? e : /theworld(?: ([\d.])+)?/ }], ["360", function (e) { var n = r("360se"); return "undefined" != typeof n ? n : -1 !== e.indexOf("360 aphone browser") ? /\b360 aphone browser \(([^\)]+)\)/ : /\b360(?:se|ee|chrome|browser)\b/ }], ["maxthon", function () { try { if (i && (i.mxVersion || i.max_version)) return { version: i.mxVersion || i.max_version } } catch (e) { } return /\b(?:maxthon|mxbrowser)(?:[ \/]([0-9.]+))?/ }], ["micromessenger", /\bmicromessenger\/([\d.]+)/], ["qq", /\bm?qqbrowser\/([0-9.]+)/], ["green", "greenbrowser"], ["tt", /\btencenttraveler ([0-9.]+)/], ["liebao", function (e) { if (e.indexOf("liebaofast") >= 0) return /\bliebaofast\/([0-9.]+)/; if (-1 === e.indexOf("lbbrowser")) return !1; var n = void 0; try { i && i.LiebaoGetVersion && (n = i.LiebaoGetVersion()) } catch (r) { } return { version: n || u } }], ["tao", /\btaobrowser\/([0-9.]+)/], ["coolnovo", /\bcoolnovo\/([0-9.]+)/], ["saayaa", "saayaa"], ["baidu", /\b(?:ba?idubrowser|baiduhd)[ \/]([0-9.x]+)/], ["ie", t], ["mi", /\bmiuibrowser\/([0-9.]+)/], ["opera", function (e) { var n = /\bopera.+version\/([0-9.ab]+)/, r = /\bopr\/([0-9.]+)/; return n.test(e) ? n : r }], ["oupeng", /\boupeng\/([0-9.]+)/], ["yandex", /yabrowser\/([0-9.]+)/], ["ali-ap", function (e) { return e.indexOf("aliapp") > 0 ? /\baliapp\(ap\/([0-9.]+)\)/ : /\balipayclient\/([0-9.]+)\b/ }], ["ali-ap-pd", /\baliapp\(ap-pd\/([0-9.]+)\)/], ["ali-am", /\baliapp\(am\/([0-9.]+)\)/], ["ali-tb", /\baliapp\(tb\/([0-9.]+)\)/], ["ali-tb-pd", /\baliapp\(tb-pd\/([0-9.]+)\)/], ["ali-tm", /\baliapp\(tm\/([0-9.]+)\)/], ["ali-tm-pd", /\baliapp\(tm-pd\/([0-9.]+)\)/], ["uc", function (e) { return e.indexOf("ucbrowser/") >= 0 ? /\bucbrowser\/([0-9.]+)/ : e.indexOf("ubrowser/") >= 0 ? /\bubrowser\/([0-9.]+)/ : /\buc\/[0-9]/.test(e) ? /\buc\/([0-9.]+)/ : e.indexOf("ucweb") >= 0 ? /\bucweb([0-9.]+)?/ : /\b(?:ucbrowser|uc)\b/ }], ["chrome", / (?:chrome|crios|crmo)\/([0-9.]+)/], ["android", function (e) { return -1 !== e.indexOf("android") ? /\bversion\/([0-9.]+(?: beta)?)/ : void 0 }], ["blackberry", function (e) { var n = e.match(a) || e.match(s) || e.match(b); return n ? { version: n[1] } : "blackberry" }], ["safari", /\bversion\/([0-9.]+(?: beta)?)(?: mobile(?:\/[a-z0-9]+)?)? safari\//], ["webview", /\bcpu(?: iphone)? os (?:[0-9._]+).+\bapplewebkit\b/], ["firefox", /\bfirefox\/([0-9.ab]+)/], ["nokia", /\bnokiabrowser\/([0-9.]+)/]]; e.exports = { device: d, os: c, browser: f, engine: l, re_msie: t } }).call(n, function () { return this } ()) }]) });
+!function (e, t, s) {
+    var ENV = function (ua) {
+        var ALIAS = {
+            "windows5.1": "Windows XP",
+            "windows5.2": "Windows Server 2003",
+            "windows6.0": "Windows Vista",
+            "windows6.1": "Windows 7",
+            "windows6.2": "Windows 8",
+            "windows6.3": "Windows 8.1",
+            "windows10.0": "Windows 10",
+            "linux-1": "Linux"
         }
-    } else {
-        if (checkMobile()) {
-            ssk = '<br><br>';
+        var info = detector.parse(ua)
+        var os = ALIAS[info.os.name + info.os.fullVersion.split('.').slice(0, 2).join('.')] || info.os.name + ' ' + info.os.fullVersion
+        function tag(fName, name) {
+            return '<span class="ds-env-tag ' + name + '" data-title="' + fName + '">' + name + '</span>'
         }
+        return tag(info.device.name + ' ' + info.device.fullVersion, info.device.name) + tag(os.replace('macosx', 'OSX'), info.os.name.replace('macosx', 'OSX')) + tag(info.browser.name + ' ' + info.browser.fullVersion, info.browser.name)
     }
-    return ssk;
-}
-//管理员判断结束
-//显UA开始
-function ua(e) {
-    var r = new Array;
-    var outputer = '';
-    if (r = e.match(/FireFox\/([^\s]+)/ig)) {
-        var r1 = r[0].split("/");
-        outputer = '<span class="ua_firefox"><i class="fa fa-firefox"></i> FireFox'
-    } else if (r = e.match(/Maxthon([\d]*)\/([^\s]+)/ig)) {
-        var r1 = r[0].split("/");
-        outputer = '<span class="ua_maxthon"><i class="fa fa-globe"></i> Maxthon'
-    } else if (r = e.match(/BIDUBrowser([\d]*)\/([^\s]+)/ig)) {
-        var r1 = r[0].split("/");
-        outputer = '<span class="ua_ucweb"><i class="fa fa-globe"></i> 百度浏览器'
-    } else if (r = e.match(/UBrowser([\d]*)\/([^\s]+)/ig)) {
-        var r1 = r[0].split("/");
-        outputer = '<span class="ua_ucweb"><i class="fa fa-globe"></i> UCBrowser'
-    } else if (r = e.match(/UCBrowser([\d]*)\/([^\s]+)/ig)) {
-        var r1 = r[0].split("/");
-        outputer = '<span class="ua_ucweb"><i class="fa fa-globe"></i> UCBrowser'
-    } else if (r = e.match(/MetaSr/ig)) {
-        outputer = '<span class="ua_sogou"><i class="fa fa-globe"></i> 搜狗浏览器'
-    } else if (r = e.match(/2345Explorer/ig)) {
-        outputer = '<span class="ua_2345explorer"><i class="fa fa-globe"></i> 2345王牌浏览器'
-    } else if (r = e.match(/2345chrome/ig)) {
-        outputer = '<span class="ua_2345chrome"><i class="fa fa-globe"></i> 2345加速浏览器'
-    } else if (r = e.match(/LBBROWSER/ig)) {
-        outputer = '<span class="ua_lbbrowser"><i class="fa fa-globe"></i> 猎豹安全浏览器'
-    } else if (r = e.match(/MicroMessenger\/([^\s]+)/ig)) {
-        var r1 = r[0].split("/");
-        outputer = '<span class="ua_qq"><i class="fa fa-weixin"></i> 微信'
-        /*.split('/')[0]*/
-    } else if (r = e.match(/QQBrowser\/([^\s]+)/ig)) {
-        var r1 = r[0].split("/");
-        outputer = '<span class="ua_qq"><i class="fa fa-qq"></i> QQ浏览器'
-        /*.split('/')[0]*/
-    } else if (r = e.match(/QQ\/([^\s]+)/ig)) {
-        var r1 = r[0].split("/");
-        outputer = '<span class="ua_qq"><i class="fa fa-qq"></i> QQ浏览器'
-        /*.split('/')[0]*/
-    } else if (r = e.match(/MiuiBrowser\/([^\s]+)/ig)) {
-        var r1 = r[0].split("/");
-        outputer = '<span class="ua_mi"><i class="fa fa-globe"></i> Miui浏览器'
-        /*.split('/')[0]*/
-    } else if (r = e.match(/Chrome([\d]*)\/([^\s]+)/ig)) {
-        var r1 = r[0].split("/");
-        outputer = '<span class="ua_chrome"><i class="fa fa-chrome"></i> Chrome'
-        /*.split('.')[0]*/
-    } else if (r = e.match(/safari\/([^\s]+)/ig)) {
-        var r1 = r[0].split("/");
-        outputer = '<span class="ua_apple"><i class="fa fa-safari"></i> Safari'
-    } else if (r = e.match(/Opera[\s|\/]([^\s]+)/ig)) {
-        var r1 = r[0].split("/");
-        outputer = '<span class="ua_opera"><i class="fa fa-opera"></i> Opera'
-    } else if (r = e.match(/Trident\/7.0/gi)) {
-        outputer = '<span class="ua_ie"><i class="fa fa-internet-explorer"></i> IE 11'
-    } else if (r = e.match(/MSIE\s([^\s|;]+)/gi)) {
-        outputer = '<span class="ua_ie"><i class="fa fa-internet-explorer"></i> IE' + ' ' + r[0]
-        /*.replace('MSIE', '').split('.')[0]*/
-    } else {
-        outputer = '<span class="ua_other"><i class="fa fa-globe"></i> 其它浏览器'
+    function a() {
+        return c.short_name ? g + "//" + c.short_name + "." + S.DOMAIN : S.REMOTE
     }
-    if (checkMobile()) {
-        Mobile = '<br><br>';
-    } else {
-        Mobile = '';
-    }
-    return outputer + "</span>" + Mobile;
-}
-function os(e) {
-    var os = '';
-    if (e.match(/win/ig)) {
-        if (e.match(/nt 5.1/ig)) {
-            os = '<span class="os_xp"><i class="fa fa-windows"></i> Windows XP'
-        } else if (e.match(/nt 6.1/ig)) {
-            os = '<span class="os_7"><i class="fa fa-windows"></i> Windows 7'
-        } else if (e.match(/nt 6.2/ig)) {
-            os = '<span class="os_8"><i class="fa fa-windows"></i> Windows 8'
-        } else if (e.match(/nt 6.3/ig)) {
-            os = '<span class="os_8_1"><i class="fa fa-windows"></i> Windows 8.1'
-        } else if (e.match(/nt 10.0/ig)) {
-            os = '<span class="os_8_1"><i class="fa fa-windows"></i> Windows 10'
-        } else if (e.match(/nt 6.0/ig)) {
-            os = '<span class="os_vista"><i class="fa fa-windows"></i> Windows Vista'
-        } else if (e.match(/nt 5/ig)) {
-            os = '<span class="os_2000"><i class="fa fa-windows"></i> Windows 2000'
-        } else {
-            os = '<span class="os_windows"><i class="fa fa-windows"></i> Windows'
+    function i() {
+        function t() {
+            for (var t; t = y.shift();) {
+                var a = t.url
+                    , i = new s(t.title, {
+                        dir: "auto",
+                        icon: t.iconUrl,
+                        body: t.body
+                    });
+                try {
+                    i.onclick = function () {
+                        e.focus(),
+                            h.href = a,
+                            i.close()
+                    }
+                } catch (r) { }
+                setTimeout(function () {
+                    i.close && i.close()
+                }, 8e3)
+            }
         }
-    } else if (e.match(/android/ig)) {
-        os = '<span class="os_android"><i class="fa fa-android"></i> Android'
-    } else if (e.match(/ubuntu/ig)) {
-        os = '<span class="os_ubuntu"><i class="fa fa-desktop"></i> Ubuntu'
-    } else if (e.match(/linux/ig)) {
-        os = '<span class="os_linux"><i class="fa fa-linux"></i> Linux'
-    } else if (e.match(/mac/ig)) {
-        os = '<span class="os_mac"><i class="fa fa-apple"></i> Mac OS X'
-    } else if (e.match(/unix/ig)) {
-        os = '<span class="os_unix"><i class="fa fa-desktop"></i> Unix'
-    } else if (e.match(/symbian/ig)) {
-        os = '<span class="os_nokia"><i class="fa fa-mobile"></i> Nokia SymbianOS'
-    } else {
-        os = '<span class="os_other"><i class="fa fa-desktop"></i> 其它操作系统'
+        var s = e.Notification;
+        "Notification" in e && "denied" !== s.permission && ("granted" === s.permission && t(),
+            s.requestPermission(function (e) {
+                "granted" === e && t()
+            }))
     }
-    return os + "</span>";
-}
-//显UA结束
-
-(function(e, t, n) {
-    function at(e, t) {
-        for (var n in t) t[n] && (e[n] ? e[n].set(t[n]) : e[n] = new et(t[n]))
+    function r() {
+        return 0 == nt.data.user_id
     }
-    function ft(e, t) {
-        for (var n in t) e[n] = t[n]
+    function n(e) {
+        S.theme = e,
+            "none" != e && o.injectStylesheet(S.STATIC_URL + "/styles/embed" + (e ? "." + e + ".css?" + M[e] : "." + short_name) + ".css")
     }
-    function lt() {
-        if (u.checkPermission()) return;
-        var t;
-        while (t = O.shift()) {
-            var n = u.createNotification(t.iconUrl, t.title, t.body),
-            i = t.url;
-            try {
-                n.onclick = function() {
-                    e.focus(),
-                    r.href = i,
-                    n.cancel()
+    var o = {}
+        , d = t.getElementsByTagName("head")[0] || t.getElementsByTagName("body")[0];
+    if (o.extend = function (e, t) {
+        for (var s in t)
+            e[s] = t[s];
+        return e
+    }
+        ,
+        o.injectScript = function (a, i) {
+            var r = t.createElement("script")
+                , n = t.head || t.getElementsByTagName("head")[0] || t.documentElement;
+            r.type = "text/javascript",
+                r.src = a,
+                r.async = "async",
+                r.charset = "utf-8",
+                i && (r.onload = r.onreadystatechange = function (t, a) {
+                    var o = a || !r.readyState || /loaded|complete/.test(r.readyState);
+                    o && (r.onload = r.onreadystatechange = null,
+                        n && r.parentNode && n.removeChild(r),
+                        r = s,
+                        a || i.call(e))
                 }
-            } catch(s) {}
-            n.show(),
-            setTimeout(function() {
-                n.cancel && n.cancel()
-            },
-            8e3)
+                ),
+                n.insertBefore(r, n.firstChild)
         }
-    }
-    function ct() {
-        return rt.data.user_id == 0
-    }
-    function ht(e, t, n) {
-        if (o) try {
-            o.removeItem(e),
-            o.removeItem(e + ":timestamp"),
-            o[e] = i.stringify(t),
-            o[e + ":timestamp"] = Math.floor(n)
-        } catch(r) {}
-    }
-    function pt(e) {
-        w.theme = e,
-        e != "none" && w.injectStylesheet(b + "/styles/embed" + (e ? "." + e + ".css?" + y[e] : "." + short_name) + ".css")
-    }
-    if (e.DUOSHUO) return;
-    var r = e.location,
-    i = e.JSON,
-    s = e.XMLHttpRequest,
-    o = i && i.stringify && e.localStorage,
-    u = e.webkitNotifications,
-    a = t.getElementsByTagName("head")[0] || t.getElementsByTagName("body")[0],
-    f = e.navigator.userAgent,
-    l = t.location.protocol == "https:" ? "https:": "http:",
-    c = 0,
-    h,
-    p = function() {
-        var e = {
-            "<": "&lt;",
-            ">": "&gt;",
-            '"': "&quot;",
-            "'": "&#x27;",
-            "`": "&#x60;"
-        },
-        t = /&(?!\w+;)|[<>"'`]/g,
-        n = /[&<>"'`]/,
-        r = function(t) {
-            return e[t] || "&amp;"
-        };
-        return function(e) {
-            return e == null || e === !1 ? "": n.test(e) ? e.replace(t, r) : e
+        ,
+        o.injectStylesheet = function (e) {
+            var s = t.createElement("link");
+            s.type = "text/css",
+                s.rel = "stylesheet",
+                s.href = e,
+                d.appendChild(s)
         }
-    } (),
-    d = function(e) {
-        if (e.match(/^(http|https):/)) return e;
-        var n = t.createElement("a");
-        return n.href = e,
-        x.hrefNormalized ? n.href: n.getAttribute("href", 4)
-    },
-    v = {
-        start: 0,
-        end: 0
-    },
-    m = function(e) {
-        var n = this,
-        r = 0,
-        i = 0,
-        s, o, u, a, f;
-        t.selection && (o = t.selection.createRange(), o && o.parentElement() == n && (a = n.value.length, s = n.value.replace(/\r\n/g, "\n"), u = n.createTextRange(), u.moveToBookmark(o.getBookmark()), f = n.createTextRange(), f.collapse(!1), u.compareEndPoints("StartToEnd", f) > -1 ? r = i = a: (r = -u.moveStart("character", -a), r += s.slice(0, r).split("\n").length - 1, u.compareEndPoints("EndToEnd", f) > -1 ? i = a: (i = -u.moveEnd("character", -a), i += s.slice(0, i).split("\n").length - 1)))),
-        v.start = r,
-        v.end = i
-    },
-    g = function(e) {
-        return function() {
-            return e
+        ,
+        o.injectStyle = function (e) {
+            var s = t.createElement("style");
+            return s.type = "text/css",
+                d.appendChild(s),
+                e = e.replace(/\}/g, "}\n"),
+                s.styleSheet ? s.styleSheet.cssText = e : s.appendChild(t.createTextNode(e)),
+                s
         }
-    },
-    y = {
-        "default": "d6149e1c",
-        dark: "c11b5925",
-        bluebox: "dbc0a9af"
-    },
-    b = l + "//static.duoshuo.com",
-    w = e.DUOSHUO = {
-        DOMAIN: "duoshuo.com",
-        REMOTE: "http://duoshuo.com",
-        version: 140327,
-        loaded: {
-            jQuery: typeof jQuery != "undefined" && jQuery.fn.jquery >= "1.5",
-            smilies: !1,
-            mzadxN: typeof mzadxN != "undefined"
-        },
-        libs: {
-            jQuery: b + "/libs/embed.compat.js?24f8ca3f.js",
-            smilies: b + "/libs/smilies.js?921e8eda.js",
-            mzadxN: "http://js.miaozhen.com/mz_ad_serving.js"
-        },
-        sourceName: {
-            weibo: "\u65b0\u6d6a\u5fae\u535a",
-            qq: "QQ",
-            qzone: "QQ\u7a7a\u95f4",
-            qqt: "\u817e\u8baf\u5fae\u535a",
-            renren: "\u4eba\u4eba\u7f51",
-            douban: "\u8c46\u74e3\u7f51",
-            netease: "\u7f51\u6613\u5fae\u535a",
-            kaixin: "\u5f00\u5fc3\u7f51",
-            sohu: "\u641c\u72d0\u5fae\u535a",
-            baidu: "\u767e\u5ea6",
-            taobao: "\u6dd8\u5b9d",
-            msn: "MSN",
-            google: "\u8c37\u6b4c"
-        },
-        serviceNames: {
-            weibo: "\u5fae\u535a",
-            qq: "QQ",
-            douban: "\u8c46\u74e3",
-            renren: "\u4eba\u4eba",
-            netease: "\u7f51\u6613",
-            kaixin: "\u5f00\u5fc3",
-            sohu: "\u641c\u72d0",
-            baidu: "\u767e\u5ea6",
-            taobao: "\u6dd8\u5b9d",
-            msn: "MSN",
-            google: "\u8c37\u6b4c"
-        },
-        parseDate: function(e) {
-            return e.parse("2011-10-28T00:00:00+08:00") &&
-            function(t) {
-                return new e(t)
-            } || e.parse("2011/10/28T00:00:00+0800") &&
-            function(t) {
-                return new e(t.replace(/-/g, "/").replace(/:(\d\d)$/, "$1"))
-            } || e.parse("2011/10/28 00:00:00+0800") &&
-            function(t) {
-                return new e(t.replace(/-/g, "/").replace(/:(\d\d)$/, "$1").replace("T", " "))
-            } ||
-            function(t) {
-                return new e(t)
-            }
-        } (Date),
-        fullTime: function(e) {
-            var t = w.parseDate(e);
-            return t.getFullYear() + "\u5e74" + (t.getMonth() + 1) + "\u6708" + t.getDate() + "\u65e5 " + t.toLocaleTimeString()
-        },
-        elapsedTime: function(e) {
-            var t = w.parseDate(e),
-            n = new Date,
-            r = (n - c - t) / 1e3;
-            return r < 10 ? "\u521a\u521a": r < 60 ? Math.round(r) + "\u79d2\u524d": r < 3600 ? Math.round(r / 60) + "\u5206\u949f\u524d": r < 86400 ? Math.round(r / 3600) + "\u5c0f\u65f6\u524d": (n.getFullYear() == t.getFullYear() ? "": t.getFullYear() + "\u5e74") + (t.getMonth() + 1) + "\u6708" + t.getDate() + "\u65e5"
-        },
-        require: function(e, t) {
-            if (typeof e == "string") w.loaded[e] ? t() : F(w.libs[e],
-            function() {
-                w.loaded[e] = !0,
-                t()
-            });
-            else if (typeof e == "object") {
-                var n, r = !0;
-                for (n = 0; n < e.length; n++)(function(i) {
-                    if (w.loaded[e[n]]) return;
-                    r = !1,
-                    F(w.libs[i],
-                    function() {
-                        w.loaded[i] = !0;
-                        for (var n = 0; n < e.length; n++) if (!w.loaded[e[n]]) return;
-                        t()
-                    })
-                })(e[n]);
-                r && t()
-            }
-        },
-        getCookie: function(e) {
-            var r = " " + e + "=",
-            i = t.cookie.split(";"),
-            s = 0,
-            o,
-            u,
-            a;
-            for (; s < i.length; s++) {
-                o = " " + i[s],
-                u = o.indexOf(r);
-                if (u >= 0 && u + r.length == (a = o.indexOf("=") + 1)) return decodeURIComponent(o.substring(a, o.length).replace(/\+/g, ""))
-            }
-            return n
-        },
-        param: function(e) {
+        ,
+        o.getCookie = function (e) {
+            for (var a, i, r, n = " " + e + "=", o = t.cookie.split(";"), d = 0; d < o.length; d++)
+                if (a = " " + o[d],
+                    i = a.indexOf(n),
+                    i >= 0 && i + n.length == (r = a.indexOf("=") + 1))
+                    return decodeURIComponent(a.substring(r, a.length).replace(/\+/g, ""));
+            return s
+        }
+        ,
+        o.param = function (e) {
             var t = [];
-            for (var r in e) e[r] != n && t.push(r + "=" + encodeURIComponent(e[r]));
+            for (var a in e)
+                e[a] != s && t.push(a + "=" + encodeURIComponent(e[a]));
             return t.join("&")
-        },
-        ajax: function(e, t, r, o, u) {
-            var a = w.getCookie("duoshuo_token");
-            r.v = w.version,
-            a ? r.jwt = a: z.remote_auth && (r.remote_auth = z.remote_auth);
-            if (s && i && i.parse) {
-                var f = new s;
-                if ( !! f && "withCredentials" in f) {
-                    var l;
-                    function c(e, t, n, r) {
-                        var s, a, f, l = t;
-                        if (e >= 200 && e < 300 || e === 304) if (e === 304) l = "notmodified",
-                        s = !0;
-                        else try {
-                            a = i.parse(n),
-                            l = "success",
-                            s = !0
-                        } catch(c) {
-                            l = "parsererror",
-                            f = c
-                        } else {
-                            f = l;
-                            if (!l || e) l = "error",
-                            e < 0 && (e = 0);
-                            try {
-                                a = i.parse(n)
-                            } catch(c) {
-                                l = "parsererror",
-                                f = c
-                            }
-                        }
-                        s ? o(a) : l === "parseerror" ? I("\u89e3\u6790\u9519\u8bef: " + n) : (u && u(a), I("\u51fa\u9519\u5566(" + a.code + "): " + a.errorMessage), a.errorTrace && I(a.errorTrace))
-                    }
-                    f.open(e, w.hostUrl + t + ".json" + (e == "GET" ? "?" + w.param(r) : ""), !0),
-                    f.withCredentials = !0,
-                    f.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8"),
-                    f.send(e == "GET" ? null: w.param(r)),
-                    l = function(e, t) {
-                        var r, i, s, o;
-                        try {
-                            if (l && (t || f.readyState === 4)) {
-                                l = n;
-                                if (t) f.readyState !== 4 && f.abort();
-                                else {
-                                    r = f.status,
-                                    s = f.getAllResponseHeaders();
-                                    try {
-                                        o = f.responseText
-                                    } catch(e) {}
-                                    try {
-                                        i = f.statusText
-                                    } catch(u) {
-                                        i = ""
-                                    }
-                                }
-                            }
-                        } catch(a) {
-                            t || c( - 1, a)
-                        }
-                        o && c(r, i, o, s)
-                    },
-                    f.readyState === 4 ? l() : f.onreadystatechange = l;
-                    return
-                }
+        }
+        ,
+        o.cssProperty = function (e, s) {
+            var a = (t.body || t.documentElement).style;
+            if ("undefined" == typeof a)
+                return !1;
+            if ("string" == typeof a[e])
+                return s ? e : !0;
+            for (var i = ["Moz", "Webkit", "ms"], e = e.charAt(0).toUpperCase() + e.substr(1), r = 0; r < i.length; r++)
+                if ("string" == typeof a[i[r] + e])
+                    return s ? i[r] + e : !0
+        }
+        ,
+        !e.DUOSHUO) {
+        for (var l in Object.prototype)
+            return alert("Object.prototype 不为空，请不要给 Object.prototype 设置方法");
+        var c, u, p = e.JSON, h = e.location, f = e.XMLHttpRequest, m = p && p.stringify && e.localStorage, v = e.navigator.userAgent, g = "https:" == t.location.protocol ? "https:" : "http:", b = 0, y = [], _ = u = function () {
+            function e(e) {
+                return t[e] || "&amp;"
             }
-            e != "GET" && (r._method = "POST");
-            var h = "cb_" + Math.round(Math.random() * 1e6);
-            w[h] = function(e) {
-                switch (e.code) {
-                case 0:
-                    o(e);
-                    break;
-                default:
-                    u && u(e),
-                    I("\u51fa\u9519\u5566(" + e.code + "): " + e.errorMessage),
-                    e.errorTrace && I(e.errorTrace)
-                }
-            },
-            r.callback = "DUOSHUO['" + h + "']",
-            F(w.hostUrl + t + ".jsonp?" + w.param(r))
-        },
-        injectStylesheet: function(e) {
-            var n = t.createElement("link");
-            n.type = "text/css",
-            n.rel = "stylesheet",
-            n.href = e,
-            a.appendChild(n)
-        },
-        setCustomStyle: function(e) {
-            h || (h = t.createElement("style"), h.type = "text/css", a.appendChild(h)),
-            e = e.replace(/\}/g, "}\n");
-            if (h.styleSheet) h.styleSheet.cssText = e;
-            else {
-                while (h.firstChild) h.removeChild(h.firstChild);
-                h.appendChild(t.createTextNode(e))
-            }
-        },
-        compileStyle: function(e) {
-            var t = "",
-            n = {
-                textbox: "#ds-thread #ds-reset .ds-replybox .ds-textarea-wrapper"
-            };
-            if (e) for (var r in e) t += n[r] + "{" + e[r] + "}\n";
-            return t
-        },
-        init: function(e, t) {
-            e && !N[e] && (N[e] = t || {
-                type: "EmbedThread"
-            }),
-            w.initView && w.initView()
-        }
-    },
-    E = t.all,
-    S,
-    x = w.support = function() {
-        var n = t.createElement("div");
-        n.innerHTML = '<a href="/a">a</a><input type="checkbox"/>';
-        var i = n.getElementsByTagName("a")[0],
-        o = n.getElementsByTagName("input")[0],
-        u = {
-            placeholder: "placeholder" in o,
-            touch: "ontouchstart" in e || "onmsgesturechange" in e,
-            hrefNormalized: i.getAttribute("href") === "/a",
-            iOS: f.match(/ \((iPad|iPhone|iPod);( U;)? CPU( iPhone)? OS /),
-            android: f.match(/ \(Linux; U; Android /)
-        };
-        return S = !s && typeof n.style.maxHeight == "undefined",
-        u.authInWin = e.postMessage && e.screen.width > 800 && !u.iOS && !u.android && r.origin,
-        u
-    } (),
-    T = function(e, n) {
-        var r = (t.body || t.documentElement).style;
-        if (typeof r == "undefined") return ! 1;
-        if (typeof r[e] == "string") return n ? e: !0;
-        var i = ["Moz", "Webkit", "ms"],
-        e = e.charAt(0).toUpperCase() + e.substr(1),
-        s = 0;
-        for (; s < i.length; s++) if (typeof r[i[s] + e] == "string") return n ? i[s] + e: !0
-    },
-    N = w.selectors = {
-        ".ds-thread": {
-            type: "EmbedThread"
-        },
-        ".ds-recent-comments": {
-            type: "RecentComments"
-        },
-        ".ds-recent-visitors": {
-            type: "RecentVisitors"
-        },
-        ".ds-top-users": {
-            type: "TopUsers"
-        },
-        ".ds-top-threads": {
-            type: "TopThreads"
-        },
-        ".ds-login": {
-            type: "LoginWidget"
-        },
-        ".ds-thread-count": {
-            type: "ThreadCount"
-        }
-    },
-    C = w.pagelets = [],
-    k = {
-        post: "\u53d1\u5e03",
-        posting: "\u6b63\u5728\u53d1\u5e03",
-        settings: "\u8bbe\u7f6e",
-        reply: "\u56de\u590d",
-        like: "\u9876",
-        repost: "\u8f6c\u53d1",
-        report: "\u4e3e\u62a5",
-        "delete": "\u5220\u9664",
-        reply_to: "\u56de\u590d ",
-        reposts: "\u8f6c\u53d1",
-        comments: "\u8bc4\u8bba",
-        floor: "\u697c",
-        latest: "\u6700\u65b0",
-        earliest: "\u6700\u65e9",
-        hottest: "\u6700\u70ed",
-        share_to: "\u5206\u4eab\u5230:",
-        leave_a_message: "\u8bf4\u70b9\u4ec0\u4e48\u5427\u2026",
-        no_comments_yet: "\u8fd8\u6ca1\u6709\u8bc4\u8bba\uff0c\u6c99\u53d1\u7b49\u4f60\u6765\u62a2",
-        repost_reason: "\u8bf7\u8f93\u5165\u8f6c\u53d1\u7406\u7531",
-        hot_posts_title: "\u88ab\u9876\u8d77\u6765\u7684\u8bc4\u8bba",
-        comments_zero: "\u6682\u65e0\u8bc4\u8bba",
-        comments_one: "1\u6761\u8bc4\u8bba",
-        comments_multiple: "{num}\u6761\u8bc4\u8bba",
-        reposts_zero: "\u6682\u65e0\u8f6c\u53d1",
-        reposts_one: "1\u6761\u8f6c\u53d1",
-        reposts_multiple: "{num}\u6761\u8f6c\u53d1",
-        weibo_reposts_zero: "\u6682\u65e0\u65b0\u6d6a\u5fae\u535a",
-        weibo_reposts_one: "1\u6761\u65b0\u6d6a\u5fae\u535a",
-        weibo_reposts_multiple: "{num}\u6761\u65b0\u6d6a\u5fae\u535a",
-        qqt_reposts_zero: "\u6682\u65e0\u817e\u8baf\u5fae\u535a",
-        qqt_reposts_one: "1\u6761\u817e\u8baf\u5fae\u535a",
-        qqt_reposts_multiple: "{num}\u6761\u817e\u8baf\u5fae\u535a"
-    },
-    L = function(e, t, n, r) {
-        w.ajax("GET", e, t, n ||
-        function() {},
-        r)
-    },
-    A = function(e, t, n, r) {
-        w.ajax("POST", e, t, n ||
-        function() {},
-        r)
-    },
-    O = [],
-    M,
-    _ = [],
-    D = function(t) {
-        if (! ("WebSocket" in e && i)) return ! 1;
-        _.push(i.stringify(t)),
-        M || (M = w.webSocket = new WebSocket("ws://ws.duoshuo.com:8201/"), M.onopen = function() {
-            var e;
-            if (M.readyState === 1) while (e = _.shift()) M.send(e)
-        },
-        M.onmessage = function(e) {
-            try {
-                var t = 0,
-                n, r = i.parse(e.data)
-            } catch(s) {
-                return
-            }
-            switch (r.type) {
-            case "post":
-                for (; t < w.pagelets.length; t++) n = w.pagelets[t],
-                n.threadId == r.thread_id && n.onMessage(r);
-                break;
-            case "notification":
-                O.push(r),
-                lt();
-                break;
-            default:
-            }
-        },
-        e.addEventListener("beforeunload",
-        function() {
-            M.close()
-        })),
-        M.onopen()
-    },
-    P = w.Collections = {},
-    H = w.Views = {},
-    B = w.Callbacks = {},
-    j = w.openDialog = function(e) {
-        return w.dialog !== n && w.dialog.el.remove(),
-        w.dialog = (new H.Dialog('<div class="ds-dialog"><div class="ds-dialog-inner ds-rounded"><div class="ds-dialog-body">' + e + '</div><div class="ds-dialog-footer"><a href="http://duoshuo.com/" target="_blank" class="ds-logo"></a><span>\u793e\u4f1a\u5316\u8bc4\u8bba\u6846</span></div><a class="ds-dialog-close" href="javascript:void(0)" title="\u5173\u95ed"></a></div></div>')).open()
-    },
-    F = w.injectScript = function(r, i) {
-        var s = t.createElement("script"),
-        o = t.head || t.getElementsByTagName("head")[0] || t.documentElement;
-        s.type = "text/javascript",
-        s.src = r,
-        s.async = "async",
-        s.charset = "utf-8",
-        i && (s.onload = s.onreadystatechange = function(t, r) {
-            if (r || !s.readyState || /loaded|complete/.test(s.readyState)) s.onload = s.onreadystatechange = null,
-            o && s.parentNode && o.removeChild(s),
-            s = n,
-            r || i.call(e)
-        }),
-        o.insertBefore(s, o.firstChild)
-    },
-    I = w.log = function(e) {
-        typeof console == "object" && console.log(e)
-    },
-    q = w.smilies = {},
-    R = ["EmbedThread", "RecentComments", "RecentVisitors", "TopUsers", "TopThreads", "LoginWidget", "ThreadCount"],
-    U = 0,
-    z,
-    W = function() {
-        var e = {},
-        t = 0;
-        for (; t < arguments.length; t++) arguments[t] && ft(e, arguments[t]);
-        var n = w.param(e);
-        return n ? "?" + n: ""
-    },
-    X = function() {
-        var e = w.getCookie("duoshuo_token");
-        return e ? {
-            jwt: e
-        }: z.remote_auth ? {
-            short_name: z.short_name,
-            remote_auth: z.remote_auth
-        }: n
-    },
-    V = function() {
-        return ! z && (z = e.duoshuoQuery) && tt.trigger("queryDefined"),
-        z
-    };
-    for (var $ in Object.prototype) return alert("Object.prototype\u4e0d\u4e3a\u7a7a\uff0c\u8bf7\u4e0d\u8981\u7ed9Object.prototype\u8bbe\u7f6e\u65b9\u6cd5");
-    var J = w.templates = {
-        userUrl: function(e) {
-            return e.url
-        },
-        avatarUrl: function(e, t) {
-            return e.avatar_url || nt.data.default_avatar_url
-        },
-        userAnchor: function(e) {
-            var t = J.userUrl(e);
-            return t ? '<a rel="nofollow author" target="_blank" href="' + p(t) + '">' + p(e.name) + "</a>": p(e.name)
-        },
-        avatarImg: function(e, t) {
-            return '<img src="' + p(J.avatarUrl(e, t)) + '" alt="' + p(e.name) + '"' + (t ? ' style="width:' + t + "px;height:" + t + 'px"': "") + "/>"
-        },
-        avatar: function(e, t) {
-            var n = J.avatarImg(e, t),
-            r = J.userUrl(e);
-            return r ? '<a rel="nofollow author" target="_blank" href="' + p(r) + '" ' + (e.user_id ? " onclick=\"this.href='" + w.hostUrl + "/user-url/?user_id=" + e.user_id + "';\"": "") + ' title="' + p(e.name) + '">' + n + "</a>": n
-        },
-        timeHtml: function(e, t) {
-            return e ? t ? '<a href="' + t + '" target="_blank" rel="nofollow" class="ds-time" datetime="' + e + '" title="' + w.fullTime(e) + '">' + w.elapsedTime(e) + "</a>": '<span class="ds-time" datetime="' + e + '" title="' + w.fullTime(e) + '">' + w.elapsedTime(e) + "</span>": ""
-        },
-        serviceIcon: function(e, t) {
-            return '<a href="javascript:void(0)" class="ds-service-icon' + (t ? "-grey": "") + " ds-" + e + '" data-service="' + e + '" title="' + w.sourceName[e] + '"></a>'
-        },
-        loginButtons: function(e) {
-            return '<div class="ds-login-buttons"><p>\u793e\u4ea4\u5e10\u53f7\u767b\u5f55:</p><div class="ds-social-links">' + J.serviceList() + J.additionalServices() + "</div></div>"
-        },
-        poweredBy: function(e) {
-            return '<p class="ds-powered-by"><a href="http://duoshuo.com" target="_blank" rel="nofollow">' + p(e) + "</a></p>"
-        },
-        indicator: g('<div id="ds-indicator"></div>'),
-        waitingImg: g('<div id="ds-waiting"></div>'),
-        serviceList: function(e) {
-            var t = '<ul class="ds-service-list">',
-            n = ["weibo", "qq", "renren", "douban"],
-            r = 0;
-            for (; r < n.length; r++) t += J.loginItem(n[r], e);
-            return t + '<li><a class="ds-more-services" href="javascript:void(0)">\u66f4\u591a\u00bb</a></li>' + "</ul>"
-        },
-        additionalServices: function(e) {
-            var t = '<ul class="ds-service-list ds-additional-services">',
-            n = ["kaixin", "netease", "sohu", "baidu", "google"],
-            r = 0;
-            for (; r < n.length; r++) t += J.loginItem(n[r], e);
-            return t + "</ul>"
-        },
-        loginItem: function(e, t) {
-            var n = J[t ? "bindUrl": "loginUrl"](e);
-            return '<li><a href="' + n + '" rel="nofollow" class="ds-service-link ds-' + e + '">' + w.serviceNames[e] + (rt.data.social_uid[e] ? ' <span class="ds-icon ds-icon-ok"></span>': "") + "</a>" + "</li>"
-        },
-        loginUrl: function(e, t) {
-            return t || (t = {}),
-            z.sso && z.sso.login && (t.sso = 1, t.redirect_uri = z.sso.login),
-            w.hostUrl + "/login/" + e + "/" + W(t)
-        },
-        bindUrl: function(e) {
-            return w.hostUrl + "/bind/" + e + "/" + W(z.sso && z.sso.login ? {
-                sso: 1,
-                redirect_uri: z.sso.login
-            }: null, X())
-        },
-        logoutUrl: function() {
-            return w.hostUrl + "/logout/" + W(z.sso && z.sso.logout ? {
-                sso: 1,
-                redirect_uri: z.sso.logout
-            }: null)
-        },
-        likePost: function(e) {
-            return '<a class="ds-post-likes" href="javascript:void(0);"><span class="ds-icon ds-icon-like"></span>' + k.like + (e.likes > 0 ? "(" + e.likes + ")": "") + "</a>"
-        },
-        ctxPost: function(e, t, n) {
-            var r = K(e);
-            return '<li class="ds-ctx-entry"' + (n ? ' style="display:none"': "") + ' data-post-id="' + e.post_id + '"><div class="ds-avatar">' + J.avatar(r) + '</div><div class="ds-ctx-body"><div class="ds-ctx-head">' + J.userAnchor(r) + J.timeHtml(e.created_at, e.url) + (t >= 0 ? '<div class="ds-ctx-nth" title="' + w.fullTime(e.created_at) + '">' + (t + 1) + k.floor + "</div>": "") + '</div><div class="ds-ctx-content">' + e.message + (t >= 0 ? '\u3000\u3000\u3000\u3000\u3000\u3000\u3000<div class="ds-comment-actions' + (e.vote > 0 ? " ds-post-liked": "") + '">' + J.likePost(e) + ' <a class="ds-post-repost" href="javascript:void(0);"><span class="ds-icon ds-icon-share"></span>' + k.repost + "</a>" + ' <a class="ds-post-reply" href="javascript:void(0);"><span class="ds-icon ds-icon-reply"></span>' + k.reply + "</a>" + "</div>": "") + "</div></div></li>"
-        }
-    },
-    K = function(e) {
-        return ut[e.author_id] && ut[e.author_id].data || e.author
-    },
-    Q = function(e) {
-        var t = [];
-        for (var n in e) t.push('<input type="hidden" name="' + n + '" value="' + p(e[n]) + '" />');
-        return t.join("\n")
-    };
-    for (; U < R.length; U++) w[R[U]] = function(e) {
-        return function(t, n) {
-            n = n || {},
-            n.type = e,
-            t && !N[t] && (N[t] = n),
-            w.initSelector && w.initSelector(t, n)
-        }
-    } (R[U]),
-    w["create" + R[U]] = function(e) {
-        return function(n, r) {
-            var i = t.createElement(n);
-            for (var s in r) i.setAttribute("data-" + s, r[s]);
-            return w[e](i),
-            i
-        }
-    } (R[U]);
-    w.RecentCommentsWidget = w.RecentComments;
-    var G = 0,
-    Y = w.Class = function() {};
-    Y.extend = function(e) {
-        function r() { ! G && this.init && this.init.apply(this, arguments)
-        }
-        G = 1;
-        var t = new this;
-        G = 0;
-        for (var n in e) t[n] = e[n];
-        return r.prototype = t,
-        r.prototype.constructor = r,
-        r.extend = arguments.callee,
-        r
-    };
-    var Z = w.Event = Y.extend({
-        on: function(e, t) {
-            var r = this.handlers || (this.handlers = {});
-            return r[e] === n && (r[e] = []),
-            r[e].push(t),
-            this
-        },
-        trigger: function(e, t) {
-            var n = (this.handlers || (this.handlers = {}))[e];
-            if (n) for (var r = 0; r < n.length; r++) if (n[r].call(this, t) === !1) break;
-            return this
-        }
-    }),
-    et = w.Model = Z.extend({
-        init: function(e) {
-            this.data = e
-        },
-        reset: function(e) {
-            this.data = e,
-            this.trigger("reset")
-        },
-        remove: function(e) {
-            this.data.splice(e, 1),
-            this.trigger("reset")
-        },
-        set: function(e, t) {
-            if (t === n) for (var r in e) this.data[r] = e[r];
-            else this.data[e] = t;
-            this.trigger("reset")
-        }
-    }),
-    tt = w.events = new Z,
-    nt = w.site = new et,
-    rt = w.visitor = new et,
-    it = w.unread = new et,
-    st = w.threads = {},
-    ot = w.postPool = {},
-    ut = w.users = {};
-    tt.on("queryDefined",
-    function() {
-        var e = z.short_name;
-        w.hostUrl = e ? l + "//" + e + "." + w.DOMAIN: w.REMOTE,
-        z.theme && pt(z.theme);
-        if (o) {
-            var t = o["ds_site_" + e],
-            n = o["ds_lang_" + e];
-            t && nt.reset(i.parse(t)),
-            n && ft(k, i.parse(n))
-        }
-    }),
-    V(),
-    w.loaded.jQuery && (w.jQuery = e.jQuery),
-    w.require("jQuery",
-    function() {
-        function dt(e, t, n) {
-            if (e.find(".ds-post[data-post-id=" + t.post_id + "]")[0]) return;
-            return e.find(".ds-post-placeholder").remove(),
-            i(J.post(t, n)).hide()[n.order == "asc" ? "appendTo": "prependTo"](e).slideDown(function() {})
-        }
-        function vt(e, t) {
-            var n;
-            this.delegate("a.ds-post-likes", "click",
-            function(e) {
-                if (ct()) return gt(),
-                !1;
-                var t = i(this).parent();
-                return liked = t.hasClass("ds-post-liked"),
-                matches = i(this).html().match(/\((\d+)\)/),
-                likes = (matches ? parseInt(matches[1]) : 0) + (liked ? -1 : 1),
-                A("/api/posts/vote", {
-                    post_id: t.closest(".ds-ctx-entry, .ds-post-self").attr("data-post-id"),
-                    vote: liked ? 0 : 1
-                }),
-                i(this).html(i(this).html().replace(/\(\d+\)/, "") + (likes ? "(" + likes + ")": "")),
-                t[liked ? "removeClass": "addClass"]("ds-post-liked"),
-                !1
-            }).delegate("a.ds-post-repost", "click",
-            function(e) {
-                var t = i(this).closest(".ds-post-self"),
-                n = ot[t.attr("data-post-id")];
-                return w.repostDialog(n, ""),
-                !1
-            }).delegate("a.ds-post-delete", "click",
-            function(t) {
-                if (confirm("\u786e\u5b9a\u8981\u5220\u9664\u8fd9\u6761\u8bc4\u8bba\u5417\uff1f")) {
-                    var n = i(this).closest(".ds-post-self");
-                    A("/api/posts/remove", {
-                        post_id: n.attr("data-post-id")
-                    }),
-                    n.parent().fadeOut(200,
-                    function() {
-                        e.data.comments--,
-                        e.updateCounter("duoshuo"),
-                        i(this).remove()
-                    })
-                }
-                return ! 1
-            }).delegate("a.ds-post-report", "click",
-            function(e) {
-                if (confirm("\u786e\u5b9a\u8981\u4e3e\u62a5\u8fd9\u6761\u8bc4\u8bba\u5417\uff1f")) {
-                    var t = i(this).closest(".ds-post-self");
-                    A("/api/posts/report", {
-                        post_id: t.attr("data-post-id")
-                    }),
-                    alert("\u611f\u8c22\u60a8\u7684\u53cd\u9988\uff01")
-                }
-                return ! 1
-            }).delegate("a.ds-post-reply", "click",
-            function(r) {
-                var s = i(this),
-                o = s.closest(".ds-comment-actions");
-                if (o.hasClass("ds-reply-active")) n.el.fadeOut(200,
-                function() {
-                    i(this).detach()
-                }),
-                o.removeClass("ds-reply-active");
-                else {
-                    var u = s.closest(".ds-ctx-entry, .ds-post-self");
-                    n ? n.actionsBar.removeClass("ds-reply-active") : (n = new H.Replybox(e), n.render(!0).el.addClass("ds-inline-replybox").detach()),
-                    n.el.find("[name=parent_id]").val(u.attr("data-post-id")),
-                    n.el.show().appendTo(s.closest(".ds-ctx-body, .ds-comment-body")).find("textarea").focus(),
-                    n.actionsBar = o.addClass("ds-reply-active"),
-                    t.max_depth <= 1 ? n.postList = e.postList.el: (n.postList = u.siblings(".ds-children"), n.postList[0] || (n.postList = i('<ul class="ds-children"></ul>').insertAfter(u)))
-                }
-                return ! 1
-            }).delegate("a.ds-weibo-comments", "click",
-            function(e) {
-                var n = i(this).closest(".ds-post-self"),
-                r = n.attr("data-post-id"),
-                s = n.data("source");
-                if (n.attr("data-root-id") == 0) {
-                    var o = n.siblings(".ds-children");
-                    o[0] ? o.remove() : (o = i('<ul class="ds-children"></ul>').insertAfter(n), L("/api/posts/listComments", bt({
-                        post_id: r
-                    }),
-                    function(e) {
-                        l(e),
-                        o.append(i.map(e.response,
-                        function(e) {
-                            return J.post(e, t)
-                        }).join(""))
-                    }))
-                }
-                return ! 1
-            }).delegate("a.ds-weibo-reposts", "click",
-            function(t) {
-                var n = i(this).closest(".ds-post-self"),
-                r = ot[n.attr("data-post-id")],
-                s = r.data.source;
-                if (!rt.data.social_uid[s == "qqt" ? "qq": s]) {
-                    mt(s);
-                    return
-                }
-                var o = r.data.root_id,
-                u = o != "0" ? ot[o] : r,
-                a = "";
-                if (o != "0") {
-                    var f = K(r.data);
-                    a = (s == "weibo" ? "//@" + f.name: "|| @" + f.qqt_account) + ":" + r.data.message
-                }
-                return w.repostDialog(u, a, e, s),
-                !1
-            }).delegate("a.ds-expand", "click",
-            function(e) {
-                var t = i(this).parent();
-                return t.siblings().show(),
-                t.remove(),
-                !1
-            }),
-            x.touch || this.delegate("a.ds-comment-context, .ds-avatar, .ds-user-name", "mouseenter",
-            function(t) {
-                var n = this;
-                if (bubbleOutTimer && $.owner == n) clearTimeout(bubbleOutTimer),
-                bubbleOutTimer = 0;
-                else {
-                    var r = i(n);
-                    Y = setTimeout(function() {
-                        Y = 0,
-                        $.owner = n,
-                        tt();
-                        var t = r.offset(),
-                        i = e.el.offset(),
-                        s = r.innerWidth() / 2,
-                        o = e.el.innerHeight() - (t.top - i.top) + 6,
-                        u = t.left - i.left - 35 + (s > 35 ? 35 : s);
-                        try {
-                            if (r.hasClass("ds-comment-context")) G.attr("id", "ds-ctx-bubble").attr("data-post-id", r.attr("data-post-id")).html('<ul id="ds-ctx">' + J.ctxPost(ot[r.attr("data-parent-id")].data) + "</ul>" + '<div class="ds-bubble-footer"><a class="ds-ctx-open" href="javascript:void(0);">\u67e5\u770b\u5bf9\u8bdd</a></div>');
-                            else if (r.hasClass("ds-avatar") || r.hasClass("ds-user-name")) {
-                                var a = {},
-                                f = a.user_id = r.attr("data-user-id");
-                                if (!f) throw "no info";
-                                G.attr("id", "ds-user-card").attr("data-user-id", f).empty(),
-                                ut[f] ? G.html(J.userInfo(ut[f].data)) : L("/api/users/profile", bt(a),
-                                function(e) {
-                                    var t = e.response;
-                                    ut[f] ? ut[f].set(t) : ut[f] = new et(t),
-                                    $.owner == n && G.html(J.userInfo(t))
-                                })
-                            }
-                            $.css({
-                                bottom: o,
-                                left: u
-                            }).appendTo(e.innerEl)
-                        } catch(l) {
-                            $.detach()
-                        }
-                    },
-                    200)
-                }
-            }).delegate("a.ds-comment-context, .ds-avatar, .ds-user-name", "mouseleave",
-            function() {
-                Y ? (clearTimeout(Y), Y = 0) : bubbleOutTimer || bubbleOut()
-            })
-        }
-        function mt(e) {
-            var t = J[ct() ? "loginUrl": "bindUrl"](e);
-            x.authInWin && O(e, t) || (r.href = t)
-        }
-        function gt() {
-            var e = j("<h2>\u793e\u4ea4\u5e10\u53f7\u767b\u5f55</h2>" + J.serviceList() + J.additionalServices()).el.find(".ds-dialog").css("width", "300px");
-            M(e)
-        }
-        function bt(e) {
-            var n = {
-                require: "site,visitor,nonce,serverTime,lang" + (yt++?"": ",unread,log,extraCss"),
-                site_ims: o && o["ds_site_" + z.short_name + ":timestamp"],
-                lang_ims: o && o["ds_lang_" + z.short_name + ":timestamp"],
-                referer: t.referrer
-            };
-            z.stylePatch && (n.style_patch = z.stylePatch);
-            for (var r in n) n[r] && (!S || encodeURIComponent(n[r]).length < 200) && (e[r] = n[r]);
-            return e
-        }
-        var i = w.jQuery,
-        s = i(e),
-        a = i(t),
-        l = w.loadRequire = function(e) {
-            e.serverTime && (c = (new Date).getTime() - e.serverTime * 1e3),
-            e.visitor && (!rt.data && e.visitor.user_id && u && !u.checkPermission() && D({
-                logged_user_id: e.visitor.user_id
-            }), rt.reset(e.visitor)),
-            e.site && (nt.reset(e.site), ht("ds_site_" + z.short_name, e.site, e.serverTime)),
-            !w.theme && nt.data.theme && pt(nt.data.theme),
-            e.lang && (ft(k, e.lang), ht("ds_lang_" + z.short_name, e.lang, e.serverTime));
-            if (e.stylesheets) for (var t = 0; t < e.stylesheets.length; t++) w.injectStylesheet(e.stylesheets[t]);
-            e.nonce && (w.nonce = e.nonce),
-            e.style && w.setCustomStyle((e.style || "") + w.compileStyle(z.component_style)),
-            e.unread && it.reset(e.unread)
-        },
-        h = function(e) {
-            e.stopPropagation()
-        },
-        g = function(e) { (e.ctrlKey && e.which == 13 || e.which == 10) && i(this.form).trigger("submit")
-        },
-        y = function(e) {
-            var t = i(this);
-            t.height(Math.max(54, t.next(".ds-hidden-text").text(this.value).height() + 27))
-        },
-        O = function(t, n) {
-            var i = {
-                weibo: [760, 600],
-                renren: [420, 322],
-                qq: [504, 445],
-                netease: [810, 645],
-                sohu: [972, 600],
-                google: [600, 440],
-                taobao: [480, 585]
-            } [t] || [550, 400];
-            return e.open(n + (n.indexOf("?") == -1 ? "?": "&") + w.param({
-                origin: r.origin || "http://" + r.host
-            }), "_blank", "width=" + i[0] + ",height=" + i[1] + ",toolbar=no,menubar=no,location=yes")
-        },
-        M = function(e, t) {
-            x.authInWin && e.find(t || "a.ds-service-link").click(function(e) {
-                var t = this.href.match(/\/(login|bind)\/(\w+)\//i);
-                if (!t || !w.serviceNames[t[2]]) return;
-                return ! O(t[2], this.href)
-            })
-        },
-        _ = function(e) {
-            return x.touch && e.addClass("ds-touch"),
-            T("transition") || e.addClass("ds-no-transition"),
-            S && e.addClass("ds-ie6"),
-            i.support.opacity || e.addClass("ds-no-opacity"),
-            e
-        },
-        B = function(e) {
-            if (!x.placeholder) {
-                var t = e.attr("placeholder");
-                e.val(t).focus(function() {
-                    this.value === t && (this.value = "")
-                }).blur(function() {
-                    this.value === "" && (this.value = t)
-                })
-            }
-            return e
-        };
-        if (e.postMessage) {
-            var F = function(e) {
-                if (e.origin === "http://duoshuo.com") switch (e.data.type) {
-                case "login":
-                    r.href = e.data.redirectUrl;
-                    break;
-                default:
-                }
-            };
-            e.addEventListener ? e.addEventListener("message", F, !1) : e.attachEvent && e.attachEvent("onmessage", F)
-        }
-        w.scrollTo = function(e) {
-            var t = e.offset().top; (t < s.scrollTop() || t > s.scrollTop() + s.height()) && i("html, body").animate({
-                scrollTop: t - 40
-            },
-            200, "swing")
-        },
-        w.toJSON = function(e) {
-            var t = /\r?\n/g,
-            n = /^(?:color|date|datetime|datetime-local|email|hidden|month|number|password|range|search|tel|text|time|url|week)$/i,
-            r = /^(?:select|textarea)/i,
-            s = e.map(function() {
-                return this.elements ? i.makeArray(this.elements) : this
-            }).filter(function() {
-                return this.name && !this.disabled && (this.checked || r.test(this.nodeName) || n.test(this.type))
-            }).map(function(e, n) {
-                var r = i(this).val();
-                return r == null ? null: i.isArray(r) ? i.map(r,
-                function(e, r) {
-                    return {
-                        name: n.name,
-                        value: e.replace(t, "\r\n")
-                    }
-                }) : {
-                    name: n.name,
-                    value: r.replace(t, "\r\n")
-                }
-            }).toArray(),
-            o = {};
-            return i.each(s,
-            function() {
-                o[this.name] = this.value
-            }),
-            o
-        };
-        var R = w.Widget = Z.extend({
-            init: function(e, t) {
-                this.el = e,
-                this.options = t || {},
-                this.render()
-            },
-            render: function() {},
-            reset: function() {},
-            load: function(e) {
-                switch (e.code) {
-                case 0:
-                    l(e),
-                    this.onload(e);
-                    break;
-                default:
-                    this.onError(e)
-                }
-            },
-            onload: function(e) {
-                this.el.html(J[this.tmpl].call(J, e.response, i.extend(this.options, e.options)))
-            },
-            onMessage: function() {},
-            onError: function(e) {
-                I("\u51fa\u9519\u5566(" + e.code + "): " + e.errorMessage),
-                e.errorTrace && I(e.errorTrace)
-            }
-        }),
-        U = function(e) {
             var t = {
-                "unread-comments": {
-                    title: "\u65b0\u7559\u8a00\u53ca\u56de\u590d",
-                    apiUrl: "/api/users/unreadComments",
-                    tmpl: function(e) {
-                        return '<li data-thread-id="' + e.thread.thread_id + '">' + i.map(e.authors, J.userAnchor).join("\u3001") + ' \u5728 <a class="ds-read" href="' + e.thread.url + '#comments" target="_blank">' + p(e.thread.title || "\u65e0\u6807\u9898") + '</a> \u4e2d\u56de\u590d\u4e86\u4f60 <a class="ds-delete ds-read" title="\u77e5\u9053\u4e86" href="javascript:void(0)">\u77e5\u9053\u4e86</a></li>'
-                    },
-                    read: function(e) {
-                        var t = e.attr("data-thread-id");
-                        A("/api/threads/read", {
-                            thread_id: t
-                        }),
-                        it.data.comments--
-                    }
-                },
-                "unread-notifications": {
-                    title: "\u7cfb\u7edf\u6d88\u606f",
-                    apiUrl: "/api/users/unreadNotifications",
-                    tmpl: function(e) {
-                        return '<li data-notification-id="' + e.notification_id + '" data-notification-type="' + e.type + '">' + e.content + ' <a class="ds-delete ds-read" title="\u77e5\u9053\u4e86" href="javascript:void(0)">\u77e5\u9053\u4e86</a></li>'
-                    },
-                    read: function(e) {
-                        var t = e.attr("data-notification-id");
-                        A("/api/notifications/read", {
-                            notification_id: t
-                        }),
-                        it.data.notifications--
-                    }
-                }
-            } [e],
-            n = j("<h2>" + t.title + "</h2>" + '<ul class="ds-unread-list"></ul>');
-            n.on("close", w.resetNotify);
-            var r = n.el.find(".ds-unread-list").delegate(".ds-delete", "click",
-            function(e) {
-                return i(this).parent().remove(),
-                r.children().length === 0 && n.close(),
-                !1
-            }).delegate(".ds-read", "click",
-            function(e) {
-                t.read(i(this).parent())
-            });
-            i("#ds-notify").hide(),
-            L(t.apiUrl, {},
-            function(e) {
-                n.el.find(".ds-unread-list").html(i.map(e.response, t.tmpl).join("\n"))
-            }),
-            u && u.checkPermission() && u.requestPermission(lt)
-        };
-        w.resetNotify = function() {
-            var e = i("#ds-notify"),
-            n = it.data;
-            e[0] || (e = i('<div id="ds-notify"></div>').css({
-                hidden: {
-                    display: "none"
-                },
-                "top-right": {
-                    top: "24px",
-                    right: "24px"
-                },
-                "bottom-right": {
-                    bottom: "24px",
-                    right: "24px"
-                }
-            } [nt.data.notify_position]).delegate(".ds-notify-unread a", "click",
-            function(e) {
-                return U(i(this).data("type")),
-                !1
-            }).appendTo(t.body)),
-            e.html('<div id="ds-reset"><a class="ds-logo" href="http://duoshuo.com/" target="_blank" title="\u591a\u8bf4"></a><ul class="ds-notify-unread"><li' + (n.comments ? "": ' style="display:none;"') + '><a data-type="unread-comments" href="javascript:void(0);">\u4f60\u6709' + n.comments + "\u6761\u65b0\u56de\u590d</a></li><li" + (n.notifications ? "": ' style="display:none;"') + '><a data-type="unread-notifications" href="javascript:void(0);">\u4f60\u6709' + n.notifications + "\u6761\u7cfb\u7edf\u6d88\u606f</a></li></ul></div>")[(n.comments || n.notifications) && nt.data.notify_position !== "hidden" && !i(".ds-dialog")[0] ? "show": "hide"]()
-        },
-        it.on("reset", w.resetNotify),
-        J.replybox = function(e, t) {
-            var n = e.options,
-            r = rt.data,
-            i = [],
-            s = "",
-            o,
-            u = {
-                thread_id: e.threadId,
-                parent_id: "",
-                nonce: w.nonce
-            };
-            for (var a in r.repostOptions) r.repostOptions[a] && (i.push(a), o = 1),
-            s += J.serviceIcon(a, !r.repostOptions[a]);
-            return '<div class="ds-replybox"><a class="ds-avatar"' + (ct() ? ' href="javascript:void(0);" onclick="return false"': ' href="' + w.REMOTE + "/settings/avatar/" + W(X()) + '" target="_blank" title="\u8bbe\u7f6e\u5934\u50cf"') + ">" + J.avatarImg(r) + "</a>" + '<form method="post">' + Q(u) + '<div class="ds-textarea-wrapper ds-rounded-top">' + '<textarea name="message" title="Ctrl+Enter\u5feb\u6377\u63d0\u4ea4" placeholder="' + p(k.leave_a_message) + '"></textarea>' + '<pre class="ds-hidden-text"></pre>' + "</div>" + '<div class="ds-post-toolbar">' + '<div class="ds-post-options ds-gradient-bg">' + '<span class="ds-sync">' + (!ct() && s ? '<input id="ds-sync-checkbox' + (t ? "-inline": "") + '" type="checkbox" name="repost" ' + (o ? 'checked="checked" ': "") + 'value="' + i.join(",") + '"> <label for="ds-sync-checkbox' + (t ? "-inline": "") + '">' + k.share_to + "</label>" + s: "") + "</span>" + "</div>" + '<button class="ds-post-button" type="submit">' + p(k.post) + "</button>" + '<div class="ds-toolbar-buttons">' + (n.use_smilies ? '<a class="ds-toolbar-button ds-add-emote" title="\u63d2\u5165\u8868\u60c5"></a>': "") + (n.use_images && n.parse_html_enabled ? '<a class="ds-toolbar-button ds-add-image" title="\u63d2\u5165\u56fe\u7247"></a>': "") + "</div>" + "</div>" + "</form>" + "</div>"
-        },
-        H.Replybox = function(e) {
-            this.embedThread = e
-        },
-        H.Replybox.prototype = {
-            render: function(e) {
-                function T(e) {
-                    e.data("submitting", !0),
-                    e.find(".ds-post-button").addClass("ds-waiting").html(k.posting)[0].disabled = !0
-                }
-                function N(e) {
-                    e.data("submitting", !1),
-                    e.find(".ds-post-button").removeClass("ds-waiting").html(k.post)[0].disabled = !1
-                }
-                var n = this,
-                r = n.embedThread,
-                s = r.options,
-                u = function(e) {
-                    w.require("smilies",
-                    function() {})
-                },
-                a = n.el = i(J.replybox(r, e)).click(u),
-                f = a.find("form"),
-                l = f.find("input[type=checkbox]")[0],
-                c = f.find("a.ds-service-icon, a.ds-service-icon-grey"),
-                h = B(f.find("textarea")).focus(u).keyup(g).keyup(y).bind("focus mousedown mouseup keyup", m),
-                d = a.find(".ds-add-emote").click(function(e) {
-                    var r = w.smiliesTooltip;
-                    return d.toggleClass("ds-expanded").hasClass("ds-expanded") ? (r || (r = w.smiliesTooltip = new H.SmiliesTooltip, r.render(), w.require("smilies",
-                    function() {
-                        r.reset("\u5fae\u535a-\u9ed8\u8ba4")
-                    })), r.replybox = n, r.el.appendTo(t.body).css({
-                        top: n.el.offset().top + n.el.outerHeight() + 4 + "px",
-                        left: n.el.find(".ds-textarea-wrapper").offset().left + "px"
-                    }), i(t.body).click(E)) : E(e),
-                    !1
-                }),
-                b = a.find(".ds-add-image").click(function(e) {
-                    var n = h[0],
-                    r = n.value,
-                    i = "\u8bf7\u8f93\u5165\u56fe\u7247\u5730\u5740",
-                    s = '<img src="' + i + '" />';
-                    if (t.selection) {
-                        n.value = r.substring(0, v.start) + s + r.substring(v.end, r.length),
-                        n.value = n.value.replace("\u8bf4\u70b9\u4ec0\u4e48\u5427 ...", ""),
-                        n.focus();
-                        var o = t.selection.createRange();
-                        o.collapse(),
-                        o.findText(i),
-                        o.select()
-                    } else {
-                        n.value = r.substring(0, n.selectionStart) + s + r.substring(n.selectionEnd);
-                        var u = n.value.search(i);
-                        n.setSelectionRange(u, u + i.length),
-                        n.focus()
-                    }
-                    e.preventDefault()
-                }),
-                E = n.hideSmilies = function(e) {
-                    d.removeClass("ds-expanded"),
-                    w.smiliesTooltip.el.detach(),
-                    i(t.body).unbind("click", E)
-                },
-                S = function(e, t) {
-                    var n = j('<h2>\u793e\u4ea4\u5e10\u53f7\u767b\u5f55</h2><div class="ds-icons-32">' + i.map(["weibo", "qq", "renren", "kaixin", "douban", "netease", "sohu"],
-                    function(e) {
-                        return '<a class="ds-' + e + '" href="' + J.loginUrl(e) + '">' + w.sourceName[e] + "</a>"
-                    }).join("") + "</div>" + (s.deny_anonymous ? "": '<h2>\u4f5c\u4e3a\u6e38\u5ba2\u7559\u8a00</h2><form><div class="ds-control-group"><input type="text" name="author_name" id="ds-dialog-name" value="' + p(rt.data.name) + '" required />' + '<label for="ds-dialog-name">\u540d\u5b57(\u5fc5\u586b)</label>' + "</div>" + (s.require_guest_email ? '<div class="ds-control-group"><input type="email" name="author_email" id="ds-dialog-email" value="' + p(rt.data.email) + '" required />' + '<label for="ds-dialog-email">\u90ae\u7bb1(\u5fc5\u586b)</label>' + "</div>": "") + (s.require_guest_url ? '<div class="ds-control-group"><input type="url" name="author_url" id="ds-dialog-url" placeholder="http://" value="' + p(rt.data.url || "") + '" />' + '<label for="ds-dialog-url">\u7f51\u5740(\u53ef\u9009)</label>' + "</div>": "") + '<button type="submit">\u53d1\u5e03</button>' + "</form>")),
-                    r = n.el.find(".ds-dialog").css("width", "320px");
-                    M(r, ".ds-icons-32 a");
-                    if (!s.deny_anonymous) {
-                        var o = n.el.find("form");
-                        o.submit(function(e) {
-                            var r = o.find("input[name=author_email]").val();
-                            return (r || s.require_guest_email) && !r.match(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/) ? (alert("\u8bf7\u8f93\u5165\u4e00\u4e2a\u6709\u6548\u7684email\u5730\u5740."), !1) : (t(w.toJSON(o)), n.close(), !1)
-                        }),
-                        o.find("input[name=author_name]")[0].focus()
-                    }
-                };
-                s.deny_anonymous && h.focus(function(e) {
-                    if (ct()) {
-                        S(f, C);
-                        var t = function(e) {
-                            e.stopPropagation(),
-                            h.unbind("click", t)
-                        };
-                        h.click(t)
-                    }
-                    return ! 1
-                });
-                var C = function(e) {
-                    T(f),
-                    A("/api/posts/create", i.extend(w.toJSON(f), e),
-                    function(e) {
-                        var t = e.response,
-                        i = dt(n.postList, t, s);
-                        s.order == "asc" == (s.formPosition == "top") && w.scrollTo(i),
-                        ot[t.post_id] = new et(t),
-                        r.data.comments++,
-                        r.updateCounter("duoshuo"),
-                        h.val("").trigger("keyup"),
-                        N(f),
-                        a.hasClass("ds-inline-replybox") && (a.detach(), n.actionsBar.removeClass("ds-reply-active"));
-                        if (o) try {
-                            o.removeItem("ds_draft_" + r.threadId)
-                        } catch(u) {}
-                    },
-                    function(e) {
-                        N(f),
-                        alert(e.errorMessage)
-                    })
-                };
-                f.submit(function(e) {
-                    if (f.data("submitting")) return ! 1;
-                    var t = i.trim(f[0].message.value);
-                    return t == "" || !x.placeholder && t == h.attr("placeholder") ? (alert("\u60a8\u8fd8\u6ca1\u5199\u5185\u5bb9\u5462"), !1) : (ct() ? S(f, C) : C(), !1)
-                });
-                var L = function(e) {
-                    return i(e).hasClass("ds-service-icon-grey") ? null: i(e).attr("data-service")
-                };
-                return c.click(function() {
-                    return i(this).toggleClass("ds-service-icon-grey").toggleClass("ds-service-icon"),
-                    l.value = i.map(c, L).join(","),
-                    l.checked = l.value != "",
-                    !1
-                }),
-                i(l).change(function() {
-                    var e = this.checked;
-                    c[e ? "removeClass": "addClass"]("ds-service-icon-grey")[e ? "addClass": "removeClass"]("ds-service-icon"),
-                    this.value = i.map(c, L).join(",")
-                }),
-                this
+                "<": "&lt;",
+                ">": "&gt;",
+                '"': "&quot;",
+                "'": "&#x27;",
+                "`": "&#x60;"
             }
-        },
-        H.Dialog = Z.extend({
-            init: function(e, t) { (this.el = i("#ds-wrapper"))[0] || (this.el = _(i('<div id="ds-wrapper"></div>'))),
-                this.options = i.extend({
-                    width: 600
-                },
-                t),
-                e !== n && i(e).attr("id", "ds-reset").appendTo(this.el)
-            },
-            open: function() {
-                var e = this;
-                e.el.hide().appendTo(t.body).fadeIn(200),
-                S && e.el.css("top", s.scrollTop() + 100),
-                e.el.show().find(".ds-dialog").delegate("a.ds-dialog-close", "click",
-                function(t) {
-                    return e.close(),
-                    !1
-                }).click(h);
-                var n = function(t) {
-                    if (t.which == 27) return e.close(),
-                    !1
-                },
-                r = function(t) {
-                    return e.close(),
-                    !1
-                };
-                return a.keydown(n),
-                i(t.body).click(r),
-                e.close = function(s) {
-                    a.unbind("keydown", n),
-                    i(t.body).unbind("click", r),
-                    e.el.fadeOut(200,
-                    function() {
-                        i(this).remove()
-                    }),
-                    e.trigger("close")
-                },
-                e
+                , s = /&(?!\w+;)|[<>"'`]/g
+                , a = /[&<>"'`]/;
+            return function (t) {
+                return null == t || t === !1 ? "" : a.test(t) ? t.replace(s, e) : t
             }
-        }),
-        J.likePanel = function(e) {
-            return e.likes ? '<span class="ds-highlight">' + e.likes + "</span> \u4eba\u559c\u6b22": ""
-        },
-        J.likeTooltip = function(e) {
-            var t = {
-                qzone: "QQ\u7a7a\u95f4",
-                weibo: "\u65b0\u6d6a\u5fae\u535a",
-                qqt: "\u817e\u8baf\u5fae\u535a",
-                renren: "\u4eba\u4eba\u7f51",
-                kaixin: "\u5f00\u5fc3\u7f51",
-                douban: "\u8c46\u74e3\u7f51",
-                baidu: "\u767e\u5ea6\u641c\u85cf",
-                netease: "\u7f51\u6613\u5fae\u535a",
-                sohu: "\u641c\u72d0\u5fae\u535a"
-            },
-            n = [];
-            for (var r in t) n.push('<li><a class="ds-share-to-' + r + " ds-service-link ds-" + r + '" href="' + w.hostUrl + "/share-proxy/?" + w.param({
-                service: r,
-                thread_id: e.thread_id
-            }) + '">' + t[r] + "</a></li>");
-            var i = Math.ceil(n.length / 2);
-            return '<div class="ds-like-tooltip ds-rounded"><p>\u5f88\u9ad8\u5174\u4f60\u80fd\u559c\u6b22\uff0c\u5206\u4eab\u4e00\u4e0b\u5427\uff1a</p><ul>' + n.slice(0, i).join("") + "</ul><ul>" + n.slice(i).join("") + '</ul><p class="ds-like-tooltip-footer"><a class="ds-like-tooltip-close">\u7b97\u4e86</a></p></div>'
-        },
-        H.Meta = function(e) {
-            this.embedThread = e
-        },
-        H.Meta.prototype = {
-            render: function() {
-                var r = this,
-                s = r.embedThread,
-                o = s.data,
-                u = r.el = i('<div class="ds-meta"><a href="javascript:void(0)" class="ds-like-thread-button ds-rounded' + (o.user_vote > 0 ? " ds-thread-liked": "") + '"><span class="ds-icon ds-icon-heart"></span>' + ' <span class="ds-thread-like-text">' + (o.user_vote > 0 ? "\u5df2\u559c\u6b22": "\u559c\u6b22") + '</span><span class="ds-thread-cancel-like">\u53d6\u6d88\u559c\u6b22</span></a><span class="ds-like-panel"></span></div>'),
-                a = u.find(".ds-like-thread-button").click(function(f) {
-                    var l = a.hasClass("ds-thread-liked");
-                    A("/api/threads/vote", {
-                        thread_id: s.threadId,
-                        vote: l ? 0 : 1
-                    },
-                    function(e) {
-                        i.each(e.response.thread,
-                        function(e, t) {
-                            o[e] = t
-                        }),
-                        r.resetLikePanel()
+        } (), k = function (e) {
+            if (e.match(/^(http|https):/))
+                return e;
+            var s = t.createElement("a");
+            return s.href = e,
+                P.hrefNormalized ? s.href : s.getAttribute("href", 4)
+        }
+            , w = function (e) {
+                return function () {
+                    return e
+                }
+            }
+            , x = function () {
+                for (var e = {}, t = 0; t < arguments.length; t++)
+                    arguments[t] && o.extend(e, arguments[t]);
+                var s = o.param(e);
+                return s ? "?" + s : ""
+            }
+            , T = function () {
+                var e = o.getCookie("duoshuo_token");
+                return e ? {
+                    jwt: e
+                } : c.remote_auth ? {
+                    short_name: c.short_name,
+                    remote_auth: c.remote_auth
+                } : s
+            }
+            , q = function () {
+                if (!c && (c = e.duoshuoQuery)) {
+                    if (!c.short_name || "your_duoshuo_short_name" === c.short_name)
+                        return c = s,
+                            void alert("你还没有设置多说域名(duoshuoQuery.short_name)，填入已有域名或创建新站点：http://duoshuo.com/create-site/");
+                    it.trigger("queryDefined")
+                }
+                return c
+            }
+            , C = function (e) {
+                return e && e.error && e.warn ? e : {
+                    error: function () { },
+                    log: function () { },
+                    warn: function () { }
+                }
+            } (e.console), S = e.DUOSHUO = {
+                sourceName: {
+                    weibo: "新浪微博",
+                    qq: "QQ",
+                    qzone: "QQ空间",
+                    qqt: "腾讯微博",
+                    renren: "人人网",
+                    douban: "豆瓣网",
+                    kaixin: "开心网",
+                    sohu: "搜狐微博",
+                    baidu: "百度",
+                    google: "谷歌",
+                    wechat: "微信",
+                    weixin: "微信",
+                    facebook: "Facebook",
+                    twitter: "Twitter",
+                    linkedin: "Linkedin"
+                },
+                serviceNames: {
+                    weibo: "微博",
+                    qq: "QQ",
+                    douban: "豆瓣",
+                    renren: "人人",
+                    kaixin: "开心",
+                    baidu: "百度",
+                    google: "谷歌",
+                    wechat: "微信",
+                    weixin: "微信",
+                    facebook: "Facebook",
+                    twitter: "Twitter",
+                    linkedin: "Linkedin"
+                },
+                parseDate: function (e) {
+                    return e.parse("2011-10-28T00:00:00+08:00") && function (t) {
+                        return new e(t)
+                    }
+                        || e.parse("2011/10/28T00:00:00+0800") && function (t) {
+                            return new e(t.replace(/-/g, "/").replace(/:(\d\d)$/, "$1"))
+                        }
+                        || e.parse("2011/10/28 00:00:00+0800") && function (t) {
+                            return new e(t.replace(/-/g, "/").replace(/:(\d\d)$/, "$1").replace("T", " "))
+                        }
+                        || function (t) {
+                            return new e(t)
+                        }
+                } (Date),
+                fullTime: function (e) {
+                    var t = S.parseDate(e);
+                    return t.getFullYear() + "年" + (t.getMonth() + 1) + "月" + t.getDate() + "日 " + t.toLocaleTimeString()
+                },
+                elapsedTime: function (e) {
+                    var t = S.parseDate(e)
+                        , s = new Date
+                        , a = (s - b - t) / 1e3;
+                    return 10 > a ? "刚刚" : 60 > a ? Math.round(a) + "秒前" : 3600 > a ? Math.round(a / 60) + "分钟前" : 86400 > a ? Math.round(a / 3600) + "小时前" : (s.getFullYear() == t.getFullYear() ? "" : t.getFullYear() + "年") + (t.getMonth() + 1) + "月" + t.getDate() + "日"
+                },
+                compileStyle: function (e) {
+                    var t = ""
+                        , s = {};
+                    if (s.textbox = "#ds-thread #ds-reset .ds-replybox .ds-textarea-wrapper",
+                        !e)
+                        return t;
+                    for (var a in e)
+                        t += s[a] + "{" + e[a] + "}\n";
+                    return t
+                },
+                init: function (e, t) {
+                    e && !O[e] && (O[e] = t || {
+                        type: "EmbedThread"
                     }),
-                    a.toggleClass("ds-thread-liked"),
-                    a.find(".ds-thread-like-text").text(l ? "\u559c\u6b22": "\u5df2\u559c\u6b22");
-                    var c = function(e) {
-                        r.tooltip.detach(),
-                        i(t.body).unbind("click", c)
+                        S.initView && S.initView()
+                }
+            }, j = t.all, P = S.support = function () {
+                var s = t.createElement("div");
+                s.innerHTML = '<a href="/a" style="opacity:.55;">a</a><input type="checkbox"/>';
+                var a = s.getElementsByTagName("a")[0]
+                    , i = s.getElementsByTagName("input")[0]
+                    , r = {
+                        placeholder: "placeholder" in i,
+                        touch: "ontouchstart" in e || "onmsgesturechange" in e,
+                        opacity: /^0.55$/.test(a.style.opacity),
+                        hrefNormalized: "/a" === a.getAttribute("href"),
+                        iOS: v.match(/ \((iPad|iPhone|iPod);( U;)? CPU( iPhone)? OS /),
+                        android: v.match(/ \(Linux; U; Android /)
                     };
-                    return l ? r.tooltip && c(f) : (r.tooltip === n && (r.tooltip = i(J.likeTooltip(o)).click(h).delegate("a", "click",
-                    function(t) {
-                        switch (this.className) {
-                        case "ds-like-tooltip-close":
-                            c(t);
+                return r.ie6 = !f && "undefined" == typeof s.style.maxHeight,
+                    r.authInWin = e.postMessage && e.screen.width > 800 && !r.iOS && !r.android && h.origin,
+                    r
+            } (), O = S.selectors = {
+                ".ds-thread": {
+                    type: "EmbedThread"
+                },
+                ".ds-recent-comments": {
+                    type: "RecentComments"
+                },
+                ".ds-recent-visitors": {
+                    type: "RecentVisitors"
+                },
+                ".ds-top-users": {
+                    type: "TopUsers"
+                },
+                ".ds-top-threads": {
+                    type: "TopThreads"
+                },
+                ".ds-login": {
+                    type: "LoginWidget"
+                },
+                ".ds-thread-count": {
+                    type: "ThreadCount"
+                },
+                ".ds-share": {
+                    type: "ShareWidget"
+                }
+            }, E = S.openDialog = function (e) {
+                return S.dialog !== s && S.dialog.el.remove(),
+                    S.dialog = new st.Dialog(et.dialog(e)).open()
+            }
+            , L = S.smilies = {};
+        S.require = function () {
+            function t(e) {
+                var t = U[e] ? "?" + U[e] + ".js" : "";
+                return S.STATIC_URL + "/libs/" + e + ".js" + t
+            }
+            var s = {
+                mzadxN: "undefined" != typeof mzadxN
+            };
+            return "undefined" != typeof jQuery && jQuery.fn.jquery >= "1.5" && (s["embed.compat"] = !0,
+                S.jQuery = e.jQuery),
+                function (e, a) {
+                    if ("string" == typeof e)
+                        s[e] ? a() : o.injectScript(t(e), function () {
+                            s[e] = !0,
+                                a()
+                        });
+                    else if ("object" == typeof e) {
+                        var i, r = !0;
+                        for (i = 0; i < e.length; i++)
+                            (function (n) {
+                                s[e[i]] || (r = !1,
+                                    o.injectScript(t(n), function () {
+                                        s[n] = !0;
+                                        for (var t = 0; t < e.length; t++)
+                                            if (!s[e[t]])
+                                                return;
+                                        a()
+                                    }))
+                            })(e[i]);
+                        r && a()
+                    }
+                }
+        } ();
+        for (var N = 0, I = ["EmbedThread", "RecentComments", "RecentVisitors", "TopUsers", "TopThreads", "LoginWidget", "ThreadCount"]; N < I.length; N++)
+            S[I[N]] = function (e) {
+                return function (t, s) {
+                    s = s || {},
+                        s.type = e,
+                        t && !O[t] && (O[t] = s),
+                        S.initSelector && S.initSelector(t, s)
+                }
+            } (I[N]),
+                S["create" + I[N]] = function (e) {
+                    return function (s, a) {
+                        var i = t.createElement(s);
+                        for (var r in a)
+                            i.setAttribute("data-" + r, a[r]);
+                        return S[e](i),
+                            i
+                    }
+                } (I[N]);
+        S.RecentCommentsWidget = S.RecentComments;
+        var R = S.API = {
+            ajax: function (e, t, i, r, n) {
+                function d(e) {
+                    var t = e.getResponseHeader("Date");
+                    t && (b = new Date - new Date(t))
+                }
+                function l(e, t, s) {
+                    var a, i, o, l = t;
+                    if (e >= 200 && 300 > e || 304 === e)
+                        if (304 === e)
+                            l = "notmodified",
+                                o = !0;
+                        else
+                            try {
+                                a = p.parse(s),
+                                    l = "success",
+                                    o = !0
+                            } catch (c) {
+                                l = "parsererror",
+                                    i = c
+                            }
+                    else {
+                        i = l,
+                            (!l || e) && (l = "error",
+                                0 > e && (e = 0));
+                        try {
+                            a = p.parse(s)
+                        } catch (c) {
+                            l = "parsererror",
+                                i = c
+                        }
+                    }
+                    o ? r && r(a) : "parseerror" === l ? C.error("解析错误: " + s) : (C.error("出错啦(" + a.code + "): " + a.errorMessage),
+                        n && n(a),
+                        a.errorTrace && C.error(a.errorTrace)),
+                        d(m)
+                }
+                var u = o.getCookie("duoshuo_token");
+                i = i || {},
+                    i.v = S.version,
+                    u ? i.jwt = u : c.remote_auth && (i.remote_auth = c.remote_auth);
+                var h = f && p && p.parse;
+                if (h) {
+                    var m = new f
+                        , v = !!m && "withCredentials" in m;
+                    if (v) {
+                        var g;
+                        return m.open(e, a() + "/api/" + t + ".json" + ("GET" == e ? "?" + o.param(i) : ""), !0),
+                            m.withCredentials = !0,
+                            m.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8"),
+                            m.send("GET" == e ? null : o.param(i)),
+                            g = function (e, t) {
+                                var a, i, r, n;
+                                try {
+                                    if (g && (t || 4 === m.readyState))
+                                        if (g = s,
+                                            t)
+                                            4 !== m.readyState && m.abort();
+                                        else {
+                                            a = m.status,
+                                                r = m.getAllResponseHeaders();
+                                            try {
+                                                n = m.responseText
+                                            } catch (e) { }
+                                            try {
+                                                i = m.statusText
+                                            } catch (o) {
+                                                i = ""
+                                            }
+                                        }
+                                } catch (d) {
+                                    t || l(-1, d)
+                                }
+                                n && l(a, i, n, r)
+                            }
+                            ,
+                            void (4 === m.readyState ? g() : m.onreadystatechange = g)
+                    }
+                }
+                "GET" != e && (i._method = "POST");
+                var y = "cb_" + Math.round(1e6 * Math.random());
+                R[y] = function (e) {
+                    switch (e.code) {
+                        case 0:
+                            r && r(e);
                             break;
                         default:
-                            if (!e.open(this.href, "_blank", "height=500,width=600,top=0,left=0,toolbar=no,menubar=no,resizable=yes,location=yes,status=no")) return
+                            n && n(e),
+                                C.error("出错啦(" + e.code + "): " + e.errorMessage),
+                                e.errorTrace && C.error(e.errorTrace)
+                    }
+                }
+                    ,
+                    i.callback = "DUOSHUO.API['" + y + "']",
+                    o.injectScript(a() + "/api/" + t + ".jsonp?" + o.param(i))
+            },
+            get: function (e, t, s, a) {
+                return this.ajax("GET", e, t, s, a)
+            },
+            post: function (e, t, s, a) {
+                return this.ajax("POST", e, t, s, a)
+            }
+        }
+            , A = S.ws = {
+                messages: [],
+                send: function (s) {
+                    if (!("WebSocket" in e && p))
+                        return !1;
+                    var a = this;
+                    if (a.messages.push(p.stringify(s)),
+                        !a.webSocket) {
+                        var r = "https:" === t.location.protocol ? "wss://ws.duoshuo.com:8202/" : "ws://ws.duoshuo.com:8201/"
+                            , n = a.webSocket = new WebSocket(r);
+                        n.onopen = function () {
+                            var e, t = 1 === n.readyState;
+                            if (t)
+                                for (; e = a.messages.shift();)
+                                    n.send(e)
                         }
-                        return ! 1
-                    })), r.tooltip.appendTo(s.innerEl).css({
-                        top: u.position().top + u.outerHeight() - 4 + "px",
-                        left: 0
-                    }), i(t.body).click(c)),
-                    !1
-                });
-                return r.resetLikePanel(),
-                ct() && u.hide(),
-                r
-            },
-            resetLikePanel: function() {
-                this.el.find(".ds-like-panel").html(J.likePanel(this.embedThread.data))
-            }
-        },
-        J.postListHead = function(e) {
-            var t = e.data,
-            n = e.options;
-            return '<div class="ds-comments-info"><div class="ds-sort"><a class="ds-order-desc">' + k.latest + '</a><a class="ds-order-asc">' + k.earliest + '</a><a class="ds-order-hot">' + k.hottest + '</a></div><ul class="ds-comments-tabs"><li class="ds-tab"><a class="ds-comments-tab-duoshuo ds-current" href="javascript:void(0);"></a></li>' + (n.show_reposts && t.reposts ? '<li class="ds-tab"><a class="ds-comments-tab-repost" href="javascript:void(0);"></a></li>': "") + (n.show_weibo && t.weibo_reposts ? '<li class="ds-tab"><a class="ds-comments-tab-weibo" href="javascript:void(0);"></a></li>': "") + (n.show_qqt && t.qqt_reposts ? '<li class="ds-tab"><a class="ds-comments-tab-qqt" href="javascript:void(0);"></a></li>': "") + "</ul>" + "</div>"
-        },
-        H.PostListHead = function(e) {
-            this.embedThread = e
-        },
-        H.PostListHead.prototype = {
-            render: function() {
-                var e = this.embedThread,
-                t = e.options,
-                n = e.postList,
-                r = this.el = i(J.postListHead(e)),
-                s = r.find("ul.ds-comments-tabs").delegate(".ds-tab a", "click",
-                function(t) {
-                    s.find("a.ds-current").removeClass("ds-current"),
-                    n.params.page = 1;
-                    var r = t.currentTarget;
-                    switch (r.className) {
-                    case "ds-comments-tab-duoshuo":
-                        n.params.source = "duoshuo",
-                        e.replybox.el.show();
-                        break;
-                    case "ds-comments-tab-repost":
-                        n.params.source = "repost",
-                        e.replybox.el.hide();
-                        break;
-                    case "ds-comments-tab-weibo":
-                        n.params.source = "weibo",
-                        e.replybox.el.hide();
-                        break;
-                    case "ds-comments-tab-qqt":
-                        n.params.source = "qqt",
-                        e.replybox.el.hide();
-                        break;
-                    default:
+                            ,
+                            n.onmessage = function (e) {
+                                try {
+                                    var t = p.parse(e.data)
+                                } catch (s) {
+                                    return
+                                }
+                                switch (t.type) {
+                                    case "post":
+                                        for (var a, r = 0; r < S.pagelets.length; r++)
+                                            a = S.pagelets[r],
+                                                a.threadId == t.thread_id && a.onMessage(t);
+                                        break;
+                                    case "notification":
+                                        y.push(t),
+                                            i()
+                                }
+                            }
+                            ,
+                            e.addEventListener("beforeunload", function () {
+                                n.close()
+                            })
                     }
-                    return i(r).addClass("ds-current"),
-                    n.refetch(),
-                    !1
-                }),
-                o = r.find(".ds-sort").delegate("a", "click",
-                function(e) {
-                    return o.find("a.ds-current").removeClass("ds-current"),
-                    n.params.order = t.order = this.className.replace("ds-order-", ""),
-                    n.params.page = 1,
-                    n.refetch(),
-                    i(this).addClass("ds-current"),
-                    !1
-                });
-                return o.find(".ds-order-" + n.params.order).addClass("ds-current"),
-                this
-            }
-        },
-        H.Paginator = function(e) {
-            e = e || {};
-            var t = this,
-            n = t.el = e.el || i('<div class="ds-paginator"></div>'),
-            r = t.collection = e.collection;
-            n.delegate("a", "click",
-            function(e) {
-                return r.params.page = parseInt(this.innerHTML),
-                r.refetch(),
-                n.find(".ds-current").removeClass("ds-current"),
-                i(this).addClass("ds-current"),
-                !1
-            })
-        },
-        H.Paginator.prototype = {
-            reset: function(e) {
-                function i(e) {
-                    r.push('<a data-page="' + e + '" href="javascript:void(0);">' + e + "</a>")
+                    a.webSocket.onopen()
                 }
-                var t = this.collection.params.page || 1,
-                n, r = [];
-                if (t > 1) {
-                    i(1),
-                    n = t > 4 ? t - 2 : 2,
-                    n > 2 && r.push('<span class="page-break">...</span>');
-                    for (; n < t; n++) i(n)
-                }
-                r.push('<a data-page="' + t + '" href="javascript:void(0);" class="ds-current">' + t + "</a>");
-                if (t < e.pages) {
-                    for (n = t + 1; n <= t + 4 && n < e.pages; n++) i(n);
-                    n < e.pages && r.push('<span class="page-break">...</span>'),
-                    i(e.pages)
-                }
-                this.el.html('<div class="ds-border"></div>' + r.join(" "))[e.pages > 1 ? "show": "hide"]()
+            };
+        S.DOMAIN = "duoshuo.com",
+            S.STATIC_URL = g + "//static.duoshuo.com",
+            S.REMOTE = g + "//duoshuo.com",
+            S.version = "16.6.16";
+        var M = {
+            "default": "9b2a46a0",
+            dark: "33f3a5ac",
+            bluebox: "39a75d50",
+            newhua: "706ba4eb",
+            justflat: "9d72ec5a"
+        }
+            , U = {
+                "embed.compat": "24f8ca3f",
+                smilies: "921e8eda"
             }
-        },
-        J.smiliesTooltip = function(e) {
-            var t = '<div id="ds-smilies-tooltip"><ul class="ds-smilies-tabs">';
-            for (var n in e) t += "<li><a>" + n + "</a></li>";
-            return t + '</ul><div class="ds-smilies-container"></div></div>'
-        },
-        w.addSmilies = function(e, t) {
-            var n = w.smiliesTooltip;
-            n && n.el.find("ul.ds-smilies-tabs").append("<li><a>" + e + "</a></li>"),
-            w.smilies[e] = t
-        },
-        H.SmiliesTooltip = function() {},
-        H.SmiliesTooltip.prototype = {
-            render: function() {
-                var e = this,
-                n = e.el = i(J.smiliesTooltip(q));
-                return n.click(h).find("ul.ds-smilies-tabs").delegate("a", "click",
-                function(t) {
-                    e.reset(this.innerHTML)
-                }),
-                n.find(".ds-smilies-container").delegate("img", "click",
-                function(n) {
-                    var r = e.replybox,
-                    i = r.el.find("textarea")[0],
-                    s = i.value;
-                    if (t.selection) {
-                        i.value = s.substring(0, v.start) + this.title + s.substring(v.end, s.length),
-                        i.value = i.value.replace(k.leave_a_message, ""),
-                        i.focus();
-                        var o = t.selection.createRange();
-                        o.moveStart("character", v.start + this.title.length),
-                        o.collapse(),
-                        o.select()
-                    } else {
-                        var u = i.selectionStart + this.title.length;
-                        i.value = s.substring(0, i.selectionStart) + this.title + s.substring(i.selectionEnd),
-                        i.setSelectionRange(u, u)
-                    }
-                    r.hideSmilies(),
-                    i.focus()
-                }),
-                this
-            },
-            reset: function(e) {
-                var t = this.el.find("ul.ds-smilies-tabs");
-                t.find("a.ds-current").removeClass("ds-current"),
-                t.find("a").filter(function() {
-                    return this.innerHTML == e
-                }).addClass("ds-current");
-                var n = "<ul>";
-                return i.each(q[e],
-                function(t, r) {
-                    var i = e.indexOf("\u5fae\u535a") === 0 ? "http://img.t.sinajs.cn/t35/style/images/common/face/ext/normal/" + r.replace("_org", "_thumb") : b + "/images/smilies/" + r;
-                    e === "WordPress" && (t = " " + t + " "),
-                    n += '<li><img src="' + i + '" title="' + p(t) + '" /></li>'
-                }),
-                n += "</ul>",
-                this.el.find(".ds-smilies-container").html(n),
-                this
+            , z = {
+                post: "发布",
+                posting: "正在发布",
+                settings: "设置",
+                reply: "回复",
+                like: "顶",
+                repost: "转发",
+                report: "举报",
+                "delete": "删除",
+                reply_to: "回复 ",
+                reposts: "转发",
+                comments: "评论",
+                floor: "楼",
+                latest: "最新",
+                earliest: "最早",
+                hottest: "最热",
+                share_to: "分享到:",
+                leave_a_message: "说点什么吧…",
+                no_comments_yet: "还没有评论，沙发等你来抢",
+                repost_reason: "请输入转发理由",
+                hot_posts_title: "被顶起来的评论",
+                comments_zero: "暂无评论",
+                comments_one: "1条评论",
+                comments_multiple: "{num}条评论",
+                reposts_zero: "暂无转发",
+                reposts_one: "1条转发",
+                reposts_multiple: "{num}条转发",
+                weibo_reposts_zero: "暂无新浪微博",
+                weibo_reposts_one: "1条新浪微博",
+                weibo_reposts_multiple: "{num}条新浪微博",
+                qqt_reposts_zero: "暂无腾讯微博",
+                qqt_reposts_one: "1条腾讯微博",
+                qqt_reposts_multiple: "{num}条腾讯微博"
             }
-        },
-        J.postPlaceholder = function() {
-            return '<li class="ds-post ds-post-placeholder">' + k.no_comments_yet + "</li>"
-        },
-        J.post = function(e, t) {
-            var n = K(e),
-            r = n.user_id ? ' data-user-id="' + n.user_id + '"': "",
-            s = n.qqt_account || "",
-            o = J.timeHtml(e.created_at, e.url),
-            u = e.parents || [];
-            switch (e.source) {
-            case "duoshuo":
-                o += '<a class="ds-post-reply" href="javascript:void(0);"><span class="ds-icon ds-icon-reply"></span>' + k.reply + "</a>" + J.likePost(e) + '<a class="ds-post-repost" href="javascript:void(0);"><span class="ds-icon ds-icon-share"></span>' + k.repost + "</a>" + '<a class="ds-post-report" href="javascript:void(0);"><span class="ds-icon ds-icon-report"></span>' + k.report + "</a>" + (e.privileges["delete"] ? '<a class="ds-post-delete" href="javascript:void(0);"><span class="ds-icon ds-icon-delete"></span>' + k["delete"] + "</a>": "");
-                break;
-            case "qqt":
-            case "weibo":
-                o += '<a class="ds-weibo-comments" href="javascript:void(0);">' + k.comments + (e.type.match(/\-comment$/) ? "": '(<span class="ds-count">' + e.comments + "</span>)") + "</a>" + '<a class="ds-weibo-reposts" href="javascript:void(0);">' + k.reposts + (e.type.match(/\-comment$/) ? "": '(<span class="ds-count">' + e.reposts + "</span>)") + "</a>";
-                break;
-            default:
-            }
-            return '<li class="ds-post" data-post-id="' + e.post_id + '"><div class="ds-post-self" data-post-id="' + e.post_id + '" data-thread-id="' + e.thread_id + '" data-root-id="' + e.root_id + '" data-source="' + e.source + '"><div class="ds-avatar"' + r + ">" + J.avatar(n) + (w.sourceName[e.source] ? J.serviceIcon(e.source) : "") + '</div><div class="ds-comment-body"><div class="ds-comment-header">' + (n.url ? '<a class="ds-user-name ds-highlight" data-qqt-account="' + s + '" href="' + p(n.url) + '" ' + (n.user_id ? " onclick=\"this.href='" + w.hostUrl + "/user-url/?user_id=" + n.user_id + "';\"": "") + ' rel="nofollow" target="_blank"' + r + ">" + p(n.name) + "</a>": '<span class="ds-user-name"' + r + ' data-qqt-account="'+s+'">'+p(n.name)+"</span>") +"<span class=\"ua\">" + sskadmin(e.author) + "</span><span class=\"ua\">" + ua(e.agent) +"</span><span class=\"ua\">"+ os(e.agent) + "</span>" +"</div>" + (t.max_depth == 1 && t.show_context && u.length ? '<ol id="ds-ctx">' + i.map(u,
-            function(e, t) {
-                return (t == 1 && u.length > 2 ? '<li class="ds-ctx-entry"><a href="javascript:void(0);" class="ds-expand">\u8fd8\u6709' + (u.length - 2) + "\u6761\u8bc4\u8bba</a></li>": "") + (ot[e] ? J.ctxPost(ot[e].data, t, t && t < u.length - 1) : "")
-            }).join("") + "</ol>": "") + "<p>" + (u.length >= t.max_depth && (!t.show_context || t.max_depth > 1) && e.parent_id && ot[e.parent_id] ? '<a class="ds-comment-context" data-post-id="' + e.post_id + '" data-parent-id="' + e.parent_id + '">' + k.reply_to + p(K(ot[e.parent_id].data).name) + ": </a>": "") + e.message + '</p><div class="ds-comment-footer ds-comment-actions' + (e.vote > 0 ? " ds-post-liked": "") + '">' + o + "</div></div></div>" + (t.max_depth > 1 && (e.childrenArray || e.children) && e.source != "weibo" && e.source != "qqt" ? '<ul class="ds-children">' + i.map(e.childrenArray || e.children,
-            function(e) {
-                return ot[e] ? J.post(ot[e].data, t) : ""
-            }).join("") + "</ul>": "") + "</li>"
-        };
-        var $ = i('<div id="ds-bubble"><div class="ds-bubble-content"></div><div class="ds-arrow ds-arrow-down ds-arrow-border"></div><div class="ds-arrow ds-arrow-down"></div></div>'),
-        G = $.find(".ds-bubble-content").delegate("a.ds-ctx-open", "click",
-        function(e) {
-            L("/api/posts/conversation", {
-                post_id: G.attr("data-post-id")
-            },
-            function(e) {
-                t.el.find("ol").html(i.map(e.response, J.ctxPost).join("\n"))
-            });
-            var t = j('<h2>\u67e5\u770b\u5bf9\u8bdd</h2><ol id="ds-ctx"></ol>');
-            return t.el.find(".ds-dialog").css("width", "600px"),
-            t.el.find(".ds-dialog-body").css({
-                "max-height": "350px",
-                _height: "350px",
-                "overflow-y": "auto",
-                "padding-top": "10px"
-            }),
-            !1
-        }),
-        Y = bubbleOutTimer = 0,
-        tt = function() {
-            bubbleOutTimer && (clearTimeout(bubbleOutTimer), bubbleOutTimer = 0)
-        };
-        bubbleOut = function() {
-            bubbleOutTimer = setTimeout(function() {
-                bubbleOutTimer = 0,
-                $.detach()
-            },
-            400)
-        },
-        $.mouseenter(tt).mouseleave(bubbleOut),
-        J.userInfo = function(e) {
-            var t = [];
-            return i.each(e.social_uid,
-            function(e, n) {
-                t.push('<a href="' + w.REMOTE + "/user-proxy/" + e + "/" + n + '/" target="_blank" class="ds-service-icon ds-' + e + '" title="' + w.sourceName[e] + '"></a>')
-            }),
-            '<a href="' + p(e.url) + '" class="ds-avatar" target="_blank">' + J.avatarImg(e) + '</a><a href="' + p(e.url) + '" class="ds-user-name ds-highlight" target="_blank">' + p(e.name) + "</a>" + t.join("") + '<p class="ds-user-card-meta"><a href="' + w.REMOTE + "/profile/" + e.user_id + '/" target="_blank"><span class="ds-highlight">' + e.comments + "</span>\u6761\u8bc4\u8bba</a></p>" + (e.description ? '<p class="ds-user-description">' + p(e.description) + "</p>": "")
-        },
-        P.PostList = function(e) {
-            e && (e.params && (this.params = e.params), e.embedThread && (this.embedThread = e.embedThread)),
-            this.el = i('<ul class="ds-comments"></ul>')
-        },
-        P.PostList.prototype = {
-            url: "/api/threads/listPosts",
-            render: function() {
-                return vt.call(this.el, this.embedThread, this.embedThread.options),
-                this
-            },
-            reset: function(e) {
-                var t = this.embedThread.options;
-                this.el.html(e[0] ? i.map(e,
-                function(e) {
-                    return ot[e] ? J.post(ot[e].data, t) : ""
-                }).join("") : J.postPlaceholder())
-            },
-            refetch: function() {
-                var e = this,
-                n = i(J.indicator()).appendTo(t.body).fadeIn(200);
-                e.el.fadeTo(200, .5),
-                L(e.url, e.params,
-                function(t) {
-                    at(ot, t.parentPosts || t.relatedPosts),
-                    at(ut, t.users),
-                    e.reset(t.response),
-                    e.embedThread.paginator.reset(t.cursor),
-                    e.el.fadeTo(200, 1),
-                    w.scrollTo(e.el),
-                    n.remove()
-                })
-            }
-        },
-        w.repostDialog = function(e, t, n, r) {
-            var i = j('<h2>\u8f6c\u53d1\u5230\u5fae\u535a</h2><div class="ds-quote"><strong>@' + p(K(e.data).name) + "</strong>: " + e.data.message + "</div>" + "<form>" + Q({
-                post_id: e.data.post_id
-            }) + '<div class="ds-textarea-wrapper">' + '<textarea name="message" title="Ctrl+Enter\u5feb\u6377\u63d0\u4ea4" placeholder="' + p(k.repost_reason) + '">' + p(t) + "</textarea>" + '<pre class="ds-hidden-text"></pre>' + "</div>" + '<div class="ds-actions">' + (r ? Q({
-                "service[]": r
-            }) : '<label><input type="checkbox" name="service[]" value="weibo"' + (rt.data.social_uid.weibo ? ' checked="checked"': "") + ' /><span class="ds-service-icon ds-weibo"></span>\u65b0\u6d6a\u5fae\u535a</label>  ' + '<label><input type="checkbox" name="service[]" value="qqt"' + (rt.data.social_uid.qq ? ' checked="checked"': "") + ' /><span class="ds-service-icon ds-qqt"></span>\u817e\u8baf\u5fae\u535a</label>') + '<button type="submit">' + k.repost + "</button>" + "</div>" + "</form>"),
-            s = i.el.find("form").submit(function(e) {
-                return ! r && !s.find("[type=checkbox]:checked")[0] ? (alert("\u8fd8\u6ca1\u6709\u9009\u53d1\u5e03\u5230\u54ea\u513f\u5462"), !1) : (A("/api/posts/repost", w.toJSON(s),
-                function(e) {
-                    if (n && r) {
-                        var t = n.options,
-                        i = dt(n.postList.el, e.response[r], t);
-                        t.order == "asc" == (t.formPosition == "top") && w.scrollTo(i);
-                        var s = n.el.find(".ds-comments-tab-" + r + " span.ds-highlight");
-                        s.html(parseInt(s.html()) + 1)
-                    }
-                }), i.close(), !1)
-            });
-            return s.find(".ds-actions [type=checkbox]").change(function(e) {
-                var t = this.value;
-                if (this.checked && !rt.data.social_uid[t == "qqt" ? "qq": t]) {
-                    mt(t);
-                    return
-                }
-            }),
-            B(s.find("textarea")).keyup(g).keyup(y).focus(),
-            !1
-        },
-        J.toolbar = function(e) {
-            var t = J.logoutUrl();
-            return '<div class="ds-toolbar"><div class="ds-account-control"><span class="ds-icon ds-icon-settings"></span> <span>\u5e10\u53f7\u7ba1\u7406</span><ul><li><a class="ds-bind-more" href="javascript:void(0);" style="border-top: none">\u7ed1\u5b9a\u66f4\u591a</a></li><li><a target="_blank" href="' + w.REMOTE + "/settings/" + W(X()) + '">' + p(k.settings) + "</a></li>" + '<li><a rel="nofollow" href="' + t + '" style="border-bottom: none">\u767b\u51fa</a></li>' + "</ul>" + "</div>" + '<div class="ds-visitor">' + (rt.data.url ? '<a class="ds-visitor-name" href="' + p(rt.data.url) + '" target="_blank">' + p(rt.data.name) + "</a>": '<span class="ds-visitor-name">' + p(rt.data.name) + "</span>") + '<a class="ds-unread-comments-count" href="javascript:void(0);" title="\u65b0\u56de\u590d"></a>' + "</div>" + "</div>"
-        },
-        H.EmbedThread = R.extend({
-            uri: "/api/threads/listPosts",
-            params: "thread-id local-thread-id source-thread-id thread-key category channel-key author-key author-id url limit order max-depth form-position container-url" + (f.match(/MSIE 6\.0/) ? "": " title image thumbnail"),
-            render: function() {
-                var e = this.el.attr("id", "ds-thread").append(J.waitingImg()),
-                t = e.width(),
-                n = e.data("url") || !e.attr("data-thread-id") && i("link[rel=canonical]").attr("href");
-                n ? e.data("url", d(n)) : e.data("container-url", r.href),
-                t && t <= 400 && e.addClass("ds-narrow").data("max-depth", 1)
-            },
-            updateCounter: function(e) {
-                var t = {
-                    duoshuo: ["comments", "\u8bc4\u8bba"],
-                    repost: ["reposts", "\u8f6c\u8f7d"],
-                    weibo: ["weibo_reposts", "\u65b0\u6d6a\u5fae\u535a"],
-                    qqt: ["qqt_reposts", "\u817e\u8baf\u5fae\u535a"]
-                };
-                for (var n in t) if (!e || e == n) {
-                    var r = this.data[t[n][0]];
-                    this.el.find(".ds-comments-tab-" + n).html(this.el.hasClass("ds-narrow") ? '<span class="ds-service-icon ds-' + n + '"></span>' + r: (r ? '<span class="ds-highlight">' + r + "</span>\u6761": "") + t[n][1])
-                }
-            },
-            onError: function(e) {
-                this.el.html("\u8bc4\u8bba\u6846\u51fa\u9519\u5566(" + e.code + "): " + e.errorMessage)
-            },
-            onload: function(t) {
-                var r = this,
-                s = r.threadId = t.thread.thread_id,
-                u = t.cursor,
-                a = r.options = t.options,
-                f = r.innerEl = _(i('<div id="ds-reset"></div>').appendTo(r.el));
-                r.data = t.thread,
-                at(ot, t.parentPosts || t.relatedPosts),
-                at(ut, t.users),
-                r.el.find("#ds-waiting").remove(),
-                a.like_thread_enabled && (r.meta = new H.Meta(r), r.meta.render().el.appendTo(f)),
-                a.hot_posts && t.hotPosts && t.hotPosts.length && (r.hotPosts = new H.HotPosts(i('<div class="ds-rounded"></div>'), {
-                    max_depth: 1,
-                    show_context: a.show_context
-                }), r.hotPosts.thread = r, r.hotPosts.el.appendTo(f), r.hotPosts.onload({
-                    response: t.hotPosts,
-                    options: {}
-                })),
-                r.postListHead = new H.PostListHead(r),
-                r.postList = new P.PostList({
-                    embedThread: r,
-                    params: {
-                        source: "duoshuo",
-                        thread_id: s,
-                        max_depth: a.max_depth,
-                        order: a.order,
-                        limit: a.limit
-                    }
-                }),
-                r.postList.render().reset(t.response),
-                r.paginator = new H.Paginator({
-                    collection: r.postList
-                }),
-                r.paginator.reset(u);
-                var l = r.replybox = new H.Replybox(r),
-                c = l.render().el.find("textarea");
-                l.postList = r.postList.el;
-                if (o) {
-                    var h = "ds_draft_" + s;
-                    c.bind("focus blur keyup",
-                    function(e) {
-                        var t = i(e.currentTarget).val();
+            , D = {
+                get: function (e) {
+                    return m ? m[e] : void 0
+                },
+                save: function (e, t) {
+                    if (m)
                         try {
-                            o[h] = t
-                        } catch(e) {}
-                    }),
-                    o[h] && c.val(o[h])
+                            m.removeItem(e),
+                                m[e] = p.stringify(t),
+                                m.removeItem(e + ":timestamp"),
+                                m[e + ":timestamp"] = Math.floor((new Date - b) / 1e3)
+                        } catch (s) { }
                 }
-                if (ct()) {
-                    var p = i(J.loginButtons()).delegate("a.ds-more-services", "click",
-                    function() {
-                        return p.find(".ds-additional-services").toggle(),
-                        !1
-                    });
-                    M(p)
-                } else r.toolbar = i(J.toolbar()).delegate(".ds-account-control", "mouseenter",
-                function() {
-                    i(this).addClass("ds-active")
-                }).delegate(".ds-account-control", "mouseleave",
-                function() {
-                    i(this).removeClass("ds-active")
-                }).delegate("a.ds-bind-more", "click",
-                function() {
-                    var e = j("<h2>\u7ed1\u5b9a\u66f4\u591a\u5e10\u53f7</h2>" + J.serviceList(1) + J.additionalServices(1) + '<div style="clear:both"></div>').el.find(".ds-dialog").addClass("ds-dialog-bind-more").css("width", "300px");
-                    return M(e),
-                    !1
-                }).delegate("a.ds-unread-comments-count", "click",
-                function(e) {
-                    return U("unread-comments"),
-                    !1
-                });
-                r.postListHead.render().el.appendTo(f)[a.formPosition == "top" ? "before": "after"]('<a name="respond"></a>', r.toolbar || p, l.el).after(r.postList.el, r.paginator.el),
-                r.updateCounter(),
-                t.alerts && i.each(t.alerts,
-                function(e, t) {
-                    i('<div class="ds-alert">' + t + "</div>").insertBefore(r.toolbar || p)
+            }
+            , W = S.loadRequire = function (t) {
+                if (t.visitor && (!nt.data && t.visitor.user_id && e.Notification && A.send({
+                    logged_user_id: t.visitor.user_id
                 }),
-                a.message && c.val(a.message).focus(),
-                i(J.poweredBy(a.poweredby_text)).appendTo(f),
-                it.on("reset",
-                function() {
-                    var e = it.data.comments || 0;
-                    f.find("a.ds-unread-comments-count").html(e).attr("title", e ? "\u4f60\u6709" + e + "\u6761\u65b0\u56de\u590d": "\u4f60\u6ca1\u6709\u65b0\u56de\u590d").css("display", e ? "inline": "none")
-                }),
-                a.mzadx_id && (w.require("mzadxN",
-                function() {}), i('<div id="MZADX_' + a.mzadx_id + '" style="margin:0 auto;"></div>').appendTo(f), __mz_rpq = e.__mz_rpq || [], __mz_rpq.push({
-                    l: [a.mzadx_id],
-                    r: "1",
-                    _srv: "MZADX",
-                    _callback: function(e, t) {}
-                })),
-                w.thread = r,
-                it.data !== n && it.trigger("reset"),
-                ct() || D({
-                    visit_thread_id: r.threadId
-                })
+                    nt.reset(t.visitor)),
+                    t.site && (rt.reset(t.site),
+                        D.save("ds_site_" + c.short_name, t.site)),
+                    !S.theme && rt.data.theme && n(rt.data.theme),
+                    t.lang && (o.extend(z, t.lang),
+                        D.save("ds_lang_" + c.short_name, t.lang)),
+                    t.stylesheets)
+                    for (var s = 0; s < t.stylesheets.length; s++)
+                        o.injectStylesheet(t.stylesheets[s]);
+                if (t.nonce && (S.nonce = t.nonce),
+                    t.style && o.injectStyle((t.style || "") + S.compileStyle(c.component_style)),
+                    t.unread && ot.reset(t.unread),
+                    t.warnings)
+                    for (var s = 0; s < t.warnings.length; s++)
+                        C.warn(t.warnings[s])
+            }
+            , B = 0
+            , H = S.Class = function () { }
+            ;
+        H.extend = function (e) {
+            function t() {
+                !B && this.init && this.init.apply(this, arguments)
+            }
+            B = 1;
+            var s = new this;
+            B = 0;
+            for (var a in e)
+                s[a] = e[a];
+            return t.prototype = s,
+                t.prototype.constructor = t,
+                t.extend = arguments.callee,
+                t
+        }
+            ;
+        var J = S.Event = H.extend({
+            on: function (e, t) {
+                var a = this.handlers || (this.handlers = {});
+                return a[e] === s && (a[e] = []),
+                    a[e].push(t),
+                    this
             },
-            onMessage: function(e) {
-                dt(this.postList.el, e, this.options)
+            trigger: function (e, t) {
+                var s = (this.handlers || (this.handlers = {}))[e];
+                if (s)
+                    for (var a = 0; a < s.length && s[a].call(this, t) !== !1; a++)
+                        ;
+                return this
             }
-        }),
-        J.hotPosts = function(e, t) {
-            return '<div class="ds-header ds-gradient-bg">' + k.hot_posts_title + "</div><ul>" + i.map(e,
-            function(e) {
-                return ot[e] ? J.post(ot[e].data, t) : ""
-            }).join("") + "</ul>"
-        },
-        H.HotPosts = R.extend({
-            params: "show-quote",
-            tmpl: "hotPosts",
-            render: function() {
-                return this.el.attr("id", "ds-hot-posts"),
-                this
-            },
-            onload: function(e) {
-                R.prototype.onload.call(this, e),
-                vt.call(this.el.find("ul"), this.thread, this.options)
-            }
-        }),
-        J.commentList = function(e, t) {
-            return i.map(e,
-            function(e) {
-                var n = K(e);
-                return '<li class="ds-comment' + (t.show_avatars ? " ds-show-avatars": "") + '" data-post-id="' + e.post_id + '">' + (t.show_avatars ? '<div class="ds-avatar">' + J.avatar(n, t.avatar_size) + "</div>": "") + '<div class="ds-meta">' + J.userAnchor(n) + (t.show_time ? J.timeHtml(e.created_at) : "") + "</div>" + (t.show_title ? '<div class="ds-thread-title">\u5728 <a href="' + p(e.thread.url + "#comments") + '">' + p(e.thread.title) + '</a> \u4e2d\u8bc4\u8bba</div><div class="ds-excerpt">' + e.message + "</div>": '<a class="ds-excerpt" title="' + p(e.thread.title) + ' \u4e2d\u7684\u8bc4\u8bba" href="' + p(e.thread.url + "#comments") + '">' + e.message + "</a>") + "</li>"
-            }).join("")
-        },
-        H.RecentComments = R.extend({
-            uri: "/api/sites/listRecentPosts",
-            params: "show-avatars show-time show-title avatar-size show-admin excerpt-length num-items channel-key",
-            tmpl: "commentList",
-            render: function() {
-                this.el.attr("id", "ds-recent-comments")
-            }
-        }),
-        J.recentVisitors = function(e, t) {
-            return i.map(e,
-            function(e) {
-                return '<div class="ds-avatar">' + J.avatar(e, t.avatar_size) + "</div>"
-            }).join("")
-        },
-        H.RecentVisitors = R.extend({
-            uri: "/api/sites/listVisitors",
-            params: "show-time avatar-size num-items channel-key",
-            tmpl: "recentVisitors",
-            render: function() {
-                this.el.children().detach(),
-                this.el.attr("id", "ds-recent-visitors").append(this.waitingEl = i(J.waitingImg()))
-            }
-        }),
-        J.topUsers = function(e, t) {
-            return i.map(e,
-            function(e) {
-                return '<div class="ds-avatar">' + J.avatar(e, t.avatar_size) + "<h4>" + e.name + "</h4>" + "</div>"
-            }).join("")
-        },
-        H.TopUsers = R.extend({
-            uri: "/api/sites/listTopUsers",
-            params: "show-time avatar-size num-items channel-key",
-            tmpl: "topUsers",
-            render: function() {
-                this.el.children().detach(),
-                this.el.attr("id", "ds-top-users").append(this.waitingEl = i(J.waitingImg()))
-            }
-        }),
-        J.topThreads = function(e, t) {
-            return i.map(e,
-            function(e) {
-                return '<li><a target="_blank" href="' + p(e.url) + '" title="' + e.title + '">' + e.title + "</a>" + "</li>"
-            }).join("")
-        },
-        H.TopThreads = R.extend({
-            uri: "/api/sites/listTopThreads",
-            params: "range num-items channel-key",
-            tmpl: "topThreads",
-            render: function() {
-                this.el.children().detach(),
-                this.el.attr("id", "ds-top-threads").append(this.waitingEl = i(J.waitingImg()))
-            }
-        }),
-        J.loginWidget = function() {
-            var e = '<div class="ds-icons-32">';
-            return i.each(["weibo", "qq", "renren", "kaixin", "douban", "netease", "sohu"],
-            function(t, n) {
-                e += '<a class="ds-' + n + '" href="' + J.loginUrl(n) + '">' + w.sourceName[n] + "</a>"
-            }),
-            e + "</div>"
-        },
-        H.LoginWidget = R.extend({
-            tmpl: "loginWidget",
-            render: function() {
-                var e = this.el;
-                e.attr("id", "ds-login").html(J.loginWidget()),
-                M(e, "a"),
-                e.find("a.ds-logout").attr("href", J.logoutUrl())
-            }
-        }),
-        H.ThreadCount = R.extend({
-            onload: function(e) {
-                var t = this.el,
-                n = t.data("count-type") || "comments",
-                r = e.data[n];
-                t[t.data("replace") ? "replaceWith": "html"](k[n + "_" + (r ? r > 1 ? "multiple": "one": "zero")].replace("{num}", r))
-            }
-        });
-        var yt = 0;
-        w.initSelector = function(e, t) {
-            var n = [];
-            V() && (i.isReady || !E) && i(e).each(function(e, r) {
-                var s = i(r);
-                if (s.data("initialized")) return;
-                s.data("initialized", !0);
-                var o = new H[t.type](s, t);
-                C.push(o);
-                if (t.type === "ThreadCount") {
-                    var u = s.attr("data-thread-key");
-                    s.attr("data-channel-key") && (u = s.attr("data-channel-key") + ":" + u),
-                    n.push(u),
-                    st[u] || (st[u] = new et({})),
-                    st[u].on("reset",
-                    function() {
-                        o.onload(this)
-                    })
-                } else if (o.uri) {
-                    var a = {};
-                    i.each(o.params.split(" "),
-                    function(e, t) {
-                        a[t.replace(/-/g, "_")] = s.attr("data-" + t) || s.data(t)
-                    }),
-                    L(o.uri, bt(a),
-                    function(e) {
-                        o.load(e)
-                    })
-                }
-            }),
-            n.length && L("/api/threads/counts", bt({
-                threads: n.join(",")
-            }),
-            function(e) {
-                l(e),
-                ft(k, e.options),
-                at(st, e.response)
-            })
-        },
-        (w.initView = function() {
-            i.each(N, w.initSelector)
-        })(),
-        i(function() {
-            if (!V()) return I("\u7f3a\u5c11duoshuoQuery\u7684\u5b9a\u4e49");
-            setInterval(function() {
-                i(".ds-time").each(function() {
-                    var e = i(this).attr("datetime");
-                    e && (this.innerHTML = w.elapsedTime(e))
-                })
-            },
-            2e4),
-            z.ondomready && z.ondomready(),
-            w.initView(),
-            !yt && z.short_name && L("/api/analytics/ping", bt({}), l)
         })
-    })
-})(window, document);
+            , Q = S.Widget = J.extend({
+                init: function (e, t) {
+                    this.el = e,
+                        this.options = t || {},
+                        this.render()
+                },
+                render: function () { },
+                reset: function () { },
+                load: function (e) {
+                    switch (e.code) {
+                        case 0:
+                            W(e);
+                            var t = this.prepare(e);
+                            t.options = o.extend(this.options, e.options),
+                                this.onload(t);
+                            break;
+                        default:
+                            this.onError(e)
+                    }
+                },
+                onload: function (e) {
+                    this.el.html(et[this.tmpl](e))
+                },
+                prepare: function (e) {
+                    return e
+                },
+                onMessage: function () { },
+                onError: function (e) {
+                    C.error("出错啦(" + e.code + "): " + e.errorMessage),
+                        e.errorTrace && C.error(e.errorTrace)
+                }
+            })
+            , V = S.Model = J.extend({
+                init: function (e) {
+                    this.data = e
+                },
+                reset: function (e) {
+                    this.data = e,
+                        this.trigger("reset")
+                },
+                remove: function (e) {
+                    this.data.splice(e, 1),
+                        this.trigger("reset")
+                },
+                set: function (e, t) {
+                    if (t === s)
+                        for (var a in e)
+                            this.data[a] = e[a];
+                    else
+                        this.data[e] = t;
+                    return this.trigger("reset"),
+                        this
+                },
+                toJSON: function () {
+                    return o.extend({}, this.data)
+                }
+            })
+            , $ = V.extend({
+                toJSON: function () {
+                    return o.extend({}, this.data)
+                }
+            })
+            , F = V.extend({
+                toJSON: function () {
+                    var e = o.extend({}, this.data);
+                    return e.theAuthor = ct[this.data.author_id] && ct[this.data.author_id].data || this.data.author,
+                        e.parents = this.data.parents || [],
+                        e
+                }
+            })
+            , G = V.extend({
+                toJSON: function () {
+                    return o.extend({}, this.data)
+                }
+            })
+            , Y = function (e) {
+                this.model = e
+            }
+            ;
+        Y.prototype.set = function (e) {
+            for (var t in e)
+                e[t] && (this[t] ? this[t].set(e[t]) : this[t] = new this.model(e[t]))
+        }
+            ,
+            Y.prototype.get = function (e) {
+                for (var t = 0, s = []; t < e.length; t++)
+                    s[t] = this[e[t]];
+                return s
+            }
+            ,
+            Y.prototype.getJSON = function (e) {
+                for (var t = 0, s = []; t < e.length; t++)
+                    this[e[t]] && s.push(this[e[t]].toJSON());
+                return s
+            }
+            ;
+        var Z = {
+            userUrl: function (e) {
+                return e.url
+            },
+            avatarUrl: function (e) {
+                return e.avatar_url || rt.data.default_avatar_url
+            },
+            loginUrl: function (e, t) {
+                return t || (t = {}),
+                    c.sso && c.sso.login && (t.sso = 1,
+                        t.redirect_uri = c.sso.login),
+                    a() + "/login/" + e + "/" + x(t)
+            },
+            bindUrl: function (e) {
+                return a() + "/bind/" + e + "/" + x(c.sso && c.sso.login ? {
+                    sso: 1,
+                    redirect_uri: c.sso.login
+                } : null, T())
+            },
+            logoutUrl: function () {
+                return a() + "/logout/" + x(c.sso && c.sso.logout ? {
+                    sso: 1,
+                    redirect_uri: c.sso.logout
+                } : null)
+            }
+        }
+            , X = ["weixin", "weibo", "qq", "renren"]
+            , K = ["douban", "kaixin", "baidu", "google"]
+            , et = S.templates = {
+                userAnchor: function (e) {
+                    return e.url ? '<a rel="nofollow author" target="_blank" href="' + _(e.url) + '">' + _(e.name) + "</a>" : _(e.name)
+                },
+                avatarImg: function (e, t) {
+                    return '<img src="' + _(Z.avatarUrl(e, t)) + '" alt="' + _(e.name) + '"' + (t ? ' style="width:' + t + "px;height:" + t + 'px"' : "") + "/>"
+                },
+                avatar: function (e, t) {
+                    var s = et.avatarImg(e, t)
+                        , i = Z.userUrl(e);
+                    return i ? '<a rel="nofollow author" target="_blank" href="' + _(i) + '" ' + (e.user_id ? " onclick=\"this.href='" + a() + "/user-url/?user_id=" + e.user_id + "';\"" : "") + ' title="' + _(e.name) + '">' + s + "</a>" : s
+                },
+                timeText: function (e) {
+                    return e ? '<span class="ds-time" datetime="' + e + '" title="' + S.fullTime(e) + '">' + S.elapsedTime(e) + "</span>" : ""
+                },
+                timeAnchor: function (e, t) {
+                    return e ? '<a href="' + t + '" target="_blank" rel="nofollow" class="ds-time" datetime="' + e + '" title="' + S.fullTime(e) + '">' + S.elapsedTime(e) + "</a>" : ""
+                },
+                serviceIcon: function (e, t) {
+                    return '<a href="javascript:void(0)" class="ds-service-icon' + (t ? "-grey" : "") + " ds-" + e + '" data-service="' + e + '" title="' + S.sourceName[e] + '"></a>'
+                },
+                poweredBy: function (e) {
+                    return '<div class="ds-powered-by"><a href="http://duoshuo.com" target="_blank" rel="nofollow">' + _(e) + "</a></div>"
+                },
+                indicator: w('<div id="ds-indicator"></div>'),
+                waitingImg: w('<div id="ds-waiting"></div>'),
+                loginItem: function (e, t) {
+                    var s = Z[t ? "bindUrl" : "loginUrl"](e);
+                    return '<li>    <a href="' + s + '" rel="nofollow" class="ds-service-link ds-' + e + '">' + S.serviceNames[e] + (nt.data.social_uid[e] ? ' <i class="icon icon-check-circle"></i>' : "") + "</a></li>"
+                }
+            }
+            , tt = function (e) {
+                var t = [];
+                for (var s in e)
+                    t.push('<input type="hidden" name="' + s + '" value="' + _(e[s]) + '" />');
+                return t.join("\n")
+            }
+            ;
+        et.commentList = function (e) {
+            var t = ""
+                , s = e.list;
+            if (s)
+                for (var a, i = -1, r = s.length - 1; r > i;)
+                    a = s[i += 1],
+                        t += '<li class="ds-comment',
+                        e.options.show_avatars && (t += " ds-show-avatars"),
+                        t += '" data-post-id="' + a.post_id + '">',
+                        e.options.show_avatars && (t += '<div class="ds-avatar">' + et.avatar(a.theAuthor, e.options.avatar_size) + "</div>"),
+                        t += '<div class="ds-meta">' + et.userAnchor(a.theAuthor),
+                        e.options.show_time && (t += et.timeText(a.created_at)),
+                        t += "</div>",
+                        t += e.options.show_title ? '<div class="ds-thread-title">在 <a href="' + u(a.thread.url) + '#comments">' + u(a.thread.title) + '</a> 中评论</div><div class="ds-excerpt">' + a.message + "</div>" : '<a class="ds-excerpt" title="' + a.thread.title + ' 中的评论" href="' + u(a.thread.url) + '#comments">' + a.message + "</a>",
+                        t += "</li>";
+            return t
+        }
+            ,
+            et.ctxPost = function (e) {
+                var t = "";
+                return e.post && (t += '<li class="ds-ctx-entry"',
+                    e.hidden && (t += ' style="display:none"'),
+                    t += ' data-post-id="' + e.post.post_id + '"><div class="ds-avatar">' + et.avatar(e.post.theAuthor || e.post.author) + '</div><div class="ds-ctx-body"><div class="ds-ctx-head">' + et.userAnchor(e.post.theAuthor || e.post.author) + et.timeAnchor(e.post.created_at, e.post.url),
+                    e.index >= 0 && (t += '<div class="ds-ctx-nth" title="' + S.fullTime(e.post.created_at) + '">' + (e.index + 1) + z.floor + "</div>"),
+                    t += '</div><div class="ds-ctx-content">' + e.post.message + '</div>',
+                    e.index >= 0 && (t += '<div class="ds-comment-actions',
+                        e.post.vote > 0 && (t += " ds-post-liked"),
+                        t += '">' + et.likePost(e.post) + '<a class="ds-post-repost" href="javascript:void(0);"><i class="icon icon-reply"></i>' + z.repost + '</a><a class="ds-post-reply" href="javascript:void(0);"><i class="icon icon-reply"></i>' + z.reply + "</a></div>"),
+                    t += "</div></li>"),
+                    t
+            }
+            ,
+            et["dialog-anonymous"] = function (e) {
+                var t = '<h2>社交帐号登录</h2><div class="ds-icons-32">'
+                    , s = e.services;
+                if (s)
+                    for (var a, i = -1, r = s.length - 1; r > i;)
+                        a = s[i += 1],
+                            t += '<a class="ds-' + a + '" href="' + Z.loginUrl(a) + '">' + S.sourceName[a] + "</a>";
+                return t += "</div>",
+                    e.options.deny_anonymous || (t += '<h2>作为游客留言</h2><form><div class="ds-control-group"><input type="text" name="author_name" id="ds-dialog-name" value="' + u(nt.data.name) + '" required /><label for="ds-dialog-name">名字(必填)</label></div>',
+                        e.options.require_guest_email && (t += '<div class="ds-control-group"><input type="email" name="author_email" id="ds-dialog-email" value="' + u(nt.data.email) + '" required /><label for="ds-dialog-email">邮箱(必填)</label></div>'),
+                        e.options.require_guest_url && (t += '<div class="ds-control-group"><input type="url" name="author_url" id="ds-dialog-url" placeholder="http://" value="' + u(nt.data.url) + '" /><label for="ds-dialog-url">网址(可选)</label></div>'),
+                        t += '<button type="submit">发布</button></form>'),
+                    t
+            }
+            ,
+            et["dialog-ask-for-auth"] = function () {
+                var e = '<h2>社交帐号登录</h2><ul class="ds-service-list">' + et.serviceList(X) + '</ul><ul class="ds-service-list ds-additional-services">' + et.serviceList(K) + "</ul>";
+                return e
+            }
+            ,
+            et["dialog-bind-more"] = function () {
+                var e = '<h2>绑定更多帐号</h2><ul class="ds-service-list">' + et.serviceBindList(X) + '</ul><ul class="ds-service-list ds-additional-services">' + et.serviceBindList(K) + '</ul><div style="clear:both"></div>';
+                return e
+            }
+            ,
+            et["dialog-qrcode"] = function (e) {
+                var t = '<h2>微信扫一扫，分享到朋友圈</h2><div class="ds-share-qrcode" style="text-align:center;"><img src="' + e.qrcode_url + '" alt="' + e.url + '"></div>';
+                return t
+            }
+            ,
+            et["dialog-reposts"] = function (e) {
+                var t = '<h2>转发到微博</h2><div class="ds-quote"><strong>@' + u(e.post.theAuthor.name) + "</strong>: " + e.post.message + "</div><form>" + tt({
+                    post_id: e.post.post_id
+                }) + '<div class="ds-textarea-wrapper"><textarea name="message" title="Ctrl+Enter快捷提交" placeholder="' + u(z.repost_reason) + '">' + u(e.repostMessage) + '</textarea><pre class="ds-hidden-text"></pre>';
+                return t += '</div><div class="ds-actions">',
+                    e.service ? t += tt({
+                        "service[]": e.service
+                    }) : (t += '<label><input type="checkbox" name="service[]" value="weibo"',
+                        nt.data.social_uid.weibo && (t += ' checked="checked"'),
+                        t += ' /><span class="ds-service-icon ds-weibo"></span>新浪微博</label><label><input type="checkbox" name="service[]" value="qqt"',
+                        nt.data.social_uid.qq && (t += ' checked="checked"'),
+                        t += ' /><span class="ds-service-icon ds-qqt"></span>腾讯微博</label>'),
+                    t += '<button type="submit">' + z.repost + "</button></div></form>"
+            }
+            ,
+            et.dialog = function (e) {
+                var t = '<div class="ds-dialog"><div class="ds-dialog-inner ds-rounded"><div class="ds-dialog-body">' + e + '</div><div class="ds-dialog-footer"><a href="http://duoshuo.com/" target="_blank" class="ds-logo"></a><span>社会化评论框</span></div><a class="ds-dialog-close" href="javascript:void(0)" title="关闭"><i class="icon icon-times"></i></a></div></div>';
+                return t
+            }
+            ,
+            et.hotPosts = function (e) {
+                var t = '<div class="ds-header ds-gradient-bg">' + u(z.hot_posts_title) + "</div><ul>"
+                    , s = e.list;
+                if (s)
+                    for (var a, i = -1, r = s.length - 1; r > i;)
+                        a = s[i += 1],
+                            t += et.post({
+                                post: a,
+                                options: e.options
+                            });
+                return t += "</ul>"
+            }
+            ,
+            et.likePost = function (e) {
+                var t = '<a class="ds-post-likes" href="javascript:void(0);"><i class="icon icon-heart"></i>' + z.like;
+                return e.likes > 0 && (t += "(" + e.likes + ")"),
+                    t += "</a>"
+            }
+            ,
+            et.likeTooltip = function (e) {
+                var t = '<div class="ds-like-tooltip ds-rounded"><p>很高兴你能喜欢，分享一下吧：</p><ul>';
+                for (var s in e.services)
+                    t += '<li><a class="ds-share-to-' + s + " ds-service-link ds-" + s + '" href="' + a() + "/share-proxy/?" + o.param({
+                        service: s,
+                        thread_id: e.thread_id
+                    }) + '">' + e.services[s] + "</a></li>";
+                return t += '</ul><p class="ds-like-tooltip-footer"><a href="javascript:;" class="ds-like-tooltip-close">算了</a></p></div>'
+            }
+            ,
+            et.loginButtons = function () {
+                var e = '<div class="ds-login-buttons"><p>社交帐号登录:</p><div class="ds-social-links"><ul class="ds-service-list">' + et.serviceList(X) + '<li><a class="ds-more-services" href="javascript:void(0)">更多»</a></li></ul><ul class="ds-service-list ds-additional-services">' + et.serviceList(K) + "</ul></div></div>";
+                return e
+            }
+            ,
+            et.loginWidget = function (e) {
+                var t = '<div class="ds-icons-32">'
+                    , s = e;
+                if (s)
+                    for (var a, i = -1, r = s.length - 1; r > i;)
+                        a = s[i += 1],
+                            t += '<a class="ds-' + a + '" href="' + Z.loginUrl(a) + '">' + S.sourceName[a] + "</a>";
+                return t += "</div>"
+            }
+            ,
+            et.meta = function (e) {
+                var t = '<div class="ds-meta"><a href="javascript:void(0)" class="ds-like-thread-button ds-rounded';
+                return e.user_vote > 0 && (t += " ds-thread-liked"),
+                    t += '"><i class="icon icon-heart"></i> <span class="ds-thread-like-text">',
+                    t += e.user_vote > 0 ? "已喜欢" : "喜欢",
+                    t += '</span><span class="ds-thread-cancel-like">取消喜欢</span></a><span class="ds-like-panel"></span></div>'
+            }
+            ,
+            et.notify = function (e) {
+                var t = '<div id="ds-reset"><a class="ds-logo" href="http://duoshuo.com/" target="_blank" title="多说"></a><ul class="ds-notify-unread"><li';
+                return e.comments || (t += ' style="display:none;"'),
+                    t += '><a data-type="unread-comments" href="javascript:void(0);">你有' + e.comments + "条新回复</a></li><li",
+                    e.notifications || (t += ' style="display:none;"'),
+                    t += '><a data-type="unread-notifications" href="javascript:void(0);">你有' + e.notifications + "条系统消息</a></li></ul></div>"
+            }
+            ,
+            et.post = function (e) {
+                var t = ""
+                    , s = e.post
+                    , i = e.options
+                    , r = s.author;
+                if (t += '<li class="ds-post" data-post-id="' + s.post_id + '"><div class="ds-post-self" data-post-id="' + s.post_id + '" data-thread-id="' + s.thread_id + '" data-root-id="' + s.root_id + '" data-source="' + s.source + '"><div class="ds-avatar"',
+                    r.user_id && (t += ' data-user-id="' + r.user_id + '"'),
+                    t += ">" + et.avatar(r),
+                    S.sourceName[s.source] && (t += et.serviceIcon(s.source)),
+                    t += '</div><div class="ds-comment-body"><div class="ds-comment-header">',
+                    r.url ? (t += '<a class="ds-user-name ds-highlight" data-qqt-account="' + (r.qqt_account || "") + '" href="' + u(r.url) + '" ',
+                        r.user_id && (t += " onclick=\"this.href='" + a() + "/user-url/?user_id=" + r.user_id + "';\""),
+                        t += ' rel="nofollow" target="_blank"',
+                        r.user_id && (t += ' data-user-id="' + r.user_id + '"'),
+                        t += ">" + u(r.name) + "</a>") : (t += '<span class="ds-user-name"',
+                            r.user_id && (t += ' data-user-id="' + r.user_id + '"'),
+                            t += ' data-qqt-account="' + (r.qqt_account || "") + '">' + u(r.name) + "</span>"),
+                    t += ENV(s.agent) + "</div>",
+                    1 == i.max_depth && i.show_context && s.parents.length) {
+                    t += '<ol id="ds-ctx">';
+                    var n = lt.getJSON(s.parents);
+                    if (n)
+                        for (var o, d = -1, l = n.length - 1; l > d;)
+                            o = n[d += 1],
+                                1 == d && s.parents.length > 2 && (t += '<li class="ds-ctx-entry"><a href="javascript:void(0);" class="ds-expand">还有' + (s.parents.length - 2) + "条评论</a></li>"),
+                                t += et.ctxPost({
+                                    post: o,
+                                    index: d,
+                                    hidden: d && d < s.parents.length - 1
+                                });
+                    t += "</ol>"
+                }
+                if (t += '<div class="ds-comment-content">',
+                    s.parents.length >= i.max_depth && (!i.show_context || i.max_depth > 1) && s.parent_id && lt[s.parent_id] && (t += '<a class="ds-comment-context" data-post-id="' + s.post_id + '" data-parent-id="' + s.parent_id + '">' + z.reply_to + u(lt[s.parent_id].toJSON().author.name) + ": </a>"),
+                    t += s.message + '</div><div class="ds-comment-footer ds-comment-actions',
+                    s.likes > 0 && (t += " ds-post-liked"),
+                    t += '">',
+                    t += s.url ? et.timeAnchor(s.created_at, s.url) : et.timeText(s.created_at),
+                    "duoshuo" == s.source ? (t += '<a class="ds-post-reply" href="javascript:void(0);"><i class="icon icon-reply"></i>' + z.reply + "</a>" + et.likePost(s) + '<a class="ds-post-repost" href="javascript:void(0);"><i class="icon icon-share"></i>' + z.repost + '</a><a class="ds-post-report" href="javascript:void(0);"><i class="icon icon-flag"></i>' + z.report + "</a>",
+                        s.privileges["delete"] && (t += '<a class="ds-post-delete" href="javascript:void(0);"><i class="icon icon-times"></i>' + z["delete"] + "</a>")) : ("qqt" == s.source || "weibo" == s.source) && (t += '<a class="ds-weibo-comments" href="javascript:void(0);">' + z.comments,
+                            s.type.match(/\-comment$/) || (t += '(<span class="ds-count">' + s.comments + "</span>)"),
+                            t += '</a><a class="ds-weibo-reposts" href="javascript:void(0);">' + z.reposts,
+                            s.type.match(/\-comment$/) || (t += '(<span class="ds-count">' + s.reposts + "</span>)"),
+                            t += "</a>"),
+                    t += "</div></div></div>",
+                    i.max_depth > 1 && (s.childrenArray || s.children) && "weibo" != s.source && "qqt" != s.source) {
+                    t += '<ul class="ds-children">';
+                    var c = lt.getJSON(s.childrenArray || s.children);
+                    if (c)
+                        for (var s, d = -1, p = c.length - 1; p > d;)
+                            s = c[d += 1],
+                                t += et.post({
+                                    post: s,
+                                    options: i
+                                });
+                    t += "</ul>"
+                }
+                return t += "</li>"
+            }
+            ,
+            et.postListHead = function (e) {
+                var t = '<div class="ds-comments-info"><div class="ds-sort"><a class="ds-order-desc">' + z.latest + '</a><a class="ds-order-asc">' + z.earliest + '</a><a class="ds-order-hot">' + z.hottest + '</a></div><ul class="ds-comments-tabs"><li class="ds-tab"><a class="ds-comments-tab-duoshuo ds-current" href="javascript:void(0);"></a></li>';
+                return e.options.show_reposts && e.thread.reposts && (t += '<li class="ds-tab"><a class="ds-comments-tab-repost" href="javascript:void(0);"></a></li>'),
+                    t += " ",
+                    e.options.show_weibo && e.thread.weibo_reposts && (t += '<li class="ds-tab"><a class="ds-comments-tab-weibo" href="javascript:void(0);"></a></li>'),
+                    t += " ",
+                    e.options.show_qqt && e.thread.qqt_reposts && (t += '<li class="ds-tab"><a class="ds-comments-tab-qqt" href="javascript:void(0);"></a></li>'),
+                    t += "</ul></div>"
+            }
+            ,
+            et.recentVisitors = function (e) {
+                var t = ""
+                    , s = e.response;
+                if (s)
+                    for (var a, i = -1, r = s.length - 1; r > i;)
+                        a = s[i += 1],
+                            t += '<div class="ds-avatar">' + et.avatar(a, e.options.avatar_size) + "</div>";
+                return t
+            }
+            ,
+            et["related-read"] = function (e) {
+                var t = "";
+                if (e && e.length) {
+                    t += '<article class="ds-reads-expand"><div class="ds-header">头条推荐</div><section> ';
+                    var s = e;
+                    if (s)
+                        for (var a, i = -1, r = s.length - 1; r > i;) {
+                            if (a = s[i += 1],
+                                t += ' <a href="' + a.url + '" class="ds-reads-item"> ',
+                                3 == a.imgs.length) {
+                                t += " <h2>" + a.title + '</h2> <div class="ds-reads-pics"> <ul> ';
+                                var n = a.imgs;
+                                if (n)
+                                    for (var o, d = -1, l = n.length - 1; l > d;)
+                                        o = n[d += 1],
+                                            t += ' <li> <div class="ds-reads-dumb"></div> <div class="ds-reads-pic-wrap" style="background-image:url(' + o + ');"></div> </li> ';
+                                t += ' </ul> </div> <div class="ds-reads-info"> ',
+                                    1 == a.type && (t += ' <span class="ds-reads-app-special">打开头条阅读</span> '),
+                                    t += ' <span class="ds-reads-date" data-date="' + a.timeStamp + '"></span> </div> '
+                            } else
+                                t += ' <div class="ds-reads-desc ',
+                                    a.imgs.length || (t += "ds-reads-only"),
+                                    t += '"> <div class="ds-reads-title">' + a.title + '</div> <div class="ds-reads-info"> ',
+                                    1 == a.type && (t += ' <span class="ds-reads-app-special">打开头条阅读</span> '),
+                                    t += ' <span class="ds-reads-date" data-date="' + a.timeStamp + '"></span> </div> </div> ',
+                                    a.imgs.length && (t += ' <div class="ds-reads-pic-right"> <div class="ds-reads-dumb"></div> <div class="ds-reads-pic-wrap" style="background-image:url(' + a.imgs[0] + ');"> ',
+                                        a.hasVideo && (t += ' <div class="ds-reads-vid-info"><span>' + a.videoDuration + "</span></div> "),
+                                        t += " </div> </div> "),
+                                    t += " ";
+                            t += " </a> "
+                        }
+                    t += "</section></article>"
+                }
+                return t
+            }
+            ,
+            et.replybox = function (e) {
+                var t = '<div class="ds-replybox"><a class="ds-avatar"';
+                if (t += r() ? ' href="javascript:void(0);" onclick="return false"' : ' href="' + S.REMOTE + "/settings/avatar/" + x(T()) + '" target="_blank" title="设置头像"',
+                    t += ">" + et.avatarImg(nt.data) + '</a><form method="post">' + tt(e.params) + '<div class="ds-textarea-wrapper ds-rounded-top"><textarea name="message" class="ds-rounded-top" title="Ctrl+Enter快捷提交" placeholder="' + u(z.leave_a_message) + '"></textarea><pre class="ds-hidden-text"></pre>',
+                    t += "</div>",
+                    t += '<div class="ds-post-toolbar"><div class="ds-post-options ds-gradient-bg"><span class="ds-sync">',
+                    !r() && nt.data.repostOptions) {
+                    t += '<input id="ds-sync-checkbox',
+                        e.inline && (t += "-inline"),
+                        t += '" type="checkbox" name="repost" ',
+                        e.checked && (t += 'checked="checked" '),
+                        t += 'value="' + e.repostArray.join(",") + '"> <label for="ds-sync-checkbox',
+                        e.inline && (t += "-inline"),
+                        t += '">' + z.share_to + "</label>";
+                    for (var s in nt.data.repostOptions)
+                        t += et.serviceIcon(s, !nt.data.repostOptions[s])
+                }
+                return t += "</span>",
+                    t += "</div>",
+                    t += '<button class="ds-post-button" type="submit">' + u(z.post) + '</button><div class="ds-toolbar-buttons">',
+                    e.options.use_smilies && (t += '<a class="ds-toolbar-button ds-add-emote" title="插入表情"><i class="icon icon-smile-o"></i></a>'),
+                    e.options.use_images && e.options.parse_html_enabled && (t += '<a class="ds-toolbar-button ds-add-image" title="插入图片"><i class="icon icon-image"></i></a>'),
+                    t += "</div></div>",
+                    t += "</form></div>"
+            }
+            ,
+            et.serviceBindList = function (e) {
+                var t = ""
+                    , s = e;
+                if (s)
+                    for (var a, i = -1, r = s.length - 1; r > i;)
+                        a = s[i += 1],
+                            t += '<li><a href="' + Z.bindUrl(a) + '" rel="nofollow" class="ds-service-link ds-' + a + '">' + S.serviceNames[a],
+                            nt.data.social_uid[a] && (t += ' <i class="icon icon-check-circle"></i>'),
+                            t += "</a></li>";
+                return t
+            }
+            ,
+            et.serviceList = function (e) {
+                var t = ""
+                    , s = e;
+                if (s)
+                    for (var a, i = -1, r = s.length - 1; r > i;)
+                        a = s[i += 1],
+                            t += '<li><a href="' + Z.loginUrl(a) + '" rel="nofollow" class="ds-service-link ds-' + a + '">' + S.serviceNames[a] + "</a></li>";
+                return t
+            }
+            ,
+            et.shareWidget = function (e) {
+                var t = '<div class="ds-share-icons"> <div class="ds-share-icons-inner"> <ul class="ds-share-icons-16"> '
+                    , s = e.services;
+                if (s)
+                    for (var a, i = -1, r = s.length - 1; r > i;)
+                        a = s[i += 1],
+                            t += ' <li> <a class="ds-' + a + '" href="javascript:void(0);" data-service="' + a + '">' + S.sourceName[a] + "</a> </li> ";
+                return t += ' </ul> </div> <div class="ds-share-icons-footer">' + e.copyright + "</div></div>"
+            }
+            ,
+            et.smiliesTooltip = function (e) {
+                var t = '<div id="ds-smilies-tooltip"><ul class="ds-smilies-tabs">';
+                for (var s in e)
+                    t += "<li><a>" + s + "</a></li>";
+                return t += '</ul><div class="ds-smilies-container"></div></div>'
+            }
+            ,
+            et.toolbar = function () {
+                var e = '<div class="ds-toolbar"><div class="ds-account-control"><span><i class="icon icon-cog"></i>帐号管理</span><ul><li><a class="ds-bind-more" href="javascript:void(0);" style="border-top: none">绑定更多</a></li><li><a target="_blank" href="' + S.REMOTE + "/settings/" + x(T()) + '">' + u(z.settings) + '</a></li><li><a rel="nofollow" href="' + Z.logoutUrl() + '" style="border-bottom: none">登出</a></li></ul></div><div class="ds-visitor">';
+                return e += nt.data.url ? '<a class="ds-visitor-name" href="' + u(nt.data.url) + '" target="_blank">' + u(nt.data.name) + "</a>" : '<span class="ds-visitor-name">' + u(nt.data.name) + "</span>",
+                    e += '<a class="ds-unread-comments-count" href="javascript:void(0);" title="新回复"></a></div></div>'
+            }
+            ,
+            et.topThreads = function (e) {
+                var t = ""
+                    , s = e.response;
+                if (s)
+                    for (var a, i = -1, r = s.length - 1; r > i;)
+                        a = s[i += 1],
+                            t += '<li><a target="_blank" href="' + u(a.url) + '" title="' + u(a.title) + '">' + u(a.title) + "</a></li>";
+                return t
+            }
+            ,
+            et.topUsers = function (e) {
+                var t = ""
+                    , s = e.response;
+                if (s)
+                    for (var a, i = -1, r = s.length - 1; r > i;)
+                        a = s[i += 1],
+                            t += '<div class="ds-avatar">' + et.avatar(a, e.options.avatar_size) + "<h4>" + u(a.name) + "</h4></div>";
+                return t
+            }
+            ,
+            et.userInfo = function (e) {
+                var t = '<a href="' + u(e.url) + '" onclick="this.href=\'' + a() + "/user-url/?user_id=" + e.user_id + '\';" class="ds-avatar" target="_blank">' + et.avatarImg(e) + '</a><a href="' + u(e.url) + '" onclick="this.href=\'' + a() + "/user-url/?user_id=" + e.user_id + '\';" class="ds-user-name ds-highlight" target="_blank">' + u(e.name) + "</a>";
+                for (var s in e.social_uid)
+                    t += '<a href="' + S.REMOTE + "/user-proxy/" + s + "/" + e.social_uid[s] + '/" target="_blank" class="ds-service-icon ds-' + s + '" title="' + S.sourceName[s] + '"></a>';
+                return t += '<p class="ds-user-card-meta"><a href="' + S.REMOTE + "/profile/" + e.user_id + '/" target="_blank"><span class="ds-highlight">' + e.comments + "</span>条评论</a></p>",
+                    e.description && (t += '<p class="ds-user-description">' + u(e.description) + "</p>"),
+                    t
+            }
+            ;
+        var st = S.Views = {}
+            , at = (S.Callbacks = {},
+                S.pagelets = [])
+            , it = S.events = new J
+            , rt = S.site = new V
+            , nt = S.visitor = new $
+            , ot = S.unread = new V
+            , dt = S.threadPool = new Y(G)
+            , lt = S.postPool = new Y(F)
+            , ct = S.userPool = new Y($);
+        it.on("queryDefined", function () {
+            var e = c.short_name;
+            if (c.theme && n(c.theme),
+                m) {
+                var t = m["ds_site_" + e]
+                    , s = m["ds_lang_" + e];
+                t && rt.reset(p.parse(t)),
+                    s && o.extend(z, p.parse(s))
+            }
+        }),
+            q(),
+            S.require("embed.compat", function () {
+                function i(e) {
+                    e.stopPropagation()
+                }
+                function n(e) {
+                    (e.ctrlKey && 13 == e.which || 10 == e.which) && H(this.form).trigger("submit")
+                }
+                function d() {
+                    var e = H(this);
+                    e.height(Math.max(54, e.next(".ds-hidden-text").text(this.value).height() + 27))
+                }
+                function l() {
+                    if (P.authInWin) {
+                        var e = this.href.match(/\/(login|bind)\/(\w+)\//i);
+                        if (e && S.serviceNames[e[2]])
+                            return !b(e[2], this.href)
+                    }
+                }
+                function u() {
+                    var e, s, a, i, r, n = this, o = 0, d = 0;
+                    t.selection && (s = t.selection.createRange(),
+                        s && s.parentElement() == n && (i = n.value.length,
+                            e = n.value.replace(/\r\n/g, "\n"),
+                            a = n.createTextRange(),
+                            a.moveToBookmark(s.getBookmark()),
+                            r = n.createTextRange(),
+                            r.collapse(!1),
+                            a.compareEndPoints("StartToEnd", r) > -1 ? o = d = i : (o = -a.moveStart("character", -i),
+                                o += e.slice(0, o).split("\n").length - 1,
+                                a.compareEndPoints("EndToEnd", r) > -1 ? d = i : (d = -a.moveEnd("character", -i),
+                                    d += e.slice(0, d).split("\n").length - 1)))),
+                        H(n).data("ds-range-start", o).data("ds-range-end", d)
+                }
+                function p(e) {
+                    return P.touch && e.addClass("ds-touch"),
+                        o.cssProperty("transition") || e.addClass("ds-no-transition"),
+                        P.ie6 && e.addClass("ds-ie6"),
+                        P.opacity || e.addClass("ds-no-opacity"),
+                        e
+                }
+                function f(e) {
+                    if (!P.placeholder) {
+                        var t = e.attr("placeholder");
+                        e.val(t).focus(function () {
+                            this.value === t && (this.value = "")
+                        }).blur(function () {
+                            "" === this.value && (this.value = t)
+                        })
+                    }
+                    return e
+                }
+                function g(e) {
+                    if ("http://duoshuo.com" === e.origin)
+                        switch (e.data.type) {
+                            case "login":
+                                h.href = e.data.redirectUrl
+                        }
+                }
+                function b(t, s) {
+                    var a = {
+                        weibo: [760, 600],
+                        renren: [420, 322],
+                        qq: [504, 445],
+                        weixin: [450, 550],
+                        google: [600, 440]
+                    }[t] || [550, 400];
+                    return e.open(s + (-1 == s.indexOf("?") ? "?" : "&") + o.param({
+                        origin: h.origin || "http://" + h.host
+                    }), "_blank", "width=" + a[0] + ",height=" + a[1] + ",toolbar=no,menubar=no,location=yes")
+                }
+                function y(e) {
+                    var t = Z[r() ? "loginUrl" : "bindUrl"](e);
+                    P.authInWin && b(e, t) || (h.href = t)
+                }
+                function w() {
+                    var e = E(et["dialog-ask-for-auth"]({})).el.find(".ds-dialog").css("width", "300px");
+                    e.find("a.ds-service-link").click(l)
+                }
+                function x(e, t, s, a) {
+                    function i() {
+                        function e(e) {
+                            if (s && a) {
+                                var t = s.options
+                                    , i = M(s.postList.el, e.response[a], t);
+                                "asc" == t.order == ("top" == t.formPosition) && S.scrollTo(i);
+                                var r = s.el.find(".ds-comments-tab-" + a + " span.ds-highlight");
+                                r.html(parseInt(r.html()) + 1)
+                            }
+                        }
+                        return a || l.find("[type=checkbox]:checked")[0] ? (R.post("posts/repost", S.toJSON(l), e),
+                            o.close(),
+                            !1) : (alert("还没有选发布到哪儿呢"),
+                                !1)
+                    }
+                    function r() {
+                        var e = this.value;
+                        return this.checked && !nt.data.social_uid["qqt" == e ? "qq" : e] ? void y(e) : void 0
+                    }
+                    var o = E(et["dialog-reposts"]({
+                        post: e.toJSON(),
+                        repostMessage: t,
+                        service: a
+                    }))
+                        , l = o.el.find("form");
+                    return l.submit(i),
+                        l.find(".ds-actions [type=checkbox]").change(r),
+                        f(l.find("textarea")).keyup(n).keyup(d).focus(),
+                        !1
+                }
+                function T(e) {
+                    var t = {
+                        "unread-comments": {
+                            title: "新留言及回复",
+                            apiUrl: "users/unreadComments",
+                            tmpl: function (e) {
+                                return e.thread ? '<li data-thread-id="' + e.thread.thread_id + '">' + H.map(e.authors, et.userAnchor).join("、") + ' 在 <a class="ds-read" href="' + e.thread.url + '#comments" target="_blank">' + _(e.thread.title || "无标题") + '</a> 中回复了你 <a class="ds-delete ds-read" title="知道了" href="javascript:void(0)">知道了</a></li>' : ""
+                            },
+                            read: function (e) {
+                                var t = e.attr("data-thread-id");
+                                R.post("threads/read", {
+                                    thread_id: t
+                                }),
+                                    ot.data.comments--
+                            }
+                        },
+                        "unread-notifications": {
+                            title: "系统消息",
+                            apiUrl: "users/unreadNotifications",
+                            tmpl: function (e) {
+                                return '<li data-notification-id="' + e.notification_id + '" data-notification-type="' + e.type + '">' + e.content + ' <a class="ds-delete ds-read" title="知道了" href="javascript:void(0)">知道了</a></li>'
+                            },
+                            read: function (e) {
+                                var t = e.attr("data-notification-id");
+                                R.post("notifications/read", {
+                                    notification_id: t
+                                }),
+                                    ot.data.notifications--
+                            }
+                        }
+                    }[e]
+                        , s = E("<h2>" + t.title + '</h2><ul class="ds-unread-list"></ul>');
+                    s.on("close", S.resetNotify);
+                    var a = s.el.find(".ds-unread-list").delegate(".ds-delete", "click", function () {
+                        return H(this).parent().remove(),
+                            0 === a.children().length && s.close(),
+                            !1
+                    }).delegate(".ds-read", "click", function () {
+                        t.read(H(this).parent())
+                    });
+                    H("#ds-notify").hide(),
+                        R.get(t.apiUrl, {}, function (e) {
+                            s.el.find(".ds-unread-list").html(H.map(e.response, t.tmpl).join("\n"))
+                        })
+                }
+                function N() {
+                    bubbleOutTimer && (clearTimeout(bubbleOutTimer),
+                        bubbleOutTimer = 0)
+                }
+                function I() {
+                    bubbleOutTimer = setTimeout(function () {
+                        bubbleOutTimer = 0,
+                            X.detach()
+                    }, 400)
+                }
+                function M(e, t, s) {
+                    return e.find(".ds-post[data-post-id=" + t.data.post_id + "]")[0] ? void 0 : (e.find(".ds-post-placeholder").remove(),
+                        H(et.post({
+                            post: t.toJSON(),
+                            options: s
+                        })).hide()["asc" == s.order ? "appendTo" : "prependTo"](e).slideDown(function () { }))
+                }
+                function U(e, t) {
+                    function s() {
+                        if (r())
+                            return w(),
+                                !1;
+                        var e = H(this).parent()
+                            , t = e.hasClass("ds-post-liked")
+                            , s = H(this).html().match(/\((\d+)\)/)
+                            , a = (s ? parseInt(s[1]) : 0) + (t ? -1 : 1);
+                        return R.post("posts/vote", {
+                            post_id: e.closest(".ds-ctx-entry, .ds-post-self").attr("data-post-id"),
+                            vote: t ? 0 : 1
+                        }),
+                            H(this).html(H(this).html().replace(/\(\d+\)/, "") + (a ? "(" + a + ")" : "")),
+                            e[t ? "removeClass" : "addClass"]("ds-post-liked"),
+                            !1
+                    }
+                    function a() {
+                        var e = H(this).closest(".ds-post-self")
+                            , t = lt[e.attr("data-post-id")];
+                        return x(t, ""),
+                            !1
+                    }
+                    function i() {
+                        if (!confirm("确定要删除这条评论吗？"))
+                            return !1;
+                        var t = H(this).closest(".ds-post-self");
+                        return R.post("posts/remove", {
+                            post_id: t.attr("data-post-id")
+                        }),
+                            t.parent().fadeOut(200, function () {
+                                e.data.comments-- ,
+                                    e.updateCounter("duoshuo"),
+                                    H(this).remove()
+                            }),
+                            !1
+                    }
+                    function n() {
+                        if (!confirm("确定要举报这条评论吗？"))
+                            return !1;
+                        var e = H(this).closest(".ds-post-self");
+                        return R.post("posts/report", {
+                            post_id: e.attr("data-post-id")
+                        }),
+                            alert("感谢您的反馈！"),
+                            !1
+                    }
+                    function o() {
+                        var s = H(this)
+                            , a = s.closest(".ds-comment-actions");
+                        if (a.hasClass("ds-reply-active"))
+                            h.el.fadeOut(200, function () {
+                                H(this).detach()
+                            }),
+                                a.removeClass("ds-reply-active");
+                        else {
+                            var i = s.closest(".ds-ctx-entry, .ds-post-self");
+                            h ? h.actionsBar.removeClass("ds-reply-active") : (h = new st.Replybox(e),
+                                h.render(!0).el.addClass("ds-inline-replybox").detach()),
+                                h.el.find("[name=parent_id]").val(i.attr("data-post-id")),
+                                h.el.show().appendTo(s.closest(".ds-ctx-body, .ds-comment-body")).find("textarea").focus(),
+                                h.actionsBar = a.addClass("ds-reply-active"),
+                                t.max_depth <= 1 ? h.postList = e.postList.el : (h.postList = i.siblings(".ds-children"),
+                                    h.postList[0] || (h.postList = H('<ul class="ds-children"></ul>').insertAfter(i)))
+                        }
+                        return !1
+                    }
+                    function d() {
+                        function e(e) {
+                            W(e),
+                                i.append(H.map(e.response, function (e) {
+                                    return et.post({
+                                        post: e,
+                                        options: t
+                                    })
+                                }).join(""))
+                        }
+                        {
+                            var s = H(this).closest(".ds-post-self")
+                                , a = s.attr("data-post-id");
+                            s.data("source")
+                        }
+                        if (0 != s.attr("data-root-id"))
+                            return !1;
+                        var i = s.siblings(".ds-children");
+                        return i[0] ? (i.remove(),
+                            !1) : (i = H('<ul class="ds-children"></ul>').insertAfter(s),
+                                R.get("posts/listComments", B({
+                                    post_id: a
+                                }), e),
+                                !1)
+                    }
+                    function l() {
+                        var t = H(this).closest(".ds-post-self")
+                            , s = lt[t.attr("data-post-id")]
+                            , a = s.data.source;
+                        if (!nt.data.social_uid["qqt" == a ? "qq" : a])
+                            return void y(a);
+                        var i = s.data.root_id
+                            , r = "0" != i ? lt[i] : s
+                            , n = "";
+                        if ("0" != i) {
+                            var o = prepatePost(s.data).theAuthor;
+                            n = ("weibo" == a ? "//@" + o.name : "|| @" + o.qqt_account) + ":" + s.data.message
+                        }
+                        return x(r, n, e, a),
+                            !1
+                    }
+                    function c() {
+                        var e = H(this).parent();
+                        return e.siblings().show(),
+                            e.remove(),
+                            !1
+                    }
+                    function u() {
+                        function t() {
+                            function t(e) {
+                                var t = e.response;
+                                ct[c] ? ct[c].set(t) : ct[c] = new $(t),
+                                    X.owner == s && K.html(et.userInfo(t))
+                            }
+                            tt = 0,
+                                X.owner = s,
+                                N();
+                            var i = a.offset()
+                                , r = e.el.offset()
+                                , n = a.innerWidth() / 2
+                                , o = e.el.innerHeight() - (i.top - r.top) + 6
+                                , d = i.left - r.left - 35 + (n > 35 ? 35 : n);
+                            try {
+                                if (a.hasClass("ds-comment-context"))
+                                    K.attr("id", "ds-ctx-bubble").attr("data-post-id", a.attr("data-post-id")).html('<ul id="ds-ctx">' + et.ctxPost({
+                                        post: lt[a.attr("data-parent-id")].toJSON()
+                                    }) + '</ul><div class="ds-bubble-footer"><a class="ds-ctx-open" href="javascript:void(0);">查看对话</a></div>');
+                                else if (a.hasClass("ds-avatar") || a.hasClass("ds-user-name")) {
+                                    var l = {}
+                                        , c = l.user_id = a.attr("data-user-id");
+                                    if (!c)
+                                        throw "no info";
+                                    K.attr("id", "ds-user-card").attr("data-user-id", c).empty(),
+                                        ct[c] ? K.html(et.userInfo(ct[c].data)) : R.get("users/profile", B(l), t)
+                                }
+                                X.css({
+                                    bottom: o,
+                                    left: d
+                                }).appendTo(e.innerEl)
+                            } catch (u) {
+                                X.detach()
+                            }
+                        }
+                        var s = this;
+                        if (bubbleOutTimer && X.owner == s)
+                            return clearTimeout(bubbleOutTimer),
+                                void (bubbleOutTimer = 0);
+                        var a = H(s);
+                        tt = setTimeout(t, 200)
+                    }
+                    function p() {
+                        tt ? (clearTimeout(tt),
+                            tt = 0) : bubbleOutTimer || I()
+                    }
+                    var h;
+                    this.delegate("a.ds-post-likes", "click", s).delegate("a.ds-post-repost", "click", a).delegate("a.ds-post-delete", "click", i).delegate("a.ds-post-report", "click", n).delegate("a.ds-post-reply", "click", o).delegate("a.ds-weibo-comments", "click", d).delegate("a.ds-weibo-reposts", "click", l).delegate("a.ds-expand", "click", c),
+                        P.touch || this.delegate("a.ds-comment-context, .ds-avatar, .ds-user-name", "mouseenter", u).delegate("a.ds-comment-context, .ds-avatar, .ds-user-name", "mouseleave", p)
+                }
+                function B(e) {
+                    var s = {
+                        require: "site,visitor,nonce,lang" + (it++ ? "" : ",unread,log,extraCss"),
+                        site_ims: D.get("ds_site_" + c.short_name + ":timestamp"),
+                        lang_ims: D.get("ds_lang_" + c.short_name + ":timestamp"),
+                        referer: t.referrer
+                    };
+                    c.stylePatch && (s.style_patch = c.stylePatch);
+                    for (var a in s)
+                        s[a] && (!P.ie6 || encodeURIComponent(s[a]).length < 200) && (e[a] = s[a]);
+                    return e
+                }
+                var H = S.jQuery
+                    , V = H(e)
+                    , Y = H(t);
+                e.postMessage && (e.addEventListener ? e.addEventListener("message", g, !1) : e.attachEvent && e.attachEvent("onmessage", g)),
+                    S.scrollTo = function (e) {
+                        var t = e.offset().top;
+                        (t < V.scrollTop() || t > V.scrollTop() + V.height()) && H("html, body").animate({
+                            scrollTop: t - 40
+                        }, 200, "swing")
+                    }
+                    ,
+                    S.toJSON = function (e) {
+                        var t = /\r?\n/g
+                            , s = /^(?:color|date|datetime|datetime-local|email|hidden|month|number|password|range|search|tel|text|time|url|week)$/i
+                            , a = /^(?:select|textarea)/i
+                            , i = e.map(function () {
+                                return this.elements ? H.makeArray(this.elements) : this
+                            }).filter(function () {
+                                return this.name && !this.disabled && (this.checked || a.test(this.nodeName) || s.test(this.type))
+                            }).map(function (e, s) {
+                                var a = H(this).val();
+                                return null == a ? null : H.isArray(a) ? H.map(a, function (e) {
+                                    return {
+                                        name: s.name,
+                                        value: e.replace(t, "\r\n")
+                                    }
+                                }) : {
+                                        name: s.name,
+                                        value: a.replace(t, "\r\n")
+                                    }
+                            }).toArray()
+                            , r = {};
+                        return H.each(i, function () {
+                            r[this.name] = this.value
+                        }),
+                            r
+                    }
+                    ,
+                    S.resetNotify = function () {
+                        var e = H("#ds-notify")
+                            , s = ot.data;
+                        e[0] || (e = H('<div id="ds-notify"></div>').css({
+                            hidden: {
+                                display: "none"
+                            },
+                            "top-right": {
+                                top: "24px",
+                                right: "24px"
+                            },
+                            "bottom-right": {
+                                bottom: "24px",
+                                right: "24px"
+                            }
+                        }[rt.data.notify_position]).delegate(".ds-notify-unread a", "click", function () {
+                            return T(H(this).data("type")),
+                                !1
+                        }).appendTo(t.body)),
+                            e.html(et.notify(s))[!s.comments && !s.notifications || "hidden" === rt.data.notify_position || H(".ds-dialog")[0] ? "hide" : "show"]()
+                    }
+                    ,
+                    ot.on("reset", S.resetNotify),
+                    st.Replybox = function (e) {
+                        this.embedThread = e
+                    }
+                    ,
+                    st.Replybox.prototype = {
+                        render: function (e) {
+                            function s(e) {
+                                e.find('textarea').val(function () {
+                                    return marked ? marked(this.value).replace(/>\n/g, '>') : this.value
+                                }),
+                                    e.data("submitting", !0),
+                                    e.find(".ds-post-button").addClass("ds-waiting").html(z.posting)[0].disabled = !0
+                            }
+                            function a(e) {
+                                e.data("submitting", !1),
+                                    e.find(".ds-post-button").removeClass("ds-waiting").html(z.post)[0].disabled = !1
+                            }
+                            var i = this
+                                , o = i.embedThread
+                                , c = o.options
+                                , p = function () {
+                                    S.require("smilies", function () { })
+                                }
+                                , h = {
+                                    thread: o,
+                                    options: c,
+                                    inline: e,
+                                    params: {
+                                        thread_id: o.threadId,
+                                        parent_id: "",
+                                        nonce: S.nonce
+                                    },
+                                    repostArray: [],
+                                    checked: 0
+                                };
+                            for (var v in nt.data.repostOptions)
+                                nt.data.repostOptions[v] && (h.repostArray.push(v),
+                                    h.checked = 1);
+                            var g = i.el = H(et.replybox(h)).click(p)
+                                , b = g.find("form")
+                                , y = b.find("input[type=checkbox]")[0]
+                                , _ = b.find("a.ds-service-icon, a.ds-service-icon-grey")
+                                , k = f(b.find("textarea")).focus(p).keyup(n).keyup(d).bind("focus mousedown mouseup keyup", u)
+                                , w = g.find(".ds-add-emote").click(function (e) {
+                                    var s = S.smiliesTooltip;
+                                    return w.toggleClass("ds-expanded").hasClass("ds-expanded") ? (s || (s = S.smiliesTooltip = new st.SmiliesTooltip,
+                                        s.render(),
+                                        S.require("smilies", function () {
+                                            s.reset("微博-默认")
+                                        })),
+                                        s.replybox = i,
+                                        s.el.appendTo(t.body).css({
+                                            top: i.el.offset().top + i.el.outerHeight() + 4 + "px",
+                                            left: i.el.find(".ds-textarea-wrapper").offset().left + "px"
+                                        }),
+                                        H(t.body).click(x)) : x(e),
+                                        !1
+                                })
+                                , x = (g.find(".ds-add-image").click(function (e) {
+                                    var s = k[0]
+                                        , a = s.value
+                                        , i = "请输入图片地址"
+                                        , r = '<img src="' + i + '" />';
+                                    if (t.selection) {
+                                        s.value = a.substring(0, k.data("ds-range-start")) + r + a.substring(k.data("ds-range-end"), a.length),
+                                            s.value = s.value.replace("说点什么吧 ...", ""),
+                                            s.focus();
+                                        var n = t.selection.createRange();
+                                        n.collapse(),
+                                            n.findText(i),
+                                            n.select()
+                                    } else {
+                                        s.value = a.substring(0, s.selectionStart) + r + a.substring(s.selectionEnd);
+                                        var o = s.value.search(i);
+                                        s.setSelectionRange(o, o + i.length),
+                                            s.focus()
+                                    }
+                                    e.preventDefault()
+                                }),
+                                    i.hideSmilies = function () {
+                                        w.removeClass("ds-expanded"),
+                                            S.smiliesTooltip.el.detach(),
+                                            H(t.body).unbind("click", x)
+                                    }
+                                )
+                                , T = function (e, t) {
+                                    var s = E(et["dialog-anonymous"]({
+                                        services: ["weixin", "weibo", "qq", "renren", "kaixin", "douban"],
+                                        options: c
+                                    }))
+                                        , a = s.el.find(".ds-dialog").css("width", "320px");
+                                    if (a.find(".ds-icons-32 a").click(l),
+                                        !c.deny_anonymous) {
+                                        var i = s.el.find("form");
+                                        i.submit(function () {
+                                            var e = i.find("input[name=author_email]").val();
+                                            return !e && !c.require_guest_email || e.match(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/) ? (t(S.toJSON(i)),
+                                                s.close(),
+                                                !1) : (alert("请输入一个有效的email地址."),
+                                                    !1)
+                                        }),
+                                            i.find("input[name=author_name]")[0].focus()
+                                    }
+                                }
+                                ;
+                            c.deny_anonymous && k.focus(function () {
+                                if (r()) {
+                                    T(b, q);
+                                    var e = function (t) {
+                                        t.stopPropagation(),
+                                            k.unbind("click", e)
+                                    }
+                                        ;
+                                    k.click(e)
+                                }
+                                return !1
+                            });
+                            var q = function (e) {
+                                s(b),
+                                    R.post("posts/create", H.extend(S.toJSON(b), e), function (e) {
+                                        var t = lt[e.response.post_id] = new F(e.response)
+                                            , s = M(i.postList, t, c);
+                                        if ("asc" == c.order == ("top" == c.formPosition) && S.scrollTo(s),
+                                            o.data.comments++ ,
+                                            o.updateCounter("duoshuo"),
+                                            k.val("").trigger("keyup"),
+                                            a(b),
+                                            g.hasClass("ds-inline-replybox") && (g.detach(),
+                                                i.actionsBar.removeClass("ds-reply-active")),
+                                            m)
+                                            try {
+                                                m.removeItem("ds_draft_" + o.threadId)
+                                            } catch (r) { }
+                                    }, function (e) {
+                                        a(b),
+                                            alert(e.errorMessage)
+                                    })
+                            }
+                                ;
+                            b.submit(function () {
+                                if (b.data("submitting"))
+                                    return !1;
+                                var e = H.trim(b[0].message.value);
+                                return "" == e || !P.placeholder && e == k.attr("placeholder") ? (alert("您还没写内容呢"),
+                                    !1) : (r() ? T(b, q) : q(),
+                                        !1)
+                            });
+                            var C = function (e) {
+                                return H(e).hasClass("ds-service-icon-grey") ? null : H(e).attr("data-service")
+                            }
+                                ;
+                            if (_.click(function () {
+                                return H(this).toggleClass("ds-service-icon-grey").toggleClass("ds-service-icon"),
+                                    y.value = H.map(_, C).join(","),
+                                    y.checked = "" != y.value,
+                                    !1
+                            }),
+                                H(y).change(function () {
+                                    var e = this.checked;
+                                    _[e ? "removeClass" : "addClass"]("ds-service-icon-grey")[e ? "addClass" : "removeClass"]("ds-service-icon"),
+                                        this.value = H.map(_, C).join(",")
+                                }),
+                                !e && m) {
+                                var j = "ds_draft_" + o.threadId;
+                                k.bind("focus blur keyup", function (e) {
+                                    var t = H(e.currentTarget).val();
+                                    try {
+                                        m[j] = t
+                                    } catch (e) { }
+                                }),
+                                    m[j] && k.val(m[j])
+                            }
+                            return this
+                        }
+                    },
+                    st.Dialog = J.extend({
+                        init: function (e, t) {
+                            (this.el = H("#ds-wrapper"))[0] || (this.el = p(H('<div id="ds-wrapper"></div>'))),
+                                this.options = H.extend({
+                                    width: 600
+                                }, t),
+                                e !== s && H(e).attr("id", "ds-reset").appendTo(this.el)
+                        },
+                        open: function () {
+                            function e(e) {
+                                return 27 == e.which ? (a.close(),
+                                    !1) : void 0
+                            }
+                            function s() {
+                                return a.close(),
+                                    !1
+                            }
+                            var a = this;
+                            return a.el.hide().appendTo(t.body).fadeIn(200),
+                                P.ie6 && a.el.css("top", V.scrollTop() + 100),
+                                a.el.show().find(".ds-dialog").delegate("a.ds-dialog-close", "click", function () {
+                                    return a.close(),
+                                        !1
+                                }).click(i),
+                                Y.keydown(e),
+                                H(t.body).click(s),
+                                a.close = function () {
+                                    Y.unbind("keydown", e),
+                                        H(t.body).unbind("click", s),
+                                        a.el.fadeOut(200, function () {
+                                            H(this).remove()
+                                        }),
+                                        a.trigger("close")
+                                }
+                                ,
+                                a
+                        }
+                    }),
+                    et.likePanel = function (e) {
+                        return e.likes ? '<span class="ds-highlight">' + e.likes + "</span> 人喜欢" : ""
+                    }
+                    ,
+                    st.Meta = function (e) {
+                        this.embedThread = e
+                    }
+                    ,
+                    st.Meta.prototype = {
+                        render: function () {
+                            function a(a) {
+                                function r(e) {
+                                    o.set(e),
+                                        n.resetLikePanel()
+                                }
+                                function c() {
+                                    n.tooltip.detach(),
+                                        H(t.body).unbind("click", c)
+                                }
+                                function u(t) {
+                                    switch (this.className) {
+                                        case "ds-like-tooltip-close":
+                                            c(t);
+                                            break;
+                                        default:
+                                            if (!e.open(this.href, "_blank", "height=500,width=600,top=0,left=0,toolbar=no,menubar=no,resizable=yes,location=yes,status=no"))
+                                                return
+                                    }
+                                    return !1
+                                }
+                                var p = l.hasClass("ds-thread-liked");
+                                if (R.post("threads/vote", {
+                                    thread_id: n.embedThread.threadId,
+                                    vote: p ? 0 : 1
+                                }, r),
+                                    l.toggleClass("ds-thread-liked"),
+                                    l.find(".ds-thread-like-text").text(p ? "喜欢" : "已喜欢"),
+                                    p)
+                                    return n.tooltip && c(a),
+                                        !1;
+                                if (n.tooltip === s) {
+                                    var h = et.likeTooltip({
+                                        services: {
+                                            qzone: "QQ空间",
+                                            weibo: "新浪微博",
+                                            qqt: "腾讯微博",
+                                            renren: "人人网",
+                                            kaixin: "开心网",
+                                            douban: "豆瓣网",
+                                            baidu: "百度搜藏"
+                                        },
+                                        thread_id: o.data.thread_id
+                                    });
+                                    n.tooltip = H(h).click(i).delegate("a", "click", u)
+                                }
+                                var f = {};
+                                return f.left = 0,
+                                    f.top = d.position().top + d.outerHeight() - 4 + "px",
+                                    n.tooltip.appendTo(n.embedThread.innerEl).css(f),
+                                    H(t.body).click(c),
+                                    !1
+                            }
+                            var n = this
+                                , o = n.embedThread.model
+                                , d = n.el = H(et.meta(o.toJSON()))
+                                , l = d.find(".ds-like-thread-button");
+                            return l.click(a),
+                                n.resetLikePanel(),
+                                r() && d.hide(),
+                                n
+                        },
+                        resetLikePanel: function () {
+                            this.el.find(".ds-like-panel").html(et.likePanel(this.embedThread.model.toJSON()))
+                        }
+                    },
+                    st.PostListHead = function (e) {
+                        this.embedThread = e
+                    }
+                    ,
+                    st.PostListHead.prototype = {
+                        render: function () {
+                            function e(e) {
+                                r.find("a.ds-current").removeClass("ds-current"),
+                                    a.params.page = 1;
+                                var t = e.currentTarget;
+                                switch (t.className) {
+                                    case "ds-comments-tab-duoshuo":
+                                        a.params.source = "duoshuo",
+                                            s.replybox.el.show();
+                                        break;
+                                    case "ds-comments-tab-repost":
+                                        a.params.source = "repost",
+                                            s.replybox.el.hide();
+                                        break;
+                                    case "ds-comments-tab-weibo":
+                                        a.params.source = "weibo",
+                                            s.replybox.el.hide();
+                                        break;
+                                    case "ds-comments-tab-qqt":
+                                        a.params.source = "qqt",
+                                            s.replybox.el.hide()
+                                }
+                                return H(t).addClass("ds-current"),
+                                    a.refetch(),
+                                    !1
+                            }
+                            function t() {
+                                return n.find("a.ds-current").removeClass("ds-current"),
+                                    a.params.order = s.options.order = this.className.replace("ds-order-", ""),
+                                    a.params.page = 1,
+                                    a.refetch(),
+                                    H(this).addClass("ds-current"),
+                                    !1
+                            }
+                            var s = this.embedThread
+                                , a = s.postList
+                                , i = this.el = H(et.postListHead({
+                                    thread: s.model.toJSON(),
+                                    options: s.options
+                                }))
+                                , r = i.find("ul.ds-comments-tabs");
+                            r.delegate(".ds-tab a", "click", e);
+                            var n = i.find(".ds-sort");
+                            return n.delegate("a", "click", t),
+                                n.find(".ds-order-" + a.params.order).addClass("ds-current"),
+                                this
+                        }
+                    },
+                    st.Paginator = function (e) {
+                        function t() {
+                            return i.params.page = parseInt(this.innerHTML),
+                                i.refetch(),
+                                a.find(".ds-current").removeClass("ds-current"),
+                                H(this).addClass("ds-current"),
+                                !1
+                        }
+                        e = e || {};
+                        var s = this
+                            , a = s.el = e.el || H('<div class="ds-paginator"></div>')
+                            , i = s.collection = e.collection;
+                        a.delegate("a", "click", t)
+                    }
+                    ,
+                    st.Paginator.prototype = {
+                        reset: function (e) {
+                            function t(e) {
+                                i.push('<a data-page="' + e + '" href="javascript:void(0);">' + e + "</a>")
+                            }
+                            var s, a = this.collection.params.page || 1, i = [];
+                            if (a > 1)
+                                for (t(1),
+                                    s = a > 4 ? a - 2 : 2,
+                                    s > 2 && i.push('<span class="page-break">...</span>'); a > s; s++)
+                                    t(s);
+                            if (i.push('<a data-page="' + a + '" href="javascript:void(0);" class="ds-current">' + a + "</a>"),
+                                a < e.pages) {
+                                for (s = a + 1; a + 4 >= s && s < e.pages; s++)
+                                    t(s);
+                                s < e.pages && i.push('<span class="page-break">...</span>'),
+                                    t(e.pages)
+                            }
+                            this.el.html('<div class="ds-border"></div>' + i.join(" "))[e.pages > 1 ? "show" : "hide"]()
+                        }
+                    },
+                    S.addSmilies = function (e, t) {
+                        var s = S.smiliesTooltip;
+                        s && s.el.find("ul.ds-smilies-tabs").append("<li><a>" + e + "</a></li>"),
+                            S.smilies[e] = t
+                    }
+                    ,
+                    st.SmiliesTooltip = function () { }
+                    ,
+                    st.SmiliesTooltip.prototype = {
+                        render: function () {
+                            function e() {
+                                var e = s.replybox
+                                    , a = e.el.find("textarea")
+                                    , i = a[0]
+                                    , r = i.value;
+                                if (t.selection) {
+                                    i.value = r.substring(0, a.data("ds-range-start")) + this.title + r.substring(a.data("ds-range-end"), r.length),
+                                        i.value = i.value.replace(z.leave_a_message, ""),
+                                        i.focus();
+                                    var n = t.selection.createRange();
+                                    n.moveStart("character", a.data("ds-range-start") + this.title.length),
+                                        n.collapse(),
+                                        n.select()
+                                } else {
+                                    var o = i.selectionStart + this.title.length;
+                                    i.value = r.substring(0, i.selectionStart) + this.title + r.substring(i.selectionEnd),
+                                        i.setSelectionRange(o, o)
+                                }
+                                e.hideSmilies(),
+                                    i.focus()
+                            }
+                            var s = this
+                                , a = s.el = H(et.smiliesTooltip(L));
+                            return a.click(i).find("ul.ds-smilies-tabs").delegate("a", "click", function () {
+                                s.reset(this.innerHTML)
+                            }),
+                                a.find(".ds-smilies-container").delegate("img", "click", e),
+                                this
+                        },
+                        reset: function (e) {
+                            function t(t, s) {
+                                var i = 0 === e.indexOf("微博") ? "http://img.t.sinajs.cn/t35/style/images/common/face/ext/normal/" + s.replace("_org", "_thumb") : S.STATIC_URL + "/images/smilies/" + s;
+                                "WordPress" === e && (t = " " + t + " "),
+                                    a += '<li><img src="' + i + '" title="' + _(t) + '" /></li>'
+                            }
+                            var s = this.el.find("ul.ds-smilies-tabs");
+                            s.find("a.ds-current").removeClass("ds-current"),
+                                s.find("a").filter(function () {
+                                    return this.innerHTML == e
+                                }).addClass("ds-current");
+                            var a = "<ul>";
+                            return H.each(L[e], t),
+                                a += "</ul>",
+                                this.el.find(".ds-smilies-container").html(a),
+                                this
+                        }
+                    },
+                    et.postPlaceholder = function () {
+                        return ['<li class="ds-post ds-post-placeholder">', z.no_comments_yet, "</li>"].join("")
+                    }
+                    ;
+                var X = H('<div id="ds-bubble"><div class="ds-bubble-content"></div><div class="ds-arrow ds-arrow-down ds-arrow-border"></div><div class="ds-arrow ds-arrow-down"></div></div>')
+                    , K = X.find(".ds-bubble-content").delegate("a.ds-ctx-open", "click", function () {
+                        function e(e) {
+                            function t(e, t) {
+                                return et.ctxPost({
+                                    post: e,
+                                    index: t
+                                })
+                            }
+                            C.log(H.map(e.response, t).join("\n"));
+                            s.el.find("ol");
+                            s.el.find("ol").html(H.map(e.response, t).join("\n"))
+                        }
+                        var t = {};
+                        t.post_id = K.attr("data-post-id"),
+                            R.get("posts/conversation", t, e);
+                        var s = E('<h2>查看对话</h2><ol id="ds-ctx"></ol>');
+                        return s.el.find(".ds-dialog").css("width", "600px"),
+                            s.el.find(".ds-dialog-body").css({
+                                "max-height": "350px",
+                                _height: "350px",
+                                "overflow-y": "auto",
+                                "padding-top": "10px"
+                            }),
+                            !1
+                    })
+                    , tt = bubbleOutTimer = 0;
+                X.mouseenter(N).mouseleave(I),
+                    st.PostList = function (e) {
+                        e && (e.params && (this.params = e.params),
+                            e.embedThread && (this.embedThread = e.embedThread)),
+                            this.el = H('<ul class="ds-comments"></ul>')
+                    }
+                    ,
+                    st.PostList.prototype = {
+                        url: "threads/listPosts",
+                        render: function () {
+                            return U.call(this.el, this.embedThread, this.embedThread.options),
+                                this
+                        },
+                        reset: function (e) {
+                            var t = this.embedThread.options;
+                            this.el.html(e[0] ? H.map(lt.getJSON(e), function (e) {
+                                return et.post({
+                                    post: e,
+                                    options: t
+                                })
+                            }).join("") : et.postPlaceholder())
+                        },
+                        refetch: function () {
+                            function e(e) {
+                                lt.set(e.parentPosts || e.relatedPosts),
+                                    ct.set(e.users),
+                                    s.reset(e.response),
+                                    s.embedThread.paginator.reset(e.cursor),
+                                    s.el.fadeTo(200, 1),
+                                    S.scrollTo(s.el),
+                                    a.remove()
+                            }
+                            var s = this
+                                , a = H(et.indicator()).appendTo(t.body).fadeIn(200);
+                            s.el.fadeTo(200, .5),
+                                R.get(s.url, s.params, e)
+                        }
+                    },
+                    st.RelatedRead = function () {
+                        this._init()
+                    }
+                    ,
+                    st.RelatedRead.prototype = {
+                        _init: function () {
+                            this.el = H('<div id="ds-related-reads"></div>')
+                        },
+                        load: function (s) {
+                            e.__duoshuo_id__ = s,
+                                e.readsByToutiao = [],
+                                e.readsByToutiao.push({
+                                    id: "ds-related-reads",
+                                    num: 3
+                                });
+                            var a = "//s0.pstatp.com/site/reads-sdk/5bf3702b38076207bee1.js"
+                                , i = t.createElement("script");
+                            i.src = a,
+                                i.charset = "utf-8",
+                                i.crossOrigin = "anonymous",
+                                t.head.appendChild(i)
+                        },
+                        mount: function (e) {
+                            this.el.insertBefore(e)
+                        }
+                    },
+                    st.EmbedThread = Q.extend({
+                        uri: "threads/listPosts",
+                        params: "thread-id local-thread-id source-thread-id thread-key category channel-key author-key author-id url limit order max-depth form-position container-url" + (v.match(/MSIE 6\.0/) ? "" : " title image thumbnail"),
+                        render: function () {
+                            var e = this.el;
+                            if ("请将此处替换成文章在你的站点中的ID" === e.data("thread-key"))
+                                return alert("请设置正确的 data-thread-key 属性"),
+                                    !1;
+                            e.attr("id", "ds-thread").append(et.waitingImg());
+                            var t = e.width()
+                                , s = e.data("url") || !e.attr("data-thread-id") && H("link[rel=canonical]").attr("href");
+                            s ? e.data("url", k(s)) : e.data("container-url", h.href),
+                                t && 400 >= t && e.addClass("ds-narrow").data("max-depth", 1)
+                        },
+                        updateCounter: function (e) {
+                            function t(e) {
+                                return e.substr(e.indexOf("}") + 1)
+                            }
+                            var s = {
+                                duoshuo: ["comments", t(z.comments_multiple) || "评论"],
+                                repost: ["reposts", t(z.reposts_multiple) || "转载"],
+                                weibo: ["weibo_reposts", t(z.weibo_reposts_multiple) || "新浪微博"],
+                                qqt: ["qqt_reposts", t(z.qqt_reposts_multiple) || "腾讯微博"]
+                            };
+                            for (var a in s)
+                                if (!e || e == a) {
+                                    var i = this.data[s[a][0]];
+                                    this.el.find(".ds-comments-tab-" + a).html(this.el.hasClass("ds-narrow") ? '<span class="ds-service-icon ds-' + a + '"></span>' + i : (i ? '<span class="ds-highlight">' + i + "</span>" : "0") + s[a][1])
+                                }
+                        },
+                        onError: function (e) {
+                            this.el.html("评论框出错啦(" + e.code + "): " + e.errorMessage)
+                        },
+                        onload: function (t) {
+                            var a = this
+                                , i = a.threadId = t.thread.thread_id
+                                , n = t.cursor
+                                , o = a.options = t.options
+                                , d = a.innerEl = p(H('<div id="ds-reset"></div>').appendTo(a.el));
+                            a.model = new G(a.data = t.thread),
+                                lt.set(t.parentPosts || t.relatedPosts),
+                                ct.set(t.users),
+                                a.el.find("#ds-waiting").remove(),
+                                t.options && t.options.show_recommend && (a.relatedRead = new st.RelatedRead,
+                                    a.relatedRead.load(t.thread.site_id),
+                                    a.relatedRead.mount(d)),
+                                o.like_thread_enabled && (a.meta = new st.Meta(a),
+                                    d.append(a.meta.render().el)),
+                                o.hot_posts && t.hotPosts && t.hotPosts.length && (a.hotPosts = new st.HotPosts(H('<div class="ds-rounded"></div>'), {
+                                    max_depth: 1,
+                                    show_context: o.show_context
+                                }),
+                                    a.hotPosts.thread = a,
+                                    d.append(a.hotPosts.el),
+                                    a.hotPosts.onload({
+                                        list: lt.getJSON(t.hotPosts)
+                                    })),
+                                a.postListHead = new st.PostListHead(a),
+                                a.postList = new st.PostList({
+                                    embedThread: a,
+                                    params: {
+                                        source: "duoshuo",
+                                        thread_id: i,
+                                        max_depth: o.max_depth,
+                                        order: o.order,
+                                        limit: o.limit
+                                    }
+                                }),
+                                a.postList.render().reset(t.response),
+                                a.paginator = new st.Paginator({
+                                    collection: a.postList
+                                }),
+                                a.paginator.reset(n);
+                            var c = a.replybox = new st.Replybox(a);
+                            c.postList = a.postList.el,
+                                r() ? a.loginButtons = H(et.loginButtons()).delegate("a.ds-more-services", "click", function () {
+                                    return a.loginButtons.find(".ds-additional-services").toggle(),
+                                        !1
+                                }).delegate("a.ds-service-link", "click", l) : a.toolbar = H(et.toolbar()).delegate(".ds-account-control", "mouseenter", function () {
+                                    H(this).addClass("ds-active")
+                                }).delegate(".ds-account-control", "mouseleave", function () {
+                                    H(this).removeClass("ds-active")
+                                }).delegate("a.ds-bind-more", "click", function () {
+                                    var e = E(et["dialog-bind-more"]()).el.find(".ds-dialog").addClass("ds-dialog-bind-more").css("width", "300px");
+                                    return e.find("a.ds-service-link").click(l),
+                                        !1
+                                }).delegate("a.ds-unread-comments-count", "click", function () {
+                                    return T("unread-comments"),
+                                        !1
+                                });
+                            var u = ['<a name="respond"></a>', a.toolbar || a.loginButtons, c.render().el];
+                            "top" == o.formPosition && H.fn.append.apply(d, u),
+                                d.append(a.postListHead.render().el, a.postList.el, a.paginator.el),
+                                "bottom" == o.formPosition && H.fn.append.apply(d, u),
+                                d.append(et.poweredBy(o.poweredby_text)),
+                                a.updateCounter(),
+                                t.alerts && H.each(t.alerts, function (e, t) {
+                                    H('<div class="ds-alert">' + t + "</div>").insertBefore(a.toolbar || loginButtons)
+                                }),
+                                o.message && c.el.find("textarea").val(o.message).focus(),
+                                ot.on("reset", function () {
+                                    var e = ot.data.comments || 0;
+                                    d.find("a.ds-unread-comments-count").html(e).attr("title", e ? "你有" + e + "条新回复" : "你没有新回复").css("display", e ? "inline" : "none")
+                                }),
+                                o.mzadx_id && (S.require("mzadxN", function () { }),
+                                    H('<div id="MZADX_' + o.mzadx_id + '" style="margin:0 auto;"></div>').appendTo(d),
+                                    __mz_rpq = e.__mz_rpq || [],
+                                    __mz_rpq.push({
+                                        l: [o.mzadx_id],
+                                        r: "1",
+                                        _srv: "MZADX",
+                                        _callback: function () { }
+                                    })),
+                                S.thread = a,
+                                ot.data !== s && ot.trigger("reset"),
+                                r() || A.send({
+                                    visit_thread_id: a.threadId
+                                })
+                        },
+                        onMessage: function (e) {
+                            M(this.postList.el, new F(e), this.options)
+                        }
+                    }),
+                    st.HotPosts = Q.extend({
+                        tmpl: "hotPosts",
+                        params: "show-quote",
+                        render: function () {
+                            return this.el.attr("id", "ds-hot-posts"),
+                                this
+                        },
+                        onload: function (e) {
+                            e.options = H.extend(this.options, e.options),
+                                Q.prototype.onload.call(this, e),
+                                U.call(this.el.find("ul"), this.thread, this.options)
+                        }
+                    }),
+                    st.RecentComments = Q.extend({
+                        tmpl: "commentList",
+                        uri: "sites/listRecentPosts",
+                        params: "show-avatars show-time show-title avatar-size show-admin excerpt-length num-items channel-key",
+                        render: function () {
+                            this.el.attr("id", "ds-recent-comments")
+                        },
+                        prepare: function (e) {
+                            return {
+                                list: H.map(e.response, function (e) {
+                                    return new F(e).toJSON()
+                                })
+                            }
+                        }
+                    }),
+                    st.RecentVisitors = Q.extend({
+                        tmpl: "recentVisitors",
+                        uri: "sites/listVisitors",
+                        params: "show-time avatar-size num-items channel-key",
+                        render: function () {
+                            this.el.children().detach(),
+                                this.el.attr("id", "ds-recent-visitors").append(this.waitingEl = H(et.waitingImg()))
+                        }
+                    }),
+                    st.TopThreads = Q.extend({
+                        tmpl: "topThreads",
+                        uri: "sites/listTopThreads",
+                        params: "range num-items channel-key",
+                        render: function () {
+                            this.el.children().detach(),
+                                this.el.attr("id", "ds-top-threads").append(this.waitingEl = H(et.waitingImg()))
+                        }
+                    }),
+                    st.LoginWidget = Q.extend({
+                        tmpl: "loginWidget",
+                        render: function () {
+                            var e = this.el;
+                            e.attr("id", "ds-login").html(et.loginWidget(["weixin", "weibo", "qq", "renren", "kaixin", "douban"])),
+                                e.find("a").click(l),
+                                e.find("a.ds-logout").attr("href", Z.logoutUrl())
+                        }
+                    }),
+                    st.ThreadCount = Q.extend({
+                        onload: function (e) {
+                            var t = this.el
+                                , s = t.data("count-type") || "comments"
+                                , a = e.data[s];
+                            t[t.data("replace") ? "replaceWith" : "html"](z[s + "_" + (a ? a > 1 ? "multiple" : "one" : "zero")].replace("{num}", a))
+                        }
+                    }),
+                    st.ShareWidget = Q.extend({
+                        tmpl: "shareWidget",
+                        render: function () {
+                            var e = {
+                                copyright: "多说分享插件",
+                                services: ["weibo", "qzone", "sohu", "renren", "netease", "qqt", "kaixin", "douban", "qq", "meilishuo", "mogujie", "baidu", "taobao", "google", "wechat", "diandian", "huaban", "duitang", "youdao", "pengyou", "facebook", "twitter", "linkedin", "msn"]
+                            };
+                            this.el.attr("id", "ds-share"),
+                                this.el.children().attr("id", "ds-reset"),
+                                this.el.find(".ds-share-aside-inner").html(et.shareWidget(e)),
+                                this.el.find(".ds-share-icons-more").html(et.shareWidget(e)),
+                                this.el.find(".ds-share-icons-more").hide(),
+                                this.el.hasClass("flat") && this.el.find("a").each(function () {
+                                    H(this).addClass("flat")
+                                }),
+                                p(this.el),
+                                this.delegateEvents()
+                        },
+                        delegateEvents: function () {
+                            var s = this
+                                , i = s.el;
+                            if (i.children().hasClass("ds-share-inline")) {
+                                var r = ".ds-share-icons-more"
+                                    , n = i.find(r)
+                                    , d = "[data-toggle=ds-share-icons-more]";
+                                i.delegate(d, "mouseover", function () {
+                                    n.show()
+                                }),
+                                    i.delegate(d, "mouseout", function () {
+                                        n.hide()
+                                    }),
+                                    i.delegate(r, "mouseover", function () {
+                                        n.show()
+                                    }),
+                                    i.delegate(r, "mouseout", function () {
+                                        n.hide()
+                                    })
+                            } else {
+                                var l = i.children().hasClass("ds-share-aside-left") ? "slide-to-right" : "slide-to-left"
+                                    , c = i.children();
+                                if (!o.cssProperty("transition")) {
+                                    var u = i.children().hasClass("ds-share-aside-left") ? "left" : "right";
+                                    i.delegate(".ds-share-aside-toggle", "mouseover", function () {
+                                        var e = {}
+                                            , s = P.ie6 && "right" === u;
+                                        s ? e.left = (t.documentElement.scrollLeft + t.documentElement.clientWidth - this.offsetWidth - (parseInt(this.currentStyle.marginLeft, 10) || 0) - parseInt(this.currentStyle.marginRight, 10) || 0) - 195 : e[u] = 0,
+                                            c.animate(e, 200)
+                                    }),
+                                        i.delegate(".ds-share-aside-inner", "mouseleave", function () {
+                                            var e = {}
+                                                , s = P.ie6 && "right" === u;
+                                            s ? e.left = (t.documentElement.scrollLeft + t.documentElement.clientWidth - this.offsetWidth - (parseInt(this.currentStyle.marginLeft, 10) || 0) - parseInt(this.currentStyle.marginRight, 10) || 0) + 230 : e[u] = -229,
+                                                c.animate(e, 200)
+                                        })
+                                }
+                                i.delegate(".ds-share-aside-toggle,.ds-share-aside-inner", "mouseover", function () {
+                                    c.addClass(l)
+                                }),
+                                    i.delegate(".ds-share-aside-toggle,.ds-share-aside-inner", "mouseleave", function () {
+                                        c.removeClass(l)
+                                    })
+                            }
+                            i.delegate("a", "click", function (t) {
+                                var s = H(this).data("service");
+                                if (!i.data("url"))
+                                    return void alert("请设置data-url");
+                                if ("wechat" === s) {
+                                    var r = a() + "/api/qrcode/getImage.png"
+                                        , n = "?size=240&text=" + i.data("url")
+                                        , d = E(et["dialog-qrcode"]({
+                                            qrcode_url: r + n,
+                                            url: i.data("url")
+                                        }));
+                                    d.el.find(".ds-dialog").css("width", "320px")
+                                } else {
+                                    var l = a() + "/share-proxy/?" + o.param({
+                                        service: H(this).data("service"),
+                                        thread_key: i.data("threadKey"),
+                                        title: i.data("title"),
+                                        images: i.data("images"),
+                                        content: i.data("content"),
+                                        url: i.data("url")
+                                    });
+                                    e.open(l, "_blank")
+                                }
+                                t.preventDefault(),
+                                    t.stopPropagation()
+                            })
+                        }
+                    });
+                var it = 0;
+                S.initSelector = function (e, t) {
+                    function s(e) {
+                        W(e),
+                            o.extend(z, e.options),
+                            dt.set(e.response)
+                    }
+                    var a = [];
+                    !q() || !H.isReady && j || H(e).each(function (e, s) {
+                        var i = H(s);
+                        if (!i.data("initialized")) {
+                            i.data("initialized", !0);
+                            var r = new st[t.type](i, t);
+                            if (at.push(r),
+                                "ThreadCount" === t.type) {
+                                var n = i.attr("data-thread-key");
+                                i.attr("data-channel-key") && (n = i.attr("data-channel-key") + ":" + n),
+                                    a.push(n),
+                                    dt[n] || (dt[n] = new G({})),
+                                    dt[n].on("reset", function () {
+                                        r.onload(this)
+                                    })
+                            } else if (r.uri) {
+                                var o = {};
+                                H.each(r.params.split(" "), function (e, t) {
+                                    o[t.replace(/-/g, "_")] = i.attr("data-" + t) || i.data(t)
+                                }),
+                                    R.get(r.uri, B(o), function (e) {
+                                        r.load(e)
+                                    })
+                            }
+                        }
+                    }),
+                        a.length && R.get("threads/counts", B({
+                            threads: a.join(",")
+                        }), s)
+                }
+                    ,
+                    (S.initView = function () {
+                        H.each(O, S.initSelector)
+                    }
+                    )(),
+                    H(function () {
+                        if (!c) {
+                            if (!q())
+                                return C.error("缺少 duoshuoQuery 的定义");
+                            C.warn("请在加载多说 embed.js 之前定义 duoshuoQuery")
+                        }
+                        setInterval(function () {
+                            H(".ds-time").each(function () {
+                                var e = H(this).attr("datetime");
+                                e && (this.innerHTML = S.elapsedTime(e))
+                            })
+                        }, 2e4),
+                            c.ondomready && c.ondomready(),
+                            S.initView(),
+                            !it && c.short_name && R.get("analytics/ping", B({}), W)
+                    })
+            })
+    }
+} (window, document);
