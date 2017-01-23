@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://lxchuan12.github.io/"/>
-  <updated>2017-01-22T15:28:08.399Z</updated>
+  <updated>2017-01-23T14:19:18.341Z</updated>
   <id>https://lxchuan12.github.io/</id>
   
   <author>
@@ -16,11 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>2016年，毕业，工作</title>
+    <title>2016年度总结，毕业，工作</title>
     <link href="https://lxchuan12.github.io/2017/01/07/20170107-2016-annual-summary/"/>
     <id>https://lxchuan12.github.io/2017/01/07/20170107-2016-annual-summary/</id>
     <published>2017-01-07T13:40:38.000Z</published>
-    <updated>2017-01-22T15:28:08.399Z</updated>
+    <updated>2017-01-23T14:19:18.341Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>1月4日的时候就写好了这篇文章，发年度总结说说的同时，在想有必要在空间发这篇日志，因为是使用markdown写的，排版是个问题，可以发表在简书啊（但是又包含很多个人信息）,后来觉得就没发。现在想想好像基本都是用手机看的，排版并不是那么重要，还是发出来吧，可能对读者有些启发。</p>
@@ -55,7 +55,7 @@
 <p>虽然这类文章有点夸大其词，鸡汤文的感觉，但也不无道理。总之这是赚钱思维的一种转变。</p>
 <p>PPT圈内，布衣公子从2012年开始分享自己的PPT作品，他的作品影响着很多人。后来收费，一份作品就能买到上万元。这是他分享他的故事时分享的五个故事。<br><a href="http://mp.weixin.qq.com/s?__biz=MjM5MjQyODY1NA==&amp;mid=2654123389&amp;idx=1&amp;sn=2ccfddafe2502ae5a63c1ce6059afa50&amp;chksm=bd60727c8a17fb6a9e57e94be91decf921dc1778e0a38b32dadc8c5e8007fe6333895cd631b2&amp;scene=0#rd" target="_blank" rel="external">改变我命运的五个故事-布衣公子</a><br>要在大城市生活，培养一种或几种可以「变现」的能力，并且这些能力不受地域的限制，似乎变得重要起来。</p>
 <h3 id="时间也是资源"><a href="#时间也是资源" class="headerlink" title="时间也是资源"></a>时间也是资源</h3><p>时间管理是永恒的话题，这篇文章写的挺好：<a href="http://weibo.com/ttarticle/p/show?id=2309404011377055416316" target="_blank" rel="external">毕业三年，你如何与同龄人拉开差距？</a></p>
-<h3 id="世界发展太快，需要不断学习"><a href="#世界发展太快，需要不断学习" class="headerlink" title="世界发展太快，需要不断学习"></a>世界发展太快，需要不断学习</h3><p>世界在发展，以前的很多岗位都不存在了。而且未来很多工作可以由机器人来完成，而且机器人比人类做得更优秀。那么持续学习，变得更加的重要了。</p>
+<h3 id="世界发展太快，需要不断学习"><a href="#世界发展太快，需要不断学习" class="headerlink" title="世界发展太快，需要不断学习"></a>世界发展太快，需要不断学习</h3><p>世界在发展，以前的很多岗位都不存在了。而且未来很多工作可以由机器人来完成，而且机器人比人类做得更优秀。另外年轻人的接触新鲜事物的学习能力相对比较强。那么持续学习，变得更加的重要了。</p>
 ]]></content>
     
     <summary type="html">
@@ -583,9 +583,9 @@
       <category term="JavaScript" scheme="https://lxchuan12.github.io/categories/JavaScript/"/>
     
     
-      <category term="js" scheme="https://lxchuan12.github.io/tags/js/"/>
-    
       <category term="vuejs" scheme="https://lxchuan12.github.io/tags/vuejs/"/>
+    
+      <category term="js" scheme="https://lxchuan12.github.io/tags/js/"/>
     
   </entry>
   
