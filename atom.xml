@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://lxchuan12.github.io/"/>
-  <updated>2017-03-05T15:45:28.714Z</updated>
+  <updated>2017-03-06T15:05:54.188Z</updated>
   <id>https://lxchuan12.github.io/</id>
   
   <author>
@@ -14,6 +14,55 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>简单实用免费的shadowsocks翻墙技巧</title>
+    <link href="https://lxchuan12.github.io/2017/03/06/20170306-freess/"/>
+    <id>https://lxchuan12.github.io/2017/03/06/20170306-freess/</id>
+    <published>2017-03-06T15:02:23.000Z</published>
+    <updated>2017-03-06T15:05:54.188Z</updated>
+    
+    <content type="html"><![CDATA[<p>开发时遇到问题，一般都是使用<strong>谷歌搜索</strong>，相对百度更加精准一些。比如搜索我的网名<strong>轩辕Rowboat</strong>，一大堆结果……<a id="more"></a><br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://upload-images.jianshu.io/upload_images/201107-0c966a706280b1f4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="谷歌搜索轩辕Rowboat结果.png" title="">
+                </div>
+                <div class="image-caption">谷歌搜索轩辕Rowboat结果.png</div>
+            </figure></p>
+<p>谷歌书签同步，YouTube等等。总是需要<strong>翻墙</strong>的。<br>一次偶然的机会发现了这个网站，<a href="http://freess.org/" target="_blank" rel="external">FreeSS-最好用的免费SS提供站点</a>（提供免费的ss账号）（免费为它打广告~）<br>觉得好东西要分享给大家，于是写下这篇文章（当然我觉得很多人都会，但还是写了）。</p>
+<h3 id="1、下载shadowsocks（mac端可以下载mac版本）："><a href="#1、下载shadowsocks（mac端可以下载mac版本）：" class="headerlink" title="1、下载shadowsocks（mac端可以下载mac版本）："></a>1、下载shadowsocks（mac端可以下载mac版本）：</h3><p>下载地址：<a href="https://github.com/shadowsocks/shadowsocks-windows/releases。" target="_blank" rel="external">https://github.com/shadowsocks/shadowsocks-windows/releases。</a><br>我下载的是:<a href="https://github.com/shadowsocks/shadowsocks-windows/releases/download/3.4.3/Shadowsocks-3.4.3.zip" target="_blank" rel="external">3.4.3.zip版本</a> ，解压到电脑任意位置，点击打开Shadowsocks.exe程序，程序图标会出现在右下角。</p>
+<h3 id="2、打开这个网站http-freess-org-，"><a href="#2、打开这个网站http-freess-org-，" class="headerlink" title="2、打开这个网站http://freess.org/ ，"></a>2、打开这个网站<a href="http://freess.org/" target="_blank" rel="external">http://freess.org/</a> ，</h3><p>打开任意一个二维码。右键程序图标，弹出菜单中选择“<strong>服务器</strong>”－“<strong>扫描屏幕上的二维码</strong>”，扫描成功后会<strong>自动配置</strong>，菜单中勾选“<strong>启用系统代理</strong>”即可。这时就可以使用任意浏览器翻墙了。不过这个免费的ss账号，<strong>只限当天使用，次日得重新扫描</strong>。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://upload-images.jianshu.io/upload_images/201107-b74e7c9df6536f4d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="编辑服务器" title="">
+                </div>
+                <div class="image-caption">编辑服务器</div>
+            </figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://upload-images.jianshu.io/upload_images/201107-421cb8b9e8ec2aa6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="配置截图" title="">
+                </div>
+                <div class="image-caption">配置截图</div>
+            </figure>
+<p>当然不一定要翻墙，也可以使用谷歌。（可以搜索<strong>谷歌镜像站</strong>，有一些可用谷歌（学术）搜索镜像）。</p>
+<p>更多<strong>使用说明</strong>可以查看：<a href="https://github.com/shadowsocks/shadowsocks-windows/wiki/Shadowsocks-Windows-%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E" target="_blank" rel="external">官方中文说明文档</a><br>比如：配合谷歌插件（<strong>SwitchyOmega</strong> ）共同使用。</p>
+<p>小胡子哥的文章：<a href="http://www.barretlee.com/blog/2016/08/03/shadowsocks/" target="_blank" rel="external">Shadowsocks 原理简介及安装指南</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;开发时遇到问题，一般都是使用&lt;strong&gt;谷歌搜索&lt;/strong&gt;，相对百度更加精准一些。比如搜索我的网名&lt;strong&gt;轩辕Rowboat&lt;/strong&gt;，一大堆结果……
+    
+    </summary>
+    
+      <category term="shadowsocks" scheme="https://lxchuan12.github.io/categories/shadowsocks/"/>
+    
+    
+      <category term="window" scheme="https://lxchuan12.github.io/tags/window/"/>
+    
+  </entry>
   
   <entry>
     <title>vue1.0和2.0的区别</title>
@@ -718,34 +767,6 @@
     
     
       <category term="self-growth" scheme="https://lxchuan12.github.io/tags/self-growth/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>弹窗（modal）垂直水平居中</title>
-    <link href="https://lxchuan12.github.io/2016/08/17/20160817-modal-center/"/>
-    <id>https://lxchuan12.github.io/2016/08/17/20160817-modal-center/</id>
-    <published>2016-08-17T15:07:15.000Z</published>
-    <updated>2016-08-17T15:58:06.795Z</updated>
-    
-    <content type="html"><![CDATA[<p>今天发现{margin:0 auto}竟然能使固定定位fixed(脱离文档流）（在chrome手机模拟器和chrome浏览器）水平居中。<br>在我安卓手机(4.2.2)不行。后来改成{margin-left:-定宽/2}，于是在安卓手机也可以了……<a id="more"></a></p>
-<h2 id="弹窗垂直水平居中："><a href="#弹窗垂直水平居中：" class="headerlink" title="弹窗垂直水平居中："></a>弹窗垂直水平居中：</h2><h3 id="方法1："><a href="#方法1：" class="headerlink" title="方法1："></a>方法1：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">.modal&#123;</div><div class="line">    position:fixed;</div><div class="line">    width:250px;</div><div class="line">    height:100px;</div><div class="line">    background:#ececec;</div><div class="line">    left:50%;</div><div class="line">    top:50%;</div><div class="line">    margin-left:-125px;</div><div class="line">    margin-top:-50px;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><strong>小结:</strong>fixed，支持到IE7，IE6不支持。modal定宽定高。</p>
-<h3 id="方法2："><a href="#方法2：" class="headerlink" title="方法2："></a>方法2：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">.modal&#123;</div><div class="line">    position:fixed;</div><div class="line">    width:250px;</div><div class="line">    height:100px;</div><div class="line">    background:#ececec;</div><div class="line">    left:50%;</div><div class="line">    top:50%;</div><div class="line">    -webkit-transform:translate(-50%,-50%);</div><div class="line">    transform:translate(-50%,-50%);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><strong>小结:</strong>不支持IE9+，modal不需定宽定高，手机端可用。（发现如果有其他的transform，好像先执行其他的，在移动到中心。）另外，发现{margin:0 auto}:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">.modal&#123;</div><div class="line">    position:fixed;</div><div class="line">    width:250px;</div><div class="line">    left:0;</div><div class="line">    right:0;</div><div class="line">    top:40%;</div><div class="line">    bottom:auto;</div><div class="line">    margin:0 auto;</div><div class="line">    background:#ececec;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>竟然能使固定定位fixed(脱离文档流）（在chrome手机模拟器和chrome浏览器）水平居中。<br>在我安卓手机(4.2.2)不行。后来改成{margin-left:-定宽/2}，于是在安卓手机也可以了</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;今天发现{margin:0 auto}竟然能使固定定位fixed(脱离文档流）（在chrome手机模拟器和chrome浏览器）水平居中。&lt;br&gt;在我安卓手机(4.2.2)不行。后来改成{margin-left:-定宽/2}，于是在安卓手机也可以了……
-    
-    </summary>
-    
-      <category term="css" scheme="https://lxchuan12.github.io/categories/css/"/>
-    
-    
-      <category term="css" scheme="https://lxchuan12.github.io/tags/css/"/>
     
   </entry>
   
