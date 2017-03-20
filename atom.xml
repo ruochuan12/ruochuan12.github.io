@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://lxchuan12.github.io/"/>
-  <updated>2017-03-17T14:57:51.695Z</updated>
+  <updated>2017-03-20T14:22:47.232Z</updated>
   <id>https://lxchuan12.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://lxchuan12.github.io/2017/03/17/20170317-How-to-crack-Baidu-SkyDrive-download-restrictions-and-SkyDrive-search-tips/"/>
     <id>https://lxchuan12.github.io/2017/03/17/20170317-How-to-crack-Baidu-SkyDrive-download-restrictions-and-SkyDrive-search-tips/</id>
     <published>2017-03-17T14:52:23.000Z</published>
-    <updated>2017-03-17T14:57:51.695Z</updated>
+    <updated>2017-03-20T14:22:47.232Z</updated>
     
     <content type="html"><![CDATA[<p>今天两个朋友问我如何选电脑的问题，我说了一些大概流程，<strong>需求-&gt;预算-&gt;筛选-&gt;对比-&gt;购买</strong>。其实我好久没有关注这方面了，毕竟没钱买电脑。<br>晚上回来一想，好像好久没看《电脑报》（里面有购机指南）了，才发现百度网盘里存着的《电脑报》和《电脑爱好者》还是2014年的，原来两年没看了。大学里也会去图书馆看看纸质的。然后 <strong>找到</strong> 2017年《电脑报》的看了一会。<br>看到一篇《如何破解百度网盘下载限制》的文章，我试过后有效，特来分享整理给大家。<br>在chrome浏览器中，新建一个书签，书签名字随意，书签的网址复制粘贴这段代码：<br><code>javascript:navigator.__defineGetter__ (&#39;platform&#39;,function(){return &#39;&#39;});</code></p>
 <p><img src="http://upload-images.jianshu.io/upload_images/201107-eee7bebd91594895.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="新建一个书签下载时点击下它.png"></p>
@@ -85,9 +85,9 @@
     <link href="https://lxchuan12.github.io/2017/03/06/20170306-freess/"/>
     <id>https://lxchuan12.github.io/2017/03/06/20170306-freess/</id>
     <published>2017-03-06T15:02:23.000Z</published>
-    <updated>2017-03-07T15:14:57.125Z</updated>
+    <updated>2017-03-20T14:23:20.773Z</updated>
     
-    <content type="html"><![CDATA[<p>开发时遇到问题，一般都是使用<strong>谷歌搜索</strong>，相对百度更加精准一些。比如搜索我的网名<strong>轩辕Rowboat</strong>，一大堆结果。<a id="more"></a><br><figure class="image-bubble">
+    <content type="html"><![CDATA[<p>开发时遇到问题，一般都是使用<strong>谷歌搜索</strong>，相对百度更加精准一些。比如搜索我的网名<strong>轩辕Rowboat</strong>，一大堆结果。<br><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
                     <img src="http://upload-images.jianshu.io/upload_images/201107-0c966a706280b1f4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="谷歌搜索轩辕Rowboat结果.png" title="">
@@ -112,13 +112,23 @@
                 <div class="image-caption">配置截图</div>
             </figure>
 <p>当然只想用谷歌搜索不一定要翻墙，可以使用谷歌镜像搜索。（网上有一些<strong>谷歌镜像站</strong>，不过有一定局限性，也有一些可用谷歌学术搜索镜像）。</p>
+<h3 id="可能遇到问题："><a href="#可能遇到问题：" class="headerlink" title="可能遇到问题："></a>可能遇到问题：</h3><p>如果碰到打开时提示，版本过低。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://upload-images.jianshu.io/upload_images/201107-2a558d5cb7bf523e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="版本过低.png" title="">
+                </div>
+                <div class="image-caption">版本过低.png</div>
+            </figure>
+<p>下载安装.netframework<a href="https://download.microsoft.com/download/D/5/C/D5C98AB0-35CC-45D9-9BA5-B18256BA2AE6/NDP462-KB3151802-Web.exe" target="_blank" rel="external">下载地址链接</a></p>
 <p>更多<strong>使用说明</strong>可以查看：<a href="https://github.com/shadowsocks/shadowsocks-windows/wiki/Shadowsocks-Windows-%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E" target="_blank" rel="external">官方中文说明文档</a><br>比如：配合谷歌插件（<strong>SwitchyOmega</strong> ）共同使用。</p>
 <p>小胡子哥的文章：<a href="http://www.barretlee.com/blog/2016/08/03/shadowsocks/" target="_blank" rel="external">Shadowsocks 原理简介及安装指南</a></p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;开发时遇到问题，一般都是使用&lt;strong&gt;谷歌搜索&lt;/strong&gt;，相对百度更加精准一些。比如搜索我的网名&lt;strong&gt;轩辕Rowboat&lt;/strong&gt;，一大堆结果。
+      &lt;p&gt;开发时遇到问题，一般都是使用&lt;strong&gt;谷歌搜索&lt;/strong&gt;，相对百度更加精准一些。比如搜索我的网名&lt;strong&gt;轩辕Rowboat&lt;/strong&gt;，一大堆结果。&lt;br&gt;&lt;figure class=&quot;image-bubble&quot;&gt;
+               
     
     </summary>
     
@@ -134,7 +144,7 @@
     <link href="https://lxchuan12.github.io/2017/02/12/20170212-The%20difference%20between%20vue1.0%20and%202/"/>
     <id>https://lxchuan12.github.io/2017/02/12/20170212-The difference between vue1.0 and 2/</id>
     <published>2017-02-12T07:04:23.000Z</published>
-    <updated>2017-03-05T15:45:28.714Z</updated>
+    <updated>2017-03-20T14:22:07.999Z</updated>
     
     <content type="html"><![CDATA[<p>重新仔细读了下文档，边看边写了一些。<br>1、v-once只渲染一次。<br>2、过滤器 第二参数（）以函数传参的形式。过滤器可以串联。<br>全局过滤器和单个过滤器<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;!-- in mustaches --&gt;</div><div class="line">&#123;&#123; message | capitalize &#125;&#125;</div><div class="line">&lt;!-- in v-bind --&gt;</div><div class="line">&lt;div v-bind:id=&quot;rawId | formatId&quot;&gt;&lt;/div&gt;</div></pre></td></tr></table></figure></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;&#123; message | filterA | filterB &#125;&#125;</div></pre></td></tr></table></figure>
@@ -162,7 +172,7 @@
       <category term="vue" scheme="https://lxchuan12.github.io/categories/vue/"/>
     
     
-      <category term="vue" scheme="https://lxchuan12.github.io/tags/vue/"/>
+      <category term="vuejs" scheme="https://lxchuan12.github.io/tags/vuejs/"/>
     
   </entry>
   
@@ -171,7 +181,7 @@
     <link href="https://lxchuan12.github.io/2017/01/07/20170107-2016-annual-summary/"/>
     <id>https://lxchuan12.github.io/2017/01/07/20170107-2016-annual-summary/</id>
     <published>2017-01-07T13:40:38.000Z</published>
-    <updated>2017-01-23T14:19:18.341Z</updated>
+    <updated>2017-03-20T14:15:45.277Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>1月4日的时候就写好了这篇文章，发年度总结说说的同时，在想有必要在空间发这篇日志，因为是使用markdown写的，排版是个问题，可以发表在简书啊（但是又包含很多个人信息）,后来觉得就没发。现在想想好像基本都是用手机看的，排版并不是那么重要，还是发出来吧，可能对读者有些启发。</p>
@@ -204,7 +214,7 @@
 <p>总结一下，对年轻人来说可操作性最强又能挣很多钱的方法，其实就三个步骤：<br>第一：找到自己的一个特长，把它培养得足够出色<br>第二：找到适合你的特长，又有足够用户注意的平台<br>第三：在这个平台上深耕细作，打造品牌，获得收入<br>每个人都有自己的特长，只要长时间持续打磨，总有一天能到“可以卖钱”的水平。</p>
 </blockquote>
 <p>虽然这类文章有点夸大其词，鸡汤文的感觉，但也不无道理。总之这是赚钱思维的一种转变。</p>
-<p>PPT圈内，布衣公子从2012年开始分享自己的PPT作品，他的作品影响着很多人。后来收费，一份作品就能买到上万元。这是他分享他的故事时分享的五个故事。<br><a href="http://mp.weixin.qq.com/s?__biz=MjM5MjQyODY1NA==&amp;mid=2654123389&amp;idx=1&amp;sn=2ccfddafe2502ae5a63c1ce6059afa50&amp;chksm=bd60727c8a17fb6a9e57e94be91decf921dc1778e0a38b32dadc8c5e8007fe6333895cd631b2&amp;scene=0#rd" target="_blank" rel="external">改变我命运的五个故事-布衣公子</a><br>要在大城市生活，培养一种或几种可以「变现」的能力，并且这些能力不受地域的限制，似乎变得重要起来。</p>
+<p>PPT圈内，布衣公子从2012年开始分享自己的PPT作品，他的作品影响着很多人。后来收费，一份作品就能卖到上万元。这是他分享他的故事时分享的五个故事。<br><a href="http://mp.weixin.qq.com/s?__biz=MjM5MjQyODY1NA==&amp;mid=2654123389&amp;idx=1&amp;sn=2ccfddafe2502ae5a63c1ce6059afa50&amp;chksm=bd60727c8a17fb6a9e57e94be91decf921dc1778e0a38b32dadc8c5e8007fe6333895cd631b2&amp;scene=0#rd" target="_blank" rel="external">改变我命运的五个故事-布衣公子</a><br>要在大城市生活，培养一种或几种可以「变现」的能力，并且这些能力不受地域的限制，似乎变得重要起来。</p>
 <h3 id="时间也是资源"><a href="#时间也是资源" class="headerlink" title="时间也是资源"></a>时间也是资源</h3><p>时间管理是永恒的话题，这篇文章写的挺好：<a href="http://weibo.com/ttarticle/p/show?id=2309404011377055416316" target="_blank" rel="external">毕业三年，你如何与同龄人拉开差距？</a></p>
 <h3 id="世界发展太快，需要不断学习"><a href="#世界发展太快，需要不断学习" class="headerlink" title="世界发展太快，需要不断学习"></a>世界发展太快，需要不断学习</h3><p>世界在发展，以前的很多岗位都不存在了。而且未来很多工作可以由机器人来完成，而且机器人比人类做得更优秀。另外年轻人的接触新鲜事物的学习能力相对比较强。那么持续学习，变得更加的重要了。</p>
 ]]></content>
