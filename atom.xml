@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://lxchuan12.github.io/"/>
-  <updated>2017-03-20T14:22:47.232Z</updated>
+  <updated>2017-03-28T15:19:09.277Z</updated>
   <id>https://lxchuan12.github.io/</id>
   
   <author>
@@ -14,6 +14,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>HTTP</title>
+    <link href="https://lxchuan12.github.io/2017/03/28/20170328-http/"/>
+    <id>https://lxchuan12.github.io/2017/03/28/20170328-http/</id>
+    <published>2017-03-28T15:12:32.000Z</published>
+    <updated>2017-03-28T15:19:09.277Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近遇到HTTP方面的问题比较多。顺便做些总结。（待写）</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近遇到HTTP方面的问题比较多。顺便做些总结。（待写）&lt;/p&gt;
+
+    
+    </summary>
+    
+      <category term="HTTP" scheme="https://lxchuan12.github.io/categories/HTTP/"/>
+    
+    
+      <category term="HTTP" scheme="https://lxchuan12.github.io/tags/HTTP/"/>
+    
+  </entry>
   
   <entry>
     <title>如何破解百度网盘下载限制及网盘搜索技巧</title>
@@ -773,40 +797,6 @@
       <category term="js" scheme="https://lxchuan12.github.io/tags/js/"/>
     
       <category term="wechat" scheme="https://lxchuan12.github.io/tags/wechat/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(转)一种代码量更少的(micro clearfix)清除浮动的hack</title>
-    <link href="https://lxchuan12.github.io/2016/08/19/20160819-css-micro%20clearfix-hack/"/>
-    <id>https://lxchuan12.github.io/2016/08/19/20160819-css-micro clearfix-hack/</id>
-    <published>2016-08-19T15:24:12.000Z</published>
-    <updated>2016-08-19T15:36:30.924Z</updated>
-    
-    <content type="html"><![CDATA[<p>clearfix hack做为一种无需借助额外标签清除浮动的方法已经人尽皆知了，本文给出一种优化方案，可以进一步减少所需css的数量……<a id="more"></a></p>
-<p>Demo: <a href="http://nicolasgallagher.com/micro-clearfix-hack/demo/" target="_blank" rel="external">Micro clearfix hack</a></p>
-<p>Known support: Firefox 3.5+, Safari 4+, Chrome, Opera 9+, IE 6+</p>
-<p>micro clearfix基于 <a href="http://www.yuiblog.com/blog/2010/09/27/clearfix-reloaded-overflowhidden-demystified/" target="_blank" rel="external">Thierry Koblentz’s “clearfix reloaded</a>reloaded优化而来，适用于现代浏览器（modern browsers）</p>
-<p>下面是micro clearfix的代码片段<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">.cf:before,</div><div class="line">.cf:after &#123;</div><div class="line">    content: &quot; &quot;; </div><div class="line">    display: table; </div><div class="line">&#125;</div><div class="line">.cf:after &#123;</div><div class="line">    clear: both;</div><div class="line">&#125;</div><div class="line">.cf &#123;</div><div class="line">    *zoom: 1;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>“micro clearfix”生成伪类元素，并将其display属性设置为table，这样就会创建一个匿名<a href="http://www.w3.org/TR/CSS2/tables.html#anonymous-boxes" target="_blank" rel="external">table-cell</a>，同时生成了新的BFC，这样意味着<br>:before伪类会阻止上边距折叠，:after伪类用于清除浮动，好处是不用隐藏产生的内容了，所需要的css代码就变少了。</p>
-<p>为了清除浮动包含:before选择器是没必要的，但是:before的加入可以阻止top-margins折叠，这样有两个好处：</p>
-<p>同其他使用BFC方式清除浮动一样，确保了视觉上的一致，例如使用overflow:hidden<br>IE 6/7中使用zoom:1 时，确保了视觉上的一致<br>N.B.: 有一个细节：IE 6/7中在新的BFC中浮动元素的下边距是不会包含在内的，进一步的描述可以看这里： <a href="http://nicolasgallagher.com/better-float-containment-in-ie/" target="_blank" rel="external">Better float containment in IE using CSS expressions</a>.<br>content:” “的使用避免了一个Opera的bug，如果contenteditable属性同时出现在元素中时，这个bug会在待清除元素周围生成空格。一种可选的修复方案是使用 font:0/0 a，多谢Sergio Cerrutti测试出这个bug</p>
-<p>转载于：<a href="http://www.jianshu.com/p/7521ec9d8f24" target="_blank" rel="external">一种代码量更少的(micro clearfix)清除浮动的hack</a></p>
-<p>英文版：<a href="http://nicolasgallagher.com/micro-clearfix-hack/" target="_blank" rel="external">A new micro clearfix hack</a>，转载标明出处，谢谢！</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;clearfix hack做为一种无需借助额外标签清除浮动的方法已经人尽皆知了，本文给出一种优化方案，可以进一步减少所需css的数量……
-    
-    </summary>
-    
-      <category term="CSS" scheme="https://lxchuan12.github.io/categories/CSS/"/>
-    
-    
-      <category term="css" scheme="https://lxchuan12.github.io/tags/css/"/>
-    
-      <category term="clearfix" scheme="https://lxchuan12.github.io/tags/clearfix/"/>
     
   </entry>
   
