@@ -6,6 +6,8 @@
   <title>轩辕Rowboat的博客 | 前端路上 | PPT爱好者 | 所知甚少，唯善学。</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
+  <meta name="theme-color" content="#3D95D5">
+  
   
   <meta name="keywords" content="轩辕Rowboat，前端路上，PPT爱好者，所知甚少，唯善学。">
   <meta name="description" content="轩辕Rowboat，某世界闻名的陶瓷大学2016届毕业生，目前在杭州从事前端开发工作，也是一枚PPT爱好者。常以轩辕Rowboat为名混迹于江湖。">
@@ -18,8 +20,10 @@
 <meta name="twitter:title" content="轩辕Rowboat的博客">
 <meta name="twitter:description" content="轩辕Rowboat，某世界闻名的陶瓷大学2016届毕业生，目前在杭州从事前端开发工作，也是一枚PPT爱好者。常以轩辕Rowboat为名混迹于江湖。">
   
+    <link rel="alternative" href="/atom.xml" title="轩辕Rowboat的博客" type="application/atom+xml">
+  
   <meta name="summary" content="轩辕Rowboat，某世界闻名的陶瓷大学2016届毕业生，目前在杭州从事前端开发工作，也是一枚PPT爱好者。常以轩辕Rowboat为名混迹于江湖。">
-  <link rel="shortcut icon" href="/">
+  <link rel="shortcut icon" href="/favicon.ico">
   <link rel="stylesheet" href="/css/style.css">
 </head>
 
@@ -33,15 +37,64 @@
   </a>
   <div class="brand-wrap">
     <div class="brand">
-      <a href="/" class="avatar"><img src="undefined"></a>
+      <a href="/" class="avatar"><img src="/img/logo.jpg"></a>
       <div class="introduce">
         <h5 class="nickname">轩辕Rowboat</h5>
-        <a href="mailto:undefined" class="mail">
+        <a href="mailto:lxchuan12@163.com" title="lxchuan12@163.com" class="mail">lxchuan12@163.com</a>
       </div>
     </div>
   </div>
   <div class="scroll-wrap flex-col">
     <ul class="nav">
+      
+          <li class="waves-block waves-effect active">
+            <a href="/"  >
+              <i class="icon icon-lg icon-home"></i>
+              主页
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="/archives"  >
+              <i class="icon icon-lg icon-archives"></i>
+              文章
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="http://www.jianshu.com/users/83129d433d72/latest_articles" target="_blank" >
+              <i class="icon icon-lg icon-book"></i>
+              简书
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="https://segmentfault.com/u/lxchuan12" target="_blank" >
+              <i class="icon icon-lg icon-seg"></i>
+              segmentfault
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="https://lxchuan12.github.io/works/" target="_blank" >
+              <i class="icon icon-lg icon-hand-o-right"></i>
+              作品展示
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="https://github.com/lxchuan12" target="_blank" >
+              <i class="icon icon-lg icon-github"></i>
+              Github
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="https://lxchuan12.github.io/2016/09/07/20160907-How-do-I-set-foot-on-the-front-end-of-the-road/" target="_blank" >
+              <i class="icon icon-lg icon-user"></i>
+              关于我
+            </a>
+          </li>
       
     </ul>
 
@@ -50,7 +103,7 @@
   <p>轩辕Rowboat的博客 &copy; 2017</p>
   <p>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme
   <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></p>
-  <a href="undefined" target="_blank" class="rss" title="rss"><i class="icon icon-2x icon-rss-square"></i></a>
+  <a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-2x icon-rss-square"></i></a>
 </footer>
 
   </div>
@@ -65,6 +118,20 @@
         </a>
         <div class="flex-col header-title ellipsis">轩辕Rowboat的博客</div>
         
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input " autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-share">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
         
     </div>
 </header>
@@ -116,7 +183,7 @@
     
     
         <a href="/2017/03/28/20170328-http/" class="post-more waves-effect waves-button">
-            
+            阅读全文>>
         </a>
     </div>
     
@@ -155,50 +222,11 @@
     <div class="post-content" id="post-content" itemprop="postContent" >
 
     
-         今天两个朋友问我如何选电脑的问题，我说了一些大概流程， 需求-&gt;预算-&gt;筛选-&gt;对比-&gt;购买 。其实我好久没有关注这方面了，毕竟没钱买电脑。 晚上回来一想，好像好久没看《电脑报》（里面有购机指南）了，才发现百度网盘里存着的《电脑报》和《电脑爱好者》还是2014年的，原来两年没看了。大学里也会去图书馆看看纸质的。然后  找到  2017年《电脑报》的看了一会。 看到一篇《如何破解百度网盘下载限制》的文章，我试过后有效，特来分享整理给大家。 在chrome浏览器中，新建一个书签，书签名字随意，书签的网址复制粘贴这段代码：  javascript:navigator.__defineGetter__ (&#39;platform&#39;,function(){return &#39;&#39;});  
-   
- 它的作用是 防止下载大文件时唤醒百度网盘客户端 。 
-  所以在点击“下载”前，先点击它。 待开始下载后，打开浏览器的 “下载内容” （快捷键：Ctrl+J），看到正在进行的下载任务选择 “复制链接地址” 。 
- 
-                 
-                      
-                     
-                 
-                 右击复制链接地址.png 
-             
- 将地址粘贴到 迅雷极速版 下载，官方好像不提供下载链接了，这里推荐 百度软件中心下载地址  http://rj.baidu.com/soft/detail/26860.html  ,点击 普通下载 即可，这样就可以了。     虽然速度不是非常稳定但至少比百度云盘PC客户端几十KB／s快。不建议大家再安装破解版，有钱还是买个会员吧，或者干脆上NAS。 
- 可能有小伙伴好奇我是如何找到2017年的《电脑报》的。 
- 
-                 
-                      
-                     
-                 
-                 搜百度盘.png 
-             
- 这时分享几个网盘搜索网站： 
- （常用）搜百度盘： http://www.sobaidupan.com  
- 
-                 
-                      
-                     
-                 
-                 搜索“罗小川chuan”结果.png 
-             
- 搜索“罗小川chuan”结果，可怕，我得赶紧取消一些个人信息的公开分享了。 
- 盘搜网： http://www.pansou.com/  搜盘网： http://www.soupan.info/  
- 
-                 
-                      
-                     
-                 
-                 之前书签里保存的网盘搜索网站.png 
-             
- 等等，其他就不附链接了。 
-
+         今天两个朋友问我如何选电脑的问题，我说了一些大概流程， 需求-&gt;预算-&gt;筛选-&gt;对比-&gt;购买 。其实我好久没有关注这方面了，毕竟没钱买电脑。 晚上回来一想，好像好久没看《电脑报》（里面有购机指南）了，才发现百度网盘里存着的《电脑报》和《电脑爱好者》还是2014年的，原来两年没看了。大学里也会去图书馆看看纸质的。然后  找到  2017年《电脑报》的看了一会。 看到一篇《如
     
     
         <a href="/2017/03/17/20170317-How-to-crack-Baidu-SkyDrive-download-restrictions-and-SkyDrive-search-tips/" class="post-more waves-effect waves-button">
-            
+            阅读全文>>
         </a>
     </div>
     
@@ -244,41 +272,11 @@
                  
                  谷歌搜索轩辕Rowboat结果.png 
               
- 谷歌书签同步，YouTube等等。总是需要 翻墙 的。 一次偶然的机会发现了这个网站， FreeSS-最好用的免费SS提供站点 （提供免费的ss账号）（免费为它打广告~） 觉得好东西要分享给大家，于是写下这篇文章（当然我觉得很多人都会，但还是写了）。 
-   1、下载shadowsocks（Mac，Android等可以下载相应版本）：  windows各版本下载地址： https://github.com/shadowsocks/shadowsocks-windows/releases ，这网址一般不会是失效。一般下载最新的Downloads-&gt;Shadowsocks-xxx.zip即可。 
- Mac，Android等可以在这个链接下载： https://github.com/shadowsocks  我下载的是: 3.4.3.zip版本  ，软件一直在持续更新，链接可能会失效。解压到电脑任意位置，点击打开Shadowsocks.exe程序，程序图标会出现在右下角。 
-   2、打开这个网站 http://freess.org/  ，配置  打开任意一个二维码。右键程序图标，弹出菜单中选择“ 服务器 ”－“ 扫描屏幕上的二维码 ”，扫描成功后会 自动配置 ，菜单中勾选“ 启用系统代理 ”即可。这时就可以使用任意浏览器翻墙了。不过这个免费的ss账号（目前可用）， 只限当天使用，次日得重新扫描 。 
- 
-                 
-                      
-                     
-                 
-                 编辑服务器 
-             
- 
-                 
-                      
-                     
-                 
-                 配置截图 
-             
- 当然只想用谷歌搜索不一定要翻墙，可以使用谷歌镜像搜索。（网上有一些 谷歌镜像站 ，不过有一定局限性，也有一些可用谷歌学术搜索镜像）。 
-   可能遇到问题：  如果碰到打开时提示，版本过低。 
- 
-                 
-                      
-                     
-                 
-                 版本过低.png 
-             
- 下载安装.netframework 下载地址链接  
- 更多 使用说明 可以查看： 官方中文说明文档  比如：配合谷歌插件（ SwitchyOmega  ）共同使用。 
- 小胡子哥的文章： Shadowsocks 原理简介及安装指南  
-
+ 谷歌书
     
     
         <a href="/2017/03/06/20170306-freess/" class="post-more waves-effect waves-button">
-            
+            阅读全文>>
         </a>
     </div>
     
@@ -317,26 +315,11 @@
     <div class="post-content" id="post-content" itemprop="postContent" >
 
     
-         重新仔细读了下文档，边看边写了一些。 1、v-once只渲染一次。 2、过滤器 第二参数（）以函数传参的形式。过滤器可以串联。 全局过滤器和单个过滤器       1  2  3  4      &lt;!-- in mustaches --&gt;  &#123;&#123; message | capitalize &#125;&#125;  &lt;!-- in v-bind --&gt;  &lt;div v-bind:id=&quot;rawId | formatId&quot;&gt;&lt;/div&gt;       
-      1      &#123;&#123; message | filterA | filterB &#125;&#125;      
-      1      &#123;&#123; message | filterA(&apos;arg1&apos;, arg2) &#125;&#125;      
- 3、watch允许异步操作。computed做不到。 4、新增：v-else-if 5、v-if中，使用 key 控制元素的可重用 6、v-for (value,index)，$index被废除。 item in items,item of items.       1  2  3      &lt;div v-for=&quot;(value, key, index) in object&quot;&gt;    &#123;&#123; index &#125;&#125;. &#123;&#123; key &#125;&#125; : &#123;&#123; value &#125;&#125;  &lt;/div&gt;       
- 7、track-by=”$index”被废用，用key替代。（就地复用） 7.1、template中不能使用this不是。data.a=1,template,直接写a即可。 8、2.1.4新增   9、2.1.0 新增 可以用如下修饰符开启鼠标或键盘事件监听，使在按键按下时发生响应。       1  2  3  4      .ctrl  .alt  .shift  .meta       
- 10、修饰符lazy,number,trim 11、组件中data 必须是函数       1  2  3      &lt;table&gt;    &lt;my-row&gt;...&lt;/my-row&gt;  &lt;/table&gt;       
-      1  2  3      &lt;table&gt;    &lt;tr is=&quot;my-row&quot;&gt;&lt;/tr&gt;  &lt;/table&gt;      
- 12、自定义事件，废除了events、$dispatch、$broadcast。 使用 $on(eventName) 监听事件 使用 $emit(eventName) 触发事件 13、给组件绑定原生事件-修饰符.native       1      &lt;my-component v-on:click.native=&quot;doTheThing&quot;&gt;&lt;/my-component&gt;       
- 
- 使用自定义事件的表单输入组件 14、非父子组件通信。 15、slot分发内容。 16、动态组件，     参考： [译]Vue 动态组件  17、子组件索引ref       1  2  3  4  5  6      &lt;div id=&quot;parent&quot;&gt;    &lt;user-profile ref=&quot;profile&quot;&gt;&lt;/user-profile&gt;  &lt;/div&gt;  var parent = new Vue(&#123; el: &apos;#parent&apos; &#125;)  // 访问子组件  var child = parent.$refs.profile       
- 
- 18、使用 v-once 的低级静态组件 19、列表过渡 ,tag,v-move  jQuery Event.stopImmediatePropagation() 函数详解   
- 
- stopImmediatePropagation()函数用于阻止剩余的事件处理函数的执 行，并防止当前事件在DOM树上冒泡。 
- 
-
+         重新仔细读了下文档，边看边写了一些。 1、v-once只渲染一次。 2、过滤器 第二参数（）以函数传参的形式。过滤器可以串联。 全局过滤器和单个过滤器       1  2  3  4      &lt;!-- in mustaches --&gt;  &#123;&#123; message | capitalize &#125;&#125;  &lt;!-- in v-bind --&gt;
     
     
         <a href="/2017/02/12/20170212-The difference between vue1.0 and 2/" class="post-more waves-effect waves-button">
-            
+            阅读全文>>
         </a>
     </div>
     
@@ -378,42 +361,11 @@
          
  1月4日的时候就写好了这篇文章，发年度总结说说的同时，在想有必要在空间发这篇日志，因为是使用markdown写的，排版是个问题，可以发表在简书啊（但是又包含很多个人信息）,后来觉得就没发。现在想想好像基本都是用手机看的，排版并不是那么重要，还是发出来吧，可能对读者有些启发。 
  
- 时间总是那么的快。2014年开始，就有了写个人年度总结的习惯。如果把2015年定义成 PPT年 ，那么2016年则可以说是 开发年 。这一年相对比较平凡，还算满意。 
- 2015年的年底，准备好了提前答辩的相关事宜。2016年元旦放假三天，在学校的课题组办公室翻看着微博（微博有时间轴，可以看到每个月都发了什么，这也就是为什么我比较喜欢发微博的原因之一），做着PPT，用思维导图工具Xmind，写着年度总结—— 《2015年总结，淡化旧标签，无惧未来 》 。 
- 翻看2016年的微博，看到大年初三的一条这样写着： 
- 
- 猴年初三（2月10日），去舅舅家拜年。舅舅极力要求我在他家住，说以后工作了，忙着赚钱，更是没什么时间住了。舅妈以为我还是21岁……然而过完年，虚岁就是24岁了，其实明明是22岁半。好吧，确实老了。到了尴尬的年纪。按这样算，还有6年就30岁了……这六年要赚好多钱。 
- 
- 最近听喜马拉雅付费精品中关于年度计划的，提到人生的8个方面,分别是身体健康、财务理财、人际社群、工作事业、家庭生活、学习成长、体验突破、休闲放松。于是根据这个把自己的2016年总结整理了一张思维导图和仿支付宝年账单做了一份年度总结PPT。  
-                 
-                      
-                     
-                 
-                 2016年度总结思维导图 
-               
-                 
-                      
-                     
-                 
-                 2016年度总结PPT 
-              
-   未来的路在哪  1、看周围同事，基本就能看到自己几年后是过着怎样的生活。试想这样的生活是不是自己想要的，如果不是又将做什么来改变呢。老板有时给我们开会也会问：一个员工加入一家公司终究会离开，你是否会认真考虑【我会在这里干多少年？想成为什么样的人】。 2、再看看自己的校友，在移动互联网领域比较出名的有杜瑶，CSS参考手册作者（css.doyoe.com），去哪儿网前端技术总监。猎豹移动副总裁陈勇。柴魁元,乐动卓越科技有限公司CTO等等。 3、如果仅从开发这条路来看，很容易看到自己的天花板。而且业界都一致认为，程序员是吃青春饭，看自己身边同事就知道年长的非常少。G20放假那次回家，跟老爸聊天，老爸聊到年轻的时候赚点钱容易，年纪大了就不容易了。何况你这工作吃的是青春饭，以后怎么办。我说：到时候再看，转行吧。比如这篇文章： 一位工作十年程序员给的忠告  
-   打造个人品牌（知识型IP）  《程序员必读的职业规划书》有提到打造个人品牌；公司年中大会上，我司创始人（前阿里副总裁）也谈到IP；参加的网红经济论坛上更是对网红（IP）有一些深层次的解读；《和秋叶一起学职场技能》书中也有提到如何打造个人品牌。 虽然，以前的积累，微博粉丝超过了1千，微信好友快1000，两个QQ的好友基本不重复，超过1400，但这些都是最低层次的无门槛自媒体。 
- 我这名字，在我关注的圈子中，知道比较有名的大咖有小川叔。 在公司叫花名（轩辕），于是把我在网络上的各种账号的昵称统一成 轩辕Rowboat ，也算是打造个人品牌的开始吧。 
- 2016年，这一年出现了很多 知识变现 的产品，比如：微信公众号打赏，简书打赏，知乎live，分答，在行，微博的问答，喜马拉雅付费精品等。 
- 原是程序员的彭小六就凭借着知识变现这一红利月入6位数。比如：  《凭着这3个字，我上个月挣了6位数》  也有程序员靠之前人气等多方面的积累，开一次知乎live，分享知识，就能赚1万+。 之前在公众号看到的文章， 《月入10W真的很难吗？》  清华大学毕业阿何的一篇文章： 《年轻人，如何挣到自己第一个100万？》  文尾总结： 
- 
- 总结一下，对年轻人来说可操作性最强又能挣很多钱的方法，其实就三个步骤： 第一：找到自己的一个特长，把它培养得足够出色 第二：找到适合你的特长，又有足够用户注意的平台 第三：在这个平台上深耕细作，打造品牌，获得收入 每个人都有自己的特长，只要长时间持续打磨，总有一天能到“可以卖钱”的水平。 
- 
- 虽然这类文章有点夸大其词，鸡汤文的感觉，但也不无道理。总之这是赚钱思维的一种转变。 
- PPT圈内，布衣公子从2012年开始分享自己的PPT作品，他的作品影响着很多人。后来收费，一份作品就能卖到上万元。这是他分享他的故事时分享的五个故事。  改变我命运的五个故事-布衣公子  要在大城市生活，培养一种或几种可以「变现」的能力，并且这些能力不受地域的限制，似乎变得重要起来。 
-   时间也是资源  时间管理是永恒的话题，这篇文章写的挺好： 毕业三年，你如何与同龄人拉开差距？  
-   世界发展太快，需要不断学习  世界在发展，以前的很多岗位都不存在了。而且未来很多工作可以由机器人来完成，而且机器人比人类做得更优秀。另外年轻人的接触新鲜事物的学习能力相对比较强。那么持续学习，变得更加的重要了。 
-
+ 时间总是那么的快。2014年开始，就有了写个人年度总结的习惯。如果把2015年定义成 PPT年 ，那么2016
     
     
         <a href="/2017/01/07/20170107-2016-annual-summary/" class="post-more waves-effect waves-button">
-            
+            阅读全文>>
         </a>
     </div>
     
@@ -458,28 +410,11 @@
    基本操作  双击shift搜索：快速查找。文件，函数名等。 
  template模板可以设置。 
  光标定位到相关位置。比如tilte,body 每次修改的历史：local  history。 
- 多光标的功能。 1、查找替换，ctrl+R 2、alt+鼠标选择。 
-  3、alt+单击。 
- 4、格式化代码：ctrl+alt+L 
-  菜单，code——reformat code。 
- 5、快捷键可以自定义设置。 可以通过快捷键名称来查找。也可以通过怎么使用来查找快捷键，然后对其进行修改。 webstrom预设了许多快捷键，可以自己选择。与原来的IDE快捷键相同。 
-    Emmet   详情参见：  Emmet：HTML/CSS代码快速编写神器  
- 1、Tab键，缩写的补全 2、li中间写完，按enter键，光标直接定位到接下来的一个。 3、嵌套结构： >  +  ^         () 子元素，同级，往上一级，重复，（） 4、属性 # （id）. （类）[]自定义属性 div#container.container  $ ul&gt;li.item-$ 5 {}文本 p{click me} lorem没有意义的文字。用于排版。 用法：lorem100 注意事项：光标定位在最后（最想展开的）。 不能有空格。 比如： css中，bt:border-top m10:margin:10px; m10-20:margin:10px 20px; bdrs10:border-radius:10px; df：display：flex; 
-  设置前缀。 默认关闭这个开关。可以用其他工具来实现。、 html:5,sublime text等编辑器可以安装emmet插件。 
-   进阶操作一——常见快捷键  操作，快捷键。 
- 光标放在相对应的标签上，按F1，可以显示相关的描述，关联的站点等。 js也是如此，参数列表等。 比如 
-   hello world  要包裹在一个div中，选择这代码，ctrl+alt+T,选择第一个，输入div就变包裹在div中。  
- ——7 1、注释与取消注释 ctrl+/ 2、选择 选中子元素，alt+上/下 3、粘贴 ctrl+shift+V，最近粘贴板中的内容。 4、删除当前行， ctrl+退格键。 5、当前行上、下面加入一行 上面加入一行。ctrl+alt+enter 下面加入一行。ctrl+shift+enter. 这样不需要刻意定位光标的位置。其实键盘上有（home,end)键。 6、折叠代码，ctrl++（展开），ctrl+-(折叠) ctrl+shift++,ctrl+shift+-,所有可以折叠的地方全部折叠。在css中，js,html中都是如此。 7、相邻位置代码换位置。 alt+shift+上、下键。选中一段代码也可以让其上下移动。 8、闭合标签，定位在两个标签位置。ctrl+m键。引号，括号，{}等也适用。window下好像无效。 9、前进、后退到上一次编辑的地方。ctrl+alt+左右键。 10、转到上一次编辑的地方。ctrl+shift+backspace键。 11、最近使用的文件，ctrl+E ——8 1、img标签，知道图片宽和高。 方式1、输入路径，宽和高，按住Tab键可以自动补全。 方式2、放在图片上，按F1图片预览，固定预览框。或者悬浮在文字上方。 方式3、按住shift，鼠标浮在路径上，就可以看到图片的预览了。 2、color:#999;色块上点击即可选择修改颜色。亮度（竖向）和透明度（横向）可以调节。 
-   进阶操作二——重命名  1、重命名， 
-   hello world ，把光标放在标签上， ctrl+T,第一个就是重命名。window下试用无效。shift+F6重命名。2、其实直接写即可呀。 对话框会显示有相同的地方，右击，排查或包含include，exclude.点击执行，do refactor。侧边有一些功能。 2、函数名称，参数重命名。 html,css,js中都可以重命名，类名，颜色，可以预览，避免把一些框架库里的相同东西修改了。、 文件或文件夹也可以重命名。所有引用的地方也被修改了。  
-   进阶操作三——代码检查  webstrom使用了静态代码分析。 不仅检查编译错误， 而且代码效率低下，未使用的代码，非本地化的字符串，无法解析的代码，内存泄露，甚至编写问题等等。 提示分为：错误，警告和正确。红色，橙黄色，或者绿色。 一般来说是对整个项目进行检查的。也可以自己配置检查的范围。 也可以自己运行检查。–&gt;code-&gt;Inspect code 
- webstrom检查出来的不代表真的有错，还需要人工自己检查。 一般在文件中，F2键可以在各个错误中切换。 alt+enter，可以看到提示。（右侧的提示） 规则自己设置，搜索inspec 
- js是静态的校验。 
-
+ 多光标的功能。 1、查找替换，ctrl+R 2、
     
     
         <a href="/2016/12/07/20161207-webstrom-skill/" class="post-more waves-effect waves-button">
-            
+            阅读全文>>
         </a>
     </div>
     
@@ -522,7 +457,7 @@
     
     
         <a href="/2016/10/29/20161029-array-splice-uniq/" class="post-more waves-effect waves-button">
-            
+            阅读全文>>
         </a>
     </div>
     
@@ -565,7 +500,7 @@
     
     
         <a href="/2016/10/16/20161016-background-attachment/" class="post-more waves-effect waves-button">
-            
+            阅读全文>>
         </a>
     </div>
     
@@ -608,7 +543,7 @@
     
     
         <a href="/2016/10/09/20161009-function-length/" class="post-more waves-effect waves-button">
-            
+            阅读全文>>
         </a>
     </div>
     
@@ -651,7 +586,7 @@
     
     
         <a href="/2016/09/22/20160922-RegExp/" class="post-more waves-effect waves-button">
-            
+            阅读全文>>
         </a>
     </div>
     
@@ -674,10 +609,75 @@
 <div class="mask" id="mask"></div>
 <a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
 
+<script>
+var BLOG_SHARE = {
+    title: "轩辕Rowboat的博客",
+    pic: "/img/logo.jpg",
+    summary: document.getElementsByName('summary')[0].content,
+    url: "https://lxchuan12.github.io/index.html"
+};
+</script>
+<div class="global-share" id="global-share">
+    <div class="tit">分享到：</div>
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" href="javascript:;" data-title="微博" data-service="tsina">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns" href="javascript:;" data-title="微信" data-service="weixin">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" href="javascript:;" data-title=" QQ" data-service="cqq">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" href="javascript:;" data-title=" Facebook" data-service="fb">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" href="javascript:;" data-title=" Twitter" data-service="twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="douban share-sns" href="javascript:;" data-title="豆瓣" data-service="douban">
+          豆
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
 <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
 
 <script src="/js/main.js"></script>
 
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<script type="text/template" id="search-tpl">
+<li class="item">
+    <a href="/{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</script>
+
+<script src="/js/search.js"></script>
 
 
 

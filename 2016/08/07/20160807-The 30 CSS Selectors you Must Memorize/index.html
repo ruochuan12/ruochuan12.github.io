@@ -6,6 +6,8 @@
   <title>(转)30个你必须记住的CSS选择器 | 轩辕Rowboat的博客 | 前端路上 | PPT爱好者 | 所知甚少，唯善学。</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
+  <meta name="theme-color" content="#3D95D5">
+  
   
   <meta name="keywords" content="CSS选择器">
   <meta name="description" content="概述也许你了解了基本的 id,class和descendant选择器，并且整天都在调用，如果是这样的话，那你正在错过拥有灵活性更大的选择器。这篇文章里面提到的大部分选择器都是在CSS3标准下的，所以它们只能在相应最新版本的浏览器中才能生效，你完全应该把这些都记在你聪明的脑袋里面……">
@@ -22,30 +24,81 @@
 <meta name="twitter:description" content="概述也许你了解了基本的 id,class和descendant选择器，并且整天都在调用，如果是这样的话，那你正在错过拥有灵活性更大的选择器。这篇文章里面提到的大部分选择器都是在CSS3标准下的，所以它们只能在相应最新版本的浏览器中才能生效，你完全应该把这些都记在你聪明的脑袋里面……">
 <meta name="twitter:image" content="http://images.cnitblog.com/blog/460220/201401/03143631-272fddc759664e95be319d868bae7abf.png">
   
+    <link rel="alternative" href="/atom.xml" title="轩辕Rowboat的博客" type="application/atom+xml">
+  
   <meta name="summary" content="&lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;p&gt;也许你了解了基本的 id,class和descendant选择器，并且整天都在调用，如果是这样的话，那你正在错过拥有灵活性更大的选择器。这篇文章里面提到的大部分选择器都是在CSS3标准下的，所以它们只能在相应最新版本的浏览器中才能生效，你完全应该把这些都记在你聪明的脑袋里面……">
-  <link rel="shortcut icon" href="/">
+  <link rel="shortcut icon" href="/favicon.ico">
   <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
   <div id="loading" class="active"></div>
 
-  <nav id="menu"  >
+  <nav id="menu" class="hide" >
    <div class="inner flex-row-vertical">
   <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
       <i class="icon icon-lg icon-close"></i>
   </a>
   <div class="brand-wrap">
     <div class="brand">
-      <a href="/" class="avatar"><img src="undefined"></a>
+      <a href="/" class="avatar"><img src="/img/logo.jpg"></a>
       <div class="introduce">
         <h5 class="nickname">轩辕Rowboat</h5>
-        <a href="mailto:undefined" class="mail">
+        <a href="mailto:lxchuan12@163.com" title="lxchuan12@163.com" class="mail">lxchuan12@163.com</a>
       </div>
     </div>
   </div>
   <div class="scroll-wrap flex-col">
     <ul class="nav">
+      
+          <li class="waves-block waves-effect">
+            <a href="/"  >
+              <i class="icon icon-lg icon-home"></i>
+              主页
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="/archives"  >
+              <i class="icon icon-lg icon-archives"></i>
+              文章
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="http://www.jianshu.com/users/83129d433d72/latest_articles" target="_blank" >
+              <i class="icon icon-lg icon-book"></i>
+              简书
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="https://segmentfault.com/u/lxchuan12" target="_blank" >
+              <i class="icon icon-lg icon-seg"></i>
+              segmentfault
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="https://lxchuan12.github.io/works/" target="_blank" >
+              <i class="icon icon-lg icon-hand-o-right"></i>
+              作品展示
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="https://github.com/lxchuan12" target="_blank" >
+              <i class="icon icon-lg icon-github"></i>
+              Github
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="https://lxchuan12.github.io/2016/09/07/20160907-How-do-I-set-foot-on-the-front-end-of-the-road/" target="_blank" >
+              <i class="icon icon-lg icon-user"></i>
+              关于我
+            </a>
+          </li>
       
     </ul>
 
@@ -54,7 +107,7 @@
   <p>轩辕Rowboat的博客 &copy; 2017</p>
   <p>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme
   <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></p>
-  <a href="undefined" target="_blank" class="rss" title="rss"><i class="icon icon-2x icon-rss-square"></i></a>
+  <a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-2x icon-rss-square"></i></a>
 </footer>
 
   </div>
@@ -69,6 +122,20 @@
         </a>
         <div class="flex-col header-title ellipsis">(转)30个你必须记住的CSS选择器</div>
         
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input " autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-share">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
         
     </div>
 </header>
@@ -101,7 +168,48 @@
         <aside class="post-widget" id="post-widget">
 
             
+            <div class="post-share" id="post-share">
+    <div class="tit">分享到：</div>
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" href="javascript:;" data-title="微博" data-service="tsina">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns" href="javascript:;" data-title="微信" data-service="weixin">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" href="javascript:;" data-title=" QQ" data-service="cqq">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" href="javascript:;" data-title=" Facebook" data-service="fb">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" href="javascript:;" data-title=" Twitter" data-service="twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="douban share-sns" href="javascript:;" data-title="豆瓣" data-service="douban">
+          豆
+        </a>
+      </li>
+    </ul>
+ </div>
 
+            
+
+            
+            <nav class="post-toc-wrap" id="post-toc">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#概述"><span class="post-toc-number">1.</span> <span class="post-toc-text">概述</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1"><span class="post-toc-number">2.</span> <span class="post-toc-text">1. *</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-X"><span class="post-toc-number">3.</span> <span class="post-toc-text">2.#X</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-X"><span class="post-toc-number">4.</span> <span class="post-toc-text">3. .X</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4-X-Y"><span class="post-toc-number">5.</span> <span class="post-toc-text">4.X Y</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#5-X"><span class="post-toc-number">6.</span> <span class="post-toc-text">5.X</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#6-X-visited-和-X-link"><span class="post-toc-number">7.</span> <span class="post-toc-text">6.X:visited 和 X:link</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#7-X-Y"><span class="post-toc-number">8.</span> <span class="post-toc-text">7.X + Y</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#8-X-gt-Y"><span class="post-toc-number">9.</span> <span class="post-toc-text">8.X>Y</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#9-X-Y"><span class="post-toc-number">10.</span> <span class="post-toc-text">9.X~Y</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#10-X-title"><span class="post-toc-number">11.</span> <span class="post-toc-text">10.X[title]</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#11-X-href-”foo”"><span class="post-toc-number">12.</span> <span class="post-toc-text">11. X[href=”foo”]</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#12-X-href-”nettuts”"><span class="post-toc-number">13.</span> <span class="post-toc-text">12. X[href*=”nettuts”]</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#13-X-href-”http”"><span class="post-toc-number">14.</span> <span class="post-toc-text">13. X[href^=”http”]</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#14-X-href-”-jpg”"><span class="post-toc-number">15.</span> <span class="post-toc-text">14. X[href$=”.jpg”]</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#15-X-data-”foo”"><span class="post-toc-number">16.</span> <span class="post-toc-text">15. X[data-*=”foo”]</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#16-X-foo-”bar”"><span class="post-toc-number">17.</span> <span class="post-toc-text">16. X[foo~=”bar”]</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#17-X-checked"><span class="post-toc-number">18.</span> <span class="post-toc-text">17. X:checked</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#18-X-after"><span class="post-toc-number">19.</span> <span class="post-toc-text">18. X:after</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#19-X-hover"><span class="post-toc-number">20.</span> <span class="post-toc-text">19. X:hover</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#20-X-not-selector"><span class="post-toc-number">21.</span> <span class="post-toc-text">20. X:not(selector)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#21-X-pseudoElement"><span class="post-toc-number">22.</span> <span class="post-toc-text">21. X::pseudoElement</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#22-X-nth-child-n"><span class="post-toc-number">23.</span> <span class="post-toc-text">22. X:nth-child(n)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#23-X-nth-last-child-n"><span class="post-toc-number">24.</span> <span class="post-toc-text">23. X:nth-last-child(n)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#24-X-nth-of-type-n"><span class="post-toc-number">25.</span> <span class="post-toc-text">24. X:nth-of-type(n)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#25-X-nth-last-of-type-n"><span class="post-toc-number">26.</span> <span class="post-toc-text">25. X:nth-last-of-type(n)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#26-X-first-child"><span class="post-toc-number">27.</span> <span class="post-toc-text">26. X:first-child</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#27-X-last-child"><span class="post-toc-number">28.</span> <span class="post-toc-text">27. X:last-child</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#28-X-only-child"><span class="post-toc-number">29.</span> <span class="post-toc-text">28. X:only-child</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#29-X-only-of-type"><span class="post-toc-number">30.</span> <span class="post-toc-text">29. X:only-of-type</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#30-X-first-of-type"><span class="post-toc-number">31.</span> <span class="post-toc-text">30. X:first-of-type</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#结论"><span class="post-toc-number"></span> <span class="post-toc-text">结论</span></a>
+            </nav>
             
         </aside>
 
@@ -571,6 +679,10 @@ a[data-info~=&quot;image&quot;] {
 
 
             
+            <div class="post-reward">
+                <a id="rewardBtn" href="javascript:;" class="post-reward-btn waves-effect waves-circle waves-light">赏</a>
+            </div>
+            
             
             <blockquote>
                 <p>
@@ -604,6 +716,26 @@ a[data-info~=&quot;image&quot;] {
 
             
             
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="20160807-The 30 CSS Selectors you Must Memorize" data-title="(转)30个你必须记住的CSS选择器" data-url="https://lxchuan12.github.io/2016/08/07/20160807-The 30 CSS Selectors you Must Memorize/index.html"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"lxchuan12"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
 
 
 
@@ -611,15 +743,104 @@ a[data-info~=&quot;image&quot;] {
     </div>
 </article>
 
+<div id="reward" class="reward-lay">
+    <a class="reward-off" id="rewardOff" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        你的打赏是我写作的动力~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <ul class="reward-items">
+        
+        <li>
+            <img src="/img/wechat.jpg" title="微信打赏二维码" alt="微信打赏二维码">
+            <p>微信</p>
+        </li>
+        
+
+        
+        <li>
+            <img src="/img/alipay.jpg" title="支付宝打赏二维码" alt="支付宝打赏二维码">
+            <p>支付宝</p>
+        </li>
+        
+    </ul>
+</div>
+
     </div>
   </main>
 <div class="mask" id="mask"></div>
 <a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
 
+<script>
+var BLOG_SHARE = {
+    title: "(转)30个你必须记住的CSS选择器",
+    pic: "/img/logo.jpg",
+    summary: document.getElementsByName('summary')[0].content,
+    url: "https://lxchuan12.github.io/2016/08/07/20160807-The 30 CSS Selectors you Must Memorize/index.html"
+};
+</script>
+<div class="global-share" id="global-share">
+    <div class="tit">分享到：</div>
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" href="javascript:;" data-title="微博" data-service="tsina">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns" href="javascript:;" data-title="微信" data-service="weixin">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" href="javascript:;" data-title=" QQ" data-service="cqq">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" href="javascript:;" data-title=" Facebook" data-service="fb">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" href="javascript:;" data-title=" Twitter" data-service="twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="douban share-sns" href="javascript:;" data-title="豆瓣" data-service="douban">
+          豆
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
 <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
 
 <script src="/js/main.js"></script>
 
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<script type="text/template" id="search-tpl">
+<li class="item">
+    <a href="/{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</script>
+
+<script src="/js/search.js"></script>
 
 
 
