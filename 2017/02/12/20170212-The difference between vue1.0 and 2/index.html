@@ -10,20 +10,20 @@
   
   
   <meta name="keywords" content="vuejs">
-  <meta name="description" content="重新仔细读了下文档，边看边写了一些。1、v-once只渲染一次。2、过滤器 第二参数（）以函数传参的形式。过滤器可以串联。全局过滤器和单个过滤器1234&amp;lt;!-- in mustaches --&amp;gt;&amp;#123;&amp;#123; message | capitalize &amp;#125;&amp;#125;&amp;lt;!-- in v-bind --&amp;gt;&amp;lt;div v-bind:id=&amp;quot;raw">
+  <meta name="description" content="重新仔细读了下文档，边看边写了一些。1、v-once只渲染一次。2、过滤器 第二参数（）以函数传参的形式。过滤器可以串联。全局过滤器和单个过滤器。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue1.0和2.0的区别">
 <meta property="og:url" content="https://lxchuan12.github.io/2017/02/12/20170212-The difference between vue1.0 and 2/index.html">
 <meta property="og:site_name" content="轩辕Rowboat的博客">
-<meta property="og:description" content="重新仔细读了下文档，边看边写了一些。1、v-once只渲染一次。2、过滤器 第二参数（）以函数传参的形式。过滤器可以串联。全局过滤器和单个过滤器1234&amp;lt;!-- in mustaches --&amp;gt;&amp;#123;&amp;#123; message | capitalize &amp;#125;&amp;#125;&amp;lt;!-- in v-bind --&amp;gt;&amp;lt;div v-bind:id=&amp;quot;raw">
-<meta property="og:updated_time" content="2017-03-20T14:22:07.999Z">
+<meta property="og:description" content="重新仔细读了下文档，边看边写了一些。1、v-once只渲染一次。2、过滤器 第二参数（）以函数传参的形式。过滤器可以串联。全局过滤器和单个过滤器。">
+<meta property="og:updated_time" content="2017-06-24T15:23:28.738Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue1.0和2.0的区别">
-<meta name="twitter:description" content="重新仔细读了下文档，边看边写了一些。1、v-once只渲染一次。2、过滤器 第二参数（）以函数传参的形式。过滤器可以串联。全局过滤器和单个过滤器1234&amp;lt;!-- in mustaches --&amp;gt;&amp;#123;&amp;#123; message | capitalize &amp;#125;&amp;#125;&amp;lt;!-- in v-bind --&amp;gt;&amp;lt;div v-bind:id=&amp;quot;raw">
+<meta name="twitter:description" content="重新仔细读了下文档，边看边写了一些。1、v-once只渲染一次。2、过滤器 第二参数（）以函数传参的形式。过滤器可以串联。全局过滤器和单个过滤器。">
   
     <link rel="alternative" href="/atom.xml" title="轩辕Rowboat的博客" type="application/atom+xml">
   
-  <meta name="summary" content="轩辕Rowboat，某世界闻名的陶瓷大学2016届毕业生，目前在杭州从事前端开发工作，也是一枚PPT爱好者。常以轩辕Rowboat为名混迹于江湖。">
+  <meta name="summary" content="&lt;p&gt;重新仔细读了下文档，边看边写了一些。&lt;br&gt;1、v-once只渲染一次。&lt;br&gt;2、过滤器 第二参数（）以函数传参的形式。过滤器可以串联。&lt;br&gt;全局过滤器和单个过滤器。">
   <link rel="shortcut icon" href="/favicon.ico">
   <link rel="stylesheet" href="/css/style.css">
 </head>
@@ -213,7 +213,7 @@
         <div class="post-main">
 
             <div class="post-content" id="post-content" itemprop="postContent">
-            <p>重新仔细读了下文档，边看边写了一些。<br>1、v-once只渲染一次。<br>2、过滤器 第二参数（）以函数传参的形式。过滤器可以串联。<br>全局过滤器和单个过滤器<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;!-- in mustaches --&gt;</div><div class="line">&#123;&#123; message | capitalize &#125;&#125;</div><div class="line">&lt;!-- in v-bind --&gt;</div><div class="line">&lt;div v-bind:id=&quot;rawId | formatId&quot;&gt;&lt;/div&gt;</div></pre></td></tr></table></figure></p>
+            <p>重新仔细读了下文档，边看边写了一些。<br>1、v-once只渲染一次。<br>2、过滤器 第二参数（）以函数传参的形式。过滤器可以串联。<br>全局过滤器和单个过滤器。<a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;!-- in mustaches --&gt;</div><div class="line">&#123;&#123; message | capitalize &#125;&#125;</div><div class="line">&lt;!-- in v-bind --&gt;</div><div class="line">&lt;div v-bind:id=&quot;rawId | formatId&quot;&gt;&lt;/div&gt;</div></pre></td></tr></table></figure></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;&#123; message | filterA | filterB &#125;&#125;</div></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;&#123; message | filterA(&apos;arg1&apos;, arg2) &#125;&#125;</div></pre></td></tr></table></figure>
 <p>3、watch允许异步操作。computed做不到。<br>4、新增：v-else-if<br>5、v-if中，使用 key 控制元素的可重用<br>6、v-for (value,index)，$index被废除。 item in items,item of items.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;div v-for=&quot;(value, key, index) in object&quot;&gt;</div><div class="line">  &#123;&#123; index &#125;&#125;. &#123;&#123; key &#125;&#125; : &#123;&#123; value &#125;&#125;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure></p>

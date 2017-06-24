@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://lxchuan12.github.io/"/>
-  <updated>2017-03-20T14:22:47.232Z</updated>
+  <updated>2017-06-24T15:24:29.479Z</updated>
   <id>https://lxchuan12.github.io/</id>
   
   <author>
@@ -16,13 +16,73 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>工作一年后，我有些感悟</title>
+    <link href="https://lxchuan12.github.io/2017/06/02/20170602-After%20a%20year&#39;s%20work,%20I%20had%20some%20insights/"/>
+    <id>https://lxchuan12.github.io/2017/06/02/20170602-After a year&#39;s work, I had some insights/</id>
+    <published>2017-06-02T14:20:53.000Z</published>
+    <updated>2017-06-24T15:24:29.479Z</updated>
+    
+    <content type="html"><![CDATA[<p>去年6月1日，入职那天早上下着小雨。在公司取了一个花名：<strong>轩辕</strong>，后来把网上昵称基本都改成了<strong>轩辕Rowboat</strong>。还记得那天晚上朋友请我吃小龙虾。</p>
+<p>今年，6月1日，有新同事入职。已经毕业工作一年了，刚好有些感悟就写出来。<a id="more"></a></p>
+<h3 id="学习工作"><a href="#学习工作" class="headerlink" title="学习工作"></a>学习工作</h3><p><strong>从校园到职场</strong></p>
+<p>主动认识同事。</p>
+<p>虽然不太可能与每一个同事都能相处的特别熟。但对于新人，都会被拉入一些群。这时候，可以加同事QQ或者微信等（同事一般不会拒绝），便于之后沟通交流工作。</p>
+<p>这时候有的人能够主动快速得认识团队里的同事。有的人则是入职了很久都不认识对面的同事。</p>
+<p>把离别看得平淡了许多。大学毕业后，很多人一晃一年没见，是再正常不过的事了。</p>
+<p>同事离职后，即使还在同一个城市，但交集就变少了。</p>
+<p>有江湖的地方就有规矩，职场也有。在职场只要用心去发现，能够学到公司的管理方式等。</p>
+<p><strong>认清自己的定位</strong></p>
+<p>常和别人开玩笑说，自己是来自贫困的小山村的一个大学生，职业是：说的高端一点是<strong>前端开发工程师</strong>，说的通俗易懂点则是<strong>做网站的程序猿</strong>。嗯，这就算是一种定位。</p>
+<p>像我这样的人几百万。想起一个朋友说：感觉你在IT方面很厉害。我说：你只是认识万千程序猿中的一个而已。</p>
+<p><strong>学无止境，提升竞争力</strong></p>
+<p>智联招聘网显示：web前端开发是竞争最激烈的职业。</p>
+<p>上次听一次segmentfault的讲堂，其中有提到慕课网有很多用户，其中400万是前端开发。</p>
+<p>有时候会想我这一年是不是学习方式不对，不够努力，或者说能否再努力一点，是不是能够进入更好的大公司，能够得到更好的成长。</p>
+<p><strong>事实证明，自身能力不够，有机遇来了，会抓不住。</strong></p>
+<p>比如：之前有面试过淘宝、大搜车等，然而技术一般，没能通过面试。</p>
+<h3 id="现实生活"><a href="#现实生活" class="headerlink" title="现实生活"></a>现实生活</h3><p>我读大学买了电脑考了驾照，四年花了家里4万块左右（从大一暑假买电脑开始算到大四结束，用Excel统计家里打了25200元给我）。而在杭州待一年光吃住就得花近3万块（吃饭按一天40元算，一个月1200，租房1100+）。</p>
+<p>最近看的电视剧《欢乐颂2》中，身为90后的程序猿应勤在大上海买了车买了房（好像还提到是全额付款）。现实中在大上海房价均价5.5万/平米，有人分析单靠程序猿那点工资（虽然IT行业相对其他行业薪资高些）是不太可能的。</p>
+<h3 id="展望未来"><a href="#展望未来" class="headerlink" title="展望未来"></a>展望未来</h3><p>看到毕业几年的同事过着怎样的生活，可以推测出几年后的自己大概过着怎样的生活。当然未来的一切都是未知的。但基本能看出自己一年后是过着怎样的生活。</p>
+<p>月薪两万的薪资算是很不错了，但是在大城市算刚起步，为什么算刚起步，主要因为房价太高，买个房好几百万。比较优秀的前端开发工程师，工作三年后月薪大概能达到15K—20K，当然各城市不一。再往后，能达到年薪50万左右已经是非常不错了。</p>
+<p><strong>如何提高收入，是大家关心的永恒的话题。</strong>5月份我们从学校课题组出来的三个同学回学校时，在高铁上上讨论过，毕业一年有什么感觉，大家都一致认为：<strong>要想单靠开发这点薪资，在大城市立足，是非常艰难的。</strong>然后想着有哪些赚钱之道，都可以去试试，刚毕业一年，还算很早。</p>
+<p>主要说到三条。<strong>第一条是：加入有潜力的团队初创公司（拿股份）。</strong>同学就说到他们老大的事迹，说刚靠程序猿这点工资在大城市过上小资生活是很艰难的，他之前加入阿里后来拿股份才开了现在的公司（大概意思是这样）。</p>
+<p><strong>第二条是：拓展自己的人脉，找准风口，好创意，自己组建团队开发出有价值的产品。</strong>说到这条我就提到小密圈（付费圈子，我加入一个圈子收费200，有700+人加入，运营一年，就能得到14万的收入。）</p>
+<p>我自己也建了一个<strong>前端视野</strong>的小密圈（免费），发发自己关于前端开发的所见所想，也好沉淀沉淀，没打算怎么推广，但这里还是贴一下二维码，<strong>万一有人想加入呢</strong>。</p>
+<p><img src="/2017/06/02/20170602-After%20a%20year%27s%20work,%20I%20had%20some%20insights/xiaomiquan.jpg" alt="前端视野-小密圈-一个人走得快，一群人走得远" title="前端视野-小密圈-一个人走得快，一群人走得远">。</p>
+<p>[前端视野-小密圈-一个人走得快，一群人走得远]</p>
+<p>前端视野-小密圈-一个人走得快，一群人走得远<br>还建有一个<strong>PPT视野</strong>的圈子，这个目前还没发过动态。</p>
+<p><strong>第三条则是：发展一项兴趣爱好，打造个人品牌，做到可以赚大钱的地步。</strong>（有人刚毕业4K，毕业三年，凭借PPT，开商务PPT训练营收费课程，年薪50万）。他们经常问我可以多接些PPT来做，就可以赚点钱了，我说目前没有时间，也没有渠道，而且我也是只是万千PPT设计师中很渣的一员。</p>
+<p>想做到收入更高，除了做好本职工作和提升专业素养外，也需要跳出来看看外面的世界。</p>
+<p>上次和同学几人一起玩的时候，有个妹纸说了这句，<strong>何以解忧，唯有暴富</strong>。让我记忆犹新。</p>
+<p>事实上群体中确实有小概率事件发生，比如中个上千万的彩票，但是对于个体，这种事几乎不可能发生。而且有研究表明，中彩票的普通人，一般会在五年后用完这笔财富，最后还是普通人。</p>
+<p><strong>所以说：提高自己在各方面的竞争力</strong>，比如：为人处事、沟通表达、团队协作等等，这也就是<strong>可迁移能力</strong>，以不变应对这个变化的世界，才是最重要的。</p>
+<p><a href="http://www.jianshu.com/p/0b29cc65dc82" target="_blank" rel="external">这是我写在简书的文章：工作一年后，我有些感悟</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;去年6月1日，入职那天早上下着小雨。在公司取了一个花名：&lt;strong&gt;轩辕&lt;/strong&gt;，后来把网上昵称基本都改成了&lt;strong&gt;轩辕Rowboat&lt;/strong&gt;。还记得那天晚上朋友请我吃小龙虾。&lt;/p&gt;
+&lt;p&gt;今年，6月1日，有新同事入职。已经毕业工作一年了，刚好有些感悟就写出来。
+    
+    </summary>
+    
+      <category term="随笔" scheme="https://lxchuan12.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="随笔" scheme="https://lxchuan12.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+      <category term="感悟" scheme="https://lxchuan12.github.io/tags/%E6%84%9F%E6%82%9F/"/>
+    
+  </entry>
+  
+  <entry>
     <title>如何破解百度网盘下载限制及网盘搜索技巧</title>
     <link href="https://lxchuan12.github.io/2017/03/17/20170317-How-to-crack-Baidu-SkyDrive-download-restrictions-and-SkyDrive-search-tips/"/>
     <id>https://lxchuan12.github.io/2017/03/17/20170317-How-to-crack-Baidu-SkyDrive-download-restrictions-and-SkyDrive-search-tips/</id>
     <published>2017-03-17T14:52:23.000Z</published>
-    <updated>2017-03-20T14:22:47.232Z</updated>
+    <updated>2017-06-24T15:22:02.618Z</updated>
     
-    <content type="html"><![CDATA[<p>今天两个朋友问我如何选电脑的问题，我说了一些大概流程，<strong>需求-&gt;预算-&gt;筛选-&gt;对比-&gt;购买</strong>。其实我好久没有关注这方面了，毕竟没钱买电脑。<br>晚上回来一想，好像好久没看《电脑报》（里面有购机指南）了，才发现百度网盘里存着的《电脑报》和《电脑爱好者》还是2014年的，原来两年没看了。大学里也会去图书馆看看纸质的。然后 <strong>找到</strong> 2017年《电脑报》的看了一会。<br>看到一篇《如何破解百度网盘下载限制》的文章，我试过后有效，特来分享整理给大家。<br>在chrome浏览器中，新建一个书签，书签名字随意，书签的网址复制粘贴这段代码：<br><code>javascript:navigator.__defineGetter__ (&#39;platform&#39;,function(){return &#39;&#39;});</code></p>
+    <content type="html"><![CDATA[<p>今天两个朋友问我如何选电脑的问题，我说了一些大概流程，<strong>需求-&gt;预算-&gt;筛选-&gt;对比-&gt;购买</strong>。其实我好久没有关注这方面了，毕竟没钱买电脑。<br>晚上回来一想，好像好久没看《电脑报》（里面有购机指南）了，才发现百度网盘里存着的《电脑报》和《电脑爱好者》还是2014年的，原来两年没看了。<a id="more"></a>大学里也会去图书馆看看纸质的。然后<strong>找到</strong> 2017年《电脑报》的看了一会。<br>看到一篇《如何破解百度网盘下载限制》的文章，我试过后有效，特来分享整理给大家。<br>在chrome浏览器中，新建一个书签，书签名字随意，书签的网址复制粘贴这段代码：<br><code>javascript:navigator.__defineGetter__ (&#39;platform&#39;,function(){return &#39;&#39;});</code></p>
 <p><img src="http://upload-images.jianshu.io/upload_images/201107-eee7bebd91594895.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="新建一个书签下载时点击下它.png"></p>
 <p>它的作用是<strong>防止下载大文件时唤醒百度网盘客户端</strong>。</p>
 <p><strong>所以在点击“下载”前，先点击它。</strong>待开始下载后，打开浏览器的<strong>“下载内容”</strong>（快捷键：Ctrl+J），看到正在进行的下载任务选择<strong>“复制链接地址”</strong>。</p>
@@ -65,7 +125,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;今天两个朋友问我如何选电脑的问题，我说了一些大概流程，&lt;strong&gt;需求-&amp;gt;预算-&amp;gt;筛选-&amp;gt;对比-&amp;gt;购买&lt;/strong&gt;。其实我好久没有关注这方面了，毕竟没钱买电脑。&lt;br&gt;晚上回来一想，好像好久没看《电脑报》（里面有购机指南）了，才发现百度网盘
+      &lt;p&gt;今天两个朋友问我如何选电脑的问题，我说了一些大概流程，&lt;strong&gt;需求-&amp;gt;预算-&amp;gt;筛选-&amp;gt;对比-&amp;gt;购买&lt;/strong&gt;。其实我好久没有关注这方面了，毕竟没钱买电脑。&lt;br&gt;晚上回来一想，好像好久没看《电脑报》（里面有购机指南）了，才发现百度网盘里存着的《电脑报》和《电脑爱好者》还是2014年的，原来两年没看了。
     
     </summary>
     
@@ -85,9 +145,9 @@
     <link href="https://lxchuan12.github.io/2017/03/06/20170306-freess/"/>
     <id>https://lxchuan12.github.io/2017/03/06/20170306-freess/</id>
     <published>2017-03-06T15:02:23.000Z</published>
-    <updated>2017-04-10T15:15:10.120Z</updated>
+    <updated>2017-06-24T15:22:41.570Z</updated>
     
-    <content type="html"><![CDATA[<p>开发时遇到问题，一般都是使用<strong>谷歌搜索</strong>，相对百度更加精准一些。比如搜索我的网名<strong>轩辕Rowboat</strong>，一大堆结果。<br><figure class="image-bubble">
+    <content type="html"><![CDATA[<p>开发时遇到问题，一般都是使用<strong>谷歌搜索</strong>，相对百度更加精准一些。比如搜索我的网名<strong>轩辕Rowboat</strong>，一大堆结果。<a id="more"></a><br><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
                     <img src="http://upload-images.jianshu.io/upload_images/201107-0c966a706280b1f4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="谷歌搜索轩辕Rowboat结果.png" title="">
@@ -128,8 +188,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;开发时遇到问题，一般都是使用&lt;strong&gt;谷歌搜索&lt;/strong&gt;，相对百度更加精准一些。比如搜索我的网名&lt;strong&gt;轩辕Rowboat&lt;/strong&gt;，一大堆结果。&lt;br&gt;&lt;figure class=&quot;image-bubble&quot;&gt;
-               
+      &lt;p&gt;开发时遇到问题，一般都是使用&lt;strong&gt;谷歌搜索&lt;/strong&gt;，相对百度更加精准一些。比如搜索我的网名&lt;strong&gt;轩辕Rowboat&lt;/strong&gt;，一大堆结果。
     
     </summary>
     
@@ -145,9 +204,9 @@
     <link href="https://lxchuan12.github.io/2017/02/12/20170212-The%20difference%20between%20vue1.0%20and%202/"/>
     <id>https://lxchuan12.github.io/2017/02/12/20170212-The difference between vue1.0 and 2/</id>
     <published>2017-02-12T07:04:23.000Z</published>
-    <updated>2017-03-20T14:22:07.999Z</updated>
+    <updated>2017-06-24T15:23:28.738Z</updated>
     
-    <content type="html"><![CDATA[<p>重新仔细读了下文档，边看边写了一些。<br>1、v-once只渲染一次。<br>2、过滤器 第二参数（）以函数传参的形式。过滤器可以串联。<br>全局过滤器和单个过滤器<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;!-- in mustaches --&gt;</div><div class="line">&#123;&#123; message | capitalize &#125;&#125;</div><div class="line">&lt;!-- in v-bind --&gt;</div><div class="line">&lt;div v-bind:id=&quot;rawId | formatId&quot;&gt;&lt;/div&gt;</div></pre></td></tr></table></figure></p>
+    <content type="html"><![CDATA[<p>重新仔细读了下文档，边看边写了一些。<br>1、v-once只渲染一次。<br>2、过滤器 第二参数（）以函数传参的形式。过滤器可以串联。<br>全局过滤器和单个过滤器。<a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;!-- in mustaches --&gt;</div><div class="line">&#123;&#123; message | capitalize &#125;&#125;</div><div class="line">&lt;!-- in v-bind --&gt;</div><div class="line">&lt;div v-bind:id=&quot;rawId | formatId&quot;&gt;&lt;/div&gt;</div></pre></td></tr></table></figure></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;&#123; message | filterA | filterB &#125;&#125;</div></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;&#123; message | filterA(&apos;arg1&apos;, arg2) &#125;&#125;</div></pre></td></tr></table></figure>
 <p>3、watch允许异步操作。computed做不到。<br>4、新增：v-else-if<br>5、v-if中，使用 key 控制元素的可重用<br>6、v-for (value,index)，$index被废除。 item in items,item of items.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;div v-for=&quot;(value, key, index) in object&quot;&gt;</div><div class="line">  &#123;&#123; index &#125;&#125;. &#123;&#123; key &#125;&#125; : &#123;&#123; value &#125;&#125;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure></p>
@@ -166,7 +225,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;重新仔细读了下文档，边看边写了一些。&lt;br&gt;1、v-once只渲染一次。&lt;br&gt;2、过滤器 第二参数（）以函数传参的形式。过滤器可以串联。&lt;br&gt;全局过滤器和单个过滤器&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td cl
+      &lt;p&gt;重新仔细读了下文档，边看边写了一些。&lt;br&gt;1、v-once只渲染一次。&lt;br&gt;2、过滤器 第二参数（）以函数传参的形式。过滤器可以串联。&lt;br&gt;全局过滤器和单个过滤器。
     
     </summary>
     
@@ -182,10 +241,10 @@
     <link href="https://lxchuan12.github.io/2017/01/07/20170107-2016-annual-summary/"/>
     <id>https://lxchuan12.github.io/2017/01/07/20170107-2016-annual-summary/</id>
     <published>2017-01-07T13:40:38.000Z</published>
-    <updated>2017-03-20T14:15:45.277Z</updated>
+    <updated>2017-06-24T15:25:20.635Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
-<p>1月4日的时候就写好了这篇文章，发年度总结说说的同时，在想有必要在空间发这篇日志，因为是使用markdown写的，排版是个问题，可以发表在简书啊（但是又包含很多个人信息）,后来觉得就没发。现在想想好像基本都是用手机看的，排版并不是那么重要，还是发出来吧，可能对读者有些启发。</p>
+<p>1月4日的时候就写好了这篇文章，发年度总结说说的同时，在想是否有必要在空间发这篇日志，因为是使用markdown写的，排版是个问题，可以发表在简书啊（但是又包含很多个人信息）,后来觉得就没发。现在想想好像基本都是用手机看的，排版并不是那么重要，还是发出来吧，可能对读者有些启发。<a id="more"></a></p>
 </blockquote>
 <p>时间总是那么的快。2014年开始，就有了写个人年度总结的习惯。如果把2015年定义成<strong>PPT年</strong>，那么2016年则可以说是<strong>开发年</strong>。这一年相对比较平凡，还算满意。</p>
 <p>2015年的年底，准备好了提前答辩的相关事宜。2016年元旦放假三天，在学校的课题组办公室翻看着微博（微博有时间轴，可以看到每个月都发了什么，这也就是为什么我比较喜欢发微博的原因之一），做着PPT，用思维导图工具Xmind，写着年度总结——<a href="http://user.qzone.qq.com/1019963719/blog/1451822274" target="_blank" rel="external">《2015年总结，淡化旧标签，无惧未来 》</a>。</p>
@@ -223,7 +282,7 @@
     <summary type="html">
     
       &lt;blockquote&gt;
-&lt;p&gt;1月4日的时候就写好了这篇文章，发年度总结说说的同时，在想有必要在空间发这篇日志，因为是使用markdown写的，排版是个问题，可以发表在简书啊（但是又包含很多个人信息）,后来觉得就没发。现在想想好像基本都是用手机看的，排版并不是那么重要，还是发出
+&lt;p&gt;1月4日的时候就写好了这篇文章，发年度总结说说的同时，在想是否有必要在空间发这篇日志，因为是使用markdown写的，排版是个问题，可以发表在简书啊（但是又包含很多个人信息）,后来觉得就没发。现在想想好像基本都是用手机看的，排版并不是那么重要，还是发出来吧，可能对读者有些启发。
     
     </summary>
     
@@ -239,12 +298,12 @@
     <link href="https://lxchuan12.github.io/2016/12/07/20161207-webstrom-skill/"/>
     <id>https://lxchuan12.github.io/2016/12/07/20161207-webstrom-skill/</id>
     <published>2016-12-07T14:48:18.000Z</published>
-    <updated>2016-12-10T15:24:24.733Z</updated>
+    <updated>2017-06-24T15:25:56.187Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
-<p><strong>webstrom有一些基本的操作</strong><br>1、快速查找<br>2、代码补全<br>3、版本控制<br>4、本地历史<br>5、即时模板<br>6、光标<br>7、代码格式化等</p>
-</blockquote>
+<p><strong>webstrom有一些基本的操作</strong><br>1、快速查找<br>2、代码补全<br>3、版本控制<br>4、本地历史<br>5、即时模板<br>6、光标<br>7、代码格式化等<br><a id="more"></a></p>
 <h4 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h4><p>双击shift搜索：快速查找。文件，函数名等。</p>
+</blockquote>
 <p>template模板可以设置。</p>
 <p>光标定位到相关位置。比如tilte,body<br>每次修改的历史：local  history。</p>
 <p>多光标的功能。<br>1、查找替换，ctrl+R<br>2、alt+鼠标选择。</p>
@@ -269,9 +328,7 @@
     <summary type="html">
     
       &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;webstrom有一些基本的操作&lt;/strong&gt;&lt;br&gt;1、快速查找&lt;br&gt;2、代码补全&lt;br&gt;3、版本控制&lt;br&gt;4、本地历史&lt;br&gt;5、即时模板&lt;br&gt;6、光标&lt;br&gt;7、代码格式化等&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h
+&lt;p&gt;&lt;strong&gt;webstrom有一些基本的操作&lt;/strong&gt;&lt;br&gt;1、快速查找&lt;br&gt;2、代码补全&lt;br&gt;3、版本控制&lt;br&gt;4、本地历史&lt;br&gt;5、即时模板&lt;br&gt;6、光标&lt;br&gt;7、代码格式化等&lt;br&gt;
     
     </summary>
     
@@ -569,14 +626,14 @@
     <link href="https://lxchuan12.github.io/2016/09/07/20160907-How-do-I-set-foot-on-the-front-end-of-the-road/"/>
     <id>https://lxchuan12.github.io/2016/09/07/20160907-How-do-I-set-foot-on-the-front-end-of-the-road/</id>
     <published>2016-09-07T13:48:12.000Z</published>
-    <updated>2017-06-19T13:54:41.419Z</updated>
+    <updated>2017-06-24T15:13:21.115Z</updated>
     
     <content type="html"><![CDATA[<p>感觉最近<strong>我是如何XXX的</strong>这类标题挺火的。<br>杭州举办G20峰会，9月1日~7日，放假7天，带了本《ES6 标准入门》回家。在火车上看了几集《微微一笑很倾城》，让我回忆起大学生活。就想着下次返杭的时候可以在火车上，写篇文章记录下，自己的前端学习之路。<a id="more"></a><br><strong>1、刚好可以对现在大四迷茫的学弟学妹们，有些指引</strong>。<br><strong>2、还可以借此回忆下大学生活</strong>。<br><strong>3、锻炼自己写长文的逻辑能力</strong>。<br><strong>当然，学习是座大山，人们沿着不同的路登山，分享着自己看到的风景，别人不一定看得到你看到的风景，体会得了你的心情。</strong></p>
 <h3 id="接触前端"><a href="#接触前端" class="headerlink" title="接触前端"></a>接触前端</h3><p>2012年，那年大一，只记得上学期参加了四个社团，参加社团的各种活动，比较忙，另外自己收集一些电子书放到我那一点都不智能的手机上看。下学期，我所在的社团计算机协会（后文简称计协），当时教网页制作（嗯，那时不叫前端开发），当然我报名去参加了。比我们大一级的学长用着Dreamweaver软件 给我们教学，超链接，图片，音乐，视频，FLASH等。总之感觉很有趣。也要我们做出一些作品，交作业。但那时我并没有电脑。所以就没做。</p>
 <h3 id="江西省网页制作与设计技能大赛"><a href="#江西省网页制作与设计技能大赛" class="headerlink" title="江西省网页制作与设计技能大赛"></a>江西省网页制作与设计技能大赛</h3><p>大二任职计协会长，举办各类活动。也没怎么学习前端开发之类的知识。学习方面好像也就是平时上上课而已，再就是学习电脑方面的技巧，帮助别人解决电脑问题，为此也写了挺多这类技术文章。比如：<a href="http://user.qzone.qq.com/1019963719/blog/1437915015" target="_blank" rel="external">【教程】Ｕ盘、硬盘安装原版win7、8.1、10系统</a>,<a href="http://user.qzone.qq.com/1019963719/blog/1414836306" target="_blank" rel="external">近期上网拨号客户端出现拨号异常、711错误解决方案</a>。<strong>在大学，懂点电脑，会装几个软件，重装个系统，在别人眼中就会被看做是大神，并且很受欢迎</strong>。后来实在忙，就写了篇文章：<a href="http://user.qzone.qq.com/1019963719/blog/1413177913" target="_blank" rel="external">对不起，我不能帮你修电脑了</a><br>转眼间，就到了2014年4月（大二下学期），我所在的信息学院，组织参加省级网页大赛，同时派老师给予培训指导。这时，老师N每周四（或五）给我们上了几周课，主要讲HTML和CSS，还给我们他录制的视频，当时觉得老师好厉害。后来让我们出作品，我们就找设计（陶美）学院的学生给我们设计网页视觉稿。虽然她们学的是设计，但也不是很懂网页设计这块。于是我就自己参照一个视觉比较好的网站，自己仿照着写了一个。当时还是比较忙，只有晚上有时间，所以总共八个页面，好像写了将近10天。主要用了HTML，CSS，js，jquery。现在放在github上，点击可以访问，<a href="http://lxchuan12.github.io/Fashion-Studio/">时尚影楼</a>,那时并不是很懂js和jquery。后来比赛结果出来了，竟然是省级一等奖。其实一等奖有挺多的。这次网页赛，我们学校获得了很多奖项。大二末，图书馆一老师找到我们，想让我们暑假回去学点PHP，开学好让我们上手，帮他做项目。<br>我们信息学院邀请了10级计科的H学长，给我们这些迷茫的学弟学妹开了一次经验分享会，说到腾讯招人的标准。因为他就是课题组研发部的一员。说到课题组研发部的各种好处，跟着里面的老师L学习PHP，学到60％就够找好工作了。总之意思就是要进课题组学习。<br>大二暑假，家里没网，我就在学校，下载好各种PHP学习资源，暑假就在家看着PHP相关的视频等，一套PHP视频也是100多集，基本看完了，也写了些代码。当时也学了javascript，一套JS视频100多集没有看完。其实到后来基本都忘了。另外，大二暑假，线上面试了乔布简历，通过成为了乔布简历校园大使。</p>
 <h3 id="加入课题组研发部"><a href="#加入课题组研发部" class="headerlink" title="加入课题组研发部"></a>加入课题组研发部</h3><p>大三上学期，卸任了计协会长，本以为这是大学最后一个职务，谁知这只是第一个。同学A，同学B跟着图书馆老师做PHP的项目。而我此时看着没啥事，就玩起了PPT，新媒体运营，又相继任职了<strong>校园网络中心团队的队长</strong>（关于这个我也写了篇文章<a href="http://user.qzone.qq.com/1019963719/blog/1439715599" target="_blank" rel="external">谈一谈校园网管这一工作</a>，一直任职到大四上学期）。<strong>校友总会志愿团常务团长</strong>（后来由于组织性质缘故，2014年11月，不到两个月就默认退出了），<strong>乔布简历江西省副主管</strong>，那时班上竞选班干，班主任说我们计协会长卸任了怎么不竞选一个职务。我说不用了，我并没有说还有这么多职务。上学期刚开始不久，我们专业老师也邀请了11级的学长学姐分享他们的一些经验。后来我们成立了信管学习小组，规定时间来主教自习。主要是为了学习网站开发。但后来效果不佳，我也较忙，就散了。<br>PPT水平在涨进，主要体现在我做的优秀班集体评选PPT上，传说就是凭借这次展示，让学校领导记住了做PPT还有这么好的人，后来（2015年5月13日）就被找去做更名大学工作汇报PPT，再后来就有了这张图 PPT制作主要经历:<br><img src="/2016/09/07/20160907-How-do-I-set-foot-on-the-front-end-of-the-road/ppt.png" alt="PPT制作主要经历" title="PPT制作主要经历">，也写了一些关于PPT制作的文章，比如：<a href="http://www.jianshu.com/p/065989d7783a" target="_blank" rel="external">要做PPT，一直找不到资源？</a>。开发水平并没有多少涨进。<br>大三下学期，我和同学A，B一起加入了课题组学习，做任务。5月19日，成立了<a href="http://mia.pasp.cn/" target="_blank" rel="external">移动互联协会</a>，又任职<strong>移动互联协会首届会长</strong>，一直任职到大四上学期。成立这社团，主要目的就是为了培养开发，后来给学弟学妹们培训HTML，CSS,和PPT，PS等，感觉他们真幸福。现在回想起来，在课题组，老师好像真的没给我什么实质性的开发任务。好像就让我做些与开发不那么相关的事情。可能是我个人原因。<br>4月，九家培训机构到我们信息学院做宣讲，他们的目的很明显，就是招人去培训。下午跟千锋教育的老师聊了挺久，主要是了解了他们机构是如何授课等。当然，他们极力希望我能去他们的好程序员班，但我肯定不会考虑培训。当时听完，晚上总结了一张图![从校园宣讲会我学到了什么]<br><img src="/2016/09/07/20160907-How-do-I-set-foot-on-the-front-end-of-the-road/peixun.png" alt="从校园宣讲会我学到了什么" title="从校园宣讲会我学到了什么">。</p>
 <p>到学期末（6月），让我和同学A一起做<a href="http://sjysxy.jci.edu.cn/" target="_blank" rel="external">设计学院网站</a>（给了设计稿），用迅时CMS搭建网站后台（Asp.net）。主要是我做。那时相当于隔了一年多，要重新捡起HTML，CSS，JS。连引入的jquery和自己写的JS顺序都能弄反，连Jquery的选项卡都写不来。熬了几次夜，在同学A和老师的指导下。终于完成了。这时，我开始感受到，就业压力，我究竟要往哪条路走。是<strong>新媒体运营（PPT）</strong>，或者是<strong>PHP开发</strong>，还是<strong>前端开发</strong>？<br>如果走新媒体运营（PPT），那么要开个微信公众号，写PPT相关文章，PPT演界网卖模板，等等。</p>
-<h3 id="真正意义上开始学前端开发"><a href="#真正意义上开始学前端开发" class="headerlink" title="真正意义上开始学前端开发"></a>真正意义上开始学前端开发</h3><p>大三暑假，课题组业务需求，我和同学A，B，都留在课题组做任务学习。前期我还在学PHP，后来室友L，在杭州暑假实习，他说前端也比较火。刚好又在网易云课堂，看到网易推出前端微专业第二期。价格一千多。虽然对于在更名大学办公室做PPT和做网络中心团队队长赚了少许钱的我来说，不是很贵，但上学期报名了驾照（3K+），所以就买不起了。但那时我就确定了方向，前端开发，因为入门相对容易，并且所见即所得，喜欢视觉交互，和之前玩PPT是同样注重视觉交互和逻辑。另外在PHP方面根本没做什么项目。要走前端，原生JavaScript必学！于是在知乎上看到说智能社的JS视频<a href="http://study.163.com/course/courseMain.htm?courseId=224014" target="_blank" rel="external">《精通JavaScript开发》</a>，这套课程不错。那时就没多想，先看完这套课程再学其他的。<strong>很多时候，你想学的太多，都在同时学，往往效果不好，而是先学什么再学什么</strong>。记得那时，晚上9点断网，他们在打牌，我回去后在看下载好的视频。学完这条课程后，感觉有些提升，至少熟练了下写代码。<br>学完这套后，就在慕课网学习其他前端相关知识。<br>8月，课题组组建了一支团队，参加互联网+大赛，当时学校比较重视这次比赛，召集参赛者在学校机房培训，解决吃住问题（在教工食堂吃了10多天），我一不小心又成了<strong>临时班长</strong>，协助就业处的老师处理相关事务。我还负责团队赛项目计划书的撰写和PPT制作。<br>后来我们团队依次进入校赛，省赛，国赛，最后10月份到吉林大学（吉林长春）参赛国赛，获得国赛金奖（前30）和最佳创意奖，载誉归来之时，学校领导在校门口接我们，学校党委书记说奖励我们团队10万元。刚开始以为不会分到没多少钱。后来就有钱买课程了。双十一期间，就买了网易云课堂的前端开发微专业第三期，系统的学习前端开发。另外还买了妙味课堂的视频课程学习。<strong>有人说，你要学知识，把市面上这类书都买下来，看懂并消化。那你肯定就有提升了。</strong><br>11月，老师N让我做<a href="http://xgc.jci.edu.cn/" target="_blank" rel="external">学工处</a>的网站，同样是Asp.net的后台。这次就没做多久，也没做设计学院网站那么痛苦。<br>12月，开始做毕业设计，是用php+mySql做第二课堂管理系统。1月5日，提前答辩通过。</p>
+<h3 id="真正意义上开始学前端开发"><a href="#真正意义上开始学前端开发" class="headerlink" title="真正意义上开始学前端开发"></a>真正意义上开始学前端开发</h3><p>大三暑假，课题组业务需求，我和同学A，B，都留在课题组做任务学习。前期我还在学PHP，后来室友L，在杭州暑假实习，他说前端也比较火。刚好又在网易云课堂，看到网易推出前端微专业第二期。价格一千多。虽然对于在更名大学办公室做PPT和做网络中心团队队长赚了少许钱的我来说，不是很贵，但上学期报名了驾照（3K+），所以就买不起了。但那时我就确定了方向，前端开发，因为入门相对容易，并且所见即所得，喜欢视觉交互，和之前玩PPT是同样注重视觉交互和逻辑。另外在PHP方面根本没做什么项目。要走前端，原生JavaScript必学！于是在知乎上看到说智能社的JS视频<a href="http://study.163.com/course/courseMain.htm?courseId=224014" target="_blank" rel="external">《精通JavaScript开发》</a>，这套课程不错。那时就没多想，先看完这套课程再学其他的。<strong>很多时候，你想学的太多，都在同时学，往往效果不好，而是先学什么再学什么</strong>。记得那时，晚上9点断网，他们在打牌，我回去后在看下载好的视频。学完这条课程后，感觉有些提升，至少熟练了下写代码。<br>学完这套后，就在慕课网学习其他前端相关知识。<br>8月，课题组组建了一支团队，参加互联网+大赛，当时学校比较重视这次比赛，召集参赛者在学校机房培训，解决吃住问题（在教工食堂吃了10多天），我一不小心又成了<strong>临时班长</strong>，协助就业处的老师处理相关事务。我还负责团队赛项目计划书的撰写和PPT制作。<br>后来我们团队（指尖上的陶艺项目）依次进入校赛，省赛，国赛，最后10月份到吉林大学（吉林长春）参赛国赛，获得国赛金奖（前30）和最佳创意奖，载誉归来之时，学校领导在校门口接我们，学校党委书记说奖励我们团队10万元。刚开始以为不会分到没多少钱。后来就有钱买课程了。双十一期间，就买了网易云课堂的前端开发微专业第三期，系统的学习前端开发。另外还买了妙味课堂的视频课程学习。<strong>有人说，你要学知识，把市面上这类书都买下来，看懂并消化。那你肯定就有提升了。</strong><br>11月，老师N让我做<a href="http://xgc.jci.edu.cn/" target="_blank" rel="external">学工处</a>的网站，同样是Asp.net的后台。这次就没做多久，也没做设计学院网站那么痛苦。<br>12月，开始做毕业设计，是用php+mySql做第二课堂管理系统。1月5日，提前答辩通过。</p>
 <h3 id="大四寒假"><a href="#大四寒假" class="headerlink" title="大四寒假"></a>大四寒假</h3><p>开发水平那么差的我，当然是不忘抓住这段时间，提升自己的。看妙味课堂的视频。学着前端微专业，看课程，查资料，讨论区讨论，做作业，改作业。提交作业有截止日期。感觉这段时间挺充实的。<br>也在考虑大四下学期是否去学校，校内实习，还是去公司实习。老师L是推荐我去公司实习，能学挺多。<br>虽然11月份参加了学校的招聘会，有公司问我用过Bootstrap吗，我说没有。后来有几家公司，叫我去实习，我没去。主要是以下考虑：<br><strong>1、公司前端团队好，实习则好。不好，不如自学</strong>。<br><strong>2、自己不足还有很多，希望能继续学完前端开发微专业，获得优秀学员，也许能进好一点的公司</strong>。<br><strong>3、毕竟不考研，以后有的是工作时间，还不如继续享受下最后一学期的校园生活</strong>。</p>
 <h3 id="大四最后一个学期"><a href="#大四最后一个学期" class="headerlink" title="大四最后一个学期"></a>大四最后一个学期</h3><p>开学伊始，我和同学A，B都没去公司实习，重新来到了课题组。刚去不久，老师N就推荐我去南昌，算是实习，说有搞PHP的愿意带一个人一起做项目。后来委婉的拒绝了。因为已经不想走PHP开发路线，想走前端开发路线。但本学期，老师交给我的任务依旧是PHP开发的。第二课堂管理系统（PHP+MySql，CI框架）。因为不是很赶，我就前端微专业，百度前端技术学院任务，（妙味课堂的vip视频）三线并行。4月初，完成了<a href="http://lxchuan12.github.io/Netease-Web/">前端微专业大作业</a>，获得优秀学员证书。在学校，上班是996（早上9点上班，晚上9点下班，中午休息1-2小时）。周日老师不在办公室，而我一般在（同学A，B不在）。因为我太Low了，所以只好多花点时间学习。有段时间，都是24点前提交完代码，才去刷牙洗脸睡觉。晚上躺着睡前还在<strong>牛客网</strong>刷题，或者看视频，或者看前端开发类电子书。</p>
 <h3 id="面试，入职杭州一家移动互联网公司"><a href="#面试，入职杭州一家移动互联网公司" class="headerlink" title="面试，入职杭州一家移动互联网公司"></a>面试，入职杭州一家移动互联网公司</h3><p>4月底投简历，5月劳动节一过，我和同学A就来杭州面试。我求职还算顺利，面试了3天，共9家。有的给了offer，就选了一家我认为比较合适的。6月1日入职杭州一家移动互联网公司，公司使用花名，我自己挑选了一个，叫<strong>轩辕</strong>。于是把网上各种昵称，改成了<strong>轩辕Rowboat</strong>。</p>
@@ -757,40 +814,6 @@
       <category term="js" scheme="https://lxchuan12.github.io/tags/js/"/>
     
       <category term="wechat" scheme="https://lxchuan12.github.io/tags/wechat/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(转)一种代码量更少的(micro clearfix)清除浮动的hack</title>
-    <link href="https://lxchuan12.github.io/2016/08/19/20160819-css-micro%20clearfix-hack/"/>
-    <id>https://lxchuan12.github.io/2016/08/19/20160819-css-micro clearfix-hack/</id>
-    <published>2016-08-19T15:24:12.000Z</published>
-    <updated>2016-08-19T15:36:30.924Z</updated>
-    
-    <content type="html"><![CDATA[<p>clearfix hack做为一种无需借助额外标签清除浮动的方法已经人尽皆知了，本文给出一种优化方案，可以进一步减少所需css的数量……<a id="more"></a></p>
-<p>Demo: <a href="http://nicolasgallagher.com/micro-clearfix-hack/demo/" target="_blank" rel="external">Micro clearfix hack</a></p>
-<p>Known support: Firefox 3.5+, Safari 4+, Chrome, Opera 9+, IE 6+</p>
-<p>micro clearfix基于 <a href="http://www.yuiblog.com/blog/2010/09/27/clearfix-reloaded-overflowhidden-demystified/" target="_blank" rel="external">Thierry Koblentz’s “clearfix reloaded</a>reloaded优化而来，适用于现代浏览器（modern browsers）</p>
-<p>下面是micro clearfix的代码片段<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">.cf:before,</div><div class="line">.cf:after &#123;</div><div class="line">    content: &quot; &quot;; </div><div class="line">    display: table; </div><div class="line">&#125;</div><div class="line">.cf:after &#123;</div><div class="line">    clear: both;</div><div class="line">&#125;</div><div class="line">.cf &#123;</div><div class="line">    *zoom: 1;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>“micro clearfix”生成伪类元素，并将其display属性设置为table，这样就会创建一个匿名<a href="http://www.w3.org/TR/CSS2/tables.html#anonymous-boxes" target="_blank" rel="external">table-cell</a>，同时生成了新的BFC，这样意味着<br>:before伪类会阻止上边距折叠，:after伪类用于清除浮动，好处是不用隐藏产生的内容了，所需要的css代码就变少了。</p>
-<p>为了清除浮动包含:before选择器是没必要的，但是:before的加入可以阻止top-margins折叠，这样有两个好处：</p>
-<p>同其他使用BFC方式清除浮动一样，确保了视觉上的一致，例如使用overflow:hidden<br>IE 6/7中使用zoom:1 时，确保了视觉上的一致<br>N.B.: 有一个细节：IE 6/7中在新的BFC中浮动元素的下边距是不会包含在内的，进一步的描述可以看这里： <a href="http://nicolasgallagher.com/better-float-containment-in-ie/" target="_blank" rel="external">Better float containment in IE using CSS expressions</a>.<br>content:” “的使用避免了一个Opera的bug，如果contenteditable属性同时出现在元素中时，这个bug会在待清除元素周围生成空格。一种可选的修复方案是使用 font:0/0 a，多谢Sergio Cerrutti测试出这个bug</p>
-<p>转载于：<a href="http://www.jianshu.com/p/7521ec9d8f24" target="_blank" rel="external">一种代码量更少的(micro clearfix)清除浮动的hack</a></p>
-<p>英文版：<a href="http://nicolasgallagher.com/micro-clearfix-hack/" target="_blank" rel="external">A new micro clearfix hack</a>，转载标明出处，谢谢！</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;clearfix hack做为一种无需借助额外标签清除浮动的方法已经人尽皆知了，本文给出一种优化方案，可以进一步减少所需css的数量……
-    
-    </summary>
-    
-      <category term="CSS" scheme="https://lxchuan12.github.io/categories/CSS/"/>
-    
-    
-      <category term="css" scheme="https://lxchuan12.github.io/tags/css/"/>
-    
-      <category term="clearfix" scheme="https://lxchuan12.github.io/tags/clearfix/"/>
     
   </entry>
   
