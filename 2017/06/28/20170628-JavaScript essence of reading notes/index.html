@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>JavaScript 语言精粹 读书笔记 | 轩辕Rowboat的博客 | 前端路上 | PPT爱好者 | 所知甚少，唯善学。</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="theme-color" content="#3D95D5">
+  
+  
+  <meta name="keywords" content="JavaScript,读书笔记">
+  <meta name="description" content="JavaScript语言精粹（修订版） 读书笔记（还在继续写^_^，先发一部分出来）
+第6章 数组数组是一段线性分配的内存，它通过整数计算偏移并访问其中的元素。数组是一种性能出色的数据结构。不幸的是，JavaScript没有像此类数组一样的数据结构。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript 语言精粹 读书笔记">
+<meta property="og:url" content="https://lxchuan12.github.io/2017/06/28/20170628-JavaScript essence of reading notes/index.html">
+<meta property="og:site_name" content="轩辕Rowboat的博客">
+<meta property="og:description" content="JavaScript语言精粹（修订版） 读书笔记（还在继续写^_^，先发一部分出来）
+第6章 数组数组是一段线性分配的内存，它通过整数计算偏移并访问其中的元素。数组是一种性能出色的数据结构。不幸的是，JavaScript没有像此类数组一样的数据结构。">
+<meta property="og:updated_time" content="2017-06-28T14:38:54.347Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JavaScript 语言精粹 读书笔记">
+<meta name="twitter:description" content="JavaScript语言精粹（修订版） 读书笔记（还在继续写^_^，先发一部分出来）
+第6章 数组数组是一段线性分配的内存，它通过整数计算偏移并访问其中的元素。数组是一种性能出色的数据结构。不幸的是，JavaScript没有像此类数组一样的数据结构。">
+  
+    <link rel="alternative" href="/atom.xml" title="轩辕Rowboat的博客" type="application/atom+xml">
+  
+  <meta name="summary" content="&lt;p&gt;JavaScript语言精粹（修订版） 读书笔记（还在继续写^_^，先发一部分出来）&lt;/p&gt;
+&lt;h3 id=&quot;第6章-数组&quot;&gt;&lt;a href=&quot;#第6章-数组&quot; class=&quot;headerlink&quot; title=&quot;第6章 数组&quot;&gt;&lt;/a&gt;第6章 数组&lt;/h3&gt;&lt;p&gt;数组是一段线性分配的内存，它通过整数计算偏移并访问其中的元素。&lt;br&gt;数组是一种性能出色的数据结构。不幸的是，JavaScript没有像此类数组一样的数据结构。">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="loading" class="active"></div>
+
+  <nav id="menu" class="hide" >
+   <div class="inner flex-row-vertical">
+  <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+      <i class="icon icon-lg icon-close"></i>
+  </a>
+  <div class="brand-wrap">
+    <div class="brand">
+      <a href="/" class="avatar"><img src="/img/logo.jpg"></a>
+      <div class="introduce">
+        <h5 class="nickname">轩辕Rowboat</h5>
+        <a href="mailto:lxchuan12@163.com" title="lxchuan12@163.com" class="mail">lxchuan12@163.com</a>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-wrap flex-col">
+    <ul class="nav">
+      
+          <li class="waves-block waves-effect">
+            <a href="/"  >
+              <i class="icon icon-lg icon-home"></i>
+              主页
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="/archives"  >
+              <i class="icon icon-lg icon-archives"></i>
+              文章
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="http://www.jianshu.com/users/83129d433d72/latest_articles" target="_blank" >
+              <i class="icon icon-lg icon-book"></i>
+              简书
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="http://weibo.com/lxchuan12" target="_blank" >
+              <i class="icon icon-lg icon-weibo"></i>
+              微博
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="https://lxchuan12.github.io/works/" target="_blank" >
+              <i class="icon icon-lg icon-hand-o-right"></i>
+              作品展示
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="https://github.com/lxchuan12" target="_blank" >
+              <i class="icon icon-lg icon-github"></i>
+              Github
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="https://lxchuan12.github.io/2016/09/07/20160907-How-do-I-set-foot-on-the-front-end-of-the-road/" target="_blank" >
+              <i class="icon icon-lg icon-user"></i>
+              关于我
+            </a>
+          </li>
+      
+    </ul>
+
+    <footer class="footer">
+  <p><a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0;vertical-align:middle;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAAAPCAMAAABEF7i9AAAAllBMVEUAAAD///+rsapERER3d3eIiIjMzMzu7u4iIiKUmZO6v7rKzsoODg4RERFVVVUNDQ0NDg0PEA8zMzNLTEtbXltmZmZydnF9gn2AgICPkI+ZmZmqqqq7u7vFxsXIzMgNDQwZGRkgICAhISEkJSMnKCcuMC4xMzE5Ozk7PTtBQkFCQkJDQ0Nna2eGhoaHh4ezuLLGysbd3d1wVGpAAAAA4UlEQVR42q2T1xqCMAyFk7QsBQeKA9x7j/d/OSm22CpX0nzcpA1/T05aAOuBVkMAScQFHLnEwoCo2f1TnQIGoVMewjZEjVFN4GH1Ue1Cn2jWqwfsOOj6wDwGvotsl/c8lv7KIq1eLOsT0HMFHMIE/RZyHnlphryT9zyV+8WH5e8yQw3wnQvgAFxPTKUVi555SHR/lOfLMgVTeDlSfN+TaoUsiTyeIm+bCkHvCA2FUKG48LDtYBZBknsYP/G8NTw0gaaHyuQf4H5pecrB/FYCT2sL9zAfy1Xyjou6L8X2W7YcLyBZCRtnq/zfAAAAAElFTkSuQmCC" /></a></p>
+  <p>轩辕Rowboat的博客 &copy; 2017</p>
+  <p>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme
+  <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></p>
+  <a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-2x icon-rss-square"></i></a>
+</footer>
+
+  </div>
+</div>
+
+  </nav>
+  <main id="main">
+    <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">JavaScript 语言精粹 读书笔记</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input " autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-share">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header">
+  <div class="container">
+    <h1 class="author">JavaScript 语言精粹 读书笔记</h1>
+    <h5 class="subtitle">
+        
+            <time datetime="2017-06-28T14:26:53.000Z" itemprop="datePublished" class="page-time">
+  2017-06-28
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/读书笔记/">读书笔记</a></li></ul>
+
+        
+    </h5>
+  </div>
+</header>
+
+    <div class="container body-wrap">
+      <article id="post-20170628-JavaScript essence of reading notes" 
+  class="article article-type-post" itemprop="blogPost">
+    <div class="post-meta flex-row">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/读书笔记/">读书笔记</a></li></ul>
+
+    </div>
+    <div class="post-body">
+        <aside class="post-widget" id="post-widget">
+
+            
+            <div class="post-share" id="post-share">
+    <div class="tit">分享到：</div>
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" href="javascript:;" data-title="微博" data-service="tsina">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns" href="javascript:;" data-title="微信" data-service="weixin">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" href="javascript:;" data-title=" QQ" data-service="cqq">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" href="javascript:;" data-title=" Facebook" data-service="fb">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" href="javascript:;" data-title=" Twitter" data-service="twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="douban share-sns" href="javascript:;" data-title="豆瓣" data-service="douban">
+          豆
+        </a>
+      </li>
+    </ul>
+ </div>
+
+            
+
+            
+            <nav class="post-toc-wrap" id="post-toc">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#第6章-数组"><span class="post-toc-number">1.</span> <span class="post-toc-text">第6章 数组</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#第8章-方法"><span class="post-toc-number">2.</span> <span class="post-toc-text">第8章 方法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Array"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">Array</span></a></li></ol></li></ol>
+            </nav>
+            
+        </aside>
+
+        <div class="post-main">
+
+            <div class="post-content" id="post-content" itemprop="postContent">
+            <p>JavaScript语言精粹（修订版） 读书笔记（还在继续写^_^，先发一部分出来）</p>
+<h3 id="第6章-数组"><a href="#第6章-数组" class="headerlink" title="第6章 数组"></a>第6章 数组</h3><p>数组是一段线性分配的内存，它通过整数计算偏移并访问其中的元素。<br>数组是一种性能出色的数据结构。不幸的是，JavaScript没有像此类数组一样的数据结构。<a id="more"></a></p>
+<p><strong>数组字面量</strong><br>对象字面量<br>数组继承了Array.prototype大量有用的方法。而对象字面量是继承自Object.prototype。<br>数组有length属性，而对象没有。<br><strong>长度</strong><br>每个数组都有一个length属性。<br>可以直接设置length的值。设置更大的length不会给数组分配更多的空间，而设小导致所有下标大于等于新length的属性被删除。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var arr = [1,2,3];</div><div class="line">arr.length = 1;</div><div class="line">console.log(arr) // [1]</div></pre></td></tr></table></figure></p>
+<p>也可以通过length来通过添加值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var arr = [1,2,3];</div><div class="line">arr[arr.length] = 4;</div><div class="line">console.log(arr) // [1,2,3,4]</div></pre></td></tr></table></figure></p>
+<p>有时用push方法更方便。<br><strong>删除</strong><br>由于JavaScript的数组也是对象，所以delete运算符可以用来从数组中移出元素。移除后，长度不变，原位置上变成了undefined。<br>可以使用Array.prototype.splice方法删除数组。<br><strong>枚举</strong><br>JS数组就是对象，所以for in语句可以用来遍历数据的所有属性。<br><strong>不过</strong>，for in无法保证属性顺序。并且可能从原型链中得到意外的属性。<br>for循环可以避免以上问题。<br><strong>容易混淆的地方</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">typeof [] === &quot;object&quot;; // true</div><div class="line">typeof &#123;&#125; === &quot;object&quot;; // true</div></pre></td></tr></table></figure></p>
+<p>识别是否是数组。<br>方法一、<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var is_array = function (value) &#123;</div><div class="line">  return value &amp;&amp; typeof value === &apos;object&apos; &amp;&amp; value.constructor === Array;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<p>但它在识别从不同窗口（window）或帧（frame）里的构造的数组时会失败。<br>有一个更好的方式：<br>方法二、<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var is_array = function (value) &#123;</div><div class="line">  return Object.prototype.toString.apply(value) === &apos;[object Array]&apos;;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><strong>扩展</strong>：<br>方法三、<br>ES5 提供了Array.isArray()的方法。不过兼容性是IE9+。<br>要做到兼容，可以用如下方法。MDN上提供的。<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray" target="_blank" rel="external">MDN Array.isArray</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">if (!Array.isArray)&#123;</div><div class="line">  Array.isArray = function(arg)&#123;</div><div class="line">    return Object.prototype.toString.call(arg) === &apos;[object Array]&apos;;</div><div class="line">  &#125;;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>方法四、<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/instanceof" target="_blank" rel="external"><strong>instanceof</strong> 运算符用来测试一个对象在其原型链中是否存在一个构造函数的 prototype 属性。</a><br>方法五、<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/isPrototypeOf" target="_blank" rel="external"><strong>isPrototypeOf()</strong> 方法用于测试一个对象是否存在于另一个对象的原型链上。</a><br>方法六、<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/GetPrototypeOf" target="_blank" rel="external"><strong>Object.getPrototypeOf()</strong> 方法返回指定对象的原型（即, 内部[[Prototype]]属性的值）。</a><br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var arr = [];</div><div class="line">arr instanceof Array;</div><div class="line">Array.prototype.isPrototypeOf(arr);</div><div class="line">Object.getPrototypeOf(arr) === Array.prototype;</div></pre></td></tr></table></figure></p>
+<p>小结：除了方法二、三外，面对复杂的环境，其他的都不能准确的判断是否是数组。<br><strong>方法</strong><br><code>JavaScript</code>提供了一套数组可用的方法，这些方法是被存储在Array.prototype中的函数。<br><code>Object.prototype</code>是可以扩充的。<br><code>Array.prototype</code>也是可以扩充的。<br><code>ES5</code>中提供的<code>Object.create</code>方法。这方法用在数组是没有意义的，因为它产生的是一个对象，而不是一个数组，产生的对象将继承这个数组的值和方法，但它没有<code>length</code>特殊属性。<br><strong>指定初始值</strong><br>JavaScript的数组通常不会预设值。文中写了一个循环来扩展，生成初始值。<br><strong>扩展：</strong><code>ES6</code>中提供了fill来填充。比如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">[&apos;a&apos;,&apos;b&apos;,&apos;c&apos;].fill(0);   // [0,0,0]</div><div class="line">new Array(3).fill(0);   // [0,0,0]</div><div class="line"></div><div class="line">// fill方法还可以接受第二、第三个参数，用于指定填充的起始位置和结束位置（不包含）。</div><div class="line">new Array(3).fill(0,1,2); // [ ,0, ,]  空位不是undefined。空位没有任何值。ES6则是明确将空位转为undefined。</div></pre></td></tr></table></figure></p>
+<h3 id="第8章-方法"><a href="#第8章-方法" class="headerlink" title="第8章 方法"></a>第8章 方法</h3><h4 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h4><p><strong>array.concat(item…)</strong><br>concat 方法产生一个新数组，它包含一份array的浅复制并把一个或多个参数item附加在其后。如果item是数组，那么每个元素分别被添加。<br>后面有功能类似的array.push(item…)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var a = [&apos;a&apos;,&apos;b&apos;,&apos;c&apos;];</div><div class="line">var b = [&apos;x&apos;,&apos;y&apos;,&apos;z&apos;];</div><div class="line">var c = a.concat(b, true);</div><div class="line">// c =&gt; [&apos;a&apos;,&apos;b&apos;,&apos;c&apos;,&apos;x&apos;,&apos;y&apos;,&apos;z&apos;,true]</div></pre></td></tr></table></figure></p>
+<p><strong>扩展：</strong> ES6 有更便捷的扩展运算符…<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var a = [&apos;a&apos;,&apos;b&apos;,&apos;c&apos;];</div><div class="line">var b = [&apos;x&apos;,&apos;y&apos;,&apos;z&apos;];</div><div class="line">var c = [...a,true,...b];   // [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, true, &quot;x&quot;, &quot;y&quot;, &quot;z&quot;]</div></pre></td></tr></table></figure></p>
+<p><strong>array.join(separator)</strong><br>join方法把一个array构造成一个字符串。<br>separator 默认值就是逗号’,’。<br>如果你想把大量的字符串片段组装成一个字符串，把这些片段放在一个数组中，并用join方法连接起来通常比用+元素运算符连接起来要快。</p>
+<blockquote>
+<p>译注：对于IE6/7，使用join连接大量字符串效率确实优于加号运算符。但目前主流浏览器，包括IE8以后的版本，都对+元素运算符连接字符串做了优化，性能已经显著高于Array.join()。所以目前大多数情况下，建议首选使用+ 连接字符串。更多参看《高性能网站建设进阶指南》中字符串优化相关章节。</p>
+</blockquote>
+<p><strong>array.pop()</strong><br>pop方法移除array中的最后一个元素，并返回这个元素。如果array为空，则返回undefined。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var a = [&apos;a&apos;,&apos;b&apos;,&apos;c&apos;];</div><div class="line">var c = a.pop(); // a 是 [&apos;a&apos;,&apos;b&apos;]  c是 &apos;c&apos;</div><div class="line">// pop 可以像这样实现。</div><div class="line">Array.prototype.pop = function () &#123;</div><div class="line">  return this.splice(this.length-1,1)[0];</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><strong>array.push(item…)</strong><br>与concat不同的是，它会修改array，如果参数item是数组，它会把参数数组作为单个元素整个添加到数组中。并返回这个array的新长度值。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var a = [1,2,3];</div><div class="line">var b = [4,5,6];</div><div class="line">var c = a.push(b,true);</div><div class="line">// a 是 [1,2,3,[4,5,6],true]</div><div class="line">// c 是 5</div></pre></td></tr></table></figure></p>
+<p>push可以像这样实现：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">Array.prototype.push = function () &#123;</div><div class="line">  this.splice.apply(</div><div class="line">  this,</div><div class="line">  [this.length,0].</div><div class="line">  concat(Array.prototype.slice.apply(arguments)));</div><div class="line">  return this.length;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><strong>array.reverse()</strong><br>reverve反转array元素顺序，并返回array本身。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var a = [1,2,3];</div><div class="line">var b = a.reverse();</div><div class="line">// a 和 b都是 [3,2,1]</div></pre></td></tr></table></figure></p>
+<p><strong>array.shift()</strong><br>shift移除array的第一个元素并返回这个元素。如果array为空，则返回undefined。shift通常比pop慢的多。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var a = [1,2,3];</div><div class="line">var c = a.shift(); // a 是[2,3] , c 是1</div></pre></td></tr></table></figure></p>
+<p>shift可以这样实现：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Array.prototype.shift = function()&#123;</div><div class="line">  return this.splice(0,1)[0];</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><strong>array.slice(start[, end])</strong><br>slice是对array中的一段做浅复制。end是可选的。默认是array.length,如果两个参数任何一个是负数，array.length会和相加。如果start大于array.length,获得一个[],字符串也有Sting.slice这个同名方法。</p>
+
+
+            
+            <div class="post-reward">
+                <a id="rewardBtn" href="javascript:;" class="post-reward-btn waves-effect waves-circle waves-light">赏</a>
+            </div>
+            
+            
+            <blockquote>
+                <p>
+                本文地址：
+                <a href="https://lxchuan12.github.io/2017/06/28/20170628-JavaScript essence of reading notes/" target="_blank" rel="external">https://lxchuan12.github.io/2017/06/28/20170628-JavaScript essence of reading notes/</a>
+                </p>
+                <footer><cite><a href="https://lxchuan12.github.io">@轩辕Rowboat的博客</a></cite></footer>
+            </blockquote>
+            </div>
+            
+<nav class="post-nav">
+  
+
+  
+    <div class="waves-block waves-effect next fr">
+      <a href="/2017/06/02/20170602-After a year's work, I had some insights/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">工作一年后，我有些感悟</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+            
+            
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="20170628-JavaScript essence of reading notes" data-title="JavaScript 语言精粹 读书笔记" data-url="https://lxchuan12.github.io/2017/06/28/20170628-JavaScript essence of reading notes/index.html"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"lxchuan12"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+
+        </div>
+    </div>
+</article>
+
+<div id="reward" class="reward-lay">
+    <a class="reward-off" id="rewardOff" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        你的打赏是我写作的动力~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <ul class="reward-items">
+        
+        <li>
+            <img src="/img/wechat.jpg" title="微信打赏二维码" alt="微信打赏二维码">
+            <p>微信</p>
+        </li>
+        
+
+        
+        <li>
+            <img src="/img/alipay.jpg" title="支付宝打赏二维码" alt="支付宝打赏二维码">
+            <p>支付宝</p>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+  </main>
+<div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+<script>
+var BLOG_SHARE = {
+    title: "JavaScript 语言精粹 读书笔记",
+    pic: "/img/logo.jpg",
+    summary: document.getElementsByName('summary')[0].content,
+    url: "https://lxchuan12.github.io/2017/06/28/20170628-JavaScript essence of reading notes/index.html"
+};
+</script>
+<div class="global-share" id="global-share">
+    <div class="tit">分享到：</div>
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" href="javascript:;" data-title="微博" data-service="tsina">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns" href="javascript:;" data-title="微信" data-service="weixin">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" href="javascript:;" data-title=" QQ" data-service="cqq">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" href="javascript:;" data-title=" Facebook" data-service="fb">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" href="javascript:;" data-title=" Twitter" data-service="twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="douban share-sns" href="javascript:;" data-title="豆瓣" data-service="douban">
+          豆
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+
+<script src="/js/main.js"></script>
+
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<script type="text/template" id="search-tpl">
+<li class="item">
+    <a href="/{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</script>
+
+<script src="/js/search.js"></script>
+
+
+
+
+
+
+
+
+
+</body>
+</html>
