@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://lxchuan12.github.io/"/>
-  <updated>2017-06-28T14:38:54.347Z</updated>
+  <updated>2017-07-15T15:47:05.398Z</updated>
   <id>https://lxchuan12.github.io/</id>
   
   <author>
@@ -16,11 +16,78 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>JavaScript 语言精粹 读书笔记</title>
-    <link href="https://lxchuan12.github.io/2017/06/28/20170628-JavaScript%20essence%20of%20reading%20notes/"/>
-    <id>https://lxchuan12.github.io/2017/06/28/20170628-JavaScript essence of reading notes/</id>
+    <title>JavaScript 语言精粹 读书笔记（一）1-5章</title>
+    <link href="https://lxchuan12.github.io/2017/07/15/20170628-JavaScript%20essence%20of%20reading%20notes-1/"/>
+    <id>https://lxchuan12.github.io/2017/07/15/20170628-JavaScript essence of reading notes-1/</id>
+    <published>2017-07-15T15:45:52.000Z</published>
+    <updated>2017-07-15T15:47:05.398Z</updated>
+    
+    <content type="html"><![CDATA[<p>JavaScript语言精粹（修订版） 读书笔记（还在继续写^_^，先发一部分出来）</p>
+<h3 id="第1章-精华"><a href="#第1章-精华" class="headerlink" title="第1章 精华"></a>第1章 精华</h3><p>大多数语言都有精华和糟粕。JavaScript令人诡异的事情是，在对这门语言没有的太多了解，甚至对编程都没有太多了解的情况下，你也能用它来完成工作。<a id="more"></a><br>看到这里不禁想起：</p>
+<blockquote>
+<p>张鑫旭大牛在<a href="http://www.zhangxinxu.com/wordpress/2017/06/ten-question-about-frontend-zhihu/" target="_blank" rel="external">《我对知乎前端相关问题的十问十答》</a><br>非计算机专业背景学习JS要点有这一条：<br>所有继承和原型相关内容跳过，注意，是跳过，不要看！没有这些JS一样可以活得很好，你的日常工作一样玩得飞起，当然，你没忍住看了相关知识也没关系，因为你会发现自己看不懂的；</p>
+</blockquote>
+<p>JavaScript的函数是（主要）基于<strong>词法作用域</strong>的顶级对象。</p>
+<blockquote>
+<p>译注：JavaScript中的函数是根据词法来划分作用域的，而不是动态划分作用域的。具体内容参见《JavaScript权威指南》中译第5版相关章节“8.8.1 词法作用域”。<br>JavaScript有非常强大的对象字面量表示法。这种表示法是JSON的灵感来源。<br>原型继承是JavaScript中一个有争议的特性。</p>
+</blockquote>
+<p>《ECMAScript编程语言》第3版定义了JavaScript的标准。<br><a href="http://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf" target="_blank" rel="external">ES3标准</a><br><strong>扩展：</strong>ES5和ES6等标准可参见这篇文章：<a href="https://zhuanlan.zhihu.com/p/27537439" target="_blank" rel="external">ECMAScript 2018 标准导读</a></p>
+<p>一个简单的例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Function.prototype.method = function(name, func) &#123;</div><div class="line">  this.prototype[name] = func;</div><div class="line">  return this;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>书中贯彻始终都会用到这个method方案，作者将会在第4章解释它。</p>
+<h3 id="第3章-对象"><a href="#第3章-对象" class="headerlink" title="第3章 对象"></a>第3章 对象</h3><p>JavaScript简单数据类型包括数字、字符串、布尔值，null值和undefined值。其他所有值都是对象。<br>数组、字符串和布尔值“貌似”对象，因为它们拥有方法（包装对象），但它们是不可变的。<br>对象是属性的容器，其中每个属性都拥有名字和值。属性名可以是包括空字符串在内的所有字符串，属性值可以是除了undefined值之外的任何值。</p>
+<p>JavaScript包含一种原型链的特性，允许对象继承到另一个对象的属性。正确地使用它能减少对象初始化时的消耗的时间和内存。<br><strong>检索</strong><br><code>.</code>,<code>[]</code>两种检索方式，推荐点<code>.</code>表示法。<br>尝试重<code>undefined</code>的成员属性中取值将会导致<code>TypeError</code>异常，这时可以通过&amp;&amp; 来避免错误。<br><strong>更新</strong><br>如果属性名已经存在对象里。那么属性的值会被替换。如果之前没有拥有那个属性名，那么该属性将被扩充到对象中。<br><strong>引用</strong><br>对象通过引用来传递。它们永远不会被复制。<br><strong>原型</strong><br>所有通过对象字面量创建的对象都链接到Object.prototype。<br>创建新对象时，可以选择某个对象作为它的原型。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">if (typeof Object.create !== &apos;function&apos;) &#123;</div><div class="line">  Object.create = function(o) &#123;</div><div class="line">    var F = function () &#123;&#125;;</div><div class="line">    F.prototype = o;</div><div class="line">    return new F();</div><div class="line">  &#125;;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>原型连接只有在检索值的时候才被用到。如果尝试去获取对象的某个属性值，但对象没有此属性名，那么JavaScript会试着从原型对象中获取属性值。如果那个原型对象也没有该属性，那么再从它的原型中寻找，依此类推，知道该过程最后达到终点<code>Object.prototype</code>。如果想要的属性完全不存在原型链中，那么结果就是 <code>undefined</code>值。这个过程称为<strong>委托</strong>。<br>原型关系是一种动态的关系。<br><strong>反射</strong><br>原型链上的所有属性都会产生值。有两种方案可以处理掉对象上不需要的属性。<br>①程序检查时丢弃值为函数的属性。但有可能有些值确实是函数，所以该方法不可靠。<br>②使用<code>hasOwnProperty</code>方法，如果是对象拥有独有的属性，则返回true。该方法不会检查原型链。<br><strong>枚举</strong><br>① for in可以遍历一个对象中所有的属性名。但包含函数和一些不关心的原型中属性。而且顺序不确定，可以用 <code>hasOwnProperty</code>方法和typeof排除函数。<br>②for 循环不会出现for in那些情况。</p>
+<p><strong>删除</strong><br>delete运算符可以用来删除对象的属性。<br><strong>减少全局变量的污染</strong><br>可以把全局性的资源纳入一个名称空间之下。这样做能减少冲突。</p>
+<h3 id="第四章-函数"><a href="#第四章-函数" class="headerlink" title="第四章 函数"></a>第四章 函数</h3><p>函数用于①代码复用②信息隐藏③组合调用。一般来说，所谓编程，就是将一组需求分节成一组函数与数据结构的技能。<br>JavaScript的函数就是对象。<br>函数对象连接到Function.prototype(该原型对象本身连接到Object。prototype)。<br>每个函数在创建时会附加两个隐藏属性，函数的上下文和实现函数行为的代码。<br>每个函数对象在创建时也随配有一个prototype属性。它的值是一个拥有constructor属性且值为该函数的对象。</p>
+<p><strong>函数字面量</strong><br>函数字面量包括4个部分。①保留字function②函数名，可以省略，③一组参数④一组语句。<br>函数字面量可以出现在任何允许表达式出现的地方。一个内部函数除了可以访问自己的参数和变量，同时也可以自由访问把它嵌套在其中的父函数的参数和变量。通过函数字面量创建的函数对象包含一个连接到外部上下文的连接。<br>这被称为<strong>闭包</strong>。</p>
+<p><strong>调用</strong><br>除了声明时定义的形式参数，每一个函数还接收两个附加的参数：this和argument。在JavaScript中一共有四种调用模式。①方法调用模式，②函数调用模式③构造器调用模式④apply调用模式。</p>
+<p>（this指向问题一直困扰很多人。我一般是这样记的，谁调用this就指向谁。）</p>
+<p><strong>方法调用模式</strong><br>对象的方法执行,this指向该对象。比如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">var myObj = &#123;</div><div class="line">  value: 0,</div><div class="line">  showValue: function() &#123;</div><div class="line">    console.log(&apos;value:&apos;, this.value);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">myObj.showValue();  // value: 0</div></pre></td></tr></table></figure></p>
+<p><strong>函数调用模式</strong><br>var add = function(a,b) {<br>  return a + b;<br>}<br>add(3,4);  //7<br>window.add(3,4);  //7<br>这种this被绑定到全局对象（window）。<br>可以理解是window.add(3,4);<br>有种简单的办法就是var that = this;把this存储下。<br>例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">var myObj = &#123;</div><div class="line">  value: 0,</div><div class="line">  age: 20,</div><div class="line">  showValue: function() &#123;</div><div class="line">    console.log(&apos;value:&apos;,this.value);</div><div class="line">    var  that = this;</div><div class="line">    var showAge = function() &#123;</div><div class="line">        // window上没有age，所以是undefined</div><div class="line">        console.log(&apos;这里的this是window ---age:&apos;, this.age);  // undefined</div><div class="line">        console.log(&apos;age:&apos;, that.age);  // 20</div><div class="line">     &#125;</div><div class="line">     showAge();</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">myObj.showValue();  // 0， undefined，</div></pre></td></tr></table></figure></p>
+<p><strong>构造器调用模式</strong><br>JavaScript是一门基于原型继承的语言。</p>
+<p>如果在一个函数前面带上new 来调用。那么背地利将会创建一个连接到该函数的prototype成员的新对象，同时this会被绑定到那个新对象上。<br>new 前缀也会改变return 语句的行为。<br>例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">var Quo = function (string) &#123;</div><div class="line">  this.status = string;</div><div class="line">&#125;</div><div class="line">Quo.prototype.get_status = function () &#123;</div><div class="line">  return this.status; </div><div class="line">&#125;</div><div class="line">var myQuo = new Quo(&apos;confused&apos;); // &apos;confused&apos;</div></pre></td></tr></table></figure></p>
+<p>一个函数，如果创建的目的就是希望结合new 前缀来调用。那么它就被称为构造器函数。按照约定，它们保存在以大写函数命名的变量里。如果调用构造器函数时没有在前面加上new,可能会发生非常糟糕的事情，既没有编译时的警告，也没有运行时广告，所以大写约定非常重要。<br>作者不推荐这种形式的构造器函数。有更好的替代方式。</p>
+<p><strong>Apply调用模式</strong><br>JavaScript是一门函数式的面向对象编程语言，所以对象可以拥有方法。<br>apply方法让我们构建一个参数数组传递给调用函数，它也允许我们选择this的值。</p>
+<p><strong>参数</strong><br>arguments，虽然拥有length属性，但不是真正的数组。而是类似数组（array-like）的对象。<br><strong>返回</strong><br>return 可用来是函数提前返回。当return 被执行时，函数立即返回而不再执行余下的语句。<br>一个函数总会返回一个值，如果没指定，那就是返回undefined值。<br>如果函数调用时在前面加上了new 前缀，且返回值不是一个对象，则返回this（该新对象）。<br><strong>异常</strong><br>JavaScript提供了一套异常处理机制。<br>throw语句和try catch<br><strong>扩展类型的功能</strong><br>JavaScript允许给语言的基本类型扩充功能。在第3章中我们已经看到，可以通过Object.prototype添加方法，可以让该方法对所有对象都可用。这样的方式对函数、数组、字符串、数字、正则表达式和布尔值同样适用。</p>
+<p>例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Function.prototype.method = function () &#123;</div><div class="line">  this.prototype[name]  = func;</div><div class="line">  return this;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>基本类型的原型是公用结构，所以在类库混用时务必小心。一个保险的做法就是只在确认没有该方法时才添加它。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">Function.prototype.methods = function(name, func) &#123;</div><div class="line">  if (!this.prototype[name]) &#123;</div><div class="line">      this.prototype[name] = func;</div><div class="line">  &#125;</div><div class="line">  return this;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><strong>递归</strong></p>
+<p>递归函数就是会直接或间接地调用自身的一种函数。递归是一种强大的编程技术，递归是用一般的方式去解决每一个子问题。书中举了一个<strong>汉诺塔</strong>的例子，是程序设计中经典递归问题。详细说明可以参见 <a href="http://baike.baidu.com/view/191666.htm" target="_blank" rel="external">百度百科“汉诺塔”词条</a>。<br>一些语言提供了尾递归优化。尾递归是一种在函数的最后执行调用语句的特殊形式的递归。参见<a href="https://en.wikipedia.org/wiki/Tail_call" target="_blank" rel="external">Tail call</a>。 ES6版本扩展了尾递归。参见阮一峰老师的《ES6标准入门》中的<a href="http://es6.ruanyifeng.com/#docs/function#尾调用优化" target="_blank" rel="external">尾调用优化</a></p>
+<p><strong>作用域</strong><br>在编程语言中，作用域控制着变量与参数的可见性和声明周期。<br>书中指出当前JavaScript没有块级作用域。因为没有块级作用域，所以最好的做法是在函数体的顶部声明函数中可能用到的所有变量。不过ES6扩展了有块级作用域。<br><strong>闭包</strong><br>作用域的好处是内部函数可以访问定义它们的外部函数的参数和变量（除了this和arguments）。<br><strong>回调</strong><br>发起异步请求，提供一个当服务器响应到达时随即出发的回调函数。异步函数立即返回，这样客户端就不会被阻塞。</p>
+<p><strong>模块</strong><br>我们可以使用函数和闭包来构造模块。模块是一个提供接口却隐藏状态与实现的函数或对象。<br>举例：给String添加一个deentityify方法。它的任务是寻找字符串中的HTML字符实体并把它们替换成对应的字符。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">String.method(&apos;deentityify&apos;, function () &#123;</div><div class="line">    // 字符实体表。它映射字符实体的名字到对应的字符。</div><div class="line">    var entity = &#123;</div><div class="line">        quot: &apos;&quot;&apos;,</div><div class="line">        lt: &apos;&lt;&apos;,</div><div class="line">        gt: &apos;&gt;&apos;</div><div class="line">    &#125;;</div><div class="line">    // 返回 deentityify方法</div><div class="line">    return function () &#123;</div><div class="line">        return this.replace(/&amp;([^&amp;;]+);)/g,</div><div class="line">        function (a,b) &#123;</div><div class="line">            var r = entity[b];</div><div class="line">            return typeof r === &apos;string&apos;? r : a;</div><div class="line">        &#125;</div><div class="line">    &#125;;</div><div class="line">&#125;());</div></pre></td></tr></table></figure></p>
+<p>模块模式利用了函数作用域和闭包来创建被绑定对象与私有成员的关联，在上面例子中，只有deentityify方法有权访问字符实体表这个数据对象。</p>
+<p>模块模式的一般形式是：一个定义了私有变量和函数的函数；利用闭包创建可以访问私有变量和函数的特权函数；最后返回这个特权函数，或者把它们保存到一个可以访问的地方。</p>
+<p>使用模块模式就可以摒弃全局变量的使用。它促进了信息隐藏和其他优秀的设计实践。对于应用程序的封装，或者构造其他单例对象，模块模式非常有效。</p>
+<blockquote>
+<p>单例译注<br>模块模式通常结合单例模式使用。JavaScript的单例就是用对象字面量表示法创建的对象，对&gt;象的属性值可以是数值或函数，并且属性值在该对象的生命周期中不会发生变化。更多内容参见：<a href="https://en.wikipedia.org/wiki/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F" target="_blank" rel="external">单例模式</a></p>
+</blockquote>
+<p><strong>级联</strong><br>有一些方法没有返回值。如果我们让这些方法返回this而不是undefined，就可以启用级联。<br>在一个级联中，我们可以在单独一条语句中依次调用同一个对象的很多方法。比如jQuery获取元素、操作样式、添加事件、添加动画等。<br><strong>柯里化</strong><br>柯里化，是把多参数函数转换为一系列单参数函数并进行调用的技术。更多详情可参见：<a href="https://en.wikipedia.org/wiki/%E6%9F%AF%E9%87%8C%E5%8C%96" target="_blank" rel="external">柯里化</a><br>函数也是值。柯里化允许我们把函数与传递给它的参数相结合，产生一个新的函数。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var add1 = add.curry(1);</div><div class="line">document.writeln(add1(6));</div></pre></td></tr></table></figure></p>
+<p>JavaScript并没有curry方法，但可以扩展该功能。<br>arguments不是真正的数组，所以使用了Array.prototype.slice方法。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">Function.method(&apos;curry&apos;,function()&#123;</div><div class="line">    var slice = Array.prototype.slice,</div><div class="line">    args = slice.apply(arguments),</div><div class="line">    that = this;</div><div class="line">    return function() &#123;</div><div class="line">        return that.apply(null, args.concat(slice.apply(arguments)));</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p><strong>记忆</strong><br>函数可以将先前操作的结果记录在某个对象里，从而避免无谓的重复运算。这种优化称作记忆。<br>比如说，我们想要一个递归函数来计算Fibonacci(斐波那契)数列，它的特点是，前面相邻两项之和等于后一项的值。更多参考：<a href="https://en.wikipedia.org/wiki/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91" target="_blank" rel="external">斐波那契</a>。最前面两个数字是0和1。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;JavaScript语言精粹（修订版） 读书笔记（还在继续写^_^，先发一部分出来）&lt;/p&gt;
+&lt;h3 id=&quot;第1章-精华&quot;&gt;&lt;a href=&quot;#第1章-精华&quot; class=&quot;headerlink&quot; title=&quot;第1章 精华&quot;&gt;&lt;/a&gt;第1章 精华&lt;/h3&gt;&lt;p&gt;大多数语言都有精华和糟粕。JavaScript令人诡异的事情是，在对这门语言没有的太多了解，甚至对编程都没有太多了解的情况下，你也能用它来完成工作。
+    
+    </summary>
+    
+      <category term="读书笔记" scheme="https://lxchuan12.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="JavaScript" scheme="https://lxchuan12.github.io/tags/JavaScript/"/>
+    
+      <category term="读书笔记" scheme="https://lxchuan12.github.io/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JavaScript 语言精粹 读书笔记（二）6-10章</title>
+    <link href="https://lxchuan12.github.io/2017/06/28/20170628-JavaScript%20essence%20of%20reading%20notes-2/"/>
+    <id>https://lxchuan12.github.io/2017/06/28/20170628-JavaScript essence of reading notes-2/</id>
     <published>2017-06-28T14:26:53.000Z</published>
-    <updated>2017-06-28T14:38:54.347Z</updated>
+    <updated>2017-07-15T15:47:07.552Z</updated>
     
     <content type="html"><![CDATA[<p>JavaScript语言精粹（修订版） 读书笔记（还在继续写^_^，先发一部分出来）</p>
 <h3 id="第6章-数组"><a href="#第6章-数组" class="headerlink" title="第6章 数组"></a>第6章 数组</h3><p>数组是一段线性分配的内存，它通过整数计算偏移并访问其中的元素。<br>数组是一种性能出色的数据结构。不幸的是，JavaScript没有像此类数组一样的数据结构。<a id="more"></a></p>
@@ -805,37 +872,6 @@
     
     
       <category term="sass" scheme="https://lxchuan12.github.io/tags/sass/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>js如何判断对象为空</title>
-    <link href="https://lxchuan12.github.io/2016/08/27/20160827-Judge-null-object-by-javascript/"/>
-    <id>https://lxchuan12.github.io/2016/08/27/20160827-Judge-null-object-by-javascript/</id>
-    <published>2016-08-27T14:46:23.000Z</published>
-    <updated>2016-08-29T15:46:51.607Z</updated>
-    
-    <content type="html"><![CDATA[<p>vuejs项目中，遇到要判断data中的对象是否为空……<a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">var vm = new Vue(&#123;</div><div class="line">  el:&apos;#demo&apos;,</div><div class="line">  data:&#123;</div><div class="line">    msg:&apos;hello&apos;,</div><div class="line">    ms:&#123;&#125;</div><div class="line">  &#125;,</div><div class="line">  created ()&#123;</div><div class="line">    let that = this;</div><div class="line">    console.log(that.ms);</div><div class="line">    console.log(that.msg);</div><div class="line">    console.log(that.ms === null);//false</div><div class="line">    if(that.ms)&#123;//true</div><div class="line">      console.log(1);//1,</div><div class="line">    &#125;;</div><div class="line">    console.log(that.ms === undefined);//false</div><div class="line">    for(var attr in that.ms)&#123;</div><div class="line">      console.log(attr);</div><div class="line">      console.log(&apos;2&apos;);</div><div class="line">    &#125;</div><div class="line">    //console.log(&apos;3&apos;);</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-<p><a href="http://jsbin.com/xasemec/22/edit?html,js,console" target="_blank" rel="external">点击查看详情vuejs</a></p>
-<p>jquery有工具方法$.isEmptyObject(),查看源码发现这样实现的。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">isEmptyObject:function(obj)&#123;</div><div class="line">    var name;</div><div class="line">    for(name in obj)&#123;</div><div class="line">        return false;</div><div class="line">    &#125;</div><div class="line">    return true;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>这是利用了for in无法循环到系统自带的属性值。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">//比如：</div><div class="line">function Watch()&#123;&#125;</div><div class="line">//Watch.prototype.constructor = Watch;</div><div class="line">//系统自己生成。写出来这句也无法用for in循环到。</div><div class="line">for (var attr in Watch.prototype)&#123;</div><div class="line">    console.log(&apos;can not console&apos;);//无法输出。</div><div class="line">&#125;</div><div class="line">//如果自己写,则可以输出show.</div><div class="line">Watch.prototype.show = function()&#123;&#125;</div></pre></td></tr></table></figure></p>
-<p>这时想起了<a href="http://www.tuicool.com/articles/3meE3a" target="_blank" rel="external">js中数组遍历for与for in区别(强烈建议不要使用for in遍历数组)</a><br>$.isPlainObject()方法：<a href="http://www.365mini.com/page/jquery_isplainobject.htm" target="_blank" rel="external">判断”纯粹的对象”，就是该对象是通过”{}”或”new Object”创建的。</a><br>$.isPlainObject( document.location ) ); // false(在IE中返回true)</p>
-<p><strong>参考资料：</strong><a href="http://www.cnblogs.com/TomXu/archive/2011/12/15/2288411.html" target="_blank" rel="external">汤姆大叔博客</a></p>
-<p>小结:js一切皆为对象，了解面对对象编程很有好处。能研究一遍jquery源码,定能更上一层楼。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;vuejs项目中，遇到要判断data中的对象是否为空……
-    
-    </summary>
-    
-      <category term="JavaScript" scheme="https://lxchuan12.github.io/categories/JavaScript/"/>
-    
-    
-      <category term="vuejs" scheme="https://lxchuan12.github.io/tags/vuejs/"/>
-    
-      <category term="js" scheme="https://lxchuan12.github.io/tags/js/"/>
     
   </entry>
   
