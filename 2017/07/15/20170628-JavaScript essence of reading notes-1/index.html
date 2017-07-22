@@ -10,24 +10,29 @@
   
   
   <meta name="keywords" content="JavaScript,读书笔记">
-  <meta name="description" content="JavaScript语言精粹（修订版） 读书笔记（还在继续写^_^，先发一部分出来）
-第1章 精华大多数语言都有精华和糟粕。JavaScript令人诡异的事情是，在对这门语言没有的太多了解，甚至对编程都没有太多了解的情况下，你也能用它来完成工作。">
+  <meta name="description" content="JavaScript语言精粹（修订版） 读书笔记（还在继续写，先发一部分出来^_^）
+第1章 精华大多数语言都有精华和糟粕。JavaScript令人诡异的事情是，在对这门语言没有的太多了解，甚至对编程都没有太多了解的情况下，你也能用它来完成工作。看到这里不禁想起：
+
+张鑫旭大牛在《我对知乎前端相关问题的十问十答》非计算机专业背景学习JS要点有这一条：所有继承和原型相关内容跳过，注意，是跳过，不要看">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript 语言精粹 读书笔记（一）1-5章">
 <meta property="og:url" content="https://lxchuan12.github.io/2017/07/15/20170628-JavaScript essence of reading notes-1/index.html">
 <meta property="og:site_name" content="轩辕Rowboat的博客">
-<meta property="og:description" content="JavaScript语言精粹（修订版） 读书笔记（还在继续写^_^，先发一部分出来）
-第1章 精华大多数语言都有精华和糟粕。JavaScript令人诡异的事情是，在对这门语言没有的太多了解，甚至对编程都没有太多了解的情况下，你也能用它来完成工作。">
-<meta property="og:updated_time" content="2017-07-15T15:47:05.398Z">
+<meta property="og:description" content="JavaScript语言精粹（修订版） 读书笔记（还在继续写，先发一部分出来^_^）
+第1章 精华大多数语言都有精华和糟粕。JavaScript令人诡异的事情是，在对这门语言没有的太多了解，甚至对编程都没有太多了解的情况下，你也能用它来完成工作。看到这里不禁想起：
+
+张鑫旭大牛在《我对知乎前端相关问题的十问十答》非计算机专业背景学习JS要点有这一条：所有继承和原型相关内容跳过，注意，是跳过，不要看">
+<meta property="og:updated_time" content="2017-07-22T15:49:55.503Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript 语言精粹 读书笔记（一）1-5章">
-<meta name="twitter:description" content="JavaScript语言精粹（修订版） 读书笔记（还在继续写^_^，先发一部分出来）
-第1章 精华大多数语言都有精华和糟粕。JavaScript令人诡异的事情是，在对这门语言没有的太多了解，甚至对编程都没有太多了解的情况下，你也能用它来完成工作。">
+<meta name="twitter:description" content="JavaScript语言精粹（修订版） 读书笔记（还在继续写，先发一部分出来^_^）
+第1章 精华大多数语言都有精华和糟粕。JavaScript令人诡异的事情是，在对这门语言没有的太多了解，甚至对编程都没有太多了解的情况下，你也能用它来完成工作。看到这里不禁想起：
+
+张鑫旭大牛在《我对知乎前端相关问题的十问十答》非计算机专业背景学习JS要点有这一条：所有继承和原型相关内容跳过，注意，是跳过，不要看">
   
     <link rel="alternative" href="/atom.xml" title="轩辕Rowboat的博客" type="application/atom+xml">
   
-  <meta name="summary" content="&lt;p&gt;JavaScript语言精粹（修订版） 读书笔记（还在继续写^_^，先发一部分出来）&lt;/p&gt;
-&lt;h3 id=&quot;第1章-精华&quot;&gt;&lt;a href=&quot;#第1章-精华&quot; class=&quot;headerlink&quot; title=&quot;第1章 精华&quot;&gt;&lt;/a&gt;第1章 精华&lt;/h3&gt;&lt;p&gt;大多数语言都有精华和糟粕。JavaScript令人诡异的事情是，在对这门语言没有的太多了解，甚至对编程都没有太多了解的情况下，你也能用它来完成工作。">
+  <meta name="summary" content="轩辕Rowboat，某世界闻名的陶瓷大学2016届毕业生，目前在杭州从事前端开发工作，也是一枚PPT爱好者。常以轩辕Rowboat为名混迹于江湖。">
   <link rel="shortcut icon" href="/favicon.ico">
   <link rel="stylesheet" href="/css/style.css">
 </head>
@@ -209,7 +214,7 @@
 
             
             <nav class="post-toc-wrap" id="post-toc">
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#第1章-精华"><span class="post-toc-number">1.</span> <span class="post-toc-text">第1章 精华</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#第3章-对象"><span class="post-toc-number">2.</span> <span class="post-toc-text">第3章 对象</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#第四章-函数"><span class="post-toc-number">3.</span> <span class="post-toc-text">第四章 函数</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#第1章-精华"><span class="post-toc-number">1.</span> <span class="post-toc-text">第1章 精华</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#第2章-语法"><span class="post-toc-number">2.</span> <span class="post-toc-text">第2章 语法</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#第3章-对象"><span class="post-toc-number">3.</span> <span class="post-toc-text">第3章 对象</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#第四章-函数"><span class="post-toc-number">4.</span> <span class="post-toc-text">第四章 函数</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#第5章-继承"><span class="post-toc-number">5.</span> <span class="post-toc-text">第5章 继承</span></a></li></ol>
             </nav>
             
         </aside>
@@ -217,8 +222,8 @@
         <div class="post-main">
 
             <div class="post-content" id="post-content" itemprop="postContent">
-            <p>JavaScript语言精粹（修订版） 读书笔记（还在继续写^_^，先发一部分出来）</p>
-<h3 id="第1章-精华"><a href="#第1章-精华" class="headerlink" title="第1章 精华"></a>第1章 精华</h3><p>大多数语言都有精华和糟粕。JavaScript令人诡异的事情是，在对这门语言没有的太多了解，甚至对编程都没有太多了解的情况下，你也能用它来完成工作。<a id="more"></a><br>看到这里不禁想起：</p>
+            <p>JavaScript语言精粹（修订版） 读书笔记（还在继续写，先发一部分出来^_^）</p>
+<h3 id="第1章-精华"><a href="#第1章-精华" class="headerlink" title="第1章 精华"></a>第1章 精华</h3><p>大多数语言都有精华和糟粕。JavaScript令人诡异的事情是，在对这门语言没有的太多了解，甚至对编程都没有太多了解的情况下，你也能用它来完成工作。<br>看到这里不禁想起：</p>
 <blockquote>
 <p>张鑫旭大牛在<a href="http://www.zhangxinxu.com/wordpress/2017/06/ten-question-about-frontend-zhihu/" target="_blank" rel="external">《我对知乎前端相关问题的十问十答》</a><br>非计算机专业背景学习JS要点有这一条：<br>所有继承和原型相关内容跳过，注意，是跳过，不要看！没有这些JS一样可以活得很好，你的日常工作一样玩得飞起，当然，你没忍住看了相关知识也没关系，因为你会发现自己看不懂的；</p>
 </blockquote>
@@ -229,6 +234,7 @@
 <p>《ECMAScript编程语言》第3版定义了JavaScript的标准。<br><a href="http://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf" target="_blank" rel="external">ES3标准</a><br><strong>扩展：</strong>ES5和ES6等标准可参见这篇文章：<a href="https://zhuanlan.zhihu.com/p/27537439" target="_blank" rel="external">ECMAScript 2018 标准导读</a></p>
 <p>一个简单的例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Function.prototype.method = function(name, func) &#123;</div><div class="line">  this.prototype[name] = func;</div><div class="line">  return this;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>书中贯彻始终都会用到这个method方案，作者将会在第4章解释它。</p>
+<h3 id="第2章-语法"><a href="#第2章-语法" class="headerlink" title="第2章 语法"></a>第2章 语法</h3><p>本章主要用铁路图（语法图）表示语法。<br>主要有：空白、标识符、数字、字符串、语句、表达式、字面量、函数。<br>typeof 运算符产生的值有’number’, ‘string’,’boolean’,’undefined’,’function’,’object’。如果运算数是一个数组或者是null,那么结果是’object’,这其实是不对的。</p>
 <h3 id="第3章-对象"><a href="#第3章-对象" class="headerlink" title="第3章 对象"></a>第3章 对象</h3><p>JavaScript简单数据类型包括数字、字符串、布尔值，null值和undefined值。其他所有值都是对象。<br>数组、字符串和布尔值“貌似”对象，因为它们拥有方法（包装对象），但它们是不可变的。<br>对象是属性的容器，其中每个属性都拥有名字和值。属性名可以是包括空字符串在内的所有字符串，属性值可以是除了undefined值之外的任何值。</p>
 <p>JavaScript包含一种原型链的特性，允许对象继承到另一个对象的属性。正确地使用它能减少对象初始化时的消耗的时间和内存。<br><strong>检索</strong><br><code>.</code>,<code>[]</code>两种检索方式，推荐点<code>.</code>表示法。<br>尝试重<code>undefined</code>的成员属性中取值将会导致<code>TypeError</code>异常，这时可以通过&amp;&amp; 来避免错误。<br><strong>更新</strong><br>如果属性名已经存在对象里。那么属性的值会被替换。如果之前没有拥有那个属性名，那么该属性将被扩充到对象中。<br><strong>引用</strong><br>对象通过引用来传递。它们永远不会被复制。<br><strong>原型</strong><br>所有通过对象字面量创建的对象都链接到Object.prototype。<br>创建新对象时，可以选择某个对象作为它的原型。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">if (typeof Object.create !== &apos;function&apos;) &#123;</div><div class="line">  Object.create = function(o) &#123;</div><div class="line">    var F = function () &#123;&#125;;</div><div class="line">    F.prototype = o;</div><div class="line">    return new F();</div><div class="line">  &#125;;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>原型连接只有在检索值的时候才被用到。如果尝试去获取对象的某个属性值，但对象没有此属性名，那么JavaScript会试着从原型对象中获取属性值。如果那个原型对象也没有该属性，那么再从它的原型中寻找，依此类推，知道该过程最后达到终点<code>Object.prototype</code>。如果想要的属性完全不存在原型链中，那么结果就是 <code>undefined</code>值。这个过程称为<strong>委托</strong>。<br>原型关系是一种动态的关系。<br><strong>反射</strong><br>原型链上的所有属性都会产生值。有两种方案可以处理掉对象上不需要的属性。<br>①程序检查时丢弃值为函数的属性。但有可能有些值确实是函数，所以该方法不可靠。<br>②使用<code>hasOwnProperty</code>方法，如果是对象拥有独有的属性，则返回true。该方法不会检查原型链。<br><strong>枚举</strong><br>① for in可以遍历一个对象中所有的属性名。但包含函数和一些不关心的原型中属性。而且顺序不确定，可以用 <code>hasOwnProperty</code>方法和typeof排除函数。<br>②for 循环不会出现for in那些情况。</p>
@@ -258,7 +264,11 @@
 </blockquote>
 <p><strong>级联</strong><br>有一些方法没有返回值。如果我们让这些方法返回this而不是undefined，就可以启用级联。<br>在一个级联中，我们可以在单独一条语句中依次调用同一个对象的很多方法。比如jQuery获取元素、操作样式、添加事件、添加动画等。<br><strong>柯里化</strong><br>柯里化，是把多参数函数转换为一系列单参数函数并进行调用的技术。更多详情可参见：<a href="https://en.wikipedia.org/wiki/%E6%9F%AF%E9%87%8C%E5%8C%96" target="_blank" rel="external">柯里化</a><br>函数也是值。柯里化允许我们把函数与传递给它的参数相结合，产生一个新的函数。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var add1 = add.curry(1);</div><div class="line">document.writeln(add1(6));</div></pre></td></tr></table></figure></p>
 <p>JavaScript并没有curry方法，但可以扩展该功能。<br>arguments不是真正的数组，所以使用了Array.prototype.slice方法。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">Function.method(&apos;curry&apos;,function()&#123;</div><div class="line">    var slice = Array.prototype.slice,</div><div class="line">    args = slice.apply(arguments),</div><div class="line">    that = this;</div><div class="line">    return function() &#123;</div><div class="line">        return that.apply(null, args.concat(slice.apply(arguments)));</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-<p><strong>记忆</strong><br>函数可以将先前操作的结果记录在某个对象里，从而避免无谓的重复运算。这种优化称作记忆。<br>比如说，我们想要一个递归函数来计算Fibonacci(斐波那契)数列，它的特点是，前面相邻两项之和等于后一项的值。更多参考：<a href="https://en.wikipedia.org/wiki/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91" target="_blank" rel="external">斐波那契</a>。最前面两个数字是0和1。</p>
+<p><strong>记忆</strong><br>函数可以将先前操作的结果记录在某个对象里，从而避免无谓的重复运算。这种优化称作记忆。<br>比如说，我们想要一个递归函数来计算Fibonacci(斐波那契)数列，它的特点是，前面相邻两项之和等于后一项的值。更多参考：<a href="https://en.wikipedia.org/wiki/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91" target="_blank" rel="external">斐波那契</a>。最前面两个数字是0和1。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var fibonacci = function() &#123;</div><div class="line">    return n &lt; 2? n : fibonacci(n-1) + fibonacci(n-2);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>这样虽然能完成工作，但它做了很多无谓的工作。<br>构造一个带有记忆功能的函数：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">var memoizer = function(mome, formula) &#123;</div><div class="line">    var recur = function(n) &#123;</div><div class="line">        var result = meno[n];</div><div class="line">        if (typeof result !== &apos;number&apos;) &#123;</div><div class="line">            result = formula(recur, n);</div><div class="line">            meno[n] = result;</div><div class="line">        &#125;</div><div class="line">        return result;</div><div class="line">    &#125;;</div><div class="line">    return recur;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>再用这个memoizer函数来定义fibonacci函数，提供其初始的memo数组和formula函数。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var fibonacci = memoizer([0,1],function(recur, n)&#123;</div><div class="line">    return recur(n-1) + recur (n-2);</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<p>极大的减少了我们的工作量。例如要产生一个记忆的阶乘函数，只需要提供基本的阶乘公式即可：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var factorial = meoizer([1,1], function(recur, n)&#123;</div><div class="line">    return n * recur(n-1);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<h3 id="第5章-继承"><a href="#第5章-继承" class="headerlink" title="第5章 继承"></a>第5章 继承</h3><p>TO DO 闭包 和第5章</p>
 
 
             
