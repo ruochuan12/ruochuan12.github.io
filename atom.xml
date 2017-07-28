@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://lxchuan12.github.io/"/>
-  <updated>2017-07-26T14:48:31.650Z</updated>
+  <updated>2017-07-28T14:28:40.154Z</updated>
   <id>https://lxchuan12.github.io/</id>
   
   <author>
@@ -20,9 +20,10 @@
     <link href="https://lxchuan12.github.io/2017/07/23/20170723-JavaScript%20essence%20of%20reading%20notes/"/>
     <id>https://lxchuan12.github.io/2017/07/23/20170723-JavaScript essence of reading notes/</id>
     <published>2017-07-23T14:23:52.000Z</published>
-    <updated>2017-07-26T14:48:31.650Z</updated>
+    <updated>2017-07-28T14:28:40.154Z</updated>
     
-    <content type="html"><![CDATA[<blockquote>
+    <content type="html"><![CDATA[<p><a href="https://segmentfault.com/a/1190000010313101" target="_blank" rel="external">首发于：segmentfault《JavaScript语言精粹 修订版》 读书笔记</a></p>
+<blockquote>
 <p>之前看到这篇文章，<a href="https://zhuanlan.zhihu.com/p/23265155?refer=dreawer" target="_blank" rel="external">前端网老姚浅谈：怎么学JavaScript？</a>，说到怎么学习JavaScript，那就是<strong>看书、分析源码。</strong><br><strong>10本书读2遍的好处，应该大于一本书读20遍。</strong><br><strong>看书主动学习，看视频是被动学习。</strong><br><strong>看书和分析源码的时机</strong>。但已经工作一年半载时，正是提高的好时候，此时可以去看书了。全面系统的梳理知识点，扫清自己的盲区。如果只是靠项目经验是不够的，通过项目来学习，那&gt;肯定是必须的，工作本身就是一个学习的过程。<br><strong>怎么把一本书看完呢？</strong>很简单，敲。文字加代码都敲。<br>比较认同老姚的说法。去年毕业到现在，我也算是工作一年了，是时候看书查缺补漏了。</p>
 </blockquote>
 <p>于是我就先把这本薄的经典书《JavaScript语言精粹 修订版》<a href="https://book.douban.com/subject/11874748/" target="_blank" rel="external">豆瓣读书本书简介</a>（总共10章，除去附录，才100页），读完并记录了一些笔记。基本算是摘抄书本的，自己联想到了一些知识和资料也扩展了一下。总体写下来近一万字。读书笔记还可以分享给别人看。回顾时，书不在身边还可以看看自己的笔记。想想这类经典书记一遍动手敲一遍也是很值得的。不过这读书笔记中可能会有一些错别字，阅读时如果发现欢迎指正。</p>
@@ -40,7 +41,7 @@
 <h3 id="第2章-语法"><a href="#第2章-语法" class="headerlink" title="第2章 语法"></a>第2章 语法</h3><p>本章主要用铁路图（语法图）表示语法。<br>主要有：空白、标识符、数字、字符串、语句、表达式、字面量、函数。<br><code>typeof</code> 运算符产生的值有<code>&#39;number&#39;</code>, <code>&#39;string&#39;</code>,<code>&#39;boolean&#39;</code>,<code>&#39;undefined&#39;</code>,<code>&#39;function&#39;</code>,<code>&#39;object&#39;</code>。如果运算数是一个数组或者是<code>null</code>,那么结果是<code>&#39;object&#39;</code>,这其实是不对的。</p>
 <h3 id="第3章-对象"><a href="#第3章-对象" class="headerlink" title="第3章 对象"></a>第3章 对象</h3><p><code>JavaScript</code>简单数据类型包括数字、字符串、布尔值，<code>null</code>值和<code>undefined</code>值。其他所有值都是对象。<br>数组、字符串和布尔值“貌似”对象，因为它们拥有方法（包装对象），但它们是不可变的。<br>对象是属性的容器，其中每个属性都拥有名字和值。属性名可以是包括空字符串在内的所有字符串，属性值可以是除了<code>undefined</code>值之外的任何值。</p>
 <p><code>JavaScript</code>包含一种原型链的特性，允许对象继承到另一个对象的属性。正确地使用它能减少对象初始化时的消耗的时间和内存。<br><strong>检索</strong><br><code>.</code>,<code>[]</code>两种检索方式，推荐点<code>.</code>表示法。<br>尝试重<code>undefined</code>的成员属性中取值将会导致<code>TypeError</code>异常，这时可以通过<code>&amp;&amp;</code>来避免错误。<br><strong>更新</strong><br>如果属性名已经存在对象里。那么属性的值会被替换。如果之前没有拥有那个属性名，那么该属性将被扩充到对象中。<br><strong>引用</strong><br>对象通过引用来传递。它们永远不会被复制。<br><strong>原型</strong><br>所有通过对象字面量创建的对象都链接到<code>Object.prototype</code>。<br>创建新对象时，可以选择某个对象作为它的原型。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">if (typeof Object.create !== &apos;function&apos;) &#123;</div><div class="line">  Object.create = function(o) &#123;</div><div class="line">    var F = function () &#123;&#125;;</div><div class="line">    F.prototype = o;</div><div class="line">    return new F();</div><div class="line">  &#125;;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>原型连接只有在检索值的时候才被用到。如果尝试去获取对象的某个属性值，但对象没有此属性名，那么<code>JavaScript</code>会试着从原型对象中获取属性值。如果那个原型对象也没有该属性，那么再从它的原型中寻找，依此类推，知道该过程最后达到终点<code>Object.prototype</code>。如果想要的属性完全不存在原型链中，那么结果就是 <code>undefined</code>值。这个过程称为<strong>委托</strong>。<br>原型关系是一种动态的关系。<br><strong>反射</strong><br>原型链上的所有属性都会产生值。有两种方案可以处理掉对象上不需要的属性。<br>①程序检查时丢弃值为函数的属性。但有可能有些值确实是函数，所以该方法不可靠。<br>②使用<code>hasOwnProperty</code>方法，如果是对象拥有独有的属性，则返回<code>true</code>。该方法不会检查原型链。<br><strong>枚举</strong><br>① <code>for in</code>可以遍历一个对象中所有的属性名。但包含函数和一些不关心的原型中属性。而且顺序不确定，可以用 <code>hasOwnProperty</code>方法和<code>typeof</code>排除函数。<br>②<code>for</code> 循环不会出现<code>for in</code>那些情况。<br><strong>删除</strong><br>delete运算符可以用来删除对象的属性。<br><strong>减少全局变量的污染</strong><br>可以把全局性的资源纳入一个名称空间之下。这样做能减少冲突。</p>
+<p>原型连接只有在检索值的时候才被用到。如果尝试去获取对象的某个属性值，但对象没有此属性名，那么<code>JavaScript</code>会试着从原型对象中获取属性值。如果那个原型对象也没有该属性，那么再从它的原型中寻找，依此类推，直到该过程最后达到终点<code>Object.prototype</code>。如果想要的属性完全不存在原型链中，那么结果就是 <code>undefined</code>值。这个过程称为<strong>委托</strong>。<br>原型关系是一种动态的关系。<br><strong>反射</strong><br>原型链上的所有属性都会产生值。有两种方案可以处理掉对象上不需要的属性。<br>①程序检查时丢弃值为函数的属性。但有可能有些值确实是函数，所以该方法不可靠。<br>②使用<code>hasOwnProperty</code>方法，如果是对象拥有独有的属性，则返回<code>true</code>。该方法不会检查原型链。<br><strong>枚举</strong><br>① <code>for in</code>可以遍历一个对象中所有的属性名。但包含函数和一些不关心的原型中属性。而且顺序不确定，可以用 <code>hasOwnProperty</code>方法和<code>typeof</code>排除函数。<br>②<code>for</code> 循环不会出现<code>for in</code>那些情况。<br><strong>删除</strong><br>delete运算符可以用来删除对象的属性。<br><strong>减少全局变量的污染</strong><br>可以把全局性的资源纳入一个名称空间之下。这样做能减少冲突。</p>
 <h3 id="第4章-函数"><a href="#第4章-函数" class="headerlink" title="第4章 函数"></a>第4章 函数</h3><p>函数用于①代码复用②信息隐藏③组合调用。一般来说，所谓编程，就是将一组需求分节成一组函数与数据结构的技能。<br><code>JavaScript</code>的函数就是对象。<br>函数对象连接到<code>Function.prototype</code>(该原型对象本身连接到<code>Object.prototype</code>)。<br>每个函数在创建时会附加两个隐藏属性，函数的上下文和实现函数行为的代码。<br>每个函数对象在创建时也随配有一个<code>prototype</code>属性。它的值是一个拥有<code>constructor</code>属性且值为该函数的对象。<br><strong>函数字面量</strong><br>函数字面量包括4个部分。①保留字<code>function</code>②函数名，可以省略，③一组参数④一组语句。<br>函数字面量可以出现在任何允许表达式出现的地方。一个内部函数除了可以访问自己的参数和变量，同时也可以自由访问把它嵌套在其中的父函数的参数和变量。通过函数字面量创建的函数对象包含一个连接到外部上下文的连接。这被称为<strong>闭包</strong>。<br><strong>调用</strong><br>除了声明时定义的形式参数，每一个函数还接收两个附加的参数：<code>this</code>和<code>argument</code>。在<code>JavaScript</code>中一共有四种调用模式。①方法调用模式，②函数调用模式③构造器调用模式④<code>apply</code>调用模式。</p>
 <p>（<code>this</code>指向问题一直困扰很多人。我一般是这样记的，谁调用<code>this</code>就指向谁。）</p>
 <p><strong>方法调用模式</strong><br>对象的方法执行,<code>this</code>指向该对象。比如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">var myObj = &#123;</div><div class="line">  value: 0,</div><div class="line">  showValue: function() &#123;</div><div class="line">    console.log(&apos;value:&apos;, this.value);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">myObj.showValue();  // value: 0</div></pre></td></tr></table></figure></p>
@@ -115,7 +116,7 @@
 <p><strong>string.lastIndexOf(searchString,position)</strong><br><code>lastIndexOf</code> 方法和<code>indexOf</code>方法类似，不过它是从末尾开始查找，不是从头开始。</p>
 <p><strong>string.localeCompare(that)</strong><br>比较两个字符串。类似于<code>array.sort</code>。</p>
 <p><strong>string.match(regexp)</strong><br>如果没有<code>g</code>标识，那么调用<code>string.match(regexp)</code>和调用<code>regexp.exec(string)</code>结果相同。如果带有<code>g</code>标识，那么它生成一个包含所有匹配（除捕获分组之外）的数组。</p>
-<p><strong>string.match(searchValue,replaceValue)</strong><br>对<code>string</code>进行查找和替换操作，并返回一个新的字符串。参数<code>searchvalue</code>可以是一个字符串也可以是一个正则表达式对象。参数<code>replaceValue</code>可以是一个字符串或一个函数。</p>
+<p><strong>string.replace(searchValue,replaceValue)</strong><br>对<code>string</code>进行查找和替换操作，并返回一个新的字符串。参数<code>searchvalue</code>可以是一个字符串也可以是一个正则表达式对象。参数<code>replaceValue</code>可以是一个字符串或一个函数。</p>
 <p><strong>string.search(regexp)</strong><br>和<code>indexOf</code>类似，不过它接收正则为参数。</p>
 <p><strong>string.slice(start, end)</strong><br><code>slice</code>方法复制<code>string</code>的一部分来构造一个新的字符串。如果<code>start</code>参数是负数，它将与<code>string.length</code>相加。<code>end</code>参数是可选的。</p>
 <p><strong>string.split(separator,limit)</strong><br>把<code>string</code>分割成片段来创建一个字符串数组。可选参数<code>limit</code>可以限制分割的片段数量。<code>separator</code>参数可以是字符串或者正则。<br><strong>string.substring(start,end)</strong><br>与<code>slice</code>方法一样，不过它不能处理负数参数。<br><strong>string.toLocaleLowerCase()</strong><br>它使用本地化的规则把这个<code>string</code>中的字母转换成小写格式。这个方法主要用在土耳其语上。<br><strong>string.toLocaleUpperCase()</strong><br>它使用本地化的规则把这个<code>string</code>中的字母转换成大写格式。这个方法主要用在土耳其语上。<br><strong>string.toLowerCase()</strong><br>返回新字符串，所有字母转成小写格式。<br><strong>string.toUpperCase()</strong><br>返回新字符串，所有字母转成大写格式。<br><strong>String.fromCharCode(char…)</strong><br>根据一串数字编码返回一个字符串。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var a = String.fromCharCode(67,97,116) // a是&apos;Cat&apos;</div></pre></td></tr></table></figure></p>
@@ -126,8 +127,8 @@
     
     <summary type="html">
     
-      &lt;blockquote&gt;
-&lt;p&gt;之前看到这篇文章，&lt;a href=&quot;https://zhuanlan.zhihu.com/p/23265155?refer=dreawer&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;前端网老姚浅谈：怎么学JavaScript？
+      &lt;p&gt;&lt;a href=&quot;https://segmentfault.com/a/1190000010313101&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;首发于：segmentfault《JavaScript语言精粹 修订版》 读书笔记&lt;/a&gt;&lt;/p&gt;
+&lt;b
     
     </summary>
     
@@ -910,9 +911,9 @@
       <category term="JavaScript" scheme="https://lxchuan12.github.io/categories/JavaScript/"/>
     
     
-      <category term="vuejs" scheme="https://lxchuan12.github.io/tags/vuejs/"/>
-    
       <category term="js" scheme="https://lxchuan12.github.io/tags/js/"/>
+    
+      <category term="vuejs" scheme="https://lxchuan12.github.io/tags/vuejs/"/>
     
   </entry>
   
