@@ -271,7 +271,7 @@
     <link href="https://lxchuan12.github.io/2017/03/06/20170306-freess/"/>
     <id>https://lxchuan12.github.io/2017/03/06/20170306-freess/</id>
     <published>2017-03-06T15:02:23.000Z</published>
-    <updated>2017-06-24T15:22:41.570Z</updated>
+    <updated>2017-08-08T14:19:01.371Z</updated>
     
     <content type="html"><![CDATA[<p>开发时遇到问题，一般都是使用<strong>谷歌搜索</strong>，相对百度更加精准一些。比如搜索我的网名<strong>轩辕Rowboat</strong>，一大堆结果。<a id="more"></a><br><figure class="image-bubble">
                 <div class="img-lightbox">
@@ -280,7 +280,7 @@
                 </div>
                 <div class="image-caption">谷歌搜索轩辕Rowboat结果.png</div>
             </figure></p>
-<p>谷歌书签同步，YouTube等等。总是需要<strong>翻墙</strong>的。<br>一次偶然的机会发现了这个网站，<a href="http://freess.org/" target="_blank" rel="external">FreeSS-最好用的免费SS提供站点</a>（提供免费的ss账号）（免费为它打广告~）<br>觉得好东西要分享给大家，于是写下这篇文章（当然我觉得很多人都会，但还是写了）。</p>
+<p>谷歌书签同步，YouTube等等。总是需要<strong>翻墙</strong>的。<br>一次偶然的机会发现了这个网站，<a href="http://freess.cx/" target="_blank" rel="external">FreeSS-最好用的免费SS提供站点</a>（提供免费的ss账号）（免费为它打广告~）<br>觉得好东西要分享给大家，于是写下这篇文章（当然我觉得很多人都会，但还是写了）。</p>
 <h3 id="1、下载shadowsocks（Mac，Android等可以下载相应版本）："><a href="#1、下载shadowsocks（Mac，Android等可以下载相应版本）：" class="headerlink" title="1、下载shadowsocks（Mac，Android等可以下载相应版本）："></a>1、下载shadowsocks（Mac，Android等可以下载相应版本）：</h3><p>windows各版本下载地址：<a href="https://github.com/shadowsocks/shadowsocks-windows/releases" target="_blank" rel="external">https://github.com/shadowsocks/shadowsocks-windows/releases</a>，这网址一般不会是失效。一般下载最新的Downloads-&gt;Shadowsocks-xxx.zip即可。</p>
 <p>Mac，Android等可以在这个链接下载：<a href="https://github.com/shadowsocks" target="_blank" rel="external">https://github.com/shadowsocks</a><br>我下载的是:<a href="https://github.com/shadowsocks/shadowsocks-windows/releases/download/3.4.3/Shadowsocks-3.4.3.zip" target="_blank" rel="external">3.4.3.zip版本</a> ，软件一直在持续更新，链接可能会失效。解压到电脑任意位置，点击打开Shadowsocks.exe程序，程序图标会出现在右下角。</p>
 <h3 id="2、打开这个网站http-freess-org-，配置"><a href="#2、打开这个网站http-freess-org-，配置" class="headerlink" title="2、打开这个网站http://freess.org/ ，配置"></a>2、打开这个网站<a href="http://freess.org/" target="_blank" rel="external">http://freess.org/</a> ，配置</h3><p>打开任意一个二维码。右键程序图标，弹出菜单中选择“<strong>服务器</strong>”－“<strong>扫描屏幕上的二维码</strong>”，扫描成功后会<strong>自动配置</strong>，菜单中勾选“<strong>启用系统代理</strong>”即可。这时就可以使用任意浏览器翻墙了。不过这个免费的ss账号（目前可用），<strong>只限当天使用，次日得重新扫描</strong>。</p>
@@ -308,7 +308,7 @@
                 <div class="image-caption">版本过低.png</div>
             </figure>
 <p>下载安装.netframework<a href="https://download.microsoft.com/download/D/5/C/D5C98AB0-35CC-45D9-9BA5-B18256BA2AE6/NDP462-KB3151802-Web.exe" target="_blank" rel="external">下载地址链接</a></p>
-<p>更多<strong>使用说明</strong>可以查看：<a href="https://github.com/shadowsocks/shadowsocks-windows/wiki/Shadowsocks-Windows-%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E" target="_blank" rel="external">官方中文说明文档</a><br>比如：配合谷歌插件（<strong>SwitchyOmega</strong> ）共同使用。</p>
+<p>更多<strong>使用说明</strong>可以查看：<a href="https://github.com/shadowsocks/shadowsocks-windows/wiki/Shadowsocks-Windows-%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E" target="_blank" rel="external">官方中文说明文档</a><br>比如：配合谷歌插件（<strong>SwitchyOmega</strong> ）共同使用，可以做到系统代理和直接连接，自动切换，就不容易导致开了代理，连接不需要代理的网站异常了。<br><a href="https://chrome.google.com/webstore/detail/padekgcemlokbadohgkifijomclgjgif" target="_blank" rel="external">SwitchyOmega插件下载安装地址</a></p>
 <p>小胡子哥的文章：<a href="http://www.barretlee.com/blog/2016/08/03/shadowsocks/" target="_blank" rel="external">Shadowsocks 原理简介及安装指南</a></p>
 ]]></content>
     
@@ -911,9 +911,9 @@
       <category term="JavaScript" scheme="https://lxchuan12.github.io/categories/JavaScript/"/>
     
     
-      <category term="js" scheme="https://lxchuan12.github.io/tags/js/"/>
-    
       <category term="vuejs" scheme="https://lxchuan12.github.io/tags/vuejs/"/>
+    
+      <category term="js" scheme="https://lxchuan12.github.io/tags/js/"/>
     
   </entry>
   
