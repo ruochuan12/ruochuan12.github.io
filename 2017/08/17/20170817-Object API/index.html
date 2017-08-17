@@ -3,27 +3,27 @@
 <head>
   <meta charset="utf-8">
   
-  <title>js如何判断对象为空 | 轩辕Rowboat的博客 | 前端路上 | PPT爱好者 | 所知甚少，唯善学。</title>
+  <title>Object API解析 | 轩辕Rowboat的博客 | 前端路上 | PPT爱好者 | 所知甚少，唯善学。</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   <meta name="theme-color" content="#3D95D5">
   
   
-  <meta name="keywords" content="js,vuejs">
-  <meta name="description" content="vuejs项目中，遇到要判断data中的对象是否为空……">
+  <meta name="keywords" content="JavaScript">
+  <meta name="description" content="Object.prototype该属性是所有对象的原型（包括 Object对象本身），语言中的其他对象正是通过对该属性上添加东西来实现它们之间的继承关系的。所以要小心使用。比如：var s = new String(‘xuanyuan’);Object.prototype.custom = 1;console.log(s.custom); // 1">
 <meta property="og:type" content="article">
-<meta property="og:title" content="js如何判断对象为空">
-<meta property="og:url" content="https://lxchuan12.github.io/2016/08/27/20160827-Judge-null-object-by-javascript/index.html">
+<meta property="og:title" content="Object API解析">
+<meta property="og:url" content="https://lxchuan12.github.io/2017/08/17/20170817-Object API/index.html">
 <meta property="og:site_name" content="轩辕Rowboat的博客">
-<meta property="og:description" content="vuejs项目中，遇到要判断data中的对象是否为空……">
-<meta property="og:updated_time" content="2016-08-29T15:46:51.607Z">
+<meta property="og:description" content="Object.prototype该属性是所有对象的原型（包括 Object对象本身），语言中的其他对象正是通过对该属性上添加东西来实现它们之间的继承关系的。所以要小心使用。比如：var s = new String(‘xuanyuan’);Object.prototype.custom = 1;console.log(s.custom); // 1">
+<meta property="og:updated_time" content="2017-08-17T15:51:54.024Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="js如何判断对象为空">
-<meta name="twitter:description" content="vuejs项目中，遇到要判断data中的对象是否为空……">
+<meta name="twitter:title" content="Object API解析">
+<meta name="twitter:description" content="Object.prototype该属性是所有对象的原型（包括 Object对象本身），语言中的其他对象正是通过对该属性上添加东西来实现它们之间的继承关系的。所以要小心使用。比如：var s = new String(‘xuanyuan’);Object.prototype.custom = 1;console.log(s.custom); // 1">
   
     <link rel="alternative" href="/atom.xml" title="轩辕Rowboat的博客" type="application/atom+xml">
   
-  <meta name="summary" content="&lt;p&gt;vuejs项目中，遇到要判断data中的对象是否为空……">
+  <meta name="summary" content="轩辕Rowboat，某世界闻名的陶瓷大学2016届毕业生，目前在杭州从事前端开发工作，也是一枚PPT爱好者。常以轩辕Rowboat为名混迹于江湖。">
   <link rel="shortcut icon" href="/favicon.ico">
   <link rel="stylesheet" href="/css/style.css">
 </head>
@@ -117,7 +117,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">js如何判断对象为空</div>
+        <div class="flex-col header-title ellipsis">Object API解析</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -138,11 +138,11 @@
 </header>
 <header class="content-header">
   <div class="container">
-    <h1 class="author">js如何判断对象为空</h1>
+    <h1 class="author">Object API解析</h1>
     <h5 class="subtitle">
         
-            <time datetime="2016-08-27T14:46:23.000Z" itemprop="datePublished" class="page-time">
-  2016-08-27
+            <time datetime="2017-08-17T15:51:52.000Z" itemprop="datePublished" class="page-time">
+  2017-08-17
 </time>
 
 
@@ -154,11 +154,11 @@
 </header>
 
     <div class="container body-wrap">
-      <article id="post-20160827-Judge-null-object-by-javascript" 
+      <article id="post-20170817-Object API" 
   class="article article-type-post" itemprop="blogPost">
     <div class="post-meta flex-row">
         
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vuejs/">vuejs</a></li></ul>
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
 
     </div>
     <div class="post-body">
@@ -205,7 +205,7 @@
 
             
             <nav class="post-toc-wrap" id="post-toc">
-            
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Object-prototype"><span class="post-toc-number">1.</span> <span class="post-toc-text">Object.prototype</span></a></li></ol>
             </nav>
             
         </aside>
@@ -213,13 +213,7 @@
         <div class="post-main">
 
             <div class="post-content" id="post-content" itemprop="postContent">
-            <p>vuejs项目中，遇到要判断data中的对象是否为空……<a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">var vm = new Vue(&#123;</div><div class="line">  el:&apos;#demo&apos;,</div><div class="line">  data:&#123;</div><div class="line">    msg:&apos;hello&apos;,</div><div class="line">    ms:&#123;&#125;</div><div class="line">  &#125;,</div><div class="line">  created ()&#123;</div><div class="line">    let that = this;</div><div class="line">    console.log(that.ms);</div><div class="line">    console.log(that.msg);</div><div class="line">    console.log(that.ms === null);//false</div><div class="line">    if(that.ms)&#123;//true</div><div class="line">      console.log(1);//1,</div><div class="line">    &#125;;</div><div class="line">    console.log(that.ms === undefined);//false</div><div class="line">    for(var attr in that.ms)&#123;</div><div class="line">      console.log(attr);</div><div class="line">      console.log(&apos;2&apos;);</div><div class="line">    &#125;</div><div class="line">    //console.log(&apos;3&apos;);</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-<p><a href="http://jsbin.com/xasemec/22/edit?html,js,console" target="_blank" rel="external">点击查看详情vuejs</a></p>
-<p>jquery有工具方法$.isEmptyObject(),查看源码发现这样实现的。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">isEmptyObject:function(obj)&#123;</div><div class="line">    var name;</div><div class="line">    for(name in obj)&#123;</div><div class="line">        return false;</div><div class="line">    &#125;</div><div class="line">    return true;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>这是利用了for in无法循环到系统自带的属性值。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">//比如：</div><div class="line">function Watch()&#123;&#125;</div><div class="line">//Watch.prototype.constructor = Watch;</div><div class="line">//系统自己生成。写出来这句也无法用for in循环到。</div><div class="line">for (var attr in Watch.prototype)&#123;</div><div class="line">    console.log(&apos;can not console&apos;);//无法输出。</div><div class="line">&#125;</div><div class="line">//如果自己写,则可以输出show.</div><div class="line">Watch.prototype.show = function()&#123;&#125;</div></pre></td></tr></table></figure></p>
-<p>这时想起了<a href="http://www.tuicool.com/articles/3meE3a" target="_blank" rel="external">js中数组遍历for与for in区别(强烈建议不要使用for in遍历数组)</a><br>$.isPlainObject()方法：<a href="http://www.365mini.com/page/jquery_isplainobject.htm" target="_blank" rel="external">判断”纯粹的对象”，就是该对象是通过”{}”或”new Object”创建的。</a><br>$.isPlainObject( document.location ) ); // false(在IE中返回true)</p>
-<p><strong>参考资料：</strong><a href="http://www.cnblogs.com/TomXu/archive/2011/12/15/2288411.html" target="_blank" rel="external">汤姆大叔博客</a></p>
-<p>小结:js一切皆为对象，了解面对对象编程很有好处。能研究一遍jquery源码,定能更上一层楼。</p>
+            <h3 id="Object-prototype"><a href="#Object-prototype" class="headerlink" title="Object.prototype"></a>Object.prototype</h3><p>该属性是所有对象的原型（包括 <code>Object</code>对象本身），语言中的其他对象正是通过对该属性上添加东西来实现它们之间的继承关系的。所以要小心使用。<br>比如：<br>var s = new String(‘xuanyuan’);<br>Object.prototype.custom = 1;<br>console.log(s.custom); // 1</p>
 
 
             
@@ -231,7 +225,7 @@
             <blockquote>
                 <p>
                 本文地址：
-                <a href="https://lxchuan12.github.io/2016/08/27/20160827-Judge-null-object-by-javascript/" target="_blank" rel="external">https://lxchuan12.github.io/2016/08/27/20160827-Judge-null-object-by-javascript/</a>
+                <a href="https://lxchuan12.github.io/2017/08/17/20170817-Object API/" target="_blank" rel="external">https://lxchuan12.github.io/2017/08/17/20170817-Object API/</a>
                 </p>
                 <footer><cite><a href="https://lxchuan12.github.io">@轩辕Rowboat的博客</a></cite></footer>
             </blockquote>
@@ -239,19 +233,12 @@
             
 <nav class="post-nav">
   
-    <div class="waves-block waves-effect prev fl">
-      <a href="/2016/08/29/20160829-Sass-basic-characteristics-of-computing/" id="post-prev" class="post-nav-link">
-        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">sass基本特性-运算</h4>
-      </a>
-    </div>
-  
 
   
     <div class="waves-block waves-effect next fr">
-      <a href="/2016/08/20/20160820-safari-open-wechat/" id="post-next" class="post-nav-link">
+      <a href="/2017/07/23/20170723-JavaScript essence of reading notes/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">iPhone safari可以通过访问链接来打开微信</h4>
+        <h4 class="title">《JavaScript 语言精粹 修订版》 读书笔记</h4>
       </a>
     </div>
   
@@ -262,7 +249,7 @@
             
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="20160827-Judge-null-object-by-javascript" data-title="js如何判断对象为空" data-url="https://lxchuan12.github.io/2016/08/27/20160827-Judge-null-object-by-javascript/index.html"></div>
+	<div class="ds-thread" data-thread-key="20170817-Object API" data-title="Object API解析" data-url="https://lxchuan12.github.io/2017/08/17/20170817-Object API/index.html"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
@@ -318,10 +305,10 @@
 
 <script>
 var BLOG_SHARE = {
-    title: "js如何判断对象为空",
+    title: "Object API解析",
     pic: "/img/logo.jpg",
     summary: document.getElementsByName('summary')[0].content,
-    url: "https://lxchuan12.github.io/2016/08/27/20160827-Judge-null-object-by-javascript/index.html"
+    url: "https://lxchuan12.github.io/2017/08/17/20170817-Object API/index.html"
 };
 </script>
 <div class="global-share" id="global-share">

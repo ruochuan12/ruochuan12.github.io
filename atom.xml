@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://lxchuan12.github.io/"/>
-  <updated>2017-08-12T16:04:49.535Z</updated>
+  <updated>2017-08-17T15:51:54.024Z</updated>
   <id>https://lxchuan12.github.io/</id>
   
   <author>
@@ -14,6 +14,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Object API解析</title>
+    <link href="https://lxchuan12.github.io/2017/08/17/20170817-Object%20API/"/>
+    <id>https://lxchuan12.github.io/2017/08/17/20170817-Object API/</id>
+    <published>2017-08-17T15:51:52.000Z</published>
+    <updated>2017-08-17T15:51:54.024Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="Object-prototype"><a href="#Object-prototype" class="headerlink" title="Object.prototype"></a>Object.prototype</h3><p>该属性是所有对象的原型（包括 <code>Object</code>对象本身），语言中的其他对象正是通过对该属性上添加东西来实现它们之间的继承关系的。所以要小心使用。<br>比如：<br>var s = new String(‘xuanyuan’);<br>Object.prototype.custom = 1;<br>console.log(s.custom); // 1</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;Object-prototype&quot;&gt;&lt;a href=&quot;#Object-prototype&quot; class=&quot;headerlink&quot; title=&quot;Object.prototype&quot;&gt;&lt;/a&gt;Object.prototype&lt;/h3&gt;&lt;p&gt;该属性是所有对象的原型（包括
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="https://lxchuan12.github.io/categories/JavaScript/"/>
+    
+    
+      <category term="JavaScript" scheme="https://lxchuan12.github.io/tags/JavaScript/"/>
+    
+  </entry>
   
   <entry>
     <title>《JavaScript 语言精粹 修订版》 读书笔记</title>
@@ -884,37 +907,6 @@
     
     
       <category term="sass" scheme="https://lxchuan12.github.io/tags/sass/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>js如何判断对象为空</title>
-    <link href="https://lxchuan12.github.io/2016/08/27/20160827-Judge-null-object-by-javascript/"/>
-    <id>https://lxchuan12.github.io/2016/08/27/20160827-Judge-null-object-by-javascript/</id>
-    <published>2016-08-27T14:46:23.000Z</published>
-    <updated>2016-08-29T15:46:51.607Z</updated>
-    
-    <content type="html"><![CDATA[<p>vuejs项目中，遇到要判断data中的对象是否为空……<a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">var vm = new Vue(&#123;</div><div class="line">  el:&apos;#demo&apos;,</div><div class="line">  data:&#123;</div><div class="line">    msg:&apos;hello&apos;,</div><div class="line">    ms:&#123;&#125;</div><div class="line">  &#125;,</div><div class="line">  created ()&#123;</div><div class="line">    let that = this;</div><div class="line">    console.log(that.ms);</div><div class="line">    console.log(that.msg);</div><div class="line">    console.log(that.ms === null);//false</div><div class="line">    if(that.ms)&#123;//true</div><div class="line">      console.log(1);//1,</div><div class="line">    &#125;;</div><div class="line">    console.log(that.ms === undefined);//false</div><div class="line">    for(var attr in that.ms)&#123;</div><div class="line">      console.log(attr);</div><div class="line">      console.log(&apos;2&apos;);</div><div class="line">    &#125;</div><div class="line">    //console.log(&apos;3&apos;);</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-<p><a href="http://jsbin.com/xasemec/22/edit?html,js,console" target="_blank" rel="external">点击查看详情vuejs</a></p>
-<p>jquery有工具方法$.isEmptyObject(),查看源码发现这样实现的。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">isEmptyObject:function(obj)&#123;</div><div class="line">    var name;</div><div class="line">    for(name in obj)&#123;</div><div class="line">        return false;</div><div class="line">    &#125;</div><div class="line">    return true;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>这是利用了for in无法循环到系统自带的属性值。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">//比如：</div><div class="line">function Watch()&#123;&#125;</div><div class="line">//Watch.prototype.constructor = Watch;</div><div class="line">//系统自己生成。写出来这句也无法用for in循环到。</div><div class="line">for (var attr in Watch.prototype)&#123;</div><div class="line">    console.log(&apos;can not console&apos;);//无法输出。</div><div class="line">&#125;</div><div class="line">//如果自己写,则可以输出show.</div><div class="line">Watch.prototype.show = function()&#123;&#125;</div></pre></td></tr></table></figure></p>
-<p>这时想起了<a href="http://www.tuicool.com/articles/3meE3a" target="_blank" rel="external">js中数组遍历for与for in区别(强烈建议不要使用for in遍历数组)</a><br>$.isPlainObject()方法：<a href="http://www.365mini.com/page/jquery_isplainobject.htm" target="_blank" rel="external">判断”纯粹的对象”，就是该对象是通过”{}”或”new Object”创建的。</a><br>$.isPlainObject( document.location ) ); // false(在IE中返回true)</p>
-<p><strong>参考资料：</strong><a href="http://www.cnblogs.com/TomXu/archive/2011/12/15/2288411.html" target="_blank" rel="external">汤姆大叔博客</a></p>
-<p>小结:js一切皆为对象，了解面对对象编程很有好处。能研究一遍jquery源码,定能更上一层楼。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;vuejs项目中，遇到要判断data中的对象是否为空……
-    
-    </summary>
-    
-      <category term="JavaScript" scheme="https://lxchuan12.github.io/categories/JavaScript/"/>
-    
-    
-      <category term="vuejs" scheme="https://lxchuan12.github.io/tags/vuejs/"/>
-    
-      <category term="js" scheme="https://lxchuan12.github.io/tags/js/"/>
     
   </entry>
   
