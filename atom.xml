@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://lxchuan12.github.io/"/>
-  <updated>2017-08-17T15:51:54.024Z</updated>
+  <updated>2017-08-18T14:01:19.434Z</updated>
   <id>https://lxchuan12.github.io/</id>
   
   <author>
@@ -20,14 +20,18 @@
     <link href="https://lxchuan12.github.io/2017/08/17/20170817-Object%20API/"/>
     <id>https://lxchuan12.github.io/2017/08/17/20170817-Object API/</id>
     <published>2017-08-17T15:51:52.000Z</published>
-    <updated>2017-08-17T15:51:54.024Z</updated>
+    <updated>2017-08-18T14:01:19.434Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="Object-prototype"><a href="#Object-prototype" class="headerlink" title="Object.prototype"></a>Object.prototype</h3><p>该属性是所有对象的原型（包括 <code>Object</code>对象本身），语言中的其他对象正是通过对该属性上添加东西来实现它们之间的继承关系的。所以要小心使用。<br>比如：<br>var s = new String(‘xuanyuan’);<br>Object.prototype.custom = 1;<br>console.log(s.custom); // 1</p>
+    <content type="html"><![CDATA[<p>###Object构造器的成员</p>
+<h4 id="Object-prototype"><a href="#Object-prototype" class="headerlink" title="Object.prototype"></a>Object.prototype</h4><p>该属性是所有对象的原型（包括 <code>Object</code>对象本身），语言中的其他对象正是通过对该属性上添加东西来实现它们之间的继承关系的。所以要小心使用。<br>比如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var s = new String(&apos;xuanyuan&apos;);</div><div class="line">Object.prototype.custom = 1;</div><div class="line">console.log(s.custom); // 1</div></pre></td></tr></table></figure></p>
+<h3 id="Object-prototype-的成员"><a href="#Object-prototype-的成员" class="headerlink" title="Object.prototype 的成员"></a>Object.prototype 的成员</h3><h4 id="constructor-NaN"><a href="#constructor-NaN" class="headerlink" title="constructor"></a>constructor</h4><p>该属性指向用来构造该函数对象的构造器，在这里为<code>Object()</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Object.prototype.constructor === Object; // true</div><div class="line">var o = new Object();</div><div class="line">o.constructor === Object; // true</div></pre></td></tr></table></figure></p>
+<h4 id="toString-radix"><a href="#toString-radix" class="headerlink" title="toString(radix)"></a>toString(radix)</h4><p>该方法返回的是一个用于描述目标对象的字符串。特别地，当目标是一个Number对象时，可以传递一个用于进制数的参数<code>radix</code>，该参数<code>radix</code>，该参数的默认值为10。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var o = &#123;prop:1&#125;;</div><div class="line">o.toString(); // &apos;[object object]&apos;</div><div class="line">var n = new Number(255);</div><div class="line">n.toString(); // &apos;255&apos;</div><div class="line">n.toString(16); // &apos;ff&apos;</div></pre></td></tr></table></figure></p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;h3 id=&quot;Object-prototype&quot;&gt;&lt;a href=&quot;#Object-prototype&quot; class=&quot;headerlink&quot; title=&quot;Object.prototype&quot;&gt;&lt;/a&gt;Object.prototype&lt;/h3&gt;&lt;p&gt;该属性是所有对象的原型（包括
+      &lt;p&gt;###Object构造器的成员&lt;/p&gt;
+&lt;h4 id=&quot;Object-prototype&quot;&gt;&lt;a href=&quot;#Object-prototype&quot; class=&quot;headerlink&quot; title=&quot;Object.prototype&quot;&gt;&lt;/a&gt;Object.prototyp
     
     </summary>
     
