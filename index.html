@@ -178,8 +178,8 @@
     <div class="post-content" id="post-content" itemprop="postContent" >
 
     
-         ###Object构造器的成员 
-   Object.prototype  该属性是所有对象的原型（包括  Object 对象本身），语言中的其他对象正是通过对该属性上添加东西来实现它们之间的继承关系的。所以要小心使用。 比如：       1  2  3      var s = new String(&apos;xuanyuan&apos;);  Object.prototype.custo
+         创建对象的两种方式：       1  2      var o = new Object();  var o = &#123;&#125;; // 推荐       
+ 该构造器可以接受任何类型的参数，并且会自动识别参数的类型，并选择更合适的构造器来完成相关操作。比如：       1  2  3  4      var o = new Object(&apos;something&apos;
     
     
         <a href="/2017/08/17/20170817-Object API/" class="post-more waves-effect waves-button">
