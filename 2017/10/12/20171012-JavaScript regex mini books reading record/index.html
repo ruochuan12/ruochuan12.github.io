@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>JavaScript正则表达式迷你书-阅读记录 | 轩辕Rowboat的博客 | 前端路上 | PPT爱好者 | 所知甚少，唯善学。常以轩辕Rowboat为名混迹于江湖。</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="theme-color" content="#3D95D5">
+  
+  
+  <meta name="keywords" content="JavaScript">
+  <meta name="description" content="正则可视化工具
+file:///home/sunong/%E4%B8%8B%E8%BD%BD/JavaScript%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%BF%B7%E4%BD%A0%E4%B9%A6%EF%BC%881.1%E7%89%88%EF%BC%89.pdf
+[《JavaScript 正则表达式迷你书》问世了！]（https://">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript正则表达式迷你书-阅读记录">
+<meta property="og:url" content="https://lxchuan12.github.io/2017/10/12/20171012-JavaScript regex mini books reading record/index.html">
+<meta property="og:site_name" content="轩辕Rowboat的博客">
+<meta property="og:description" content="正则可视化工具
+file:///home/sunong/%E4%B8%8B%E8%BD%BD/JavaScript%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%BF%B7%E4%BD%A0%E4%B9%A6%EF%BC%881.1%E7%89%88%EF%BC%89.pdf
+[《JavaScript 正则表达式迷你书》问世了！]（https://">
+<meta property="og:updated_time" content="2017-10-12T15:46:26.831Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JavaScript正则表达式迷你书-阅读记录">
+<meta name="twitter:description" content="正则可视化工具
+file:///home/sunong/%E4%B8%8B%E8%BD%BD/JavaScript%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%BF%B7%E4%BD%A0%E4%B9%A6%EF%BC%881.1%E7%89%88%EF%BC%89.pdf
+[《JavaScript 正则表达式迷你书》问世了！]（https://">
+  
+    <link rel="alternative" href="/atom.xml" title="轩辕Rowboat的博客" type="application/atom+xml">
+  
+  <meta name="summary" content="轩辕Rowboat，某世界闻名的陶瓷大学2016届毕业生，目前在杭州从事前端开发工作，也是一枚PPT爱好者。所知甚少，唯善学。常以轩辕Rowboat为名混迹于江湖。">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="loading" class="active"></div>
+
+  <nav id="menu" class="hide" >
+   <div class="inner flex-row-vertical">
+  <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+      <i class="icon icon-lg icon-close"></i>
+  </a>
+  <div class="brand-wrap">
+    <div class="brand">
+      <a href="/" class="avatar"><img src="/img/logo.jpg"></a>
+      <div class="introduce">
+        <h5 class="nickname">轩辕Rowboat</h5>
+        <a href="mailto:lxchuan12@163.com" title="lxchuan12@163.com" class="mail">lxchuan12@163.com</a>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-wrap flex-col">
+    <ul class="nav">
+      
+          <li class="waves-block waves-effect">
+            <a href="/"  >
+              <i class="icon icon-lg icon-home"></i>
+              主页
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="/archives"  >
+              <i class="icon icon-lg icon-archives"></i>
+              文章
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="http://www.jianshu.com/users/83129d433d72/latest_articles" target="_blank" >
+              <i class="icon icon-lg icon-book"></i>
+              简书
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="http://weibo.com/lxchuan12" target="_blank" >
+              <i class="icon icon-lg icon-weibo"></i>
+              微博
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="https://lxchuan12.github.io/works/" target="_blank" >
+              <i class="icon icon-lg icon-hand-o-right"></i>
+              作品展示
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="https://github.com/lxchuan12" target="_blank" >
+              <i class="icon icon-lg icon-github"></i>
+              Github
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="https://lxchuan12.github.io/2016/09/07/20160907-How-do-I-set-foot-on-the-front-end-of-the-road/" target="_blank" >
+              <i class="icon icon-lg icon-user"></i>
+              关于我
+            </a>
+          </li>
+      
+    </ul>
+
+    <footer class="footer">
+  <p><a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0;vertical-align:middle;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAAAPCAMAAABEF7i9AAAAllBMVEUAAAD///+rsapERER3d3eIiIjMzMzu7u4iIiKUmZO6v7rKzsoODg4RERFVVVUNDQ0NDg0PEA8zMzNLTEtbXltmZmZydnF9gn2AgICPkI+ZmZmqqqq7u7vFxsXIzMgNDQwZGRkgICAhISEkJSMnKCcuMC4xMzE5Ozk7PTtBQkFCQkJDQ0Nna2eGhoaHh4ezuLLGysbd3d1wVGpAAAAA4UlEQVR42q2T1xqCMAyFk7QsBQeKA9x7j/d/OSm22CpX0nzcpA1/T05aAOuBVkMAScQFHLnEwoCo2f1TnQIGoVMewjZEjVFN4GH1Ue1Cn2jWqwfsOOj6wDwGvotsl/c8lv7KIq1eLOsT0HMFHMIE/RZyHnlphryT9zyV+8WH5e8yQw3wnQvgAFxPTKUVi555SHR/lOfLMgVTeDlSfN+TaoUsiTyeIm+bCkHvCA2FUKG48LDtYBZBknsYP/G8NTw0gaaHyuQf4H5pecrB/FYCT2sL9zAfy1Xyjou6L8X2W7YcLyBZCRtnq/zfAAAAAElFTkSuQmCC" /></a></p>
+  <p>轩辕Rowboat的博客 &copy; 2017</p>
+  <p>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme
+  <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></p>
+  <a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-2x icon-rss-square"></i></a>
+</footer>
+
+  </div>
+</div>
+
+  </nav>
+  <main id="main">
+    <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">JavaScript正则表达式迷你书-阅读记录</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input " autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-share">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header">
+  <div class="container">
+    <h1 class="author">JavaScript正则表达式迷你书-阅读记录</h1>
+    <h5 class="subtitle">
+        
+            <time datetime="2017-10-12T15:45:52.000Z" itemprop="datePublished" class="page-time">
+  2017-10-12
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/JavaScript/">JavaScript</a></li></ul>
+
+        
+    </h5>
+  </div>
+</header>
+
+    <div class="container body-wrap">
+      <article id="post-20171012-JavaScript regex mini books reading record" 
+  class="article article-type-post" itemprop="blogPost">
+    <div class="post-meta flex-row">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+
+    </div>
+    <div class="post-body">
+        <aside class="post-widget" id="post-widget">
+
+            
+            <div class="post-share" id="post-share">
+    <div class="tit">分享到：</div>
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" href="javascript:;" data-title="微博" data-service="tsina">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns" href="javascript:;" data-title="微信" data-service="weixin">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" href="javascript:;" data-title=" QQ" data-service="cqq">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" href="javascript:;" data-title=" Facebook" data-service="fb">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" href="javascript:;" data-title=" Twitter" data-service="twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="douban share-sns" href="javascript:;" data-title="豆瓣" data-service="douban">
+          豆
+        </a>
+      </li>
+    </ul>
+ </div>
+
+            
+
+            
+            <nav class="post-toc-wrap" id="post-toc">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#记录一些学到的"><span class="post-toc-number">1.</span> <span class="post-toc-text">记录一些学到的</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-第一章-正则表达式字符匹配攻略"><span class="post-toc-number"></span> <span class="post-toc-text">1. 第一章 正则表达式字符匹配攻略</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#1-2-1-范围表示法"><span class="post-toc-number">0.1.</span> <span class="post-toc-text">1.2.1. 范围表示法</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#1-2-3-常见的简写形式"><span class="post-toc-number">0.2.</span> <span class="post-toc-text">1.2.3. 常见的简写形式</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#1-3-2-贪婪匹配与惰性匹配"><span class="post-toc-number">0.3.</span> <span class="post-toc-text">1.3.2. 贪婪匹配与惰性匹配</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-4-多选分支"><span class="post-toc-number">1.</span> <span class="post-toc-text">1.4. 多选分支</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#1-5-1-匹配-16-进制颜色值"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">1.5.1. 匹配 16 进制颜色值</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#1-5-2-匹配时间"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">1.5.2. 匹配时间</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#1-5-3-匹配日期"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">1.5.3. 匹配日期</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#1-5-4-window-操作系统文件路径"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">1.5.4. window 操作系统文件路径</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#1-5-5-匹配-id"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">1.5.5. 匹配 id</span></a></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-第二章-正则表达式位置匹配攻略"><span class="post-toc-number"></span> <span class="post-toc-text">2. 第二章 正则表达式位置匹配攻略</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-2-如何匹配位置呢？"><span class="post-toc-number"></span> <span class="post-toc-text">2.2. 如何匹配位置呢？</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-2-1-和"><span class="post-toc-number"></span> <span class="post-toc-text">2.2.1. ^ 和 $</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-2-2-b-和-B"><span class="post-toc-number"></span> <span class="post-toc-text">2.2.2. \b 和 \B</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-2-3-p-和-p"><span class="post-toc-number"></span> <span class="post-toc-text">2.2.3. (?=p) 和 (?!p)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-3-位置的特性"><span class="post-toc-number"></span> <span class="post-toc-text">2.3. 位置的特性</span></a>
+            </nav>
+            
+        </aside>
+
+        <div class="post-main">
+
+            <div class="post-content" id="post-content" itemprop="postContent">
+            <p><a href="https://jex.im/regulex/" target="_blank" rel="external">正则可视化工具</a></p>
+<p>file:///home/sunong/%E4%B8%8B%E8%BD%BD/JavaScript%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%BF%B7%E4%BD%A0%E4%B9%A6%EF%BC%881.1%E7%89%88%EF%BC%89.pdf</p>
+<p>[《JavaScript 正则表达式迷你书》问世了！]（<a href="https://zhuanlan.zhihu.com/p/29707385?utm_source=com.daimajia.gold&amp;utm_medium=social）" target="_blank" rel="external">https://zhuanlan.zhihu.com/p/29707385?utm_source=com.daimajia.gold&amp;utm_medium=social）</a></p>
+<h4 id="记录一些学到的"><a href="#记录一些学到的" class="headerlink" title="记录一些学到的"></a>记录一些学到的</h4><h2 id="1-第一章-正则表达式字符匹配攻略"><a href="#1-第一章-正则表达式字符匹配攻略" class="headerlink" title="1. 第一章 正则表达式字符匹配攻略"></a>1. 第一章 正则表达式字符匹配攻略</h2><h5 id="1-2-1-范围表示法"><a href="#1-2-1-范围表示法" class="headerlink" title="1.2.1. 范围表示法"></a>1.2.1. 范围表示法</h5><p>因为连字符有特殊用途，那么要匹配 “a”、”-“、”z” 这三者中任意一个字符，该怎么做呢？<br>不能写成 [a-z]，因为其表示小写字符中的任何一个字符。<br>可以写成如下的方式：[-az] 或 [az-] 或 [a-z]。<br>即要么放在开头，要么放在结尾，要么转义。总之不会让引擎认为是范围表示法就行了。</p>
+<h5 id="1-2-3-常见的简写形式"><a href="#1-2-3-常见的简写形式" class="headerlink" title="1.2.3. 常见的简写形式"></a>1.2.3. 常见的简写形式</h5><p>如果要匹配任意字符怎么办？可以使用 [\d\D]、[\w\W]、[\s\S] 和 [^] 中任何的一个。</p>
+<h5 id="1-3-2-贪婪匹配与惰性匹配"><a href="#1-3-2-贪婪匹配与惰性匹配" class="headerlink" title="1.3.2. 贪婪匹配与惰性匹配"></a>1.3.2. 贪婪匹配与惰性匹配</h5><p>其中 /\d{2,5}?/ 表示，虽然 2 到 5 次都行，当 2 个就够的时候，就不再往下尝试了。</p>
+<h4 id="1-4-多选分支"><a href="#1-4-多选分支" class="headerlink" title="1.4. 多选分支"></a>1.4. 多选分支</h4><p>但有个事实我们应该注意，比如我用 /good|goodbye/，去匹配 “goodbye” 字符串时，结果是 “good”：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var regex = /good|goodbye/g;</div><div class="line">var string = &quot;goodbye&quot;;</div><div class="line">console.log( string.match(regex) );</div><div class="line">// =&gt; [&quot;good&quot;]</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var regex = /goodbye|good/g;</div><div class="line">var string = &quot;goodbye&quot;;</div><div class="line">console.log( string.match(regex) );</div><div class="line">// =&gt; [&quot;goodbye&quot;]</div></pre></td></tr></table></figure>
+<p>也就是说，分支结构也是惰性的，即当前面的匹配上了，后面的就不再尝试了。</p>
+<h5 id="1-5-1-匹配-16-进制颜色值"><a href="#1-5-1-匹配-16-进制颜色值" class="headerlink" title="1.5.1. 匹配 16 进制颜色值"></a>1.5.1. 匹配 16 进制颜色值</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var regex = /#([0-9a-fA-F]&#123;6&#125;|[0-9a-fA-F]&#123;3&#125;)/g;</div><div class="line">var string = &quot;#ffbbad #Fc01DF #FFF #ffE&quot;;</div><div class="line">console.log( string.match(regex) );</div><div class="line">// =&gt; [&quot;#ffbbad&quot;, &quot;#Fc01DF&quot;, &quot;#FFF&quot;, &quot;#ffE&quot;]</div></pre></td></tr></table></figure>
+<h5 id="1-5-2-匹配时间"><a href="#1-5-2-匹配时间" class="headerlink" title="1.5.2. 匹配时间"></a>1.5.2. 匹配时间</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var regex = /^([01][0-9]|[2][0-3]):[0-5][0-9]$/;</div><div class="line">console.log( regex.test(&quot;23:59&quot;) );</div><div class="line">console.log( regex.test(&quot;02:07&quot;) );</div><div class="line">// =&gt; true</div><div class="line">// =&gt; true</div></pre></td></tr></table></figure>
+<p>如果也要求匹配 “7:9”，也就是说时分前面的 “0” 可以省略。<br>此时正则变成：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">var regex = /^(0?[0-9]|1[0-9]|[2][0-3]):(0?[0-9]|[1-5][0-9])$/;</div><div class="line">console.log( regex.test(&quot;23:59&quot;) );</div><div class="line">console.log( regex.test(&quot;02:07&quot;) );</div><div class="line">console.log( regex.test(&quot;7:9&quot;) );</div><div class="line">// =&gt; true</div><div class="line">// =&gt; true</div><div class="line">// =&gt; true</div></pre></td></tr></table></figure>
+<h5 id="1-5-3-匹配日期"><a href="#1-5-3-匹配日期" class="headerlink" title="1.5.3. 匹配日期"></a>1.5.3. 匹配日期</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var regex = /^[0-9]&#123;4&#125;-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$/;</div><div class="line">console.log( regex.test(&quot;2017-06-10&quot;) );</div><div class="line">// =&gt; true</div></pre></td></tr></table></figure>
+<h5 id="1-5-4-window-操作系统文件路径"><a href="#1-5-4-window-操作系统文件路径" class="headerlink" title="1.5.4. window 操作系统文件路径"></a>1.5.4. window 操作系统文件路径</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">var regex = /^[a-zA-Z]:\\([^\\:*&lt;&gt;|&quot;?\r\n/]+\\)*([^\\:*&lt;&gt;|&quot;?\r\n/]+)?$/;</div><div class="line">console.log( regex.test(&quot;F:\\study\\javascript\\regex\\regular expression.pdf&quot;) );</div><div class="line">console.log( regex.test(&quot;F:\\study\\javascript\\regex\\&quot;) );</div><div class="line">console.log( regex.test(&quot;F:\\study\\javascript&quot;) );</div><div class="line">console.log( regex.test(&quot;F:\\&quot;) );</div><div class="line">// =&gt; true</div><div class="line">// =&gt; true</div><div class="line">// =&gt; true</div><div class="line">// =&gt; true</div></pre></td></tr></table></figure>
+<h5 id="1-5-5-匹配-id"><a href="#1-5-5-匹配-id" class="headerlink" title="1.5.5. 匹配 id"></a>1.5.5. 匹配 id</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">// 解决之道，可以使用惰性匹配：</div><div class="line">var regex = /id=&quot;.*?&quot;/</div><div class="line">var string = &apos;&lt;div id=&quot;container&quot; class=&quot;main&quot;&gt;&lt;/div&gt;&apos;;</div><div class="line">console.log(string.match(regex)[0]);</div><div class="line">// =&gt; id=&quot;container&quot;</div></pre></td></tr></table></figure>
+<p>当然，这样也会有个问题。效率比较低，因为其匹配原理会涉及到“回溯”这个概念（这里也只是顺便提一下，第四章会详细说明）。可以优化如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var regex = /id=&quot;[^&quot;]*&quot;/</div><div class="line">var string = &apos;&lt;div id=&quot;container&quot; class=&quot;main&quot;&gt;&lt;/div&gt;&apos;;</div><div class="line">console.log(string.match(regex)[0]);</div><div class="line">// =&gt; id=&quot;container&quot;</div><div class="line">// 思考：id里有特殊字符呢。</div></pre></td></tr></table></figure>
+<h2 id="2-第二章-正则表达式位置匹配攻略"><a href="#2-第二章-正则表达式位置匹配攻略" class="headerlink" title="2. 第二章 正则表达式位置匹配攻略"></a>2. 第二章 正则表达式位置匹配攻略</h2><p>正则表达式是匹配模式，要么匹配字符，要么匹配位置。请记住这句话。</p>
+<h3 id="2-2-如何匹配位置呢？"><a href="#2-2-如何匹配位置呢？" class="headerlink" title="2.2. 如何匹配位置呢？"></a>2.2. 如何匹配位置呢？</h3><p>在 ES5 中，共有 6 个锚：<br>^、$、\b、\B、(?=p)、(?!p)</p>
+<h3 id="2-2-1-和"><a href="#2-2-1-和" class="headerlink" title="2.2.1. ^ 和 $"></a>2.2.1. ^ 和 $</h3><p>^（脱字符）匹配开头，在多行匹配中匹配行开头。<br>$（美元符号）匹配结尾，在多行匹配中匹配行结尾。</p>
+<h3 id="2-2-2-b-和-B"><a href="#2-2-2-b-和-B" class="headerlink" title="2.2.2. \b 和 \B"></a>2.2.2. \b 和 \B</h3><p>\b 是单词边界，具体就是 \w 与 \W 之间的位置，也包括 \w 与 ^ 之间的位置，和 \w 与 $ 之间的位置。<br>比如考察文件名 “[JS] Lesson_01.mp4” 中的 \b，如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var result = &quot;[JS] Lesson_01.mp4&quot;.replace(/\b/g, &apos;#&apos;);</div><div class="line">console.log(result);</div><div class="line">// =&gt; &quot;[#JS#] #Lesson_01#.#mp4#&quot;</div></pre></td></tr></table></figure></p>
+<p>\B 就是 \b 的反面的意思，非单词边界。例如在字符串中所有位置中，扣掉 \b，剩下的都是 \B 的。<br>具体说来就是 \w 与 \w、 \W 与 \W、^ 与 \W，\W 与 $ 之间的位置。<br>比如上面的例子，把所有 \B 替换成 “#”：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var result = &quot;[JS] Lesson_01.mp4&quot;.replace(/\B/g, &apos;#&apos;);</div><div class="line">console.log(result);</div><div class="line">// =&gt; &quot;#[J#S]# L#e#s#s#o#n#_#0#1.m#p#4&quot;</div></pre></td></tr></table></figure>
+<h3 id="2-2-3-p-和-p"><a href="#2-2-3-p-和-p" class="headerlink" title="2.2.3. (?=p) 和 (?!p)"></a>2.2.3. (?=p) 和 (?!p)</h3><p>(?=p)，其中 p 是一个子模式，即 p 前面的位置，或者说，该位置后面的字符要匹配 p。<br>比如 (?=l)，表示 “l” 字符前面的位置，例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var result = &quot;hello&quot;.replace(/(?=l)/g, &apos;#&apos;);</div><div class="line">console.log(result);</div><div class="line">// =&gt; &quot;he#l#lo&quot;</div></pre></td></tr></table></figure></p>
+<p>而 (?!p) 就是 (?=p) 的反面意思，比如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var result = &quot;hello&quot;.replace(/(?!l)/g, &apos;#&apos;);</div><div class="line">console.log(result);</div><div class="line">// =&gt; &quot;#h#ell#o#&quot;</div></pre></td></tr></table></figure></p>
+<p>二者的学名分别是 positive lookahead 和 negative lookahead。<br>中文翻译分别是正向先行断言和负向先行断言。<br>ES5 之后的版本，会支持 positive lookbehind 和 negative lookbehind。<br>具体是 (?&lt;=p) 和 (?&lt;!p)。<br>也有书上把这四个东西，翻译成环视，即看看右边和看看左边。<br>但一般书上，没有很好强调这四者是个位置。<br>比如 (?=p)，一般都理解成：要求接下来的字符与 p 匹配，但不能包括 p 匹配的那些字符。<br><strong>而在本人看来，(?=p) 就与 ^ 一样好理解，就是 p 前面的那个位置。</strong></p>
+<h3 id="2-3-位置的特性"><a href="#2-3-位置的特性" class="headerlink" title="2.3. 位置的特性"></a>2.3. 位置的特性</h3><p><strong>对于位置的理解，我们可以理解成空字符 “”。</strong><br>也等价于：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&quot;hello&quot; == &quot;&quot; + &quot;&quot; + &quot;hello&quot;</div></pre></td></tr></table></figure>
+<p>因此，把 /^hello$/ 写成 /^^hello$$$/，是没有任何问题的：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var result = /^^hello$$$/.test(&quot;hello&quot;);</div><div class="line">console.log(result);</div><div class="line">// =&gt; true</div></pre></td></tr></table></figure></p>
+<p>甚至可以写成更复杂的:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var result = /(?=he)^^he(?=\w)llo$\b\b$/.test(&quot;hello&quot;);</div><div class="line">console.log(result);</div><div class="line">// =&gt; true</div></pre></td></tr></table></figure></p>
+<p>也就是说字符之间的位置，可以写成多个。</p>
+<p><strong>TIP 把位置理解空字符，是对位置非常有效的理解方式。</strong></p>
+<p>25/89</p>
+
+
+            
+            <div class="post-reward">
+                <a id="rewardBtn" href="javascript:;" class="post-reward-btn waves-effect waves-circle waves-light">赏</a>
+            </div>
+            
+            
+            <blockquote>
+                <p>
+                本文地址：
+                <a href="https://lxchuan12.github.io/2017/10/12/20171012-JavaScript regex mini books reading record/" target="_blank" rel="external">https://lxchuan12.github.io/2017/10/12/20171012-JavaScript regex mini books reading record/</a>
+                </p>
+                <footer><cite><a href="https://lxchuan12.github.io">@轩辕Rowboat的博客</a></cite></footer>
+            </blockquote>
+            </div>
+            
+<nav class="post-nav">
+  
+
+  
+    <div class="waves-block waves-effect next fr">
+      <a href="/2017/09/21/20170921-github tips/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">github使用小技巧</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+            
+            
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="20171012-JavaScript regex mini books reading record" data-title="JavaScript正则表达式迷你书-阅读记录" data-url="https://lxchuan12.github.io/2017/10/12/20171012-JavaScript regex mini books reading record/index.html"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"lxchuan12"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+
+        </div>
+    </div>
+</article>
+
+<div id="reward" class="reward-lay">
+    <a class="reward-off" id="rewardOff" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        你的打赏是我写作的动力~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <ul class="reward-items">
+        
+        <li>
+            <img src="/img/wechat.jpg" title="微信打赏二维码" alt="微信打赏二维码">
+            <p>微信</p>
+        </li>
+        
+
+        
+        <li>
+            <img src="/img/alipay.jpg" title="支付宝打赏二维码" alt="支付宝打赏二维码">
+            <p>支付宝</p>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+  </main>
+<div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+<script>
+var BLOG_SHARE = {
+    title: "JavaScript正则表达式迷你书-阅读记录",
+    pic: "/img/logo.jpg",
+    summary: document.getElementsByName('summary')[0].content,
+    url: "https://lxchuan12.github.io/2017/10/12/20171012-JavaScript regex mini books reading record/index.html"
+};
+</script>
+<div class="global-share" id="global-share">
+    <div class="tit">分享到：</div>
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" href="javascript:;" data-title="微博" data-service="tsina">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns" href="javascript:;" data-title="微信" data-service="weixin">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" href="javascript:;" data-title=" QQ" data-service="cqq">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" href="javascript:;" data-title=" Facebook" data-service="fb">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" href="javascript:;" data-title=" Twitter" data-service="twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="douban share-sns" href="javascript:;" data-title="豆瓣" data-service="douban">
+          豆
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+
+<script src="/js/main.js"></script>
+
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<script type="text/template" id="search-tpl">
+<li class="item">
+    <a href="/{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</script>
+
+<script src="/js/search.js"></script>
+
+
+
+
+
+
+
+
+
+</body>
+</html>
