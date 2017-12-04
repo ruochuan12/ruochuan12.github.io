@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://lxchuan12.github.io/"/>
-  <updated>2017-10-30T15:26:38.775Z</updated>
+  <updated>2017-12-04T14:49:57.395Z</updated>
   <id>https://lxchuan12.github.io/</id>
   
   <author>
@@ -14,6 +14,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>移动端双击事件和PC端</title>
+    <link href="https://lxchuan12.github.io/2017/12/04/20171204-mobile%20pc%20dblclick/"/>
+    <id>https://lxchuan12.github.io/2017/12/04/20171204-mobile pc dblclick/</id>
+    <published>2017-12-04T13:37:29.000Z</published>
+    <updated>2017-12-04T14:49:57.395Z</updated>
+    
+    <content type="html"><![CDATA[<p>SF上，有个问题<a href="https://segmentfault.com/q/1010000012279336/a-1020000012280637" target="_blank" rel="external">想请教一下，一般类似于微信那样的，双击屏幕回到顶部是怎么做的呀？</a><br>刚开始我回答的直接是：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">// 原生JS、PC端可以在`body`上添加双击事件</div><div class="line">document.addEventListener(&apos;dblclick&apos;, function()&#123;</div><div class="line">    window.scrollTo(0, 0);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>在PC端测试了下，没问题。然后再看到别人的回答，似乎好像在移动端不起作用。于是用<code>Chrome</code>浏览器的移动端模拟试了下果然没用。<br>然后百度搜索了下，看到两篇文章<a href="http://www.mzwu.com/article.asp?id=4276" target="_blank" rel="external">移动手机端不能触发jQuery双击事件dblclick解决方法</a>，<br><a href="http://drunkhero.com/bingolife/home.php/home/blog/detail/passage/59.html" target="_blank" rel="external">双击事件dblclick在移动端不起作用？</a>，<br>加上了下面的答案。测试通过。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">// 移动端双击不起作用。</div><div class="line">// 可以用单击事件模拟</div><div class="line">var touchTime = Date.now();</div><div class="line">function handleClick()&#123;</div><div class="line">    if( Date.now() - touchTime &lt; 800 )&#123;</div><div class="line">         window.scrollTo(0, 0);</div><div class="line">    &#125;else&#123;</div><div class="line">        //如果第二次点击在第一次点击0.8秒后，</div><div class="line">        //则第二次点击默认为下一次双击判断的第一次点击</div><div class="line">        touchTime = Date.now();</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">document.addEventListener(&apos;click&apos;, handleClick);</div></pre></td></tr></table></figure></p>
+<p>那么问题又来了，我知道直接在<code>document</code>上挂载事件是正确的。但为什么不用<code>document.body</code>呢，我一下说不上来。document.body是<code>&lt;body&gt;&lt;/body&gt;</code>。是<strong>只适用于<code>HTML</code>对象的<code>DOM</code>对象</strong>。类似这样的还有<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">document.images -- 当前页面中所有图片的集合。等价于Core DOM组件中的document.getElementsByTagName(&apos;img&apos;)调用。</div><div class="line">document.applets -- 等价于document.getElementsByTagName(&apos;applets&apos;)。</div><div class="line">document.links -- 是一个列表，包含了页面中所有的`&lt;a href=&quot;...&quot;&gt;&lt;/a&gt;`标签，也就是页面中所有含有`href`属性的A标签。</div><div class="line">document.anchors -- 是包含所有带name熟悉的链接。即`&lt;a name=&quot;...&quot;&gt;&lt;/a&gt;`</div><div class="line">document.forms -- 用的比较广泛。forms标签的集合。document.forms[0] === document.getElementsByTagName(&apos;form&apos;)[0]</div><div class="line">// 以上只适用于`HTML`对象的`DOM`对象内容，摘抄于《JavaScript面向对象编程指南 · 第2版》</div></pre></td></tr></table></figure></p>
+<p>我们常见的获取元素是<code>document.querySelector(&#39;body&#39;)</code>，<code>document.getElementById()</code>，或者<code>document.getElementsByClassName()</code>,<code>document.getElementsByTagName()</code>,<code>document.getElementsByName()</code>等。<br>于是我谷歌了一下，<code>document</code>和<code>document.body</code>却出来了<code>document.ducumentElement</code>的对比。<br>我们知道<code>document.documentElement</code>是<code>HTML</code>节点。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">Object.prototype.toString.call(document)</div><div class="line">&quot;[object HTMLDocument]&quot;</div><div class="line">Object.prototype.toString.call(document.body)</div><div class="line">&quot;[object HTMLBodyElement]&quot;</div><div class="line">Object.prototype.toString.call(document.documentElement)</div><div class="line">&quot;[object HTMLHtmlElement]&quot;</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var divNode = document.createElement(&apos;div&apos;);</div><div class="line">document.appendChild(divNode);</div><div class="line">// 报错：</div><div class="line">// VM396:1 Uncaught DOMException: Failed to execute &apos;appendChild&apos; on &apos;Node&apos;: Only one element on document allowed.</div><div class="line">document.body.appendChild(divNode);</div></pre></td></tr></table></figure>
+<p>我翻了翻<code>w3c规范</code><br><a href="http://w3help.org/zh-cn/standards/" target="_blank" rel="external">W3C 标准内容列表</a><br><a href="https://www.w3.org/TR/1998/REC-DOM-Level-1-19981001/level-one-core.html" target="_blank" rel="external">1.文档对象模型（核心）级别1</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Object.getOwnPropertyDescriptors(document);</div><div class="line">// &#123;location: &#123;&#125;&#125;</div><div class="line">document.location === window.location;</div><div class="line">// true</div></pre></td></tr></table></figure>
+<p>未完待续…</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;SF上，有个问题&lt;a href=&quot;https://segmentfault.com/q/1010000012279336/a-1020000012280637&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;想请教一下，一般类似于微信那样的，双击屏幕回到顶部
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="https://lxchuan12.github.io/categories/JavaScript/"/>
+    
+    
+      <category term="JavaScript" scheme="https://lxchuan12.github.io/tags/JavaScript/"/>
+    
+  </entry>
   
   <entry>
     <title>你不知道的JavaScript上卷-读书笔记</title>
@@ -792,7 +822,7 @@
     <link href="https://lxchuan12.github.io/2016/11/20/20161120-about%20me/"/>
     <id>https://lxchuan12.github.io/2016/11/20/20161120-about me/</id>
     <published>2016-11-20T14:36:52.000Z</published>
-    <updated>2017-12-01T15:44:09.188Z</updated>
+    <updated>2017-12-01T15:48:34.051Z</updated>
     
     <content type="html"><![CDATA[<h4 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h4><p>某世界闻名的陶瓷大学2016届毕业生，目前在杭州从事前端开发工作，也是一枚<code>PPT爱好者</code>。所知甚少，唯善学。常以<code>轩辕Rowboat</code>为名混迹于江湖。</p>
 <h4 id="家乡"><a href="#家乡" class="headerlink" title="家乡"></a>家乡</h4><p>在很久很久以前，盘古开天辟地之时，后来…不知道经过了多少年。<strong>轩辕Rowboat</strong>，出生于<code>江西吉安</code>欧阳修故里的一个贫困的小山村，究竟有多贫困呢，各地贫困指数不一，就不得而知了。你们只需要知道小马云，就是来自我们的小县城上的一个镇上。百度百科词条：<a href="https://baike.baidu.com/item/%E8%8C%83%E5%B0%8F%E5%8B%A4/20198128?fr=aladdin&amp;fromid=20199280&amp;fromtitle=%E5%B0%8F%E9%A9%AC%E4%BA%91" target="_blank" rel="external">小马云</a></p>
@@ -800,11 +830,11 @@
 <h4 id="联系我"><a href="#联系我" class="headerlink" title="联系我"></a>联系我</h4><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="http://lxchuan12.github.io/2017/06/02/20170602-After%20a%20year%27s%20work,%20I%20had%20some%20insights/xiaomiquan.jpg" alt="知识星球【**前端视野**】二维码，欢迎扫码加入" title="">
+                    <img src="http://lxchuan12.github.io/2017/06/02/20170602-After%20a%20year%27s%20work,%20I%20had%20some%20insights/xiaomiquan.jpg" alt="知识星球【**前端视野**】二维码，欢迎扫码免费加入" title="">
                 </div>
-                <div class="image-caption">知识星球【**前端视野**】二维码，欢迎扫码加入</div>
+                <div class="image-caption">知识星球【**前端视野**】二维码，欢迎扫码免费加入</div>
             </figure>
-<p>主要发表一些前端所见所想，Vue、React、构建工具gulp、webpack、设计模式等。一个人走得快，一群人走得远。欢迎扫码免费加入。</p>
+<p>主要发表一些前端所见所想，<code>Vue</code>、<code>React</code>、构建工具(比如：<code>gulp</code>、<code>webpack</code>)、设计模式等。一个人走得快，一群人走得远。</p>
 <p>为啥要创建这个呢，可以查看这篇文章<a href="http://lxchuan12.github.io/2017/06/02/20170602-After%20a%20year&#39;s%20work,%20I%20had%20some%20insights/">工作一年后，我有些感悟</a>，同行大概都会有类似感慨。</p>
 <p><a href="https://segmentfault.com/u/lxchuan12" target="_blank" rel="external">segmentfault社区</a>，偶尔在<code>SF社区</code>答题，虽然目前只有少得可怜的<code>1.9K</code>声望。<br><a href="https://github.com/lxchuan12" target="_blank" rel="external">github</a>,没有star过百，特别有价值的项目。<br><a href="http://www.jianshu.com/u/83129d433d72" target="_blank" rel="external">简书</a>，偶尔在简书上写写文章。<br><a href="https://www.zhihu.com/people/lxchuan12/activities" target="_blank" rel="external">知乎</a>，偶尔逛逛知乎，看帖基本不回帖。<br><a href="https://weibo.com/lxchuan12" target="_blank" rel="external">微博</a>，偶尔在微博上更新日常。<br>微信嘛，很显然，一般人不会加我，但万一不是一般人呢，还是写下微信号，加友记得注明验证信息。<br>微信：<code>lxchuan12</code>。</p>
 ]]></content>
@@ -1042,36 +1072,6 @@
       <category term="JavaScript" scheme="https://lxchuan12.github.io/tags/JavaScript/"/>
     
       <category term="BOM" scheme="https://lxchuan12.github.io/tags/BOM/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>jQuery的几种写法探析</title>
-    <link href="https://lxchuan12.github.io/2016/09/11/20160911-Several-writing-of-jquery/"/>
-    <id>https://lxchuan12.github.io/2016/09/11/20160911-Several-writing-of-jquery/</id>
-    <published>2016-09-11T13:41:23.000Z</published>
-    <updated>2016-09-11T13:55:03.057Z</updated>
-    
-    <content type="html"><![CDATA[<p><strong>写法一：</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(function()&#123;</div><div class="line">	//code here</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-<a id="more"></a>
-<p><strong>写法二：</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(document).ready(function()&#123;</div><div class="line">	//code here</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-<p><strong>写法三：</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$().ready(function()&#123;</div><div class="line">	//code here</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
-<p>默认参数就是document，所以可以省略不写。<br><strong>写法四：</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">(function($)&#123;</div><div class="line">	//code here</div><div class="line">&#125;)(jQuery);</div></pre></td></tr></table></figure></p>
-<p>这种写法的最大好处是形成闭包。在内部定义的函数和变量只能在此范围内有效。形成是否函数函数、私有变量的概念。不会与其他类库，框架产生冲突。<br>以上四种方法都是同一个意思，一般来说使用<strong>写法一</strong>比较多。<br><strong>此外，</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$(window).load = function()&#123;</div><div class="line"></div><div class="line">&#125;</div><div class="line">//等价于：</div><div class="line">window.onload = function()&#123;</div><div class="line">	//code here</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>(JS中的事件，不加on，比如单击事件：click,双击事件：dblclick)</p>
-<p><strong>window.onload = function(){}</strong>与<strong>$(funtion(){})</strong>两者的区别是：<br><strong>$(funtion(){})</strong>：<br>1、在DOM加载完成后就可以可以对DOM进行操作。<br>一般情况一个页面响应加载的顺序是：域名解析-加载html-加载js和css-加载图片和视频等其他信息。<br>那么Dom Ready应该在“加载js和css”和“加载图片等其他信息”之间，就可以操作Dom了。<br>2、能多次使用，按序执行。<br><strong>window.onload = function(){}</strong>：<br>1、在网页中所有元素(包括元素的所有关联文件)完全加载到浏览器后才执行，即JavaScript 此时可以访问网页中的所有元素。<br>2、不能多次使用，后者会覆盖前者。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;strong&gt;写法一：&lt;/strong&gt;&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$(function()&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	//code here&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;);&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="jQuery" scheme="https://lxchuan12.github.io/categories/jQuery/"/>
-    
-    
-      <category term="jQuery" scheme="https://lxchuan12.github.io/tags/jQuery/"/>
     
   </entry>
   
