@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://lxchuan12.github.io/"/>
-  <updated>2017-12-04T14:49:57.395Z</updated>
+  <updated>2017-12-05T15:36:39.013Z</updated>
   <id>https://lxchuan12.github.io/</id>
   
   <author>
@@ -14,6 +14,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>JavaScript设计模式与开发实践 读书笔记</title>
+    <link href="https://lxchuan12.github.io/2017/12/05/20171205-JavaScript%20design%20patterns/"/>
+    <id>https://lxchuan12.github.io/2017/12/05/20171205-JavaScript design patterns/</id>
+    <published>2017-12-05T15:25:01.000Z</published>
+    <updated>2017-12-05T15:36:39.013Z</updated>
+    
+    <content type="html"><![CDATA[<p>看完此书，打算慢慢整理下读书笔记。便于巩固消化。</p>
+<h3 id="第一部分-基础知识"><a href="#第一部分-基础知识" class="headerlink" title="第一部分 基础知识"></a>第一部分 基础知识</h3><h3 id="第二部分-设计模式"><a href="#第二部分-设计模式" class="headerlink" title="第二部分 设计模式"></a>第二部分 设计模式</h3><h4 id="4-单例模式"><a href="#4-单例模式" class="headerlink" title="4.单例模式"></a>4.单例模式</h4><h5 id="定义：单例模式的定义是：保证一个类仅有一个实例，并提供它的全局访问点。"><a href="#定义：单例模式的定义是：保证一个类仅有一个实例，并提供它的全局访问点。" class="headerlink" title="定义：单例模式的定义是：保证一个类仅有一个实例，并提供它的全局访问点。"></a>定义：单例模式的定义是：保证一个类仅有一个实例，并提供它的全局访问点。</h5><h5 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h5><p>比如弹窗</p>
+<h5 id="通用的惰性单例"><a href="#通用的惰性单例" class="headerlink" title="通用的惰性单例"></a>通用的惰性单例</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var getSingle = function(fn)&#123;</div><div class="line">    var result;</div><div class="line">    return function()&#123;</div><div class="line">        return result ||  (result = fn.apply(this, arguments));</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="第三部分-设计原则和编程技巧"><a href="#第三部分-设计原则和编程技巧" class="headerlink" title="第三部分 设计原则和编程技巧"></a>第三部分 设计原则和编程技巧</h3>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;看完此书，打算慢慢整理下读书笔记。便于巩固消化。&lt;/p&gt;
+&lt;h3 id=&quot;第一部分-基础知识&quot;&gt;&lt;a href=&quot;#第一部分-基础知识&quot; class=&quot;headerlink&quot; title=&quot;第一部分 基础知识&quot;&gt;&lt;/a&gt;第一部分 基础知识&lt;/h3&gt;&lt;h3 id=&quot;第二部分-
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="https://lxchuan12.github.io/categories/JavaScript/"/>
+    
+    
+      <category term="JavaScript" scheme="https://lxchuan12.github.io/tags/JavaScript/"/>
+    
+  </entry>
   
   <entry>
     <title>移动端双击事件和PC端</title>
@@ -1045,33 +1071,6 @@
       <category term="jquery" scheme="https://lxchuan12.github.io/tags/jquery/"/>
     
       <category term="zepto" scheme="https://lxchuan12.github.io/tags/zepto/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>window.location-浏览器定位和导航</title>
-    <link href="https://lxchuan12.github.io/2016/09/12/20160912-window.location/"/>
-    <id>https://lxchuan12.github.io/2016/09/12/20160912-window.location/</id>
-    <published>2016-09-12T14:55:32.000Z</published>
-    <updated>2017-06-19T14:16:43.206Z</updated>
-    
-    <content type="html"><![CDATA[<p>平时用window.location.href比较多。<br>但却经常会忽略window.location下的其他属性……<a id="more"></a><br>并且很多时候需要对链接问号后面字符串做处理，一般使用split()分割，再取。而实际上，有window.location.search可以获取。<br>一图胜千言<br>![图解url]<br><img src="/2016/09/12/20160912-window.location/url.png" alt="图解url" title="图解url"></p>
-<p><strong>url</strong>: 统一资源定位符 (Uniform Resource Locator, URL)<br><strong>href</strong>: 当前页面的url<br><strong>protocol</strong>: 协议<br><strong>hostname</strong>: 主机名<br><strong>port</strong>: 端口号<br><strong>host</strong>: 主机名+端口号<br><strong>pathname</strong>: 当前页面的路径和文件名<br><strong>origin</strong>:协议+主机名加端口号（新API）<br><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Window/location" target="_blank" rel="external">MDN location</a></p>
-<p>![图解location]<br><img src="/2016/09/12/20160912-window.location/location.png" alt="图解location" title="图解location"></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;平时用window.location.href比较多。&lt;br&gt;但却经常会忽略window.location下的其他属性……
-    
-    </summary>
-    
-      <category term="JavaScript" scheme="https://lxchuan12.github.io/categories/JavaScript/"/>
-    
-    
-      <category term="JavaScript" scheme="https://lxchuan12.github.io/tags/JavaScript/"/>
-    
-      <category term="BOM" scheme="https://lxchuan12.github.io/tags/BOM/"/>
     
   </entry>
   
