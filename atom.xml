@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://lxchuan12.github.io/"/>
-  <updated>2018-01-09T15:33:03.087Z</updated>
+  <updated>2018-04-21T15:19:01.910Z</updated>
   <id>https://lxchuan12.github.io/</id>
   
   <author>
@@ -16,11 +16,52 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>参加有赞前端技术开放日是种怎样的体验？</title>
+    <link href="https://lxchuan12.github.io/2018/04/21/20180421-youzan%20front-end%20tech%20open%20day/"/>
+    <id>https://lxchuan12.github.io/2018/04/21/20180421-youzan front-end tech open day/</id>
+    <published>2018-04-21T12:08:26.000Z</published>
+    <updated>2018-04-21T15:19:01.910Z</updated>
+    
+    <content type="html"><![CDATA[<p>从2016年毕业在杭州工作以来，就热衷于参与各类线下技术分享类活动。<br>之前参加过网易云课堂学习节、拉勾网理想之上、coding.net 技术小馆、阿里D2、阿里work like alibaba沙龙、freeCodeCamp线下分享等。<br>…<a id="more"></a></p>
+<h3 id="为什么这么热衷于参加这类活动呢？"><a href="#为什么这么热衷于参加这类活动呢？" class="headerlink" title="为什么这么热衷于参加这类活动呢？"></a>为什么这么热衷于参加这类活动呢？</h3><p>可能拿之前D2填写的参会理由可以很好的解答这个问题。</p>
+<p><strong>D2报名填写的参会理由:</strong><br>1、了解讲师碰到的问题，有哪些解决方案，是如何解决的，学习他们的解决思路和方案。<br>2、了解现在前端技术发展情况和未来发展趋势，把握学习方向。<br>3、结交前端圈内朋友，让自己融入到更积极的技术氛围，促进自己的技术提升。</p>
+<h3 id="为啥之前都没写文章总结下，而这次有赞前端技术分享日想总结下呢？"><a href="#为啥之前都没写文章总结下，而这次有赞前端技术分享日想总结下呢？" class="headerlink" title="为啥之前都没写文章总结下，而这次有赞前端技术分享日想总结下呢？"></a>为啥之前都没写文章总结下，而这次有赞前端技术分享日想总结下呢？</h3><p>看到知乎上有这个帖子。<a href="https://www.zhihu.com/question/274150609" target="_blank" rel="external">参加有赞开放技术日是种怎样的体验？</a></p>
+<p>因为之前都是免费的活动。好像也没什么可写的。觉得发条朋友圈简明扼要的总结下即可。这次有赞的活动是收费的，都这么多人参加，而且有其他城市的人过来。比如：罗辑思维（北京），简书（上海）。<strong>可见前端圈的小伙伴对参与这类活动也是十分活跃的,同时说明了有赞宣传的比较好。</strong>觉得有必要写一下。技术方面不多写，可以回看PPT，或视频。<br>可以看下活动总结文章，里面有PPT，视频回放等。<br><a href="https://mp.weixin.qq.com/s/9FIESH8rGaV0JPR1lMgUTQ" target="_blank" rel="external">有赞技术活动首秀——有赞前端技术开放日圆满结束</a><br>主题主要有：<br>1、主题一：有赞开源项目最佳实践<br>2、主题二：本地调试线上代码——<code>ZanProxy</code><br>3、主题三：让前后端协作更高效——<code>ZanAPI</code><br>4、主题四：<code>Node</code> 在有赞的实践<br>5、主题五：有赞内部代码管理工具串讲</p>
+<p>为什么会有这么多产出，主要有三点：<br>1、业务逼的<br>2、工程师文化<br>3、注重技术基础</p>
+<p>感觉就是有赞前端技术团队，碰到什么问题，奔着高效工作的目的，提出解决方案，团队内部适用、推广，最后把做得比较好的项目开源。</p>
+<p>我是12点多到达场地。这时人还不多。拍了几张照。</p>
+<img src="/2018/04/21/20180421-youzan%20front-end%20tech%20open%20day/first-1.jpg" alt="开场前场外" title="开场前场外">
+
+<p>回顾一下整场活动，主要有五点：</p>
+<h5 id="1、人脉圈子"><a href="#1、人脉圈子" class="headerlink" title="1、人脉圈子"></a>1、人脉圈子</h5><p>有赞前端技术负责人施德来分享的缘起，说杭州兑吧公司想去有赞参观参观，交流交流。于是搞个技术开放日。<br>然后邀请了杭州一些公司来参与。比如点我达、丁香园、兑吧等。<br>说明杭州的公司前端负责人的技术圈子都相互认识熟悉。</p>
+<h5 id="2、正向反馈"><a href="#2、正向反馈" class="headerlink" title="2、正向反馈"></a>2、正向反馈</h5><p>虽然有赞搞了很多成功的项目，但也有失败的项目。<br>所有的失败项目，总结起来，就一条：没有准确估计投入产出比。<br>就是说没有正向反馈，就最后不了了之了。平时自己学习也是如此，如果没能看到正反馈，很难坚持下去。</p>
+<h5 id="3、演讲能力"><a href="#3、演讲能力" class="headerlink" title="3、演讲能力"></a>3、演讲能力</h5><p>前端负责人宣称他们内部演讲已经练习过几次了。<br>程序员可能比较欠缺演讲能力，毕竟很少机会上台面对上百人演讲，分享技术。</p>
+<h5 id="4、救场解围"><a href="#4、救场解围" class="headerlink" title="4、救场解围"></a>4、救场解围</h5><p>Q/A问答环节，可能有些问题讲师解答不是很清晰，或者说提问者不停追问，就容易导致僵持下去，现场尴尬，时间不可控等。<br>于是好几次都是前端负责人来解答提问者的问题。</p>
+<h5 id="5、技术（开源）项目本质上是：理念、套路、规范的工具化。"><a href="#5、技术（开源）项目本质上是：理念、套路、规范的工具化。" class="headerlink" title="5、技术（开源）项目本质上是：理念、套路、规范的工具化。"></a>5、技术（开源）项目本质上是：理念、套路、规范的工具化。</h5><p>比如开源的项目<a href="https://github.com/youzan/felint" target="_blank" rel="external"><code>felint</code></a>就是一个集成了 <code>eslint</code>、<code>stylelint</code>、<code>git� hook</code> 的前端代码检查工具。<br>规范定好，提交代码时强制校验，或者说<strong>随你怎么写，代码都一样</strong>，最后提交会验证一遍。<br>我司用的就是<code>githooks</code> <code>git commit</code> 时校验代码规范性。</p>
+<h5 id="6、参与到开源项目"><a href="#6、参与到开源项目" class="headerlink" title="6、参与到开源项目"></a>6、参与到开源项目</h5><p>有余力的情况下，可以参与到开源项目，也是对自己的一种提升。</p>
+<p>最后放两张照片</p>
+
+<img src="/2018/04/21/20180421-youzan%20front-end%20tech%20open%20day/full.jpg" alt="微信群中工作人员拍的场内全景图" title="微信群中工作人员拍的场内全景图">]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;从2016年毕业在杭州工作以来，就热衷于参与各类线下技术分享类活动。&lt;br&gt;之前参加过网易云课堂学习节、拉勾网理想之上、coding.net 技术小馆、阿里D2、阿里work like alibaba沙龙、freeCodeCamp线下分享等。&lt;br&gt;…
+    
+    </summary>
+    
+      <category term="随笔" scheme="https://lxchuan12.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="随笔" scheme="https://lxchuan12.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
+  
+  <entry>
     <title>2017年度总结，一如既往</title>
     <link href="https://lxchuan12.github.io/2018/01/05/20180105-2017-annual-summary/"/>
     <id>https://lxchuan12.github.io/2018/01/05/20180105-2017-annual-summary/</id>
     <published>2018-01-05T15:56:52.000Z</published>
-    <updated>2018-01-09T15:33:03.087Z</updated>
+    <updated>2018-01-10T14:33:54.065Z</updated>
     
     <content type="html"><![CDATA[<p>斗转星移，时光荏苒。2017年已经悄无声息的过去。2018年已经来临。本打算元旦完成这篇年度总结，但到现在才完整写完。</p>
 <p>年度总结有一些好处：可以回忆起几年前的点点滴滴，也可以发现一年里做的事确实不多，对自己有一定的指导意义。<br>比如：回顾下这一年走过的路，拍过的照片，参加过的活动，认识的人，听过的歌，学过的课，写过的文章，读过的书。都是生活的点点滴滴…<a id="more"></a><br><img src="/2018/01/05/20180105-2017-annual-summary/2017-cover.png" alt="封面" title="封面"><br>翻看着电脑上【N-年度总结】文件夹中2014~2016年年度总结。一般文件夹中有一份PPT和一份思维导图。</p>
@@ -31,7 +72,7 @@
 <p>如果说2015年关键词是<strong>PPT</strong>，2016年说是<strong>毕业、开发</strong>，那么2017年依旧是<strong>开发</strong>。2017年和2016年基本一样，没什么波澜，一如既往。</p>
 <h3 id="“丰富多彩的生活”"><a href="#“丰富多彩的生活”" class="headerlink" title="“丰富多彩的生活”"></a>“丰富多彩的生活”</h3><p>1月份，过年期间去舅舅家拜年，舅舅和姐夫都说我2016年工作后变了挺多，尤其酒量不错。大学室友说我工作后比较爱玩了，大学期间比较喜欢宅在寝室。其实我是那种宅也可以，游山玩水也可以的一类人。</p>
 <p>12月份，和一朋友聊天，她说了一句：<strong>看你朋友圈各方面蛮精彩的</strong>。想起高中关系比较好的几个同学都在985、211读研，虽然他们表示比较羡慕我朋友圈发的”丰富多彩”的生活，但我也比较羡慕他们的。这也许就是人们常说的围城吧。城外的人想进城，城里的人想出城。</p>
-<p>但事实上，我们总是习惯地去推测：看到一个人去图书馆，就推测TA博览群书。看到一个人发朋友圈在旅行，就推测TA经常在旅行。看到一个人去参加各种线下活动学习，就推测他经常去参加这类活动。<br>于是将美好的别人与糟糕的自己对比，从而心生羡慕。但往往这种推测不准确。</p>
+<p>但事实上，我们总是习惯地去推测：看到一个人去图书馆，就推测TA博览群书。看到一个人发朋友圈在旅行，就推测TA经常在旅行。看到一个人去参加各种线下活动学习，就推测TA经常去参加这类活动。<br>于是将美好的别人与糟糕的自己对比，从而心生羡慕。但往往这种推测不准确。</p>
 <h3 id="身体健康"><a href="#身体健康" class="headerlink" title="身体健康"></a>身体健康</h3><p>这一年，每天基本都是12点10分左右，有时睡得比较晚上班就容易打哈欠，同事开玩笑说是不是早起偷能量了。</p>
 <p>基本也没怎么锻炼，（半小时左右）上半年基本走路上下班，下半年就成基本骑车上下班了。</p>
 <p>年初体检了一次，年底体检了一次，虽无大碍，但还是要注意身体。体检时听到体检机构的工作人员讨论，别看现在的年轻人年轻，但他们经常很晚才睡，熬夜，不吃早餐等。是啊，年轻人更应该注意身体，尤其是IT行业的程序员。</p>
@@ -1061,34 +1102,6 @@
     
     
       <category term="RegExp" scheme="https://lxchuan12.github.io/tags/RegExp/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>gitflow工作流</title>
-    <link href="https://lxchuan12.github.io/2016/09/20/20160920-gitflow%20workflow/"/>
-    <id>https://lxchuan12.github.io/2016/09/20/20160920-gitflow workflow/</id>
-    <published>2016-09-20T09:30:32.000Z</published>
-    <updated>2016-09-27T15:06:56.001Z</updated>
-    
-    <content type="html"><![CDATA[<p>记得今年6月份参加了一次<code>coding</code>技术小馆杭州站的活动，讲的就是<code>git</code>和<code>gitflow</code>相关的。讲师当场也写代码。那是第一次<code>gitflow</code>工作流。那时在想我什么时候也能在舞台上讲开发技术……<a id="more"></a><br>今天就碰到一个关于<code>gitflow</code>工作流的问题。<br>使用<code>sourceTree</code>软件时，建立工作流。一般来说，是切换到<code>master</code>上。再建立工作流。我不小心，直接在<code>develop</code>分支上建了工作流。切换到<code>master</code>分支上。再打<code>hotfix</code>(修复补丁)时，发现无法成功。</p>
-<p>谷歌搜索发现解决方案：</p>
-<blockquote>
-<p>1、找到项目当前文件夹中的<code>.git/config</code>，把配置文件中的<code>gitflow</code>*相关的全部删除。<br>2、关闭再重新打开<code>SourceTree</code>。<br>3、重新在<code>master</code>上建立工作流，再打<code>hotfix</code>。<br>发现成功了。</p>
-</blockquote>
-<p>参考链接：<a href="http://www.ruanyifeng.com/blog/2015/12/git-workflow.html" target="_blank" rel="external">Git 工作流程</a><br><a href="http://blog.csdn.net/wyc_cs/article/details/51458990" target="_blank" rel="external">Git Flow 在团队中的最佳实践 – SourceTree的使用</a><br><a href="https://blog.sourcetreeapp.com/2012/08/01/smart-branching-with-sourcetree-and-git-flow/" target="_blank" rel="external">Smart branching with SourceTree and Git-flow</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;记得今年6月份参加了一次&lt;code&gt;coding&lt;/code&gt;技术小馆杭州站的活动，讲的就是&lt;code&gt;git&lt;/code&gt;和&lt;code&gt;gitflow&lt;/code&gt;相关的。讲师当场也写代码。那是第一次&lt;code&gt;gitflow&lt;/code&gt;工作流。那时在想我什么时候也能在舞台上讲开发技术……
-    
-    </summary>
-    
-      <category term="git" scheme="https://lxchuan12.github.io/categories/git/"/>
-    
-    
-      <category term="git" scheme="https://lxchuan12.github.io/tags/git/"/>
     
   </entry>
   
