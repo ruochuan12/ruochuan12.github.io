@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>vue 2.x项目 vue-qriously 生成二维码并下载、cliploard复制粘贴 | 轩辕Rowboat的博客 | 前端路上 | PPT爱好者 | 所知甚少，唯善学。常以轩辕Rowboat为名混迹于江湖。</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="theme-color" content="#3D95D5">
+  
+  
+  <meta name="keywords" content="vue,qrcode,clipboard">
+  <meta name="description" content="近日，重构项目某一老模块时，有一个功能是生成二维码并下载，还可以复制链接。列表每项都有二维码、下载二维码和复制链接和列表上方总的二维码。老模块是用的qrocode中文文档，qrcode github。
+先想着新模块中是否有生成二维码的插件，看了下package.json。有安装一个vue-qriously…">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue 2.x项目 vue-qriously 生成二维码并下载、cliploard复制粘贴">
+<meta property="og:url" content="https://lxchuan12.github.io/2018/05/16/20180515-vue qrcode clipboard/index.html">
+<meta property="og:site_name" content="轩辕Rowboat的博客">
+<meta property="og:description" content="近日，重构项目某一老模块时，有一个功能是生成二维码并下载，还可以复制链接。列表每项都有二维码、下载二维码和复制链接和列表上方总的二维码。老模块是用的qrocode中文文档，qrcode github。
+先想着新模块中是否有生成二维码的插件，看了下package.json。有安装一个vue-qriously…">
+<meta property="og:updated_time" content="2018-05-15T16:17:56.516Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="vue 2.x项目 vue-qriously 生成二维码并下载、cliploard复制粘贴">
+<meta name="twitter:description" content="近日，重构项目某一老模块时，有一个功能是生成二维码并下载，还可以复制链接。列表每项都有二维码、下载二维码和复制链接和列表上方总的二维码。老模块是用的qrocode中文文档，qrcode github。
+先想着新模块中是否有生成二维码的插件，看了下package.json。有安装一个vue-qriously…">
+  
+    <link rel="alternative" href="/atom.xml" title="轩辕Rowboat的博客" type="application/atom+xml">
+  
+  <meta name="summary" content="&lt;p&gt;近日，重构项目某一老模块时，有一个功能是生成二维码并下载，还可以复制链接。列表每项都有二维码、下载二维码和复制链接和列表上方总的二维码。&lt;br&gt;老模块是用的&lt;a href=&quot;http://code.ciaoca.com/javascript/qrcode/&quot;&gt;qrocode中文文档&lt;/a&gt;，&lt;a href=&quot;https://github.com/davidshimjs/qrcodejs&quot;&gt;qrcode github&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;先想着新模块中是否有生成二维码的插件，看了下&lt;code&gt;package.json&lt;/code&gt;。&lt;br&gt;有安装一个&lt;a href=&quot;https://github.com/theomessin/vue-qriously&quot;&gt;vue-qriously&lt;/a&gt;…">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="loading" class="active"></div>
+
+  <nav id="menu" class="hide" >
+   <div class="inner flex-row-vertical">
+  <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+      <i class="icon icon-lg icon-close"></i>
+  </a>
+  <div class="brand-wrap">
+    <div class="brand">
+      <a href="/" class="avatar"><img src="/img/logo.jpg"></a>
+      <div class="introduce">
+        <h5 class="nickname">轩辕Rowboat</h5>
+        <a href="mailto:lxchuan12@163.com" title="lxchuan12@163.com" class="mail">lxchuan12@163.com</a>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-wrap flex-col">
+    <ul class="nav">
+      
+          <li class="waves-block waves-effect">
+            <a href="/"  >
+              <i class="icon icon-lg icon-home"></i>
+              主页
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="/archives"  >
+              <i class="icon icon-lg icon-archives"></i>
+              文章
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="http://www.jianshu.com/users/83129d433d72/latest_articles" target="_blank" >
+              <i class="icon icon-lg icon-book"></i>
+              简书
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="http://weibo.com/lxchuan12" target="_blank" >
+              <i class="icon icon-lg icon-weibo"></i>
+              微博
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="https://segmentfault.com/u/lxchuan12/" target="_blank" >
+              <i class="icon icon-lg icon-hand-o-right"></i>
+              segmentfault
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="https://github.com/lxchuan12" target="_blank" >
+              <i class="icon icon-lg icon-github"></i>
+              Github
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="https://lxchuan12.github.io/2016/11/20/20161120-about%20me/" target="_blank" >
+              <i class="icon icon-lg icon-user"></i>
+              关于我
+            </a>
+          </li>
+      
+    </ul>
+
+    <footer class="footer">
+  <p><a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0;vertical-align:middle;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAAAPCAMAAABEF7i9AAAAllBMVEUAAAD///+rsapERER3d3eIiIjMzMzu7u4iIiKUmZO6v7rKzsoODg4RERFVVVUNDQ0NDg0PEA8zMzNLTEtbXltmZmZydnF9gn2AgICPkI+ZmZmqqqq7u7vFxsXIzMgNDQwZGRkgICAhISEkJSMnKCcuMC4xMzE5Ozk7PTtBQkFCQkJDQ0Nna2eGhoaHh4ezuLLGysbd3d1wVGpAAAAA4UlEQVR42q2T1xqCMAyFk7QsBQeKA9x7j/d/OSm22CpX0nzcpA1/T05aAOuBVkMAScQFHLnEwoCo2f1TnQIGoVMewjZEjVFN4GH1Ue1Cn2jWqwfsOOj6wDwGvotsl/c8lv7KIq1eLOsT0HMFHMIE/RZyHnlphryT9zyV+8WH5e8yQw3wnQvgAFxPTKUVi555SHR/lOfLMgVTeDlSfN+TaoUsiTyeIm+bCkHvCA2FUKG48LDtYBZBknsYP/G8NTw0gaaHyuQf4H5pecrB/FYCT2sL9zAfy1Xyjou6L8X2W7YcLyBZCRtnq/zfAAAAAElFTkSuQmCC" /></a></p>
+  <p>轩辕Rowboat的博客 &copy; 2018</p>
+  <p>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme
+  <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></p>
+  <a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-2x icon-rss-square"></i></a>
+</footer>
+
+  </div>
+</div>
+
+  </nav>
+  <main id="main">
+    <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">vue 2.x项目 vue-qriously 生成二维码并下载、cliploard复制粘贴</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input " autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-share">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header">
+  <div class="container">
+    <h1 class="author">vue 2.x项目 vue-qriously 生成二维码并下载、cliploard复制粘贴</h1>
+    <h5 class="subtitle">
+        
+            <time datetime="2018-05-15T16:15:21.000Z" itemprop="datePublished" class="page-time">
+  2018-05-16
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/vue/">vue</a></li></ul>
+
+        
+    </h5>
+  </div>
+</header>
+
+    <div class="container body-wrap">
+      <article id="post-20180515-vue qrcode clipboard" 
+  class="article article-type-post" itemprop="blogPost">
+    <div class="post-meta flex-row">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/clipboard/">clipboard</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/qrcode/">qrcode</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>
+
+    </div>
+    <div class="post-body">
+        <aside class="post-widget" id="post-widget">
+
+            
+            <div class="post-share" id="post-share">
+    <div class="tit">分享到：</div>
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" href="javascript:;" data-title="微博" data-service="tsina">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns" href="javascript:;" data-title="微信" data-service="weixin">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" href="javascript:;" data-title=" QQ" data-service="cqq">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" href="javascript:;" data-title=" Facebook" data-service="fb">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" href="javascript:;" data-title=" Twitter" data-service="twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="douban share-sns" href="javascript:;" data-title="豆瓣" data-service="douban">
+          豆
+        </a>
+      </li>
+    </ul>
+ </div>
+
+            
+
+            
+            <nav class="post-toc-wrap" id="post-toc">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#vue-qriously插件使用"><span class="post-toc-number">1.</span> <span class="post-toc-text">vue-qriously插件使用</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#下载二维码"><span class="post-toc-number">2.</span> <span class="post-toc-text">下载二维码</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#显示大小和下载大小不一样。"><span class="post-toc-number">3.</span> <span class="post-toc-text">显示大小和下载大小不一样。</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#cliploard-复制粘贴"><span class="post-toc-number">4.</span> <span class="post-toc-text">cliploard 复制粘贴</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#小结"><span class="post-toc-number">5.</span> <span class="post-toc-text">小结</span></a></li></ol>
+            </nav>
+            
+        </aside>
+
+        <div class="post-main">
+
+            <div class="post-content" id="post-content" itemprop="postContent">
+            <p>近日，重构项目某一老模块时，有一个功能是生成二维码并下载，还可以复制链接。列表每项都有二维码、下载二维码和复制链接和列表上方总的二维码。<br>老模块是用的<a href="http://code.ciaoca.com/javascript/qrcode/" target="_blank" rel="external">qrocode中文文档</a>，<a href="https://github.com/davidshimjs/qrcodejs" target="_blank" rel="external">qrcode github</a>。</p>
+<p>先想着新模块中是否有生成二维码的插件，看了下<code>package.json</code>。<br>有安装一个<a href="https://github.com/theomessin/vue-qriously" target="_blank" rel="external">vue-qriously</a>…<a id="more"></a>但搜索了一下，竟然没有使用，可能是因为很多二维码都是后端生成返回链接给前端的。而在其他H5、微信项目中使用了。看了下这个项目<code>star</code>数是<code>113</code>。但我不想重新引入老模块的<code>qrcodejs</code>，重新引入其他的二维码插件，相对比较麻烦。于是就保持统一用<code>vue-qriously</code>了。<br>猜想当时引入这个是<a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="external">vue 资源合集<code>awesome-vue</code></a>中，<code>qrcode</code>相关第一个就是<code>vue-qriously</code>。</p>
+<h3 id="vue-qriously插件使用"><a href="#vue-qriously插件使用" class="headerlink" title="vue-qriously插件使用"></a><code>vue-qriously</code>插件使用</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">// 入口js文件</div><div class="line">// npm install vue-qriously -S</div><div class="line">import Vue from &apos;vue&apos;;</div><div class="line">import VueQriously from &apos;vue-qriously&apos;;</div><div class="line">Vue.use(VueQriously);</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">// vue 文件</div><div class="line">&lt;template&gt;</div><div class="line">    &lt;qriously :value=&quot;value&quot; size=&quot;size&quot; :backgroundAlpha=&quot;backgroundAlpha&quot;/&gt;</div><div class="line">&lt;/template&gt;</div><div class="line"></div><div class="line">&lt;script&gt;</div><div class="line">export default &#123;</div><div class="line">    name: &apos;app&apos;,</div><div class="line">    data()&#123;</div><div class="line">        return &#123;</div><div class="line">            // 可以自定义，必填项。</div><div class="line">            value: &apos;http://lxchuan12.github.io/&apos;,</div><div class="line">            // 二维码大小 默认 100</div><div class="line">            size: 80,</div><div class="line">            // 背景透明度，默认透明 0 </div><div class="line">            backgroundAlpha： 1,</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+<p>更多参数配置可以查看：<a href="https://github.com/theomessin/vue-qriously/blob/master/src/components/v-qriously.vue" target="_blank" rel="external">github 仓库 v-qriously.vue源码</a><br>查看代码可以发现，开头引用了<code>qrious</code>，这个<code>star</code>就多一点，<code>600</code>多。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">import Qrious from &apos;qrious&apos;</div></pre></td></tr></table></figure></p>
+<p><a href="https://github.com/neocotic/qrious" target="_blank" rel="external"><code>qrious</code> github 地址</a><br><a href="https://neocotic.com/qrious/" target="_blank" rel="external"><code>qrious</code> 文档</a></p>
+<h3 id="下载二维码"><a href="#下载二维码" class="headerlink" title="下载二维码"></a>下载二维码</h3><p>粗略的翻看下以上相关文档，写完正准备要做下载功能。这时发现，哎呀，竟然就是只生成了一个<code>canvas</code>。<br>于是百度(暴露了用百度…我也想用谷歌，但现在不行…)了下<code>canvas</code>如何转图片。<br><a href="https://stackoverflow.com/questions/923885/capture-html-canvas-as-gif-jpg-png-pdf" target="_blank" rel="external">stackoverflow Capture HTML Canvas as gif/jpg/png/pdf?</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var canvas = document.getElementById(&quot;mycanvas&quot;);</div><div class="line">var imgSrc    = canvas.toDataURL(&quot;image/png&quot;);</div><div class="line">document.write(&apos;&lt;img src=&quot;&apos;+img+&apos;&quot;/&gt;&apos;);</div><div class="line">// 搜索到一些其他的方案，感觉挺麻烦。</div><div class="line">// 嗯，这个简单。想着我们项目兼容性没什么要求，于是就用这个了。</div></pre></td></tr></table></figure></p>
+<p>生成了<code>img</code>的<code>src</code>资源，那么就可以下载了。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">// 老模块是用的`jquery` + `seajs` + `vue1.x`</div><div class="line">// 新模块尽量要去除`jquery`。</div><div class="line">let src = $(&apos;.img&apos;).src;</div><div class="line">let aLink = $(&apos;&lt;a&gt;&lt;/a&gt;&apos;).attr(&apos;href&apos;, src).attr(&apos;download&apos;, &apos;xxx二维码.png&apos;).appendTo(&apos;body&apos;);</div><div class="line">aLink[0].click();</div><div class="line">aLink.remove();</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">// 新模块 去除jquery</div><div class="line">let elem = document.createElement(&apos;a&apos;);</div><div class="line">elem.setAttribute(&apos;href&apos;, imgSrc);</div><div class="line">elem.setAttribute(&apos;download&apos;, &apos;xxx二维码.png&apos;);</div><div class="line">document.body.appendChild(elem);</div><div class="line">elem.click();</div><div class="line">document.body.removeChild(elem);</div></pre></td></tr></table></figure>
+<p>但这样写也相对比较麻烦。<br>项目中封装了一个<code>download</code>指令。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">// 于是类似这种写法。</div><div class="line">this.exportLink = imgSrc;</div><div class="line">this.download = true;</div><div class="line">this.$nextTick(() =&gt; &#123;</div><div class="line">    this.exportLink = imgSrc;</div><div class="line">    this.download = false;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>代码写到这里，嗯，实现完了下载。但又发现又一需求，显示大小是<code>80 * 80</code>，下载需要是<code>160 * 160</code>。</p>
+<h3 id="显示大小和下载大小不一样。"><a href="#显示大小和下载大小不一样。" class="headerlink" title="显示大小和下载大小不一样。"></a>显示大小和下载大小不一样。</h3><p>参考了下老模块，<code>qrcodejs</code>渲染出来的<code>html</code>,<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">//  跟这个类似</div><div class="line">&lt;div id=&quot;qrcode_1&quot; title=&quot;your content&quot;&gt;</div><div class="line">    &lt;canvas width=&quot;256&quot; height=&quot;256&quot; style=&quot;display: none;&quot;&gt;&lt;/canvas&gt;</div><div class="line">    &lt;img alt=&quot;Scan me!&quot; style=&quot;display: block;&quot; src=&quot;data:image/png;base64,xxx&quot;&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure></p>
+<p><code>vue-qriously</code>渲染出来是<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;div&gt;</div><div class="line">    &lt;canvas width=&quot;80&quot; width=&quot;80&quot;&gt;&lt;/canvas&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure></p>
+<p>于是我可以把生成的<code>imgSrc</code>资源,<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&lt;template&gt;</div><div class="line">&lt;div&gt;</div><div class="line">    &lt;canvas width=&quot;160&quot; width=&quot;160&quot; v-show=&quot;false&quot;&gt;&lt;/canvas&gt;</div><div class="line">    &lt;img class=&quot;img&quot; :src=&quot;imgSrc&quot;/&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;/template&gt;</div><div class="line">&lt;style lang=&quot;less&quot;&gt;</div><div class="line">.img&#123;</div><div class="line">    width: 80px;</div><div class="line">    height: 80px;</div><div class="line">&#125;</div><div class="line">&lt;/style&gt;</div></pre></td></tr></table></figure></p>
+<p>这就实现了下载的资源是<code>160 * 160</code>，用样式控制图片显示<code>80 * 80</code>。<br>代码写完，觉得应该给<code>vue-qriously</code>写个<code>pr</code>,实现 不仅仅是渲染<code>canvas</code>，而是让大家可以选择时<code>img</code>还是<code>canvas</code>。又去翻了翻这个项目的<code>issue</code>,有一个<code>issue</code><a href="https://github.com/theomessin/vue-qriously/issues/10" target="_blank" rel="external">链接：how to make this canvas exchange to img</a> 就是说的这个。还没关闭。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">i think u can create type let user select img and canvas.</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">// 有一个回复</div><div class="line">If you want to make it become downloadable, maybe you can transform it from canvas easily by canvas.toDataURL()</div></pre></td></tr></table></figure>
+<p>文章写到这里，我发现这样似乎不太妥。我的场景，是点击时显示浮层（浮层有二维码和复制链接地址和下载二维码按钮等），获取<code>canvas</code>元素，去转成<code>img</code> <code>src</code>，再去渲染到页面，而且图片可能会闪，因为是实际大小是<code>160</code>，样式强制控制在<code>80</code>。<br>何不生成两份，一份是用来获取资源下载的。一份用来显示的。嗯，之后去优化下。<br>顺带说一下，复制粘贴</p>
+<h3 id="cliploard-复制粘贴"><a href="#cliploard-复制粘贴" class="headerlink" title="cliploard 复制粘贴"></a>cliploard 复制粘贴</h3><p>老模块中是用的<code>cliploard</code><a href="https://github.com/zenorocha/clipboard.js" target="_blank" rel="external">clipboard github仓库</a>。就是我引入的。</p>
+<p>新模块还没使用过，但依然使用这个。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">// 安装</div><div class="line">// npm install clipboard --save</div><div class="line">&lt;template @click=&quot;Clip($event, &apos;快来复制&apos;)&quot;&gt;&lt;template&gt;</div><div class="line">// 封装成一个函数</div><div class="line">import Clipboard from &apos;clipboard&apos;;</div><div class="line">export default function Clip(event，text) &#123;</div><div class="line">  const clipboard = new Clipboard(event.target, &#123;</div><div class="line">    text: () =&gt; text</div><div class="line">  &#125;);</div><div class="line">  clipboard.on(&apos;success&apos;, () =&gt; &#123;</div><div class="line">    console.log(&apos;复制成功&apos;);</div><div class="line">    clipboard.off(&apos;error&apos;);</div><div class="line">    clipboard.off(&apos;success&apos;);</div><div class="line">    clipboard.destroy();</div><div class="line">  &#125;);</div><div class="line">  clipboard.on(&apos;error&apos;, () =&gt; &#123;</div><div class="line">    console.log(&apos;复制失败，请刷新试试&apos;);</div><div class="line">    clipboard.off(&apos;error&apos;)</div><div class="line">    clipboard.off(&apos;success&apos;)</div><div class="line">    clipboard.destroy()</div><div class="line">  &#125;);</div><div class="line">  clipboard.onClick(event);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>当然也可以封装成<code>vue</code>指令。<br>可以参考<a href="https://github.com/PanJiaChen/vue-element-admin" target="_blank" rel="external">vue-element-admin这个项目</a><br>之前我看的时候还是<code>3000</code>多<code>star</code>，现在<code>1.2w+</code>，说明值得学习。<br>另外推荐<a href="https://www.awesomes.cn/" target="_blank" rel="external"><code>awesomes</code>网站 工具类库合集</a></p>
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>1、引入第三方插件等使用时，多查看<code>github</code> 文档 <code>issue</code>等，在技术社区搜索别人使用的方案。<br>2、选用第三方插件时，尽可能挑选<code>star</code>比较多的，<code>issue</code>处理比较及时的，在更新维护的。<br>3、富余时间可以多研究下别人的项目是如何组织文件，和实现的一些常用功能的。<br>4、尽可能去优化自己的代码，总结回顾。</p>
+<p>文章首发于<a href="https://segmentfault.com/a/1190000014875645" target="_blank" rel="external">vue 2.x项目 vue-qriously 生成二维码并下载、cliploard复制粘贴</a></p>
+
+
+            
+            <div class="post-reward">
+                <a id="rewardBtn" href="javascript:;" class="post-reward-btn waves-effect waves-circle waves-light">赏</a>
+            </div>
+            
+            
+            <blockquote>
+                <p>
+                本文地址：
+                <a href="https://lxchuan12.github.io/2018/05/16/20180515-vue qrcode clipboard/" target="_blank" rel="external">https://lxchuan12.github.io/2018/05/16/20180515-vue qrcode clipboard/</a>
+                </p>
+                <footer><cite><a href="https://lxchuan12.github.io">@轩辕Rowboat的博客</a></cite></footer>
+            </blockquote>
+            </div>
+            
+<nav class="post-nav">
+  
+
+  
+    <div class="waves-block waves-effect next fr">
+      <a href="/2018/04/21/20180421-youzan front-end tech open day/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">参加有赞前端技术开放日所感所想</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+            
+            
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="20180515-vue qrcode clipboard" data-title="vue 2.x项目 vue-qriously 生成二维码并下载、cliploard复制粘贴" data-url="https://lxchuan12.github.io/2018/05/16/20180515-vue qrcode clipboard/index.html"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"lxchuan12"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+
+        </div>
+    </div>
+</article>
+
+<div id="reward" class="reward-lay">
+    <a class="reward-off" id="rewardOff" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        你的打赏是我写作的动力~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <ul class="reward-items">
+        
+        <li>
+            <img src="/img/wechat.jpg" title="微信打赏二维码" alt="微信打赏二维码">
+            <p>微信</p>
+        </li>
+        
+
+        
+        <li>
+            <img src="/img/alipay.jpg" title="支付宝打赏二维码" alt="支付宝打赏二维码">
+            <p>支付宝</p>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+  </main>
+<div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+<script>
+var BLOG_SHARE = {
+    title: "vue 2.x项目 vue-qriously 生成二维码并下载、cliploard复制粘贴",
+    pic: "/img/logo.jpg",
+    summary: document.getElementsByName('summary')[0].content,
+    url: "https://lxchuan12.github.io/2018/05/16/20180515-vue qrcode clipboard/index.html"
+};
+</script>
+<div class="global-share" id="global-share">
+    <div class="tit">分享到：</div>
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" href="javascript:;" data-title="微博" data-service="tsina">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns" href="javascript:;" data-title="微信" data-service="weixin">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" href="javascript:;" data-title=" QQ" data-service="cqq">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" href="javascript:;" data-title=" Facebook" data-service="fb">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" href="javascript:;" data-title=" Twitter" data-service="twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="douban share-sns" href="javascript:;" data-title="豆瓣" data-service="douban">
+          豆
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+
+<script src="/js/main.js"></script>
+
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<script type="text/template" id="search-tpl">
+<li class="item">
+    <a href="/{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</script>
+
+<script src="/js/search.js"></script>
+
+
+
+
+
+
+
+
+
+</body>
+</html>

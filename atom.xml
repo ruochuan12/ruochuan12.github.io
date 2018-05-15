@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://lxchuan12.github.io/"/>
-  <updated>2018-04-22T07:15:51.578Z</updated>
+  <updated>2018-05-15T16:17:56.516Z</updated>
   <id>https://lxchuan12.github.io/</id>
   
   <author>
@@ -14,6 +14,55 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>vue 2.x项目 vue-qriously 生成二维码并下载、cliploard复制粘贴</title>
+    <link href="https://lxchuan12.github.io/2018/05/16/20180515-vue%20qrcode%20clipboard/"/>
+    <id>https://lxchuan12.github.io/2018/05/16/20180515-vue qrcode clipboard/</id>
+    <published>2018-05-15T16:15:21.000Z</published>
+    <updated>2018-05-15T16:17:56.516Z</updated>
+    
+    <content type="html"><![CDATA[<p>近日，重构项目某一老模块时，有一个功能是生成二维码并下载，还可以复制链接。列表每项都有二维码、下载二维码和复制链接和列表上方总的二维码。<br>老模块是用的<a href="http://code.ciaoca.com/javascript/qrcode/" target="_blank" rel="external">qrocode中文文档</a>，<a href="https://github.com/davidshimjs/qrcodejs" target="_blank" rel="external">qrcode github</a>。</p>
+<p>先想着新模块中是否有生成二维码的插件，看了下<code>package.json</code>。<br>有安装一个<a href="https://github.com/theomessin/vue-qriously" target="_blank" rel="external">vue-qriously</a>…<a id="more"></a>但搜索了一下，竟然没有使用，可能是因为很多二维码都是后端生成返回链接给前端的。而在其他H5、微信项目中使用了。看了下这个项目<code>star</code>数是<code>113</code>。但我不想重新引入老模块的<code>qrcodejs</code>，重新引入其他的二维码插件，相对比较麻烦。于是就保持统一用<code>vue-qriously</code>了。<br>猜想当时引入这个是<a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="external">vue 资源合集<code>awesome-vue</code></a>中，<code>qrcode</code>相关第一个就是<code>vue-qriously</code>。</p>
+<h3 id="vue-qriously插件使用"><a href="#vue-qriously插件使用" class="headerlink" title="vue-qriously插件使用"></a><code>vue-qriously</code>插件使用</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">// 入口js文件</div><div class="line">// npm install vue-qriously -S</div><div class="line">import Vue from &apos;vue&apos;;</div><div class="line">import VueQriously from &apos;vue-qriously&apos;;</div><div class="line">Vue.use(VueQriously);</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">// vue 文件</div><div class="line">&lt;template&gt;</div><div class="line">    &lt;qriously :value=&quot;value&quot; size=&quot;size&quot; :backgroundAlpha=&quot;backgroundAlpha&quot;/&gt;</div><div class="line">&lt;/template&gt;</div><div class="line"></div><div class="line">&lt;script&gt;</div><div class="line">export default &#123;</div><div class="line">    name: &apos;app&apos;,</div><div class="line">    data()&#123;</div><div class="line">        return &#123;</div><div class="line">            // 可以自定义，必填项。</div><div class="line">            value: &apos;http://lxchuan12.github.io/&apos;,</div><div class="line">            // 二维码大小 默认 100</div><div class="line">            size: 80,</div><div class="line">            // 背景透明度，默认透明 0 </div><div class="line">            backgroundAlpha： 1,</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+<p>更多参数配置可以查看：<a href="https://github.com/theomessin/vue-qriously/blob/master/src/components/v-qriously.vue" target="_blank" rel="external">github 仓库 v-qriously.vue源码</a><br>查看代码可以发现，开头引用了<code>qrious</code>，这个<code>star</code>就多一点，<code>600</code>多。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">import Qrious from &apos;qrious&apos;</div></pre></td></tr></table></figure></p>
+<p><a href="https://github.com/neocotic/qrious" target="_blank" rel="external"><code>qrious</code> github 地址</a><br><a href="https://neocotic.com/qrious/" target="_blank" rel="external"><code>qrious</code> 文档</a></p>
+<h3 id="下载二维码"><a href="#下载二维码" class="headerlink" title="下载二维码"></a>下载二维码</h3><p>粗略的翻看下以上相关文档，写完正准备要做下载功能。这时发现，哎呀，竟然就是只生成了一个<code>canvas</code>。<br>于是百度(暴露了用百度…我也想用谷歌，但现在不行…)了下<code>canvas</code>如何转图片。<br><a href="https://stackoverflow.com/questions/923885/capture-html-canvas-as-gif-jpg-png-pdf" target="_blank" rel="external">stackoverflow Capture HTML Canvas as gif/jpg/png/pdf?</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var canvas = document.getElementById(&quot;mycanvas&quot;);</div><div class="line">var imgSrc    = canvas.toDataURL(&quot;image/png&quot;);</div><div class="line">document.write(&apos;&lt;img src=&quot;&apos;+img+&apos;&quot;/&gt;&apos;);</div><div class="line">// 搜索到一些其他的方案，感觉挺麻烦。</div><div class="line">// 嗯，这个简单。想着我们项目兼容性没什么要求，于是就用这个了。</div></pre></td></tr></table></figure></p>
+<p>生成了<code>img</code>的<code>src</code>资源，那么就可以下载了。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">// 老模块是用的`jquery` + `seajs` + `vue1.x`</div><div class="line">// 新模块尽量要去除`jquery`。</div><div class="line">let src = $(&apos;.img&apos;).src;</div><div class="line">let aLink = $(&apos;&lt;a&gt;&lt;/a&gt;&apos;).attr(&apos;href&apos;, src).attr(&apos;download&apos;, &apos;xxx二维码.png&apos;).appendTo(&apos;body&apos;);</div><div class="line">aLink[0].click();</div><div class="line">aLink.remove();</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">// 新模块 去除jquery</div><div class="line">let elem = document.createElement(&apos;a&apos;);</div><div class="line">elem.setAttribute(&apos;href&apos;, imgSrc);</div><div class="line">elem.setAttribute(&apos;download&apos;, &apos;xxx二维码.png&apos;);</div><div class="line">document.body.appendChild(elem);</div><div class="line">elem.click();</div><div class="line">document.body.removeChild(elem);</div></pre></td></tr></table></figure>
+<p>但这样写也相对比较麻烦。<br>项目中封装了一个<code>download</code>指令。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">// 于是类似这种写法。</div><div class="line">this.exportLink = imgSrc;</div><div class="line">this.download = true;</div><div class="line">this.$nextTick(() =&gt; &#123;</div><div class="line">    this.exportLink = imgSrc;</div><div class="line">    this.download = false;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>代码写到这里，嗯，实现完了下载。但又发现又一需求，显示大小是<code>80 * 80</code>，下载需要是<code>160 * 160</code>。</p>
+<h3 id="显示大小和下载大小不一样。"><a href="#显示大小和下载大小不一样。" class="headerlink" title="显示大小和下载大小不一样。"></a>显示大小和下载大小不一样。</h3><p>参考了下老模块，<code>qrcodejs</code>渲染出来的<code>html</code>,<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">//  跟这个类似</div><div class="line">&lt;div id=&quot;qrcode_1&quot; title=&quot;your content&quot;&gt;</div><div class="line">    &lt;canvas width=&quot;256&quot; height=&quot;256&quot; style=&quot;display: none;&quot;&gt;&lt;/canvas&gt;</div><div class="line">    &lt;img alt=&quot;Scan me!&quot; style=&quot;display: block;&quot; src=&quot;data:image/png;base64,xxx&quot;&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure></p>
+<p><code>vue-qriously</code>渲染出来是<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;div&gt;</div><div class="line">    &lt;canvas width=&quot;80&quot; width=&quot;80&quot;&gt;&lt;/canvas&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure></p>
+<p>于是我可以把生成的<code>imgSrc</code>资源,<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&lt;template&gt;</div><div class="line">&lt;div&gt;</div><div class="line">    &lt;canvas width=&quot;160&quot; width=&quot;160&quot; v-show=&quot;false&quot;&gt;&lt;/canvas&gt;</div><div class="line">    &lt;img class=&quot;img&quot; :src=&quot;imgSrc&quot;/&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;/template&gt;</div><div class="line">&lt;style lang=&quot;less&quot;&gt;</div><div class="line">.img&#123;</div><div class="line">    width: 80px;</div><div class="line">    height: 80px;</div><div class="line">&#125;</div><div class="line">&lt;/style&gt;</div></pre></td></tr></table></figure></p>
+<p>这就实现了下载的资源是<code>160 * 160</code>，用样式控制图片显示<code>80 * 80</code>。<br>代码写完，觉得应该给<code>vue-qriously</code>写个<code>pr</code>,实现 不仅仅是渲染<code>canvas</code>，而是让大家可以选择时<code>img</code>还是<code>canvas</code>。又去翻了翻这个项目的<code>issue</code>,有一个<code>issue</code><a href="https://github.com/theomessin/vue-qriously/issues/10" target="_blank" rel="external">链接：how to make this canvas exchange to img</a> 就是说的这个。还没关闭。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">i think u can create type let user select img and canvas.</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">// 有一个回复</div><div class="line">If you want to make it become downloadable, maybe you can transform it from canvas easily by canvas.toDataURL()</div></pre></td></tr></table></figure>
+<p>文章写到这里，我发现这样似乎不太妥。我的场景，是点击时显示浮层（浮层有二维码和复制链接地址和下载二维码按钮等），获取<code>canvas</code>元素，去转成<code>img</code> <code>src</code>，再去渲染到页面，而且图片可能会闪，因为是实际大小是<code>160</code>，样式强制控制在<code>80</code>。<br>何不生成两份，一份是用来获取资源下载的。一份用来显示的。嗯，之后去优化下。<br>顺带说一下，复制粘贴</p>
+<h3 id="cliploard-复制粘贴"><a href="#cliploard-复制粘贴" class="headerlink" title="cliploard 复制粘贴"></a>cliploard 复制粘贴</h3><p>老模块中是用的<code>cliploard</code><a href="https://github.com/zenorocha/clipboard.js" target="_blank" rel="external">clipboard github仓库</a>。就是我引入的。</p>
+<p>新模块还没使用过，但依然使用这个。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">// 安装</div><div class="line">// npm install clipboard --save</div><div class="line">&lt;template @click=&quot;Clip($event, &apos;快来复制&apos;)&quot;&gt;&lt;template&gt;</div><div class="line">// 封装成一个函数</div><div class="line">import Clipboard from &apos;clipboard&apos;;</div><div class="line">export default function Clip(event，text) &#123;</div><div class="line">  const clipboard = new Clipboard(event.target, &#123;</div><div class="line">    text: () =&gt; text</div><div class="line">  &#125;);</div><div class="line">  clipboard.on(&apos;success&apos;, () =&gt; &#123;</div><div class="line">    console.log(&apos;复制成功&apos;);</div><div class="line">    clipboard.off(&apos;error&apos;);</div><div class="line">    clipboard.off(&apos;success&apos;);</div><div class="line">    clipboard.destroy();</div><div class="line">  &#125;);</div><div class="line">  clipboard.on(&apos;error&apos;, () =&gt; &#123;</div><div class="line">    console.log(&apos;复制失败，请刷新试试&apos;);</div><div class="line">    clipboard.off(&apos;error&apos;)</div><div class="line">    clipboard.off(&apos;success&apos;)</div><div class="line">    clipboard.destroy()</div><div class="line">  &#125;);</div><div class="line">  clipboard.onClick(event);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>当然也可以封装成<code>vue</code>指令。<br>可以参考<a href="https://github.com/PanJiaChen/vue-element-admin" target="_blank" rel="external">vue-element-admin这个项目</a><br>之前我看的时候还是<code>3000</code>多<code>star</code>，现在<code>1.2w+</code>，说明值得学习。<br>另外推荐<a href="https://www.awesomes.cn/" target="_blank" rel="external"><code>awesomes</code>网站 工具类库合集</a></p>
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>1、引入第三方插件等使用时，多查看<code>github</code> 文档 <code>issue</code>等，在技术社区搜索别人使用的方案。<br>2、选用第三方插件时，尽可能挑选<code>star</code>比较多的，<code>issue</code>处理比较及时的，在更新维护的。<br>3、富余时间可以多研究下别人的项目是如何组织文件，和实现的一些常用功能的。<br>4、尽可能去优化自己的代码，总结回顾。</p>
+<p>文章首发于<a href="https://segmentfault.com/a/1190000014875645" target="_blank" rel="external">vue 2.x项目 vue-qriously 生成二维码并下载、cliploard复制粘贴</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;近日，重构项目某一老模块时，有一个功能是生成二维码并下载，还可以复制链接。列表每项都有二维码、下载二维码和复制链接和列表上方总的二维码。&lt;br&gt;老模块是用的&lt;a href=&quot;http://code.ciaoca.com/javascript/qrcode/&quot;&gt;qrocode中文文档&lt;/a&gt;，&lt;a href=&quot;https://github.com/davidshimjs/qrcodejs&quot;&gt;qrcode github&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;先想着新模块中是否有生成二维码的插件，看了下&lt;code&gt;package.json&lt;/code&gt;。&lt;br&gt;有安装一个&lt;a href=&quot;https://github.com/theomessin/vue-qriously&quot;&gt;vue-qriously&lt;/a&gt;…
+    
+    </summary>
+    
+      <category term="vue" scheme="https://lxchuan12.github.io/categories/vue/"/>
+    
+    
+      <category term="vue" scheme="https://lxchuan12.github.io/tags/vue/"/>
+    
+      <category term="qrcode" scheme="https://lxchuan12.github.io/tags/qrcode/"/>
+    
+      <category term="clipboard" scheme="https://lxchuan12.github.io/tags/clipboard/"/>
+    
+  </entry>
   
   <entry>
     <title>参加有赞前端技术开放日所感所想</title>
@@ -63,7 +112,7 @@
     <link href="https://lxchuan12.github.io/2018/01/05/20180105-2017-annual-summary/"/>
     <id>https://lxchuan12.github.io/2018/01/05/20180105-2017-annual-summary/</id>
     <published>2018-01-05T15:56:52.000Z</published>
-    <updated>2018-01-10T14:33:54.065Z</updated>
+    <updated>2018-01-10T14:33:54.066Z</updated>
     
     <content type="html"><![CDATA[<p>斗转星移，时光荏苒。2017年已经悄无声息的过去。2018年已经来临。本打算元旦完成这篇年度总结，但到现在才完整写完。</p>
 <p>年度总结有一些好处：可以回忆起几年前的点点滴滴，也可以发现一年里做的事确实不多，对自己有一定的指导意义。<br>比如：回顾下这一年走过的路，拍过的照片，参加过的活动，认识的人，听过的歌，学过的课，写过的文章，读过的书。都是生活的点点滴滴…<a id="more"></a><br><img src="/2018/01/05/20180105-2017-annual-summary/2017-cover.png" alt="封面" title="封面"><br>翻看着电脑上【N-年度总结】文件夹中2014~2016年年度总结。一般文件夹中有一份PPT和一份思维导图。</p>
@@ -194,7 +243,7 @@
     <link href="https://lxchuan12.github.io/2017/10/12/20171012-JavaScript%20regex%20mini%20books%20reading%20record/"/>
     <id>https://lxchuan12.github.io/2017/10/12/20171012-JavaScript regex mini books reading record/</id>
     <published>2017-10-12T15:45:52.000Z</published>
-    <updated>2017-10-21T15:52:11.460Z</updated>
+    <updated>2017-10-21T15:52:11.461Z</updated>
     
     <content type="html"><![CDATA[<p><a href="https://jex.im/regulex/" target="_blank" rel="external">正则可视化工具</a><br><a href="https://regexper.com/#jsah" target="_blank" rel="external">正则可视化工具-regexper</a><br><a href="http://regex101.com/" target="_blank" rel="external">正则在线测试工具-regex101</a></p>
 <h1 id="勘误："><a href="#勘误：" class="headerlink" title="勘误："></a>勘误：</h1><p>2.4.2.5. 格式化<br>$ 1888.00 -&gt; $ 1,888.00</p>
@@ -391,7 +440,7 @@
     <link href="https://lxchuan12.github.io/2017/09/21/20170921-github%20tips/"/>
     <id>https://lxchuan12.github.io/2017/09/21/20170921-github tips/</id>
     <published>2017-09-21T15:15:52.000Z</published>
-    <updated>2017-09-21T15:44:17.403Z</updated>
+    <updated>2017-09-21T15:44:17.404Z</updated>
     
     <content type="html"><![CDATA[<p>大多数开发者都有github账号，但github这些日常小技巧估计不知道。<br>1、<a href="https://github.com/explore/subscribe" target="_blank" rel="external">subscribe订阅github周报，每周会把你关注的开发语言和关注的人的动态等发邮件给你：</a><br><a href="https://github.com/trending" target="_blank" rel="external">每天github的热点</a><br>2、快捷键：在github某个项目面板（页面），按shift+?，可以看到所有支持的快捷键。<br>其中常用的主要有。</p>
 <blockquote>
@@ -801,7 +850,7 @@
     <link href="https://lxchuan12.github.io/2017/02/12/20170212-The%20difference%20between%20vue1.0%20and%202/"/>
     <id>https://lxchuan12.github.io/2017/02/12/20170212-The difference between vue1.0 and 2/</id>
     <published>2017-02-12T07:04:23.000Z</published>
-    <updated>2017-06-24T15:23:28.738Z</updated>
+    <updated>2017-06-24T15:23:28.739Z</updated>
     
     <content type="html"><![CDATA[<p>重新仔细读了下文档，边看边写了一些。<br>1、v-once只渲染一次。<br>2、过滤器 第二参数（）以函数传参的形式。过滤器可以串联。<br>全局过滤器和单个过滤器。<a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;!-- in mustaches --&gt;</div><div class="line">&#123;&#123; message | capitalize &#125;&#125;</div><div class="line">&lt;!-- in v-bind --&gt;</div><div class="line">&lt;div v-bind:id=&quot;rawId | formatId&quot;&gt;&lt;/div&gt;</div></pre></td></tr></table></figure></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;&#123; message | filterA | filterB &#125;&#125;</div></pre></td></tr></table></figure>
@@ -838,7 +887,7 @@
     <link href="https://lxchuan12.github.io/2017/01/07/20170107-2016-annual-summary/"/>
     <id>https://lxchuan12.github.io/2017/01/07/20170107-2016-annual-summary/</id>
     <published>2017-01-07T13:40:38.000Z</published>
-    <updated>2017-06-24T15:25:20.635Z</updated>
+    <updated>2017-06-24T15:25:20.636Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>1月4日的时候就写好了这篇文章，发年度总结说说的同时，在想是否有必要在空间发这篇日志，因为是使用markdown写的，排版是个问题，可以发表在简书啊（但是又包含很多个人信息）,后来觉得就没发。现在想想好像基本都是用手机看的，排版并不是那么重要，还是发出来吧，可能对读者有些启发。<a id="more"></a></p>
@@ -1042,7 +1091,7 @@
     <link href="https://lxchuan12.github.io/2016/10/09/20161009-function-length/"/>
     <id>https://lxchuan12.github.io/2016/10/09/20161009-function-length/</id>
     <published>2016-10-09T13:30:12.000Z</published>
-    <updated>2016-10-17T12:50:41.889Z</updated>
+    <updated>2016-10-17T12:50:41.890Z</updated>
     
     <content type="html"><![CDATA[<p>看<a href="http://es6.ruanyifeng.com/#docs/function#函数的length属性" target="_blank" rel="external">《ES6标准入门》中提到函数的length属性</a>，看到有函数的length属性这一说法，其实之前一直都不知道有。并且不知道这个length有何应用……<a id="more"></a>查阅了<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Function/length" target="_blank" rel="external">MDN Function.length</a>是这样描述的：</p>
 <blockquote>
@@ -1065,45 +1114,6 @@
     
     
       <category term="js" scheme="https://lxchuan12.github.io/tags/js/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>正则表达式知识点</title>
-    <link href="https://lxchuan12.github.io/2016/09/22/20160922-RegExp/"/>
-    <id>https://lxchuan12.github.io/2016/09/22/20160922-RegExp/</id>
-    <published>2016-09-22T15:48:12.000Z</published>
-    <updated>2016-10-23T15:11:22.449Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="正则表达式-RegExp"><a href="#正则表达式-RegExp" class="headerlink" title="正则表达式(RegExp)"></a>正则表达式(RegExp)</h2><h3 id="1、什么是正则表达式"><a href="#1、什么是正则表达式" class="headerlink" title="1、什么是正则表达式"></a>1、什么是正则表达式</h3><p>1.1 什么叫“正则”<br>—规则、模式<br>—强大的字符串匹配工具……<a id="more"></a><br>1.2 正则的写法<br>–new RegExp(“a”,”ig”),需要传参只能用这种方案。<br>–/a/</p>
-<h3 id="2、正则表达式常用方法"><a href="#2、正则表达式常用方法" class="headerlink" title="2、正则表达式常用方法"></a>2、正则表达式常用方法</h3><p>2.1 test<br>—字符串判断<br>—返回真假<br>—正则.test(字符串)<br>—例子：是否有不是数字的字符<br>2.2 search<br>字符串搜索<br>–返回出现的位置<br>–字符串.search(正则)<br>–忽略大小写：i——ignore<br>2.3 match<br>获取匹配的项目,<br>–返回数组<br>–量词：+<br>–全局匹配：g——global<br>–例子：找出所有数字<br>2.4 replace<br>替换所有匹配<br>–返回替换后的字符串<br>–字符串.replace(正则,想替换的)<br>–例子：敏感词过滤<br>-例子：统计字符串中每个字符的出现频率<br>/**<br>统计字符串中每个字符的出现频率，返回一个 Object，key 为统计字符，value 为出现频率</p>
-<ol>
-<li>不限制 key 的顺序</li>
-<li>输入的字符串参数不会为空</li>
-<li>忽略空白字符<br>输入例子:<br>count(‘hello world’)<br>输出例子:<br>{h: 1, e: 1, l: 3, o: 2, w: 1, r: 1, d: 1}<br>*/<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">function count_2(str) &#123;</div><div class="line">    var obj = &#123;&#125;;</div><div class="line">    // \S:非空白符</div><div class="line">    str.replace(/\S/g,function(s)&#123;</div><div class="line">        !obj[s]?obj[s]=1:obj[s]++;</div><div class="line">    &#125;)</div><div class="line">    return obj;</div><div class="line">&#125;</div><div class="line">console.log(count_2(&apos;hello world&apos;));</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>–匹配子项<br>–例子：日期格式化</p>
-<h3 id="3、正则表达式字符类"><a href="#3、正则表达式字符类" class="headerlink" title="3、正则表达式字符类"></a>3、正则表达式字符类</h3><p>3.1 任意字符<br>-[abc]<br>–例子：o[usb]t——obt、ost、out<br>3.2 范围<br>-[a-z]、[0-9]<br>–例子：id[0-9]——id0、id5<br>3.3 排除<br>-[^a]<br>–例子：o[^0-9]t——oat、o?t、o t<br>3.4 组合<br>-[a-z0-9A-Z]<br>实例：偷小说<br>过滤HTML标签<br>–自定义innerText方法</p>
-<h3 id="4、转义字符"><a href="#4、转义字符" class="headerlink" title="4、转义字符"></a>4、转义字符</h3><p>转义字符<br>.（点）——任意字符<br>\d（[0-9]）、\w（[a-zA-Z0-9_]）、\s（空白符） 、\b（单词边界）<br>\D（[^\d]）、\W（[^\w]）、\S（[^\s]） 、\B（[^\b]）<br>\1    重复子项<br>例子<br>–获取class元素<br>–找重复项最多的字符和个数</p>
-<h3 id="5、量词"><a href="#5、量词" class="headerlink" title="5、量词"></a>5、量词</h3><p>5.1 什么是量词<br>出现的次数<br>{n,m}，至少出现n次，最多m次<br>例子：查找QQ号<br>5.2 常用量词<br>{m,n}:m到n次<br>{n,}:至少n次<br>{n}:正好n次<br>*:任意次  {0,}<br>？:零次或一次  {0,1}<br>+:一次或任意次{1,}</p>
-<p>正则收尾<br>^ 开始<br>$ 结束<br>例子<br>–是不是QQ号<br>–去掉前后空格</p>
-<h3 id="6、常用正则例子"><a href="#6、常用正则例子" class="headerlink" title="6、常用正则例子"></a>6、常用正则例子</h3><p>高级表单校验<br>匹配中文：[\u4e00-\u9fa5]<br>行首行尾空格：^\s<em>|\s</em>$<br>Email：^\w+@[a-z0-9]+(.[a-z]+){1,3}$</p>
-<p>网址：[a-zA-z]+://[^\s]*<br>QQ号：[1-9][0-9]{4,9}<br>邮政编码：[1-9]\d{5}<br>身份证：[1-9]\d{14}|[1-9]\d{17}|[1-9]\d{16}x</p>
-<h3 id="7、正则与面向对象"><a href="#7、正则与面向对象" class="headerlink" title="7、正则与面向对象"></a>7、正则与面向对象</h3><p>把方法包在一个空间里<br>有人管他叫——命名空间<br>在公司里，把同一类方法，包在一起<br>JSON的使用<br>把之前的方法，包在一起</p>
-<h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/RegExp" target="_blank" rel="external">MDN RegExp</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;正则表达式-RegExp&quot;&gt;&lt;a href=&quot;#正则表达式-RegExp&quot; class=&quot;headerlink&quot; title=&quot;正则表达式(RegExp)&quot;&gt;&lt;/a&gt;正则表达式(RegExp)&lt;/h2&gt;&lt;h3 id=&quot;1、什么是正则表达式&quot;&gt;&lt;a href=&quot;#1、什么是正则表达式&quot; class=&quot;headerlink&quot; title=&quot;1、什么是正则表达式&quot;&gt;&lt;/a&gt;1、什么是正则表达式&lt;/h3&gt;&lt;p&gt;1.1 什么叫“正则”&lt;br&gt;—规则、模式&lt;br&gt;—强大的字符串匹配工具……
-    
-    </summary>
-    
-      <category term="JavaScript" scheme="https://lxchuan12.github.io/categories/JavaScript/"/>
-    
-    
-      <category term="RegExp" scheme="https://lxchuan12.github.io/tags/RegExp/"/>
     
   </entry>
   
