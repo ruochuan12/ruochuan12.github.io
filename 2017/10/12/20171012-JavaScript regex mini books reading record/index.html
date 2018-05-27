@@ -1,16 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  
-  <title>JavaScript正则表达式迷你书-阅读笔记 | 轩辕Rowboat的博客 | 前端路上 | PPT爱好者 | 所知甚少，唯善学。常以轩辕Rowboat为名混迹于江湖。</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  
-  <meta name="theme-color" content="#3D95D5">
-  
-  
-  <meta name="keywords" content="JavaScript">
-  <meta name="description" content="正则可视化工具正则可视化工具-regexper正则在线测试工具-regex101
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>JavaScript正则表达式迷你书-阅读笔记 | 轩辕Rowboat的博客 | 前端路上 | PPT爱好者 | 所知甚少，唯善学。常以轩辕Rowboat为名混迹于江湖。</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3D95D5">
+    
+    
+    <meta name="keywords" content="JavaScript">
+    <meta name="description" content="正则可视化工具正则可视化工具-regexper正则在线测试工具-regex101
 勘误：2.4.2.5. 格式化$ 1888.00 -&amp;gt; $ 1,888.00
 3.3.1. 括号嵌套怎么办？最后的是 \4，找到第3个开括号  -&amp;gt; 最后的是 \4，找到第4个开括号
 3.5.6. 匹配成对标签其中开标签 &amp;lt;[\^&amp;gt;]+&amp;gt; 改成 &amp;lt;([^&amp;gt;]+)&amp;gt;  -">
@@ -29,107 +40,96 @@
 勘误：2.4.2.5. 格式化$ 1888.00 -&amp;gt; $ 1,888.00
 3.3.1. 括号嵌套怎么办？最后的是 \4，找到第3个开括号  -&amp;gt; 最后的是 \4，找到第4个开括号
 3.5.6. 匹配成对标签其中开标签 &amp;lt;[\^&amp;gt;]+&amp;gt; 改成 &amp;lt;([^&amp;gt;]+)&amp;gt;  -">
-  
-    <link rel="alternative" href="/atom.xml" title="轩辕Rowboat的博客" type="application/atom+xml">
-  
-  <meta name="summary" content="轩辕Rowboat，某世界闻名的陶瓷大学2016届毕业生，目前在杭州从事前端开发工作，也是一枚PPT爱好者。所知甚少，唯善学。常以轩辕Rowboat为名混迹于江湖。">
-  <link rel="shortcut icon" href="/favicon.ico">
-  <link rel="stylesheet" href="/css/style.css">
+    
+        <link rel="alternate" type="application/atom+xml" title="轩辕Rowboat的博客" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
 </head>
 
 <body>
-  <div id="loading" class="active"></div>
+    <div id="loading" class="active"></div>
 
-  <nav id="menu" class="hide" >
-   <div class="inner flex-row-vertical">
-  <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
-      <i class="icon icon-lg icon-close"></i>
-  </a>
-  <div class="brand-wrap">
-    <div class="brand">
-      <a href="/" class="avatar"><img src="/img/logo.jpg"></a>
-      <div class="introduce">
-        <h5 class="nickname">轩辕Rowboat</h5>
-        <a href="mailto:lxchuan12@163.com" title="lxchuan12@163.com" class="mail">lxchuan12@163.com</a>
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/logo.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">轩辕Rowboat</h5>
+          <a href="mailto:lxchuan12@163.com" title="lxchuan12@163.com" class="mail">lxchuan12@163.com</a>
+        </hgroup>
       </div>
     </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                文章
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://www.jianshu.com/users/83129d433d72/latest_articles" target="_blank" >
+                <i class="icon icon-lg icon-book"></i>
+                简书
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://weibo.com/lxchuan12" target="_blank" >
+                <i class="icon icon-lg icon-weibo"></i>
+                微博
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://segmentfault.com/u/lxchuan12/" target="_blank" >
+                <i class="icon icon-lg icon-hand-o-right"></i>
+                segmentfault
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/lxchuan12" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://lxchuan12.github.io/2016/11/20/20161120-about%20me/" target="_blank" >
+                <i class="icon icon-lg icon-user"></i>
+                关于我
+              </a>
+            </li>
+        
+      </ul>
+    </div>
   </div>
-  <div class="scroll-wrap flex-col">
-    <ul class="nav">
-      
-          <li class="waves-block waves-effect">
-            <a href="/"  >
-              <i class="icon icon-lg icon-home"></i>
-              主页
-            </a>
-          </li>
-      
-          <li class="waves-block waves-effect">
-            <a href="/archives"  >
-              <i class="icon icon-lg icon-archives"></i>
-              文章
-            </a>
-          </li>
-      
-          <li class="waves-block waves-effect">
-            <a href="http://www.jianshu.com/users/83129d433d72/latest_articles" target="_blank" >
-              <i class="icon icon-lg icon-book"></i>
-              简书
-            </a>
-          </li>
-      
-          <li class="waves-block waves-effect">
-            <a href="http://weibo.com/lxchuan12" target="_blank" >
-              <i class="icon icon-lg icon-weibo"></i>
-              微博
-            </a>
-          </li>
-      
-          <li class="waves-block waves-effect">
-            <a href="https://segmentfault.com/u/lxchuan12/" target="_blank" >
-              <i class="icon icon-lg icon-hand-o-right"></i>
-              segmentfault
-            </a>
-          </li>
-      
-          <li class="waves-block waves-effect">
-            <a href="https://github.com/lxchuan12" target="_blank" >
-              <i class="icon icon-lg icon-github"></i>
-              Github
-            </a>
-          </li>
-      
-          <li class="waves-block waves-effect">
-            <a href="https://lxchuan12.github.io/2016/11/20/20161120-about%20me/" target="_blank" >
-              <i class="icon icon-lg icon-user"></i>
-              关于我
-            </a>
-          </li>
-      
-    </ul>
+</aside>
 
-    <footer class="footer">
-    <p style="display: none;">
-        <a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
-        <img alt="Creative Commons License" style="border-width:0;vertical-align:middle;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAAAPCAMAAABEF7i9AAAAllBMVEUAAAD///+rsapERER3d3eIiIjMzMzu7u4iIiKUmZO6v7rKzsoODg4RERFVVVUNDQ0NDg0PEA8zMzNLTEtbXltmZmZydnF9gn2AgICPkI+ZmZmqqqq7u7vFxsXIzMgNDQwZGRkgICAhISEkJSMnKCcuMC4xMzE5Ozk7PTtBQkFCQkJDQ0Nna2eGhoaHh4ezuLLGysbd3d1wVGpAAAAA4UlEQVR42q2T1xqCMAyFk7QsBQeKA9x7j/d/OSm22CpX0nzcpA1/T05aAOuBVkMAScQFHLnEwoCo2f1TnQIGoVMewjZEjVFN4GH1Ue1Cn2jWqwfsOOj6wDwGvotsl/c8lv7KIq1eLOsT0HMFHMIE/RZyHnlphryT9zyV+8WH5e8yQw3wnQvgAFxPTKUVi555SHR/lOfLMgVTeDlSfN+TaoUsiTyeIm+bCkHvCA2FUKG48LDtYBZBknsYP/G8NTw0gaaHyuQf4H5pecrB/FYCT2sL9zAfy1Xyjou6L8X2W7YcLyBZCRtnq/zfAAAAAElFTkSuQmCC" />
-    </a>
-</p>
-  <p>轩辕Rowboat的博客 &copy; 2018</p>
-  <p style="display: none;">Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme
-  <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></p>
-  <a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-2x icon-rss-square"></i></a>
-  <span id="busuanzi_container_site_uv">
-    本站访客数<span id="busuanzi_value_site_uv"></span>人次
-  </span>
-  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-</footer>
-
-  </div>
-</div>
-
-  </nav>
-  <main id="main">
-    <header class="top-header" id="header">
+    <main id="main">
+        <header class="top-header" id="header">
     <div class="flex-row">
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
@@ -140,96 +140,73 @@
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
                 <i class="icon icon-lg icon-chevron-left"></i>
             </a>
-            <input type="text" id="key" class="search-input " autocomplete="off" placeholder="输入感兴趣的关键字">
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
                 <i class="icon icon-lg icon-search"></i>
             </a>
         </div>
         
         
-        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-share">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
             <i class="icon icon-lg icon-share-alt"></i>
         </a>
         
     </div>
 </header>
-<header class="content-header">
-  <div class="container">
-    <h1 class="author">JavaScript正则表达式迷你书-阅读笔记</h1>
-    <h5 class="subtitle">
-        
-            <time datetime="2017-10-12T15:45:52.000Z" itemprop="datePublished" class="page-time">
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">JavaScript正则表达式迷你书-阅读笔记</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2017-10-12T15:45:52.000Z" itemprop="datePublished" class="page-time">
   2017-10-12
 </time>
 
 
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/JavaScript/">JavaScript</a></li></ul>
 
-        
-    </h5>
-  </div>
+            
+        </h5>
+    </div>
+
+    
+
+
 </header>
 
-    <div class="container body-wrap">
-      <article id="post-20171012-JavaScript regex mini books reading record" 
-  class="article article-type-post" itemprop="blogPost">
-    <div class="post-meta flex-row">
-        
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
 
-    </div>
-    <div class="post-body">
-        <aside class="post-widget" id="post-widget">
-
-            
-            <div class="post-share" id="post-share">
-    <div class="tit">分享到：</div>
-    <ul class="reset share-icons">
-      <li>
-        <a class="weibo share-sns" href="javascript:;" data-title="微博" data-service="tsina">
-          <i class="icon icon-weibo"></i>
-        </a>
-      </li>
-      <li>
-        <a class="weixin share-sns" href="javascript:;" data-title="微信" data-service="weixin">
-          <i class="icon icon-weixin"></i>
-        </a>
-      </li>
-      <li>
-        <a class="qq share-sns" href="javascript:;" data-title=" QQ" data-service="cqq">
-          <i class="icon icon-qq"></i>
-        </a>
-      </li>
-      <li>
-        <a class="facebook share-sns" href="javascript:;" data-title=" Facebook" data-service="fb">
-          <i class="icon icon-facebook"></i>
-        </a>
-      </li>
-      <li>
-        <a class="twitter share-sns" href="javascript:;" data-title=" Twitter" data-service="twitter">
-          <i class="icon icon-twitter"></i>
-        </a>
-      </li>
-      <li>
-        <a class="douban share-sns" href="javascript:;" data-title="豆瓣" data-service="douban">
-          豆
-        </a>
-      </li>
-    </ul>
- </div>
-
-            
-
-            
-            <nav class="post-toc-wrap" id="post-toc">
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
             <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#勘误："><span class="post-toc-number">1.</span> <span class="post-toc-text">勘误：</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#记录一些学到的"><span class="post-toc-number">2.</span> <span class="post-toc-text">记录一些学到的</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#1-第一章-正则表达式字符匹配攻略"><span class="post-toc-number">3.</span> <span class="post-toc-text">1. 第一章 正则表达式字符匹配攻略</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-2-1-范围表示法"><span class="post-toc-number">3.0.1.</span> <span class="post-toc-text">1.2.1. 范围表示法</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-2-3-常见的简写形式"><span class="post-toc-number">3.0.2.</span> <span class="post-toc-text">1.2.3. 常见的简写形式</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-3-2-贪婪匹配与惰性匹配"><span class="post-toc-number">3.0.3.</span> <span class="post-toc-text">1.3.2. 贪婪匹配与惰性匹配</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-4-多选分支"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">1.4. 多选分支</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-5-1-匹配-16-进制颜色值"><span class="post-toc-number">3.1.1.</span> <span class="post-toc-text">1.5.1. 匹配 16 进制颜色值</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-5-2-匹配时间"><span class="post-toc-number">3.1.2.</span> <span class="post-toc-text">1.5.2. 匹配时间</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-5-3-匹配日期"><span class="post-toc-number">3.1.3.</span> <span class="post-toc-text">1.5.3. 匹配日期</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-5-4-window-操作系统文件路径"><span class="post-toc-number">3.1.4.</span> <span class="post-toc-text">1.5.4. window 操作系统文件路径</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-5-5-匹配-id"><span class="post-toc-number">3.1.5.</span> <span class="post-toc-text">1.5.5. 匹配 id</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#2-第二章-正则表达式位置匹配攻略"><span class="post-toc-number">4.</span> <span class="post-toc-text">2. 第二章 正则表达式位置匹配攻略</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-2-如何匹配位置呢？"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">2.2. 如何匹配位置呢？</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-2-1-和"><span class="post-toc-number">4.1.1.</span> <span class="post-toc-text">2.2.1. ^ 和 $</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-2-2-b-和-B"><span class="post-toc-number">4.1.2.</span> <span class="post-toc-text">2.2.2. \b 和 \B</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-2-3-p-和-p"><span class="post-toc-number">4.1.3.</span> <span class="post-toc-text">2.2.3. (?=p) 和 (?!p)</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-3-位置的特性"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">2.3. 位置的特性</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-4-相关案例"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">2.4. 相关案例</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-4-1-不匹配任何东西的正则"><span class="post-toc-number">4.3.1.</span> <span class="post-toc-text">2.4.1. 不匹配任何东西的正则</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-4-2-数字的千位分隔符表示法"><span class="post-toc-number">4.3.2.</span> <span class="post-toc-text">2.4.2 数字的千位分隔符表示法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-4-2-4-支持其他形式"><span class="post-toc-number">4.3.2.1.</span> <span class="post-toc-text">2.4.2.4. 支持其他形式</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-4-2-5-格式化"><span class="post-toc-number">4.3.2.2.</span> <span class="post-toc-text">2.4.2.5. 格式化</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-4-3-验证密码问题（TODO-Read-again）"><span class="post-toc-number">4.3.3.</span> <span class="post-toc-text">2.4.3. 验证密码问题（TODO Read again）</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#第三章-正则表达式括号的作用"><span class="post-toc-number">5.</span> <span class="post-toc-text">第三章 正则表达式括号的作用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-2-1-提取数据"><span class="post-toc-number">5.0.1.</span> <span class="post-toc-text">3.2.1. 提取数据</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-2-2-替换"><span class="post-toc-number">5.0.2.</span> <span class="post-toc-text">3.2.2. 替换</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-3-反向引用"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">3.3. 反向引用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-3-1-括号嵌套怎么办？"><span class="post-toc-number">5.1.1.</span> <span class="post-toc-text">3.3.1. 括号嵌套怎么办？</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-3-2-10-表示什么呢？"><span class="post-toc-number">5.1.2.</span> <span class="post-toc-text">3.3.2. \10 表示什么呢？</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-3-3-引用不存在的分组会怎样？"><span class="post-toc-number">5.1.3.</span> <span class="post-toc-text">3.3.3. 引用不存在的分组会怎样？</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-3-4-分组后面有量词会怎样？"><span class="post-toc-number">5.1.4.</span> <span class="post-toc-text">3.3.4. 分组后面有量词会怎样？</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-4-非捕获括号"><span class="post-toc-number">5.2.</span> <span class="post-toc-text">3.4. 非捕获括号</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-5-相关案例"><span class="post-toc-number">5.3.</span> <span class="post-toc-text">3.5. 相关案例</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-5-1-字符串-trim-方法模拟"><span class="post-toc-number">5.3.1.</span> <span class="post-toc-text">3.5.1. 字符串 trim 方法模拟</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-5-2-将每个单词的首字母转换为大写"><span class="post-toc-number">5.3.2.</span> <span class="post-toc-text">3.5.2. 将每个单词的首字母转换为大写</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-5-3-驼峰化"><span class="post-toc-number">5.3.3.</span> <span class="post-toc-text">3.5.3. 驼峰化</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-5-4-中划线化"><span class="post-toc-number">5.3.4.</span> <span class="post-toc-text">3.5.4. 中划线化</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-5-5-HTML-转义和反转义"><span class="post-toc-number">5.3.5.</span> <span class="post-toc-text">3.5.5. HTML 转义和反转义</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-5-6-匹配成对标签"><span class="post-toc-number">5.3.6.</span> <span class="post-toc-text">3.5.6. 匹配成对标签</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#4-第四章-正则表达式回溯法原理"><span class="post-toc-number">6.</span> <span class="post-toc-text">4. 第四章 正则表达式回溯法原理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4-1-没有回溯的匹配"><span class="post-toc-number">6.1.</span> <span class="post-toc-text">4.1. 没有回溯的匹配</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4-2-有回溯的匹配"><span class="post-toc-number">6.2.</span> <span class="post-toc-text">4.2. 有回溯的匹配</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4-3-常见的回溯形式"><span class="post-toc-number">6.3.</span> <span class="post-toc-text">4.3. 常见的回溯形式</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-3-1-贪婪量词"><span class="post-toc-number">6.3.1.</span> <span class="post-toc-text">4.3.1 贪婪量词</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-3-2-惰性量词"><span class="post-toc-number">6.3.2.</span> <span class="post-toc-text">4.3.2 惰性量词</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-3-3-分支结构"><span class="post-toc-number">6.3.3.</span> <span class="post-toc-text">4.3.3 分支结构</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4-4-本章小结"><span class="post-toc-number">6.4.</span> <span class="post-toc-text">4.4. 本章小结</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#5-第五章-正则表达式的拆分"><span class="post-toc-number">7.</span> <span class="post-toc-text">5. 第五章 正则表达式的拆分</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#5-1-结构和操作符"><span class="post-toc-number">7.1.</span> <span class="post-toc-text">5.1. 结构和操作符</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#5-2-注意要点"><span class="post-toc-number">7.2.</span> <span class="post-toc-text">5.2. 注意要点</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5-2-1-匹配字符串整体问题"><span class="post-toc-number">7.2.1.</span> <span class="post-toc-text">5.2.1 匹配字符串整体问题</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5-2-2-量词连缀问题"><span class="post-toc-number">7.2.2.</span> <span class="post-toc-text">5.2.2 量词连缀问题</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5-2-3-元字符转义问题"><span class="post-toc-number">7.2.3.</span> <span class="post-toc-text">5.2.3 元字符转义问题</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#5-2-3-1-字符组中的元字符"><span class="post-toc-number">7.2.3.1.</span> <span class="post-toc-text">5.2.3.1. 字符组中的元字符</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#5-2-3-2-匹配-“-abc-”-和-“-3-5-”"><span class="post-toc-number">7.2.3.2.</span> <span class="post-toc-text">5.2.3.2. 匹配 “[abc]” 和 “{3,5}”</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#5-2-3-3-其余情况"><span class="post-toc-number">7.2.3.3.</span> <span class="post-toc-text">5.2.3.3. 其余情况</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#5-3-案例分析"><span class="post-toc-number">7.3.</span> <span class="post-toc-text">5.3. 案例分析</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5-3-1-身份证"><span class="post-toc-number">7.3.1.</span> <span class="post-toc-text">5.3.1 身份证</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5-3-2-IPV4-地址"><span class="post-toc-number">7.3.2.</span> <span class="post-toc-text">5.3.2 IPV4 地址</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#6-第六章-正则表达式的构建"><span class="post-toc-number">8.</span> <span class="post-toc-text">6. 第六章 正则表达式的构建</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#6-1-平衡法则"><span class="post-toc-number">8.1.</span> <span class="post-toc-text">6.1. 平衡法则</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#6-2-构建正则前提"><span class="post-toc-number">8.2.</span> <span class="post-toc-text">6.2. 构建正则前提</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#6-2-2-是否有必要使用正则？"><span class="post-toc-number">8.2.1.</span> <span class="post-toc-text">6.2.2. 是否有必要使用正则？</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#6-2-3-是否有必要构建一个复杂的正则？"><span class="post-toc-number">8.2.2.</span> <span class="post-toc-text">6.2.3. 是否有必要构建一个复杂的正则？</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#6-3-准确性"><span class="post-toc-number">8.3.</span> <span class="post-toc-text">6.3. 准确性</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#6-3-1-匹配固定电话"><span class="post-toc-number">8.3.1.</span> <span class="post-toc-text">6.3.1. 匹配固定电话</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#6-3-2-匹配浮点数"><span class="post-toc-number">8.3.2.</span> <span class="post-toc-text">6.3.2. 匹配浮点数</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#6-4-效率"><span class="post-toc-number">8.4.</span> <span class="post-toc-text">6.4. 效率</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#6-4-1-使用具体型字符组来代替通配符，来消除回溯"><span class="post-toc-number">8.4.1.</span> <span class="post-toc-text">6.4.1. 使用具体型字符组来代替通配符，来消除回溯</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#6-4-2-使用非捕获型分组"><span class="post-toc-number">8.4.2.</span> <span class="post-toc-text">6.4.2. 使用非捕获型分组</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#6-4-3-独立出确定字符"><span class="post-toc-number">8.4.3.</span> <span class="post-toc-text">6.4.3. 独立出确定字符</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#6-4-4-提取分支公共部分"><span class="post-toc-number">8.4.4.</span> <span class="post-toc-text">6.4.4. 提取分支公共部分</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#6-4-5-减少分支的数量，缩小它们的范围"><span class="post-toc-number">8.4.5.</span> <span class="post-toc-text">6.4.5. 减少分支的数量，缩小它们的范围</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#7-第七章-正则表达式编程"><span class="post-toc-number">9.</span> <span class="post-toc-text">7. 第七章 正则表达式编程</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#7-1-正则表达式的四种操作"><span class="post-toc-number">9.1.</span> <span class="post-toc-text">7.1. 正则表达式的四种操作</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#7-1-1-验证"><span class="post-toc-number">9.1.1.</span> <span class="post-toc-text">7.1.1. 验证</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#7-1-2-切分"><span class="post-toc-number">9.1.2.</span> <span class="post-toc-text">7.1.2. 切分</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#7-1-3-提取"><span class="post-toc-number">9.1.3.</span> <span class="post-toc-text">7.1.3. 提取</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#7-1-4-替换"><span class="post-toc-number">9.1.4.</span> <span class="post-toc-text">7.1.4. 替换</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#7-2-相关-API-注意要点"><span class="post-toc-number">9.2.</span> <span class="post-toc-text">7.2. 相关 API 注意要点</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#7-2-1-search-和-match-的参数问题"><span class="post-toc-number">9.2.1.</span> <span class="post-toc-text">7.2.1. search 和 match 的参数问题</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#7-2-2-match-返回结果的格式问题"><span class="post-toc-number">9.2.2.</span> <span class="post-toc-text">7.2.2. match 返回结果的格式问题</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#7-2-3-exec-比-match-更强大"><span class="post-toc-number">9.2.3.</span> <span class="post-toc-text">7.2.3. exec 比 match 更强大</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#7-2-4-修饰符-g，对-exex-和-test-的影响"><span class="post-toc-number">9.2.4.</span> <span class="post-toc-text">7.2.4. 修饰符 g，对 exex 和 test 的影响</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#7-2-5-test-整体匹配时需要使用-和"><span class="post-toc-number">9.2.5.</span> <span class="post-toc-text">7.2.5. test 整体匹配时需要使用 ^ 和 $</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#7-2-6-split-相关注意事项"><span class="post-toc-number">9.2.6.</span> <span class="post-toc-text">7.2.6. split 相关注意事项</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#7-2-7-replace-是很强大的"><span class="post-toc-number">9.2.7.</span> <span class="post-toc-text">7.2.7. replace 是很强大的</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#7-2-8-使用构造函数需要注意的问题"><span class="post-toc-number">9.2.8.</span> <span class="post-toc-text">7.2.8. 使用构造函数需要注意的问题</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#7-2-9-修饰符"><span class="post-toc-number">9.2.9.</span> <span class="post-toc-text">7.2.9. 修饰符</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#7-2-10-source-属性"><span class="post-toc-number">9.2.10.</span> <span class="post-toc-text">7.2.10. source 属性</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#7-2-11-构造函数属性"><span class="post-toc-number">9.2.11.</span> <span class="post-toc-text">7.2.11. 构造函数属性</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#7-3-真实案例"><span class="post-toc-number">9.3.</span> <span class="post-toc-text">7.3. 真实案例</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#7-3-1-使用构造函数生成正则表达式"><span class="post-toc-number">9.3.1.</span> <span class="post-toc-text">7.3.1. 使用构造函数生成正则表达式</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#7-3-2-使用字符串保存数据"><span class="post-toc-number">9.3.2.</span> <span class="post-toc-text">7.3.2. 使用字符串保存数据</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#7-3-3-if-语句中使用正则替代-amp-amp"><span class="post-toc-number">9.3.3.</span> <span class="post-toc-text">7.3.3. if 语句中使用正则替代 &&</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#7-3-4-使用强大的-replace"><span class="post-toc-number">9.3.4.</span> <span class="post-toc-text">7.3.4. 使用强大的 replace</span></a></li></ol></li></ol></li></ol>
-            </nav>
+        </nav>
+    </aside>
+
+
+<article id="post-20171012-JavaScript regex mini books reading record"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">JavaScript正则表达式迷你书-阅读笔记</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2017-10-12 23:45:52" datetime="2017-10-12T15:45:52.000Z"  itemprop="datePublished">2017-10-12</time>
+
             
-        </aside>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/JavaScript/">JavaScript</a></li></ul>
 
-        <div class="post-main">
 
-            <div class="post-content" id="post-content" itemprop="postContent">
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
             <p><a href="https://jex.im/regulex/" target="_blank" rel="external">正则可视化工具</a><br><a href="https://regexper.com/#jsah" target="_blank" rel="external">正则可视化工具-regexper</a><br><a href="http://regex101.com/" target="_blank" rel="external">正则在线测试工具-regex101</a></p>
 <h1 id="勘误："><a href="#勘误：" class="headerlink" title="勘误："></a>勘误：</h1><p>2.4.2.5. 格式化<br>$ 1888.00 -&gt; $ 1,888.00</p>
 <p>3.3.1. 括号嵌套怎么办？<br>最后的是 \4，找到第3个开括号  -&gt; 最后的是 \4，找到第4个开括号</p>
@@ -406,25 +383,96 @@
 <h3 id="7-3-4-使用强大的-replace"><a href="#7-3-4-使用强大的-replace" class="headerlink" title="7.3.4. 使用强大的 replace"></a>7.3.4. 使用强大的 replace</h3><p>因为 replace 方法比较强大，有时用它根本不是为了替换，只是拿其匹配到的信息来做文章。<br>这里以查询字符串（querystring）压缩技术为例，注意下面 replace 方法中，回调函数根本没有返回任何<br>东西。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">function compress (source) &#123;</div><div class="line">var keys = &#123;&#125;;</div><div class="line">source.replace(/([^=&amp;]+)=([^&amp;]*)/g, function (full, key, value) &#123;</div><div class="line">keys[key] = (keys[key] ? keys[key] + &apos;,&apos; : &apos;&apos;) + value;</div><div class="line">&#125;);</div><div class="line">var result = [];</div><div class="line">for (var key in keys) &#123;</div><div class="line">result.push(key + &apos;=&apos; + keys[key]);</div><div class="line">&#125;</div><div class="line">return result.join(&apos;&amp;&apos;);</div><div class="line">&#125;</div><div class="line">console.log( compress(&quot;a=1&amp;b=2&amp;a=3&amp;b=4&quot;) );</div><div class="line">// =&gt; &quot;a=1,3&amp;b=2,4&quot;</div></pre></td></tr></table></figure></p>
 <p>完。<br>84/89</p>
 
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2017-10-21T15:52:11.461Z" itemprop="dateUpdated">2017-10-21 23:52:11</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2017/10/12/20171012-JavaScript regex mini books reading record/" target="_blank" rel="external">https://lxchuan12.github.io/2017/10/12/20171012-JavaScript regex mini books reading record/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://lxchuan12.github.io">
+            <img src="/img/logo.jpg" alt="轩辕Rowboat">
+            轩辕Rowboat
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+
 
             
-            <div class="post-reward">
-                <a id="rewardBtn" href="javascript:;" class="post-reward-btn waves-effect waves-circle waves-light">赏</a>
-            </div>
-            
-            
-            <blockquote>
-                <p>
-                本文地址：
-                <a href="https://lxchuan12.github.io/2017/10/12/20171012-JavaScript regex mini books reading record/" target="_blank" rel="external">https://lxchuan12.github.io/2017/10/12/20171012-JavaScript regex mini books reading record/</a>
-                </p>
-                <footer><cite><a href="https://lxchuan12.github.io">@轩辕Rowboat的博客</a></cite></footer>
-            </blockquote>
-            </div>
-            
-<nav class="post-nav">
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://lxchuan12.github.io/2017/10/12/20171012-JavaScript regex mini books reading record/&title=《JavaScript正则表达式迷你书-阅读笔记》 — 轩辕Rowboat的博客&pic=https://lxchuan12.github.io/img/logo.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://lxchuan12.github.io/2017/10/12/20171012-JavaScript regex mini books reading record/&title=《JavaScript正则表达式迷你书-阅读笔记》 — 轩辕Rowboat的博客&source=轩辕Rowboat，某世界闻名的陶瓷大学2016届毕业生，目前在杭州从事前端开发工作，也是一枚PPT爱好者。所知甚少，唯善学。常以轩辕Rowboat为名混..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://lxchuan12.github.io/2017/10/12/20171012-JavaScript regex mini books reading record/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《JavaScript正则表达式迷你书-阅读笔记》 — 轩辕Rowboat的博客&url=https://lxchuan12.github.io/2017/10/12/20171012-JavaScript regex mini books reading record/&via=https://lxchuan12.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://lxchuan12.github.io/2017/10/12/20171012-JavaScript regex mini books reading record/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+    
+<nav class="post-nav flex-row flex-justify-between">
   
-    <div class="waves-block waves-effect prev fl">
+    <div class="waves-block waves-effect prev">
       <a href="/2017/10/26/20171026-you don't know js-1/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
         <h4 class="title">你不知道的JavaScript上卷-读书笔记</h4>
@@ -433,7 +481,7 @@
   
 
   
-    <div class="waves-block waves-effect next fr">
+    <div class="waves-block waves-effect next">
       <a href="/2017/09/21/20170921-github tips/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
         <h4 class="title">github使用小技巧</h4>
@@ -443,101 +491,163 @@
 </nav>
 
 
-            
-            
+
+    
 
 
 
-        </div>
-    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </article>
 
-<div id="reward" class="reward-lay">
-    <a class="reward-off" id="rewardOff" href="javascript:;"><i class="icon icon-close"></i></a>
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <h3 class="reward-title">
         <i class="icon icon-quote-left"></i>
         你的打赏是我写作的动力~
         <i class="icon icon-quote-right"></i>
     </h3>
-    <ul class="reward-items">
+    <div class="reward-content">
         
-        <li>
-            <img src="/img/wechat.jpg" title="微信打赏二维码" alt="微信打赏二维码">
-            <p>微信</p>
-        </li>
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
         
-
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
         
-        <li>
-            <img src="/img/alipay.jpg" title="支付宝打赏二维码" alt="支付宝打赏二维码">
-            <p>支付宝</p>
-        </li>
-        
-    </ul>
+    </div>
 </div>
 
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+        <p>
+            <span>轩辕Rowboat &copy; 2016 - 2018</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
     </div>
-  </main>
-<div class="mask" id="mask"></div>
+    <div class="bottom" style="display: none">
+        <p><span>轩辕Rowboat &copy; 2016 - 2018</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
 <a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
 
-<script>
-var BLOG_SHARE = {
-    title: "JavaScript正则表达式迷你书-阅读笔记",
-    pic: "/img/logo.jpg",
-    summary: document.getElementsByName('summary')[0].content,
-    url: "https://lxchuan12.github.io/2017/10/12/20171012-JavaScript regex mini books reading record/index.html"
-};
-</script>
-<div class="global-share" id="global-share">
-    <div class="tit">分享到：</div>
+
+
+<div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" href="javascript:;" data-title="微博" data-service="tsina">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://lxchuan12.github.io/2017/10/12/20171012-JavaScript regex mini books reading record/&title=《JavaScript正则表达式迷你书-阅读笔记》 — 轩辕Rowboat的博客&pic=https://lxchuan12.github.io/img/logo.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
       <li>
-        <a class="weixin share-sns" href="javascript:;" data-title="微信" data-service="weixin">
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
           <i class="icon icon-weixin"></i>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" href="javascript:;" data-title=" QQ" data-service="cqq">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://lxchuan12.github.io/2017/10/12/20171012-JavaScript regex mini books reading record/&title=《JavaScript正则表达式迷你书-阅读笔记》 — 轩辕Rowboat的博客&source=轩辕Rowboat，某世界闻名的陶瓷大学2016届毕业生，目前在杭州从事前端开发工作，也是一枚PPT爱好者。所知甚少，唯善学。常以轩辕Rowboat为名混..." data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" href="javascript:;" data-title=" Facebook" data-service="fb">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://lxchuan12.github.io/2017/10/12/20171012-JavaScript regex mini books reading record/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" href="javascript:;" data-title=" Twitter" data-service="twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《JavaScript正则表达式迷你书-阅读笔记》 — 轩辕Rowboat的博客&url=https://lxchuan12.github.io/2017/10/12/20171012-JavaScript regex mini books reading record/&via=https://lxchuan12.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="douban share-sns" href="javascript:;" data-title="豆瓣" data-service="douban">
-          豆
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://lxchuan12.github.io/2017/10/12/20171012-JavaScript regex mini books reading record/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
         </a>
       </li>
     </ul>
  </div>
 
 
-<script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://lxchuan12.github.io/2017/10/12/20171012-JavaScript regex mini books reading record/" alt="微信分享二维码">
+</div>
 
-<script src="/js/main.js"></script>
 
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+lazyScripts.push('//s95.cnzz.com/z_stat.php?id=1273798602&web_id=1273798602')
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
 
 
 <div class="search-panel" id="search-panel">
     <ul class="search-result" id="search-result"></ul>
 </div>
-<script type="text/template" id="search-tpl">
+<template id="search-tpl">
 <li class="item">
-    <a href="/{path}" class="waves-block waves-effect">
+    <a href="{path}" class="waves-block waves-effect">
         <div class="title ellipsis" title="{title}">{title}</div>
         <div class="flex-row flex-middle">
             <div class="tags ellipsis">
@@ -547,17 +657,35 @@ var BLOG_SHARE = {
         </div>
     </a>
 </li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
 </script>
-
-<script src="/js/search.js"></script>
-
-
-
-
-
-<script src="//s95.cnzz.com/z_stat.php?id=1273798602&web_id=1273798602"></script>
-
-
 
 
 
