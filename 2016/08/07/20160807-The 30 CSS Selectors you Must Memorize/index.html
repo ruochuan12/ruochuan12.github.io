@@ -20,11 +20,13 @@
     
     <meta name="keywords" content="CSS选择器">
     <meta name="description" content="概述也许你了解了基本的 id,class和descendant选择器，并且整天都在调用，如果是这样的话，那你正在错过拥有灵活性更大的选择器。这篇文章里面提到的大部分选择器都是在CSS3标准下的，所以它们只能在相应最新版本的浏览器中才能生效，你完全应该把这些都记在你聪明的脑袋里面……">
+<meta name="keywords" content="CSS选择器">
 <meta property="og:type" content="article">
 <meta property="og:title" content="(转)30个你必须记住的CSS选择器">
 <meta property="og:url" content="https://lxchuan12.github.io/2016/08/07/20160807-The 30 CSS Selectors you Must Memorize/index.html">
 <meta property="og:site_name" content="轩辕Rowboat的博客">
 <meta property="og:description" content="概述也许你了解了基本的 id,class和descendant选择器，并且整天都在调用，如果是这样的话，那你正在错过拥有灵活性更大的选择器。这篇文章里面提到的大部分选择器都是在CSS3标准下的，所以它们只能在相应最新版本的浏览器中才能生效，你完全应该把这些都记在你聪明的脑袋里面……">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://images.cnitblog.com/blog/460220/201401/03143631-272fddc759664e95be319d868bae7abf.png">
 <meta property="og:image" content="http://images.cnitblog.com/blog/460220/201401/04194911-6cbeb39056254f6d9903aa7d1cdfb5da.png">
 <meta property="og:updated_time" content="2016-09-08T13:57:25.487Z">
@@ -173,7 +175,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#概述"><span class="post-toc-number">1.</span> <span class="post-toc-text">概述</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1"><span class="post-toc-number">2.</span> <span class="post-toc-text">1. *</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-X"><span class="post-toc-number">3.</span> <span class="post-toc-text">2.#X</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-X"><span class="post-toc-number">4.</span> <span class="post-toc-text">3. .X</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4-X-Y"><span class="post-toc-number">5.</span> <span class="post-toc-text">4.X Y</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#5-X"><span class="post-toc-number">6.</span> <span class="post-toc-text">5.X</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#6-X-visited-和-X-link"><span class="post-toc-number">7.</span> <span class="post-toc-text">6.X:visited 和 X:link</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#7-X-Y"><span class="post-toc-number">8.</span> <span class="post-toc-text">7.X + Y</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#8-X-gt-Y"><span class="post-toc-number">9.</span> <span class="post-toc-text">8.X>Y</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#9-X-Y"><span class="post-toc-number">10.</span> <span class="post-toc-text">9.X~Y</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#10-X-title"><span class="post-toc-number">11.</span> <span class="post-toc-text">10.X[title]</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#11-X-href-”foo”"><span class="post-toc-number">12.</span> <span class="post-toc-text">11. X[href=”foo”]</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#12-X-href-”nettuts”"><span class="post-toc-number">13.</span> <span class="post-toc-text">12. X[href*=”nettuts”]</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#13-X-href-”http”"><span class="post-toc-number">14.</span> <span class="post-toc-text">13. X[href^=”http”]</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#14-X-href-”-jpg”"><span class="post-toc-number">15.</span> <span class="post-toc-text">14. X[href$=”.jpg”]</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#15-X-data-”foo”"><span class="post-toc-number">16.</span> <span class="post-toc-text">15. X[data-*=”foo”]</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#16-X-foo-”bar”"><span class="post-toc-number">17.</span> <span class="post-toc-text">16. X[foo~=”bar”]</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#17-X-checked"><span class="post-toc-number">18.</span> <span class="post-toc-text">17. X:checked</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#18-X-after"><span class="post-toc-number">19.</span> <span class="post-toc-text">18. X:after</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#19-X-hover"><span class="post-toc-number">20.</span> <span class="post-toc-text">19. X:hover</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#20-X-not-selector"><span class="post-toc-number">21.</span> <span class="post-toc-text">20. X:not(selector)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#21-X-pseudoElement"><span class="post-toc-number">22.</span> <span class="post-toc-text">21. X::pseudoElement</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#22-X-nth-child-n"><span class="post-toc-number">23.</span> <span class="post-toc-text">22. X:nth-child(n)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#23-X-nth-last-child-n"><span class="post-toc-number">24.</span> <span class="post-toc-text">23. X:nth-last-child(n)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#24-X-nth-of-type-n"><span class="post-toc-number">25.</span> <span class="post-toc-text">24. X:nth-of-type(n)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#25-X-nth-last-of-type-n"><span class="post-toc-number">26.</span> <span class="post-toc-text">25. X:nth-last-of-type(n)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#26-X-first-child"><span class="post-toc-number">27.</span> <span class="post-toc-text">26. X:first-child</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#27-X-last-child"><span class="post-toc-number">28.</span> <span class="post-toc-text">27. X:last-child</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#28-X-only-child"><span class="post-toc-number">29.</span> <span class="post-toc-text">28. X:only-child</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#29-X-only-of-type"><span class="post-toc-number">30.</span> <span class="post-toc-text">29. X:only-of-type</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#30-X-first-of-type"><span class="post-toc-number">31.</span> <span class="post-toc-text">30. X:first-of-type</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#结论"><span class="post-toc-number"></span> <span class="post-toc-text">结论</span></a>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#概述"><span class="post-toc-number">1.</span> <span class="post-toc-text">概述</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1"><span class="post-toc-number">2.</span> <span class="post-toc-text">1. *</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-X"><span class="post-toc-number">3.</span> <span class="post-toc-text">2.#X</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-X"><span class="post-toc-number">4.</span> <span class="post-toc-text">3. .X</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4-X-Y"><span class="post-toc-number">5.</span> <span class="post-toc-text">4.X Y</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#5-X"><span class="post-toc-number">6.</span> <span class="post-toc-text">5.X</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#6-X-visited-和-X-link"><span class="post-toc-number">7.</span> <span class="post-toc-text">6.X:visited 和 X:link</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#7-X-Y"><span class="post-toc-number">8.</span> <span class="post-toc-text">7.X + Y</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#8-X-gt-Y"><span class="post-toc-number">9.</span> <span class="post-toc-text">8.X&gt;Y</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#9-X-Y"><span class="post-toc-number">10.</span> <span class="post-toc-text">9.X~Y</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#10-X-title"><span class="post-toc-number">11.</span> <span class="post-toc-text">10.X[title]</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#11-X-href-”foo”"><span class="post-toc-number">12.</span> <span class="post-toc-text">11. X[href=”foo”]</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#12-X-href-”nettuts”"><span class="post-toc-number">13.</span> <span class="post-toc-text">12. X[href*=”nettuts”]</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#13-X-href-”http”"><span class="post-toc-number">14.</span> <span class="post-toc-text">13. X[href^=”http”]</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#14-X-href-”-jpg”"><span class="post-toc-number">15.</span> <span class="post-toc-text">14. X[href$=”.jpg”]</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#15-X-data-”foo”"><span class="post-toc-number">16.</span> <span class="post-toc-text">15. X[data-*=”foo”]</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#16-X-foo-”bar”"><span class="post-toc-number">17.</span> <span class="post-toc-text">16. X[foo~=”bar”]</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#17-X-checked"><span class="post-toc-number">18.</span> <span class="post-toc-text">17. X:checked</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#18-X-after"><span class="post-toc-number">19.</span> <span class="post-toc-text">18. X:after</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#19-X-hover"><span class="post-toc-number">20.</span> <span class="post-toc-text">19. X:hover</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#20-X-not-selector"><span class="post-toc-number">21.</span> <span class="post-toc-text">20. X:not(selector)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#21-X-pseudoElement"><span class="post-toc-number">22.</span> <span class="post-toc-text">21. X::pseudoElement</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#22-X-nth-child-n"><span class="post-toc-number">23.</span> <span class="post-toc-text">22. X:nth-child(n)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#23-X-nth-last-child-n"><span class="post-toc-number">24.</span> <span class="post-toc-text">23. X:nth-last-child(n)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#24-X-nth-of-type-n"><span class="post-toc-number">25.</span> <span class="post-toc-text">24. X:nth-of-type(n)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#25-X-nth-last-of-type-n"><span class="post-toc-number">26.</span> <span class="post-toc-text">25. X:nth-last-of-type(n)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#26-X-first-child"><span class="post-toc-number">27.</span> <span class="post-toc-text">26. X:first-child</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#27-X-last-child"><span class="post-toc-number">28.</span> <span class="post-toc-text">27. X:last-child</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#28-X-only-child"><span class="post-toc-number">29.</span> <span class="post-toc-text">28. X:only-child</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#29-X-only-of-type"><span class="post-toc-number">30.</span> <span class="post-toc-text">29. X:only-of-type</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#30-X-first-of-type"><span class="post-toc-number">31.</span> <span class="post-toc-text">30. X:first-of-type</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#结论"><span class="post-toc-number"></span> <span class="post-toc-text">结论</span></a>
         </nav>
     </aside>
 
@@ -209,7 +211,7 @@
 <pre><code>#container * {
   border: 1px solid black;
 }
-</code></pre><p>它会选中#container下的所有元素。当然，我还是不建议你去使用它。<a href="http://cdn.tutsplus.com/net/uploads/legacy/840_cssSelectors/selectors/star.html" target="_blank" rel="external">DEMO</a></p>
+</code></pre><p>它会选中#container下的所有元素。当然，我还是不建议你去使用它。<a href="http://cdn.tutsplus.com/net/uploads/legacy/840_cssSelectors/selectors/star.html" target="_blank" rel="noopener">DEMO</a></p>
 <p><strong>兼容性</strong>：</p>
 <ul>
 <li>IE6+</li>
@@ -224,7 +226,7 @@
 }
 </code></pre><p>在选择器中使用#可以用id来定位某个元素。大家通常都会这么使用，使用的时候大家还是得相当小心的。  </p>
 <p>需要问自己一下：我是不是必须要给这个元素来赋值个id来定位它呢？</p>
-<p>id选择器是很严格的并且你没办法去复用它。如果可以的话，首先试试用标签名字，HTML5中的新元素，或者是伪类。<a href="http://cdn.tutsplus.com/net/uploads/legacy/840_cssSelectors/selectors/id.html" target="_blank" rel="external">DEMO</a>  </p>
+<p>id选择器是很严格的并且你没办法去复用它。如果可以的话，首先试试用标签名字，HTML5中的新元素，或者是伪类。<a href="http://cdn.tutsplus.com/net/uploads/legacy/840_cssSelectors/selectors/id.html" target="_blank" rel="noopener">DEMO</a>  </p>
 <p><strong>兼容性</strong>:</p>
 <ul>
 <li>IE6+</li>
@@ -236,7 +238,7 @@
 <h2 id="3-X"><a href="#3-X" class="headerlink" title="3. .X"></a>3. .X</h2><pre><code>.error {
   color: red;
 }
-</code></pre><p>这是个class选择器。它跟id选择器不同的是，它可以定位多个元素。当你想对多个元素进行样式修饰的时候就可以使用class。当你要对某个特定的元素进行修饰那就是用id来定位它。<a href="http://cdn.tutsplus.com/net/uploads/legacy/840_cssSelectors/selectors/class.html" target="_blank" rel="external">DEMO</a></p>
+</code></pre><p>这是个class选择器。它跟id选择器不同的是，它可以定位多个元素。当你想对多个元素进行样式修饰的时候就可以使用class。当你要对某个特定的元素进行修饰那就是用id来定位它。<a href="http://cdn.tutsplus.com/net/uploads/legacy/840_cssSelectors/selectors/class.html" target="_blank" rel="noopener">DEMO</a></p>
 <p><strong>兼容性</strong>:</p>
 <ul>
 <li>IE6+</li>
@@ -249,7 +251,7 @@
   text-decoration: none;
 }
 </code></pre><p>下一个常用的就是descendant(后代)选择器(后代指所有后代，儿子、孙子后代等)。如果你想更加具体的去定位元素，你可以使用它。例如，假如，你不需要定位所有的a元素，而只需要定位li标签下的a标签？这时候你就需要使用descendant选择器了。  </p>
-<p>专家提示：如果你的选择器像X Y Z A B.error这样，那你就错了。时刻都提醒自己，是否真的需要对那么多元素修饰。<a href="http://cdn.tutsplus.com/net/uploads/legacy/840_cssSelectors/selectors/descend.html" target="_blank" rel="external">DEMO</a></p>
+<p>专家提示：如果你的选择器像X Y Z A B.error这样，那你就错了。时刻都提醒自己，是否真的需要对那么多元素修饰。<a href="http://cdn.tutsplus.com/net/uploads/legacy/840_cssSelectors/selectors/descend.html" target="_blank" rel="noopener">DEMO</a></p>
 <p><strong>兼容性</strong>:</p>
 <ul>
 <li>IE6+</li>
@@ -260,7 +262,7 @@
 </ul>
 <h2 id="5-X"><a href="#5-X" class="headerlink" title="5.X"></a>5.X</h2><pre><code>a { color: red; }
 ul { margin-left: 0; }
-</code></pre><p>如果你想定位页面上所有的某标签，不是通过id或者是’class’，这简单，直接使用类型选择器。<a href="http://cdn.tutsplus.com/net/uploads/legacy/840_cssSelectors/selectors/tagName.html" target="_blank" rel="external">DEMO</a>  </p>
+</code></pre><p>如果你想定位页面上所有的某标签，不是通过id或者是’class’，这简单，直接使用类型选择器。<a href="http://cdn.tutsplus.com/net/uploads/legacy/840_cssSelectors/selectors/tagName.html" target="_blank" rel="noopener">DEMO</a>  </p>
 <p><strong>兼容性</strong>:</p>
 <ul>
 <li>IE6+</li>
@@ -271,7 +273,7 @@ ul { margin-left: 0; }
 </ul>
 <h2 id="6-X-visited-和-X-link"><a href="#6-X-visited-和-X-link" class="headerlink" title="6.X:visited 和 X:link"></a>6.X:visited 和 X:link</h2><pre><code>a:link {color:red;}
 a:visited {color: purple;}
-</code></pre><p>我们使用:link这个伪类来定位所有还没有被访问过的链接。<br>另外，我们也使用:visited来定位所有已经被访问过的链接。<br><a href="http://cdn.tutsplus.com/net/uploads/legacy/840_cssSelectors/selectors/links.html" target="_blank" rel="external">DEMO</a></p>
+</code></pre><p>我们使用:link这个伪类来定位所有还没有被访问过的链接。<br>另外，我们也使用:visited来定位所有已经被访问过的链接。<br><a href="http://cdn.tutsplus.com/net/uploads/legacy/840_cssSelectors/selectors/links.html" target="_blank" rel="noopener">DEMO</a></p>
 <p><strong>兼容性</strong>:</p>
 <ul>
 <li>IE7+</li>
@@ -283,7 +285,7 @@ a:visited {color: purple;}
 <h2 id="7-X-Y"><a href="#7-X-Y" class="headerlink" title="7.X + Y"></a>7.X + Y</h2><pre><code>ul+p{
     color:red;
 }
-</code></pre><p>这被称作相邻选择符。它将只选择紧贴在X元素之后Y元素。上面的例子，仅每一个ul之后的第一个段落元素的文本为红色。<br><a href="http://cdn.tutsplus.com/net/uploads/legacy/840_cssSelectors/selectors/adjacent.html" target="_blank" rel="external">DEMO</a></p>
+</code></pre><p>这被称作相邻选择符。它将只选择紧贴在X元素之后Y元素。上面的例子，仅每一个ul之后的第一个段落元素的文本为红色。<br><a href="http://cdn.tutsplus.com/net/uploads/legacy/840_cssSelectors/selectors/adjacent.html" target="_blank" rel="noopener">DEMO</a></p>
 <p><strong>兼容性</strong>:</p>
 <ul>
 <li>IE7+</li>
@@ -308,7 +310,7 @@ a:visited {color: purple;}
       &lt;li&gt; List Item &lt;/li&gt;  
    &lt;/ul&gt;  
 &lt;/div&gt; 
-</code></pre><p>选择符#container &gt; ul将只选择id为container的div的直接子代ul。它不匹配更深层的li的子代的ul。<br>因此，使用子代选择符有性能上的优势。事实上，这同样适用于基于css选择器的javascript引擎。<br><a href="http://cdn.tutsplus.com/net/uploads/legacy/840_cssSelectors/selectors/childcombinator.html" target="_blank" rel="external">DEMO</a></p>
+</code></pre><p>选择符#container &gt; ul将只选择id为container的div的直接子代ul。它不匹配更深层的li的子代的ul。<br>因此，使用子代选择符有性能上的优势。事实上，这同样适用于基于css选择器的javascript引擎。<br><a href="http://cdn.tutsplus.com/net/uploads/legacy/840_cssSelectors/selectors/childcombinator.html" target="_blank" rel="noopener">DEMO</a></p>
 <p><strong>兼容性</strong></p>
 <pre><code>*IE7+
 *Firefox
@@ -318,7 +320,7 @@ a:visited {color: purple;}
 </code></pre><h2 id="9-X-Y"><a href="#9-X-Y" class="headerlink" title="9.X~Y"></a>9.X~Y</h2><pre><code>ul ~ p {  
    color: red;  
 }
-</code></pre><p>这是兄弟选择符和X + Y一样，然而，它没有约束。与相邻选择符（ul + li）仅选择前一个选择符后面的第一个元素比起来，兄弟选择符更宽泛。它会选择，我们上面例子中更在ul后面的任何p元素。<br><a href="http://cdn.tutsplus.com/net/uploads/legacy/840_cssSelectors/selectors/generalcombinator.html" target="_blank" rel="external">DEMO</a></p>
+</code></pre><p>这是兄弟选择符和X + Y一样，然而，它没有约束。与相邻选择符（ul + li）仅选择前一个选择符后面的第一个元素比起来，兄弟选择符更宽泛。它会选择，我们上面例子中更在ul后面的任何p元素。<br><a href="http://cdn.tutsplus.com/net/uploads/legacy/840_cssSelectors/selectors/generalcombinator.html" target="_blank" rel="noopener">DEMO</a></p>
 <p><strong>兼容性</strong></p>
 <pre><code>*IE7+
 *Firefox
@@ -328,7 +330,7 @@ a:visited {color: purple;}
 </code></pre><h2 id="10-X-title"><a href="#10-X-title" class="headerlink" title="10.X[title]"></a>10.X[title]</h2><pre><code>a[title] {  
    color: green;  
 } 
-</code></pre><p>被称为属性选择器，在我们上面的例子里，这只会选择有title属性的锚标签。没有此属性的锚标签将不受影像。但如果你需要更多的特性怎么办呢？呵呵……<br><a href="http://cdn.tutsplus.com/net/uploads/legacy/840_cssSelectors/selectors/attributes.html" target="_blank" rel="external">DEMO</a></p>
+</code></pre><p>被称为属性选择器，在我们上面的例子里，这只会选择有title属性的锚标签。没有此属性的锚标签将不受影像。但如果你需要更多的特性怎么办呢？呵呵……<br><a href="http://cdn.tutsplus.com/net/uploads/legacy/840_cssSelectors/selectors/attributes.html" target="_blank" rel="noopener">DEMO</a></p>
 <p><strong>兼容性</strong></p>
 <pre><code>*IE7+
 *Firefox
@@ -338,12 +340,12 @@ a:visited {color: purple;}
 </code></pre><h2 id="11-X-href-”foo”"><a href="#11-X-href-”foo”" class="headerlink" title="11. X[href=”foo”]"></a>11. X[href=”foo”]</h2><pre><code>a[href=&quot;http://net.tutsplus.com&quot;] {  
   color: #1f6053; /* nettuts green */  
 }
-</code></pre><p>上面的代码段将给所有href属性为<a href="http://net.tutsplus.com的锚标签添加样式；他们将会显示为我们的品牌绿色。所有其他的锚标签将不受影响。" target="_blank" rel="external">http://net.tutsplus.com的锚标签添加样式；他们将会显示为我们的品牌绿色。所有其他的锚标签将不受影响。</a></p>
+</code></pre><p>上面的代码段将给所有href属性为<a href="http://net.tutsplus.com的锚标签添加样式；他们将会显示为我们的品牌绿色。所有其他的锚标签将不受影响。" target="_blank" rel="noopener">http://net.tutsplus.com的锚标签添加样式；他们将会显示为我们的品牌绿色。所有其他的锚标签将不受影响。</a></p>
 <blockquote>
 <p>注意我们将href值用引号包裹。记住，当使用javascript的css选择符引擎时也这么做。如果可能的话，尽可能使用css3选择符代替非官方的方法。</p>
 </blockquote>
 <p>这工作的很好，但有点不够灵活。如果链接确实直接连接到Nettus+还好，但是，也许路径是到nettust的相对路径呢？在这种情况下，我们可以使用一点正则表达式语法。</p>
-<p><a href="http://cdn.tutsplus.com/net/uploads/legacy/840_cssSelectors/selectors/attributes2.html" target="_blank" rel="external">DEMO</a></p>
+<p><a href="http://cdn.tutsplus.com/net/uploads/legacy/840_cssSelectors/selectors/attributes2.html" target="_blank" rel="noopener">DEMO</a></p>
 <p><strong>兼容性</strong></p>
 <pre><code>*IE7+
 *Firefox
@@ -353,7 +355,7 @@ a:visited {color: purple;}
 </code></pre><h2 id="12-X-href-”nettuts”"><a href="#12-X-href-”nettuts”" class="headerlink" title="12. X[href*=”nettuts”]"></a>12. X[href*=”nettuts”]</h2><pre><code>a[href*=&quot;tuts&quot;] {  
   color: #1f6053; /* nettuts green */  
 } 
-</code></pre><p>来了不是~这就是我们需要的代码。*号指定了包含该属性的值必须包含定义的值。就是说，这句代码包含了href值为 nettuts.com，net.tutsplus.com或者tutsplus.com。<br>记住这个描述过于宽泛，如果是某个锚点标签链接到某个连接中带有tuts非Envato的网站（tutsplus属于Envato旗下网站）呢？因此你需要更多特性来限制，分别使用^和&amp;来限定字符串的开始和结束。<br><a href="http://cdn.tutsplus.com/net/uploads/legacy/840_cssSelectors/selectors/attributes3.html" target="_blank" rel="external">DEMO</a></p>
+</code></pre><p>来了不是~这就是我们需要的代码。*号指定了包含该属性的值必须包含定义的值。就是说，这句代码包含了href值为 nettuts.com，net.tutsplus.com或者tutsplus.com。<br>记住这个描述过于宽泛，如果是某个锚点标签链接到某个连接中带有tuts非Envato的网站（tutsplus属于Envato旗下网站）呢？因此你需要更多特性来限制，分别使用^和&amp;来限定字符串的开始和结束。<br><a href="http://cdn.tutsplus.com/net/uploads/legacy/840_cssSelectors/selectors/attributes3.html" target="_blank" rel="noopener">DEMO</a></p>
 <p><strong>兼容性</strong></p>
 <pre><code>*IE7+
 *Firefox
@@ -366,9 +368,9 @@ a:visited {color: purple;}
 }
 </code></pre><p>有没有想过某些网站是如何定义一个图标的链接的？我确定你肯定看到过。这些链接很容易让你跳转到另一个网站。<br>使用^(carat)符灰常简单啦。这个符号常常在正则表达式中表示字符串的开始。如果我们想指向所有以”http”开头的”href”属性的锚点的话，我们就可以使用类似于上面的那段代码啦。</p>
 <blockquote>
-<p>注意啦，我们不需要搜索”<a href="http://&quot;,完全没必要，因为我们还要包含以" target="_blank" rel="external">http://&quot;,完全没必要，因为我们还要包含以</a><br><a href="https://开头的链接呢。" target="_blank" rel="external">https://开头的链接呢。</a></p>
+<p>注意啦，我们不需要搜索”http://“,完全没必要，因为我们还要包含以<br>https://开头的链接呢。</p>
 </blockquote>
-<p>如果我们想为所有链接到图片的链接定义样式咋办？这种情况下，我们得搜索字符串的结束了不是。<br><a href="http://cdn.tutsplus.com/net/uploads/legacy/840_cssSelectors/selectors/attributes4.html" target="_blank" rel="external">DEMO</a></p>
+<p>如果我们想为所有链接到图片的链接定义样式咋办？这种情况下，我们得搜索字符串的结束了不是。<br><a href="http://cdn.tutsplus.com/net/uploads/legacy/840_cssSelectors/selectors/attributes4.html" target="_blank" rel="noopener">DEMO</a></p>
 <p><strong>兼容性</strong></p>
 <pre><code>*IE7+
 *Firefox
@@ -378,7 +380,7 @@ a:visited {color: purple;}
 </code></pre><h2 id="14-X-href-”-jpg”"><a href="#14-X-href-”-jpg”" class="headerlink" title="14. X[href$=”.jpg”]"></a>14. X[href$=”.jpg”]</h2><pre><code>a[href$=&quot;.jpg&quot;] {  
    color: red;  
 }
-</code></pre><p>又来了，我们还是使用正则表达式符号，$(dolor)，来作为字符串的结束标记。这种情况下，我们就会搜索所有url以.jpg为结尾的锚点啦。记住记住这种情况下gif和png格式的图片不会被选择哦。<br><a href="http://cdn.tutsplus.com/net/uploads/legacy/840_cssSelectors/selectors/attributes5.html" target="_blank" rel="external">DEMO</a></p>
+</code></pre><p>又来了，我们还是使用正则表达式符号，$(dolor)，来作为字符串的结束标记。这种情况下，我们就会搜索所有url以.jpg为结尾的锚点啦。记住记住这种情况下gif和png格式的图片不会被选择哦。<br><a href="http://cdn.tutsplus.com/net/uploads/legacy/840_cssSelectors/selectors/attributes5.html" target="_blank" rel="noopener">DEMO</a></p>
 <p><strong>兼容性</strong></p>
 <pre><code>*IE7+
 *Firefox
@@ -395,7 +397,7 @@ a[href$=&quot;.png&quot;],
 a[href$=&quot;.gif&quot;] {  
    color: red;  
 }
-</code></pre><p> 不过，这样很蛋疼，效率极低。另一个解决办法是使用自定义属性。如果我们加了一种自己的 data-filetype 属性给每一个链接到图片的锚点的话呢？<br><code>&lt;a href=&quot;path/to/image.jpg&quot; data-filetype=&quot;image&quot;&gt; Image Link &lt;/a&gt;</code><br>这样关联后，我们就能使用标准的属性选择器来指定这些链接啦。看下面：<br><a href="http://cdn.tutsplus.com/net/uploads/legacy/840_cssSelectors/selectors/attributes6.html" target="_blank" rel="external">DEMO</a></p>
+</code></pre><p> 不过，这样很蛋疼，效率极低。另一个解决办法是使用自定义属性。如果我们加了一种自己的 data-filetype 属性给每一个链接到图片的锚点的话呢？<br><code>&lt;a href=&quot;path/to/image.jpg&quot; data-filetype=&quot;image&quot;&gt; Image Link &lt;/a&gt;</code><br>这样关联后，我们就能使用标准的属性选择器来指定这些链接啦。看下面：<br><a href="http://cdn.tutsplus.com/net/uploads/legacy/840_cssSelectors/selectors/attributes6.html" target="_blank" rel="noopener">DEMO</a></p>
 <p><strong>兼容性</strong></p>
 <pre><code>*IE7+
 *Firefox
@@ -419,7 +421,7 @@ a[data-info~=&quot;external&quot;] {
 a[data-info~=&quot;image&quot;] {  
   border: 1px solid black;  
 }
-</code></pre><p>很棒，不是吗？<br><a href="http://cdn.tutsplus.com/net/uploads/legacy/840_cssSelectors/selectors/attributes7.html" target="_blank" rel="external">DEMO</a></p>
+</code></pre><p>很棒，不是吗？<br><a href="http://cdn.tutsplus.com/net/uploads/legacy/840_cssSelectors/selectors/attributes7.html" target="_blank" rel="noopener">DEMO</a></p>
 <p><strong>兼容性</strong></p>
 <pre><code>*IE7+
 *Firefox
@@ -429,7 +431,7 @@ a[data-info~=&quot;image&quot;] {
 </code></pre><h2 id="17-X-checked"><a href="#17-X-checked" class="headerlink" title="17. X:checked"></a>17. X:checked</h2><pre><code>input[type=radio]:checked {  
    border: 1px solid black;  
 } 
-</code></pre><p>这种伪类只会匹配已经被选中的单选元素。就是这么简单。<br><a href="http://cdn.tutsplus.com/net/uploads/legacy/840_cssSelectors/selectors/attributes7.html" target="_blank" rel="external">DEMO</a></p>
+</code></pre><p>这种伪类只会匹配已经被选中的单选元素。就是这么简单。<br><a href="http://cdn.tutsplus.com/net/uploads/legacy/840_cssSelectors/selectors/attributes7.html" target="_blank" rel="noopener">DEMO</a></p>
 <p><strong>兼容性</strong></p>
 <pre><code>*IE9+
 *Firefox
@@ -453,7 +455,7 @@ a[data-info~=&quot;image&quot;] {
    *display: inline-block;   
    _height: 1%;  
 }
-</code></pre><p>这个改进使用了:after伪类元素来在元素后增加一个空间，然后清除它。这个牛X的技巧你应该收藏到工具包里，特别是当overflow:hidden方法无能为力的时候。<br>想看看其他创造性的用法：<a href="http://net.tutsplus.com/tutorials/html-css-techniques/quick-tip-getting-clever-with-css3-shadows/" target="_blank" rel="external">访问我滴创建阴影的窍门</a></p>
+</code></pre><p>这个改进使用了:after伪类元素来在元素后增加一个空间，然后清除它。这个牛X的技巧你应该收藏到工具包里，特别是当overflow:hidden方法无能为力的时候。<br>想看看其他创造性的用法：<a href="http://net.tutsplus.com/tutorials/html-css-techniques/quick-tip-getting-clever-with-css3-shadows/" target="_blank" rel="noopener">访问我滴创建阴影的窍门</a></p>
 <blockquote>
 <p>通过Css3选择器的标准说明书，你应该有技巧地使用这些伪类语法——双冒号::。不过为了兼容，浏览器会接受一个双引号。</p>
 </blockquote>
@@ -487,7 +489,7 @@ a[data-info~=&quot;image&quot;] {
 <pre><code>*:not(p) {  
   color: green;  
 } 
-</code></pre><p><a href="http://cdn.tutsplus.com/net/uploads/legacy/840_cssSelectors/selectors/not.html" target="_blank" rel="external">DEMO</a></p>
+</code></pre><p><a href="http://cdn.tutsplus.com/net/uploads/legacy/840_cssSelectors/selectors/not.html" target="_blank" rel="noopener">DEMO</a></p>
 <p><strong>兼容性</strong></p>
 <pre><code>*IE9+
 *Firefox
@@ -509,7 +511,7 @@ a[data-info~=&quot;image&quot;] {
    font-weight: bold;  
    font-size: 1.2em;  
 } 
-</code></pre><p>同样，这个::first-line伪元素会像我们期望的那样，只定义段落的第一行的样式。<br><a href="http://cdn.tutsplus.com/net/uploads/legacy/840_cssSelectors/selectors/pseudoElements.html" target="_blank" rel="external">DEMO</a></p>
+</code></pre><p>同样，这个::first-line伪元素会像我们期望的那样，只定义段落的第一行的样式。<br><a href="http://cdn.tutsplus.com/net/uploads/legacy/840_cssSelectors/selectors/pseudoElements.html" target="_blank" rel="noopener">DEMO</a></p>
 <p><strong>兼容性</strong></p>
 <pre><code>*IE6+
 *Firefox
@@ -519,7 +521,7 @@ a[data-info~=&quot;image&quot;] {
 </code></pre><h2 id="22-X-nth-child-n"><a href="#22-X-nth-child-n" class="headerlink" title="22. X:nth-child(n)"></a>22. X:nth-child(n)</h2><pre><code>li:nth-child(3) {  
    color: red;  
 } 
-</code></pre><p>想想那些没法从元素堆中选择元素的日子。nth-child伪类解决了这个问题。<br>请注意 nth-child接收整数和变量，不过不是从0开始的，如果你想选定第二个li，使用 li:nth-child(2).<br>我们甚至使用这个办法来选择任意的子元素。例如，我们可以用 li:nth-child(4n)来完成4为倍数的所有元素的选择。<br><a href="http://cdn.tutsplus.com/net/uploads/legacy/840_cssSelectors/selectors/nth.html" target="_blank" rel="external">DEMO</a></p>
+</code></pre><p>想想那些没法从元素堆中选择元素的日子。nth-child伪类解决了这个问题。<br>请注意 nth-child接收整数和变量，不过不是从0开始的，如果你想选定第二个li，使用 li:nth-child(2).<br>我们甚至使用这个办法来选择任意的子元素。例如，我们可以用 li:nth-child(4n)来完成4为倍数的所有元素的选择。<br><a href="http://cdn.tutsplus.com/net/uploads/legacy/840_cssSelectors/selectors/nth.html" target="_blank" rel="noopener">DEMO</a></p>
 <p><strong>兼容性</strong></p>
 <pre><code>*IE9+
 *Firefox 3.5+
@@ -529,7 +531,7 @@ a[data-info~=&quot;image&quot;] {
 </code></pre><h2 id="23-X-nth-last-child-n"><a href="#23-X-nth-last-child-n" class="headerlink" title="23. X:nth-last-child(n)"></a>23. X:nth-last-child(n)</h2><pre><code>li:nth-last-child(2) {  
    color: red;  
 }
-</code></pre><p>如果我有灰常多的li在ul里面，我只想要最后3个li怎么办？不必使用li:nth-child(397),你可以使用nth-last-child伪类。<br>这种技巧和第六条几乎一样有效，不过两者的不同之处在于它从结束开始收集，用回溯的方式进行。<br><a href="http://cdn.tutsplus.com/net/uploads/legacy/840_cssSelectors/selectors/nthLast.html" target="_blank" rel="external">DEMO</a></p>
+</code></pre><p>如果我有灰常多的li在ul里面，我只想要最后3个li怎么办？不必使用li:nth-child(397),你可以使用nth-last-child伪类。<br>这种技巧和第六条几乎一样有效，不过两者的不同之处在于它从结束开始收集，用回溯的方式进行。<br><a href="http://cdn.tutsplus.com/net/uploads/legacy/840_cssSelectors/selectors/nthLast.html" target="_blank" rel="noopener">DEMO</a></p>
 <p><strong>兼容性</strong></p>
 <pre><code>*IE9+
 *Firefox 3.5+
@@ -538,7 +540,7 @@ a[data-info~=&quot;image&quot;] {
 </code></pre><h2 id="24-X-nth-of-type-n"><a href="#24-X-nth-of-type-n" class="headerlink" title="24. X:nth-of-type(n)"></a>24. X:nth-of-type(n)</h2><pre><code>ul:nth-of-type(3) {  
    border: 1px solid black;  
 }
-</code></pre><p>你应该有很多时候想要元素类型来选择元素而不是通过孩子。<br>想象一下标记5个无序列表（UL）。如果你想定义第三个ul，并且没有一个唯一的id来找到它，你就可以使用 nth-of-type(3)伪类了。在上面这个代码段中，只有第三个ul才会有黑色的边框。<br><a href="http://cdn.tutsplus.com/net/uploads/legacy/840_cssSelectors/selectors/nthOfType.html" target="_blank" rel="external">DEMO</a><br><strong>兼容性</strong></p>
+</code></pre><p>你应该有很多时候想要元素类型来选择元素而不是通过孩子。<br>想象一下标记5个无序列表（UL）。如果你想定义第三个ul，并且没有一个唯一的id来找到它，你就可以使用 nth-of-type(3)伪类了。在上面这个代码段中，只有第三个ul才会有黑色的边框。<br><a href="http://cdn.tutsplus.com/net/uploads/legacy/840_cssSelectors/selectors/nthOfType.html" target="_blank" rel="noopener">DEMO</a><br><strong>兼容性</strong></p>
 <pre><code>*IE9+
 *Firefox 3.5+
 *Chrome
@@ -555,7 +557,7 @@ a[data-info~=&quot;image&quot;] {
 </code></pre><h2 id="26-X-first-child"><a href="#26-X-first-child" class="headerlink" title="26. X:first-child"></a>26. X:first-child</h2><pre><code>ul li:first-child {  
    border-top: none;  
 }
-</code></pre><p>这个结构的伪类让我们可以选择某个元素的第一个子孩子。你通常可以使用这个办法来删除第一个或者最后一个元素的边框。<br>例如，你有一系列的rows，每一个都有border-top 和border-bottom。这种情况下，第一行和最后一行看起来会灰常怪。<br>很多设计师会使用first和last类来弥补这个缺陷。相反，你可以使用这些伪类来解决这些问题。<br><a href="http://cdn.tutsplus.com/net/uploads/legacy/840_cssSelectors/selectors/firstChild.html" target="_blank" rel="external">DEMO</a></p>
+</code></pre><p>这个结构的伪类让我们可以选择某个元素的第一个子孩子。你通常可以使用这个办法来删除第一个或者最后一个元素的边框。<br>例如，你有一系列的rows，每一个都有border-top 和border-bottom。这种情况下，第一行和最后一行看起来会灰常怪。<br>很多设计师会使用first和last类来弥补这个缺陷。相反，你可以使用这些伪类来解决这些问题。<br><a href="http://cdn.tutsplus.com/net/uploads/legacy/840_cssSelectors/selectors/firstChild.html" target="_blank" rel="noopener">DEMO</a></p>
 <p><strong>兼容性</strong></p>
 <pre><code>*IE7+
 *Firefox 3.5+
@@ -594,7 +596,7 @@ a[data-info~=&quot;image&quot;] {
                 </div>
                 <div class="image-caption">图片</div>
             </figure>
-<p>看上图，解决了不是。<br><a href="http://cdn.tutsplus.com/net/uploads/legacy/840_cssSelectors/selectors/firstChild.html" target="_blank" rel="external">DEMO</a></p>
+<p>看上图，解决了不是。<br><a href="http://cdn.tutsplus.com/net/uploads/legacy/840_cssSelectors/selectors/firstChild.html" target="_blank" rel="noopener">DEMO</a></p>
 <p><strong>兼容性</strong></p>
 <pre><code>*IE9+
 *Firefox
@@ -610,7 +612,7 @@ a[data-info~=&quot;image&quot;] {
    &lt;p&gt; Two paragraphs total. &lt;/p&gt;  
    &lt;p&gt; Two paragraphs total. &lt;/p&gt;  
 &lt;/div&gt; 
-</code></pre><p>这样，第二个div的p标签的内容不会被选中。只有第一个div的p才会被选中。 <a href="http://cdn.tutsplus.com/net/uploads/legacy/840_cssSelectors/selectors/onlyChild.html" target="_blank" rel="external">DEMO</a></p>
+</code></pre><p>这样，第二个div的p标签的内容不会被选中。只有第一个div的p才会被选中。 <a href="http://cdn.tutsplus.com/net/uploads/legacy/840_cssSelectors/selectors/onlyChild.html" target="_blank" rel="noopener">DEMO</a></p>
 <p><strong>兼容性</strong></p>
 <pre><code>*IE9+
 *Firefox
@@ -623,7 +625,7 @@ a[data-info~=&quot;image&quot;] {
 <pre><code>ul &gt; li:only-of-type {  
    font-weight: bold;  
 }
-</code></pre><p><a href="http://cdn.tutsplus.com/net/uploads/legacy/840_cssSelectors/selectors/onlyOfType.html" target="_blank" rel="external">DEMO</a></p>
+</code></pre><p><a href="http://cdn.tutsplus.com/net/uploads/legacy/840_cssSelectors/selectors/onlyOfType.html" target="_blank" rel="noopener">DEMO</a></p>
 <p><strong>兼容性</strong></p>
 <pre><code>*IE9+
 *Firefox 3.5+
@@ -649,7 +651,7 @@ a[data-info~=&quot;image&quot;] {
 <pre><code>ul:first-of-type li:nth-last-child(1) {  
    font-weight: bold; 
 }
-</code></pre><p>这次，我们取到第一个ul，然后找到第一个元素，不过是从最后一个开始数。哈哈。<br><a href="http://cdn.tutsplus.com/net/uploads/legacy/840_cssSelectors/selectors/firstOfType.html" target="_blank" rel="external">DEMO</a></p>
+</code></pre><p>这次，我们取到第一个ul，然后找到第一个元素，不过是从最后一个开始数。哈哈。<br><a href="http://cdn.tutsplus.com/net/uploads/legacy/840_cssSelectors/selectors/firstOfType.html" target="_blank" rel="noopener">DEMO</a></p>
 <p><strong>兼容性</strong></p>
 <pre><code>*IE9+
 *Firefox 3.5+
@@ -657,8 +659,8 @@ a[data-info~=&quot;image&quot;] {
 *Safari
 *Opera
 </code></pre><h1 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h1><p>如果你仍在为解决old浏览器的缺陷而纠结，如IE6。在使用这些新的选择器方面，你仍然需要非常小心。不过，别因为这个阻碍了你对这些新玩意儿的学习。别虐待自己。确保关注这里的兼容性列表。应一方面，你可以使用 Dean Edward’s excellent IE9.js script 来为旧浏览器提供新的选择器支持。（我去。cool）<br>其次，当使用javascript库时，如流行的jQuery，最好尽可能使用这些css3本身的选择器而不是使用库的自定义方法/选择器。这能让你的代码更快哦，因为这些选择器引擎本身就能被浏览器解析，而不是用这些库选择器。<br>感谢阅读，希望你能学到一两个技巧。</p>
-<p>#译者注<br>本文为翻译文章，<br>原文为“<a href="http://net.tutsplus.com/tutorials/html-css-techniques/the-30-css-selectors-you-must-memorize/" target="_blank" rel="external">The 30 CSS Selectors you Must Memorize</a>”</p>
-<p><a href="http://www.cnblogs.com/yanhaijing/p/3496480.html" target="_blank" rel="external">本文转载于颜海镜的博客</a></p>
+<p>#译者注<br>本文为翻译文章，<br>原文为“<a href="http://net.tutsplus.com/tutorials/html-css-techniques/the-30-css-selectors-you-must-memorize/" target="_blank" rel="noopener">The 30 CSS Selectors you Must Memorize</a>”</p>
+<p><a href="http://www.cnblogs.com/yanhaijing/p/3496480.html" target="_blank" rel="noopener">本文转载于颜海镜的博客</a></p>
 
         </div>
 

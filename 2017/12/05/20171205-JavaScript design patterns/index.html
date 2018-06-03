@@ -19,22 +19,18 @@
     
     
     <meta name="keywords" content="JavaScript">
-    <meta name="description" content="看完此书，打算慢慢整理下读书笔记。便于巩固消化。
-第一部分 基础知识第二部分 设计模式4.单例模式定义：单例模式的定义是：保证一个类仅有一个实例，并提供它的全局访问点。例子比如弹窗
-通用的惰性单例123456var getSingle = function(fn)&amp;#123;    var result;    return function()&amp;#123;        return resul">
+    <meta name="description" content="看完此书，打算慢慢整理下读书笔记。便于巩固消化。 第一部分 基础知识第二部分 设计模式4.单例模式定义：单例模式的定义是：保证一个类仅有一个实例，并提供它的全局访问点。例子比如弹窗 通用的惰性单例123456var getSingle = function(fn)&amp;#123;    var result;    return function()&amp;#123;        return resul">
+<meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript设计模式与开发实践 读书笔记">
 <meta property="og:url" content="https://lxchuan12.github.io/2017/12/05/20171205-JavaScript design patterns/index.html">
 <meta property="og:site_name" content="轩辕Rowboat的博客">
-<meta property="og:description" content="看完此书，打算慢慢整理下读书笔记。便于巩固消化。
-第一部分 基础知识第二部分 设计模式4.单例模式定义：单例模式的定义是：保证一个类仅有一个实例，并提供它的全局访问点。例子比如弹窗
-通用的惰性单例123456var getSingle = function(fn)&amp;#123;    var result;    return function()&amp;#123;        return resul">
+<meta property="og:description" content="看完此书，打算慢慢整理下读书笔记。便于巩固消化。 第一部分 基础知识第二部分 设计模式4.单例模式定义：单例模式的定义是：保证一个类仅有一个实例，并提供它的全局访问点。例子比如弹窗 通用的惰性单例123456var getSingle = function(fn)&amp;#123;    var result;    return function()&amp;#123;        return resul">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2017-12-05T15:36:39.013Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript设计模式与开发实践 读书笔记">
-<meta name="twitter:description" content="看完此书，打算慢慢整理下读书笔记。便于巩固消化。
-第一部分 基础知识第二部分 设计模式4.单例模式定义：单例模式的定义是：保证一个类仅有一个实例，并提供它的全局访问点。例子比如弹窗
-通用的惰性单例123456var getSingle = function(fn)&amp;#123;    var result;    return function()&amp;#123;        return resul">
+<meta name="twitter:description" content="看完此书，打算慢慢整理下读书笔记。便于巩固消化。 第一部分 基础知识第二部分 设计模式4.单例模式定义：单例模式的定义是：保证一个类仅有一个实例，并提供它的全局访问点。例子比如弹窗 通用的惰性单例123456var getSingle = function(fn)&amp;#123;    var result;    return function()&amp;#123;        return resul">
     
         <link rel="alternate" type="application/atom+xml" title="轩辕Rowboat的博客" href="/atom.xml">
     
@@ -204,7 +200,7 @@
         <div class="post-content" id="post-content" itemprop="postContent">
             <p>看完此书，打算慢慢整理下读书笔记。便于巩固消化。</p>
 <h3 id="第一部分-基础知识"><a href="#第一部分-基础知识" class="headerlink" title="第一部分 基础知识"></a>第一部分 基础知识</h3><h3 id="第二部分-设计模式"><a href="#第二部分-设计模式" class="headerlink" title="第二部分 设计模式"></a>第二部分 设计模式</h3><h4 id="4-单例模式"><a href="#4-单例模式" class="headerlink" title="4.单例模式"></a>4.单例模式</h4><h5 id="定义：单例模式的定义是：保证一个类仅有一个实例，并提供它的全局访问点。"><a href="#定义：单例模式的定义是：保证一个类仅有一个实例，并提供它的全局访问点。" class="headerlink" title="定义：单例模式的定义是：保证一个类仅有一个实例，并提供它的全局访问点。"></a>定义：单例模式的定义是：保证一个类仅有一个实例，并提供它的全局访问点。</h5><h5 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h5><p>比如弹窗</p>
-<h5 id="通用的惰性单例"><a href="#通用的惰性单例" class="headerlink" title="通用的惰性单例"></a>通用的惰性单例</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var getSingle = function(fn)&#123;</div><div class="line">    var result;</div><div class="line">    return function()&#123;</div><div class="line">        return result ||  (result = fn.apply(this, arguments));</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h5 id="通用的惰性单例"><a href="#通用的惰性单例" class="headerlink" title="通用的惰性单例"></a>通用的惰性单例</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var getSingle = function(fn)&#123;</span><br><span class="line">    var result;</span><br><span class="line">    return function()&#123;</span><br><span class="line">        return result ||  (result = fn.apply(this, arguments));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="第三部分-设计原则和编程技巧"><a href="#第三部分-设计原则和编程技巧" class="headerlink" title="第三部分 设计原则和编程技巧"></a>第三部分 设计原则和编程技巧</h3>
         </div>
 

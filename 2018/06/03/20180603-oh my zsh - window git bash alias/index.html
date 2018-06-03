@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>oh my zsh 和 window git bash 设置别名提高效率 | 轩辕Rowboat的博客 | 前端路上 | PPT爱好者 | 所知甚少，唯善学。常以轩辕Rowboat为名混迹于江湖。</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    
+    <meta name="keywords" content="git,tool,zsh,oh my zhs,git bash,ubuntu">
+    <meta name="description" content="安装 oh my zsh公司使用Ubuntu系统。自己安装了 oh my zshoh my zsh官网。这里简述下安装方法123sudo apt-get install zshzsh --version// 5.1.1 12345// Via curl$ sh -c &amp;quot;$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/m">
+<meta name="keywords" content="git,tool,zsh,oh my zhs,git bash,ubuntu">
+<meta property="og:type" content="article">
+<meta property="og:title" content="oh my zsh 和 window git bash 设置别名提高效率">
+<meta property="og:url" content="https://lxchuan12.github.io/2018/06/03/20180603-oh my zsh - window git bash alias/index.html">
+<meta property="og:site_name" content="轩辕Rowboat的博客">
+<meta property="og:description" content="安装 oh my zsh公司使用Ubuntu系统。自己安装了 oh my zshoh my zsh官网。这里简述下安装方法123sudo apt-get install zshzsh --version// 5.1.1 12345// Via curl$ sh -c &amp;quot;$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/m">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-06-03T15:20:35.857Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="oh my zsh 和 window git bash 设置别名提高效率">
+<meta name="twitter:description" content="安装 oh my zsh公司使用Ubuntu系统。自己安装了 oh my zshoh my zsh官网。这里简述下安装方法123sudo apt-get install zshzsh --version// 5.1.1 12345// Via curl$ sh -c &amp;quot;$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/m">
+    
+        <link rel="alternate" type="application/atom+xml" title="轩辕Rowboat的博客" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/logo.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">轩辕Rowboat</h5>
+          <a href="mailto:lxchuan12@163.com" title="lxchuan12@163.com" class="mail">lxchuan12@163.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                文章
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://www.jianshu.com/users/83129d433d72/latest_articles" target="_blank" >
+                <i class="icon icon-lg icon-book"></i>
+                简书
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://weibo.com/lxchuan12" target="_blank" >
+                <i class="icon icon-lg icon-weibo"></i>
+                微博
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://segmentfault.com/u/lxchuan12/" target="_blank" >
+                <i class="icon icon-lg icon-hand-o-right"></i>
+                segmentfault
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/lxchuan12" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://lxchuan12.github.io/2016/11/20/20161120-about%20me/"  >
+                <i class="icon icon-lg icon-user"></i>
+                关于我
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">oh my zsh 和 window git bash 设置别名提高效率</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">oh my zsh 和 window git bash 设置别名提高效率</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-06-03T13:32:53.000Z" itemprop="datePublished" class="page-time">
+  2018-06-03
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/tool/">tool</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装-oh-my-zsh"><span class="post-toc-number">1.</span> <span class="post-toc-text">安装 oh my zsh</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#window-10-安装-ubuntu-子系统，安装oh-my-zsh"><span class="post-toc-number">2.</span> <span class="post-toc-text">window 10 安装 ubuntu 子系统，安装oh my zsh</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#window-git-bash-设置别名提高效率"><span class="post-toc-number">3.</span> <span class="post-toc-text">window git bash 设置别名提高效率</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#小结"><span class="post-toc-number">4.</span> <span class="post-toc-text">小结</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-20180603-oh my zsh - window git bash alias"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">oh my zsh 和 window git bash 设置别名提高效率</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-06-03 21:32:53" datetime="2018-06-03T13:32:53.000Z"  itemprop="datePublished">2018-06-03</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/tool/">tool</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h3 id="安装-oh-my-zsh"><a href="#安装-oh-my-zsh" class="headerlink" title="安装 oh my zsh"></a>安装 oh my zsh</h3><p>公司使用<code>Ubuntu</code>系统。自己安装了 <code>oh my zsh</code><a href="http://ohmyz.sh/" target="_blank" rel="noopener">oh my zsh官网</a>。这里简述下安装方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install zsh</span><br><span class="line">zsh --version</span><br><span class="line">// 5.1.1</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// Via curl</span><br><span class="line">$ sh -c &quot;$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)&quot;</span><br><span class="line"></span><br><span class="line">// Via Wget</span><br><span class="line">$ sh -c &quot;$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)&quot;</span><br></pre></td></tr></table></figure>
+<p>安装成功后，配置信息会在<code>~/.zshrc</code>。可以通过<code>vim ~/.zshrc</code>打开编辑<code>zsh</code>配置信息，可以看到默认配置了<code>git</code> 插件<a href="https://github.com/robbyrussell/oh-my-zsh/wiki/Plugin:git" target="_blank" rel="noopener">Plugin:git</a>。<br>也就是说，可以更加简便的使用<code>git</code> 相关的一些别名。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 比如</span><br><span class="line">`git status`时，只需要输入`gst`。</span><br><span class="line">`git pull` 时，只需要输入`gl`。</span><br><span class="line">`git push 时，只需要输入`gp`等等。</span><br></pre></td></tr></table></figure></p>
+<p>是因为配置里有这些简写，<a href="https://github.com/robbyrussell/oh-my-zsh/blob/master/plugins/git/git.plugin.zsh" target="_blank" rel="noopener">oh my zsh plugin git.plugin.zsh</a>。<br>安装成功后，同时会创建<code>~/.oh-my-zsh</code>的文件夹，其实就是<code>.oh-my-zsh</code> 的 <code>git</code> 仓库<code>master</code>分支。<br>可以发现文件夹中有一个<code>plugins</code>文件夹，内置了很多插件。可以自定义主题<code>theme</code>，具体可以看<a href="https://github.com/robbyrussell/oh-my-zsh/blob/master/themes/example.zsh-theme" target="_blank" rel="noopener">example.zsh-theme</a>。<br><code>custom</code>自定义相关。<br>插件相关会安装在这里，<a href="https://github.com/robbyrussell/oh-my-zsh/blob/master/custom/plugins/example/example.plugin.zsh" target="_blank" rel="noopener">更多可以查看example.plugin.zsh</a></p>
+<p>我暂时安装了这几个插件。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">plugins=(</span><br><span class="line">  // 内置插件，启用即可</span><br><span class="line">  git</span><br><span class="line">  cp</span><br><span class="line">  mv</span><br><span class="line">  // 按两下esc键，用sudo权限</span><br><span class="line">  sudo</span><br><span class="line">  // 记录历史输入的zsh命令，自动提示，快速使用</span><br><span class="line">  zsh-autosuggestions</span><br><span class="line">  // zsh 命令高亮</span><br><span class="line">  zsh-syntax-highlighting</span><br><span class="line">)</span><br></pre></td></tr></table></figure></p>
+<p>顺带讲下后面两个插件的安装方法<br>安装 <code>zsh-autosuggestions</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions</span><br></pre></td></tr></table></figure></p>
+<p>安装<code>zsh-syntax-highlighting</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting</span><br></pre></td></tr></table></figure></p>
+<p><code>$ZSH_CUSTOM</code> 其实是个变量，代表这个路径<code>~/.oh-my-zsh/custom</code>，<br>也就是安装到了这个目录下。还有很多高效插件，等您发掘~<a href="http://ohmyz.sh/" target="_blank" rel="noopener">oh my zsh官网</a><br>不过插件安装多了，感觉会有些卡顿~<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 每次修改了这个`.zshrc`配置文件，需要重载一下，才能生效。</span><br><span class="line">source .zshrc</span><br><span class="line">// 也可以封装成一个简写命令 alias</span><br><span class="line">alias rl=&apos;source ~/.zshrc&apos;</span><br></pre></td></tr></table></figure></p>
+<p>也可以在这个配置文件中配置更多<code>alias</code>。<br><code>oh my zsh</code>命令工具确实好用，但还没买<code>mac</code>，又不想用<code>ubuntu</code>的童鞋怎么办呢~<br><code>win10</code> 支持安装<code>ubuntu</code>等子系统，就可以安装<code>oh my zsh</code>, 学习<code>linux</code>了。</p>
+<h3 id="window-10-安装-ubuntu-子系统，安装oh-my-zsh"><a href="#window-10-安装-ubuntu-子系统，安装oh-my-zsh" class="headerlink" title="window 10 安装 ubuntu 子系统，安装oh my zsh"></a>window 10 安装 ubuntu 子系统，安装oh my zsh</h3><p>之前偶然发现自己电脑<code>window 10</code> 有类似<code>linux</code> 功能（虽然这功能之前就有印象，但没去研究），这里有篇简短介绍文章：<a href="https://www.iplaysoft.com/ubuntu-for-windows10.html" target="_blank" rel="noopener">微软官方 Ubuntu for Win10 版免费 Linux 子系统下载！一键安装运行超简单</a></p>
+<p>竟然也可以安装<code>oh my zsh</code><a href="http://ohmyz.sh/" target="_blank" rel="noopener">官网</a>。想学习 <code>linux</code> 又不想安装 <code>linux</code> 系统，这时候可以用<code>win10</code>自带的<code>Ubuntu</code>。<br>发现这篇写的比较详细，笔者就不再赘述了。<br><a href="https://blog.csdn.net/sko121/article/details/78091083" target="_blank" rel="noopener">Win10 环境下安装配置 zsh</a><br><code>win10</code>安装了<code>ubuntu</code>子系统和<code>oh my zsh</code>后，则可以通过<code>/mnt/f/</code>访问<code>win10</code>下的<code>f</code>盘，或者其他盘。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 比如跳转到工作目录</span><br><span class="line">alias dgg=&apos;cd /mnt/f/git-source/github&apos;</span><br><span class="line">// vscode 打开要编辑的文件或文件夹</span><br><span class="line">code sticky-notes</span><br></pre></td></tr></table></figure></p>
+<p>也就是相当于<code>win10</code>下解锁了<code>oh my zsh</code>。<br>那不是<code>win10</code>，也想通过设置别名来提高效率，是不是就没有办法了呢，可以使用<code>git bash</code>设置<code>alias</code>，安装<code>git</code>，自带<code>git bash</code>。</p>
+<h3 id="window-git-bash-设置别名提高效率"><a href="#window-git-bash-设置别名提高效率" class="headerlink" title="window git bash 设置别名提高效率"></a>window git bash 设置别名提高效率</h3><p><code>window</code> 桌面或任意资源管理器位置，右击，选择<code>Git Bash Here</code>，即打开了<code>git bash</code>命令行。<br>先设置下主题，右击选择<code>options</code>, <code>Looks &gt; theme &gt; dracula</code><br>我选择的是<code>dracula</code>主题，看起来比较舒适。还可以设置字体等。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// 跳转到根路径</span><br><span class="line">cd ~</span><br><span class="line">// 查看下是否有.bash_profile文件</span><br><span class="line">la</span><br><span class="line">// 如果没有.bash_profile文件，需要创建</span><br><span class="line">touch .bash_profile</span><br><span class="line">// 打开编辑 （笔者这里安装了vscode，所以直接用其打开文件）</span><br><span class="line">code .bash_profile</span><br></pre></td></tr></table></figure></p>
+<p>可以根据修改设置一些别名。<br>比如我们常用的<code>git status</code>命令，可以封装成<code>gst</code>。清屏<code>clear</code>命令封装成<code>cls</code>。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">alias gst=&apos;git status&apos;</span><br><span class="line">alias cls=&apos;clear&apos;</span><br></pre></td></tr></table></figure></p>
+<p>每次修改这个文件需要输入<code>source ~/.bash_profile</code>重载这个文件，才会生效。<br><code>code ~/.bash_profile</code>，用<code>vscode</code>编辑这个配置文件，封装成一个命令。<br>比如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">alias rl=&apos;source ~/.bash_profile&apos;</span><br><span class="line">alias bashconfig=&apos;code ~/.bash_profile&apos;</span><br></pre></td></tr></table></figure></p>
+<p>这样每次修改保存后就只需要输入<code>rl</code>，即可重载生效了。<br>还可以把一些工作目录封装，笔者的一些项目是放在<code>/f/git-source/github</code>文件下。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// github上的项目</span><br><span class="line">alias dgg=&apos;cd F:/git-source/github&apos;</span><br><span class="line">// 周报相关</span><br><span class="line">alias dcwk=&apos;cd F:/git-source/coding/weekly&apos;</span><br></pre></td></tr></table></figure></p>
+<p>每次进入项目，就直接<code>dgg</code>，即可跳转到这个目录，然后选择相应的目录即可。<br>比如<code>dgg</code>进入工作目录，<code>cd analyse-vue-cli</code>进入项目目录,（输入<code>anal</code>按<code>tab</code>键智能提示）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//  /f/git-source/github/analyse-vue-cli (dev)</span><br><span class="line">// 查看状态 git status</span><br><span class="line">gst</span><br><span class="line">// 用vscode 打开这个文件夹，开始编辑~</span><br><span class="line">code ./</span><br></pre></td></tr></table></figure></p>
+<p>git 相关的，<br>例举一些平时用的比较多的。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">alias g=&apos;git&apos;</span><br><span class="line">alias ga=&apos;git add&apos;</span><br><span class="line">alias gaa=&apos;git add -all&apos;</span><br><span class="line">alias gp=&apos;git push&apos;</span><br><span class="line">alias gl=&apos;git pull&apos;</span><br><span class="line">alias gcmsg=&apos;git commit -m&apos;</span><br><span class="line">// 分支相关</span><br><span class="line">alias gb=&apos;git branch&apos;</span><br><span class="line">alias gbr=&apos;git branch -r&apos;</span><br><span class="line">alias gba=&apos;git branch -a&apos;</span><br><span class="line">// checkout</span><br><span class="line">alias gco=&apos;git checkout&apos;</span><br><span class="line">alias gcb=&apos;git checkout -b&apos;</span><br><span class="line">// merge</span><br><span class="line">alias gm=&apos;git merge&apos;</span><br><span class="line">// diff</span><br><span class="line">alias gd=&apos;git diff&apos;</span><br><span class="line">alias gdw=&apos;git diff --word-diff&apos;</span><br></pre></td></tr></table></figure></p>
+<p>更多可以把<code>oh my zsh</code>的插件一些命令拷贝过来，留<code>alias</code>相关的即可，<a href="https://github.com/robbyrussell/oh-my-zsh/blob/master/plugins/git/git.plugin.zsh" target="_blank" rel="noopener">oh my zsh plugin git.plugin.zsh</a><br><a href="https://github.com/robbyrussell/oh-my-zsh/wiki/Plugin:git" target="_blank" rel="noopener">Plugin:git wiki</a><br>相当于解锁了<code>oh my zsh</code> 的<code>git</code>插件。还有很多插件，比如<code>npm</code><a href="https://github.com/robbyrussell/oh-my-zsh/blob/master/plugins/npm/npm.plugin.zsh" target="_blank" rel="noopener">点击查看</a>, <code>node 等</code>，都可以研究下。<br>不过可能大多数人不知道，<code>git</code>也是可以这是别名的。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// git status =&gt; git st</span><br><span class="line">git config --global alias.st status</span><br></pre></td></tr></table></figure></p>
+<p>更多可以查看廖雪峰老师的这篇文章<a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/001375234012342f90be1fc4d81446c967bbdc19e7c03d3000" target="_blank" rel="noopener">git 配置别名</a><br><code>git bash</code>，有没有类似<code>oh my zsh</code>的插件呢，笔者暂时没发现，如果您知道，欢迎告诉笔者。<br>目录相关的操作，也可以设置一些别名。比如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// 回退到上一级</span><br><span class="line">alias ..=&apos;cd ..&apos;</span><br><span class="line">alias ...=&apos;cd ../..&apos;</span><br><span class="line">alias ....=&apos;cd ../../..&apos;</span><br><span class="line">alias .....=&apos;cd ../../../..&apos;</span><br><span class="line">alias ......=&apos;cd ../../../../..&apos;</span><br></pre></td></tr></table></figure></p>
+<p>更多还可以使用<code>cmder</code><a href="http://cmder.net/" target="_blank" rel="noopener">点击查看cmder官网</a>命令行工具。虽然笔者几年前就安装了，但发现还是<code>git bash</code>用的顺畅些，可能是我还不太习惯<code>cmder</code>。<br>关于<code>cmder</code>配置相关，这里推荐晚晴幽草轩轩主的一篇文章：<br><a href="https://jeffjade.com/2016/01/13/2016-01-13-windows-software-cmder/" target="_blank" rel="noopener">Win下必备神器之Cmder</a></p>
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>磨刀不误砍柴工，花时间折腾研究工具，有利于提高开发效率。</p>
+<p>文章首发于segmentfault <a href="https://segmentfault.com/a/1190000015155864" target="_blank" rel="noopener">oh my zsh 和 window git bash 设置别名提高效率</a></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2018-06-03T15:20:35.857Z" itemprop="dateUpdated">2018-06-03 23:20:35</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2018/06/03/20180603-oh my zsh - window git bash alias/" target="_blank" rel="external">https://lxchuan12.github.io/2018/06/03/20180603-oh my zsh - window git bash alias/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://lxchuan12.github.io">
+            <img src="/img/logo.jpg" alt="轩辕Rowboat">
+            轩辕Rowboat
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git-bash/">git bash</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/oh-my-zhs/">oh my zhs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tool/">tool</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ubuntu/">ubuntu</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/zsh/">zsh</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://lxchuan12.github.io/2018/06/03/20180603-oh my zsh - window git bash alias/&title=《oh my zsh 和 window git bash 设置别名提高效率》 — 轩辕Rowboat的博客&pic=https://lxchuan12.github.io/img/logo.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://lxchuan12.github.io/2018/06/03/20180603-oh my zsh - window git bash alias/&title=《oh my zsh 和 window git bash 设置别名提高效率》 — 轩辕Rowboat的博客&source=轩辕Rowboat，某世界闻名的陶瓷大学2016届毕业生，目前在杭州从事前端开发工作，也是一枚PPT爱好者。所知甚少，唯善学。常以轩辕Rowboat为名混..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://lxchuan12.github.io/2018/06/03/20180603-oh my zsh - window git bash alias/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《oh my zsh 和 window git bash 设置别名提高效率》 — 轩辕Rowboat的博客&url=https://lxchuan12.github.io/2018/06/03/20180603-oh my zsh - window git bash alias/&via=https://lxchuan12.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://lxchuan12.github.io/2018/06/03/20180603-oh my zsh - window git bash alias/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/05/16/20180515-vue qrcode clipboard/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">vue 2.x项目 vue-qriously 生成二维码并下载、cliploard复制粘贴</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'true' == 'true',
+            verify: 'false' == 'true',
+            appId: "0TKTK966CPwc1sozltNJnPwi-gzGzoHsz",
+            appKey: "pqWw70koe6UNqnGfrPBLgPCO",
+            avatar: "mm",
+            placeholder: "ヾﾉ≧∀≦)o来啊，快活啊!",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        你的打赏是我写作的动力~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+        <p>
+            <span>轩辕Rowboat &copy; 2016 - 2018</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+    <div class="bottom" style="display: none">
+        <p><span>轩辕Rowboat &copy; 2016 - 2018</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://lxchuan12.github.io/2018/06/03/20180603-oh my zsh - window git bash alias/&title=《oh my zsh 和 window git bash 设置别名提高效率》 — 轩辕Rowboat的博客&pic=https://lxchuan12.github.io/img/logo.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://lxchuan12.github.io/2018/06/03/20180603-oh my zsh - window git bash alias/&title=《oh my zsh 和 window git bash 设置别名提高效率》 — 轩辕Rowboat的博客&source=轩辕Rowboat，某世界闻名的陶瓷大学2016届毕业生，目前在杭州从事前端开发工作，也是一枚PPT爱好者。所知甚少，唯善学。常以轩辕Rowboat为名混..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://lxchuan12.github.io/2018/06/03/20180603-oh my zsh - window git bash alias/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《oh my zsh 和 window git bash 设置别名提高效率》 — 轩辕Rowboat的博客&url=https://lxchuan12.github.io/2018/06/03/20180603-oh my zsh - window git bash alias/&via=https://lxchuan12.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://lxchuan12.github.io/2018/06/03/20180603-oh my zsh - window git bash alias/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://lxchuan12.github.io/2018/06/03/20180603-oh my zsh - window git bash alias/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+lazyScripts.push('//s95.cnzz.com/z_stat.php?id=1273798602&web_id=1273798602')
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '(つェ⊂)Good Bye！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'Hi~Welcome back!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

@@ -20,11 +20,13 @@
     
     <meta name="keywords" content="RegExp">
     <meta name="description" content="正则表达式(RegExp)1、什么是正则表达式1.1 什么叫“正则”—规则、模式—强大的字符串匹配工具……">
+<meta name="keywords" content="RegExp">
 <meta property="og:type" content="article">
 <meta property="og:title" content="正则表达式知识点">
 <meta property="og:url" content="https://lxchuan12.github.io/2016/09/22/20160922-RegExp/index.html">
 <meta property="og:site_name" content="轩辕Rowboat的博客">
 <meta property="og:description" content="正则表达式(RegExp)1、什么是正则表达式1.1 什么叫“正则”—规则、模式—强大的字符串匹配工具……">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2016-10-23T15:11:22.449Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="正则表达式知识点">
@@ -201,7 +203,7 @@
 <ol>
 <li>不限制 key 的顺序</li>
 <li>输入的字符串参数不会为空</li>
-<li>忽略空白字符<br>输入例子:<br>count(‘hello world’)<br>输出例子:<br>{h: 1, e: 1, l: 3, o: 2, w: 1, r: 1, d: 1}<br>*/<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">function count_2(str) &#123;</div><div class="line">    var obj = &#123;&#125;;</div><div class="line">    // \S:非空白符</div><div class="line">    str.replace(/\S/g,function(s)&#123;</div><div class="line">        !obj[s]?obj[s]=1:obj[s]++;</div><div class="line">    &#125;)</div><div class="line">    return obj;</div><div class="line">&#125;</div><div class="line">console.log(count_2(&apos;hello world&apos;));</div></pre></td></tr></table></figure>
+<li>忽略空白字符<br>输入例子:<br>count(‘hello world’)<br>输出例子:<br>{h: 1, e: 1, l: 3, o: 2, w: 1, r: 1, d: 1}<br>*/<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function count_2(str) &#123;</span><br><span class="line">    var obj = &#123;&#125;;</span><br><span class="line">    // \S:非空白符</span><br><span class="line">    str.replace(/\S/g,function(s)&#123;</span><br><span class="line">        !obj[s]?obj[s]=1:obj[s]++;</span><br><span class="line">    &#125;)</span><br><span class="line">    return obj;</span><br><span class="line">&#125;</span><br><span class="line">console.log(count_2(&apos;hello world&apos;));</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <p>–匹配子项<br>–例子：日期格式化</p>
@@ -212,7 +214,7 @@
 <h3 id="6、常用正则例子"><a href="#6、常用正则例子" class="headerlink" title="6、常用正则例子"></a>6、常用正则例子</h3><p>高级表单校验<br>匹配中文：[\u4e00-\u9fa5]<br>行首行尾空格：^\s<em>|\s</em>$<br>Email：^\w+@[a-z0-9]+(.[a-z]+){1,3}$</p>
 <p>网址：[a-zA-z]+://[^\s]*<br>QQ号：[1-9][0-9]{4,9}<br>邮政编码：[1-9]\d{5}<br>身份证：[1-9]\d{14}|[1-9]\d{17}|[1-9]\d{16}x</p>
 <h3 id="7、正则与面向对象"><a href="#7、正则与面向对象" class="headerlink" title="7、正则与面向对象"></a>7、正则与面向对象</h3><p>把方法包在一个空间里<br>有人管他叫——命名空间<br>在公司里，把同一类方法，包在一起<br>JSON的使用<br>把之前的方法，包在一起</p>
-<h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/RegExp" target="_blank" rel="external">MDN RegExp</a></p>
+<h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/RegExp" target="_blank" rel="noopener">MDN RegExp</a></p>
 
         </div>
 

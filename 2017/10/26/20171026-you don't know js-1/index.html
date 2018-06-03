@@ -20,11 +20,13 @@
     
     <meta name="keywords" content="JavaScript">
     <meta name="description" content="前言：你们应当像我一样， 不满足于只是让代码正常工作， 而是想要弄清楚“为什么”。 我希望你能勇于挑战这条崎岖颠簸的“少有人走的路”， 拥抱整个 JavaScript。 掌握了这些知识之后， 无论什么技术、 框架和流行词语你都能轻松理解。使用代码示例可以在这里下载本书第一部分“作用域和闭包” 随附的资料（代码示例、 练习题等） ：http://bit.ly/1c8HEWF。可以在这里下载本书第二部">
+<meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="你不知道的JavaScript上卷-读书笔记">
 <meta property="og:url" content="https://lxchuan12.github.io/2017/10/26/20171026-you don't know js-1/index.html">
 <meta property="og:site_name" content="轩辕Rowboat的博客">
 <meta property="og:description" content="前言：你们应当像我一样， 不满足于只是让代码正常工作， 而是想要弄清楚“为什么”。 我希望你能勇于挑战这条崎岖颠簸的“少有人走的路”， 拥抱整个 JavaScript。 掌握了这些知识之后， 无论什么技术、 框架和流行词语你都能轻松理解。使用代码示例可以在这里下载本书第一部分“作用域和闭包” 随附的资料（代码示例、 练习题等） ：http://bit.ly/1c8HEWF。可以在这里下载本书第二部">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2017-10-30T15:26:38.775Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="你不知道的JavaScript上卷-读书笔记">
@@ -196,7 +198,7 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p>前言：<br>你们应当像我一样， 不满足于只是让代码正常工作， 而是想要弄清楚“为什么”。 我希望<br>你能勇于挑战这条崎岖颠簸的“少有人走的路”， 拥抱整个 JavaScript。 掌握了这些知识之<br>后， 无论什么技术、 框架和流行词语你都能轻松理解。<br>使用代码示例<br>可以在这里下载本书第一部分“作用域和闭包” 随附的资料（代码示例、 练习题等） ：<br><a href="http://bit.ly/1c8HEWF。" target="_blank" rel="external">http://bit.ly/1c8HEWF。</a><br>可以在这里下载本书第二部分“this 和对象原型” 随附的资料（代码示例、 练习题等） ：<br><a href="http://bit.ly/ydkjs-this-code" target="_blank" rel="external">http://bit.ly/ydkjs-this-code</a><br>要了解更多 O’Reilly 图书、 培训课程、 会议和新闻的信息， 请访问以下网站：<br><a href="http://www.oreilly.com" target="_blank" rel="external">http://www.oreilly.com</a><br>我们在 Facebook 的地址如下： <a href="http://facebook.com/oreilly" target="_blank" rel="external">http://facebook.com/oreilly</a><br>请关注我们的 Twitter 动态： <a href="http://twitter.com/oreillymedia" target="_blank" rel="external">http://twitter.com/oreillymedia</a><br>我们的 YouTube 视频地址如下： <a href="http://www.youtube.com/oreillymedia" target="_blank" rel="external">http://www.youtube.com/oreillymedia</a><br>要查看“你不知道的 JavaScript” 系列丛书中的全部图书， 请访问：<br><a href="http://YouDontKnowJS.com" target="_blank" rel="external">http://YouDontKnowJS.com</a></p>
+            <p>前言：<br>你们应当像我一样， 不满足于只是让代码正常工作， 而是想要弄清楚“为什么”。 我希望<br>你能勇于挑战这条崎岖颠簸的“少有人走的路”， 拥抱整个 JavaScript。 掌握了这些知识之<br>后， 无论什么技术、 框架和流行词语你都能轻松理解。<br>使用代码示例<br>可以在这里下载本书第一部分“作用域和闭包” 随附的资料（代码示例、 练习题等） ：<br><a href="http://bit.ly/1c8HEWF。" target="_blank" rel="noopener">http://bit.ly/1c8HEWF。</a><br>可以在这里下载本书第二部分“this 和对象原型” 随附的资料（代码示例、 练习题等） ：<br><a href="http://bit.ly/ydkjs-this-code" target="_blank" rel="noopener">http://bit.ly/ydkjs-this-code</a><br>要了解更多 O’Reilly 图书、 培训课程、 会议和新闻的信息， 请访问以下网站：<br><a href="http://www.oreilly.com" target="_blank" rel="noopener">http://www.oreilly.com</a><br>我们在 Facebook 的地址如下： <a href="http://facebook.com/oreilly" target="_blank" rel="noopener">http://facebook.com/oreilly</a><br>请关注我们的 Twitter 动态： <a href="http://twitter.com/oreillymedia" target="_blank" rel="noopener">http://twitter.com/oreillymedia</a><br>我们的 YouTube 视频地址如下： <a href="http://www.youtube.com/oreillymedia" target="_blank" rel="noopener">http://www.youtube.com/oreillymedia</a><br>要查看“你不知道的 JavaScript” 系列丛书中的全部图书， 请访问：<br><a href="http://YouDontKnowJS.com" target="_blank" rel="noopener">http://YouDontKnowJS.com</a></p>
 <h1 id="第一部分-作用域和闭包"><a href="#第一部分-作用域和闭包" class="headerlink" title="第一部分 作用域和闭包"></a>第一部分 作用域和闭包</h1><p>知其然， 也要知其所以然。</p>
 <h2 id="第一章-作用域是什么"><a href="#第一章-作用域是什么" class="headerlink" title="第一章 作用域是什么"></a>第一章 作用域是什么</h2><h4 id="分词-词法分析（Tokenizing-Lexing）"><a href="#分词-词法分析（Tokenizing-Lexing）" class="headerlink" title="分词/词法分析（Tokenizing/Lexing）"></a>分词/词法分析（Tokenizing/Lexing）</h4><p>这个过程会将由字符组成的字符串分解成（对编程语言来说） 有意义的代码块， 这些代<br>码块被称为词法单元（token）。 例如， 考虑程序 var a = 2;。 这段程序通常会被分解成<br>为下面这些词法单元： var、 a、 =、 2 、 ;。 空格是否会被当作词法单元， 取决于空格在<br>这门语言中是否具有意义。</p>
 

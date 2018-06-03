@@ -20,17 +20,19 @@
     
     <meta name="keywords" content="js,oop">
     <meta name="description" content="一个前端QQ群里，有人提问，关于面向对象的……我看完后解答了">
+<meta name="keywords" content="js,oop">
 <meta property="og:type" content="article">
 <meta property="og:title" content="由JavaScript一道面向对象题引发的思考">
 <meta property="og:url" content="https://lxchuan12.github.io/2016/08/30/20160830-js-oop-prototype-constructor/index.html">
 <meta property="og:site_name" content="轩辕Rowboat的博客">
 <meta property="og:description" content="一个前端QQ群里，有人提问，关于面向对象的……我看完后解答了">
-<meta property="og:image" content="https://lxchuan12.github.io/./img/console-output.jpg">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://lxchuan12.github.io/2016/08/30/20160830-js-oop-prototype-constructor/img/console-output.jpg">
 <meta property="og:updated_time" content="2016-08-31T05:13:33.817Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="由JavaScript一道面向对象题引发的思考">
 <meta name="twitter:description" content="一个前端QQ群里，有人提问，关于面向对象的……我看完后解答了">
-<meta name="twitter:image" content="https://lxchuan12.github.io/./img/console-output.jpg">
+<meta name="twitter:image" content="https://lxchuan12.github.io/2016/08/30/20160830-js-oop-prototype-constructor/img/console-output.jpg">
     
         <link rel="alternate" type="application/atom+xml" title="轩辕Rowboat的博客" href="/atom.xml">
     
@@ -198,16 +200,16 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p>一个前端QQ群里，有人提问，关于面向对象的……我看完后解答了<a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">function Person()&#123;</div><div class="line">  this.name = &quot;lxchuan12&quot;;</div><div class="line">&#125;</div><div class="line">var rowboat = new Person();</div><div class="line">Person.prototype.age=20;</div><div class="line">Person.prototype=&#123;a:1,b:2&#125;;</div><div class="line">//Person.prototype.constructor = Person;</div><div class="line">console.log(rowboat.name);//&quot;lxchuan12&quot;</div><div class="line">console.log(rowboat.age);//20</div><div class="line">console.log(rowboat.a);//undefined</div><div class="line">console.log(rowboat.b);//undefined</div><div class="line">console.log(rowboat);</div><div class="line">console.log(Person.prototype.name);//undefined</div><div class="line">console.log(Person.prototype.age);//undefined</div><div class="line">console.log(Person.prototype.a);//1</div><div class="line">console.log(Person.prototype.b);//2</div><div class="line">console.log(Person.prototype.constructor);//function Object() &#123; [native code] &#125;</div><div class="line">console.log(Person.prototype);//Object &#123;a: 1, b: 2&#125;</div></pre></td></tr></table></figure></p>
+            <p>一个前端QQ群里，有人提问，关于面向对象的……我看完后解答了<a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">function Person()&#123;</span><br><span class="line">  this.name = &quot;lxchuan12&quot;;</span><br><span class="line">&#125;</span><br><span class="line">var rowboat = new Person();</span><br><span class="line">Person.prototype.age=20;</span><br><span class="line">Person.prototype=&#123;a:1,b:2&#125;;</span><br><span class="line">//Person.prototype.constructor = Person;</span><br><span class="line">console.log(rowboat.name);//&quot;lxchuan12&quot;</span><br><span class="line">console.log(rowboat.age);//20</span><br><span class="line">console.log(rowboat.a);//undefined</span><br><span class="line">console.log(rowboat.b);//undefined</span><br><span class="line">console.log(rowboat);</span><br><span class="line">console.log(Person.prototype.name);//undefined</span><br><span class="line">console.log(Person.prototype.age);//undefined</span><br><span class="line">console.log(Person.prototype.a);//1</span><br><span class="line">console.log(Person.prototype.b);//2</span><br><span class="line">console.log(Person.prototype.constructor);//function Object() &#123; [native code] &#125;</span><br><span class="line">console.log(Person.prototype);//Object &#123;a: 1, b: 2&#125;</span><br></pre></td></tr></table></figure></p>
 <h3 id="问题："><a href="#问题：" class="headerlink" title="问题："></a>问题：</h3><p>他不明白，为什么rowboat.age为20。但Person.prototype.age却为undefined。</p>
-<h3 id="解答："><a href="#解答：" class="headerlink" title="解答："></a>解答：</h3><p>我把代码在<a href="http://jsbin.com/muzofix/19/edit?html,js,console" target="_blank" rel="external">jsbin</a>运行后，为之解答。<br>Person.prototype={a:1,b:2};这种写法是赋值，<br>与Person.prototype.age=20;写法不同，不经意间把constructor指向原本为Person的，改为了Object（一般来说，需要修正指向。Person.prototype.constructor = Person）。<br><figure class="image-bubble">
+<h3 id="解答："><a href="#解答：" class="headerlink" title="解答："></a>解答：</h3><p>我把代码在<a href="http://jsbin.com/muzofix/19/edit?html,js,console" target="_blank" rel="noopener">jsbin</a>运行后，为之解答。<br>Person.prototype={a:1,b:2};这种写法是赋值，<br>与Person.prototype.age=20;写法不同，不经意间把constructor指向原本为Person的，改为了Object（一般来说，需要修正指向。Person.prototype.constructor = Person）。<br><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
                     <img src="./img/console-output.jpg" alt="控制台输出对象" title="">
                 </div>
                 <div class="image-caption">控制台输出对象</div>
             </figure><br>相当于prototype下只有a,b两个值了。所以Person.prototype.age则是undefined。<br>但rowboat.age是原型上的，可以找到，所以是20。<br>所谓原型查找：查找的是构造器查找的原型，构造器是指向一个function(){},里面没有a和b.</p>
-<h3 id="参考资料："><a href="#参考资料：" class="headerlink" title="参考资料："></a>参考资料：</h3><p><a href="https://segmentfault.com/a/1190000006009690" target="_blank" rel="external">《JavaScript高级程序设计》——对象学习笔记</a></p>
+<h3 id="参考资料："><a href="#参考资料：" class="headerlink" title="参考资料："></a>参考资料：</h3><p><a href="https://segmentfault.com/a/1190000006009690" target="_blank" rel="noopener">《JavaScript高级程序设计》——对象学习笔记</a></p>
 <h3 id="小结："><a href="#小结：" class="headerlink" title="小结："></a>小结：</h3><p>学习js面对对象编程相关知识,对了解js语言很有帮助。另外，有人说，能写组件，做组件开发说明达到了中级水平。</p>
 
         </div>
