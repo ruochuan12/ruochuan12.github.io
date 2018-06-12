@@ -18,16 +18,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     
-    <meta name="keywords" content="git,zsh,oh my zsh,git bash,ubuntu,tool">
+    <meta name="keywords" content="git,tool,zsh,oh my zsh,git bash,ubuntu">
     <meta name="description" content="安装 oh my zsh公司使用Ubuntu系统。自己安装了 oh my zshoh my zsh官网。这里简述下安装方法123sudo apt-get install zshzsh --version// 5.1.1 12345// Via curl$ sh -c &amp;quot;$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/m">
-<meta name="keywords" content="git,zsh,oh my zsh,git bash,ubuntu,tool">
+<meta name="keywords" content="git,tool,zsh,oh my zsh,git bash,ubuntu">
 <meta property="og:type" content="article">
 <meta property="og:title" content="oh my zsh 和 window git bash 设置别名提高效率">
 <meta property="og:url" content="https://lxchuan12.github.io/2018/06/03/20180603-oh my zsh - window git bash alias/index.html">
 <meta property="og:site_name" content="轩辕Rowboat的博客">
 <meta property="og:description" content="安装 oh my zsh公司使用Ubuntu系统。自己安装了 oh my zshoh my zsh官网。这里简述下安装方法123sudo apt-get install zshzsh --version// 5.1.1 12345// Via curl$ sh -c &amp;quot;$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/m">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-06-04T14:17:59.469Z">
+<meta property="og:updated_time" content="2018-06-12T14:30:04.376Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="oh my zsh 和 window git bash 设置别名提高效率">
 <meta name="twitter:description" content="安装 oh my zsh公司使用Ubuntu系统。自己安装了 oh my zshoh my zsh官网。这里简述下安装方法123sudo apt-get install zshzsh --version// 5.1.1 12345// Via curl$ sh -c &amp;quot;$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/m">
@@ -172,7 +172,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装-oh-my-zsh"><span class="post-toc-number">1.</span> <span class="post-toc-text">安装 oh my zsh</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#windows-10-安装-Ubuntu-子系统，安装oh-my-zsh"><span class="post-toc-number">2.</span> <span class="post-toc-text">windows 10 安装 Ubuntu 子系统，安装oh my zsh</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#windows-git-bash-设置别名提高效率"><span class="post-toc-number">3.</span> <span class="post-toc-text">windows git bash 设置别名提高效率</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#git设置别名，使用tig神器"><span class="post-toc-number">4.</span> <span class="post-toc-text">git设置别名，使用tig神器</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#小结"><span class="post-toc-number">5.</span> <span class="post-toc-text">小结</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装-oh-my-zsh"><span class="post-toc-number">1.</span> <span class="post-toc-text">安装 oh my zsh</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#windows-10-安装-Ubuntu-子系统，安装oh-my-zsh"><span class="post-toc-number">2.</span> <span class="post-toc-text">windows 10 安装 Ubuntu 子系统，安装oh my zsh</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#windows-git-bash-设置别名提高效率"><span class="post-toc-number">3.</span> <span class="post-toc-text">windows git bash 设置别名提高效率</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#git设置别名，使用tig神器"><span class="post-toc-number">4.</span> <span class="post-toc-text">git设置别名，使用tig神器</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#关于"><span class="post-toc-number">5.</span> <span class="post-toc-text">关于</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#小结"><span class="post-toc-number">6.</span> <span class="post-toc-text">小结</span></a></li></ol>
         </nav>
     </aside>
 
@@ -222,6 +222,7 @@
 <p>当然，<code>git</code>也是可以设置别名的。</p>
 <h3 id="git设置别名，使用tig神器"><a href="#git设置别名，使用tig神器" class="headerlink" title="git设置别名，使用tig神器"></a><code>git</code>设置别名，使用<code>tig</code>神器</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// git status =&gt; git st</span><br><span class="line">git config --global alias.st status</span><br></pre></td></tr></table></figure>
 <p>更多可以查看廖雪峰老师的这篇文章<a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/001375234012342f90be1fc4d81446c967bbdc19e7c03d3000" target="_blank" rel="noopener">git 配置别名</a>。不过可能大多数人不知道，他们可能用着可视化工具。笔者觉得可视化工具也是对<code>git</code>的一些封装，具体背后是什么命令，我们还是需要去了解熟悉的。命令行使用<code>git</code>，笔者推荐使用<code>tig</code>。<code>git log</code>增强版，性能很好。<code>Ubuntu</code>、<code>linux</code>、<code>mac</code>可以直接安装，<code>windows</code>稍微麻烦些。具体安装方法查看<a href="https://github.com/jonas/tig/blob/master/INSTALL.adoc" target="_blank" rel="noopener">tig github仓库中的官方安装文档</a>，或者查看这篇文章：<a href="https://www.jianshu.com/p/e4ca3030a9d5" target="_blank" rel="noopener">颠覆 Git 命令使用体验的神器 – tig</a></p>
+<h3 id="关于"><a href="#关于" class="headerlink" title="关于"></a>关于</h3><p>作者：常以<strong>轩辕Rowboat</strong>为名混迹于江湖。前端路上 | PPT爱好者 | 所知甚少，唯善学。<br><a href="https://lxchuan12.github.io/">个人博客</a><br><a href="https://segmentfault.com/u/lxchuan12" target="_blank" rel="noopener">segmentfault个人主页</a><br><a href="https://juejin.im/user/57974dc55bbb500063f522fd/posts" target="_blank" rel="noopener">掘金个人主页</a><br><a href="https://www.zhihu.com/people/lxchuan12/activities" target="_blank" rel="noopener">知乎</a><br><a href="https://github.com/lxchuan12" target="_blank" rel="noopener">github</a></p>
 <h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>磨刀不误砍柴工，花时间折腾研究工具，有利于提高开发效率。</p>
 <p>文章首发于segmentfault <a href="https://segmentfault.com/a/1190000015155864" target="_blank" rel="noopener">oh my zsh 和 windows git bash 设置别名提高效率</a></p>
 
@@ -232,7 +233,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2018-06-04T14:17:59.469Z" itemprop="dateUpdated">2018-06-04 22:17:59</time>
+    最后更新时间：<time datetime="2018-06-12T14:30:04.376Z" itemprop="dateUpdated">2018-06-12 22:30:04</time>
 </span><br>
 
 
