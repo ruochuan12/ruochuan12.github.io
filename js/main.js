@@ -1,5 +1,3 @@
-// import Tsa from './tsa.js';
-// const TSA = new Tsa();
 (function (w, d) {
 
     var body = d.body,
@@ -275,29 +273,6 @@
         tabBar: function (el) {
             el.parentNode.parentNode.classList.toggle('expand')
         },
-        loadTSA: function(){
-            // console.log(action);
-            var source = isWX ? '微信' : '其他';
-            var CNZZ_ID = 1273798602;
-            if (!window.hasOwnProperty('_czc')) {
-                var protocol = document.location.protocol === 'https:' ? 'https://' : 'http://';
-                var cnzzUrl = `${protocol}s19.cnzz.com/z_stat.php?id=${CNZZ_ID}&web_id=${CNZZ_ID}`;
-                var cnzzTag = document.createElement('script');
-
-                cnzzTag.setAttribute('src', cnzzUrl);
-                var head = document.querySelector('head');
-                head.appendChild(cnzzTag);
-            }
-            // console.log($$('.menu-tsa'), '.menu-tsa');
-            [...$('#menu').querySelectorAll('.menu-tsa')].forEach(function(el){
-                var action = el.children[0] && el.children[0].textContent.trim();
-                el.addEventListener('click', function(){
-                    if (!window.hasOwnProperty('_czc')) {
-                        window._czc.push([ '_trackEvent', '菜单栏', action, `${platform.os}: ${platform.name}(${platform.version})`, source]);
-                    }
-                });
-            });
-        },
         page: (function () {
             var $elements = $$('.fade, .fade-scale');
             var visible = false;
@@ -474,7 +449,6 @@
         loading.classList.remove('active');
         Blog.page.loaded();
         w.lazyScripts && w.lazyScripts.length && Blog.loadScript(w.lazyScripts);
-        Blog.loadTSA();
     });
 
     w.addEventListener('DOMContentLoaded', function () {

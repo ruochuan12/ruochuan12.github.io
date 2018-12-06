@@ -65,63 +65,63 @@
     <div class="scroll-wrap flex-col">
       <ul class="nav">
         
-            <li class="menu-tsa waves-block waves-effect">
+            <li class="waves-block waves-effect">
               <a href="/"  >
                 <i class="icon icon-lg icon-home"></i>
                 主页
               </a>
             </li>
         
-            <li class="menu-tsa waves-block waves-effect">
+            <li class="waves-block waves-effect">
               <a href="/archives"  >
                 <i class="icon icon-lg icon-archives"></i>
                 文章
               </a>
             </li>
         
-            <li class="menu-tsa waves-block waves-effect">
+            <li class="waves-block waves-effect">
               <a href="https://lxchuan12.github.io/2016/11/20/about-me/"  >
                 <i class="icon icon-lg icon-user"></i>
                 关于我
               </a>
             </li>
         
-            <li class="menu-tsa waves-block waves-effect">
+            <li class="waves-block waves-effect">
               <a href="https://juejin.im/user/57974dc55bbb500063f522fd/posts" target="_blank" >
                 <i class="icon icon-lg icon-angle-double-down"></i>
                 掘金
               </a>
             </li>
         
-            <li class="menu-tsa waves-block waves-effect">
+            <li class="waves-block waves-effect">
               <a href="https://segmentfault.com/u/lxchuan12/" target="_blank" >
                 <i class="icon icon-lg icon-hand-o-right"></i>
                 Segmentfault
               </a>
             </li>
         
-            <li class="menu-tsa waves-block waves-effect">
+            <li class="waves-block waves-effect">
               <a href="https://github.com/lxchuan12" target="_blank" >
                 <i class="icon icon-lg icon-github-alt"></i>
                 Github
               </a>
             </li>
         
-            <li class="menu-tsa waves-block waves-effect">
+            <li class="waves-block waves-effect">
               <a href="http://weibo.com/lxchuan12" target="_blank" >
                 <i class="icon icon-lg icon-weibo"></i>
                 微博
               </a>
             </li>
         
-            <li class="menu-tsa waves-block waves-effect">
+            <li class="waves-block waves-effect">
               <a href="https://www.zhihu.com/people/lxchuan12/activities" target="_blank" >
                 <i class="icon icon-lg icon-connectdevelop"></i>
                 知乎
               </a>
             </li>
         
-            <li class="menu-tsa waves-block waves-effect">
+            <li class="waves-block waves-effect">
               <a href="http://www.jianshu.com/users/83129d433d72/latest_articles" target="_blank" >
                 <i class="icon icon-lg icon-book"></i>
                 简书
@@ -782,7 +782,28 @@ lazyScripts.push('//s95.cnzz.com/z_stat.php?id=1273798602&web_id=1273798602');
 <script src="/js/search.min.js?v=1.7.2" async></script>
 
 
+<% if (theme.mathjax){ %>
+<!-- mathjax config similar to math.stackexchange -->
 
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+<% } %>
 
 
 

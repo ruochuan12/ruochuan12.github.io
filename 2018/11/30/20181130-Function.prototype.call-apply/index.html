@@ -27,7 +27,7 @@
 <meta property="og:site_name" content="轩辕Rowboat的博客">
 <meta property="og:description" content="之前写过两篇《面试官问：能否模拟实现JS的new操作符》和《面试官问：能否模拟实现JS的bind方法》 其中模拟bind方法时是使用的call和apply修改this指向。但面试官可能问：能否不用call和apply来实现呢。意思也就是需要模拟实现call和apply的了。  附上之前写文章写过的一段话：已经有很多模拟实现call和apply的文章，为什么自己还要写一遍呢。学习就好比是座大山，人们">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-11-30T13:47:49.870Z">
+<meta property="og:updated_time" content="2018-12-06T12:35:32.916Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="面试官问：能否模拟实现JS的call和apply方法">
 <meta name="twitter:description" content="之前写过两篇《面试官问：能否模拟实现JS的new操作符》和《面试官问：能否模拟实现JS的bind方法》 其中模拟bind方法时是使用的call和apply修改this指向。但面试官可能问：能否不用call和apply来实现呢。意思也就是需要模拟实现call和apply的了。  附上之前写文章写过的一段话：已经有很多模拟实现call和apply的文章，为什么自己还要写一遍呢。学习就好比是座大山，人们">
@@ -66,63 +66,63 @@
     <div class="scroll-wrap flex-col">
       <ul class="nav">
         
-            <li class="menu-tsa waves-block waves-effect">
+            <li class="waves-block waves-effect">
               <a href="/"  >
                 <i class="icon icon-lg icon-home"></i>
                 主页
               </a>
             </li>
         
-            <li class="menu-tsa waves-block waves-effect">
+            <li class="waves-block waves-effect">
               <a href="/archives"  >
                 <i class="icon icon-lg icon-archives"></i>
                 文章
               </a>
             </li>
         
-            <li class="menu-tsa waves-block waves-effect">
+            <li class="waves-block waves-effect">
               <a href="https://lxchuan12.github.io/2016/11/20/about-me/"  >
                 <i class="icon icon-lg icon-user"></i>
                 关于我
               </a>
             </li>
         
-            <li class="menu-tsa waves-block waves-effect">
+            <li class="waves-block waves-effect">
               <a href="https://juejin.im/user/57974dc55bbb500063f522fd/posts" target="_blank" >
                 <i class="icon icon-lg icon-angle-double-down"></i>
                 掘金
               </a>
             </li>
         
-            <li class="menu-tsa waves-block waves-effect">
+            <li class="waves-block waves-effect">
               <a href="https://segmentfault.com/u/lxchuan12/" target="_blank" >
                 <i class="icon icon-lg icon-hand-o-right"></i>
                 Segmentfault
               </a>
             </li>
         
-            <li class="menu-tsa waves-block waves-effect">
+            <li class="waves-block waves-effect">
               <a href="https://github.com/lxchuan12" target="_blank" >
                 <i class="icon icon-lg icon-github-alt"></i>
                 Github
               </a>
             </li>
         
-            <li class="menu-tsa waves-block waves-effect">
+            <li class="waves-block waves-effect">
               <a href="http://weibo.com/lxchuan12" target="_blank" >
                 <i class="icon icon-lg icon-weibo"></i>
                 微博
               </a>
             </li>
         
-            <li class="menu-tsa waves-block waves-effect">
+            <li class="waves-block waves-effect">
               <a href="https://www.zhihu.com/people/lxchuan12/activities" target="_blank" >
                 <i class="icon icon-lg icon-connectdevelop"></i>
                 知乎
               </a>
             </li>
         
-            <li class="menu-tsa waves-block waves-effect">
+            <li class="waves-block waves-effect">
               <a href="http://www.jianshu.com/users/83129d433d72/latest_articles" target="_blank" >
                 <i class="icon icon-lg icon-book"></i>
                 简书
@@ -253,7 +253,7 @@
 </ul>
 <p><strong>参数</strong><br><strong>string</strong><br>表示<code>JavaScript</code>表达式，语句或一系列语句的字符串。表达式可以包含变量以及已存在对象的属性。<br><strong>返回值</strong><br>执行指定代码之后的返回值。如果返回值为空，返回<code>undefined</code><br>解决方案二：但万一面试官不允许用<code>eval</code>呢，毕竟<code>eval</code>是魔鬼。可以采用<code>new Function()</code>来生成执行函数。<br><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Function" target="_blank" rel="noopener">MDN 文档：Function</a><br><strong>语法</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">new Function ([arg1[, arg2[, ...argN]],] functionBody)</span><br></pre></td></tr></table></figure></p>
 <p><strong>参数</strong><br><strong>arg1, arg2, … argN</strong><br>被函数使用的参数的名称必须是合法命名的。参数名称是一个有效的<code>JavaScript</code>标识符的字符串，或者一个用逗号分隔的有效字符串的列表;例如<code>“×”</code>，<code>“theValue”</code>，或<code>“A，B”</code>。<br><strong>functionBody</strong><br>一个含有包括函数定义的<code>JavaScript</code>语句的字符串。<br>接下来看两个例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">简单例子：</span><br><span class="line">var sum = new Function(&apos;a&apos;, &apos;b&apos;, &apos;return a + b&apos;);</span><br><span class="line">console.log(sum(2, 6));</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">// 稍微复杂点的例子：</span><br><span class="line">var student = &#123;</span><br><span class="line">    name: &apos;轩辕Rowboat&apos;,</span><br><span class="line">    doSth: function(argsArray)&#123;</span><br><span class="line">        console.log(argsArray);</span><br><span class="line">        console.log(this.name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">// var result = student.doSth([&apos;Rowboat&apos;, 18]);</span><br><span class="line">// 用new Function()生成函数并执行返回结果</span><br><span class="line">var result = new Function(&apos;return arguments[0][arguments[1]](arguments[2][0], arguments[2][1])&apos;)(student, &apos;doSth&apos;, [&apos;Rowboat&apos;, 18]);</span><br><span class="line">// 个数不定</span><br><span class="line">// 所以可以写一个函数生成函数代码：</span><br><span class="line">function generateFunctionCode(argsArrayLength)&#123;</span><br><span class="line">    var code = &apos;return arguments[0][arguments[1]](&apos;;</span><br><span class="line">    for(var i = 0; i &lt; argsLength; i++)&#123;</span><br><span class="line">        if(i &gt; 0)&#123;</span><br><span class="line">            code += &apos;,&apos;;</span><br><span class="line">        &#125;</span><br><span class="line">        code += &apos;arguments[2][&apos; + i + &apos;]&apos;;</span><br><span class="line">    &#125;</span><br><span class="line">    code += &apos;)&apos;;</span><br><span class="line">    // return arguments[0][arguments[1]](arg1, arg2, arg3...)</span><br><span class="line">    return code;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">// 稍微复杂点的例子：</span><br><span class="line">var student = &#123;</span><br><span class="line">    name: &apos;轩辕Rowboat&apos;,</span><br><span class="line">    doSth: function(argsArray)&#123;</span><br><span class="line">        console.log(argsArray);</span><br><span class="line">        console.log(this.name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">// var result = student.doSth([&apos;Rowboat&apos;, 18]);</span><br><span class="line">// 用new Function()生成函数并执行返回结果</span><br><span class="line">var result = new Function(&apos;return arguments[0][arguments[1]](arguments[2][0], arguments[2][1])&apos;)(student, &apos;doSth&apos;, [&apos;Rowboat&apos;, 18]);</span><br><span class="line">// 个数不定</span><br><span class="line">// 所以可以写一个函数生成函数代码：</span><br><span class="line">function generateFunctionCode(argsArrayLength)&#123;</span><br><span class="line">    var code = &apos;return arguments[0][arguments[1]](&apos;;</span><br><span class="line">    for(var i = 0; i &lt; argsArrayLength; i++)&#123;</span><br><span class="line">        if(i &gt; 0)&#123;</span><br><span class="line">            code += &apos;,&apos;;</span><br><span class="line">        &#125;</span><br><span class="line">        code += &apos;arguments[2][&apos; + i + &apos;]&apos;;</span><br><span class="line">    &#125;</span><br><span class="line">    code += &apos;)&apos;;</span><br><span class="line">    // return arguments[0][arguments[1]](arg1, arg2, arg3...)</span><br><span class="line">    return code;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="你可能不知道在ES3、ES5中-undefined-是能修改的"><a href="#你可能不知道在ES3、ES5中-undefined-是能修改的" class="headerlink" title="你可能不知道在ES3、ES5中 undefined 是能修改的"></a>你可能不知道在<code>ES3、ES5</code>中 <code>undefined</code> 是能修改的</h2><p>可能大部分人不知道。<code>ES5</code>中虽然在全局作用域下不能修改，但在局部作用域中也是能修改的，不信可以复制以下测试代码在控制台执行下。虽然一般情况下是不会的去修改它。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function test()&#123;</span><br><span class="line">    var undefined = 3;</span><br><span class="line">    console.log(undefined); // chrome下也是 3</span><br><span class="line">&#125;</span><br><span class="line">test();</span><br></pre></td></tr></table></figure></p>
 <p>所以判断一个变量<code>a</code>是不是<code>undefined</code>，更严谨的方案是<code>typeof a === &#39;undefined&#39;</code>或者<code>a === void 0;</code><br>这里面用的是<code>void</code>，<code>void</code>的作用是计算表达式，始终返回<code>undefined</code>，也可以这样写<code>void(0)</code>。<br>更多可以查看<code>韩子迟</code>的这篇文章：<a href="https://github.com/hanzichi/underscore-analysis/issues/1" target="_blank" rel="noopener">为什么用「void 0」代替「undefined」</a><br>解决了这几个问题，比较容易实现如下代码。</p>
 <h2 id="使用-new-Function-模拟实现的apply"><a href="#使用-new-Function-模拟实现的apply" class="headerlink" title="使用 new Function() 模拟实现的apply"></a>使用 <code>new Function()</code> 模拟实现的<code>apply</code></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line">// 浏览器环境 非严格模式</span><br><span class="line">function getGlobalObject()&#123;</span><br><span class="line">    return this;</span><br><span class="line">&#125;</span><br><span class="line">function generateFunctionCode(argsArrayLength)&#123;</span><br><span class="line">    var code = &apos;return arguments[0][arguments[1]](&apos;;</span><br><span class="line">    for(var i = 0; i &lt; argsArrayLength; i++)&#123;</span><br><span class="line">        if(i &gt; 0)&#123;</span><br><span class="line">            code += &apos;,&apos;;</span><br><span class="line">        &#125;</span><br><span class="line">        code += &apos;arguments[2][&apos; + i + &apos;]&apos;;</span><br><span class="line">    &#125;</span><br><span class="line">    code += &apos;)&apos;;</span><br><span class="line">    // return arguments[0][arguments[1]](arg1, arg2, arg3...)</span><br><span class="line">    return code;</span><br><span class="line">&#125;</span><br><span class="line">Function.prototype.applyFn = function apply(thisArg, argsArray)&#123; // `apply` 方法的 `length` 属性是 `2`。</span><br><span class="line">    // 1.如果 `IsCallable(func)` 是 `false`, 则抛出一个 `TypeError` 异常。</span><br><span class="line">    if(typeof this !== &apos;function&apos;)&#123;</span><br><span class="line">        throw new TypeError(this + &apos; is not a function&apos;);</span><br><span class="line">    &#125;</span><br><span class="line">    // 2.如果 argArray 是 null 或 undefined, 则</span><br><span class="line">    // 返回提供 thisArg 作为 this 值并以空参数列表调用 func 的 [[Call]] 内部方法的结果。</span><br><span class="line">    if(typeof argsArray === &apos;undefined&apos; || argsArray === null)&#123;</span><br><span class="line">        argsArray = [];</span><br><span class="line">    &#125;</span><br><span class="line">    // 3.如果 Type(argArray) 不是 Object, 则抛出一个 TypeError 异常 .</span><br><span class="line">    if(argsArray !== new Object(argsArray))&#123;</span><br><span class="line">        throw new TypeError(&apos;CreateListFromArrayLike called on non-object&apos;);</span><br><span class="line">    &#125;</span><br><span class="line">    if(typeof thisArg === &apos;undefined&apos; || thisArg === null)&#123;</span><br><span class="line">        // 在外面传入的 thisArg 值会修改并成为 this 值。</span><br><span class="line">        // ES3: thisArg 是 undefined 或 null 时它会被替换成全局对象 浏览器里是window</span><br><span class="line">        thisArg = getGlobalObject();</span><br><span class="line">    &#125;</span><br><span class="line">    // ES3: 所有其他值会被应用 ToObject 并将结果作为 this 值，这是第三版引入的更改。</span><br><span class="line">    thisArg = new Object(thisArg);</span><br><span class="line">    var __fn = &apos;__&apos; + new Date().getTime();</span><br><span class="line">    // 万一还是有 先存储一份，删除后，再恢复该值</span><br><span class="line">    var originalVal = thisArg[__fn];</span><br><span class="line">    // 是否有原始值</span><br><span class="line">    var hasOriginalVal = thisArg.hasOwnProperty(__fn);</span><br><span class="line">    thisArg[__fn] = this;</span><br><span class="line">    // 9.提供 `thisArg` 作为 `this` 值并以 `argList` 作为参数列表，调用 `func` 的 `[[Call]]` 内部方法，返回结果。</span><br><span class="line">    // ES6版</span><br><span class="line">    // var result = thisArg[__fn](...args);</span><br><span class="line">    var code = generateFunctionCode(argsArray.length);</span><br><span class="line">    var result = (new Function(code))(thisArg, __fn, argsArray);</span><br><span class="line">    delete thisArg[__fn];</span><br><span class="line">    if(hasOriginalVal)&#123;</span><br><span class="line">        thisArg[__fn] = originalVal;</span><br><span class="line">    &#125;</span><br><span class="line">    return result;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
@@ -271,7 +271,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2018-11-30T13:47:49.870Z" itemprop="dateUpdated">2018-11-30 21:47:49</time>
+    最后更新时间：<time datetime="2018-12-06T12:35:32.916Z" itemprop="dateUpdated">2018-12-06 20:35:32</time>
 </span><br>
 
 
@@ -561,7 +561,28 @@ lazyScripts.push('//s95.cnzz.com/z_stat.php?id=1273798602&web_id=1273798602');
 <script src="/js/search.min.js?v=1.7.2" async></script>
 
 
+<% if (theme.mathjax){ %>
+<!-- mathjax config similar to math.stackexchange -->
 
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+<% } %>
 
 
 
