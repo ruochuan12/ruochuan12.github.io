@@ -29,7 +29,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/201107-c0fd9a9381674965?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/201107-3366d1365aab266b?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2018-11-05T15:46:59.407Z">
+<meta property="og:updated_time" content="2018-12-25T14:05:15.913Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端使用puppeteer 爬虫生成《React.js 小书》PDF并合并">
 <meta name="twitter:description" content="1、puppeteer 是什么？puppeteer: Google 官方出品的 headless Chrome node 库puppeteer github仓库puppeteer API 官方介绍：  您可以在浏览器中手动执行的大多数操作都可以使用Puppeteer完成！  生成页面的屏幕截图和PDF。抓取SPA并生成预渲染内容（即“SSR”）。自动化表单提交，UI测试，键盘输入等。创建最新的自动">
@@ -189,7 +189,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1、puppeteer-是什么？"><span class="post-toc-number">1.</span> <span class="post-toc-text">1、puppeteer 是什么？</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2、爬取网站生成PDF"><span class="post-toc-number">2.</span> <span class="post-toc-text">2、爬取网站生成PDF</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-1-安装-puppeteer"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">2.1 安装 puppeteer</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-2-《React-js小书》简介"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">2.2 《React.js小书》简介</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-3-一些可能会用到的-puppeteer-API"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">2.3 一些可能会用到的 puppeteer API</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-4-知道了以上这些API后，就可以开始写主程序了。"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">2.4 知道了以上这些API后，就可以开始写主程序了。</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3、合并成一个PDF文件-pdf-merge"><span class="post-toc-number">3.</span> <span class="post-toc-text">3、合并成一个PDF文件 pdf-merge</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#关于"><span class="post-toc-number">4.</span> <span class="post-toc-text">关于</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#小结"><span class="post-toc-number">5.</span> <span class="post-toc-text">小结</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1、puppeteer-是什么？"><span class="post-toc-number">1.</span> <span class="post-toc-text">1、puppeteer 是什么？</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2、爬取网站生成PDF"><span class="post-toc-number">2.</span> <span class="post-toc-text">2、爬取网站生成PDF</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-1-安装-puppeteer"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">2.1 安装 puppeteer</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-2-《React-js小书》简介"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">2.2 《React.js小书》简介</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-3-一些可能会用到的-puppeteer-API"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">2.3 一些可能会用到的 puppeteer API</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-4-知道了以上这些API后，就可以开始写主程序了。"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">2.4 知道了以上这些API后，就可以开始写主程序了。</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3、合并成一个PDF文件-pdf-merge"><span class="post-toc-number">3.</span> <span class="post-toc-text">3、合并成一个PDF文件 pdf-merge</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#小结"><span class="post-toc-number">4.</span> <span class="post-toc-text">小结</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#关于"><span class="post-toc-number">5.</span> <span class="post-toc-text">关于</span></a></li></ol>
         </nav>
     </aside>
 
@@ -259,9 +259,9 @@
 <p>具体代码：可以查看这里<a href="https://github.com/lxchuan12/learn-nodejs/blob/master/src/puppeteer/mergePdf.js" target="_blank" rel="noopener">爬虫生成《React.js小书》的<code>pdf</code>合并<code>pdf</code>的代码</a></p>
 <p>最终合并的<code>pdf</code>文件在这里<a href="https://github.com/lxchuan12/learn-nodejs/blob/master/src/puppeteer/reactMiniBookMerged/React%E5%B0%8F%E4%B9%A6%EF%BC%88%E5%AE%8C%E6%95%B4%E7%89%88%EF%BC%89-%E4%BD%9C%E8%80%85%EF%BC%9A%E8%83%A1%E5%AD%90%E5%A4%A7%E5%93%88-1535335084919.pdf" target="_blank" rel="noopener">React小书（完整版）-作者：胡子大哈</a>，可供下载。</p>
 <p>本想着还可以加下书签和页码，没找到合适的生成方案，那暂时先不加了。如果读者有好的方案，欢迎与笔者交流。</p>
-<h3 id="关于"><a href="#关于" class="headerlink" title="关于"></a>关于</h3><p>作者：常以<strong>轩辕Rowboat</strong>为名混迹于江湖。前端路上 | PPT爱好者 | 所知甚少，唯善学。<br><a href="https://lxchuan12.github.io/">个人博客</a><br><a href="https://segmentfault.com/u/lxchuan12" target="_blank" rel="noopener">segmentfault个人主页</a><br><a href="https://juejin.im/user/57974dc55bbb500063f522fd/posts" target="_blank" rel="noopener">掘金个人主页</a><br><a href="https://www.zhihu.com/people/lxchuan12/activities" target="_blank" rel="noopener">知乎</a><br><a href="https://github.com/lxchuan12" target="_blank" rel="noopener">github</a></p>
 <h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>1、<code>puppeteer</code>是<code>Google</code> 官方出品的 <code>headless</code> <code>Chrome</code> <code>node</code> 库，可以在浏览器中手动执行的大多数操作都可以使用<code>Puppeteer</code>完成。总之可以用来做很多有趣的事情。<br>2、用 <code>puppeteer</code> 生成每一小节的<code>pdf</code>，用依赖<code>pdftk</code>的<code>pdf-merge</code> <code>npm</code>包, 合并成一个新的<code>pdf</code>文件。或者使用<a href="https://smallpdf.com/cn" target="_blank" rel="noopener">Smallpdf</a>等网站合并。<br>3、《<code>React.js</code>小书》，推荐给大家。爬虫生成<code>pdf</code>，应该不会对<a href="http://huziketang.mangojuice.top/books/react/me/" target="_blank" rel="noopener">作者@胡子大哈</a>有什么影响。</p>
 <p>最后推荐几个链接，方便大家学习 <code>puppeteer</code>。<br><a href="http://www.r9it.com/20171106/puppeteer.html" target="_blank" rel="noopener">puppeteer入门教程</a><br><a href="https://cloud.tencent.com/developer/article/1006000" target="_blank" rel="noopener">Puppeteer 初探之前端自动化测试</a><br><a href="https://github.com/zhentaoo/puppeteer-deep" target="_blank" rel="noopener">爬虫生成ES6标准入门 pdf</a><br><a href="https://jeffjade.com/2017/12/17/134-kinds-of-toss-using-puppeteer/" target="_blank" rel="noopener">大前端神器安利之 Puppeteer</a><br><a href="https://github.com/zhaoqize/puppeteer-api-zh_CN/" target="_blank" rel="noopener">puppeteer API中文文档</a></p>
+<h3 id="关于"><a href="#关于" class="headerlink" title="关于"></a>关于</h3><p>作者：常以<strong>轩辕Rowboat</strong>为名混迹于江湖。前端路上 | PPT爱好者 | 所知甚少，唯善学。<br><a href="https://lxchuan12.github.io/">个人博客</a><br><a href="https://segmentfault.com/blog/lxchuan12" target="_blank" rel="noopener"><code>segmentfault</code>前端视野专栏</a>，开通了<strong>前端视野</strong>专栏，欢迎关注<br><a href="https://juejin.im/user/57974dc55bbb500063f522fd/posts" target="_blank" rel="noopener">掘金专栏</a>，欢迎关注<br><a href="https://zhuanlan.zhihu.com/lxchuan12" target="_blank" rel="noopener">知乎前端视野专栏</a>，开通了<strong>前端视野</strong>专栏，欢迎关注<br><a href="https://github.com/lxchuan12" target="_blank" rel="noopener">github</a>，欢迎<code>follow</code>~</p>
 
         </div>
 
@@ -270,7 +270,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2018-11-05T15:46:59.407Z" itemprop="dateUpdated">2018-11-05 23:46:59</time>
+    最后更新时间：<time datetime="2018-12-25T14:05:15.913Z" itemprop="dateUpdated">2018-12-25 22:05:15</time>
 </span><br>
 
 
@@ -362,9 +362,9 @@
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2018/07/14/20180714-some baiduyunpan-and chrome crx/" id="post-next" class="post-nav-link">
+      <a href="/2018/07/28/20180603-oh my zsh - window git bash alias/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">分享百度网盘下载搜索神器和一些实用浏览器插件</h4>
+        <h4 class="title">win10 安装 oh my zsh 和 window git bash 设置别名提高效率</h4>
       </a>
     </div>
   

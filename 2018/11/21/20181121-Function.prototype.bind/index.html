@@ -18,9 +18,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     
-    <meta name="keywords" content="JavaScript,面试">
+    <meta name="keywords" content="javascript,面试">
     <meta name="description" content="前言用过React的同学都知道，经常会使用bind来绑定this。12345678910111213141516import React, &amp;#123; Component &amp;#125; from &amp;apos;react&amp;apos;;class TodoItem extends Component&amp;#123;    constructor(props)&amp;#123;        super(pro">
-<meta name="keywords" content="JavaScript,面试">
+<meta name="keywords" content="javascript,面试">
 <meta property="og:type" content="article">
 <meta property="og:title" content="面试官问：能否模拟实现JS的bind方法">
 <meta property="og:url" content="https://lxchuan12.github.io/2018/11/21/20181121-Function.prototype.bind/index.html">
@@ -28,7 +28,7 @@
 <meta property="og:description" content="前言用过React的同学都知道，经常会使用bind来绑定this。12345678910111213141516import React, &amp;#123; Component &amp;#125; from &amp;apos;react&amp;apos;;class TodoItem extends Component&amp;#123;    constructor(props)&amp;#123;        super(pro">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/11/18/16726f4175f9c34d?w=1109&h=518&f=png&s=67135">
-<meta property="og:updated_time" content="2018-11-30T13:50:48.163Z">
+<meta property="og:updated_time" content="2018-12-25T14:23:17.138Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="面试官问：能否模拟实现JS的bind方法">
 <meta name="twitter:description" content="前言用过React的同学都知道，经常会使用bind来绑定this。12345678910111213141516import React, &amp;#123; Component &amp;#125; from &amp;apos;react&amp;apos;;class TodoItem extends Component&amp;#123;    constructor(props)&amp;#123;        super(pro">
@@ -171,7 +171,7 @@
 </time>
 
 
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/JavaScript/">JavaScript</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/javascript/">javascript</a></li></ul>
 
             
         </h5>
@@ -202,7 +202,7 @@
             <time class="post-time" title="2018-11-21 20:31:50" datetime="2018-11-21T12:31:50.000Z"  itemprop="datePublished">2018-11-21</time>
 
             
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/JavaScript/">JavaScript</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/javascript/">javascript</a></li></ul>
 
 
 
@@ -250,7 +250,7 @@
 <h2 id="最后总结一下"><a href="#最后总结一下" class="headerlink" title="最后总结一下"></a>最后总结一下</h2><p>1、<code>bind</code>是<code>Function</code>原型链中的<code>Function.prototype</code>的一个属性，它是一个函数，修改<code>this</code>指向，合并参数传递给原函数，返回值是一个新的函数。<br>2、<code>bind</code>返回的函数可以通过<code>new</code>调用，这时提供的<code>this</code>的参数被忽略，指向了<code>new</code>生成的全新对象。内部模拟实现了<code>new</code>操作符。<br>3、<code>es5-shim</code>源码模拟实现<code>bind</code>时用<code>Function</code>实现了<code>length</code>。<br>事实上，平时其实很少需要使用自己实现的投入到生成环境中。但面试官通过这个面试题能考察很多知识。比如<code>this</code>指向，原型链，闭包，函数等知识，可以扩展很多。<br>读者发现有不妥或可改善之处，欢迎指出。另外觉得写得不错，可以点个赞，也是对笔者的一种支持。</p>
 <p>文章中的例子和测试代码放在<code>github</code>中<a href="https://github.com/lxchuan12/html5/tree/gh-pages/JS%E7%9B%B8%E5%85%B3/%E5%87%BD%E6%95%B0/bind%E6%A8%A1%E6%8B%9F%E5%AE%9E%E7%8E%B0" target="_blank" rel="noopener">bind模拟实现 github</a>。<a href="http://lxchuan12.github.io/html5/JS%E7%9B%B8%E5%85%B3/%E5%87%BD%E6%95%B0/bind%E6%A8%A1%E6%8B%9F%E5%AE%9E%E7%8E%B0/bind-0.html">bind模拟实现 预览地址</a> <code>F12</code>看控制台输出，结合<code>source</code>面板查看效果更佳。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">// 最终版 删除注释 详细注释版请看上文</span><br><span class="line">Function.prototype.bind = Function.prototype.bind || function bind(thisArg)&#123;</span><br><span class="line">    if(typeof this !== &apos;function&apos;)&#123;</span><br><span class="line">        throw new TypeError(this + &apos; must be a function&apos;);</span><br><span class="line">    &#125;</span><br><span class="line">    var self = this;</span><br><span class="line">    var args = [].slice.call(arguments, 1);</span><br><span class="line">    var bound = function()&#123;</span><br><span class="line">        var boundArgs = [].slice.call(arguments);</span><br><span class="line">        var finalArgs = args.concat(boundArgs);</span><br><span class="line">        if(this instanceof bound)&#123;</span><br><span class="line">            if(self.prototype)&#123;</span><br><span class="line">                function Empty()&#123;&#125;</span><br><span class="line">                Empty.prototype = self.prototype;</span><br><span class="line">                bound.prototype = new Empty();</span><br><span class="line">            &#125;</span><br><span class="line">            var result = self.apply(this, finalArgs);</span><br><span class="line">            var isObject = typeof result === &apos;object&apos; &amp;&amp; result !== null;</span><br><span class="line">            var isFunction = typeof result === &apos;function&apos;;</span><br><span class="line">            if(isObject || isFunction)&#123;</span><br><span class="line">                return result;</span><br><span class="line">            &#125;</span><br><span class="line">            return this;</span><br><span class="line">        &#125;</span><br><span class="line">        else&#123;</span><br><span class="line">            return self.apply(thisArg, finalArgs);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    return bound;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://oshotokill.gitbooks.io/understandinges6-simplified-chinese/content/chapter_3.html" target="_blank" rel="noopener">OshotOkill翻译的 深入理解<code>ES6</code> 简体中文版 - 第三章 函数</a>（虽然我是看的纸质书籍，但推荐下这本在线的书）<br><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Function/bind" target="_blank" rel="noopener">MDN Function.prototype.bind</a><br><a href="https://juejin.im/post/59093b1fa0bb9f006517b906" target="_blank" rel="noopener">冴羽: JavaScript深入之bind的模拟实现</a><br><a href="https://www.jianshu.com/p/6958f99db769" target="_blank" rel="noopener">《react状态管理与同构实战》侯策：从一道面试题，到“我可能看了假源码”</a></p>
-<h2 id="关于"><a href="#关于" class="headerlink" title="关于"></a>关于</h2><p>作者：常以<strong>轩辕Rowboat</strong>为名混迹于江湖。前端路上 | PPT爱好者 | 所知甚少，唯善学。<br><a href="https://lxchuan12.github.io/">个人博客</a><br><a href="https://segmentfault.com/u/lxchuan12" target="_blank" rel="noopener">segmentfault个人主页</a><br><a href="https://juejin.im/user/57974dc55bbb500063f522fd/posts" target="_blank" rel="noopener">掘金个人主页</a><br><a href="https://www.zhihu.com/people/lxchuan12/activities" target="_blank" rel="noopener">知乎</a><br><a href="https://github.com/lxchuan12" target="_blank" rel="noopener">github</a></p>
+<h2 id="关于"><a href="#关于" class="headerlink" title="关于"></a>关于</h2><p>作者：常以<strong>轩辕Rowboat</strong>为名混迹于江湖。前端路上 | PPT爱好者 | 所知甚少，唯善学。<br><a href="https://lxchuan12.github.io/">个人博客</a><br><a href="https://segmentfault.com/blog/lxchuan12" target="_blank" rel="noopener"><code>segmentfault</code>前端视野专栏</a>，开通了<strong>前端视野</strong>专栏，欢迎关注<br><a href="https://juejin.im/user/57974dc55bbb500063f522fd/posts" target="_blank" rel="noopener">掘金专栏</a>，欢迎关注<br><a href="https://zhuanlan.zhihu.com/lxchuan12" target="_blank" rel="noopener">知乎前端视野专栏</a>，开通了<strong>前端视野</strong>专栏，欢迎关注<br><a href="https://github.com/lxchuan12" target="_blank" rel="noopener">github</a>，欢迎<code>follow</code>~</p>
 
         </div>
 
@@ -259,7 +259,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2018-11-30T13:50:48.163Z" itemprop="dateUpdated">2018-11-30 21:50:48</time>
+    最后更新时间：<time datetime="2018-12-25T14:23:17.138Z" itemprop="dateUpdated">2018-12-25 22:23:17</time>
 </span><br>
 
 
@@ -285,7 +285,7 @@
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/面试/">面试</a></li></ul>
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/面试/">面试</a></li></ul>
 
 
             

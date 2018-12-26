@@ -18,16 +18,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     
-    <meta name="keywords" content="Vue,qrcode,clipboard">
+    <meta name="keywords" content="vue,qrcode,clipboard">
     <meta name="description" content="近日，重构项目某一老模块时，有一个功能是生成二维码并下载，还可以复制链接。列表每项都有二维码、下载二维码和复制链接和列表上方总的二维码。老模块是用的qrocode中文文档，qrcode github。 先想着新模块中是否有生成二维码的插件，看了下package.json。有安装一个vue-qriously…">
-<meta name="keywords" content="Vue,qrcode,clipboard">
+<meta name="keywords" content="vue,qrcode,clipboard">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue 2.x项目 vue-qriously 生成二维码并下载、cliploard复制粘贴">
 <meta property="og:url" content="https://lxchuan12.github.io/2018/05/16/20180515-vue qrcode clipboard/index.html">
 <meta property="og:site_name" content="轩辕Rowboat的博客">
 <meta property="og:description" content="近日，重构项目某一老模块时，有一个功能是生成二维码并下载，还可以复制链接。列表每项都有二维码、下载二维码和复制链接和列表上方总的二维码。老模块是用的qrocode中文文档，qrcode github。 先想着新模块中是否有生成二维码的插件，看了下package.json。有安装一个vue-qriously…">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-11-23T12:28:39.759Z">
+<meta property="og:updated_time" content="2018-12-25T14:28:07.789Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue 2.x项目 vue-qriously 生成二维码并下载、cliploard复制粘贴">
 <meta name="twitter:description" content="近日，重构项目某一老模块时，有一个功能是生成二维码并下载，还可以复制链接。列表每项都有二维码、下载二维码和复制链接和列表上方总的二维码。老模块是用的qrocode中文文档，qrcode github。 先想着新模块中是否有生成二维码的插件，看了下package.json。有安装一个vue-qriously…">
@@ -169,7 +169,7 @@
 </time>
 
 
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Vue/">Vue</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/vue/">vue</a></li></ul>
 
             
         </h5>
@@ -186,7 +186,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#vue-qriously插件使用"><span class="post-toc-number">1.</span> <span class="post-toc-text">vue-qriously插件使用</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#下载二维码"><span class="post-toc-number">2.</span> <span class="post-toc-text">下载二维码</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#显示大小和下载大小不一样。"><span class="post-toc-number">3.</span> <span class="post-toc-text">显示大小和下载大小不一样。</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#cliploard-复制粘贴"><span class="post-toc-number">4.</span> <span class="post-toc-text">cliploard 复制粘贴</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#关于"><span class="post-toc-number">5.</span> <span class="post-toc-text">关于</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#小结"><span class="post-toc-number">6.</span> <span class="post-toc-text">小结</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#vue-qriously插件使用"><span class="post-toc-number">1.</span> <span class="post-toc-text">vue-qriously插件使用</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#下载二维码"><span class="post-toc-number">2.</span> <span class="post-toc-text">下载二维码</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#显示大小和下载大小不一样。"><span class="post-toc-number">3.</span> <span class="post-toc-text">显示大小和下载大小不一样。</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#cliploard-复制粘贴"><span class="post-toc-number">4.</span> <span class="post-toc-text">cliploard 复制粘贴</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#小结"><span class="post-toc-number">5.</span> <span class="post-toc-text">小结</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#关于"><span class="post-toc-number">6.</span> <span class="post-toc-text">关于</span></a></li></ol>
         </nav>
     </aside>
 
@@ -200,7 +200,7 @@
             <time class="post-time" title="2018-05-16 00:15:21" datetime="2018-05-15T16:15:21.000Z"  itemprop="datePublished">2018-05-16</time>
 
             
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Vue/">Vue</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/vue/">vue</a></li></ul>
 
 
 
@@ -233,9 +233,9 @@
 <h3 id="cliploard-复制粘贴"><a href="#cliploard-复制粘贴" class="headerlink" title="cliploard 复制粘贴"></a>cliploard 复制粘贴</h3><p>老模块中是用的<code>cliploard</code><a href="https://github.com/zenorocha/clipboard.js" target="_blank" rel="noopener">clipboard github仓库</a>。就是我引入的。</p>
 <p>新模块还没使用过，但依然使用这个。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">// 安装</span><br><span class="line">// npm install clipboard --save</span><br><span class="line">&lt;template @click=&quot;Clip($event, &apos;快来复制&apos;)&quot;&gt;&lt;template&gt;</span><br><span class="line">// 封装成一个函数</span><br><span class="line">import Clipboard from &apos;clipboard&apos;;</span><br><span class="line">export default function Clip(event，text) &#123;</span><br><span class="line">  const clipboard = new Clipboard(event.target, &#123;</span><br><span class="line">    text: () =&gt; text</span><br><span class="line">  &#125;);</span><br><span class="line">  clipboard.on(&apos;success&apos;, () =&gt; &#123;</span><br><span class="line">    console.log(&apos;复制成功&apos;);</span><br><span class="line">    clipboard.off(&apos;error&apos;);</span><br><span class="line">    clipboard.off(&apos;success&apos;);</span><br><span class="line">    clipboard.destroy();</span><br><span class="line">  &#125;);</span><br><span class="line">  clipboard.on(&apos;error&apos;, () =&gt; &#123;</span><br><span class="line">    console.log(&apos;复制失败，请刷新试试&apos;);</span><br><span class="line">    clipboard.off(&apos;error&apos;)</span><br><span class="line">    clipboard.off(&apos;success&apos;)</span><br><span class="line">    clipboard.destroy()</span><br><span class="line">  &#125;);</span><br><span class="line">  clipboard.onClick(event);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>当然也可以封装成<code>vue</code>指令。<br>可以参考<a href="https://github.com/PanJiaChen/vue-element-admin" target="_blank" rel="noopener">vue-element-admin这个项目</a><br>之前我看的时候还是<code>3000</code>多<code>star</code>，现在<code>1.2w+</code>，说明值得学习。<br>另外推荐<a href="https://www.awesomes.cn/" target="_blank" rel="noopener"><code>awesomes</code>网站 工具类库合集</a></p>
-<h3 id="关于"><a href="#关于" class="headerlink" title="关于"></a>关于</h3><p>作者：常以<strong>轩辕Rowboat</strong>为名混迹于江湖。前端路上 | PPT爱好者 | 所知甚少，唯善学。<br><a href="https://lxchuan12.github.io/">个人博客</a><br><a href="https://segmentfault.com/u/lxchuan12" target="_blank" rel="noopener">segmentfault个人主页</a><br><a href="https://juejin.im/user/57974dc55bbb500063f522fd/posts" target="_blank" rel="noopener">掘金个人主页</a><br><a href="https://www.zhihu.com/people/lxchuan12/activities" target="_blank" rel="noopener">知乎</a><br><a href="https://github.com/lxchuan12" target="_blank" rel="noopener">github</a></p>
 <h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>1、引入第三方插件等使用时，多查看<code>github</code> 文档 <code>issue</code>等，在技术社区搜索别人使用的方案。<br>2、选用第三方插件时，尽可能挑选<code>star</code>比较多的，<code>issue</code>处理比较及时的，在更新维护的。<br>3、富余时间可以多研究下别人的项目是如何组织文件，和实现的一些常用功能的。<br>4、尽可能去优化自己的代码，总结回顾。</p>
 <p>文章首发于<a href="https://segmentfault.com/a/1190000014875645" target="_blank" rel="noopener">vue 2.x项目 vue-qriously 生成二维码并下载、cliploard复制粘贴</a></p>
+<h3 id="关于"><a href="#关于" class="headerlink" title="关于"></a>关于</h3><p>作者：常以<strong>轩辕Rowboat</strong>为名混迹于江湖。前端路上 | PPT爱好者 | 所知甚少，唯善学。<br><a href="https://lxchuan12.github.io/">个人博客</a><br><a href="https://segmentfault.com/blog/lxchuan12" target="_blank" rel="noopener"><code>segmentfault</code>前端视野专栏</a>，开通了<strong>前端视野</strong>专栏，欢迎关注<br><a href="https://juejin.im/user/57974dc55bbb500063f522fd/posts" target="_blank" rel="noopener">掘金专栏</a>，欢迎关注<br><a href="https://zhuanlan.zhihu.com/lxchuan12" target="_blank" rel="noopener">知乎前端视野专栏</a>，开通了<strong>前端视野</strong>专栏，欢迎关注<br><a href="https://github.com/lxchuan12" target="_blank" rel="noopener">github</a>，欢迎<code>follow</code>~</p>
 
         </div>
 
@@ -244,7 +244,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2018-11-23T12:28:39.759Z" itemprop="dateUpdated">2018-11-23 20:28:39</time>
+    最后更新时间：<time datetime="2018-12-25T14:28:07.789Z" itemprop="dateUpdated">2018-12-25 22:28:07</time>
 </span><br>
 
 
@@ -270,7 +270,7 @@
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Vue/">Vue</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/clipboard/">clipboard</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/qrcode/">qrcode</a></li></ul>
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/clipboard/">clipboard</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/qrcode/">qrcode</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>
 
 
             
@@ -327,9 +327,9 @@
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/2018/06/03/20180603-oh my zsh - window git bash alias/" id="post-prev" class="post-nav-link">
+      <a href="/2018/06/11/20180611-analyse-vue-cli/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">win10 安装 oh my zsh 和 window git bash 设置别名提高效率</h4>
+        <h4 class="title">分析vue-cli@2.9.3 搭建的webpack项目工程</h4>
       </a>
     </div>
   

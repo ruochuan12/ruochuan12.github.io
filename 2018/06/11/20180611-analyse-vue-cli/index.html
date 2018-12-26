@@ -18,16 +18,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     
-    <meta name="keywords" content="Vue,Vue-cli,webpack">
+    <meta name="keywords" content="vue,vue-cli,webpack">
     <meta name="description" content="前言 已经有很多分析Vue-cli搭建工程的文章，为什么自己还要写一遍呢。学习就好比是座大山，人们沿着不同的路登山，分享着自己看到的风景。你不一定能看到别人看到的风景，体会到别人的心情。只有自己去登山，才能看到不一样的风景，体会才更加深刻。  项目放在笔者的github上，分析vue-cli@2.9.3 搭建的webpack项目工程。方便大家克隆下载，或者在线查看。同时也求个star ^_^，也是">
-<meta name="keywords" content="Vue,Vue-cli,webpack">
+<meta name="keywords" content="vue,vue-cli,webpack">
 <meta property="og:type" content="article">
 <meta property="og:title" content="分析vue-cli@2.9.3 搭建的webpack项目工程">
 <meta property="og:url" content="https://lxchuan12.github.io/2018/06/11/20180611-analyse-vue-cli/index.html">
 <meta property="og:site_name" content="轩辕Rowboat的博客">
 <meta property="og:description" content="前言 已经有很多分析Vue-cli搭建工程的文章，为什么自己还要写一遍呢。学习就好比是座大山，人们沿着不同的路登山，分享着自己看到的风景。你不一定能看到别人看到的风景，体会到别人的心情。只有自己去登山，才能看到不一样的风景，体会才更加深刻。  项目放在笔者的github上，分析vue-cli@2.9.3 搭建的webpack项目工程。方便大家克隆下载，或者在线查看。同时也求个star ^_^，也是">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-11-23T12:28:55.082Z">
+<meta property="og:updated_time" content="2018-12-25T14:28:37.247Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="分析vue-cli@2.9.3 搭建的webpack项目工程">
 <meta name="twitter:description" content="前言 已经有很多分析Vue-cli搭建工程的文章，为什么自己还要写一遍呢。学习就好比是座大山，人们沿着不同的路登山，分享着自己看到的风景。你不一定能看到别人看到的风景，体会到别人的心情。只有自己去登山，才能看到不一样的风景，体会才更加深刻。  项目放在笔者的github上，分析vue-cli@2.9.3 搭建的webpack项目工程。方便大家克隆下载，或者在线查看。同时也求个star ^_^，也是">
@@ -169,7 +169,7 @@
 </time>
 
 
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Vue/">Vue</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/vue/">vue</a></li></ul>
 
             
         </h5>
@@ -186,7 +186,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#前言"><span class="post-toc-number">1.</span> <span class="post-toc-text">前言</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#使用vue-cli初始化webpack工程"><span class="post-toc-number">2.</span> <span class="post-toc-text">使用vue-cli初始化webpack工程</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#package-json"><span class="post-toc-number">3.</span> <span class="post-toc-text">package.json</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#build-webpack-dev-conf-js-webpack开发环境配置"><span class="post-toc-number">4.</span> <span class="post-toc-text">build/webpack.dev.conf.js webpack开发环境配置</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#build-utils-js-工具函数"><span class="post-toc-number">5.</span> <span class="post-toc-text">build/utils.js 工具函数</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#build-webpack-base-conf-js-webpack基本配置文件"><span class="post-toc-number">6.</span> <span class="post-toc-text">build/webpack.base.conf.js webpack基本配置文件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#build-vue-loader-conf-js-vue-loader配置文件"><span class="post-toc-number">7.</span> <span class="post-toc-text">build/vue-loader.conf.js vue-loader配置文件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#build-build-js-npm-run-build-指定执行的文件"><span class="post-toc-number">8.</span> <span class="post-toc-text">build/build.js npm run build 指定执行的文件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#build-check-versions-检查node和npm版本"><span class="post-toc-number">9.</span> <span class="post-toc-text">build/check-versions 检查node和npm版本</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#build-webpack-prod-conf-js-webpack生产环境配置"><span class="post-toc-number">10.</span> <span class="post-toc-text">build/webpack.prod.conf.js webpack生产环境配置</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#babelrc-babel相关配置"><span class="post-toc-number">11.</span> <span class="post-toc-text">.babelrc babel相关配置</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#关于"><span class="post-toc-number">12.</span> <span class="post-toc-text">关于</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#小结"><span class="post-toc-number">13.</span> <span class="post-toc-text">小结</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#前言"><span class="post-toc-number">1.</span> <span class="post-toc-text">前言</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#使用vue-cli初始化webpack工程"><span class="post-toc-number">2.</span> <span class="post-toc-text">使用vue-cli初始化webpack工程</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#package-json"><span class="post-toc-number">3.</span> <span class="post-toc-text">package.json</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#build-webpack-dev-conf-js-webpack开发环境配置"><span class="post-toc-number">4.</span> <span class="post-toc-text">build/webpack.dev.conf.js webpack开发环境配置</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#build-utils-js-工具函数"><span class="post-toc-number">5.</span> <span class="post-toc-text">build/utils.js 工具函数</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#build-webpack-base-conf-js-webpack基本配置文件"><span class="post-toc-number">6.</span> <span class="post-toc-text">build/webpack.base.conf.js webpack基本配置文件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#build-vue-loader-conf-js-vue-loader配置文件"><span class="post-toc-number">7.</span> <span class="post-toc-text">build/vue-loader.conf.js vue-loader配置文件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#build-build-js-npm-run-build-指定执行的文件"><span class="post-toc-number">8.</span> <span class="post-toc-text">build/build.js npm run build 指定执行的文件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#build-check-versions-检查node和npm版本"><span class="post-toc-number">9.</span> <span class="post-toc-text">build/check-versions 检查node和npm版本</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#build-webpack-prod-conf-js-webpack生产环境配置"><span class="post-toc-number">10.</span> <span class="post-toc-text">build/webpack.prod.conf.js webpack生产环境配置</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#babelrc-babel相关配置"><span class="post-toc-number">11.</span> <span class="post-toc-text">.babelrc babel相关配置</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#小结"><span class="post-toc-number">12.</span> <span class="post-toc-text">小结</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#关于"><span class="post-toc-number">13.</span> <span class="post-toc-text">关于</span></a></li></ol>
         </nav>
     </aside>
 
@@ -200,7 +200,7 @@
             <time class="post-time" title="2018-06-11 20:22:38" datetime="2018-06-11T12:22:38.000Z"  itemprop="datePublished">2018-06-11</time>
 
             
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Vue/">Vue</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/vue/">vue</a></li></ul>
 
 
 
@@ -265,9 +265,9 @@
 <p><code>presets</code> 属性告诉 <code>Babel</code> 要转换的源码使用了哪些新的语法特性，一个 Presets 对一组新语法特性提供支持，多个 <code>Presets</code> 可以叠加。 <code>Presets</code> 其实是一组 <code>Plugins</code> 的集合，每一个 <code>Plugin</code> 完成一个新语法的转换工作。<code>Presets</code> 是按照 <code>ECMAScript</code> 草案来组织的，通常可以分为以下三大类（书中就是说三大类，我发现就两点~~~）：<br>1、已经被写入 ECMAScript 标准里的特性，由于之前每年都有新特性被加入到标准里，所以又可细分为：<br>es2015 包含在2015里加入的新特性；<br>es2016 包含在2016里加入的新特性；<br>es2017 包含在2017里加入的新特性；<br>es2017 包含在2017里加入的新特性；<br>env 包含当前所有 ECMAScript 标准里的最新特性。<br>2、被社区提出来的但还未被写入 <code>ECMAScript</code> 标准里特性，这其中又分为以下四种：<br><code>stage0</code> 只是一个美好激进的想法，有 <code>Babel</code> 插件实现了对这些特性的支持，但是不确定是否会被定为标准；<br><code>stage1</code> 值得被纳入标准的特性；<br><code>stage2</code> 该特性规范已经被起草，将会被纳入标准里；<br><code>stage3</code> 该特性规范已经定稿，各大浏览器厂商和 <code></code> 社区开始着手实现；<br><code>stage4</code> 在接下来的一年将会加入到标准里去。</p>
 </blockquote>
 <p>至此，就算相对完整的分析完了<code>Vue-cli</code>(版本<code>v2.9.3</code>)搭建的<code>webpack</code>项目工程。希望对大家有所帮助。<br><strong>项目放在笔者的<code>github</code>上，<a href="https://github.com/lxchuan12/analyse-vue-cli" target="_blank" rel="noopener">分析vue-cli@2.9.3 搭建的webpack项目工程</a>。方便大家克隆下载，或者在线查看。同时也求个<code>star</code> <code>^_^</code>，也是对笔者的一种鼓励和支持。</strong><br>笔者知识能力有限，文章有什么不妥之处，欢迎指出~</p>
-<h3 id="关于"><a href="#关于" class="headerlink" title="关于"></a>关于</h3><p>作者：常以<strong>轩辕Rowboat</strong>为名混迹于江湖。前端路上 | PPT爱好者 | 所知甚少，唯善学。<br><a href="https://lxchuan12.github.io/">个人博客</a><br><a href="https://segmentfault.com/u/lxchuan12" target="_blank" rel="noopener">segmentfault个人主页</a><br><a href="https://juejin.im/user/57974dc55bbb500063f522fd/posts" target="_blank" rel="noopener">掘金个人主页</a><br><a href="https://www.zhihu.com/people/lxchuan12/activities" target="_blank" rel="noopener">知乎</a><br><a href="https://github.com/lxchuan12" target="_blank" rel="noopener">github</a></p>
 <h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>1、分析这些，逐行注释，还是需要一些时间的。其中有些不是很明白的地方，及时查阅相应的官方文档和插件文档（建议看英文文档和最新的文档），不过文档没写明白的地方，可以多搜索一些别人的博客文章，相对比较清晰明了。<br>2、前端发展太快，这个<a href="mailto:`Vue-cli@2.9.3" target="_blank" rel="noopener">`Vue-cli@2.9.3</a><code></code>webpack<code>版本还是</code>v3.x<code>，webpack现在官方版本已经是</code>v4.12.0<code>，相信不久后，</code>Vue-cli<code>也将发布支持</code>webpack v4.x<code>的版本，</code>v3.0.0<code>已经是</code>beta.16<code>了。
 3、后续有余力，可能会继续分析新版的</code>vue-cli<code>构建的</code>webpack`项目工程。</p>
+<h3 id="关于"><a href="#关于" class="headerlink" title="关于"></a>关于</h3><p>作者：常以<strong>轩辕Rowboat</strong>为名混迹于江湖。前端路上 | PPT爱好者 | 所知甚少，唯善学。<br><a href="https://lxchuan12.github.io/">个人博客</a><br><a href="https://segmentfault.com/blog/lxchuan12" target="_blank" rel="noopener"><code>segmentfault</code>前端视野专栏</a>，开通了<strong>前端视野</strong>专栏，欢迎关注<br><a href="https://juejin.im/user/57974dc55bbb500063f522fd/posts" target="_blank" rel="noopener">掘金专栏</a>，欢迎关注<br><a href="https://zhuanlan.zhihu.com/lxchuan12" target="_blank" rel="noopener">知乎前端视野专栏</a>，开通了<strong>前端视野</strong>专栏，欢迎关注<br><a href="https://github.com/lxchuan12" target="_blank" rel="noopener">github</a>，欢迎<code>follow</code>~</p>
 
         </div>
 
@@ -276,7 +276,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2018-11-23T12:28:55.082Z" itemprop="dateUpdated">2018-11-23 20:28:55</time>
+    最后更新时间：<time datetime="2018-12-25T14:28:37.247Z" itemprop="dateUpdated">2018-12-25 22:28:37</time>
 </span><br>
 
 
@@ -302,7 +302,7 @@
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Vue/">Vue</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Vue-cli/">Vue-cli</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/webpack/">webpack</a></li></ul>
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue-cli/">vue-cli</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/webpack/">webpack</a></li></ul>
 
 
             
@@ -368,9 +368,9 @@
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2018/06/03/20180603-oh my zsh - window git bash alias/" id="post-next" class="post-nav-link">
+      <a href="/2018/05/16/20180515-vue qrcode clipboard/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">win10 安装 oh my zsh 和 window git bash 设置别名提高效率</h4>
+        <h4 class="title">vue 2.x项目 vue-qriously 生成二维码并下载、cliploard复制粘贴</h4>
       </a>
     </div>
   
