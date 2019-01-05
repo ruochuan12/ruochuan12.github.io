@@ -14,7 +14,7 @@
     
     
     
-    <title>面试官问：能否模拟实现JS的call和apply方法 | 轩辕Rowboat的博客 | 前端路上 | PPT爱好者 | 所知甚少，唯善学。常以轩辕Rowboat为名混迹于江湖。</title>
+    <title>面试官问：能否模拟实现JS的call和apply方法 | 若川的博客 | 前端路上 | PPT爱好者 | 所知甚少，唯善学。常以若川为名混迹于江湖。</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     
@@ -24,15 +24,15 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="面试官问：能否模拟实现JS的call和apply方法">
 <meta property="og:url" content="https://lxchuan12.github.io/2018/11/30/20181130-Function.prototype.call-apply/index.html">
-<meta property="og:site_name" content="轩辕Rowboat的博客">
+<meta property="og:site_name" content="若川的博客">
 <meta property="og:description" content="之前写过两篇《面试官问：能否模拟实现JS的new操作符》和《面试官问：能否模拟实现JS的bind方法》 其中模拟bind方法时是使用的call和apply修改this指向。但面试官可能问：能否不用call和apply来实现呢。意思也就是需要模拟实现call和apply的了。  附上之前写文章写过的一段话：已经有很多模拟实现call和apply的文章，为什么自己还要写一遍呢。学习就好比是座大山，人们">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-12-25T14:23:31.940Z">
+<meta property="og:updated_time" content="2019-01-05T12:41:55.407Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="面试官问：能否模拟实现JS的call和apply方法">
 <meta name="twitter:description" content="之前写过两篇《面试官问：能否模拟实现JS的new操作符》和《面试官问：能否模拟实现JS的bind方法》 其中模拟bind方法时是使用的call和apply修改this指向。但面试官可能问：能否不用call和apply来实现呢。意思也就是需要模拟实现call和apply的了。  附上之前写文章写过的一段话：已经有很多模拟实现call和apply的文章，为什么自己还要写一遍呢。学习就好比是座大山，人们">
     
-        <link rel="alternate" type="application/atom+xml" title="轩辕Rowboat的博客" href="/atom.xml">
+        <link rel="alternate" type="application/atom+xml" title="若川的博客" href="/atom.xml">
     
     <link rel="shortcut icon" href="/favicon.ico">
     <link rel="stylesheet" href="/css/style.css?v=1.7.2">
@@ -57,7 +57,7 @@
           <img src="/img/logo.jpg">
         </a>
         <hgroup class="introduce">
-          <h5 class="nickname">轩辕Rowboat</h5>
+          <h5 class="nickname">若川</h5>
           <a href="mailto:lxchuan12@163.com" title="lxchuan12@163.com" class="mail">lxchuan12@163.com</a>
         </hgroup>
       </div>
@@ -261,7 +261,7 @@
 <p>行文至此，就基本结束了，你可能还发现就是写的非严格模式下，<code>thisArg</code>原始值会包装成对象，添加函数并执行，再删除。而严格模式下还是原始值这个没有实现，而且万一这个对象是冻结对象呢，<code>Object.freeze({})</code>，是无法在这个对象上添加属性的。所以这个方法只能算是非严格模式下的简版实现。最后来总结一下。</p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>通过<code>MDN</code>认识<code>call</code>和<code>apply</code>，阅读<code>ES5</code>规范，到模拟实现<code>apply</code>，再实现<code>call</code>。<br>就是使用在对象上添加调用<code>apply</code>的函数执行，这时的调用函数的<code>this</code>就指向了这个<code>thisArg</code>，再返回结果。引出了<code>ES6 Symbol</code>，<code>ES6</code>的扩展符<code>...</code>、<code>eval</code>、<code>new Function()</code>，严格模式等。<br>事实上，现实业务场景不需要去模拟实现<code>call</code>和<code>apply</code>,毕竟是<code>ES3</code>就提供的方法。但面试官可以通过这个面试题考察候选人很多基础知识。如：<code>call</code>、<code>apply</code>的使用。<code>ES6 Symbol</code>，<code>ES6</code>的扩展符<code>...</code>，<code>eval</code>，<code>new Function()</code>，严格模式，甚至时间复杂度和空间复杂度等。<br>读者发现有不妥或可改善之处，欢迎指出。另外觉得写得不错，可以点个赞，也是对笔者的一种支持。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">// 最终版版 删除注释版，详细注释看文章</span><br><span class="line">// 浏览器环境 非严格模式</span><br><span class="line">function getGlobalObject()&#123;</span><br><span class="line">    return this;</span><br><span class="line">&#125;</span><br><span class="line">function generateFunctionCode(argsArrayLength)&#123;</span><br><span class="line">    var code = &apos;return arguments[0][arguments[1]](&apos;;</span><br><span class="line">    for(var i = 0; i &lt; argsArrayLength; i++)&#123;</span><br><span class="line">        if(i &gt; 0)&#123;</span><br><span class="line">            code += &apos;,&apos;;</span><br><span class="line">        &#125;</span><br><span class="line">        code += &apos;arguments[2][&apos; + i + &apos;]&apos;;</span><br><span class="line">    &#125;</span><br><span class="line">    code += &apos;)&apos;;</span><br><span class="line">    return code;</span><br><span class="line">&#125;</span><br><span class="line">Function.prototype.applyFn = function apply(thisArg, argsArray)&#123;</span><br><span class="line">    if(typeof this !== &apos;function&apos;)&#123;</span><br><span class="line">        throw new TypeError(this + &apos; is not a function&apos;);</span><br><span class="line">    &#125;</span><br><span class="line">    if(typeof argsArray === &apos;undefined&apos; || argsArray === null)&#123;</span><br><span class="line">        argsArray = [];</span><br><span class="line">    &#125;</span><br><span class="line">    if(argsArray !== new Object(argsArray))&#123;</span><br><span class="line">        throw new TypeError(&apos;CreateListFromArrayLike called on non-object&apos;);</span><br><span class="line">    &#125;</span><br><span class="line">    if(typeof thisArg === &apos;undefined&apos; || thisArg === null)&#123;</span><br><span class="line">        thisArg = getGlobalObject();</span><br><span class="line">    &#125;</span><br><span class="line">    thisArg = new Object(thisArg);</span><br><span class="line">    var __fn = &apos;__&apos; + new Date().getTime();</span><br><span class="line">    var originalVal = thisArg[__fn];</span><br><span class="line">    var hasOriginalVal = thisArg.hasOwnProperty(__fn);</span><br><span class="line">    thisArg[__fn] = this;</span><br><span class="line">    var code = generateFunctionCode(argsArray.length);</span><br><span class="line">    var result = (new Function(code))(thisArg, __fn, argsArray);</span><br><span class="line">    delete thisArg[__fn];</span><br><span class="line">    if(hasOriginalVal)&#123;</span><br><span class="line">        thisArg[__fn] = originalVal;</span><br><span class="line">    &#125;</span><br><span class="line">    return result;</span><br><span class="line">&#125;;</span><br><span class="line">Function.prototype.callFn = function call(thisArg)&#123;</span><br><span class="line">    var argsArray = [];</span><br><span class="line">    var argumentsLength = arguments.length;</span><br><span class="line">    for(var i = 0; i &lt; argumentsLength - 1; i++)&#123;</span><br><span class="line">        argsArray[i] = arguments[i + 1];</span><br><span class="line">    &#125;</span><br><span class="line">    return this.applyFn(thisArg, argsArray);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h2 id="扩展阅读"><a href="#扩展阅读" class="headerlink" title="扩展阅读"></a>扩展阅读</h2><p><a href="http://www.ituring.com.cn/book/tupubarticle/7768" target="_blank" rel="noopener">《JavaScript设计模式与开发实践》- 第二章 第 2 章　this、call和apply</a><br><a href="https://cloud.tencent.com/developer/article/1023535" target="_blank" rel="noopener">JS魔法堂：再次认识Function.prototype.call</a><br><a href="https://github.com/jawil/blog/issues/16" target="_blank" rel="noopener">不用call和apply方法模拟实现ES5的bind方法</a><br><a href="https://juejin.im/post/5907eb99570c3500582ca23c" target="_blank" rel="noopener">JavaScript深入之call和apply的模拟实现</a></p>
-<h2 id="关于"><a href="#关于" class="headerlink" title="关于"></a>关于</h2><p>作者：常以<strong>轩辕Rowboat</strong>为名混迹于江湖。前端路上 | PPT爱好者 | 所知甚少，唯善学。<br><a href="https://lxchuan12.github.io/">个人博客</a><br><a href="https://segmentfault.com/blog/lxchuan12" target="_blank" rel="noopener"><code>segmentfault</code>前端视野专栏</a>，开通了<strong>前端视野</strong>专栏，欢迎关注<br><a href="https://juejin.im/user/57974dc55bbb500063f522fd/posts" target="_blank" rel="noopener">掘金专栏</a>，欢迎关注<br><a href="https://zhuanlan.zhihu.com/lxchuan12" target="_blank" rel="noopener">知乎前端视野专栏</a>，开通了<strong>前端视野</strong>专栏，欢迎关注<br><a href="https://github.com/lxchuan12" target="_blank" rel="noopener">github</a>，欢迎<code>follow</code>~</p>
+<h2 id="关于"><a href="#关于" class="headerlink" title="关于"></a>关于</h2><p>作者：常以<del>轩辕Rowboat</del><strong>若川</strong>为名混迹于江湖。前端路上 | PPT爱好者 | 所知甚少，唯善学。<br><a href="https://lxchuan12.github.io/">个人博客</a><br><a href="https://segmentfault.com/blog/lxchuan12" target="_blank" rel="noopener"><code>segmentfault</code>前端视野专栏</a>，开通了<strong>前端视野</strong>专栏，欢迎关注<br><a href="https://juejin.im/user/57974dc55bbb500063f522fd/posts" target="_blank" rel="noopener">掘金专栏</a>，欢迎关注<br><a href="https://zhuanlan.zhihu.com/lxchuan12" target="_blank" rel="noopener">知乎前端视野专栏</a>，开通了<strong>前端视野</strong>专栏，欢迎关注<br><a href="https://github.com/lxchuan12" target="_blank" rel="noopener">github</a>，欢迎<code>follow</code>~</p>
 
         </div>
 
@@ -270,7 +270,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2018-12-25T14:23:31.940Z" itemprop="dateUpdated">2018-12-25 22:23:31</time>
+    最后更新时间：<time datetime="2019-01-05T12:41:55.407Z" itemprop="dateUpdated">2019-01-05 20:41:55</time>
 </span><br>
 
 
@@ -281,8 +281,8 @@
     
     <footer>
         <a href="https://lxchuan12.github.io">
-            <img src="/img/logo.jpg" alt="轩辕Rowboat">
-            轩辕Rowboat
+            <img src="/img/logo.jpg" alt="若川">
+            若川
         </a>
     </footer>
 </blockquote>
@@ -306,7 +306,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://lxchuan12.github.io/2018/11/30/20181130-Function.prototype.call-apply/&title=《面试官问：能否模拟实现JS的call和apply方法》 — 轩辕Rowboat的博客&pic=https://lxchuan12.github.io/img/logo.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://lxchuan12.github.io/2018/11/30/20181130-Function.prototype.call-apply/&title=《面试官问：能否模拟实现JS的call和apply方法》 — 若川的博客&pic=https://lxchuan12.github.io/img/logo.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -316,7 +316,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://lxchuan12.github.io/2018/11/30/20181130-Function.prototype.call-apply/&title=《面试官问：能否模拟实现JS的call和apply方法》 — 轩辕Rowboat的博客&source=轩辕Rowboat，某世界闻名的陶瓷大学2016届毕业生，目前在杭州从事前端开发工作，也是一枚PPT爱好者。所知甚少，唯善学。常以轩辕Rowboat为名混..." data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://lxchuan12.github.io/2018/11/30/20181130-Function.prototype.call-apply/&title=《面试官问：能否模拟实现JS的call和apply方法》 — 若川的博客&source=若川，某世界闻名的陶瓷大学2016届毕业生，目前在杭州从事前端开发工作，也是一枚PPT爱好者。所知甚少，唯善学。常以若川为名混迹于江湖。" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -326,7 +326,7 @@
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《面试官问：能否模拟实现JS的call和apply方法》 — 轩辕Rowboat的博客&url=https://lxchuan12.github.io/2018/11/30/20181130-Function.prototype.call-apply/&via=https://lxchuan12.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《面试官问：能否模拟实现JS的call和apply方法》 — 若川的博客&url=https://lxchuan12.github.io/2018/11/30/20181130-Function.prototype.call-apply/&via=https://lxchuan12.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -466,7 +466,7 @@
             <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
         </p>
         <p>
-            <span>轩辕Rowboat &copy; 2016 - 2018</span>
+            <span>若川 &copy; 2016 - 2019</span>
             <span>
                 
                 Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
@@ -474,7 +474,7 @@
         </p>
     </div>
     <div class="bottom" style="display: none">
-        <p><span>轩辕Rowboat &copy; 2016 - 2018</span>
+        <p><span>若川 &copy; 2016 - 2019</span>
             <span>
                 
                 Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
@@ -492,7 +492,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://lxchuan12.github.io/2018/11/30/20181130-Function.prototype.call-apply/&title=《面试官问：能否模拟实现JS的call和apply方法》 — 轩辕Rowboat的博客&pic=https://lxchuan12.github.io/img/logo.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://lxchuan12.github.io/2018/11/30/20181130-Function.prototype.call-apply/&title=《面试官问：能否模拟实现JS的call和apply方法》 — 若川的博客&pic=https://lxchuan12.github.io/img/logo.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -502,7 +502,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://lxchuan12.github.io/2018/11/30/20181130-Function.prototype.call-apply/&title=《面试官问：能否模拟实现JS的call和apply方法》 — 轩辕Rowboat的博客&source=轩辕Rowboat，某世界闻名的陶瓷大学2016届毕业生，目前在杭州从事前端开发工作，也是一枚PPT爱好者。所知甚少，唯善学。常以轩辕Rowboat为名混..." data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://lxchuan12.github.io/2018/11/30/20181130-Function.prototype.call-apply/&title=《面试官问：能否模拟实现JS的call和apply方法》 — 若川的博客&source=若川，某世界闻名的陶瓷大学2016届毕业生，目前在杭州从事前端开发工作，也是一枚PPT爱好者。所知甚少，唯善学。常以若川为名混迹于江湖。" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -512,7 +512,7 @@
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《面试官问：能否模拟实现JS的call和apply方法》 — 轩辕Rowboat的博客&url=https://lxchuan12.github.io/2018/11/30/20181130-Function.prototype.call-apply/&via=https://lxchuan12.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《面试官问：能否模拟实现JS的call和apply方法》 — 若川的博客&url=https://lxchuan12.github.io/2018/11/30/20181130-Function.prototype.call-apply/&via=https://lxchuan12.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
