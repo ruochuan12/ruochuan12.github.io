@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>面试官问：能否模拟实现JS的bind方法 | 若川的博客 | 前端路上 | PPT爱好者 | 所知甚少，唯善学。常以若川为名混迹于江湖。</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    
+    <meta name="keywords" content="javascript,面试">
+    <meta name="description" content="前言用过React的同学都知道，经常会使用bind来绑定this。12345678910111213141516import React, &amp;#123; Component &amp;#125; from &amp;apos;react&amp;apos;;class TodoItem extends Component&amp;#123;    constructor(props)&amp;#123;        super(pro">
+<meta name="keywords" content="javascript,面试">
+<meta property="og:type" content="article">
+<meta property="og:title" content="面试官问：能否模拟实现JS的bind方法">
+<meta property="og:url" content="https://lxchuan12.github.io/posts/7276cffa.html">
+<meta property="og:site_name" content="若川的博客">
+<meta property="og:description" content="前言用过React的同学都知道，经常会使用bind来绑定this。12345678910111213141516import React, &amp;#123; Component &amp;#125; from &amp;apos;react&amp;apos;;class TodoItem extends Component&amp;#123;    constructor(props)&amp;#123;        super(pro">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/11/18/16726f4175f9c34d?w=1109&h=518&f=png&s=67135">
+<meta property="og:updated_time" content="2019-02-10T14:29:24.559Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="面试官问：能否模拟实现JS的bind方法">
+<meta name="twitter:description" content="前言用过React的同学都知道，经常会使用bind来绑定this。12345678910111213141516import React, &amp;#123; Component &amp;#125; from &amp;apos;react&amp;apos;;class TodoItem extends Component&amp;#123;    constructor(props)&amp;#123;        super(pro">
+<meta name="twitter:image" content="https://user-gold-cdn.xitu.io/2018/11/18/16726f4175f9c34d?w=1109&h=518&f=png&s=67135">
+    
+        <link rel="alternate" type="application/atom+xml" title="若川的博客" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/logo.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">若川</h5>
+          <a href="mailto:lxchuan12@163.com" title="lxchuan12@163.com" class="mail">lxchuan12@163.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                文章
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/posts/9ff79b23.html"  >
+                <i class="icon icon-lg icon-user"></i>
+                关于我
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://juejin.im/user/57974dc55bbb500063f522fd/posts" target="_blank" >
+                <i class="icon icon-lg icon-angle-double-down"></i>
+                掘金
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://segmentfault.com/u/lxchuan12/" target="_blank" >
+                <i class="icon icon-lg icon-hand-o-right"></i>
+                Segmentfault
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/lxchuan12" target="_blank" >
+                <i class="icon icon-lg icon-github-alt"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://weibo.com/lxchuan12" target="_blank" >
+                <i class="icon icon-lg icon-weibo"></i>
+                微博
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://www.zhihu.com/people/lxchuan12/activities" target="_blank" >
+                <i class="icon icon-lg icon-connectdevelop"></i>
+                知乎
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://www.jianshu.com/users/83129d433d72/latest_articles" target="_blank" >
+                <i class="icon icon-lg icon-book"></i>
+                简书
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">面试官问：能否模拟实现JS的bind方法</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">面试官问：能否模拟实现JS的bind方法</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-11-21T12:31:50.000Z" itemprop="datePublished" class="page-time">
+  2018-11-21
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/javascript/">javascript</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#前言"><span class="post-toc-number">1.</span> <span class="post-toc-text">前言</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#因此可以得出结论1："><span class="post-toc-number">1.1.</span> <span class="post-toc-text">因此可以得出结论1：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#由此可以得出结论2："><span class="post-toc-number">1.2.</span> <span class="post-toc-text">由此可以得出结论2：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#可以分析得出结论3："><span class="post-toc-number">1.3.</span> <span class="post-toc-text">可以分析得出结论3：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#instanceof-不准确，ES6-new-target很好的解决这一问题"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">instanceof 不准确，ES6 new.target很好的解决这一问题</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#es5-shim的源码实现bind"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">es5-shim的源码实现bind</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#最后总结一下"><span class="post-toc-number">2.</span> <span class="post-toc-text">最后总结一下</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考"><span class="post-toc-number">3.</span> <span class="post-toc-text">参考</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#关于"><span class="post-toc-number">4.</span> <span class="post-toc-text">关于</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-20181121-Function.prototype.bind"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">面试官问：能否模拟实现JS的bind方法</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-11-21 20:31:50" datetime="2018-11-21T12:31:50.000Z"  itemprop="datePublished">2018-11-21</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/javascript/">javascript</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>用过<code>React</code>的同学都知道，经常会使用<code>bind</code>来绑定<code>this</code>。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">import React, &#123; Component &#125; from &apos;react&apos;;</span><br><span class="line">class TodoItem extends Component&#123;</span><br><span class="line">    constructor(props)&#123;</span><br><span class="line">        super(props);</span><br><span class="line">        this.handleClick = this.handleClick.bind(this);</span><br><span class="line">    &#125;</span><br><span class="line">    handleClick()&#123;</span><br><span class="line">        console.log(&apos;handleClick&apos;);</span><br><span class="line">    &#125;</span><br><span class="line">    render()&#123;</span><br><span class="line">        return  (</span><br><span class="line">            &lt;div onClick=&#123;this.handleClick&#125;&gt;点击&lt;/div&gt;</span><br><span class="line">        );</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br><span class="line">export default TodoItem;</span><br></pre></td></tr></table></figure></p>
+<p><strong>那么面试官可能会问是否想过<code>bind</code>到底做了什么，怎么模拟实现呢。</strong></p>
+<blockquote>
+<p>附上之前写文章写过的一段话：已经有很多模拟实现<code>bind</code>的文章，为什么自己还要写一遍呢。学习就好比是座大山，人们沿着不同的路登山，分享着自己看到的风景。你不一定能看到别人看到的风景，体会到别人的心情。只有自己去登山，才能看到不一样的风景，体会才更加深刻。</p>
+</blockquote>
+<p>先看一下<code>bind</code>是什么。从上面的<code>React</code>代码中，可以看出<code>bind</code>执行后是函数，并且每个函数都可以执行调用它。<br>眼见为实，耳听为虚。读者可以在控制台一步步点开<strong>例子1</strong>中的<code>obj</code>:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;&#125;;</span><br><span class="line">console.log(obj);</span><br><span class="line">console.log(typeof Function.prototype.bind); // function</span><br><span class="line">console.log(typeof Function.prototype.bind());  // function</span><br><span class="line">console.log(Function.prototype.bind.name);  // bind</span><br><span class="line">console.log(Function.prototype.bind().name);  // bound</span><br></pre></td></tr></table></figure></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://user-gold-cdn.xitu.io/2018/11/18/16726f4175f9c34d?w=1109&h=518&f=png&s=67135" alt="`Function.prototype.bind`" title="">
+                </div>
+                <div class="image-caption">`Function.prototype.bind`</div>
+            </figure>
+<h3 id="因此可以得出结论1："><a href="#因此可以得出结论1：" class="headerlink" title="因此可以得出结论1："></a>因此可以得出结论1：</h3><p>1、<code>bind</code>是<code>Functoin</code>原型链中<code>Function.prototype</code>的一个属性，每个函数都可以调用它。<br><br>2、<code>bind</code>本身是一个函数名为<code>bind</code>的函数，返回值也是函数，函数名是<code>bound</code>。（打出来就是<code>bound加上一个空格</code>）。<br>知道了<code>bind</code>是函数，就可以传参，而且返回值<code>&#39;bound &#39;</code>也是函数，也可以传参，就很容易写出<strong>例子2</strong>：<br>后文统一 <code>bound</code> 指原函数<code>original</code> <code>bind</code>之后返回的函数，便于说明。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;</span><br><span class="line">    name: &apos;轩辕Rowboat&apos;,</span><br><span class="line">&#125;;</span><br><span class="line">function original(a, b)&#123;</span><br><span class="line">    console.log(this.name);</span><br><span class="line">    console.log([a, b]);</span><br><span class="line">    return false;</span><br><span class="line">&#125;</span><br><span class="line">var bound = original.bind(obj, 1);</span><br><span class="line">var boundResult = bound(2); // &apos;轩辕Rowboat&apos;, [1, 2]</span><br><span class="line">console.log(boundResult); // false</span><br><span class="line">console.log(original.bind.name); // &apos;bind&apos;</span><br><span class="line">console.log(original.bind.length); // 1</span><br><span class="line">console.log(original.bind().length); // 2 返回original函数的形参个数</span><br><span class="line">console.log(bound.name); // &apos;bound original&apos;</span><br><span class="line">console.log((function()&#123;&#125;).bind().name); // &apos;bound &apos;</span><br><span class="line">console.log((function()&#123;&#125;).bind().length); // 0</span><br></pre></td></tr></table></figure></p>
+<h3 id="由此可以得出结论2："><a href="#由此可以得出结论2：" class="headerlink" title="由此可以得出结论2："></a>由此可以得出结论2：</h3><p>1、调用<code>bind</code>的函数中的<code>this</code>指向<code>bind()</code>函数的第一个参数。</p>
+<p>2、传给<code>bind()</code>的其他参数接收处理了，<code>bind()</code>之后返回的函数的参数也接收处理了，也就是说合并处理了。</p>
+<p>3、并且<code>bind()</code>后的<code>name</code>为<code>bound + 空格 + 调用bind的函数名</code>。如果是匿名函数则是<code>bound + 空格</code>。</p>
+<p>4、<code>bind</code>后的返回值函数，执行后返回值是原函数（<code>original</code>）的返回值。</p>
+<p>5、<code>bind</code>函数形参（即函数的<code>length</code>）是<code>1</code>。<code>bind</code>后返回的<code>bound</code>函数形参不定，根据绑定的函数原函数（<code>original</code>）形参个数确定。</p>
+<p>根据结论2：我们就可以简单模拟实现一个简版<code>bindFn</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">// 第一版 修改this指向，合并参数</span><br><span class="line">Function.prototype.bindFn = function bind(thisArg)&#123;</span><br><span class="line">    if(typeof this !== &apos;function&apos;)&#123;</span><br><span class="line">        throw new TypeError(this + &apos;must be a function&apos;);</span><br><span class="line">    &#125;</span><br><span class="line">    // 存储函数本身</span><br><span class="line">    var self = this;</span><br><span class="line">    // 去除thisArg的其他参数 转成数组</span><br><span class="line">    var args = [].slice.call(arguments, 1);</span><br><span class="line">    var bound = function()&#123;</span><br><span class="line">        // bind返回的函数 的参数转成数组</span><br><span class="line">        var boundArgs = [].slice.call(arguments);</span><br><span class="line">        // apply修改this指向，把两个函数的参数合并传给self函数，并执行self函数，返回执行结果</span><br><span class="line">        return self.apply(thisArg, args.concat(boundArgs));</span><br><span class="line">    &#125;</span><br><span class="line">    return bound;</span><br><span class="line">&#125;</span><br><span class="line">// 测试</span><br><span class="line">var obj = &#123;</span><br><span class="line">    name: &apos;轩辕Rowboat&apos;,</span><br><span class="line">&#125;;</span><br><span class="line">function original(a, b)&#123;</span><br><span class="line">    console.log(this.name);</span><br><span class="line">    console.log([a, b]);</span><br><span class="line">&#125;</span><br><span class="line">var bound = original.bindFn(obj, 1);</span><br><span class="line">bound(2); // &apos;轩辕Rowboat&apos;, [1, 2]</span><br></pre></td></tr></table></figure></p>
+<p>如果面试官看到你答到这里，估计对你的印象60、70分应该是会有的。<br>但我们知道函数是可以用<code>new</code>来实例化的。那么<code>bind()</code>返回值函数会是什么表现呢。<br>接下来看<strong>例子3</strong>：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;</span><br><span class="line">    name: &apos;轩辕Rowboat&apos;,</span><br><span class="line">&#125;;</span><br><span class="line">function original(a, b)&#123;</span><br><span class="line">    console.log(&apos;this&apos;, this); // original &#123;&#125;</span><br><span class="line">    console.log(&apos;typeof this&apos;, typeof this); // object</span><br><span class="line">    this.name = b;</span><br><span class="line">    console.log(&apos;name&apos;, this.name); // 2</span><br><span class="line">    console.log(&apos;this&apos;, this);  // original &#123;name: 2&#125;</span><br><span class="line">    console.log([a, b]); // 1, 2</span><br><span class="line">&#125;</span><br><span class="line">var bound = original.bind(obj, 1);</span><br><span class="line">var newBoundResult = new bound(2);</span><br><span class="line">console.log(newBoundResult, &apos;newBoundResult&apos;); // original &#123;name: 2&#125;</span><br></pre></td></tr></table></figure></p>
+<p>从<strong>例子3</strong>种可以看出<code>this</code>指向了<code>new bound()</code>生成的新对象。</p>
+<h3 id="可以分析得出结论3："><a href="#可以分析得出结论3：" class="headerlink" title="可以分析得出结论3："></a>可以分析得出结论3：</h3><p>1、<code>bind</code>原先指向<code>obj</code>的失效了，其他参数有效。</p>
+<p>2、<code>new bound</code>的返回值是以<code>original</code>原函数构造器生成的新对象。<code>original</code>原函数的<code>this</code>指向的就是这个新对象。<br>另外前不久写过一篇文章：<a href="https://juejin.im/post/5bde7c926fb9a049f66b8b52" target="_blank" rel="noopener">面试官问：能否模拟实现JS的new操作符</a>。简单摘要：<br><strong>new做了什么：</strong></p>
+<blockquote>
+<p>1.创建了一个全新的对象。<br><br>2.这个对象会被执行<code>[[Prototype]]</code>（也就是<code>__proto__</code>）链接。<br><br>3.生成的新对象会绑定到函数调用的this。<br><br>4.通过<code>new</code>创建的每个对象将最终被<code>[[Prototype]]</code>链接到这个函数的<code>prototype</code>对象上。<br><br>5.如果函数没有返回对象类型<code>Object</code>(包含<code>Functoin</code>, <code>Array</code>, <code>Date</code>, <code>RegExg</code>, <code>Error</code>)，那么<code>new</code>表达式中的函数调用会自动返回这个新的对象。</p>
+</blockquote>
+<p>所以相当于<code>new</code>调用时，<code>bind</code>的返回值函数<code>bound</code>内部要模拟实现<code>new</code>实现的操作。<br>话不多说，直接上代码。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">// 第三版 实现new调用</span><br><span class="line">Function.prototype.bindFn = function bind(thisArg)&#123;</span><br><span class="line">    if(typeof this !== &apos;function&apos;)&#123;</span><br><span class="line">        throw new TypeError(this + &apos; must be a function&apos;);</span><br><span class="line">    &#125;</span><br><span class="line">    // 存储调用bind的函数本身</span><br><span class="line">    var self = this;</span><br><span class="line">    // 去除thisArg的其他参数 转成数组</span><br><span class="line">    var args = [].slice.call(arguments, 1);</span><br><span class="line">    var bound = function()&#123;</span><br><span class="line">        // bind返回的函数 的参数转成数组</span><br><span class="line">        var boundArgs = [].slice.call(arguments);</span><br><span class="line">        var finalArgs = args.concat(boundArgs);</span><br><span class="line">        // new 调用时，其实this instanceof bound判断也不是很准确。es6 new.target就是解决这一问题的。</span><br><span class="line">        if(this instanceof bound)&#123;</span><br><span class="line">            // 这里是实现上文描述的 new 的第 1, 2, 4 步</span><br><span class="line">            // 1.创建一个全新的对象</span><br><span class="line">            // 2.并且执行[[Prototype]]链接</span><br><span class="line">            // 4.通过`new`创建的每个对象将最终被`[[Prototype]]`链接到这个函数的`prototype`对象上。</span><br><span class="line">            // self可能是ES6的箭头函数，没有prototype，所以就没必要再指向做prototype操作。</span><br><span class="line">            if(self.prototype)&#123;</span><br><span class="line">                // ES5 提供的方案 Object.create()</span><br><span class="line">                // bound.prototype = Object.create(self.prototype);</span><br><span class="line">                // 但 既然是模拟ES5的bind，那浏览器也基本没有实现Object.create()</span><br><span class="line">                // 所以采用 MDN ployfill方案 https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/create</span><br><span class="line">                function Empty()&#123;&#125;</span><br><span class="line">                Empty.prototype = self.prototype;</span><br><span class="line">                bound.prototype = new Empty();</span><br><span class="line">            &#125;</span><br><span class="line">            // 这里是实现上文描述的 new 的第 3 步</span><br><span class="line">            // 3.生成的新对象会绑定到函数调用的`this`。</span><br><span class="line">            var result = self.apply(this, finalArgs);</span><br><span class="line">            // 这里是实现上文描述的 new 的第 5 步</span><br><span class="line">            // 5.如果函数没有返回对象类型`Object`(包含`Functoin`, `Array`, `Date`, `RegExg`, `Error`)，</span><br><span class="line">            // 那么`new`表达式中的函数调用会自动返回这个新的对象。</span><br><span class="line">            var isObject = typeof result === &apos;object&apos; &amp;&amp; result !== null;</span><br><span class="line">            var isFunction = typeof result === &apos;function&apos;;</span><br><span class="line">            if(isObject || isFunction)&#123;</span><br><span class="line">                return result;</span><br><span class="line">            &#125;</span><br><span class="line">            return this;</span><br><span class="line">        &#125;</span><br><span class="line">        else&#123;</span><br><span class="line">            // apply修改this指向，把两个函数的参数合并传给self函数，并执行self函数，返回执行结果</span><br><span class="line">            return self.apply(thisArg, finalArgs);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    return bound;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>面试官看到这样的实现代码，基本就是满分了，心里独白：这小伙子/小姑娘不错啊。不过可能还会问<code>this instanceof bound</code>不准确问题。<br>上文注释中提到<code>this instanceof bound</code>也不是很准确，<code>ES6 new.target</code>很好的解决这一问题，我们举个<strong>例子4</strong>:</p>
+<h3 id="instanceof-不准确，ES6-new-target很好的解决这一问题"><a href="#instanceof-不准确，ES6-new-target很好的解决这一问题" class="headerlink" title="instanceof 不准确，ES6 new.target很好的解决这一问题"></a><code>instanceof</code> 不准确，<code>ES6 new.target</code>很好的解决这一问题</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">function Student(name)&#123;</span><br><span class="line">    if(this instanceof Student)&#123;</span><br><span class="line">        this.name = name;</span><br><span class="line">        console.log(&apos;name&apos;, name);</span><br><span class="line">    &#125;</span><br><span class="line">    else&#123;</span><br><span class="line">        throw new Error(&apos;必须通过new关键字来调用Student。&apos;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">var student = new Student(&apos;轩辕&apos;);</span><br><span class="line">var notAStudent = Student.call(student, &apos;Rowboat&apos;); // 不抛出错误，且执行了。</span><br><span class="line">console.log(student, &apos;student&apos;, notAStudent, &apos;notAStudent&apos;);</span><br><span class="line"></span><br><span class="line">function Student2(name)&#123;</span><br><span class="line">    if(typeof new.target !== &apos;undefined&apos;)&#123;</span><br><span class="line">        this.name = name;</span><br><span class="line">        console.log(&apos;name&apos;, name);</span><br><span class="line">    &#125;</span><br><span class="line">    else&#123;</span><br><span class="line">        throw new Error(&apos;必须通过new关键字来调用Student2。&apos;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">var student2 = new Student2(&apos;轩辕&apos;);</span><br><span class="line">var notAStudent2 = Student2.call(student2, &apos;Rowboat&apos;);</span><br><span class="line">console.log(student2, &apos;student2&apos;, notAStudent2, &apos;notAStudent2&apos;); // 抛出错误</span><br></pre></td></tr></table></figure>
+<p>细心的同学可能会发现了这版本的代码没有实现<code>bind</code>后的<code>bound</code>函数的<code>name</code><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Function/name" target="_blank" rel="noopener">MDN Function.name</a>和<code>length</code><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Function/length" target="_blank" rel="noopener">MDN Function.length</a>。面试官可能也发现了这一点继续追问，如何实现，或者问是否看过<a href="https://github.com/es-shims/es5-shim/blob/master/es5-shim.js#L201-L335" target="_blank" rel="noopener"><code>es5-shim</code>的源码实现<code>L201-L335</code></a>。如果不限<code>ES</code>版本。其实可以用<code>ES5</code>的<code>Object.defineProperties</code>来实现。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Object.defineProperties(bound, &#123;</span><br><span class="line">    &apos;length&apos;: &#123;</span><br><span class="line">        value: self.length,</span><br><span class="line">    &#125;,</span><br><span class="line">    &apos;name&apos;: &#123;</span><br><span class="line">        value: &apos;bound &apos; + self.name,</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<h3 id="es5-shim的源码实现bind"><a href="#es5-shim的源码实现bind" class="headerlink" title="es5-shim的源码实现bind"></a><code>es5-shim</code>的源码实现<code>bind</code></h3><p>直接附上源码（有删减注释和部分修改等）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line">var $Array = Array;</span><br><span class="line">var ArrayPrototype = $Array.prototype;</span><br><span class="line">var $Object = Object;</span><br><span class="line">var array_push = ArrayPrototype.push;</span><br><span class="line">var array_slice = ArrayPrototype.slice;</span><br><span class="line">var array_join = ArrayPrototype.join;</span><br><span class="line">var array_concat = ArrayPrototype.concat;</span><br><span class="line">var $Function = Function;</span><br><span class="line">var FunctionPrototype = $Function.prototype;</span><br><span class="line">var apply = FunctionPrototype.apply;</span><br><span class="line">var max = Math.max;</span><br><span class="line">// 简版 源码更复杂些。</span><br><span class="line">var isCallable = function isCallable(value)&#123;</span><br><span class="line">    if(typeof value !== &apos;function&apos;)&#123;</span><br><span class="line">        return false;</span><br><span class="line">    &#125;</span><br><span class="line">    return true;</span><br><span class="line">&#125;;</span><br><span class="line">var Empty = function Empty() &#123;&#125;;</span><br><span class="line">// 源码是 defineProperties</span><br><span class="line">// 源码是bind笔者改成bindFn便于测试</span><br><span class="line">FunctionPrototype.bindFn = function bind(that) &#123;</span><br><span class="line">    var target = this;</span><br><span class="line">    if (!isCallable(target)) &#123;</span><br><span class="line">        throw new TypeError(&apos;Function.prototype.bind called on incompatible &apos; + target);</span><br><span class="line">    &#125;</span><br><span class="line">    var args = array_slice.call(arguments, 1);</span><br><span class="line">    var bound;</span><br><span class="line">    var binder = function () &#123;</span><br><span class="line">        if (this instanceof bound) &#123;</span><br><span class="line">            var result = apply.call(</span><br><span class="line">                target,</span><br><span class="line">                this,</span><br><span class="line">                array_concat.call(args, array_slice.call(arguments))</span><br><span class="line">            );</span><br><span class="line">            if ($Object(result) === result) &#123;</span><br><span class="line">                return result;</span><br><span class="line">            &#125;</span><br><span class="line">            return this;</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            return apply.call(</span><br><span class="line">                target,</span><br><span class="line">                that,</span><br><span class="line">                array_concat.call(args, array_slice.call(arguments))</span><br><span class="line">            );</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    var boundLength = max(0, target.length - args.length);</span><br><span class="line">    var boundArgs = [];</span><br><span class="line">    for (var i = 0; i &lt; boundLength; i++) &#123;</span><br><span class="line">        array_push.call(boundArgs, &apos;$&apos; + i);</span><br><span class="line">    &#125;</span><br><span class="line">    // 这里是Function构造方式生成形参length $1, $2, $3...</span><br><span class="line">    bound = $Function(&apos;binder&apos;, &apos;return function (&apos; + array_join.call(boundArgs, &apos;,&apos;) + &apos;)&#123; return binder.apply(this, arguments); &#125;&apos;)(binder);</span><br><span class="line"></span><br><span class="line">    if (target.prototype) &#123;</span><br><span class="line">        Empty.prototype = target.prototype;</span><br><span class="line">        bound.prototype = new Empty();</span><br><span class="line">        Empty.prototype = null;</span><br><span class="line">    &#125;</span><br><span class="line">    return bound;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>你说出<code>es5-shim</code>源码<code>bind</code>实现，感慨这代码真是高效、严谨。面试官心里独白可能是：你就是我要找的人，薪酬福利你可以和<code>HR</code>去谈下。</p>
+<h2 id="最后总结一下"><a href="#最后总结一下" class="headerlink" title="最后总结一下"></a>最后总结一下</h2><p>1、<code>bind</code>是<code>Function</code>原型链中的<code>Function.prototype</code>的一个属性，它是一个函数，修改<code>this</code>指向，合并参数传递给原函数，返回值是一个新的函数。<br>2、<code>bind</code>返回的函数可以通过<code>new</code>调用，这时提供的<code>this</code>的参数被忽略，指向了<code>new</code>生成的全新对象。内部模拟实现了<code>new</code>操作符。<br>3、<code>es5-shim</code>源码模拟实现<code>bind</code>时用<code>Function</code>实现了<code>length</code>。<br>事实上，平时其实很少需要使用自己实现的投入到生成环境中。但面试官通过这个面试题能考察很多知识。比如<code>this</code>指向，原型链，闭包，函数等知识，可以扩展很多。<br>读者发现有不妥或可改善之处，欢迎指出。另外觉得写得不错，可以点个赞，也是对笔者的一种支持。</p>
+<p>文章中的例子和测试代码放在<code>github</code>中<a href="https://github.com/lxchuan12/html5/tree/gh-pages/JS%E7%9B%B8%E5%85%B3/%E5%87%BD%E6%95%B0/bind%E6%A8%A1%E6%8B%9F%E5%AE%9E%E7%8E%B0" target="_blank" rel="noopener">bind模拟实现 github</a>。<a href="http://lxchuan12.github.io/html5/JS%E7%9B%B8%E5%85%B3/%E5%87%BD%E6%95%B0/bind%E6%A8%A1%E6%8B%9F%E5%AE%9E%E7%8E%B0/bind-0.html">bind模拟实现 预览地址</a> <code>F12</code>看控制台输出，结合<code>source</code>面板查看效果更佳。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">// 最终版 删除注释 详细注释版请看上文</span><br><span class="line">Function.prototype.bind = Function.prototype.bind || function bind(thisArg)&#123;</span><br><span class="line">    if(typeof this !== &apos;function&apos;)&#123;</span><br><span class="line">        throw new TypeError(this + &apos; must be a function&apos;);</span><br><span class="line">    &#125;</span><br><span class="line">    var self = this;</span><br><span class="line">    var args = [].slice.call(arguments, 1);</span><br><span class="line">    var bound = function()&#123;</span><br><span class="line">        var boundArgs = [].slice.call(arguments);</span><br><span class="line">        var finalArgs = args.concat(boundArgs);</span><br><span class="line">        if(this instanceof bound)&#123;</span><br><span class="line">            if(self.prototype)&#123;</span><br><span class="line">                function Empty()&#123;&#125;</span><br><span class="line">                Empty.prototype = self.prototype;</span><br><span class="line">                bound.prototype = new Empty();</span><br><span class="line">            &#125;</span><br><span class="line">            var result = self.apply(this, finalArgs);</span><br><span class="line">            var isObject = typeof result === &apos;object&apos; &amp;&amp; result !== null;</span><br><span class="line">            var isFunction = typeof result === &apos;function&apos;;</span><br><span class="line">            if(isObject || isFunction)&#123;</span><br><span class="line">                return result;</span><br><span class="line">            &#125;</span><br><span class="line">            return this;</span><br><span class="line">        &#125;</span><br><span class="line">        else&#123;</span><br><span class="line">            return self.apply(thisArg, finalArgs);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    return bound;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://oshotokill.gitbooks.io/understandinges6-simplified-chinese/content/chapter_3.html" target="_blank" rel="noopener">OshotOkill翻译的 深入理解<code>ES6</code> 简体中文版 - 第三章 函数</a>（虽然我是看的纸质书籍，但推荐下这本在线的书）<br><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Function/bind" target="_blank" rel="noopener">MDN Function.prototype.bind</a><br><a href="https://juejin.im/post/59093b1fa0bb9f006517b906" target="_blank" rel="noopener">冴羽: JavaScript深入之bind的模拟实现</a><br><a href="https://www.jianshu.com/p/6958f99db769" target="_blank" rel="noopener">《react状态管理与同构实战》侯策：从一道面试题，到“我可能看了假源码”</a></p>
+<h2 id="关于"><a href="#关于" class="headerlink" title="关于"></a>关于</h2><p>作者：常以<del>轩辕Rowboat</del><strong>若川</strong>为名混迹于江湖。前端路上 | PPT爱好者 | 所知甚少，唯善学。<br><a href="https://lxchuan12.github.io/">个人博客</a><br><a href="https://segmentfault.com/blog/lxchuan12" target="_blank" rel="noopener"><code>segmentfault</code>前端视野专栏</a>，开通了<strong>前端视野</strong>专栏，欢迎关注<br><a href="https://juejin.im/user/57974dc55bbb500063f522fd/posts" target="_blank" rel="noopener">掘金专栏</a>，欢迎关注<br><a href="https://zhuanlan.zhihu.com/lxchuan12" target="_blank" rel="noopener">知乎前端视野专栏</a>，开通了<strong>前端视野</strong>专栏，欢迎关注<br><a href="https://github.com/lxchuan12" target="_blank" rel="noopener">github</a>，欢迎<code>follow</code>~</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2019-02-10T14:29:24.559Z" itemprop="dateUpdated">2019-02-10 22:29:24</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/posts/7276cffa.html" target="_blank" rel="external">https://lxchuan12.github.io/posts/7276cffa.html</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://lxchuan12.github.io">
+            <img src="/img/logo.jpg" alt="若川">
+            若川
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/面试/">面试</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://lxchuan12.github.io/posts/7276cffa.html&title=《面试官问：能否模拟实现JS的bind方法》 — 若川的博客&pic=https://lxchuan12.github.io/img/logo.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://lxchuan12.github.io/posts/7276cffa.html&title=《面试官问：能否模拟实现JS的bind方法》 — 若川的博客&source=若川，某世界闻名的陶瓷大学2016届毕业生，目前在杭州从事前端开发工作，也是一枚PPT爱好者。所知甚少，唯善学。常以若川为名混迹于江湖。" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://lxchuan12.github.io/posts/7276cffa.html" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《面试官问：能否模拟实现JS的bind方法》 — 若川的博客&url=https://lxchuan12.github.io/posts/7276cffa.html&via=https://lxchuan12.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://lxchuan12.github.io/posts/7276cffa.html" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/posts/410817b3.html" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">面试官问：能否模拟实现JS的call和apply方法</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/posts/d4c0af6f.html" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">面试官问：能否模拟实现JS的new操作符</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'true' == 'true',
+            verify: 'false' == 'true',
+            appId: "0TKTK966CPwc1sozltNJnPwi-gzGzoHsz",
+            appKey: "pqWw70koe6UNqnGfrPBLgPCO",
+            avatar: "mm",
+            placeholder: "ヾﾉ≧∀≦)o来啊，快活啊!",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        如果对您有启发和帮助，可以随意赞赏呢~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+        <p>
+            <span>若川 &copy; 2016 - 2019</span>
+            <span>
+                
+                <a href="http://www.miitbeian.gov.cn/" target="_blank">浙ICP备19003142号-1</a><br>
+                
+                <!-- Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a> -->
+            </span>
+        </p>
+    </div>
+    <div class="bottom" style="display: none">
+        <p><span>若川 &copy; 2016 - 2019</span>
+            <span>
+                
+                <a href="http://www.miitbeian.gov.cn/" target="_blank">浙ICP备19003142号-1</a><br>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://lxchuan12.github.io/posts/7276cffa.html&title=《面试官问：能否模拟实现JS的bind方法》 — 若川的博客&pic=https://lxchuan12.github.io/img/logo.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://lxchuan12.github.io/posts/7276cffa.html&title=《面试官问：能否模拟实现JS的bind方法》 — 若川的博客&source=若川，某世界闻名的陶瓷大学2016届毕业生，目前在杭州从事前端开发工作，也是一枚PPT爱好者。所知甚少，唯善学。常以若川为名混迹于江湖。" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://lxchuan12.github.io/posts/7276cffa.html" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《面试官问：能否模拟实现JS的bind方法》 — 若川的博客&url=https://lxchuan12.github.io/posts/7276cffa.html&via=https://lxchuan12.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://lxchuan12.github.io/posts/7276cffa.html" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://lxchuan12.github.io/posts/7276cffa.html" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+lazyScripts.push('//s95.cnzz.com/z_stat.php?id=1273798602&web_id=1273798602');
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>
