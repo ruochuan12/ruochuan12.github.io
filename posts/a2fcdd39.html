@@ -29,7 +29,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/201107-44debee715bc6d09.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/201107-9effcf3d1ddce36f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2019-06-13T15:16:13.681Z">
+<meta property="og:updated_time" content="2019-06-13T15:22:17.613Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="高考七年后、工作三年后的感悟">
 <meta name="twitter:description" content="本打算端午假期发表这文章，后来因为文章还需要有些调整，工作日又比较忙，就到今天周三才发。随便写了近3000字，文章最后有免费送书活动，欢迎留言参与。  又一年高考结束了。转眼高考过去七年了，工作了三年。很多认识的同届的朋友同学研究生也毕业了，在大学认识的最后一批学弟学妹也毕业了。算是一个阶段结束了。 高考很大程度决定人生轨迹七年前（2012年）坐在自己家乡的小县城考场里，写着语文试卷。前面花的时">
@@ -250,7 +250,7 @@
                 <div class="image-caption">刻意练习书籍</div>
             </figure></p>
 <p>最后附上毕业三年每年的年度总结文章和工作一年的感悟文章。<br><a href="https://www.jianshu.com/p/cea7ecd71f14" target="_blank" rel="noopener">2016年度总结，毕业，工作</a><br><a href="https://www.jianshu.com/p/0b29cc65dc82" target="_blank" rel="noopener">工作一年后，我有些感悟</a><br><a href="https://www.jianshu.com/p/71b5730dc606" target="_blank" rel="noopener">2017年度总结，一如既往</a><br><a href="https://www.jianshu.com/p/a9c7aae40e64" target="_blank" rel="noopener">2018年度总结，平淡无奇</a></p>
-<p>文章同时发布在简书（方便后续修改），点击阅读原文查看。</p>
+<p>文章同时发布在简书（方便后续修改），<a href="https://www.jianshu.com/p/edf9d76596d2" target="_blank" rel="noopener">高考七年后、工作三年后的感悟</a>。</p>
 
         </div>
 
@@ -259,7 +259,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2019-06-13T15:16:13.681Z" itemprop="dateUpdated">2019-06-13 23:16:13</time>
+    最后更新时间：<time datetime="2019-06-13T15:22:17.613Z" itemprop="dateUpdated">2019-06-13 23:22:17</time>
 </span><br>
 
 
@@ -560,7 +560,28 @@ lazyScripts.push('//s95.cnzz.com/z_stat.php?id=1276112577&web_id=1276112577');
 <script src="/js/search.min.js?v=1.7.2" async></script>
 
 
+<% if (theme.mathjax){ %>
+<!-- mathjax config similar to math.stackexchange -->
 
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+<% } %>
 
 
 
