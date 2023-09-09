@@ -1,0 +1,1 @@
+import{_ as t,Q as a,S as n,W as e,a4 as s}from"./framework-291a1352.js";const c={},o=e("h2",{id:"实现小型打包",tabindex:"-1"},[e("a",{class:"header-anchor",href:"#实现小型打包","aria-hidden":"true"},"#"),s(" 实现小型打包")],-1),r=e("p",null,"1、分析入口和依赖文件 2、",-1),_=[o,r];function d(i,l){return a(),n("div",null,_)}const f=t(c,[["render",d],["__file","index.html.vue"]]);export{f as default};
