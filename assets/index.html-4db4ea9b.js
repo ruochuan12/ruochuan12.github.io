@@ -1,0 +1,22 @@
+import{_ as s,Q as r,S as i,W as e,a4 as n,a2 as t,a5 as a,E as d}from"./framework-291a1352.js";const h={},c=e("h1",{id:"vows",tabindex:"-1"},[e("a",{class:"header-anchor",href:"#vows","aria-hidden":"true"},"#"),n(" Vows")],-1),l=e("blockquote",null,[e("p",null,"Asynchronous BDD & continuous integration for node.js")],-1),u={id:"http-vowsjs-org",tabindex:"-1"},g=e("a",{class:"header-anchor",href:"#http-vowsjs-org","aria-hidden":"true"},"#",-1),p={href:"http://vowsjs.org",target:"_blank",rel:"noopener noreferrer"},_=a(`<h2 id="introduction" tabindex="-1"><a class="header-anchor" href="#introduction" aria-hidden="true">#</a> introduction</h2><p>There are two reasons why we might want asynchronous testing. The first, and obvious reason is that node.js is asynchronous, and therefore our tests need to be. The second reason is to make test suites which target I/O libraries run much faster.</p><p><em>Vows</em> is an experiment in making this possible, while adding a minimum of overhead.</p><h2 id="synopsis" tabindex="-1"><a class="header-anchor" href="#synopsis" aria-hidden="true">#</a> synopsis</h2><pre><code>var vows = require(&#39;vows&#39;),
+    assert = require(&#39;assert&#39;);
+
+vows.describe(&#39;Deep Thought&#39;).addBatch({
+    &#39;An instance of DeepThought&#39;: {
+        topic: new DeepThought,
+
+        &#39;should know the answer to the ultimate question of life&#39;: function (deepThought) {
+            assert.equal (deepThought.question(&#39;what is the answer to the universe?&#39;), 42);
+        }
+    }
+});
+</code></pre><h2 id="coverage-reporting" tabindex="-1"><a class="header-anchor" href="#coverage-reporting" aria-hidden="true">#</a> coverage reporting</h2>`,6),m=e("em",null,"instrumented",-1),v=e("em",null,"instrumentation",-1),f={href:"https://github.com/visionmedia/node-jscoverage",target:"_blank",rel:"noopener noreferrer"},b=e("em",null,"instrumented",-1),w=e("code",null,"--cover-plain",-1),j=e("code",null,"--cover-html",-1),x=e("code",null,"--cover-json",-1),k={id:"downloading-and-installing-node-jscoverage",tabindex:"-1"},y=e("a",{class:"header-anchor",href:"#downloading-and-installing-node-jscoverage","aria-hidden":"true"},"#",-1),T={href:"https://github.com/visionmedia/node-jscoverage",target:"_blank",rel:"noopener noreferrer"},q={href:"https://github.com/visionmedia/node-jscoverage",target:"_blank",rel:"noopener noreferrer"},B=a(`<pre><code>$ git clone https://github.com/visionmedia/node-jscoverage.git
+$ cd node-jscoverage/
+$ ./configure
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+[...]
+$ make &amp;&amp; sudo make install
+</code></pre><h3 id="instrumenting-with-jscoverage" tabindex="-1"><a class="header-anchor" href="#instrumenting-with-jscoverage" aria-hidden="true">#</a> instrumenting with jscoverage</h3><pre><code>$ jscoverage myfile.js myfile-instrumented.js
+</code></pre><h2 id="installation" tabindex="-1"><a class="header-anchor" href="#installation" aria-hidden="true">#</a> installation</h2><pre><code>$ npm install vows
+</code></pre><h2 id="documentation" tabindex="-1"><a class="header-anchor" href="#documentation" aria-hidden="true">#</a> documentation</h2>`,6),D={href:"http://vowsjs.org",target:"_blank",rel:"noopener noreferrer"},V=e("h2",{id:"authors",tabindex:"-1"},[e("a",{class:"header-anchor",href:"#authors","aria-hidden":"true"},"#"),n(" authors")],-1),$=e("p",null,[n("Alexis Sellier <"),e("a",{href:"mailto:alexis@cloudhead.io"},"alexis@cloudhead.io"),n(">, Charlie Robbins,")],-1),C=e("p",null,[e("em",null,"...and many others")],-1);function E(N,S){const o=d("ExternalLinkIcon");return r(),i("div",null,[c,l,e("h4",u,[g,n(),e("a",p,[n("http://vowsjs.org"),t(o)])]),_,e("p",null,[n("Code coverage reporting is available if "),m,n(" code is detected. Currently only "),v,n(" via "),e("a",f,[n("node-jscoverage"),t(o)]),n(" is supported. When "),b,n(" code is detected and coverage reporting is enabled using any of the "),w,n(", "),j,n(", or "),x,n(" options a code coverage map is generated.")]),e("h3",k,[y,n(" downloading and installing "),e("a",T,[n("node-jscoverage"),t(o)])]),e("p",null,[e("a",q,[n("node-jscoverage"),t(o)]),n(" is a binary package that needs to be compiled from source:")]),B,e("p",null,[n("Head over to "),e("a",D,[n("http://vowsjs.org"),t(o)])]),V,$,C])}const I=s(h,[["render",E],["__file","index.html.vue"]]);export{I as default};

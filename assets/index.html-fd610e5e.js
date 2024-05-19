@@ -1,0 +1,1 @@
+import{_ as t,Q as r,S as a,W as e,a4 as o}from"./framework-291a1352.js";const c={},n=e("h1",{id:"vue-router",tabindex:"-1"},[e("a",{class:"header-anchor",href:"#vue-router","aria-hidden":"true"},"#"),o(" vue-router")],-1),s=[n];function _(d,i){return r(),a("div",null,s)}const h=t(c,[["render",_],["__file","index.html.vue"]]);export{h as default};

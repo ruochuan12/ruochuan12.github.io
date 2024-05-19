@@ -1,0 +1,5 @@
+
+User-agent:*
+Disallow:
+
+Sitemap: https://lxchuan12.gitee.io/sitemap.xml
