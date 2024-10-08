@@ -1,0 +1,1 @@
+(self.webpackChunkblog=self.webpackChunkblog||[]).push([["7871"],{29941:function(){Redux.combineReducers({todos:function(e,t){if(void 0===e)return[];if("ADD_TODO"===t.type)return e.concat([t.text]);return e},counter:function(e,t){if(void 0===e)return 0;switch(t.type){case"INCREMENT":return e+1;case"DECREMENT":return e-1;default:return e}}})}}]);
