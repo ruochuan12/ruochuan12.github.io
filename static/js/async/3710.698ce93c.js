@@ -1,0 +1,1 @@
+(self.webpackChunkblog=self.webpackChunkblog||[]).push([["3710"],{44094:function(){console.log((function(){for(var n=arguments.length,u=Array(n),e=0;e<n;e++)u[e]=arguments[e];return u.reduce((n,u)=>function(e){return n(u(e))})})(minus,add,multiply)(10))}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkblog=self.webpackChunkblog||[]).push([["4241"],{83021:function(t,e,n){function u(t){return e=>{let{dispatch:n,getState:u}=e;return e=>l=>"function"==typeof l?l(n,u,t):e(l)}}n.r(e),n.d(e,{default:()=>r});let l=u();l.withExtraArgument=u;let r=l}}]);
