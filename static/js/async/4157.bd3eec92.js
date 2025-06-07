@@ -1,0 +1,1 @@
+(self.webpackChunkblog=self.webpackChunkblog||[]).push([["4157"],{75640:function(){let l,n,u;console.log((l=minus,n=add,u=multiply,function(e){return l(n(u(e)))})(10))}}]);
